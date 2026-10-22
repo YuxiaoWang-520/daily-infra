@@ -54,3 +54,9 @@
 - Next: verify remote and mark W03, then W04 Roofline.
 - Research cache: .cache/research10/source-manifest.json and sources/ hold pinned PyTorch e149fba..., Triton c1641a..., FlashAttention 767386d... files. Paper PDFs/texts under .cache/research10/papers/ include mixed_precision, online_softmax, flashattention, gemm_anatomy. Roofline initial download timed out, resume then pdftotext exited 0; update its paper manifest before use.
 - Reviewer continuity: reuse /root/python_bootstrap_review_fallback for narrow per-article Python reviews; fixed specialist unavailable. No new optional subagents.
+
+## Session 2026-10-22T10:44:52.963095+00:00
+- Feature: W03 remote acceptance
+- Validation: GitHub main returned 5146360; all three published chapters pass 12+19+26=57 CPU tests in fresh interpreters.
+- Outcome: W01-W03 complete and pushed; goal remains active, W04-W10 and FINAL remain false.
+- Next: W04, Roofline. Primary paper cache roofline.txt sections 3/4 has been read; download resumed successfully, paper manifest corrected with initial error retained. Triton fused-softmax tutorial lines 40-105 read; note its comment says MN bytes where its calculation actually counts elements, do not copy that unit mistake. Preserve user playground/tensor.py.
