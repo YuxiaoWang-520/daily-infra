@@ -1,0 +1,44 @@
+[
+  {
+    "name": "roofline",
+    "url": "https://www2.eecs.berkeley.edu/Pubs/TechRpts/2008/EECS-2008-134.pdf",
+    "command": [
+      "curl",
+      "--fail",
+      "--location",
+      "--silent",
+      "--show-error",
+      "--connect-timeout",
+      "10",
+      "--max-time",
+      "45",
+      "https://www2.eecs.berkeley.edu/Pubs/TechRpts/2008/EECS-2008-134.pdf",
+      "--output",
+      ".cache/research10/papers/roofline.pdf"
+    ],
+    "at": "2026-10-22T10:44:52.963095+00:00",
+    "exit_code": 0,
+    "extract_exit_code": 0,
+    "sha256": "c92f852eed1070b140302114339271dc1a4d6d665814ac9000be6ce06a7d6bcb",
+    "bytes": 2430563,
+    "resumed": true,
+    "resume_command": [
+      "curl",
+      "--fail",
+      "--location",
+      "--silent",
+      "--show-error",
+      "--connect-timeout",
+      "10",
+      "--max-time",
+      "45",
+      "--continue-at",
+      "-",
+      "https://www2.eecs.berkeley.edu/Pubs/TechRpts/2008/EECS-2008-134.pdf",
+      "--output",
+      ".cache/research10/papers/roofline.pdf"
+    ],
+    "resume_exit_code": 0,
+    "initial_error": "curl: (28) Operation timed out after 41533 milliseconds with 1673529 out of 2430563 bytes received\n"
+  }
+]

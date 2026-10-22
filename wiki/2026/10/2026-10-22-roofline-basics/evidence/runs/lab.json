@@ -1,0 +1,58 @@
+{
+  "scope": "analytical only; illustrative hardware; no GPU measurements",
+  "assumptions": {
+    "peak_tflops": 100,
+    "bandwidth_gbs": 1000
+  },
+  "cases": {
+    "vector_add_fp32": {
+      "work": {
+        "flops": 1048576,
+        "bytes_moved": 12582912
+      },
+      "bound": {
+        "intensity": 0.08333333333333333,
+        "ridge_intensity": 100.0,
+        "compute_seconds": 1.048576e-08,
+        "memory_seconds": 1.2582912e-05,
+        "lower_seconds": 1.2582912e-05,
+        "attainable_tflops": 0.08333333333333333,
+        "limiter": "memory"
+      }
+    },
+    "gemm_128_fp32": {
+      "work": {
+        "flops": 4194304,
+        "bytes_moved": 196608
+      },
+      "bound": {
+        "intensity": 21.333333333333332,
+        "ridge_intensity": 100.0,
+        "compute_seconds": 4.194304e-08,
+        "memory_seconds": 1.96608e-07,
+        "lower_seconds": 1.96608e-07,
+        "attainable_tflops": 21.333333333333332,
+        "limiter": "memory"
+      }
+    },
+    "gemm_1024_fp32": {
+      "work": {
+        "flops": 2147483648,
+        "bytes_moved": 12582912
+      },
+      "bound": {
+        "intensity": 170.66666666666666,
+        "ridge_intensity": 100.0,
+        "compute_seconds": 2.147483648e-05,
+        "memory_seconds": 1.2582912e-05,
+        "lower_seconds": 2.147483648e-05,
+        "attainable_tflops": 100.0,
+        "limiter": "compute"
+      }
+    }
+  },
+  "synthetic_twice_bound": {
+    "tflops": 50.0,
+    "effective_gbs": 292.96875
+  }
+}

@@ -1,0 +1,17 @@
+test_balanced_and_empty (test_answers.BoundTests) ... ok
+test_copy_only_work (test_answers.BoundTests) ... ok
+test_invalid_hardware_and_elapsed (test_answers.BoundTests) ... ok
+test_large_gemm_compute_bound (test_answers.BoundTests) ... ok
+test_small_gemm_can_be_memory_bound_in_model (test_answers.BoundTests) ... ok
+test_synthetic_time_twice_bound (test_answers.BoundTests) ... ok
+test_units_of_effective_rates (test_answers.BoundTests) ... ok
+test_vector_add_memory_bound (test_answers.BoundTests) ... ok
+test_gemm_non_square_counts (test_answers.WorkTests) ... ok
+test_gemm_square_intensity (test_answers.WorkTests) ... ok
+test_reject_invalid_counts (test_answers.WorkTests) ... ok
+test_vector_add_counts_and_empty (test_answers.WorkTests) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.000s
+
+OK

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 460" role="img" aria-label="Roofline concept diagram: memory limit rises with intensity, compute limit is horizontal">
+<rect width="900" height="460" fill="#f8fafc"/>
+<g font-family="Arial,sans-serif" fill="#172554">
+<text x="45" y="35" font-size="23">Roofline: two upper bounds (schematic)</text>
+<text x="45" y="61" font-size="15">Illustrative assumptions: P = 100 TFLOP/s, B = 1000 GB/s. No measurements.</text>
+<path d="M100 355 H815 M100 355 V90" fill="none" stroke="#334155" stroke-width="2"/>
+<path d="M120 325 L510 130 H790" fill="none" stroke="#2563eb" stroke-width="5"/>
+<path d="M110 130 H510 M510 130 L650 60" fill="none" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6 5"/>
+<path d="M510 130 V355" fill="none" stroke="#64748b" stroke-dasharray="5 5"/>
+<text x="140" y="241" font-size="19" transform="rotate(-26 140 241)">Memory bound: B × I</text>
+<text x="555" y="111" font-size="19">Compute bound: P</text>
+<text x="435" y="380" font-size="17">Ridge: I = P/B = 100 FLOP/byte</text>
+<text x="115" y="425" font-size="17">Intensity I: more arithmetic per byte → (log-axis concept)</text>
+<text x="25" y="320" font-size="17" transform="rotate(-90 25 320)">Attainable FLOP/s ↑</text>
+<text x="125" y="165" font-size="16" fill="#475569">Actual kernel may be below the roof.</text>
+<circle cx="299" cy="287" r="6" fill="#f97316"/>
+<text x="315" y="294" font-size="16">Illustrative point (not measured)</text>
+</g></svg>
