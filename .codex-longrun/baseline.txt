@@ -1,0 +1,32 @@
+3.10.13 2.9.1 CUDA: False
+test_default_contiguity_cases (test_layout.AddressModelTests) ... ok
+test_empty_pack_does_not_pool_unused_indices (test_layout.AddressModelTests) ... ok
+test_empty_tensor_has_no_valid_index (test_layout.AddressModelTests) ... ok
+test_indices_must_be_in_bounds (test_layout.AddressModelTests) ... ok
+test_integer_metadata_is_required (test_layout.AddressModelTests) ... ok
+test_invalid_metadata_is_rejected (test_layout.AddressModelTests) ... ok
+test_pack_follows_logical_order (test_layout.AddressModelTests) ... ok
+test_pack_rejects_storage_overrun (test_layout.AddressModelTests) ... ok
+test_pack_supports_repeated_reads (test_layout.AddressModelTests) ... ok
+test_scalar_has_one_address (test_layout.AddressModelTests) ... ok
+test_slice_offset_is_in_elements (test_layout.AddressModelTests) ... ok
+test_transpose_uses_original_storage (test_layout.AddressModelTests) ... ok
+test_invalid_contracts_are_rejected (test_torch.HeadLayoutTests) ... ok
+test_materialized_bhsd_requires_copy_on_merge (test_torch.HeadLayoutTests) ... ok
+test_reshape_cannot_replace_permutation (test_torch.HeadLayoutTests) ... ok
+test_round_trip_can_reuse_storage (test_torch.HeadLayoutTests) ... ok
+test_split_has_correct_coordinates_and_no_copy (test_torch.HeadLayoutTests) ... ok
+test_address_model_matches_torch (test_torch.TorchLayoutTests) ... ok
+test_channels_last_keeps_logical_dimensions (test_torch.TorchLayoutTests) ... ok
+test_clone_is_not_a_contiguous_conversion (test_torch.TorchLayoutTests) ... ok
+test_contiguous_slice_can_have_nonzero_offset (test_torch.TorchLayoutTests) ... ok
+test_crop_cannot_flatten_without_copy (test_torch.TorchLayoutTests) ... ok
+test_noncontiguous_step_slice_can_be_viewed (test_torch.TorchLayoutTests) ... ok
+test_shape_and_values_do_not_determine_layout (test_torch.TorchLayoutTests) ... ok
+test_transpose_flatten_has_logical_order (test_torch.TorchLayoutTests) ... ok
+test_transpose_is_a_view_and_shares_mutations (test_torch.TorchLayoutTests) ... ok
+
+----------------------------------------------------------------------
+Ran 26 tests in 0.106s
+
+OK

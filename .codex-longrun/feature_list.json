@@ -1,0 +1,218 @@
+{
+  "project_goal": "完成起步阶段前 10 篇高质量 AI Infra Wiki，逐篇验证审查并同步到私密 GitHub 仓库。",
+  "created_at": "2026-10-22T10:10:25Z",
+  "rules": {
+    "single_feature_per_session": true,
+    "require_validation_evidence": true,
+    "forbid_completion_if_any_feature_fails": true,
+    "status_fields_only_update": [
+      "passes",
+      "evidence",
+      "notes",
+      "updated_at"
+    ]
+  },
+  "features": [
+    {
+      "id": "PLAN",
+      "category": "infrastructure",
+      "priority": "P0",
+      "description": "冻结前 10 篇范围与单篇即时推送规则",
+      "acceptance_criteria": [
+        "有可复核的仓库记录和成功验证"
+      ],
+      "passes": true,
+      "evidence": "docs/BOOTSTRAP10.md; .codex-longrun/baseline.txt; existing first article review.md and evidence; published f46ac4a",
+      "notes": "",
+      "updated_at": "2026-10-22T10:12:44.835708+00:00"
+    },
+    {
+      "id": "BASELINE",
+      "category": "infrastructure",
+      "priority": "P0",
+      "description": "不安装依赖的现有文章回归入口",
+      "acceptance_criteria": [
+        "有可复核的仓库记录和成功验证"
+      ],
+      "passes": true,
+      "evidence": "docs/BOOTSTRAP10.md; .codex-longrun/baseline.txt; existing first article review.md and evidence; published f46ac4a",
+      "notes": "",
+      "updated_at": "2026-10-22T10:12:44.835708+00:00"
+    },
+    {
+      "id": "W01",
+      "category": "article",
+      "priority": "P0",
+      "description": "Tensor 的 shape、stride 与连续性",
+      "acceptance_criteria": [
+        "基础到实现的正文、图解、固定源码与资料归档齐全",
+        "至少两道完整练习及详解，真实验收通过",
+        "技术与教学两轮审查完成，无 CRITICAL/HIGH",
+        "索引更新，单篇提交并推送已核验"
+      ],
+      "passes": true,
+      "evidence": "docs/BOOTSTRAP10.md; .codex-longrun/baseline.txt; existing first article review.md and evidence; published f46ac4a",
+      "notes": "",
+      "updated_at": "2026-10-22T10:12:44.835708+00:00"
+    },
+    {
+      "id": "W02",
+      "category": "article",
+      "priority": "P0",
+      "description": "广播与物化成本",
+      "acceptance_criteria": [
+        "基础到实现的正文、图解、固定源码与资料归档齐全",
+        "至少两道完整练习及详解，真实验收通过",
+        "技术与教学两轮审查完成，无 CRITICAL/HIGH",
+        "索引更新，单篇提交并推送已核验"
+      ],
+      "passes": false,
+      "evidence": "",
+      "notes": "",
+      "updated_at": ""
+    },
+    {
+      "id": "W03",
+      "category": "article",
+      "priority": "P0",
+      "description": "浮点格式与误差",
+      "acceptance_criteria": [
+        "基础到实现的正文、图解、固定源码与资料归档齐全",
+        "至少两道完整练习及详解，真实验收通过",
+        "技术与教学两轮审查完成，无 CRITICAL/HIGH",
+        "索引更新，单篇提交并推送已核验"
+      ],
+      "passes": false,
+      "evidence": "",
+      "notes": "",
+      "updated_at": ""
+    },
+    {
+      "id": "W04",
+      "category": "article",
+      "priority": "P0",
+      "description": "Roofline 与瓶颈判断",
+      "acceptance_criteria": [
+        "基础到实现的正文、图解、固定源码与资料归档齐全",
+        "至少两道完整练习及详解，真实验收通过",
+        "技术与教学两轮审查完成，无 CRITICAL/HIGH",
+        "索引更新，单篇提交并推送已核验"
+      ],
+      "passes": false,
+      "evidence": "",
+      "notes": "",
+      "updated_at": ""
+    },
+    {
+      "id": "W05",
+      "category": "article",
+      "priority": "P0",
+      "description": "GPU 并行映射",
+      "acceptance_criteria": [
+        "基础到实现的正文、图解、固定源码与资料归档齐全",
+        "至少两道完整练习及详解，真实验收通过",
+        "技术与教学两轮审查完成，无 CRITICAL/HIGH",
+        "索引更新，单篇提交并推送已核验"
+      ],
+      "passes": false,
+      "evidence": "",
+      "notes": "",
+      "updated_at": ""
+    },
+    {
+      "id": "W06",
+      "category": "article",
+      "priority": "P0",
+      "description": "异步执行与计时",
+      "acceptance_criteria": [
+        "基础到实现的正文、图解、固定源码与资料归档齐全",
+        "至少两道完整练习及详解，真实验收通过",
+        "技术与教学两轮审查完成，无 CRITICAL/HIGH",
+        "索引更新，单篇提交并推送已核验"
+      ],
+      "passes": false,
+      "evidence": "",
+      "notes": "",
+      "updated_at": ""
+    },
+    {
+      "id": "W07",
+      "category": "article",
+      "priority": "P0",
+      "description": "GEMM 分块与复用",
+      "acceptance_criteria": [
+        "基础到实现的正文、图解、固定源码与资料归档齐全",
+        "至少两道完整练习及详解，真实验收通过",
+        "技术与教学两轮审查完成，无 CRITICAL/HIGH",
+        "索引更新，单篇提交并推送已核验"
+      ],
+      "passes": false,
+      "evidence": "",
+      "notes": "",
+      "updated_at": ""
+    },
+    {
+      "id": "W08",
+      "category": "article",
+      "priority": "P0",
+      "description": "Tensor Core 条件",
+      "acceptance_criteria": [
+        "基础到实现的正文、图解、固定源码与资料归档齐全",
+        "至少两道完整练习及详解，真实验收通过",
+        "技术与教学两轮审查完成，无 CRITICAL/HIGH",
+        "索引更新，单篇提交并推送已核验"
+      ],
+      "passes": false,
+      "evidence": "",
+      "notes": "",
+      "updated_at": ""
+    },
+    {
+      "id": "W09",
+      "category": "article",
+      "priority": "P0",
+      "description": "算子融合取舍",
+      "acceptance_criteria": [
+        "基础到实现的正文、图解、固定源码与资料归档齐全",
+        "至少两道完整练习及详解，真实验收通过",
+        "技术与教学两轮审查完成，无 CRITICAL/HIGH",
+        "索引更新，单篇提交并推送已核验"
+      ],
+      "passes": false,
+      "evidence": "",
+      "notes": "",
+      "updated_at": ""
+    },
+    {
+      "id": "W10",
+      "category": "article",
+      "priority": "P0",
+      "description": "Attention 与 online softmax",
+      "acceptance_criteria": [
+        "基础到实现的正文、图解、固定源码与资料归档齐全",
+        "至少两道完整练习及详解，真实验收通过",
+        "技术与教学两轮审查完成，无 CRITICAL/HIGH",
+        "索引更新，单篇提交并推送已核验"
+      ],
+      "passes": false,
+      "evidence": "",
+      "notes": "",
+      "updated_at": ""
+    },
+    {
+      "id": "FINAL",
+      "category": "integration",
+      "priority": "P0",
+      "description": "前 10 篇入口、链接、代码回归与远端同步终验",
+      "acceptance_criteria": [
+        "索引 01—10 均可阅读",
+        "完整回归与归档检查通过",
+        "GitHub main 包含所有文章提交"
+      ],
+      "passes": false,
+      "evidence": "",
+      "notes": "",
+      "updated_at": ""
+    }
+  ]
+}
