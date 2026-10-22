@@ -1,0 +1,81 @@
+{
+  "checked_at_utc": "2026-10-22T07:24:49.646712+00:00",
+  "cwd": "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/wiki/2026/10/2026-10-22-tensor-shape-stride-contiguity/code",
+  "checks": [
+    {
+      "file": "tests.txt",
+      "argv": [
+        "/Users/wangyuxiao/conda3/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        ".",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exit_code": 0
+    },
+    {
+      "file": "tracemalloc-tests.txt",
+      "argv": [
+        "/Users/wangyuxiao/conda3/bin/python3",
+        "-X",
+        "tracemalloc=1",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        ".",
+        "-p",
+        "test_layout.py",
+        "-v"
+      ],
+      "exit_code": 0
+    },
+    {
+      "file": "lint.txt",
+      "argv": [
+        "/Users/wangyuxiao/conda3/bin/python3",
+        "-m",
+        "ruff",
+        "check",
+        "--select",
+        "E,F,I,UP",
+        "."
+      ],
+      "exit_code": 0
+    },
+    {
+      "file": "format.txt",
+      "argv": [
+        "/Users/wangyuxiao/conda3/bin/python3",
+        "-m",
+        "ruff",
+        "format",
+        "--check",
+        "."
+      ],
+      "exit_code": 0
+    },
+    {
+      "file": "lab.json",
+      "argv": [
+        "/Users/wangyuxiao/conda3/bin/python3",
+        "run_lab.py"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "environment": {
+    "python": "3.10.13",
+    "platform": "macOS-15.5-arm64-arm-64bit",
+    "torch": "2.9.1",
+    "torch_git_version": "5811a8d7da873dd699ff6687092c225caffcf1bb",
+    "device_used": "cpu",
+    "cuda_available": false,
+    "purpose": "semantics only; no latency or throughput claims"
+  },
+  "lab_claims_checked": true
+}

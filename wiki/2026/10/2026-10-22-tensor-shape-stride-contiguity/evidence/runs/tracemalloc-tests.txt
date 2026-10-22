@@ -1,0 +1,17 @@
+test_default_contiguity_cases (test_layout.AddressModelTests) ... ok
+test_empty_pack_does_not_pool_unused_indices (test_layout.AddressModelTests) ... ok
+test_empty_tensor_has_no_valid_index (test_layout.AddressModelTests) ... ok
+test_indices_must_be_in_bounds (test_layout.AddressModelTests) ... ok
+test_integer_metadata_is_required (test_layout.AddressModelTests) ... ok
+test_invalid_metadata_is_rejected (test_layout.AddressModelTests) ... ok
+test_pack_follows_logical_order (test_layout.AddressModelTests) ... ok
+test_pack_rejects_storage_overrun (test_layout.AddressModelTests) ... ok
+test_pack_supports_repeated_reads (test_layout.AddressModelTests) ... ok
+test_scalar_has_one_address (test_layout.AddressModelTests) ... ok
+test_slice_offset_is_in_elements (test_layout.AddressModelTests) ... ok
+test_transpose_uses_original_storage (test_layout.AddressModelTests) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.058s
+
+OK

@@ -1,0 +1,35 @@
+test_layout (unittest.loader._FailedTest) ... ERROR
+test_torch (unittest.loader._FailedTest) ... ERROR
+
+======================================================================
+ERROR: test_layout (unittest.loader._FailedTest)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_layout
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/conda3/lib/python3.10/unittest/loader.py", line 436, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/Users/wangyuxiao/conda3/lib/python3.10/unittest/loader.py", line 377, in _get_module_from_name
+    __import__(name)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-10-22-tensor-shape-stride-contiguity/code/test_layout.py", line 5, in <module>
+    from layout_answers import is_c_contiguous, pack_logical, storage_index
+ModuleNotFoundError: No module named 'layout_answers'
+
+
+======================================================================
+ERROR: test_torch (unittest.loader._FailedTest)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_torch
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/conda3/lib/python3.10/unittest/loader.py", line 436, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/Users/wangyuxiao/conda3/lib/python3.10/unittest/loader.py", line 377, in _get_module_from_name
+    __import__(name)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-10-22-tensor-shape-stride-contiguity/code/test_torch.py", line 7, in <module>
+    from layout_answers import is_c_contiguous, pack_logical
+ModuleNotFoundError: No module named 'layout_answers'
+
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.000s
+
+FAILED (errors=2)

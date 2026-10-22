@@ -1,0 +1,9 @@
+Local Markdown links: 63
+Pinned source anchors: 20
+Checksums verified: 18
+Code spans excluded from HTML tag validation; Markdown fences/math/details checked.
+Both SVG sources parse; final PNG dimensions and visual layout checked.
+26 tests, 12 tracing-mode tests, lint, format, and lab semantic checks: PASS.
+Saved automation: ACTIVE, Monday-Friday 11:00.
+Published article and index consistent.
+PASS

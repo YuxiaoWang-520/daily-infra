@@ -1,0 +1,12 @@
+Command (from code/):
+python3 -m unittest test_layout.AddressModelTests.test_empty_pack_does_not_pool_unused_indices -v
+
+Captured before the early return was added to pack_logical:
+test_empty_pack_does_not_pool_unused_indices (test_layout.AddressModelTests.test_empty_pack_does_not_pool_unused_indices) ... FAIL
+
+AssertionError: 4791488 not less than 1048576
+
+Ran 1 test in 0.060s
+FAILED (failures=1)
+
+This is a Python allocation regression check for an empty logical domain, not a GPU performance measurement.

@@ -1,0 +1,28 @@
+{
+  "repository": "https://github.com/pytorch/pytorch",
+  "default_branch": "main",
+  "source_commit": "c9d49411dc9c251a6f9812799112e92532748eec",
+  "source_commit_committed_at": "2026-10-22T04:36:24Z",
+  "checked_at_utc": "2026-10-22T07:09:04.266Z",
+  "retrieval_method": "GitHub connector: branch API, repository API, pinned raw file snapshots",
+  "git_clone_status": "Initial CLI clone/ls-remote did not finish; stopped those commands. Raw file snapshots were retrieved successfully via the official GitHub API connector.",
+  "runtime": {
+    "version": "2.9.1",
+    "git_commit": "5811a8d7da873dd699ff6687092c225caffcf1bb",
+    "device_used": "cpu",
+    "built_from_current_main": false
+  },
+  "documentation": {
+    "view": "https://docs.pytorch.org/docs/2.14/generated/torch.Tensor.view.html",
+    "contiguous": "https://docs.pytorch.org/docs/2.14/generated/torch.Tensor.contiguous.html",
+    "clone": "https://docs.pytorch.org/docs/2.14/generated/torch.clone.html"
+  },
+  "files": [
+    "c10/core/Contiguity.h",
+    "aten/src/ATen/TensorUtils.cpp",
+    "aten/src/ATen/native/TensorShape.cpp",
+    "aten/src/ATen/native/TensorProperties.cpp",
+    "c10/core/TensorImpl.h",
+    "LICENSE"
+  ]
+}
