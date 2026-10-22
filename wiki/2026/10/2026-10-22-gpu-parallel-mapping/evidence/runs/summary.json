@@ -1,0 +1,68 @@
+{
+  "at": "2026-10-22T10:56:55.803671+00:00",
+  "environment": {
+    "python": "3.10.13 (main, Sep 11 2023, 08:16:02) [Clang 14.0.6 ]",
+    "executable": "/Users/wangyuxiao/conda3/bin/python3",
+    "platform": "macOS-15.5-arm64-arm-64bit",
+    "torch": "2.9.1",
+    "torch_git": "5811a8d7da873dd699ff6687092c225caffcf1bb",
+    "cuda": false
+  },
+  "commands": [
+    {
+      "command": [
+        "/Users/wangyuxiao/conda3/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "code",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "cwd": "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/wiki/2026/10/2026-10-22-gpu-parallel-mapping",
+      "exit_code": 0,
+      "output": "tests.txt"
+    },
+    {
+      "command": [
+        "/Users/wangyuxiao/conda3/bin/python3",
+        "code/run_lab.py"
+      ],
+      "cwd": "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/wiki/2026/10/2026-10-22-gpu-parallel-mapping",
+      "exit_code": 0,
+      "output": "lab.json"
+    },
+    {
+      "command": [
+        "/Users/wangyuxiao/conda3/bin/python3",
+        "-m",
+        "ruff",
+        "check",
+        "--select",
+        "E,F,I,UP",
+        "--ignore",
+        "E501",
+        "code"
+      ],
+      "cwd": "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/wiki/2026/10/2026-10-22-gpu-parallel-mapping",
+      "exit_code": 0,
+      "output": "lint.txt"
+    },
+    {
+      "command": [
+        "/Users/wangyuxiao/conda3/bin/python3",
+        "-m",
+        "ruff",
+        "format",
+        "--check",
+        "code"
+      ],
+      "cwd": "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/wiki/2026/10/2026-10-22-gpu-parallel-mapping",
+      "exit_code": 0,
+      "output": "format.txt"
+    }
+  ],
+  "scope": "CPU educational references and analytical models only; no CUDA execution, profiler traffic, or GPU performance validation."
+}

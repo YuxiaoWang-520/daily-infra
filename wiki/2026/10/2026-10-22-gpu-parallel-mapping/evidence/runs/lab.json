@@ -1,0 +1,106 @@
+{
+  "scope": "CPU address model; no CUDA execution or measured transactions",
+  "ten_elements_block4": [
+    {
+      "block": 0,
+      "thread": 0,
+      "index": 0,
+      "active": true,
+      "warp": 0,
+      "lane": 0
+    },
+    {
+      "block": 0,
+      "thread": 1,
+      "index": 1,
+      "active": true,
+      "warp": 0,
+      "lane": 1
+    },
+    {
+      "block": 0,
+      "thread": 2,
+      "index": 2,
+      "active": true,
+      "warp": 0,
+      "lane": 2
+    },
+    {
+      "block": 0,
+      "thread": 3,
+      "index": 3,
+      "active": true,
+      "warp": 0,
+      "lane": 3
+    },
+    {
+      "block": 1,
+      "thread": 0,
+      "index": 4,
+      "active": true,
+      "warp": 0,
+      "lane": 0
+    },
+    {
+      "block": 1,
+      "thread": 1,
+      "index": 5,
+      "active": true,
+      "warp": 0,
+      "lane": 1
+    },
+    {
+      "block": 1,
+      "thread": 2,
+      "index": 6,
+      "active": true,
+      "warp": 0,
+      "lane": 2
+    },
+    {
+      "block": 1,
+      "thread": 3,
+      "index": 7,
+      "active": true,
+      "warp": 0,
+      "lane": 3
+    },
+    {
+      "block": 2,
+      "thread": 0,
+      "index": 8,
+      "active": true,
+      "warp": 0,
+      "lane": 0
+    },
+    {
+      "block": 2,
+      "thread": 1,
+      "index": 9,
+      "active": true,
+      "warp": 0,
+      "lane": 1
+    },
+    {
+      "block": 2,
+      "thread": 2,
+      "index": 10,
+      "active": false,
+      "warp": 0,
+      "lane": 2
+    },
+    {
+      "block": 2,
+      "thread": 3,
+      "index": 11,
+      "active": false,
+      "warp": 0,
+      "lane": 3
+    }
+  ],
+  "sectors_32_lanes_fp32": {
+    "aligned": 4,
+    "offset4": 5,
+    "stride128": 32
+  }
+}

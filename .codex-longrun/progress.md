@@ -60,3 +60,9 @@
 - Validation: GitHub main returned 5146360; all three published chapters pass 12+19+26=57 CPU tests in fresh interpreters.
 - Outcome: W01-W03 complete and pushed; goal remains active, W04-W10 and FINAL remain false.
 - Next: W04, Roofline. Primary paper cache roofline.txt sections 3/4 has been read; download resumed successfully, paper manifest corrected with initial error retained. Triton fused-softmax tutorial lines 40-105 read; note its comment says MN bytes where its calculation actually counts elements, do not copy that unit mistake. Preserve user playground/tensor.py.
+
+## Session 2026-10-22T10:53:43.340493+00:00
+- Feature: W04 remote acceptance
+- Validation: 12 CPU tests, Ruff, 29 local links, 4 source anchors and 2 source hashes PASS; independent Python review and technical/teaching self-review complete.
+- Outcome: 65ed2363b8eae9a81678165ceda87126924bd183 pushed and verified on GitHub main; 4/10 complete.
+- Next: W05 mapping and coalescing geometry; protect playground/.

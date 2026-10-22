@@ -10,7 +10,7 @@
 | 02 | [广播看似没有复制数据，为什么仍可能增加计算或访存？](wiki/2026/10/2026-10-22-broadcasting-cost/README.md) | 批处理、广播运算、扩展视图与物化 |
 | 03 | [同一个计算，为什么 FP32、BF16、FP16 的结果不同？](wiki/2026/10/2026-10-22-floating-point-formats/README.md) | 累加误差、数值范围、训练稳定性与验证 |
 | 04 | [一个算子究竟受算力还是内存带宽限制？](wiki/2026/10/2026-10-22-roofline-basics/README.md) | FLOPs、字节数、算术强度与 Roofline |
-| 05 | GPU 如何把一次算子调用分配给线程、warp 和 block？ | 并行映射、同步、资源限制与占用率 |
+| 05 | [GPU 如何把一次算子调用分配给线程、warp 和 block？](wiki/2026/10/2026-10-22-gpu-parallel-mapping/README.md) | 并行映射、同步、资源限制与占用率 |
 | 06 | GPU 计时为什么需要理解异步执行和同步？ | warmup、stream、事件计时与端到端延迟 |
 | 07 | 为什么矩阵乘法需要分块与数据复用？ | GEMM、合并访存、片上存储和 tile 选择 |
 | 08 | Tensor Core 怎样使用，什么条件决定它是否有效？ | 数据类型、形状、对齐、累加与实际指令路径 |

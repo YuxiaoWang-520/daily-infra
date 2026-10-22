@@ -1,0 +1,38 @@
+[
+  {
+    "repo": "triton-lang/triton",
+    "branch": "main",
+    "commit": "c1641abbb17a80b8c9cad1fa05b4c70d6ac260ab",
+    "path": "LICENSE",
+    "url": "https://github.com/triton-lang/triton/blob/c1641abbb17a80b8c9cad1fa05b4c70d6ac260ab/LICENSE",
+    "retrieved_at": "2026-10-22T10:12:33.204577+00:00",
+    "sha256": "92640fb97222fd0a698ff28ce0c3782c172623f8d6c609b557636a80f28fb946",
+    "bytes": 1132,
+    "command": [
+      "gh",
+      "api",
+      "-H",
+      "Accept: application/vnd.github.raw+json",
+      "repos/triton-lang/triton/contents/LICENSE?ref=c1641abbb17a80b8c9cad1fa05b4c70d6ac260ab"
+    ],
+    "local_path": "evidence/upstream/triton-lang/triton/LICENSE"
+  },
+  {
+    "repo": "triton-lang/triton",
+    "branch": "main",
+    "commit": "c1641abbb17a80b8c9cad1fa05b4c70d6ac260ab",
+    "path": "python/tutorials/01-vector-add.py",
+    "url": "https://github.com/triton-lang/triton/blob/c1641abbb17a80b8c9cad1fa05b4c70d6ac260ab/python/tutorials/01-vector-add.py",
+    "retrieved_at": "2026-10-22T10:12:33.436026+00:00",
+    "sha256": "842430949e0ccde4fbce07606cce3ac4bac36bf21b2b12619a31b795ca4029b3",
+    "bytes": 5644,
+    "command": [
+      "gh",
+      "api",
+      "-H",
+      "Accept: application/vnd.github.raw+json",
+      "repos/triton-lang/triton/contents/python/tutorials/01-vector-add.py?ref=c1641abbb17a80b8c9cad1fa05b4c70d6ac260ab"
+    ],
+    "local_path": "evidence/upstream/triton-lang/triton/python/tutorials/01-vector-add.py"
+  }
+]

@@ -1,0 +1,14 @@
+test_coverage_many_boundaries (test_answers.MappingTests) ... ok
+test_invalid_launch (test_answers.MappingTests) ... ok
+test_ten_elements_and_tail (test_answers.MappingTests) ... ok
+test_warps_restart_at_each_block (test_answers.MappingTests) ... ok
+test_aligned_contiguous_and_strided (test_answers.SectorTests) ... ok
+test_cross_boundary_duplicate_and_empty (test_answers.SectorTests) ... ok
+test_invalid_addresses_and_widths (test_answers.SectorTests) ... ok
+test_masked_tail_uses_only_valid_addresses (test_answers.SectorTests) ... ok
+test_misaligned_contiguous (test_answers.SectorTests) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.002s
+
+OK
