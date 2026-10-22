@@ -66,10 +66,10 @@
         "技术与教学两轮审查完成，无 CRITICAL/HIGH",
         "索引更新，单篇提交并推送已核验"
       ],
-      "passes": false,
-      "evidence": "",
+      "passes": true,
+      "evidence": "81b2a77e24df94c290e94443f715cda56886357d verified on GitHub main; article review.md and evidence/runs/summary.json, 12 CPU tests PASS",
       "notes": "",
-      "updated_at": ""
+      "updated_at": "2026-10-22T10:25:59.364622+00:00"
     },
     {
       "id": "W03",

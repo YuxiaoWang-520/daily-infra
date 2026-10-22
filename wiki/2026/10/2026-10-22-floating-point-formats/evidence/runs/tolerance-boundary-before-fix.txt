@@ -1,0 +1,27 @@
+test_absolute_tolerance_boundary (test_answers.ComparisonTests) ... FAIL
+test_empty_and_all_zero (test_answers.ComparisonTests) ... ok
+test_extreme_finite_values_do_not_compare_inf_to_inf (test_answers.ComparisonTests) ... ok
+test_invalid_shape_dtype_and_tolerance (test_answers.ComparisonTests) ... ok
+test_large_values_relative_tolerance (test_answers.ComparisonTests) ... ok
+test_near_zero_needs_absolute_tolerance (test_answers.ComparisonTests) ... ok
+test_one_failure_not_hidden_by_aggregate (test_answers.ComparisonTests) ... ok
+test_reject_nonfinite_even_when_positions_match (test_answers.ComparisonTests) ... ok
+test_addition_order (test_answers.FormatTests) ... ok
+test_dtype_info_and_one_spacing (test_answers.FormatTests) ... ok
+test_empty_and_invalid_sum (test_answers.FormatTests) ... ok
+test_known_roundtrip_values (test_answers.FormatTests) ... ok
+test_larger_accumulator_reduces_this_accumulation_error (test_answers.FormatTests) ... ok
+test_promoting_after_quantization_cannot_restore_input (test_answers.FormatTests) ... ok
+
+======================================================================
+FAIL: test_absolute_tolerance_boundary (test_answers.ComparisonTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-10-22-floating-point-formats/code/test_answers.py", line 85, in test_absolute_tolerance_boundary
+    self.assertTrue(report.passed)
+AssertionError: False is not true
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.026s
+
+FAILED (failures=1)

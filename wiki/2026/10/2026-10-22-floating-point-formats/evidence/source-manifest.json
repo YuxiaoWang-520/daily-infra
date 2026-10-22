@@ -1,0 +1,121 @@
+[
+  {
+    "repo": "pytorch/pytorch",
+    "branch": "main",
+    "commit": "e149fba40596a8181f44e1f318da5fa10d609118",
+    "path": "LICENSE",
+    "url": "https://github.com/pytorch/pytorch/blob/e149fba40596a8181f44e1f318da5fa10d609118/LICENSE",
+    "retrieved_at": "2026-10-22T10:12:29.519970+00:00",
+    "sha256": "bd018feef8825e88181c84eb7e3aa4eafb8f08a20d9fd6ef948569610c4a3e43",
+    "bytes": 3464,
+    "command": [
+      "gh",
+      "api",
+      "-H",
+      "Accept: application/vnd.github.raw+json",
+      "repos/pytorch/pytorch/contents/LICENSE?ref=e149fba40596a8181f44e1f318da5fa10d609118"
+    ]
+  },
+  {
+    "repo": "pytorch/pytorch",
+    "branch": "main",
+    "commit": "e149fba40596a8181f44e1f318da5fa10d609118",
+    "path": "c10/util/Half.h",
+    "url": "https://github.com/pytorch/pytorch/blob/e149fba40596a8181f44e1f318da5fa10d609118/c10/util/Half.h",
+    "retrieved_at": "2026-10-22T10:12:31.217451+00:00",
+    "sha256": "7fc8b81c00edb79e28b93a6cf3cf50de5c107bb36362417ea94d65c89b1c5ba7",
+    "bytes": 301,
+    "command": [
+      "gh",
+      "api",
+      "-H",
+      "Accept: application/vnd.github.raw+json",
+      "repos/pytorch/pytorch/contents/c10/util/Half.h?ref=e149fba40596a8181f44e1f318da5fa10d609118"
+    ]
+  },
+  {
+    "repo": "pytorch/pytorch",
+    "branch": "main",
+    "commit": "e149fba40596a8181f44e1f318da5fa10d609118",
+    "path": "c10/util/BFloat16.h",
+    "url": "https://github.com/pytorch/pytorch/blob/e149fba40596a8181f44e1f318da5fa10d609118/c10/util/BFloat16.h",
+    "retrieved_at": "2026-10-22T10:12:31.672138+00:00",
+    "sha256": "9550345b6b81b0d68d91ec9aa28225edece81d1a5843cc500366407cc9d9bdcd",
+    "bytes": 44,
+    "command": [
+      "gh",
+      "api",
+      "-H",
+      "Accept: application/vnd.github.raw+json",
+      "repos/pytorch/pytorch/contents/c10/util/BFloat16.h?ref=e149fba40596a8181f44e1f318da5fa10d609118"
+    ]
+  },
+  {
+    "repo": "pytorch/pytorch",
+    "branch": "main",
+    "commit": "e149fba40596a8181f44e1f318da5fa10d609118",
+    "path": "torch/amp/grad_scaler.py",
+    "url": "https://github.com/pytorch/pytorch/blob/e149fba40596a8181f44e1f318da5fa10d609118/torch/amp/grad_scaler.py",
+    "retrieved_at": "2026-10-22T10:12:32.120757+00:00",
+    "sha256": "862d3289c5fd0283987de797ac3a7640285bacff5720ce7e867cb92663989cc3",
+    "bytes": 31613,
+    "command": [
+      "gh",
+      "api",
+      "-H",
+      "Accept: application/vnd.github.raw+json",
+      "repos/pytorch/pytorch/contents/torch/amp/grad_scaler.py?ref=e149fba40596a8181f44e1f318da5fa10d609118"
+    ]
+  },
+  {
+    "repo": "pytorch/pytorch",
+    "branch": "main",
+    "commit": "e149fba40596a8181f44e1f318da5fa10d609118",
+    "path": "torch/headeronly/util/Half.h",
+    "url": "https://github.com/pytorch/pytorch/blob/e149fba40596a8181f44e1f318da5fa10d609118/torch/headeronly/util/Half.h",
+    "retrieved_at": "2026-10-22T10:16:21.166804+00:00",
+    "sha256": "6c02317b90c2d1265b7d8d29d3f1f39e28abf41b6d94afce4d91c297623a90c6",
+    "bytes": 28237,
+    "command": [
+      "gh",
+      "api",
+      "-H",
+      "Accept: application/vnd.github.raw+json",
+      "repos/pytorch/pytorch/contents/torch/headeronly/util/Half.h?ref=e149fba40596a8181f44e1f318da5fa10d609118"
+    ]
+  },
+  {
+    "repo": "pytorch/pytorch",
+    "branch": "main",
+    "commit": "e149fba40596a8181f44e1f318da5fa10d609118",
+    "path": "torch/headeronly/util/BFloat16.h",
+    "url": "https://github.com/pytorch/pytorch/blob/e149fba40596a8181f44e1f318da5fa10d609118/torch/headeronly/util/BFloat16.h",
+    "retrieved_at": "2026-10-22T10:16:22.310693+00:00",
+    "sha256": "302c7ba9e45d361efc5ef6ebce3b67a0cc4083bd09b60851e350273d650ff48b",
+    "bytes": 15277,
+    "command": [
+      "gh",
+      "api",
+      "-H",
+      "Accept: application/vnd.github.raw+json",
+      "repos/pytorch/pytorch/contents/torch/headeronly/util/BFloat16.h?ref=e149fba40596a8181f44e1f318da5fa10d609118"
+    ]
+  },
+  {
+    "repo": "pytorch/pytorch",
+    "branch": "main",
+    "commit": "e149fba40596a8181f44e1f318da5fa10d609118",
+    "path": "docs/source/notes/numerical_accuracy.md",
+    "url": "https://github.com/pytorch/pytorch/blob/e149fba40596a8181f44e1f318da5fa10d609118/docs/source/notes/numerical_accuracy.md",
+    "retrieved_at": "2026-10-22T10:16:23.596352+00:00",
+    "sha256": "2be44d8d41c37d05631cc1658258de6a575a8bd8c75bbef69bf53037f95a08db",
+    "bytes": 13041,
+    "command": [
+      "gh",
+      "api",
+      "-H",
+      "Accept: application/vnd.github.raw+json",
+      "repos/pytorch/pytorch/contents/docs/source/notes/numerical_accuracy.md?ref=e149fba40596a8181f44e1f318da5fa10d609118"
+    ]
+  }
+]

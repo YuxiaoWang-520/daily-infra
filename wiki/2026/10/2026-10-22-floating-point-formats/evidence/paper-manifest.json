@@ -1,0 +1,25 @@
+[
+  {
+    "name": "mixed_precision",
+    "url": "https://arxiv.org/pdf/1710.03740",
+    "command": [
+      "curl",
+      "--fail",
+      "--location",
+      "--silent",
+      "--show-error",
+      "--connect-timeout",
+      "10",
+      "--max-time",
+      "45",
+      "https://arxiv.org/pdf/1710.03740",
+      "--output",
+      ".cache/research10/papers/mixed_precision.pdf"
+    ],
+    "at": "2026-10-22T10:26:54.758419+00:00",
+    "exit_code": 0,
+    "extract_exit_code": 0,
+    "sha256": "3bbff2f757abdcfe4c5a4cee338f7b7d888110b9013ec4a934e334016f527c78",
+    "bytes": 1404641
+  }
+]

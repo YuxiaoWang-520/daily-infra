@@ -45,3 +45,12 @@
 - Validation: 12 CPU tests incl. inference AD regression, Ruff and format, diagnostic assertions, 35 links and 8 pinned anchors PASS; independent Python review and re-review clear.
 - Outcome: accepted locally; immediate article push in progress.
 - Next: verify remote, mark W02, then W03 floating-point formats.
+
+## Session 2026-10-22T10:38:55.606513+00:00
+- Feature: W03
+- Changes: gradual floating-point lesson, 2 exercises, 2 inline diagrams, 7 pinned source files, Mixed Precision Training v3 notes and acquisition metadata.
+- Validation: 19 CPU tests, diagnostic assertions, Ruff and format PASS; independent Python review/re-review; exact tolerance and stable reference metrics fixed; 39 local links and 4 source anchors valid.
+- Outcome: accepted locally; immediate chapter push pending.
+- Next: verify remote and mark W03, then W04 Roofline.
+- Research cache: .cache/research10/source-manifest.json and sources/ hold pinned PyTorch e149fba..., Triton c1641a..., FlashAttention 767386d... files. Paper PDFs/texts under .cache/research10/papers/ include mixed_precision, online_softmax, flashattention, gemm_anatomy. Roofline initial download timed out, resume then pdftotext exited 0; update its paper manifest before use.
+- Reviewer continuity: reuse /root/python_bootstrap_review_fallback for narrow per-article Python reviews; fixed specialist unavailable. No new optional subagents.

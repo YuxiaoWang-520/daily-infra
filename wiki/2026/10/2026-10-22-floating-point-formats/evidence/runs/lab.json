@@ -1,0 +1,54 @@
+{
+  "torch": "2.9.1",
+  "device": "cpu",
+  "formats": {
+    "torch.float32": {
+      "eps": 1.1920928955078125e-07,
+      "tiny_normal": 1.1754943508222875e-38,
+      "max": 3.4028234663852886e+38,
+      "stored": [
+        1.0010000467300415,
+        70000.0,
+        9.99999993922529e-09
+      ]
+    },
+    "torch.float16": {
+      "eps": 0.0009765625,
+      "tiny_normal": 6.103515625e-05,
+      "max": 65504.0,
+      "stored": [
+        1.0009765625,
+        "inf",
+        0.0
+      ]
+    },
+    "torch.bfloat16": {
+      "eps": 0.0078125,
+      "tiny_normal": 1.1754943508222875e-38,
+      "max": 3.3895313892515355e+38,
+      "stored": [
+        1.0,
+        70144.0,
+        1.0011717677116394e-08
+      ]
+    }
+  },
+  "addition_order": [
+    0.0,
+    1.0
+  ],
+  "accumulation": {
+    "ideal_decimal_sum": 100.0,
+    "quantized_input_reference": 99.9755859375,
+    "sequential_fp16": 105.1875,
+    "sequential_fp32": 99.9755859375,
+    "fp32_report": {
+      "total": 1,
+      "failed": 0,
+      "nonfinite": 0,
+      "max_absolute": 0.0,
+      "relative_l2": 0.0,
+      "passed": true
+    }
+  }
+}

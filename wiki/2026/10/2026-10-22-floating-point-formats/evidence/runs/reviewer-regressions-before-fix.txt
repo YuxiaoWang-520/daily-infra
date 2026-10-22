@@ -1,0 +1,54 @@
+test_absolute_tolerance_boundary (test_answers.ComparisonTests) ... ok
+test_empty_and_all_zero (test_answers.ComparisonTests) ... ok
+test_extreme_finite_values_do_not_compare_inf_to_inf (test_answers.ComparisonTests) ... ok
+test_invalid_shape_dtype_and_tolerance (test_answers.ComparisonTests) ... ok
+test_large_values_relative_tolerance (test_answers.ComparisonTests) ... ok
+test_near_zero_needs_absolute_tolerance (test_answers.ComparisonTests) ... ok
+test_one_failure_not_hidden_by_aggregate (test_answers.ComparisonTests) ... ok
+test_overflow_does_not_hide_tolerance_margin (test_answers.ComparisonTests) ... FAIL
+test_reject_nonfinite_even_when_positions_match (test_answers.ComparisonTests) ... ok
+test_relative_norm_preserves_small_difference (test_answers.ComparisonTests) ... FAIL
+test_relative_norm_underflow_regressions (test_answers.ComparisonTests) ... test_tolerance_is_exact_for_the_stored_binary_values (test_answers.ComparisonTests) ... FAIL
+test_addition_order (test_answers.FormatTests) ... ok
+test_dtype_info_and_one_spacing (test_answers.FormatTests) ... ok
+test_empty_and_invalid_sum (test_answers.FormatTests) ... ok
+test_known_roundtrip_values (test_answers.FormatTests) ... ok
+test_larger_accumulator_reduces_this_accumulation_error (test_answers.FormatTests) ... ok
+test_promoting_after_quantization_cannot_restore_input (test_answers.FormatTests) ... ok
+
+======================================================================
+FAIL: test_overflow_does_not_hide_tolerance_margin (test_answers.ComparisonTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-10-22-floating-point-formats/code/test_answers.py", line 99, in test_overflow_does_not_hide_tolerance_margin
+    self.assertFalse(compare_finite(actual, reference, atol=sys.float_info.max, rtol=0.75).passed)
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_relative_norm_preserves_small_difference (test_answers.ComparisonTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-10-22-floating-point-formats/code/test_answers.py", line 112, in test_relative_norm_preserves_small_difference
+    self.assertTrue(math.isclose(report.relative_l2, 2.**-52 / math.sqrt(10), rel_tol=1e-12))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_relative_norm_underflow_regressions (test_answers.ComparisonTests) (expected=1e-180)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-10-22-floating-point-formats/code/test_answers.py", line 106, in test_relative_norm_underflow_regressions
+    self.assertTrue(math.isclose(report.relative_l2, expected, rel_tol=1e-12))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_tolerance_is_exact_for_the_stored_binary_values (test_answers.ComparisonTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-10-22-floating-point-formats/code/test_answers.py", line 117, in test_tolerance_is_exact_for_the_stored_binary_values
+    self.assertFalse(compare_finite(actual, reference, atol=2.**53, rtol=0.).passed)
+AssertionError: True is not false
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.028s
+
+FAILED (failures=4)
