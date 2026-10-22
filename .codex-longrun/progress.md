@@ -38,3 +38,10 @@
 - Validation: 26 CPU tests, new examples and 18 local links PASS; two self-review rounds documented.
 - Outcome: ready for immediate per-article push.
 - Next: W02; use the slower question-driven narrative throughout.
+
+## Session 2026-10-22T10:25:28.589033+00:00
+- Feature: W02
+- Changes: broadcasting lesson, two exercises, inline diagrams, pinned PyTorch source, references and review.
+- Validation: 12 CPU tests incl. inference AD regression, Ruff and format, diagnostic assertions, 35 links and 8 pinned anchors PASS; independent Python review and re-review clear.
+- Outcome: accepted locally; immediate article push in progress.
+- Next: verify remote, mark W02, then W03 floating-point formats.

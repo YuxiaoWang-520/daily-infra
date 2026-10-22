@@ -1,0 +1,2 @@
+PASS: 35 local Markdown links; 8 pinned source line anchors; 6 source hashes; 11 core archive checksums (ignored caches excluded).
+Mermaid figures: 2, source retained inline.

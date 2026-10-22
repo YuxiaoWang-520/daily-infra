@@ -1,0 +1,82 @@
+{
+  "at": "2026-10-22T10:22:48.675964+00:00",
+  "python": "3.10.13 (main, Sep 11 2023, 08:16:02) [Clang 14.0.6 ]",
+  "torch": "2.9.1",
+  "torch_git": "5811a8d7da873dd699ff6687092c225caffcf1bb",
+  "platform": "macOS-15.5-arm64-arm-64bit",
+  "cuda_available": false,
+  "runs": [
+    {
+      "command": [
+        "/Users/wangyuxiao/conda3/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "code",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "output": "evidence/runs/tests.txt"
+    },
+    {
+      "command": [
+        "/Users/wangyuxiao/conda3/bin/python3",
+        "code/run_lab.py"
+      ],
+      "exit_code": 0,
+      "output": "evidence/runs/lab.json"
+    },
+    {
+      "command": [
+        "/Users/wangyuxiao/conda3/bin/python3",
+        "-m",
+        "ruff",
+        "check",
+        "--select",
+        "E,F,I,UP",
+        "--ignore",
+        "E501",
+        "code"
+      ],
+      "exit_code": 0,
+      "output": "evidence/runs/lint.txt"
+    },
+    {
+      "command": [
+        "/Users/wangyuxiao/conda3/bin/python3",
+        "-m",
+        "ruff",
+        "format",
+        "--check",
+        "code"
+      ],
+      "exit_code": 0,
+      "output": "evidence/runs/format.txt"
+    }
+  ],
+  "semantic_assertions": "PASS",
+  "limitations": [
+    "CPU only",
+    "current main statically inspected, not built",
+    "no timing, allocator peak, or GPU traffic measurements"
+  ],
+  "final_location_verification": {
+    "at": "2026-10-22T10:25:28.588448+00:00",
+    "command": [
+      "python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "wiki/2026/10/2026-10-22-broadcasting-cost/code",
+      "-p",
+      "test_*.py",
+      "-v"
+    ],
+    "exit_code": 0,
+    "output": "evidence/runs/tests-final-location.txt"
+  }
+}

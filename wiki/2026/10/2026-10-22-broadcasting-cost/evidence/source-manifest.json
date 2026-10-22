@@ -1,0 +1,104 @@
+[
+  {
+    "repo": "pytorch/pytorch",
+    "branch": "main",
+    "commit": "e149fba40596a8181f44e1f318da5fa10d609118",
+    "path": "LICENSE",
+    "url": "https://github.com/pytorch/pytorch/blob/e149fba40596a8181f44e1f318da5fa10d609118/LICENSE",
+    "retrieved_at": "2026-10-22T10:12:29.519970+00:00",
+    "sha256": "bd018feef8825e88181c84eb7e3aa4eafb8f08a20d9fd6ef948569610c4a3e43",
+    "bytes": 3464,
+    "command": [
+      "gh",
+      "api",
+      "-H",
+      "Accept: application/vnd.github.raw+json",
+      "repos/pytorch/pytorch/contents/LICENSE?ref=e149fba40596a8181f44e1f318da5fa10d609118"
+    ]
+  },
+  {
+    "repo": "pytorch/pytorch",
+    "branch": "main",
+    "commit": "e149fba40596a8181f44e1f318da5fa10d609118",
+    "path": "aten/src/ATen/ExpandUtils.cpp",
+    "url": "https://github.com/pytorch/pytorch/blob/e149fba40596a8181f44e1f318da5fa10d609118/aten/src/ATen/ExpandUtils.cpp",
+    "retrieved_at": "2026-10-22T10:12:30.359261+00:00",
+    "sha256": "69c16cc97348ebb3135eb8c1d0f175736aa7190799266dee7421b0d642690f17",
+    "bytes": 8092,
+    "command": [
+      "gh",
+      "api",
+      "-H",
+      "Accept: application/vnd.github.raw+json",
+      "repos/pytorch/pytorch/contents/aten/src/ATen/ExpandUtils.cpp?ref=e149fba40596a8181f44e1f318da5fa10d609118"
+    ]
+  },
+  {
+    "repo": "pytorch/pytorch",
+    "branch": "main",
+    "commit": "e149fba40596a8181f44e1f318da5fa10d609118",
+    "path": "aten/src/ATen/ExpandUtils.h",
+    "url": "https://github.com/pytorch/pytorch/blob/e149fba40596a8181f44e1f318da5fa10d609118/aten/src/ATen/ExpandUtils.h",
+    "retrieved_at": "2026-10-22T10:12:30.825494+00:00",
+    "sha256": "476def62f23809be59744491baf187dc1099ef7b483d65b68e46d71f148d5fc7",
+    "bytes": 17062,
+    "command": [
+      "gh",
+      "api",
+      "-H",
+      "Accept: application/vnd.github.raw+json",
+      "repos/pytorch/pytorch/contents/aten/src/ATen/ExpandUtils.h?ref=e149fba40596a8181f44e1f318da5fa10d609118"
+    ]
+  },
+  {
+    "repo": "pytorch/pytorch",
+    "branch": "main",
+    "commit": "e149fba40596a8181f44e1f318da5fa10d609118",
+    "path": "aten/src/ATen/TensorIterator.cpp",
+    "url": "https://github.com/pytorch/pytorch/blob/e149fba40596a8181f44e1f318da5fa10d609118/aten/src/ATen/TensorIterator.cpp",
+    "retrieved_at": "2026-10-22T10:12:30.198583+00:00",
+    "sha256": "a71a7ec9ba0532bf1380aa8ebc92975e4acb31414cd4b8eeeba650afe9e4490c",
+    "bytes": 64558,
+    "command": [
+      "gh",
+      "api",
+      "-H",
+      "Accept: application/vnd.github.raw+json",
+      "repos/pytorch/pytorch/contents/aten/src/ATen/TensorIterator.cpp?ref=e149fba40596a8181f44e1f318da5fa10d609118"
+    ]
+  },
+  {
+    "repo": "pytorch/pytorch",
+    "branch": "main",
+    "commit": "e149fba40596a8181f44e1f318da5fa10d609118",
+    "path": "aten/src/ATen/native/TensorShape.cpp",
+    "url": "https://github.com/pytorch/pytorch/blob/e149fba40596a8181f44e1f318da5fa10d609118/aten/src/ATen/native/TensorShape.cpp",
+    "retrieved_at": "2026-10-22T10:12:31.536350+00:00",
+    "sha256": "023f703e3c611b9b8b56232d79b8e25f746efd6fa459d3c18b44509ea5c675b2",
+    "bytes": 172449,
+    "command": [
+      "gh",
+      "api",
+      "-H",
+      "Accept: application/vnd.github.raw+json",
+      "repos/pytorch/pytorch/contents/aten/src/ATen/native/TensorShape.cpp?ref=e149fba40596a8181f44e1f318da5fa10d609118"
+    ]
+  },
+  {
+    "repo": "pytorch/pytorch",
+    "branch": "main",
+    "commit": "e149fba40596a8181f44e1f318da5fa10d609118",
+    "path": "docs/source/notes/broadcasting.md",
+    "url": "https://github.com/pytorch/pytorch/blob/e149fba40596a8181f44e1f318da5fa10d609118/docs/source/notes/broadcasting.md",
+    "retrieved_at": "2026-10-22T10:16:24.614889+00:00",
+    "sha256": "66beec5a1ab22119e9f31bb0f7307b781bf3752da3eac8cd2620f97d91bd23a4",
+    "bytes": 4224,
+    "command": [
+      "gh",
+      "api",
+      "-H",
+      "Accept: application/vnd.github.raw+json",
+      "repos/pytorch/pytorch/contents/docs/source/notes/broadcasting.md?ref=e149fba40596a8181f44e1f318da5fa10d609118"
+    ]
+  }
+]

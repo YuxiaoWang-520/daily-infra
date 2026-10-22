@@ -1,0 +1,26 @@
+test_bias_gradient_reduces_reused_axes (test_answers.BroadcastBehaviorTests) ... ok
+test_expand_is_a_zero_stride_view (test_answers.BroadcastBehaviorTests) ... ok
+test_overlapping_bulk_write_rejected (test_answers.BroadcastBehaviorTests) ... ok
+test_repeat_allocates_and_add_materializes (test_answers.BroadcastBehaviorTests) ... ok
+test_empty_rows_columns_and_features (test_answers.DistanceTests) ... ok
+test_equal_vectors_and_inference_contract (test_answers.DistanceTests) ... ok
+test_inference_does_not_propagate_forward_ad (test_answers.DistanceTests) ... FAIL
+test_rectangular_odd_tiles_and_noncontiguous_inputs (test_answers.DistanceTests) ... ok
+test_reject_invalid_inputs (test_answers.DistanceTests) ... ok
+test_conflicting_shapes (test_answers.ShapeTests) ... ok
+test_invalid_dimensions (test_answers.ShapeTests) ... ok
+test_valid_shapes_match_pytorch (test_answers.ShapeTests) ... ok
+
+======================================================================
+FAIL: test_inference_does_not_propagate_forward_ad (test_answers.DistanceTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-10-22-broadcasting-cost/code/test_answers.py", line 108, in test_inference_does_not_propagate_forward_ad
+    self.assertIsNone(torch.autograd.forward_ad.unpack_dual(output).tangent)
+AssertionError: tensor([[6.],
+        [6.]]) is not None
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.775s
+
+FAILED (failures=1)

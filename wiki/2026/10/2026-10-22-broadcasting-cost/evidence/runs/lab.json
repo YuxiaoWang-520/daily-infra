@@ -1,0 +1,56 @@
+{
+  "runtime": {
+    "torch": "2.9.1",
+    "device": "cpu"
+  },
+  "bias_shape": [
+    3
+  ],
+  "expanded_stride": [
+    0,
+    1
+  ],
+  "logical_elements": 6,
+  "bias_storage_bytes": 12,
+  "expanded_storage_bytes": 12,
+  "repeated_storage_bytes": 24,
+  "expand_shares_known_storage": true,
+  "output": [
+    [
+      10.0,
+      21.0,
+      32.0
+    ],
+    [
+      13.0,
+      24.0,
+      35.0
+    ]
+  ],
+  "bias_gradient_of_sum": [
+    2.0,
+    2.0,
+    2.0
+  ],
+  "zero_dimension_broadcast": [
+    0,
+    3
+  ],
+  "pairwise_squared_distance": [
+    [
+      0.0,
+      1.0,
+      4.0
+    ],
+    [
+      1.0,
+      0.0,
+      5.0
+    ],
+    [
+      4.0,
+      5.0,
+      0.0
+    ]
+  ]
+}
