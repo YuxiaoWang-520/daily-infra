@@ -1,0 +1,22 @@
+{
+  "at": "2026-10-22T10:16:20.924001+00:00",
+  "command": [
+    "/Users/wangyuxiao/conda3/bin/python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "wiki/2026/10/2026-10-22-tensor-shape-stride-contiguity/code",
+    "-p",
+    "test_*.py",
+    "-v"
+  ],
+  "exit_code": 0,
+  "python": "3.10.13 (main, Sep 11 2023, 08:16:02) [Clang 14.0.6 ]",
+  "torch": "2.9.1",
+  "platform": "macOS-15.5-arm64-arm-64bit",
+  "cuda": false,
+  "new_examples": "PASS",
+  "local_links_checked": 18,
+  "scope": "Teaching revision and 26 existing CPU tests; no changes to Python implementation; no GPU execution"
+}

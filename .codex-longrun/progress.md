@@ -31,3 +31,10 @@
 - Validation: bash .codex-longrun/init.sh, exit 0; existing 26 CPU tests pass.
 - Outcome: plan, baseline and existing article 01 accepted; no changes to article 01.
 - Next: W02 broadcasting.
+
+## Session 2026-10-22T10:16:51.640999+00:00
+- Feature: W01 teaching revision (user steering)
+- Changes: explain basic terms, row/column steps, 1D stride, view(-1), copy choices before formulas/source; update writing standard and template.
+- Validation: 26 CPU tests, new examples and 18 local links PASS; two self-review rounds documented.
+- Outcome: ready for immediate per-article push.
+- Next: W02; use the slower question-driven narrative throughout.

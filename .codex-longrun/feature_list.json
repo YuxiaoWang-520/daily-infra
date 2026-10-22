@@ -51,9 +51,9 @@
         "索引更新，单篇提交并推送已核验"
       ],
       "passes": true,
-      "evidence": "docs/BOOTSTRAP10.md; .codex-longrun/baseline.txt; existing first article review.md and evidence; published f46ac4a",
+      "evidence": "Article 01 review.md teaching revision; evidence/runs/teaching-revision.json and teaching-revision-tests.txt; 26 tests and new examples PASS",
       "notes": "",
-      "updated_at": "2026-10-22T10:12:44.835708+00:00"
+      "updated_at": "2026-10-22T10:16:51.640999+00:00"
     },
     {
       "id": "W02",
