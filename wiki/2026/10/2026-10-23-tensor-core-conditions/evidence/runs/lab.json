@@ -1,0 +1,21 @@
+{
+  "scope": "CPU padding and input quantization only; no Tensor Core execution",
+  "chosen_tile": [
+    16,
+    8,
+    16
+  ],
+  "plan_17_9_17": {
+    "padded_shape": [
+      32,
+      16,
+      32
+    ],
+    "original_flops": 5202,
+    "padded_flops": 32768,
+    "work_ratio": 6.299115724721261
+  },
+  "original_real_target": 1.001,
+  "half_storage_fp32_cpu_result": 1.0009765625,
+  "bf16_storage_fp32_cpu_result": 1.0
+}

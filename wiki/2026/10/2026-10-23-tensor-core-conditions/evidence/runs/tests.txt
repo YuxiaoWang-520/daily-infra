@@ -1,0 +1,14 @@
+test_already_aligned_and_empty (test_answers.PaddingTests) ... ok
+test_invalid_dims_and_tile (test_answers.PaddingTests) ... ok
+test_specific_chosen_instruction_tile (test_answers.PaddingTests) ... ok
+test_empty_dimensions (test_answers.QuantizationTests) ... ok
+test_input_rounding_is_not_recovered_by_float32_compute (test_answers.QuantizationTests) ... ok
+test_invalid_contract_and_inference (test_answers.QuantizationTests) ... ok
+test_noncontiguous_input_and_no_mutation (test_answers.QuantizationTests) ... ok
+test_odd_rectangular_inputs_match_quantized_reference (test_answers.QuantizationTests) ... ok
+test_reject_conversion_overflow_and_nonfinite (test_answers.QuantizationTests) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.036s
+
+OK
