@@ -1,0 +1,74 @@
+[
+  {
+    "repo": "pytorch/pytorch",
+    "branch": "main",
+    "commit": "d52f3687e72fac81e20fd7741ab1fd10e0b3899d",
+    "path": "LICENSE",
+    "url": "https://github.com/pytorch/pytorch/blob/d52f3687e72fac81e20fd7741ab1fd10e0b3899d/LICENSE",
+    "retrieved_at": "2026-10-22T21:10:04.330965+00:00",
+    "sha256": "bd018feef8825e88181c84eb7e3aa4eafb8f08a20d9fd6ef948569610c4a3e43",
+    "bytes": 3464,
+    "command": [
+      "gh",
+      "api",
+      "-H",
+      "Accept: application/vnd.github.raw+json",
+      "repos/pytorch/pytorch/contents/LICENSE?ref=d52f3687e72fac81e20fd7741ab1fd10e0b3899d"
+    ],
+    "local_path": "evidence/upstream/pytorch/pytorch/LICENSE"
+  },
+  {
+    "repo": "pytorch/pytorch",
+    "branch": "main",
+    "commit": "d52f3687e72fac81e20fd7741ab1fd10e0b3899d",
+    "path": "torch/_inductor/scheduler.py",
+    "url": "https://github.com/pytorch/pytorch/blob/d52f3687e72fac81e20fd7741ab1fd10e0b3899d/torch/_inductor/scheduler.py",
+    "retrieved_at": "2026-10-22T21:10:07.065839+00:00",
+    "sha256": "ea3d9173834023c286a52d196b563561e22f166b07661bfc4ddeac6329ea56ea",
+    "bytes": 542133,
+    "command": [
+      "gh",
+      "api",
+      "-H",
+      "Accept: application/vnd.github.raw+json",
+      "repos/pytorch/pytorch/contents/torch/_inductor/scheduler.py?ref=d52f3687e72fac81e20fd7741ab1fd10e0b3899d"
+    ],
+    "local_path": "evidence/upstream/pytorch/pytorch/torch/_inductor/scheduler.py"
+  },
+  {
+    "repo": "triton-lang/triton",
+    "branch": "main",
+    "commit": "1ec1eee840b8a35b15101e5ab9a4388e905291f3",
+    "path": "LICENSE",
+    "url": "https://github.com/triton-lang/triton/blob/1ec1eee840b8a35b15101e5ab9a4388e905291f3/LICENSE",
+    "retrieved_at": "2026-10-22T21:10:09.302913+00:00",
+    "sha256": "92640fb97222fd0a698ff28ce0c3782c172623f8d6c609b557636a80f28fb946",
+    "bytes": 1132,
+    "command": [
+      "gh",
+      "api",
+      "-H",
+      "Accept: application/vnd.github.raw+json",
+      "repos/triton-lang/triton/contents/LICENSE?ref=1ec1eee840b8a35b15101e5ab9a4388e905291f3"
+    ],
+    "local_path": "evidence/upstream/triton-lang/triton/LICENSE"
+  },
+  {
+    "repo": "triton-lang/triton",
+    "branch": "main",
+    "commit": "1ec1eee840b8a35b15101e5ab9a4388e905291f3",
+    "path": "python/tutorials/02-fused-softmax.py",
+    "url": "https://github.com/triton-lang/triton/blob/1ec1eee840b8a35b15101e5ab9a4388e905291f3/python/tutorials/02-fused-softmax.py",
+    "retrieved_at": "2026-10-22T21:10:10.148499+00:00",
+    "sha256": "4dbf82027df6149efaec19569e5b10b4c7600f53d4041dedc315a86c75b9141e",
+    "bytes": 9964,
+    "command": [
+      "gh",
+      "api",
+      "-H",
+      "Accept: application/vnd.github.raw+json",
+      "repos/triton-lang/triton/contents/python/tutorials/02-fused-softmax.py?ref=1ec1eee840b8a35b15101e5ab9a4388e905291f3"
+    ],
+    "local_path": "evidence/upstream/triton-lang/triton/python/tutorials/02-fused-softmax.py"
+  }
+]

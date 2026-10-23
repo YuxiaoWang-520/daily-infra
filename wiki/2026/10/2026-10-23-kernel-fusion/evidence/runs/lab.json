@@ -1,0 +1,37 @@
+{
+  "scope": "CPU semantics and synthetic cost assumptions; no kernel fusion measured",
+  "hand_result": [
+    [
+      0.0,
+      4.0,
+      2.0
+    ],
+    [
+      4.0,
+      2.0,
+      4.0
+    ]
+  ],
+  "hypothetical_parameters": {
+    "bandwidth_gbs": 1000,
+    "launch_us": 5
+  },
+  "no_penalty": {
+    "staged_bytes": 25169920,
+    "fused_bytes": 8392704,
+    "saved_bytes": 16777216,
+    "staged_launches": 3,
+    "fused_launches": 1,
+    "staged_seconds": 4.016992e-05,
+    "fused_seconds": 1.3392703999999999e-05
+  },
+  "assumed_fused_slowdown5": {
+    "staged_bytes": 25169920,
+    "fused_bytes": 8392704,
+    "saved_bytes": 16777216,
+    "staged_launches": 3,
+    "fused_launches": 1,
+    "staged_seconds": 4.016992e-05,
+    "fused_seconds": 4.696352e-05
+  }
+}

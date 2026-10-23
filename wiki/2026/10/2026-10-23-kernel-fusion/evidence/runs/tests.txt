@@ -1,0 +1,14 @@
+test_empty_and_zero_launch_cost (test_answers.ModelTests) ... ok
+test_invalid_model_parameters (test_answers.ModelTests) ... ok
+test_slowdown_can_reverse_choice (test_answers.ModelTests) ... ok
+test_small_byte_accounting (test_answers.ModelTests) ... ok
+test_empty_and_zero_scale (test_answers.PipelineTests) ... ok
+test_hand_example (test_answers.PipelineTests) ... ok
+test_inference_and_no_output_alias (test_answers.PipelineTests) ... ok
+test_invalid_contracts (test_answers.PipelineTests) ... ok
+test_noncontiguous_and_chunk_boundaries (test_answers.PipelineTests) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.032s
+
+OK

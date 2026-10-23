@@ -162,10 +162,10 @@
         "技术与教学两轮审查完成，无 CRITICAL/HIGH",
         "索引更新，单篇提交并推送已核验"
       ],
-      "passes": false,
-      "evidence": "",
+      "passes": true,
+      "evidence": "15c3f85f42bade7d4c0b4aa5b0bff6ff6f3b5e45 verified on GitHub main; 9 CPU tests, Ruff, archive hashes/links and technical/teaching reviews PASS",
       "notes": "",
-      "updated_at": ""
+      "updated_at": "2026-10-23T02:48:56.886143+00:00"
     },
     {
       "id": "W09",
