@@ -1,0 +1,14 @@
+test_empty_and_invalid_model (test_answers.QueueTests) ... ok
+test_event_captures_only_prior_work (test_answers.QueueTests) ... ok
+test_host_return_precedes_device_completion (test_answers.QueueTests) ... ok
+test_independent_streams_can_overlap_in_model (test_answers.QueueTests) ... ok
+test_same_stream_serializes (test_answers.QueueTests) ... ok
+test_wait_is_device_dependency_not_host_wait (test_answers.QueueTests) ... ok
+test_invalid_loop_counts_before_cuda_access (test_answers.TimingTests) ... ok
+test_no_cuda_is_an_explicit_error (test_answers.TimingTests) ... ok
+test_timer_order_warmup_wait_and_millisecond_conversion (test_answers.TimingTests) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.001s
+
+OK

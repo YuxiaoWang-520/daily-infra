@@ -1,0 +1,38 @@
+[
+  {
+    "repo": "pytorch/pytorch",
+    "branch": "main",
+    "commit": "d52f3687e72fac81e20fd7741ab1fd10e0b3899d",
+    "path": "LICENSE",
+    "url": "https://github.com/pytorch/pytorch/blob/d52f3687e72fac81e20fd7741ab1fd10e0b3899d/LICENSE",
+    "retrieved_at": "2026-10-22T21:10:04.330965+00:00",
+    "sha256": "bd018feef8825e88181c84eb7e3aa4eafb8f08a20d9fd6ef948569610c4a3e43",
+    "bytes": 3464,
+    "command": [
+      "gh",
+      "api",
+      "-H",
+      "Accept: application/vnd.github.raw+json",
+      "repos/pytorch/pytorch/contents/LICENSE?ref=d52f3687e72fac81e20fd7741ab1fd10e0b3899d"
+    ],
+    "local_path": "evidence/upstream/pytorch/pytorch/LICENSE"
+  },
+  {
+    "repo": "pytorch/pytorch",
+    "branch": "main",
+    "commit": "d52f3687e72fac81e20fd7741ab1fd10e0b3899d",
+    "path": "torch/cuda/streams.py",
+    "url": "https://github.com/pytorch/pytorch/blob/d52f3687e72fac81e20fd7741ab1fd10e0b3899d/torch/cuda/streams.py",
+    "retrieved_at": "2026-10-22T21:10:05.268040+00:00",
+    "sha256": "a2531b9d61db45a51916b24179a31137e5451371fde726995398abe6e1752ac8",
+    "bytes": 13883,
+    "command": [
+      "gh",
+      "api",
+      "-H",
+      "Accept: application/vnd.github.raw+json",
+      "repos/pytorch/pytorch/contents/torch/cuda/streams.py?ref=d52f3687e72fac81e20fd7741ab1fd10e0b3899d"
+    ],
+    "local_path": "evidence/upstream/pytorch/pytorch/torch/cuda/streams.py"
+  }
+]

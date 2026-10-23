@@ -1,0 +1,14 @@
+{
+  "scope": "synthetic model, milliseconds; no GPU times measured",
+  "cuda_available": false,
+  "host_after_first_submit_ms": 0.1,
+  "producer": {
+    "start_ms": 0.1,
+    "end_ms": 3.1
+  },
+  "consumer": {
+    "start_ms": 3.1,
+    "end_ms": 5.1
+  },
+  "host_after_sync_ms": 5.1
+}
