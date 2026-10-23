@@ -96,3 +96,16 @@
 - Validation: 9 CPU tests, Ruff, source hashes and archive links PASS; independent static Python review plus two main self-review rounds complete.
 - Outcome: cedbba29515a4e2b2df951d1bcd5cf9d65f00adb pushed and verified on GitHub main.
 - Next: W10 attention and online softmax; preserve playground/.
+
+## Session 2026-10-23T03:06:17.584896+00:00
+- Feature: W10 remote acceptance
+- Validation: 15 CPU tests, Ruff, source hashes and archive links PASS; independent static Python review plus two main self-review rounds complete.
+- Outcome: ffa66565c133d4996249a857d2e54ebef39846b8 pushed and verified on GitHub main.
+- Next: FINAL: audit all ten lessons, links, tests and remote commits; preserve playground/.
+
+## Session 2026-10-23T03:08:42.387708+00:00
+- Feature: FINAL integration acceptance
+- Validation: 10 fresh CPU suites, 131 tests PASS; 99 immutable core checksums, 40 source-manifest files, 93 pinned line anchors, 369 local file links PASS. Final diff whitespace check PASS.
+- Scope: Main-agent integration self-review; per-article technical/teaching reviews and independent Python review scopes retained. CUDA unavailable; no GPU execution or performance claims.
+- Outcome: All 10 article commits verified as ancestors of remote main ffa66565c133d4996249a857d2e54ebef39846b8; GitHub visibility PRIVATE. README and final acceptance guide updated.
+- Next: Commit and push final acceptance metadata, verify remote HEAD; preserve untracked playground/.

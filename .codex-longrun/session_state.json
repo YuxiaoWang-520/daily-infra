@@ -1,8 +1,8 @@
 {
   "created_at": "2026-10-22T10:10:25Z",
-  "updated_at": "2026-10-23T02:53:48.480447+00:00",
-  "last_session_utc": "2026-10-22T10:10:25Z",
-  "last_green_commit": "cedbba29515a4e2b2df951d1bcd5cf9d65f00adb",
-  "last_feature_id": "W09",
-  "status": "W10 attention and online softmax"
+  "updated_at": "2026-10-23T03:08:42.387708+00:00",
+  "last_session_utc": "2026-10-23T03:08:42.387708+00:00",
+  "last_green_commit": "ffa66565c133d4996249a857d2e54ebef39846b8",
+  "last_feature_id": "FINAL",
+  "status": "All ten lessons complete; 131 CPU tests and archive checks passed; article commits verified on private GitHub main."
 }

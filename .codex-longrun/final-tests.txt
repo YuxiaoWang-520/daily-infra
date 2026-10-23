@@ -1,0 +1,182 @@
+3.10.13 2.9.1 CUDA: False
+test_bias_gradient_reduces_reused_axes (test_answers.BroadcastBehaviorTests) ... ok
+test_expand_is_a_zero_stride_view (test_answers.BroadcastBehaviorTests) ... ok
+test_overlapping_bulk_write_rejected (test_answers.BroadcastBehaviorTests) ... ok
+test_repeat_allocates_and_add_materializes (test_answers.BroadcastBehaviorTests) ... ok
+test_empty_rows_columns_and_features (test_answers.DistanceTests) ... ok
+test_equal_vectors_and_inference_contract (test_answers.DistanceTests) ... ok
+test_inference_does_not_propagate_forward_ad (test_answers.DistanceTests) ... ok
+test_rectangular_odd_tiles_and_noncontiguous_inputs (test_answers.DistanceTests) ... ok
+test_reject_invalid_inputs (test_answers.DistanceTests) ... ok
+test_conflicting_shapes (test_answers.ShapeTests) ... ok
+test_invalid_dimensions (test_answers.ShapeTests) ... ok
+test_valid_shapes_match_pytorch (test_answers.ShapeTests) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.488s
+
+OK
+test_absolute_tolerance_boundary (test_answers.ComparisonTests) ... ok
+test_decimal_caller_context_is_preserved (test_answers.ComparisonTests) ... ok
+test_empty_and_all_zero (test_answers.ComparisonTests) ... ok
+test_extreme_finite_values_do_not_compare_inf_to_inf (test_answers.ComparisonTests) ... ok
+test_invalid_shape_dtype_and_tolerance (test_answers.ComparisonTests) ... ok
+test_large_values_relative_tolerance (test_answers.ComparisonTests) ... ok
+test_near_zero_needs_absolute_tolerance (test_answers.ComparisonTests) ... ok
+test_one_failure_not_hidden_by_aggregate (test_answers.ComparisonTests) ... ok
+test_overflow_does_not_hide_tolerance_margin (test_answers.ComparisonTests) ... ok
+test_reject_nonfinite_even_when_positions_match (test_answers.ComparisonTests) ... ok
+test_relative_norm_preserves_small_difference (test_answers.ComparisonTests) ... ok
+test_relative_norm_underflow_regressions (test_answers.ComparisonTests) ... ok
+test_tolerance_is_exact_for_the_stored_binary_values (test_answers.ComparisonTests) ... ok
+test_addition_order (test_answers.FormatTests) ... ok
+test_dtype_info_and_one_spacing (test_answers.FormatTests) ... ok
+test_empty_and_invalid_sum (test_answers.FormatTests) ... ok
+test_known_roundtrip_values (test_answers.FormatTests) ... ok
+test_larger_accumulator_reduces_this_accumulation_error (test_answers.FormatTests) ... ok
+test_promoting_after_quantization_cannot_restore_input (test_answers.FormatTests) ... ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 0.010s
+
+OK
+test_coverage_many_boundaries (test_answers.MappingTests) ... ok
+test_invalid_launch (test_answers.MappingTests) ... ok
+test_ten_elements_and_tail (test_answers.MappingTests) ... ok
+test_warps_restart_at_each_block (test_answers.MappingTests) ... ok
+test_aligned_contiguous_and_strided (test_answers.SectorTests) ... ok
+test_cross_boundary_duplicate_and_empty (test_answers.SectorTests) ... ok
+test_invalid_addresses_and_widths (test_answers.SectorTests) ... ok
+test_masked_tail_uses_only_valid_addresses (test_answers.SectorTests) ... ok
+test_misaligned_contiguous (test_answers.SectorTests) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.002s
+
+OK
+test_balanced_and_empty (test_answers.BoundTests) ... ok
+test_copy_only_work (test_answers.BoundTests) ... ok
+test_invalid_hardware_and_elapsed (test_answers.BoundTests) ... ok
+test_large_gemm_compute_bound (test_answers.BoundTests) ... ok
+test_small_gemm_can_be_memory_bound_in_model (test_answers.BoundTests) ... ok
+test_synthetic_time_twice_bound (test_answers.BoundTests) ... ok
+test_units_of_effective_rates (test_answers.BoundTests) ... ok
+test_vector_add_memory_bound (test_answers.BoundTests) ... ok
+test_gemm_non_square_counts (test_answers.WorkTests) ... ok
+test_gemm_square_intensity (test_answers.WorkTests) ... ok
+test_reject_invalid_counts (test_answers.WorkTests) ... ok
+test_vector_add_counts_and_empty (test_answers.WorkTests) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.000s
+
+OK
+test_default_contiguity_cases (test_layout.AddressModelTests) ... ok
+test_empty_pack_does_not_pool_unused_indices (test_layout.AddressModelTests) ... ok
+test_empty_tensor_has_no_valid_index (test_layout.AddressModelTests) ... ok
+test_indices_must_be_in_bounds (test_layout.AddressModelTests) ... ok
+test_integer_metadata_is_required (test_layout.AddressModelTests) ... ok
+test_invalid_metadata_is_rejected (test_layout.AddressModelTests) ... ok
+test_pack_follows_logical_order (test_layout.AddressModelTests) ... ok
+test_pack_rejects_storage_overrun (test_layout.AddressModelTests) ... ok
+test_pack_supports_repeated_reads (test_layout.AddressModelTests) ... ok
+test_scalar_has_one_address (test_layout.AddressModelTests) ... ok
+test_slice_offset_is_in_elements (test_layout.AddressModelTests) ... ok
+test_transpose_uses_original_storage (test_layout.AddressModelTests) ... ok
+test_invalid_contracts_are_rejected (test_torch.HeadLayoutTests) ... ok
+test_materialized_bhsd_requires_copy_on_merge (test_torch.HeadLayoutTests) ... ok
+test_reshape_cannot_replace_permutation (test_torch.HeadLayoutTests) ... ok
+test_round_trip_can_reuse_storage (test_torch.HeadLayoutTests) ... ok
+test_split_has_correct_coordinates_and_no_copy (test_torch.HeadLayoutTests) ... ok
+test_address_model_matches_torch (test_torch.TorchLayoutTests) ... ok
+test_channels_last_keeps_logical_dimensions (test_torch.TorchLayoutTests) ... ok
+test_clone_is_not_a_contiguous_conversion (test_torch.TorchLayoutTests) ... ok
+test_contiguous_slice_can_have_nonzero_offset (test_torch.TorchLayoutTests) ... ok
+test_crop_cannot_flatten_without_copy (test_torch.TorchLayoutTests) ... ok
+test_noncontiguous_step_slice_can_be_viewed (test_torch.TorchLayoutTests) ... ok
+test_shape_and_values_do_not_determine_layout (test_torch.TorchLayoutTests) ... ok
+test_transpose_flatten_has_logical_order (test_torch.TorchLayoutTests) ... ok
+test_transpose_is_a_view_and_shares_mutations (test_torch.TorchLayoutTests) ... ok
+
+----------------------------------------------------------------------
+Ran 26 tests in 0.103s
+
+OK
+test_causal_and_explicit_mask_intersect (test_answers.AttentionTests) ... ok
+test_empty_queries_keys_and_values_width (test_answers.AttentionTests) ... ok
+test_hand_weighted_average (test_answers.AttentionTests) ... ok
+test_invalid_contracts (test_answers.AttentionTests) ... ok
+test_large_finite_logits_are_stable (test_answers.AttentionTests) ... ok
+test_masked_first_tile_all_masked_row_and_mixed_rows (test_answers.AttentionTests) ... ok
+test_noncontiguous_float32_inputs_and_inference (test_answers.AttentionTests) ... ok
+test_rectangular_edges_and_multiple_tiles (test_answers.AttentionTests) ... ok
+test_reject_nonfinite_and_intermediate_overflow (test_answers.AttentionTests) ... ok
+test_top_left_causal_contract (test_answers.AttentionTests) ... ok
+test_equal_and_empty (test_answers.OnlineTests) ... ok
+test_increasing_maximum_and_large_shift (test_answers.OnlineTests) ... ok
+test_initial_masked_block_and_fully_masked (test_answers.OnlineTests) ... ok
+test_invalid_vector_mask_and_block (test_answers.OnlineTests) ... ok
+test_masked_large_logit_is_removed_before_exp (test_answers.OnlineTests) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.031s
+
+OK
+test_empty_dimensions (test_answers.MatmulTests) ... ok
+test_inference_only (test_answers.MatmulTests) ... ok
+test_invalid_contracts (test_answers.MatmulTests) ... ok
+test_noncontiguous_inputs_and_no_mutation (test_answers.MatmulTests) ... ok
+test_odd_edges_and_tile_choices (test_answers.MatmulTests) ... ok
+test_small_hand_computed (test_answers.MatmulTests) ... ok
+test_empty_and_zero_k (test_answers.TrafficTests) ... ok
+test_invalid_counts (test_answers.TrafficTests) ... ok
+test_k_tile_changes_footprint_not_valid_total_reads (test_answers.TrafficTests) ... ok
+test_larger_output_tile_reduces_model_reads (test_answers.TrafficTests) ... ok
+test_odd_shapes_account_for_actual_valid_elements (test_answers.TrafficTests) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.007s
+
+OK
+test_empty_and_invalid_model (test_answers.QueueTests) ... ok
+test_event_captures_only_prior_work (test_answers.QueueTests) ... ok
+test_host_return_precedes_device_completion (test_answers.QueueTests) ... ok
+test_independent_streams_can_overlap_in_model (test_answers.QueueTests) ... ok
+test_same_stream_serializes (test_answers.QueueTests) ... ok
+test_wait_is_device_dependency_not_host_wait (test_answers.QueueTests) ... ok
+test_invalid_loop_counts_before_cuda_access (test_answers.TimingTests) ... ok
+test_no_cuda_is_an_explicit_error (test_answers.TimingTests) ... ok
+test_timer_order_warmup_wait_and_millisecond_conversion (test_answers.TimingTests) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.001s
+
+OK
+test_empty_and_zero_launch_cost (test_answers.ModelTests) ... ok
+test_invalid_model_parameters (test_answers.ModelTests) ... ok
+test_slowdown_can_reverse_choice (test_answers.ModelTests) ... ok
+test_small_byte_accounting (test_answers.ModelTests) ... ok
+test_empty_and_zero_scale (test_answers.PipelineTests) ... ok
+test_hand_example (test_answers.PipelineTests) ... ok
+test_inference_and_no_output_alias (test_answers.PipelineTests) ... ok
+test_invalid_contracts (test_answers.PipelineTests) ... ok
+test_noncontiguous_and_chunk_boundaries (test_answers.PipelineTests) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.004s
+
+OK
+test_already_aligned_and_empty (test_answers.PaddingTests) ... ok
+test_invalid_dims_and_tile (test_answers.PaddingTests) ... ok
+test_specific_chosen_instruction_tile (test_answers.PaddingTests) ... ok
+test_empty_dimensions (test_answers.QuantizationTests) ... ok
+test_input_rounding_is_not_recovered_by_float32_compute (test_answers.QuantizationTests) ... ok
+test_invalid_contract_and_inference (test_answers.QuantizationTests) ... ok
+test_noncontiguous_input_and_no_mutation (test_answers.QuantizationTests) ... ok
+test_odd_rectangular_inputs_match_quantized_reference (test_answers.QuantizationTests) ... ok
+test_reject_conversion_overflow_and_nonfinite (test_answers.QuantizationTests) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.004s
+
+OK

@@ -194,10 +194,10 @@
         "技术与教学两轮审查完成，无 CRITICAL/HIGH",
         "索引更新，单篇提交并推送已核验"
       ],
-      "passes": false,
-      "evidence": "",
+      "passes": true,
+      "evidence": "ffa66565c133d4996249a857d2e54ebef39846b8 verified on GitHub main; 15 CPU tests, Ruff, archive hashes/links and technical/teaching reviews PASS",
       "notes": "",
-      "updated_at": ""
+      "updated_at": "2026-10-23T03:06:17.584896+00:00"
     },
     {
       "id": "FINAL",
@@ -209,10 +209,10 @@
         "完整回归与归档检查通过",
         "GitHub main 包含所有文章提交"
       ],
-      "passes": false,
-      "evidence": "",
-      "notes": "",
-      "updated_at": ""
+      "passes": true,
+      "evidence": ".codex-longrun/final-audit.json; .codex-longrun/final-tests.txt; docs/BOOTSTRAP10-VERIFICATION.md; 131 CPU tests, 99 checksum files, 93 pinned source anchors and all ten article commits on private GitHub main verified",
+      "notes": "No CUDA available; GPU extension SKIP. Final integration is main-agent self-review, per-article independent review scope recorded in review.md.",
+      "updated_at": "2026-10-23T03:08:42.387708+00:00"
     }
   ]
 }

@@ -1,0 +1,128 @@
+{
+  "checked_at_utc": "2026-10-23T03:08:42.387708+00:00",
+  "scope": "Final main-agent integration audit of all ten lessons; prior per-lesson technical/teaching reviews remain authoritative for their documented scope. No new independent full-scope or CUDA validation.",
+  "validation": {
+    "command": "PATH=/Users/wangyuxiao/conda3/bin:\"$PATH\" bash .codex-longrun/init.sh",
+    "exit_code": 0,
+    "test_suites": 10,
+    "cpu_tests": 131,
+    "log": ".codex-longrun/final-tests.txt",
+    "test_log_sha256": "20bb627a356e790f6c9cb899d796e7973f8932df5911823507f27649b99f5737",
+    "cuda_available": false
+  },
+  "articles": [
+    {
+      "number": "01",
+      "date": "2026-10-22",
+      "title": "Tensor 的 shape 一样，为什么 view、复制和访问方式仍然不同？",
+      "path": "wiki/2026/10/2026-10-22-tensor-shape-stride-contiguity",
+      "cpu_tests": 26,
+      "publication_commit": "6ab243282d90423b2afe4c2f1414aad5ed5d1cd3",
+      "core_checksum_files": 18,
+      "manifest_source_files": 6
+    },
+    {
+      "number": "02",
+      "date": "2026-10-22",
+      "title": "广播看似没有复制数据，为什么仍可能增加计算或访存？",
+      "path": "wiki/2026/10/2026-10-22-broadcasting-cost",
+      "cpu_tests": 12,
+      "publication_commit": "81b2a77e24df94c290e94443f715cda56886357d",
+      "core_checksum_files": 11,
+      "manifest_source_files": 6
+    },
+    {
+      "number": "03",
+      "date": "2026-10-22",
+      "title": "同一个计算，为什么 FP32、BF16、FP16 的结果不同？",
+      "path": "wiki/2026/10/2026-10-22-floating-point-formats",
+      "cpu_tests": 19,
+      "publication_commit": "5146360305c23940007f83bc40fcba10dbe3fbbc",
+      "core_checksum_files": 12,
+      "manifest_source_files": 7
+    },
+    {
+      "number": "04",
+      "date": "2026-10-22",
+      "title": "一个算子究竟受算力还是内存带宽限制？",
+      "path": "wiki/2026/10/2026-10-22-roofline-basics",
+      "cpu_tests": 12,
+      "publication_commit": "65ed2363b8eae9a81678165ceda87126924bd183",
+      "core_checksum_files": 8,
+      "manifest_source_files": 2
+    },
+    {
+      "number": "05",
+      "date": "2026-10-22",
+      "title": "GPU 如何把一次算子调用分配给线程、warp 和 block？",
+      "path": "wiki/2026/10/2026-10-22-gpu-parallel-mapping",
+      "cpu_tests": 9,
+      "publication_commit": "abb89ff6de98d3f5f9679448d343002c65f597ab",
+      "core_checksum_files": 7,
+      "manifest_source_files": 2
+    },
+    {
+      "number": "06",
+      "date": "2026-10-23",
+      "title": "GPU 计时为什么需要理解异步执行和同步？",
+      "path": "wiki/2026/10/2026-10-23-gpu-asynchronous-timing",
+      "cpu_tests": 9,
+      "publication_commit": "8da6e153fc36556c72177d8035d89c229b21b370",
+      "core_checksum_files": 8,
+      "manifest_source_files": 2
+    },
+    {
+      "number": "07",
+      "date": "2026-10-23",
+      "title": "为什么矩阵乘法需要分块与数据复用？",
+      "path": "wiki/2026/10/2026-10-23-gemm-tiling",
+      "cpu_tests": 11,
+      "publication_commit": "2726c430e41511659cc9248fb4e4033bfd1fac3b",
+      "core_checksum_files": 7,
+      "manifest_source_files": 2
+    },
+    {
+      "number": "08",
+      "date": "2026-10-23",
+      "title": "Tensor Core 怎样使用，什么条件决定它是否有效？",
+      "path": "wiki/2026/10/2026-10-23-tensor-core-conditions",
+      "cpu_tests": 9,
+      "publication_commit": "15c3f85f42bade7d4c0b4aa5b0bff6ff6f3b5e45",
+      "core_checksum_files": 9,
+      "manifest_source_files": 4
+    },
+    {
+      "number": "09",
+      "date": "2026-10-23",
+      "title": "算子融合什么时候划算，什么时候会适得其反？",
+      "path": "wiki/2026/10/2026-10-23-kernel-fusion",
+      "cpu_tests": 9,
+      "publication_commit": "cedbba29515a4e2b2df951d1bcd5cf9d65f00adb",
+      "core_checksum_files": 9,
+      "manifest_source_files": 4
+    },
+    {
+      "number": "10",
+      "date": "2026-10-23",
+      "title": "Attention 的计算与中间张量从哪里来，为什么需要分块？",
+      "path": "wiki/2026/10/2026-10-23-attention-online-softmax",
+      "cpu_tests": 15,
+      "publication_commit": "ffa66565c133d4996249a857d2e54ebef39846b8",
+      "core_checksum_files": 10,
+      "manifest_source_files": 5
+    }
+  ],
+  "local_markdown_file_links": 369,
+  "pinned_source_line_anchors": 93,
+  "core_checksum_files": 99,
+  "manifest_source_files": 40,
+  "remote": {
+    "name": "YuxiaoWang-520/daily-infra",
+    "branch": "main",
+    "head_before_final_metadata": "ffa66565c133d4996249a857d2e54ebef39846b8",
+    "all_article_commits_in_remote_head": true,
+    "visibility": "PRIVATE"
+  },
+  "own_markdown_files_checked": 49,
+  "git_diff_check_exit_code": 0
+}

@@ -20,3 +20,5 @@
 当前可用环境为 Python 3.10.13、PyTorch 2.9.1、macOS arm64、CPU；不自动安装依赖。GPU 专属示例明确说明未在本机执行，核心原理以有界 CPU 实验验证，不能据此宣称 CUDA kernel 的正确性或性能。
 
 进度和可恢复状态见 [任务清单](../.codex-longrun/feature_list.json) 与 [进度记录](../.codex-longrun/progress.md)。正式阅读入口始终是 [Wiki 索引](../wiki/index.md)。
+
+前 10 篇已完成并逐篇推送，第一篇已按读者反馈补充基础解释和问题引导。全套 131 项 CPU 测试通过；逐篇结果、运行方式与验证边界见 [验收记录](BOOTSTRAP10-VERIFICATION.md)。
