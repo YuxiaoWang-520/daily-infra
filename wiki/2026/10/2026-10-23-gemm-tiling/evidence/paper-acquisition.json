@@ -1,0 +1,25 @@
+[
+  {
+    "name": "gemm_anatomy",
+    "url": "https://www.cs.utexas.edu/~flame/pubs/GotoTOMS_final.pdf",
+    "command": [
+      "curl",
+      "--fail",
+      "--location",
+      "--silent",
+      "--show-error",
+      "--connect-timeout",
+      "10",
+      "--max-time",
+      "45",
+      "https://www.cs.utexas.edu/~flame/pubs/GotoTOMS_final.pdf",
+      "--output",
+      ".cache/research10/papers/gemm_anatomy.pdf"
+    ],
+    "at": "2026-10-22T10:27:02.620786+00:00",
+    "exit_code": 0,
+    "extract_exit_code": 0,
+    "sha256": "6cdb5357051c4219ede92dc7aa6e6bb7808c4f1faff08a02ac2b7e78a876379a",
+    "bytes": 510611
+  }
+]

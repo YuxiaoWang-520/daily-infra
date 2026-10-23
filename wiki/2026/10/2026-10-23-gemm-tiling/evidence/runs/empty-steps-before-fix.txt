@@ -1,0 +1,24 @@
+test_empty_dimensions (test_answers.MatmulTests) ... ok
+test_inference_only (test_answers.MatmulTests) ... ok
+test_invalid_contracts (test_answers.MatmulTests) ... ok
+test_noncontiguous_inputs_and_no_mutation (test_answers.MatmulTests) ... ok
+test_odd_edges_and_tile_choices (test_answers.MatmulTests) ... ok
+test_small_hand_computed (test_answers.MatmulTests) ... ok
+test_empty_and_zero_k (test_answers.TrafficTests) ... FAIL
+test_invalid_counts (test_answers.TrafficTests) ... ok
+test_k_tile_changes_footprint_not_valid_total_reads (test_answers.TrafficTests) ... ok
+test_larger_output_tile_reduces_model_reads (test_answers.TrafficTests) ... ok
+test_odd_shapes_account_for_actual_valid_elements (test_answers.TrafficTests) ... ok
+
+======================================================================
+FAIL: test_empty_and_zero_k (test_answers.TrafficTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-10-23-gemm-tiling/code/test_answers.py", line 94, in test_empty_and_zero_k
+    self.assertEqual(tile_traffic(0, 3, 4, 2, 2, 2, 4)["k_steps"], 0)
+AssertionError: 2 != 0
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.028s
+
+FAILED (failures=1)

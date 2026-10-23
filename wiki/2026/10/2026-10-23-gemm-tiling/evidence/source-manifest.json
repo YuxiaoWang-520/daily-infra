@@ -1,0 +1,38 @@
+[
+  {
+    "repo": "triton-lang/triton",
+    "branch": "main",
+    "commit": "1ec1eee840b8a35b15101e5ab9a4388e905291f3",
+    "path": "LICENSE",
+    "url": "https://github.com/triton-lang/triton/blob/1ec1eee840b8a35b15101e5ab9a4388e905291f3/LICENSE",
+    "retrieved_at": "2026-10-22T21:10:09.302913+00:00",
+    "sha256": "92640fb97222fd0a698ff28ce0c3782c172623f8d6c609b557636a80f28fb946",
+    "bytes": 1132,
+    "command": [
+      "gh",
+      "api",
+      "-H",
+      "Accept: application/vnd.github.raw+json",
+      "repos/triton-lang/triton/contents/LICENSE?ref=1ec1eee840b8a35b15101e5ab9a4388e905291f3"
+    ],
+    "local_path": "evidence/upstream/triton-lang/triton/LICENSE"
+  },
+  {
+    "repo": "triton-lang/triton",
+    "branch": "main",
+    "commit": "1ec1eee840b8a35b15101e5ab9a4388e905291f3",
+    "path": "python/tutorials/03-matrix-multiplication.py",
+    "url": "https://github.com/triton-lang/triton/blob/1ec1eee840b8a35b15101e5ab9a4388e905291f3/python/tutorials/03-matrix-multiplication.py",
+    "retrieved_at": "2026-10-22T21:10:11.173968+00:00",
+    "sha256": "f88a9506694c58d483ad3cdb4aa672c23df0300803bcfaca13b9396184825008",
+    "bytes": 19370,
+    "command": [
+      "gh",
+      "api",
+      "-H",
+      "Accept: application/vnd.github.raw+json",
+      "repos/triton-lang/triton/contents/python/tutorials/03-matrix-multiplication.py?ref=1ec1eee840b8a35b15101e5ab9a4388e905291f3"
+    ],
+    "local_path": "evidence/upstream/triton-lang/triton/python/tutorials/03-matrix-multiplication.py"
+  }
+]

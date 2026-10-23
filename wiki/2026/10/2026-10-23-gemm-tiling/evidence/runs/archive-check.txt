@@ -1,0 +1,1 @@
+PASS: 27 local Markdown links; 9 pinned source anchors; 2 source hashes; 7 core checksums (ignored caches excluded).

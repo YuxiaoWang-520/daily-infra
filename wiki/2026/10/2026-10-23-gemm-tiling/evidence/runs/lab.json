@@ -1,0 +1,43 @@
+{
+  "scope": "CPU block algebra and logical load counts; no GPU performance",
+  "hand_result": [
+    [
+      4.0,
+      6.0
+    ],
+    [
+      12.0,
+      14.0
+    ]
+  ],
+  "tile1": {
+    "flops": 524288,
+    "read_elements": 524288,
+    "write_elements": 4096,
+    "bytes": 2113536,
+    "program_count": 4096,
+    "k_steps": 8,
+    "peak_valid_input_elements": 16,
+    "accumulator_elements": 1
+  },
+  "tile8": {
+    "flops": 524288,
+    "read_elements": 65536,
+    "write_elements": 4096,
+    "bytes": 278528,
+    "program_count": 64,
+    "k_steps": 8,
+    "peak_valid_input_elements": 128,
+    "accumulator_elements": 64
+  },
+  "tile8_bk16": {
+    "flops": 524288,
+    "read_elements": 65536,
+    "write_elements": 4096,
+    "bytes": 278528,
+    "program_count": 64,
+    "k_steps": 4,
+    "peak_valid_input_elements": 256,
+    "accumulator_elements": 64
+  }
+}
