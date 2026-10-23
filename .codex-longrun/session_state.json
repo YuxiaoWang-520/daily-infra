@@ -1,8 +1,8 @@
 {
   "created_at": "2026-10-22T10:10:25Z",
-  "updated_at": "2026-10-23T02:48:56.886143+00:00",
+  "updated_at": "2026-10-23T02:53:48.480447+00:00",
   "last_session_utc": "2026-10-22T10:10:25Z",
-  "last_green_commit": "15c3f85f42bade7d4c0b4aa5b0bff6ff6f3b5e45",
-  "last_feature_id": "W08",
-  "status": "W09 fusion tradeoffs"
+  "last_green_commit": "cedbba29515a4e2b2df951d1bcd5cf9d65f00adb",
+  "last_feature_id": "W09",
+  "status": "W10 attention and online softmax"
 }

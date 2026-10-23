@@ -1,0 +1,48 @@
+[
+  {
+    "name": "online_softmax",
+    "url": "https://arxiv.org/pdf/1805.02867",
+    "command": [
+      "curl",
+      "--fail",
+      "--location",
+      "--silent",
+      "--show-error",
+      "--connect-timeout",
+      "10",
+      "--max-time",
+      "45",
+      "https://arxiv.org/pdf/1805.02867",
+      "--output",
+      ".cache/research10/papers/online_softmax.pdf"
+    ],
+    "at": "2026-10-22T10:26:52.483630+00:00",
+    "exit_code": 0,
+    "extract_exit_code": 0,
+    "sha256": "722747b3a32eb90f5f0255d6b59f8bb0e1bc2257702ab7915e684c15275d44d7",
+    "bytes": 147347
+  },
+  {
+    "name": "flashattention",
+    "url": "https://arxiv.org/pdf/2205.14135",
+    "command": [
+      "curl",
+      "--fail",
+      "--location",
+      "--silent",
+      "--show-error",
+      "--connect-timeout",
+      "10",
+      "--max-time",
+      "45",
+      "https://arxiv.org/pdf/2205.14135",
+      "--output",
+      ".cache/research10/papers/flashattention.pdf"
+    ],
+    "at": "2026-10-22T10:26:56.982953+00:00",
+    "exit_code": 0,
+    "extract_exit_code": 0,
+    "sha256": "ca7f9fda10b90fc05dd291a3accc85e9c1a4a860b99b31928dab03ed3fcb14e4",
+    "bytes": 2630825
+  }
+]

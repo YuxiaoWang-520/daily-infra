@@ -1,0 +1,31 @@
+{
+  "scope": "CPU FP64 algebra, no CUDA/FlashAttention execution or performance",
+  "probabilities": [
+    0.09003057317038046,
+    0.24472847105479764,
+    0.6652409557748218
+  ],
+  "first_block": {
+    "m": 2.0,
+    "l": 1.3678794411714423,
+    "u": 23.678794411714424
+  },
+  "second_block": {
+    "m": 3.0,
+    "alpha": 0.36787944117144233,
+    "l": 1.5032147244080551,
+    "u": 38.710941655794976
+  },
+  "attention_result": [
+    [
+      25.752103826044415
+    ]
+  ],
+  "capacity_model_only": {
+    "length": 8192,
+    "one_head_one_fp16_score_matrix_bytes": 134217728,
+    "32_heads_two_fp16_matrices_bytes": 8589934592,
+    "score_tile_elements_64x128": 8192,
+    "full_dense_matmul_flops_d128_per_head": 34359738368
+  }
+}

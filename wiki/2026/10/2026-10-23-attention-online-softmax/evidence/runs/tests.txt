@@ -1,0 +1,20 @@
+test_causal_and_explicit_mask_intersect (test_answers.AttentionTests) ... ok
+test_empty_queries_keys_and_values_width (test_answers.AttentionTests) ... ok
+test_hand_weighted_average (test_answers.AttentionTests) ... ok
+test_invalid_contracts (test_answers.AttentionTests) ... ok
+test_large_finite_logits_are_stable (test_answers.AttentionTests) ... ok
+test_masked_first_tile_all_masked_row_and_mixed_rows (test_answers.AttentionTests) ... ok
+test_noncontiguous_float32_inputs_and_inference (test_answers.AttentionTests) ... ok
+test_rectangular_edges_and_multiple_tiles (test_answers.AttentionTests) ... ok
+test_reject_nonfinite_and_intermediate_overflow (test_answers.AttentionTests) ... ok
+test_top_left_causal_contract (test_answers.AttentionTests) ... ok
+test_equal_and_empty (test_answers.OnlineTests) ... ok
+test_increasing_maximum_and_large_shift (test_answers.OnlineTests) ... ok
+test_initial_masked_block_and_fully_masked (test_answers.OnlineTests) ... ok
+test_invalid_vector_mask_and_block (test_answers.OnlineTests) ... ok
+test_masked_large_logit_is_removed_before_exp (test_answers.OnlineTests) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.053s
+
+OK

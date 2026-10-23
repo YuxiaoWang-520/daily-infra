@@ -1,0 +1,92 @@
+[
+  {
+    "repo": "Dao-AILab/flash-attention",
+    "branch": "main",
+    "commit": "767386d814051d1d853c45ac952d8259b5bc7235",
+    "path": "LICENSE",
+    "url": "https://github.com/Dao-AILab/flash-attention/blob/767386d814051d1d853c45ac952d8259b5bc7235/LICENSE",
+    "retrieved_at": "2026-10-22T10:12:34.958631+00:00",
+    "sha256": "8c9ccb96c065e706135b6cbad279b721da6156e51f3a5f27c6b3329af9416d73",
+    "bytes": 1558,
+    "command": [
+      "gh",
+      "api",
+      "-H",
+      "Accept: application/vnd.github.raw+json",
+      "repos/Dao-AILab/flash-attention/contents/LICENSE?ref=767386d814051d1d853c45ac952d8259b5bc7235"
+    ],
+    "local_path": "evidence/upstream/Dao-AILab/flash-attention/LICENSE"
+  },
+  {
+    "repo": "Dao-AILab/flash-attention",
+    "branch": "main",
+    "commit": "767386d814051d1d853c45ac952d8259b5bc7235",
+    "path": "README.md",
+    "url": "https://github.com/Dao-AILab/flash-attention/blob/767386d814051d1d853c45ac952d8259b5bc7235/README.md",
+    "retrieved_at": "2026-10-23T02:54:07.618435+00:00",
+    "sha256": "0dbaba56da1c8372d460956e2609bfb89acf8f3aadd65d132b1697d221069619",
+    "bytes": 25270,
+    "command": [
+      "gh",
+      "api",
+      "-H",
+      "Accept: application/vnd.github.raw+json",
+      "repos/Dao-AILab/flash-attention/contents/README.md?ref=767386d814051d1d853c45ac952d8259b5bc7235"
+    ],
+    "local_path": "evidence/upstream/Dao-AILab/flash-attention/README.md"
+  },
+  {
+    "repo": "Dao-AILab/flash-attention",
+    "branch": "main",
+    "commit": "767386d814051d1d853c45ac952d8259b5bc7235",
+    "path": "csrc/flash_attn/src/softmax.h",
+    "url": "https://github.com/Dao-AILab/flash-attention/blob/767386d814051d1d853c45ac952d8259b5bc7235/csrc/flash_attn/src/softmax.h",
+    "retrieved_at": "2026-10-22T10:12:35.906624+00:00",
+    "sha256": "77e70b8d0dbe72f459ced29199a554a0d1e0559cad2370a2e5b5f1fa5faf73f1",
+    "bytes": 9464,
+    "command": [
+      "gh",
+      "api",
+      "-H",
+      "Accept: application/vnd.github.raw+json",
+      "repos/Dao-AILab/flash-attention/contents/csrc/flash_attn/src/softmax.h?ref=767386d814051d1d853c45ac952d8259b5bc7235"
+    ],
+    "local_path": "evidence/upstream/Dao-AILab/flash-attention/csrc/flash_attn/src/softmax.h"
+  },
+  {
+    "repo": "Dao-AILab/flash-attention",
+    "branch": "main",
+    "commit": "767386d814051d1d853c45ac952d8259b5bc7235",
+    "path": "csrc/flash_attn/src/flash_fwd_kernel.h",
+    "url": "https://github.com/Dao-AILab/flash-attention/blob/767386d814051d1d853c45ac952d8259b5bc7235/csrc/flash_attn/src/flash_fwd_kernel.h",
+    "retrieved_at": "2026-10-22T10:12:36.382318+00:00",
+    "sha256": "9b31cdff4009fcd0e1bc52f9b97907d226442db24e0a150d8dfed0711ee64dda",
+    "bytes": 76953,
+    "command": [
+      "gh",
+      "api",
+      "-H",
+      "Accept: application/vnd.github.raw+json",
+      "repos/Dao-AILab/flash-attention/contents/csrc/flash_attn/src/flash_fwd_kernel.h?ref=767386d814051d1d853c45ac952d8259b5bc7235"
+    ],
+    "local_path": "evidence/upstream/Dao-AILab/flash-attention/csrc/flash_attn/src/flash_fwd_kernel.h"
+  },
+  {
+    "repo": "Dao-AILab/flash-attention",
+    "branch": "main",
+    "commit": "767386d814051d1d853c45ac952d8259b5bc7235",
+    "path": "flash_attn/cute/softmax.py",
+    "url": "https://github.com/Dao-AILab/flash-attention/blob/767386d814051d1d853c45ac952d8259b5bc7235/flash_attn/cute/softmax.py",
+    "retrieved_at": "2026-10-23T02:57:02.730247+00:00",
+    "sha256": "aaddf3030dba7b9809c4fefae3caab22d0f22b9ecf5050601d6646aefb611a49",
+    "bytes": 32023,
+    "command": [
+      "gh",
+      "api",
+      "-H",
+      "Accept: application/vnd.github.raw+json",
+      "repos/Dao-AILab/flash-attention/contents/flash_attn/cute/softmax.py?ref=767386d814051d1d853c45ac952d8259b5bc7235"
+    ],
+    "local_path": "evidence/upstream/Dao-AILab/flash-attention/flash_attn/cute/softmax.py"
+  }
+]
