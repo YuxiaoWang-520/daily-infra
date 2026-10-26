@@ -1,0 +1,4 @@
+interface:
+  display_name: "技术知识沉淀"
+  short_description: "将零散工作经验脱敏整理为可验证的技术文档，并归档推送至知识仓库"
+  default_prompt: "请用 $infra-knowledge-capture 将当前问题中的通用技术知识脱敏整理成文档，审查后推送到 daily-infra。"
