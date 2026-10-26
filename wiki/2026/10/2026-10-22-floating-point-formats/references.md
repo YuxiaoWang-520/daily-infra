@@ -23,6 +23,8 @@
 
 文档在 2026-10-22 实际访问。HTML 原文没有重新分发；保存自己的笔记及固定源码中的文档源文件，不声称主分支 Markdown 与 2.14 HTML 完全相同。
 
+2026-10-26 补充核对：[RISC-V BF16 格式规范，固定 commit `67c1319d31e07fbb48ca7a6c0fc7448f4d3090ba`](https://github.com/riscv/riscv-bfloat16/blob/67c1319d31e07fbb48ca7a6c0fc7448f4d3090ba/doc/riscv-bfloat16-format.adoc) 与 [AMD XAPP1406，Revision 1.0、2026-01-28](https://docs.amd.com/r/en-US/xapp1406-aie-ml-fp-computation/Floating-Point-Numerical-Formats)，用于补充指数偏置 127、编码与真正指数的区别、完整位串解码。自己的阅读笔记和复算命令见 [偏置核对](evidence/bf16-exponent-bias.md)；新验证见 [CPU 位编码记录](evidence/runs/bf16-exponent-bias-2026-10-26.json)。本次没有刷新原文的 PyTorch 源码快照。
+
 ## 3. 可复算的实验结论
 
 - `1.001` 经 FP16 存储为 `1.0009765625`，经 BF16 存储为 `1`；再转为 float64 只能显示这个已保存的值。

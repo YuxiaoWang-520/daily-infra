@@ -1,0 +1,5 @@
+Checked at: 2026-10-26T11:53:08.610567+08:00
+PASS: 49 local Markdown links; 7 archived source hashes; 12 existing core checksums.
+PASS: 12 normal BF16 examples, 5 boundary encodings, 2 spacing checks; 43 assertions.
+PASS: existing 19 unittest cases; no Python source changes.
+Scope: section 2 explanatory correction; CPU verification only.

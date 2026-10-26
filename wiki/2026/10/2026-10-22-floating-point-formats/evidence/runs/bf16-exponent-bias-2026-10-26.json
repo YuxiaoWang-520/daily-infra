@@ -1,0 +1,182 @@
+{
+  "checked_at": "2026-10-26T11:52:22.265053+08:00",
+  "scope": "BF16 format decode and CPU storage; no GPU or performance claims",
+  "environment": {
+    "python_executable": "/Users/wangyuxiao/conda3/bin/python3",
+    "python": "3.10.13",
+    "torch": "2.9.1",
+    "torch_git": "5811a8d7da873dd699ff6687092c225caffcf1bb",
+    "platform": "macOS-15.5-arm64-arm-64bit",
+    "device": "cpu"
+  },
+  "assertions": 43,
+  "normal_examples": [
+    {
+      "input": 0.25,
+      "bits": "0 | 01111101 | 0000000",
+      "E": 125,
+      "e": -2,
+      "fraction_integer": 0,
+      "decoded": 0.25,
+      "torch_value": 0.25
+    },
+    {
+      "input": 0.5,
+      "bits": "0 | 01111110 | 0000000",
+      "E": 126,
+      "e": -1,
+      "fraction_integer": 0,
+      "decoded": 0.5,
+      "torch_value": 0.5
+    },
+    {
+      "input": 1.0,
+      "bits": "0 | 01111111 | 0000000",
+      "E": 127,
+      "e": 0,
+      "fraction_integer": 0,
+      "decoded": 1.0,
+      "torch_value": 1.0
+    },
+    {
+      "input": 1.0078125,
+      "bits": "0 | 01111111 | 0000001",
+      "E": 127,
+      "e": 0,
+      "fraction_integer": 1,
+      "decoded": 1.0078125,
+      "torch_value": 1.0078125
+    },
+    {
+      "input": 1.5,
+      "bits": "0 | 01111111 | 1000000",
+      "E": 127,
+      "e": 0,
+      "fraction_integer": 64,
+      "decoded": 1.5,
+      "torch_value": 1.5
+    },
+    {
+      "input": 1.9921875,
+      "bits": "0 | 01111111 | 1111111",
+      "E": 127,
+      "e": 0,
+      "fraction_integer": 127,
+      "decoded": 1.9921875,
+      "torch_value": 1.9921875
+    },
+    {
+      "input": 2.0,
+      "bits": "0 | 10000000 | 0000000",
+      "E": 128,
+      "e": 1,
+      "fraction_integer": 0,
+      "decoded": 2.0,
+      "torch_value": 2.0
+    },
+    {
+      "input": 3.0,
+      "bits": "0 | 10000000 | 1000000",
+      "E": 128,
+      "e": 1,
+      "fraction_integer": 64,
+      "decoded": 3.0,
+      "torch_value": 3.0
+    },
+    {
+      "input": 4.0,
+      "bits": "0 | 10000001 | 0000000",
+      "E": 129,
+      "e": 2,
+      "fraction_integer": 0,
+      "decoded": 4.0,
+      "torch_value": 4.0
+    },
+    {
+      "input": 6.5,
+      "bits": "0 | 10000001 | 1010000",
+      "E": 129,
+      "e": 2,
+      "fraction_integer": 80,
+      "decoded": 6.5,
+      "torch_value": 6.5
+    },
+    {
+      "input": 256.0,
+      "bits": "0 | 10000111 | 0000000",
+      "E": 135,
+      "e": 8,
+      "fraction_integer": 0,
+      "decoded": 256.0,
+      "torch_value": 256.0
+    },
+    {
+      "input": -6.5,
+      "bits": "1 | 10000001 | 1010000",
+      "E": 129,
+      "e": 2,
+      "fraction_integer": 80,
+      "decoded": -6.5,
+      "torch_value": -6.5
+    }
+  ],
+  "boundaries_and_spacing": [
+    {
+      "label": "zero",
+      "bits_hex": "0x0000",
+      "expected": 0.0,
+      "actual": 0.0
+    },
+    {
+      "label": "minimum_positive_subnormal",
+      "bits_hex": "0x0001",
+      "expected": 9.183549615799121e-41,
+      "actual": 9.183549615799121e-41
+    },
+    {
+      "label": "minimum_positive_normal",
+      "bits_hex": "0x0080",
+      "expected": 1.1754943508222875e-38,
+      "actual": 1.1754943508222875e-38
+    },
+    {
+      "label": "maximum_positive_finite",
+      "bits_hex": "0x7f7f",
+      "expected": 3.3895313892515355e+38,
+      "actual": 3.3895313892515355e+38
+    },
+    {
+      "label": "positive_infinity",
+      "bits_hex": "0x7f80",
+      "expected": "inf",
+      "actual": "inf"
+    },
+    {
+      "label": "spacing_above_1",
+      "expected": 0.0078125,
+      "actual": 0.0078125
+    },
+    {
+      "label": "spacing_above_2",
+      "expected": 0.015625,
+      "actual": 0.015625
+    }
+  ],
+  "existing_exercise_regression": {
+    "command": [
+      "/Users/wangyuxiao/conda3/bin/python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      ".",
+      "-p",
+      "test_*.py",
+      "-v"
+    ],
+    "cwd": "wiki/2026/10/2026-10-22-floating-point-formats/code",
+    "exit_code": 0,
+    "log": "tests-bias-correction-2026-10-26.txt"
+  },
+  "result": "PASS"
+}
