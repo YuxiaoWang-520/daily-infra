@@ -1,0 +1,79 @@
+[
+  {
+    "repo": "vllm-project/vllm",
+    "branch": "main",
+    "commit": "7128f568ac036f7b7f21860d1928747ac6f78213",
+    "path": "LICENSE",
+    "local_path": "evidence/upstream/vllm-project/vllm/LICENSE",
+    "url": "https://github.com/vllm-project/vllm/blob/7128f568ac036f7b7f21860d1928747ac6f78213/LICENSE",
+    "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "bytes": 11357,
+    "checked_at_utc": "2026-10-26T03:14:56.992745+00:00"
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "branch": "main",
+    "commit": "7128f568ac036f7b7f21860d1928747ac6f78213",
+    "path": "vllm/model_executor/models/llama.py",
+    "local_path": "evidence/upstream/vllm-project/vllm/vllm/model_executor/models/llama.py",
+    "url": "https://github.com/vllm-project/vllm/blob/7128f568ac036f7b7f21860d1928747ac6f78213/vllm/model_executor/models/llama.py",
+    "sha256": "1654ee1ea3a030772dac4e4953843996bbc24c835aa63137e4e7e5c7ecf31a2c",
+    "bytes": 20657,
+    "checked_at_utc": "2026-10-26T03:14:56.992745+00:00"
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "branch": "main",
+    "commit": "7128f568ac036f7b7f21860d1928747ac6f78213",
+    "path": "vllm/model_executor/layers/attention/__init__.py",
+    "local_path": "evidence/upstream/vllm-project/vllm/vllm/model_executor/layers/attention/__init__.py",
+    "url": "https://github.com/vllm-project/vllm/blob/7128f568ac036f7b7f21860d1928747ac6f78213/vllm/model_executor/layers/attention/__init__.py",
+    "sha256": "822dde07028133a17abae8f17c9d5a8b242690c06a2bb3c186bac4738d17c3e1",
+    "bytes": 1585,
+    "checked_at_utc": "2026-10-26T03:14:56.992745+00:00"
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "branch": "main",
+    "commit": "7128f568ac036f7b7f21860d1928747ac6f78213",
+    "path": "vllm/model_executor/layers/attention/attention.py",
+    "local_path": "evidence/upstream/vllm-project/vllm/vllm/model_executor/layers/attention/attention.py",
+    "url": "https://github.com/vllm-project/vllm/blob/7128f568ac036f7b7f21860d1928747ac6f78213/vllm/model_executor/layers/attention/attention.py",
+    "sha256": "3914b60f5407d193cfd1cbe75c6689a6da71f89e37d177a04bb0d95b3244ea44",
+    "bytes": 33461,
+    "checked_at_utc": "2026-10-26T03:14:56.992745+00:00"
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "branch": "main",
+    "commit": "7128f568ac036f7b7f21860d1928747ac6f78213",
+    "path": "vllm/v1/attention/backends/flash_attn.py",
+    "local_path": "evidence/upstream/vllm-project/vllm/vllm/v1/attention/backends/flash_attn.py",
+    "url": "https://github.com/vllm-project/vllm/blob/7128f568ac036f7b7f21860d1928747ac6f78213/vllm/v1/attention/backends/flash_attn.py",
+    "sha256": "7991393d7895994550028637790145d03d1fe28586cac03aa2946ba13afc99c5",
+    "bytes": 74270,
+    "checked_at_utc": "2026-10-26T03:14:56.992745+00:00"
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "branch": "main",
+    "commit": "7128f568ac036f7b7f21860d1928747ac6f78213",
+    "path": "vllm/v1/core/sched/scheduler.py",
+    "local_path": "evidence/upstream/vllm-project/vllm/vllm/v1/core/sched/scheduler.py",
+    "url": "https://github.com/vllm-project/vllm/blob/7128f568ac036f7b7f21860d1928747ac6f78213/vllm/v1/core/sched/scheduler.py",
+    "sha256": "d3c7c4505fe9b1d68382d707e3de9d376bf89692fb1da78294f7361b6faed112",
+    "bytes": 172863,
+    "checked_at_utc": "2026-10-26T03:14:56.992745+00:00"
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "branch": "main",
+    "commit": "7128f568ac036f7b7f21860d1928747ac6f78213",
+    "path": "vllm/v1/core/kv_cache_manager.py",
+    "local_path": "evidence/upstream/vllm-project/vllm/vllm/v1/core/kv_cache_manager.py",
+    "url": "https://github.com/vllm-project/vllm/blob/7128f568ac036f7b7f21860d1928747ac6f78213/vllm/v1/core/kv_cache_manager.py",
+    "sha256": "d061965aefb5b8d73a520ab5ebc4c819bb0109932f5d7f4afdd37a9c610c7893",
+    "bytes": 40444,
+    "checked_at_utc": "2026-10-26T03:14:56.992745+00:00"
+  }
+]

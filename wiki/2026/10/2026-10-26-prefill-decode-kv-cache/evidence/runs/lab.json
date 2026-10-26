@@ -1,0 +1,67 @@
+{
+  "scope": "CPU semantic reference and analytical counts; no vLLM execution or GPU timing",
+  "uniform_attention_two_new_queries": [
+    [
+      20.0
+    ],
+    [
+      25.0
+    ]
+  ],
+  "updated_cache_length": 4,
+  "prompt_ids": [
+    2,
+    5,
+    1
+  ],
+  "generated_full_ids": [
+    2,
+    5,
+    1,
+    7,
+    12,
+    9,
+    9
+  ],
+  "generated_cached_ids": [
+    2,
+    5,
+    1,
+    7,
+    12,
+    9,
+    9
+  ],
+  "full_forward_lengths": [
+    3,
+    4,
+    5,
+    6
+  ],
+  "cached_forward_lengths": [
+    3,
+    1,
+    1,
+    1
+  ],
+  "final_cache_lengths": [
+    6,
+    6
+  ],
+  "full_state_max_absolute_errors": [
+    {
+      "k_max_abs": 0.0,
+      "v_max_abs": 0.0
+    },
+    {
+      "k_max_abs": 1.1102230246251565e-15,
+      "v_max_abs": 9.43689570931383e-16
+    }
+  ],
+  "work_model_not_measured_flops_or_speedup": {
+    "full_forward_positions_per_layer": 18,
+    "cached_forward_positions_per_layer": 6,
+    "full_valid_causal_pairs_per_layer_head": 52,
+    "cached_valid_causal_pairs_per_layer_head": 21
+  }
+}

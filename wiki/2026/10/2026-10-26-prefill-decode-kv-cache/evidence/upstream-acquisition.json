@@ -1,0 +1,49 @@
+{
+  "checked_at_utc": "2026-10-26T03:14:56.992745+00:00",
+  "remote": "https://github.com/vllm-project/vllm.git",
+  "branch": "main",
+  "commit": "7128f568ac036f7b7f21860d1928747ac6f78213",
+  "commit_date": "2026-10-26T10:40:54+08:00",
+  "retrieval": "Actual shallow filtered Git clone and sparse checkout; worktree clean, archived bytes compared with git show at pinned commit. No build or vLLM execution.",
+  "successful_commands": [
+    [
+      "git",
+      "clone",
+      "--depth",
+      "1",
+      "--filter=blob:none",
+      "--no-checkout",
+      "https://github.com/vllm-project/vllm.git",
+      ".cache/upstream/vllm"
+    ],
+    [
+      "git",
+      "sparse-checkout",
+      "set",
+      "--no-cone",
+      "/LICENSE",
+      "/vllm/model_executor/models/llama.py",
+      "/vllm/v1/core/sched/scheduler.py",
+      "/vllm/v1/core/kv_cache_manager.py",
+      "/vllm/v1/attention/layer.py",
+      "/vllm/v1/attention/backends/flash_attn.py"
+    ],
+    [
+      "git",
+      "checkout",
+      "main"
+    ],
+    [
+      "git",
+      "sparse-checkout",
+      "add",
+      "/vllm/model_executor/layers/attention/attention.py",
+      "/vllm/model_executor/layers/attention/__init__.py"
+    ]
+  ],
+  "notes": [
+    "Initial sparse list contained a non-existent vllm/v1/attention/layer.py; actual import path was traced to model_executor/layers/attention/attention.py.",
+    "git sparse-checkout add does not accept --no-cone in the installed Git; reran without that flag, using the existing non-cone configuration.",
+    "No stable release checkout or target GPU execution was performed."
+  ]
+}

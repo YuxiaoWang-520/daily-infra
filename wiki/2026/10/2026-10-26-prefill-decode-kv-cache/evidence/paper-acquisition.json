@@ -1,0 +1,94 @@
+[
+  {
+    "name": "transformer-1706.03762v7",
+    "url": "https://arxiv.org/pdf/1706.03762v7",
+    "at_utc": "2026-10-26T03:06:17.088281+00:00",
+    "command": [
+      "curl",
+      "-fL",
+      "--connect-timeout",
+      "10",
+      "--max-time",
+      "45",
+      "https://arxiv.org/pdf/1706.03762v7",
+      "-o",
+      ".cache/upstream/papers/transformer-1706.03762v7.pdf"
+    ],
+    "exit_code": 28,
+    "error": " 0:03:21  0:00:34  0:02:47  7803\n 17 2163k   17  371k    0     0  10818      0  0:03:24  0:00:35  0:02:49  8788\n 17 2163k   17  387k    0     0  10965      0  0:03:22  0:00:36  0:02:46  9692\n 18 2163k   18  400k    0     0  11040      0  0:03:20  0:00:37  0:02:43 10064\n 19 2163k   19  414k    0     0  11099      0  0:03:19  0:00:38  0:02:41 10759\n 19 2163k   19  430k    0     0  11250      0  0:03:16  0:00:39  0:02:37 12955\n 20 2163k   20  445k    0     0  11361      0  0:03:14  0:00:40  0:02:34 15236\n 21 2163k   21  457k    0     0  11204      0  0:03:17  0:00:41  0:02:36 12742\n 21 2163k   21  464k    0     0  11211      0  0:03:17  0:00:42  0:02:35 12414\n 21 2163k   21  465k    0     0  10991      0  0:03:21  0:00:43  0:02:38 10191\n 21 2163k   21  472k    0     0  10964      0  0:03:22  0:00:44  0:02:38  8711\n 22 2163k   22  480k    0     0  10922      0  0:03:22  0:00:45  0:02:37  7297\ncurl: (28) Operation timed out after 45001 milliseconds with 491520 out of 2215244 bytes received\n"
+  },
+  {
+    "name": "pagedattention-2309.06180v1",
+    "url": "https://arxiv.org/pdf/2309.06180v1",
+    "at_utc": "2026-10-26T03:06:17.106291+00:00",
+    "command": [
+      "curl",
+      "-fL",
+      "--connect-timeout",
+      "10",
+      "--max-time",
+      "45",
+      "https://arxiv.org/pdf/2309.06180v1",
+      "-o",
+      ".cache/upstream/papers/pagedattention-2309.06180v1.pdf"
+    ],
+    "exit_code": 28,
+    "error": " 0:02:08  0:00:34  0:01:34  4286\n 27 1425k   27  394k    0     0  11481      0  0:02:07  0:00:35  0:01:32  7691\n 28 1425k   28  399k    0     0  11318      0  0:02:08  0:00:36  0:01:32  8941\n 29 1425k   29  415k    0     0  11465      0  0:02:07  0:00:37  0:01:30 11740\n 29 1425k   29  426k    0     0  11460      0  0:02:07  0:00:38  0:01:29 12007\n 31 1425k   31  442k    0     0  11574      0  0:02:06  0:00:39  0:01:27 13269\n 31 1425k   31  448k    0     0  11297      0  0:02:09  0:00:40  0:01:29 10108\n 31 1425k   31  449k    0     0  11135      0  0:02:11  0:00:41  0:01:30  9862\n 32 1425k   32  462k    0     0  11219      0  0:02:10  0:00:42  0:01:28  9427\n 33 1425k   33  474k    0     0  11201      0  0:02:10  0:00:43  0:01:27  9316\n 33 1425k   33  478k    0     0  11095      0  0:02:11  0:00:44  0:01:27  7344\n 33 1425k   33  481k    0     0  10958      0  0:02:13  0:00:45  0:01:28  7815\ncurl: (28) Operation timed out after 45002 milliseconds with 493154 out of 1459631 bytes received\n"
+  },
+  {
+    "name": "transformer-1706.03762v7",
+    "url": "https://arxiv.org/pdf/1706.03762v7",
+    "at_utc": "2026-10-26T03:09:40.650522+00:00",
+    "command": [
+      "curl",
+      "-fL",
+      "-C",
+      "-",
+      "--connect-timeout",
+      "10",
+      "--max-time",
+      "240",
+      "https://arxiv.org/pdf/1706.03762v7",
+      "-o",
+      ".cache/upstream/papers/transformer-1706.03762v7.pdf"
+    ],
+    "exit_code": 0,
+    "bytes": 2215244,
+    "sha256": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697",
+    "extract_command": [
+      "pdftotext",
+      "-layout",
+      ".cache/upstream/papers/transformer-1706.03762v7.pdf",
+      ".cache/upstream/papers/transformer-1706.03762v7.txt"
+    ],
+    "extract_exit_code": 0
+  },
+  {
+    "name": "pagedattention-2309.06180v1",
+    "url": "https://arxiv.org/pdf/2309.06180v1",
+    "at_utc": "2026-10-26T03:08:41.359191+00:00",
+    "command": [
+      "curl",
+      "-fL",
+      "-C",
+      "-",
+      "--connect-timeout",
+      "10",
+      "--max-time",
+      "240",
+      "https://arxiv.org/pdf/2309.06180v1",
+      "-o",
+      ".cache/upstream/papers/pagedattention-2309.06180v1.pdf"
+    ],
+    "exit_code": 0,
+    "bytes": 1459631,
+    "sha256": "55b3b324d779a67c59dac2519445e3b07c14e6ff5c656fadb47a3d7b5997469e",
+    "extract_command": [
+      "pdftotext",
+      "-layout",
+      ".cache/upstream/papers/pagedattention-2309.06180v1.pdf",
+      ".cache/upstream/papers/pagedattention-2309.06180v1.txt"
+    ],
+    "extract_exit_code": 0
+  }
+]

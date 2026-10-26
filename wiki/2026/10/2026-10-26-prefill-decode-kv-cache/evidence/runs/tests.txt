@@ -1,0 +1,20 @@
+test_chunks_match_independent_sdpa_and_complete_state (test_answers.AttentionTests) ... ok
+test_empty_chunk_preserves_existing_state (test_answers.AttentionTests) ... ok
+test_invalid_shapes_dtypes_and_cache_are_rejected (test_answers.AttentionTests) ... ok
+test_noncontiguous_float32_and_input_ownership (test_answers.AttentionTests) ... ok
+test_nonfinite_inputs_and_score_overflow_are_rejected (test_answers.AttentionTests) ... ok
+test_one_query_reads_whole_prefix (test_answers.AttentionTests) ... ok
+test_two_new_queries_have_different_causal_boundaries (test_answers.AttentionTests) ... ok
+test_bad_tokens_steps_and_layer_states_are_rejected (test_answers.DecoderTests) ... ok
+test_chunked_prefill_and_decode_match_all_logits_and_caches (test_answers.DecoderTests) ... ok
+test_context_limit_counts_forwarded_positions (test_answers.DecoderTests) ... ok
+test_each_incremental_step_matches_full_recomputation (test_answers.DecoderTests) ... ok
+test_future_tokens_do_not_change_past_hidden_states (test_answers.DecoderTests) ... ok
+test_generation_matches_and_cache_lags_last_sampled_token (test_answers.DecoderTests) ... ok
+test_inference_only_and_local_seed (test_answers.DecoderTests) ... ok
+test_zero_generation_does_no_forward_or_input_aliasing (test_answers.DecoderTests) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.056s
+
+OK
