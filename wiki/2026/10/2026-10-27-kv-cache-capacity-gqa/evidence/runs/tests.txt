@@ -1,0 +1,27 @@
+test_empty_and_zero_lengths (test_answers.CapacityTests) ... ok
+test_invalid_capacity_inputs (test_answers.CapacityTests) ... ok
+test_invalid_tp_layout (test_answers.CapacityTests) ... ok
+test_mha_gqa_mqa_reference_capacities (test_answers.CapacityTests) ... ok
+test_one_token_counts_both_key_and_value (test_answers.CapacityTests) ... ok
+test_tp_partition_and_replication (test_answers.CapacityTests) ... ok
+test_variable_lengths_are_summed_without_padding (test_answers.CapacityTests) ... ok
+test_contiguous_head_groups_not_interleaved (test_answers.GroupedAttentionTests) ... ok
+test_cpu_inputs_under_a_different_default_device (test_answers.GroupedAttentionTests) ... ok
+test_float32 (test_answers.GroupedAttentionTests) ... ok
+test_full_prefill (test_answers.GroupedAttentionTests) ... ok
+test_future_tokens_cannot_affect_earlier_queries (test_answers.GroupedAttentionTests) ... ok
+test_gqa (test_answers.GroupedAttentionTests) ... ok
+test_invalid_dtype_and_nonfinite_input (test_answers.GroupedAttentionTests) ... ok
+test_invalid_positions (test_answers.GroupedAttentionTests) ... ok
+test_invalid_shapes (test_answers.GroupedAttentionTests) ... ok
+test_mha (test_answers.GroupedAttentionTests) ... ok
+test_mqa (test_answers.GroupedAttentionTests) ... ok
+test_noncontiguous_inputs_and_input_ownership (test_answers.GroupedAttentionTests) ... ok
+test_score_overflow_is_not_silently_accepted (test_answers.GroupedAttentionTests) ... ok
+test_shared_kv_does_not_force_shared_outputs (test_answers.GroupedAttentionTests) ... ok
+test_single_token_decode (test_answers.GroupedAttentionTests) ... ok
+
+----------------------------------------------------------------------
+Ran 22 tests in 0.033s
+
+OK

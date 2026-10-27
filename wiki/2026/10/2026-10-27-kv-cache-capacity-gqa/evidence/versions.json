@@ -1,0 +1,29 @@
+{
+  "checked_at_utc": "2026-10-27T03:11:41.073177+00:00",
+  "default_branch": {
+    "repo": "vllm-project/vllm",
+    "branch": "main",
+    "commit": "1e10a92d1da2da4e2b70fd66d7d31b1672ba6da7",
+    "fetch_command": [
+      "git",
+      "fetch",
+      "--depth=1",
+      "origin",
+      "main"
+    ],
+    "checkout_command": [
+      "git",
+      "switch",
+      "--detach",
+      "origin/main"
+    ],
+    "scope": "Read-only source analysis; not built or executed"
+  },
+  "latest_release_observed": {
+    "tag": "v0.32.0",
+    "published_at": "2026-10-18T06:50:48Z",
+    "commit": "5df63a7203cdb9328d824a27b682e77c7b9928be",
+    "url": "https://github.com/vllm-project/vllm/releases/tag/v0.32.0",
+    "scope": "Release metadata only; not claimed identical to the main snapshot"
+  }
+}

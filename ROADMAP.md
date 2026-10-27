@@ -17,7 +17,7 @@
 | 09 | [算子融合什么时候划算，什么时候会适得其反？](wiki/2026/10/2026-10-23-kernel-fusion/README.md) | 中间张量、启动开销、编译器与资源压力 |
 | 10 | [Attention 的计算与中间张量从哪里来，为什么需要分块？](wiki/2026/10/2026-10-23-attention-online-softmax/README.md) | 基础 Attention、online softmax 与 FlashAttention |
 | 11 | [生成一个 token 时，哪些数据可以复用？](wiki/2026/10/2026-10-26-prefill-decode-kv-cache/README.md) | 自回归生成、Prefill／Decode 与 KV Cache 生命周期 |
-| 12 | KV Cache 怎么算大小，MHA、GQA、MQA 各改变了什么？ | 长上下文、并发容量与模型结构选择 |
+| 12 | [KV Cache 怎么算大小，MHA、GQA、MQA 各改变了什么？](wiki/2026/10/2026-10-27-kv-cache-capacity-gqa/README.md) | 长上下文、并发容量与模型结构选择 |
 | 13 | KV Cache 为什么需要分页，逻辑 token 怎样找到物理块？ | 推理引擎的块管理、碎片与地址映射 |
 | 14 | 请求为何需要逐步调度，batch 大小由什么决定？ | continuous batching、TTFT、ITL 与吞吐权衡 |
 | 15 | 长 Prompt 为什么会干扰其他请求，如何拆分 Prefill？ | chunked prefill、调度预算与尾延迟 |

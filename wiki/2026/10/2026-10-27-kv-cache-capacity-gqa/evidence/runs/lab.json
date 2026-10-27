@@ -1,0 +1,70 @@
+{
+  "scope": "CPU semantic check and analytical byte counts; no GPU allocation or timing",
+  "capacity_assumptions": {
+    "layers": 32,
+    "head_dim": 128,
+    "element_bytes": 2,
+    "tokens_per_request": 8192
+  },
+  "capacities": {
+    "MHA": {
+      "kv_heads": 32,
+      "one_request_bytes": 4294967296,
+      "eight_requests_bytes": 34359738368
+    },
+    "GQA": {
+      "kv_heads": 8,
+      "one_request_bytes": 1073741824,
+      "eight_requests_bytes": 8589934592
+    },
+    "MQA": {
+      "kv_heads": 1,
+      "one_request_bytes": 134217728,
+      "eight_requests_bytes": 1073741824
+    }
+  },
+  "tensor_parallel_4": {
+    "MHA": {
+      "ranks": 4,
+      "heads_per_rank": 8,
+      "bytes_per_rank": 1073741824,
+      "cluster_bytes": 4294967296
+    },
+    "GQA": {
+      "ranks": 4,
+      "heads_per_rank": 2,
+      "bytes_per_rank": 268435456,
+      "cluster_bytes": 1073741824
+    },
+    "MQA": {
+      "ranks": 4,
+      "heads_per_rank": 1,
+      "bytes_per_rank": 134217728,
+      "cluster_bytes": 536870912
+    }
+  },
+  "gqa_check": {
+    "dtype": "torch.float64",
+    "q_shape": [
+      1,
+      4,
+      2,
+      3
+    ],
+    "kv_shape": [
+      1,
+      2,
+      5,
+      3
+    ],
+    "output_shape": [
+      1,
+      4,
+      2,
+      3
+    ],
+    "logical_compact_kv_bytes": 480,
+    "logical_expanded_kv_bytes": 960,
+    "max_abs_difference_from_sdpa": 2.220446049250313e-16
+  }
+}

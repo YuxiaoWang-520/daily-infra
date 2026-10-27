@@ -1,0 +1,69 @@
+[
+  {
+    "name": "gqa-v3",
+    "url": "https://arxiv.org/pdf/2305.13245v3",
+    "retrieved_at": "2026-10-27T03:06:19.794973+00:00",
+    "command": [
+      "curl",
+      "--fail",
+      "--location",
+      "--silent",
+      "--show-error",
+      "--connect-timeout",
+      "10",
+      "--max-time",
+      "55",
+      "https://arxiv.org/pdf/2305.13245v3",
+      "--output",
+      ".cache/research12/papers/gqa-v3.pdf"
+    ],
+    "exit_code": 28,
+    "error": "curl: (28) Operation timed out after 55003 milliseconds with 63265 out of 269116 bytes received\n"
+  },
+  {
+    "name": "mqa-v1",
+    "url": "https://arxiv.org/pdf/1911.02150v1",
+    "retrieved_at": "2026-10-27T03:05:29.572223+00:00",
+    "command": [
+      "curl",
+      "--fail",
+      "--location",
+      "--silent",
+      "--show-error",
+      "--connect-timeout",
+      "10",
+      "--max-time",
+      "55",
+      "https://arxiv.org/pdf/1911.02150v1",
+      "--output",
+      ".cache/research12/papers/mqa-v1.pdf"
+    ],
+    "exit_code": 0,
+    "sha256": "3250947d7be32f1a15531ab3062134edd431b9cf79e669d324ab5cbddd9a2094",
+    "bytes": 142627,
+    "extract_exit_code": 0
+  },
+  {
+    "name": "gqa-emnlp2023",
+    "url": "https://aclanthology.org/2023.emnlp-main.298.pdf",
+    "retrieved_at": "2026-10-27T03:07:04.298773+00:00",
+    "command": [
+      "curl",
+      "--fail",
+      "--location",
+      "--silent",
+      "--show-error",
+      "--connect-timeout",
+      "10",
+      "--max-time",
+      "55",
+      "https://aclanthology.org/2023.emnlp-main.298.pdf",
+      "--output",
+      ".cache/research12/papers/gqa-emnlp2023.pdf"
+    ],
+    "exit_code": 0,
+    "sha256": "c52de1d3339174fbf93b588aa4cc9bf36092c865f2358ece3999de152f57455c",
+    "bytes": 221556,
+    "extract_exit_code": 0
+  }
+]
