@@ -16,8 +16,9 @@
 | 10 | 2026-10-23 | [Attention 的计算与中间张量从哪里来，为什么需要分块？](2026/10/2026-10-23-attention-online-softmax/README.md) | Attention、在线归一化、分块与当前 FlashAttention | 第 03、07—09 篇 |
 | 11 | 2026-10-26 | [生成一个 token 时，哪些数据可以复用？](2026/10/2026-10-26-prefill-decode-kv-cache/README.md) | 自回归生成、Prefill／Decode、逐层 KV Cache | 第 01、03、10 篇 |
 | 12 | 2026-10-27 | [KV Cache 怎么算大小，MHA、GQA、MQA 各改变了什么？](2026/10/2026-10-27-kv-cache-capacity-gqa/README.md) | KV 容量、分组 Attention、缓存 dtype 与 TP 复制 | 第 03、10—11 篇 |
+| 13 | 2026-10-28 | [KV Cache 为什么需要分页，逻辑 token 怎样找到物理块？](2026/10/2026-10-28-paged-kv-block-table/README.md) | 分页 KV、块表、槽映射、页尾余量与回收复用 | 第 10—12 篇 |
 
-下一篇候选：KV Cache 为什么需要分页，逻辑 token 怎样找到物理块？
+下一篇候选：请求为何需要逐步调度，batch 大小由什么决定？
 
 2026-10-22 起按用户要求集中完成起步前 10 篇，使用实际归档日期；日常定时任务仍按工作日每天一篇执行。范围见 [本次任务说明](../docs/BOOTSTRAP10.md)。
 

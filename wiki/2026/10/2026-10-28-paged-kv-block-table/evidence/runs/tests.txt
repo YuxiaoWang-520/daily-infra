@@ -1,0 +1,28 @@
+test_invalid_accounting_inputs (test_answers.AccountingTests) ... ok
+test_tail_bound_for_many_lengths (test_answers.AccountingTests) ... ok
+test_unequal_lengths (test_answers.AccountingTests) ... ok
+test_zero_exact_and_empty (test_answers.AccountingTests) ... ok
+test_bad_addresses (test_answers.AddressTests) ... ok
+test_empty_history (test_answers.AddressTests) ... ok
+test_invalid_dimensions (test_answers.AddressTests) ... ok
+test_noncontiguous_table (test_answers.AddressTests) ... ok
+test_page_boundary (test_answers.AddressTests) ... ok
+test_unfilled_tail_is_not_readable (test_answers.AddressTests) ... ok
+test_unused_table_entries_are_not_dereferenced (test_answers.AddressTests) ... ok
+test_append_across_pages_and_keep_other_request (test_answers.CacheTests) ... ok
+test_append_inside_last_page_needs_no_free_block (test_answers.CacheTests) ... ok
+test_default_device_does_not_change_cpu_contract (test_answers.CacheTests) ... ok
+test_fifo_keeps_existing_free_pages_before_released_pages (test_answers.CacheTests) ... ok
+test_input_and_read_result_do_not_alias_cache (test_answers.CacheTests) ... ok
+test_invalid_input_cannot_consume_blocks (test_answers.CacheTests) ... ok
+test_noncontiguous_input_and_no_autograd_history (test_answers.CacheTests) ... ok
+test_out_of_memory_does_not_partly_append (test_answers.CacheTests) ... ok
+test_paged_gather_matches_independent_sdpa (test_answers.CacheTests) ... ok
+test_randomized_append_release_matches_dense_oracle (test_answers.CacheTests) ... ok
+test_release_reuse_does_not_read_stale_tail (test_answers.CacheTests) ... ok
+test_request_id_and_configuration (test_answers.CacheTests) ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 0.037s
+
+OK

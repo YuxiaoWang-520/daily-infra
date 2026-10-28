@@ -1,0 +1,306 @@
+[
+  {
+    "repo": "vllm-project/vllm",
+    "branch": "main",
+    "commit": "84e455367336b62547d1f1273e9b50bc7f8edb47",
+    "path": "LICENSE",
+    "local_path": "evidence/upstream/vllm-project/vllm/LICENSE",
+    "url": "https://github.com/vllm-project/vllm/blob/84e455367336b62547d1f1273e9b50bc7f8edb47/LICENSE",
+    "checked_at_utc": "2026-10-28T03:28:57.503733+00:00",
+    "command": [
+      "git",
+      "-C",
+      ".cache/upstream/vllm",
+      "show",
+      "84e455367336b62547d1f1273e9b50bc7f8edb47:LICENSE"
+    ],
+    "exit_code": 0,
+    "bytes": 11357,
+    "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "branch": "main",
+    "commit": "84e455367336b62547d1f1273e9b50bc7f8edb47",
+    "path": "docs/design/paged_attention.md",
+    "local_path": "evidence/upstream/vllm-project/vllm/docs/design/paged_attention.md",
+    "url": "https://github.com/vllm-project/vllm/blob/84e455367336b62547d1f1273e9b50bc7f8edb47/docs/design/paged_attention.md",
+    "checked_at_utc": "2026-10-28T03:28:57.575458+00:00",
+    "command": [
+      "git",
+      "-C",
+      ".cache/upstream/vllm",
+      "show",
+      "84e455367336b62547d1f1273e9b50bc7f8edb47:docs/design/paged_attention.md"
+    ],
+    "exit_code": 0,
+    "bytes": 20735,
+    "sha256": "0a8cab1d4ed29976792905056681d644dc6c755c588e4fcfb5bea6ced784dddf"
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "branch": "main",
+    "commit": "84e455367336b62547d1f1273e9b50bc7f8edb47",
+    "path": "vllm/v1/core/sched/scheduler.py",
+    "local_path": "evidence/upstream/vllm-project/vllm/vllm/v1/core/sched/scheduler.py",
+    "url": "https://github.com/vllm-project/vllm/blob/84e455367336b62547d1f1273e9b50bc7f8edb47/vllm/v1/core/sched/scheduler.py",
+    "checked_at_utc": "2026-10-28T03:28:57.627360+00:00",
+    "command": [
+      "git",
+      "-C",
+      ".cache/upstream/vllm",
+      "show",
+      "84e455367336b62547d1f1273e9b50bc7f8edb47:vllm/v1/core/sched/scheduler.py"
+    ],
+    "exit_code": 0,
+    "bytes": 177450,
+    "sha256": "c35bc19bf03a29683c4e66c093fa6d3f8c14727cbf18d554c24b28a03bed9492"
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "branch": "main",
+    "commit": "84e455367336b62547d1f1273e9b50bc7f8edb47",
+    "path": "vllm/v1/core/kv_cache_manager.py",
+    "local_path": "evidence/upstream/vllm-project/vllm/vllm/v1/core/kv_cache_manager.py",
+    "url": "https://github.com/vllm-project/vllm/blob/84e455367336b62547d1f1273e9b50bc7f8edb47/vllm/v1/core/kv_cache_manager.py",
+    "checked_at_utc": "2026-10-28T03:28:57.673743+00:00",
+    "command": [
+      "git",
+      "-C",
+      ".cache/upstream/vllm",
+      "show",
+      "84e455367336b62547d1f1273e9b50bc7f8edb47:vllm/v1/core/kv_cache_manager.py"
+    ],
+    "exit_code": 0,
+    "bytes": 40616,
+    "sha256": "b5d5e05187fcdad166e09e85ed87dae632d67cf4d2709002e150e2976dfad310"
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "branch": "main",
+    "commit": "84e455367336b62547d1f1273e9b50bc7f8edb47",
+    "path": "vllm/v1/core/kv_cache_coordinator.py",
+    "local_path": "evidence/upstream/vllm-project/vllm/vllm/v1/core/kv_cache_coordinator.py",
+    "url": "https://github.com/vllm-project/vllm/blob/84e455367336b62547d1f1273e9b50bc7f8edb47/vllm/v1/core/kv_cache_coordinator.py",
+    "checked_at_utc": "2026-10-28T03:28:57.719861+00:00",
+    "command": [
+      "git",
+      "-C",
+      ".cache/upstream/vllm",
+      "show",
+      "84e455367336b62547d1f1273e9b50bc7f8edb47:vllm/v1/core/kv_cache_coordinator.py"
+    ],
+    "exit_code": 0,
+    "bytes": 44620,
+    "sha256": "6bf7583c5fd3fb85a99437eb3d7f3eddd319314ff93737e847d071fda59383e3"
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "branch": "main",
+    "commit": "84e455367336b62547d1f1273e9b50bc7f8edb47",
+    "path": "vllm/v1/core/single_type_kv_cache_manager.py",
+    "local_path": "evidence/upstream/vllm-project/vllm/vllm/v1/core/single_type_kv_cache_manager.py",
+    "url": "https://github.com/vllm-project/vllm/blob/84e455367336b62547d1f1273e9b50bc7f8edb47/vllm/v1/core/single_type_kv_cache_manager.py",
+    "checked_at_utc": "2026-10-28T03:28:57.766891+00:00",
+    "command": [
+      "git",
+      "-C",
+      ".cache/upstream/vllm",
+      "show",
+      "84e455367336b62547d1f1273e9b50bc7f8edb47:vllm/v1/core/single_type_kv_cache_manager.py"
+    ],
+    "exit_code": 0,
+    "bytes": 118399,
+    "sha256": "4b8c34ff759855b94a5a3a4a3a1b4784077f27077539e01509c1b3f72e75455f"
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "branch": "main",
+    "commit": "84e455367336b62547d1f1273e9b50bc7f8edb47",
+    "path": "vllm/v1/core/block_pool.py",
+    "local_path": "evidence/upstream/vllm-project/vllm/vllm/v1/core/block_pool.py",
+    "url": "https://github.com/vllm-project/vllm/blob/84e455367336b62547d1f1273e9b50bc7f8edb47/vllm/v1/core/block_pool.py",
+    "checked_at_utc": "2026-10-28T03:28:57.812547+00:00",
+    "command": [
+      "git",
+      "-C",
+      ".cache/upstream/vllm",
+      "show",
+      "84e455367336b62547d1f1273e9b50bc7f8edb47:vllm/v1/core/block_pool.py"
+    ],
+    "exit_code": 0,
+    "bytes": 38330,
+    "sha256": "64d304d2b431a6ce9a0a0425610122354e1ac11b6aff1ca7d467d4218183774c"
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "branch": "main",
+    "commit": "84e455367336b62547d1f1273e9b50bc7f8edb47",
+    "path": "vllm/v1/worker/block_table.py",
+    "local_path": "evidence/upstream/vllm-project/vllm/vllm/v1/worker/block_table.py",
+    "url": "https://github.com/vllm-project/vllm/blob/84e455367336b62547d1f1273e9b50bc7f8edb47/vllm/v1/worker/block_table.py",
+    "checked_at_utc": "2026-10-28T03:28:57.861031+00:00",
+    "command": [
+      "git",
+      "-C",
+      ".cache/upstream/vllm",
+      "show",
+      "84e455367336b62547d1f1273e9b50bc7f8edb47:vllm/v1/worker/block_table.py"
+    ],
+    "exit_code": 0,
+    "bytes": 16157,
+    "sha256": "4068aea7336627f809def92f45401659d7c7c592d4da5dace6a11c90e7850c4a"
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "branch": "main",
+    "commit": "84e455367336b62547d1f1273e9b50bc7f8edb47",
+    "path": "vllm/v1/worker/gpu/block_table.py",
+    "local_path": "evidence/upstream/vllm-project/vllm/vllm/v1/worker/gpu/block_table.py",
+    "url": "https://github.com/vllm-project/vllm/blob/84e455367336b62547d1f1273e9b50bc7f8edb47/vllm/v1/worker/gpu/block_table.py",
+    "checked_at_utc": "2026-10-28T03:28:57.908083+00:00",
+    "command": [
+      "git",
+      "-C",
+      ".cache/upstream/vllm",
+      "show",
+      "84e455367336b62547d1f1273e9b50bc7f8edb47:vllm/v1/worker/gpu/block_table.py"
+    ],
+    "exit_code": 0,
+    "bytes": 17729,
+    "sha256": "3433729cad5aa5fceb312e0a8d9ffabb3f7327dbdd18966d576e64d090313020"
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "branch": "main",
+    "commit": "84e455367336b62547d1f1273e9b50bc7f8edb47",
+    "path": "vllm/v1/worker/gpu_model_runner.py",
+    "local_path": "evidence/upstream/vllm-project/vllm/vllm/v1/worker/gpu_model_runner.py",
+    "url": "https://github.com/vllm-project/vllm/blob/84e455367336b62547d1f1273e9b50bc7f8edb47/vllm/v1/worker/gpu_model_runner.py",
+    "checked_at_utc": "2026-10-28T03:28:57.957478+00:00",
+    "command": [
+      "git",
+      "-C",
+      ".cache/upstream/vllm",
+      "show",
+      "84e455367336b62547d1f1273e9b50bc7f8edb47:vllm/v1/worker/gpu_model_runner.py"
+    ],
+    "exit_code": 0,
+    "bytes": 318987,
+    "sha256": "3ba41733f7062b9b70801025ee263979a0b11b8c0cea418d5d18caa26de6524d"
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "branch": "main",
+    "commit": "84e455367336b62547d1f1273e9b50bc7f8edb47",
+    "path": "vllm/v1/attention/backends/flash_attn.py",
+    "local_path": "evidence/upstream/vllm-project/vllm/vllm/v1/attention/backends/flash_attn.py",
+    "url": "https://github.com/vllm-project/vllm/blob/84e455367336b62547d1f1273e9b50bc7f8edb47/vllm/v1/attention/backends/flash_attn.py",
+    "checked_at_utc": "2026-10-28T03:28:58.004532+00:00",
+    "command": [
+      "git",
+      "-C",
+      ".cache/upstream/vllm",
+      "show",
+      "84e455367336b62547d1f1273e9b50bc7f8edb47:vllm/v1/attention/backends/flash_attn.py"
+    ],
+    "exit_code": 0,
+    "bytes": 74270,
+    "sha256": "7991393d7895994550028637790145d03d1fe28586cac03aa2946ba13afc99c5"
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "branch": "main",
+    "commit": "84e455367336b62547d1f1273e9b50bc7f8edb47",
+    "path": "vllm/v1/attention/backends/fa_utils.py",
+    "local_path": "evidence/upstream/vllm-project/vllm/vllm/v1/attention/backends/fa_utils.py",
+    "url": "https://github.com/vllm-project/vllm/blob/84e455367336b62547d1f1273e9b50bc7f8edb47/vllm/v1/attention/backends/fa_utils.py",
+    "checked_at_utc": "2026-10-28T03:28:58.050359+00:00",
+    "command": [
+      "git",
+      "-C",
+      ".cache/upstream/vllm",
+      "show",
+      "84e455367336b62547d1f1273e9b50bc7f8edb47:vllm/v1/attention/backends/fa_utils.py"
+    ],
+    "exit_code": 0,
+    "bytes": 13782,
+    "sha256": "d2ab2c0bf1daea3a6b73481c9e4438833fcd1ee714fa66869d279ca552948cdf"
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "branch": "main",
+    "commit": "84e455367336b62547d1f1273e9b50bc7f8edb47",
+    "path": "vllm/_custom_ops.py",
+    "local_path": "evidence/upstream/vllm-project/vllm/vllm/_custom_ops.py",
+    "url": "https://github.com/vllm-project/vllm/blob/84e455367336b62547d1f1273e9b50bc7f8edb47/vllm/_custom_ops.py",
+    "checked_at_utc": "2026-10-28T03:28:58.096704+00:00",
+    "command": [
+      "git",
+      "-C",
+      ".cache/upstream/vllm",
+      "show",
+      "84e455367336b62547d1f1273e9b50bc7f8edb47:vllm/_custom_ops.py"
+    ],
+    "exit_code": 0,
+    "bytes": 143445,
+    "sha256": "1fa6c4801244f68ba6f2b4971f16cdccbbbaf59f36c7ad5fc87201eea4bac37e"
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "branch": "main",
+    "commit": "84e455367336b62547d1f1273e9b50bc7f8edb47",
+    "path": "csrc/cache_kernels.cu",
+    "local_path": "evidence/upstream/vllm-project/vllm/csrc/cache_kernels.cu",
+    "url": "https://github.com/vllm-project/vllm/blob/84e455367336b62547d1f1273e9b50bc7f8edb47/csrc/cache_kernels.cu",
+    "checked_at_utc": "2026-10-28T03:28:58.142275+00:00",
+    "command": [
+      "git",
+      "-C",
+      ".cache/upstream/vllm",
+      "show",
+      "84e455367336b62547d1f1273e9b50bc7f8edb47:csrc/cache_kernels.cu"
+    ],
+    "exit_code": 0,
+    "bytes": 94263,
+    "sha256": "fb793b07c312596e2c9480214127bfdd3ba58d71e3c1f63c50f6e908d7e1764f"
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "branch": "main",
+    "commit": "84e455367336b62547d1f1273e9b50bc7f8edb47",
+    "path": "vllm/v1/kv_cache_interface.py",
+    "local_path": "evidence/upstream/vllm-project/vllm/vllm/v1/kv_cache_interface.py",
+    "url": "https://github.com/vllm-project/vllm/blob/84e455367336b62547d1f1273e9b50bc7f8edb47/vllm/v1/kv_cache_interface.py",
+    "checked_at_utc": "2026-10-28T03:28:58.187439+00:00",
+    "command": [
+      "git",
+      "-C",
+      ".cache/upstream/vllm",
+      "show",
+      "84e455367336b62547d1f1273e9b50bc7f8edb47:vllm/v1/kv_cache_interface.py"
+    ],
+    "exit_code": 0,
+    "bytes": 65335,
+    "sha256": "1e0b5027cc13ed845488ff3f671292e6c57fcae99c5b7130ad92c9d176a38684"
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "branch": "main",
+    "commit": "84e455367336b62547d1f1273e9b50bc7f8edb47",
+    "path": "vllm/v1/worker/utils.py",
+    "local_path": "evidence/upstream/vllm-project/vllm/vllm/v1/worker/utils.py",
+    "url": "https://github.com/vllm-project/vllm/blob/84e455367336b62547d1f1273e9b50bc7f8edb47/vllm/v1/worker/utils.py",
+    "checked_at_utc": "2026-10-28T03:37:26.791870+00:00",
+    "command": [
+      "git",
+      "-C",
+      ".cache/upstream/vllm",
+      "show",
+      "84e455367336b62547d1f1273e9b50bc7f8edb47:vllm/v1/worker/utils.py"
+    ],
+    "exit_code": 0,
+    "bytes": 41545,
+    "sha256": "63da0e6e89099237d34698650d16652b2d3be776b765010e78b910fc733a089c"
+  }
+]

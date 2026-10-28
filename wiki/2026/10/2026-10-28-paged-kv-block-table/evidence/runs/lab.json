@@ -1,0 +1,54 @@
+{
+  "scope": "CPU logical paging and analytical bytes; not GPU memory or vLLM execution",
+  "address_example": [
+    12,
+    13,
+    14,
+    15,
+    20,
+    21,
+    22
+  ],
+  "page_accounting": {
+    "tokens": 8,
+    "blocks": 3,
+    "unused_slots": 4,
+    "content_bytes": 256,
+    "allocated_bytes": 384
+  },
+  "initial_interleaved_requests": {
+    "a_table": [
+      0,
+      3
+    ],
+    "b_table": [
+      1,
+      2
+    ],
+    "a_length": 7,
+    "free_blocks": 0
+  },
+  "failed_two_row_append_preserved_prefix": true,
+  "one_row_append_without_free_blocks": {
+    "length": 8,
+    "table": [
+      0,
+      3
+    ],
+    "free_blocks": 0
+  },
+  "after_release_and_reuse": {
+    "a_table": [
+      0,
+      3,
+      1
+    ],
+    "a_length": 9,
+    "new_slots": [
+      4
+    ],
+    "free_blocks": 1
+  },
+  "decode_sdpa_max_abs_difference": 0.0,
+  "no_gpu_timing_or_memory_measurement": true
+}

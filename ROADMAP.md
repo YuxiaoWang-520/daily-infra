@@ -18,7 +18,7 @@
 | 10 | [Attention 的计算与中间张量从哪里来，为什么需要分块？](wiki/2026/10/2026-10-23-attention-online-softmax/README.md) | 基础 Attention、online softmax 与 FlashAttention |
 | 11 | [生成一个 token 时，哪些数据可以复用？](wiki/2026/10/2026-10-26-prefill-decode-kv-cache/README.md) | 自回归生成、Prefill／Decode 与 KV Cache 生命周期 |
 | 12 | [KV Cache 怎么算大小，MHA、GQA、MQA 各改变了什么？](wiki/2026/10/2026-10-27-kv-cache-capacity-gqa/README.md) | 长上下文、并发容量与模型结构选择 |
-| 13 | KV Cache 为什么需要分页，逻辑 token 怎样找到物理块？ | 推理引擎的块管理、碎片与地址映射 |
+| 13 | [KV Cache 为什么需要分页，逻辑 token 怎样找到物理块？](wiki/2026/10/2026-10-28-paged-kv-block-table/README.md) | 推理引擎的块管理、碎片与地址映射 |
 | 14 | 请求为何需要逐步调度，batch 大小由什么决定？ | continuous batching、TTFT、ITL 与吞吐权衡 |
 | 15 | 长 Prompt 为什么会干扰其他请求，如何拆分 Prefill？ | chunked prefill、调度预算与尾延迟 |
 | 16 | 多个请求什么时候能安全复用同一段前缀？ | prefix caching、命中条件、隔离与失效 |
