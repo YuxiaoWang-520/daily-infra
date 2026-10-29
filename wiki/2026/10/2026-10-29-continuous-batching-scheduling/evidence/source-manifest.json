@@ -1,0 +1,189 @@
+[
+  {
+    "repo": "vllm-project/vllm",
+    "branch": "main",
+    "commit": "0c81a0371f586cc50a0daad6d216fbac21cf1a2d",
+    "path": "LICENSE",
+    "local_path": "evidence/upstream/vllm-project/vllm/LICENSE",
+    "url": "https://github.com/vllm-project/vllm/blob/0c81a0371f586cc50a0daad6d216fbac21cf1a2d/LICENSE",
+    "checked_at_utc": "2026-10-29T03:09:17.328429+00:00",
+    "command": [
+      "git",
+      "show",
+      "0c81a0371f586cc50a0daad6d216fbac21cf1a2d:LICENSE"
+    ],
+    "exit_code": 0,
+    "bytes": 11357,
+    "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "branch": "main",
+    "commit": "0c81a0371f586cc50a0daad6d216fbac21cf1a2d",
+    "path": "vllm/config/scheduler.py",
+    "local_path": "evidence/upstream/vllm-project/vllm/vllm/config/scheduler.py",
+    "url": "https://github.com/vllm-project/vllm/blob/0c81a0371f586cc50a0daad6d216fbac21cf1a2d/vllm/config/scheduler.py",
+    "checked_at_utc": "2026-10-29T03:09:17.328429+00:00",
+    "command": [
+      "git",
+      "show",
+      "0c81a0371f586cc50a0daad6d216fbac21cf1a2d:vllm/config/scheduler.py"
+    ],
+    "exit_code": 0,
+    "bytes": 16301,
+    "sha256": "61485c7a1ef1c7c65339767f4b223f55de76d2ca152eb19df915c88f526be9de"
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "branch": "main",
+    "commit": "0c81a0371f586cc50a0daad6d216fbac21cf1a2d",
+    "path": "vllm/v1/core/sched/scheduler.py",
+    "local_path": "evidence/upstream/vllm-project/vllm/vllm/v1/core/sched/scheduler.py",
+    "url": "https://github.com/vllm-project/vllm/blob/0c81a0371f586cc50a0daad6d216fbac21cf1a2d/vllm/v1/core/sched/scheduler.py",
+    "checked_at_utc": "2026-10-29T03:09:17.328429+00:00",
+    "command": [
+      "git",
+      "show",
+      "0c81a0371f586cc50a0daad6d216fbac21cf1a2d:vllm/v1/core/sched/scheduler.py"
+    ],
+    "exit_code": 0,
+    "bytes": 180137,
+    "sha256": "ae6bba121cd9d000bbbeccffd44476c53c742bad759ed7202619644b73b82818"
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "branch": "main",
+    "commit": "0c81a0371f586cc50a0daad6d216fbac21cf1a2d",
+    "path": "vllm/v1/core/sched/output.py",
+    "local_path": "evidence/upstream/vllm-project/vllm/vllm/v1/core/sched/output.py",
+    "url": "https://github.com/vllm-project/vllm/blob/0c81a0371f586cc50a0daad6d216fbac21cf1a2d/vllm/v1/core/sched/output.py",
+    "checked_at_utc": "2026-10-29T03:09:17.328429+00:00",
+    "command": [
+      "git",
+      "show",
+      "0c81a0371f586cc50a0daad6d216fbac21cf1a2d:vllm/v1/core/sched/output.py"
+    ],
+    "exit_code": 0,
+    "bytes": 13828,
+    "sha256": "f2d5b52a3869472c3c66d31bb0960e9a328d59e7271bc1e2c9d7f3ba72d8c62a"
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "branch": "main",
+    "commit": "0c81a0371f586cc50a0daad6d216fbac21cf1a2d",
+    "path": "vllm/v1/core/sched/utils.py",
+    "local_path": "evidence/upstream/vllm-project/vllm/vllm/v1/core/sched/utils.py",
+    "url": "https://github.com/vllm-project/vllm/blob/0c81a0371f586cc50a0daad6d216fbac21cf1a2d/vllm/v1/core/sched/utils.py",
+    "checked_at_utc": "2026-10-29T03:09:17.328429+00:00",
+    "command": [
+      "git",
+      "show",
+      "0c81a0371f586cc50a0daad6d216fbac21cf1a2d:vllm/v1/core/sched/utils.py"
+    ],
+    "exit_code": 0,
+    "bytes": 4355,
+    "sha256": "b6583424b6da15000545cd926ec887ee591bae8a56e6734b8ddf8f9e8f90cc4b"
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "branch": "main",
+    "commit": "0c81a0371f586cc50a0daad6d216fbac21cf1a2d",
+    "path": "vllm/v1/core/kv_cache_manager.py",
+    "local_path": "evidence/upstream/vllm-project/vllm/vllm/v1/core/kv_cache_manager.py",
+    "url": "https://github.com/vllm-project/vllm/blob/0c81a0371f586cc50a0daad6d216fbac21cf1a2d/vllm/v1/core/kv_cache_manager.py",
+    "checked_at_utc": "2026-10-29T03:09:17.328429+00:00",
+    "command": [
+      "git",
+      "show",
+      "0c81a0371f586cc50a0daad6d216fbac21cf1a2d:vllm/v1/core/kv_cache_manager.py"
+    ],
+    "exit_code": 0,
+    "bytes": 40616,
+    "sha256": "b5d5e05187fcdad166e09e85ed87dae632d67cf4d2709002e150e2976dfad310"
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "branch": "main",
+    "commit": "0c81a0371f586cc50a0daad6d216fbac21cf1a2d",
+    "path": "vllm/v1/engine/core.py",
+    "local_path": "evidence/upstream/vllm-project/vllm/vllm/v1/engine/core.py",
+    "url": "https://github.com/vllm-project/vllm/blob/0c81a0371f586cc50a0daad6d216fbac21cf1a2d/vllm/v1/engine/core.py",
+    "checked_at_utc": "2026-10-29T03:09:17.328429+00:00",
+    "command": [
+      "git",
+      "show",
+      "0c81a0371f586cc50a0daad6d216fbac21cf1a2d:vllm/v1/engine/core.py"
+    ],
+    "exit_code": 0,
+    "bytes": 124567,
+    "sha256": "3b2e67f1a02759439867daa29f9b60817b66cf4babb94637d99ba860f52b14d8"
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "branch": "main",
+    "commit": "0c81a0371f586cc50a0daad6d216fbac21cf1a2d",
+    "path": "vllm/v1/metrics/stats.py",
+    "local_path": "evidence/upstream/vllm-project/vllm/vllm/v1/metrics/stats.py",
+    "url": "https://github.com/vllm-project/vllm/blob/0c81a0371f586cc50a0daad6d216fbac21cf1a2d/vllm/v1/metrics/stats.py",
+    "checked_at_utc": "2026-10-29T03:09:17.328429+00:00",
+    "command": [
+      "git",
+      "show",
+      "0c81a0371f586cc50a0daad6d216fbac21cf1a2d:vllm/v1/metrics/stats.py"
+    ],
+    "exit_code": 0,
+    "bytes": 25244,
+    "sha256": "5c925d3c9ba8b81c52eac9cff74a2fe468d14cf710b581ab7eb5ca848450e4a6"
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "branch": "main",
+    "commit": "0c81a0371f586cc50a0daad6d216fbac21cf1a2d",
+    "path": "vllm/v1/metrics/loggers.py",
+    "local_path": "evidence/upstream/vllm-project/vllm/vllm/v1/metrics/loggers.py",
+    "url": "https://github.com/vllm-project/vllm/blob/0c81a0371f586cc50a0daad6d216fbac21cf1a2d/vllm/v1/metrics/loggers.py",
+    "checked_at_utc": "2026-10-29T03:09:17.328429+00:00",
+    "command": [
+      "git",
+      "show",
+      "0c81a0371f586cc50a0daad6d216fbac21cf1a2d:vllm/v1/metrics/loggers.py"
+    ],
+    "exit_code": 0,
+    "bytes": 59481,
+    "sha256": "a17291f044251f1586457b6bd1542f98660724dd07a426d61ce852186b95b9e1"
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "branch": "main",
+    "commit": "0c81a0371f586cc50a0daad6d216fbac21cf1a2d",
+    "path": "docs/configuration/optimization.md",
+    "local_path": "evidence/upstream/vllm-project/vllm/docs/configuration/optimization.md",
+    "url": "https://github.com/vllm-project/vllm/blob/0c81a0371f586cc50a0daad6d216fbac21cf1a2d/docs/configuration/optimization.md",
+    "checked_at_utc": "2026-10-29T03:09:17.328429+00:00",
+    "command": [
+      "git",
+      "show",
+      "0c81a0371f586cc50a0daad6d216fbac21cf1a2d:docs/configuration/optimization.md"
+    ],
+    "exit_code": 0,
+    "bytes": 27402,
+    "sha256": "ce3ab7d6af298815fc4807f2a2d54640489c131a5b248993a5fe828678390b21"
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "branch": "main",
+    "commit": "0c81a0371f586cc50a0daad6d216fbac21cf1a2d",
+    "path": "docs/design/metrics.md",
+    "local_path": "evidence/upstream/vllm-project/vllm/docs/design/metrics.md",
+    "url": "https://github.com/vllm-project/vllm/blob/0c81a0371f586cc50a0daad6d216fbac21cf1a2d/docs/design/metrics.md",
+    "checked_at_utc": "2026-10-29T03:09:17.328429+00:00",
+    "command": [
+      "git",
+      "show",
+      "0c81a0371f586cc50a0daad6d216fbac21cf1a2d:docs/design/metrics.md"
+    ],
+    "exit_code": 0,
+    "bytes": 34124,
+    "sha256": "e4ca429054a5d90780e347a5d654a67fddf06e6545e6d852cdf5f6b8c29ba22b"
+  }
+]

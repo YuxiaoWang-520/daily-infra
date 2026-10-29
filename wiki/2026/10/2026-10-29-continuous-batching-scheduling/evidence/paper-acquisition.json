@@ -1,0 +1,43 @@
+{
+  "title": "Orca: A Distributed Serving System for Transformer-Based Generative Models",
+  "authors": [
+    "Gyeong-In Yu",
+    "Joo Seong Jeong",
+    "Geon-Woo Kim",
+    "Soojeong Kim",
+    "Byung-Gon Chun"
+  ],
+  "publisher": "USENIX",
+  "publication": "OSDI 2022, July, pp. 521-538",
+  "url": "https://www.usenix.org/conference/osdi22/presentation/yu",
+  "pdf_url": "https://www.usenix.org/system/files/osdi22-yu.pdf",
+  "checked_at_utc": "2026-10-29T03:09:17.328429+00:00",
+  "command": [
+    "curl",
+    "-L",
+    "--fail",
+    "--connect-timeout",
+    "10",
+    "--max-time",
+    "45",
+    "https://www.usenix.org/system/files/osdi22-yu.pdf",
+    "-o",
+    ".cache/research14/orca-osdi22.pdf"
+  ],
+  "exit_code": 0,
+  "bytes": 3906936,
+  "sha256": "b8038438ad8ff99bb131c1a6e16f7df10cf2f962aeb1bf4f1c00cc37e70658ca",
+  "cache_path": ".cache/research14/orca-osdi22.pdf",
+  "extraction_command": [
+    "/opt/homebrew/bin/pdftotext",
+    "-layout",
+    ".cache/research14/orca-osdi22.pdf",
+    ".cache/research14/orca-osdi22.txt"
+  ],
+  "extract_exit_code": 0,
+  "read_sections": [
+    "Section 3, Figures 3-5, pp. 524-526",
+    "Section 4.2, Algorithm 1, p. 528"
+  ],
+  "redistribution": "Original PDF kept in ignored research cache; only original reading notes and publisher locator committed."
+}

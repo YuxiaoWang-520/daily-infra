@@ -1,0 +1,28 @@
+test_empty_waiting_preserves_running_work (test_answers.AdmissionTests) ... ok
+test_exact_limits_fit (test_answers.AdmissionTests) ... ok
+test_failed_admission_does_not_charge_budget (test_answers.AdmissionTests) ... ok
+test_fcfs_does_not_skip_large_head (test_answers.AdmissionTests) ... ok
+test_inputs_unchanged_and_repeatable (test_answers.AdmissionTests) ... ok
+test_invalid_counts_and_infeasible_running_work (test_answers.AdmissionTests) ... ok
+test_kv_limit_uses_ceil_division (test_answers.AdmissionTests) ... ok
+test_no_request_slot_or_no_blocks (test_answers.AdmissionTests) ... ok
+test_sequence_limit_binds_with_large_token_budget (test_answers.AdmissionTests) ... ok
+test_token_budget_binds_before_request_capacity (test_answers.AdmissionTests) ... ok
+test_zero_running_requests (test_answers.AdmissionTests) ... ok
+test_arrival_order_and_stable_ties (test_answers.SchedulingTests) ... ok
+test_capacity_one_has_same_schedule (test_answers.SchedulingTests) ... ok
+test_continuous_trace (test_answers.SchedulingTests) ... ok
+test_duplicate_ids_rejected (test_answers.SchedulingTests) ... ok
+test_empty_input (test_answers.SchedulingTests) ... ok
+test_future_arrival_waits_for_next_boundary (test_answers.SchedulingTests) ... ok
+test_generated_cases_conserve_outputs_and_capacity (test_answers.SchedulingTests) ... ok
+test_idle_time_is_not_erased (test_answers.SchedulingTests) ... ok
+test_invalid_inputs_rejected (test_answers.SchedulingTests) ... ok
+test_simulation_preserves_mutable_input (test_answers.SchedulingTests) ... ok
+test_static_late_joiner_waits_for_batch (test_answers.SchedulingTests) ... ok
+test_static_trace (test_answers.SchedulingTests) ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 0.004s
+
+OK
