@@ -18,8 +18,9 @@
 | 12 | 2026-10-27 | [KV Cache 怎么算大小，MHA、GQA、MQA 各改变了什么？](2026/10/2026-10-27-kv-cache-capacity-gqa/README.md) | KV 容量、分组 Attention、缓存 dtype 与 TP 复制 | 第 03、10—11 篇 |
 | 13 | 2026-10-28 | [KV Cache 为什么需要分页，逻辑 token 怎样找到物理块？](2026/10/2026-10-28-paged-kv-block-table/README.md) | 分页 KV、块表、槽映射、页尾余量与回收复用 | 第 10—12 篇 |
 | 14 | 2026-10-29 | [请求为何需要逐步调度，batch 大小由什么决定？](2026/10/2026-10-29-continuous-batching-scheduling/README.md) | 连续批处理、请求准入、token 预算、KV 容量与延迟口径 | 第 11—13 篇 |
+| 15 | 2026-10-30 | [长 Prompt 为什么会干扰其他请求，如何拆分 Prefill？](2026/10/2026-10-30-chunked-prefill-interference/README.md) | 分块 Prefill、跨块因果关系、token 预算与 TTFT／ITL 取舍 | 第 10—11、13—14 篇 |
 
-下一篇候选：长 Prompt 为什么会干扰其他请求，如何拆分 Prefill？
+下一篇候选：多个请求什么时候能安全复用同一段前缀？
 
 2026-10-22 起按用户要求集中完成起步前 10 篇，使用实际归档日期；日常定时任务仍按工作日每天一篇执行。范围见 [本次任务说明](../docs/BOOTSTRAP10.md)。
 

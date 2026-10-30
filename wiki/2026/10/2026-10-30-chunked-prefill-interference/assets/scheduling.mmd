@@ -1,0 +1,15 @@
+flowchart LR
+  subgraph Whole[整段进入一轮：T = 18]
+    direction TB
+    W0[时刻 0：三条请求就绪] --> W1[18 ms：A／B 新输出；C 首字]
+    W1 --> W2[20 ms：A／B 新输出]
+    W2 --> W3[22 ms：A／B 新输出]
+    W3 --> W4[24 ms：A／B 新输出]
+  end
+  subgraph Chunked[分四轮处理：T = 6]
+    direction TB
+    C0[时刻 0：三条请求就绪] --> C1[6 ms：A／B 新输出；C 已处理 4]
+    C1 --> C2[12 ms：A／B 新输出；C 已处理 8]
+    C2 --> C3[18 ms：A／B 新输出；C 已处理 12]
+    C3 --> C4[24 ms：A／B 新输出；C 首字]
+  end

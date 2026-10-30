@@ -1,0 +1,223 @@
+[
+  {
+    "repo": "vllm-project/vllm",
+    "branch": "main",
+    "commit": "e49ea84e929e3d48a2bc500454dfcd4377f9a722",
+    "path": "LICENSE",
+    "local_path": "evidence/upstream/vllm-project/vllm/LICENSE",
+    "url": "https://github.com/vllm-project/vllm/blob/e49ea84e929e3d48a2bc500454dfcd4377f9a722/LICENSE",
+    "checked_at_utc": "2026-10-30T03:15:25.275796+00:00",
+    "command": [
+      "git",
+      "show",
+      "e49ea84e929e3d48a2bc500454dfcd4377f9a722:LICENSE"
+    ],
+    "exit_code": 0,
+    "bytes": 11357,
+    "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "branch": "main",
+    "commit": "e49ea84e929e3d48a2bc500454dfcd4377f9a722",
+    "path": "vllm/config/scheduler.py",
+    "local_path": "evidence/upstream/vllm-project/vllm/vllm/config/scheduler.py",
+    "url": "https://github.com/vllm-project/vllm/blob/e49ea84e929e3d48a2bc500454dfcd4377f9a722/vllm/config/scheduler.py",
+    "checked_at_utc": "2026-10-30T03:15:25.275796+00:00",
+    "command": [
+      "git",
+      "show",
+      "e49ea84e929e3d48a2bc500454dfcd4377f9a722:vllm/config/scheduler.py"
+    ],
+    "exit_code": 0,
+    "bytes": 16301,
+    "sha256": "61485c7a1ef1c7c65339767f4b223f55de76d2ca152eb19df915c88f526be9de"
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "branch": "main",
+    "commit": "e49ea84e929e3d48a2bc500454dfcd4377f9a722",
+    "path": "vllm/v1/core/sched/scheduler.py",
+    "local_path": "evidence/upstream/vllm-project/vllm/vllm/v1/core/sched/scheduler.py",
+    "url": "https://github.com/vllm-project/vllm/blob/e49ea84e929e3d48a2bc500454dfcd4377f9a722/vllm/v1/core/sched/scheduler.py",
+    "checked_at_utc": "2026-10-30T03:15:25.275796+00:00",
+    "command": [
+      "git",
+      "show",
+      "e49ea84e929e3d48a2bc500454dfcd4377f9a722:vllm/v1/core/sched/scheduler.py"
+    ],
+    "exit_code": 0,
+    "bytes": 179782,
+    "sha256": "18199b804ce496d889852395a2b5e2e2acd776571cfcd0e15a7a611cd34e1c2a"
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "branch": "main",
+    "commit": "e49ea84e929e3d48a2bc500454dfcd4377f9a722",
+    "path": "vllm/v1/core/sched/output.py",
+    "local_path": "evidence/upstream/vllm-project/vllm/vllm/v1/core/sched/output.py",
+    "url": "https://github.com/vllm-project/vllm/blob/e49ea84e929e3d48a2bc500454dfcd4377f9a722/vllm/v1/core/sched/output.py",
+    "checked_at_utc": "2026-10-30T03:15:25.275796+00:00",
+    "command": [
+      "git",
+      "show",
+      "e49ea84e929e3d48a2bc500454dfcd4377f9a722:vllm/v1/core/sched/output.py"
+    ],
+    "exit_code": 0,
+    "bytes": 13465,
+    "sha256": "57fe0c71d054d7f2c54669669255b56542b833706cec9634ccc9347411a44b02"
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "branch": "main",
+    "commit": "e49ea84e929e3d48a2bc500454dfcd4377f9a722",
+    "path": "vllm/v1/core/kv_cache_manager.py",
+    "local_path": "evidence/upstream/vllm-project/vllm/vllm/v1/core/kv_cache_manager.py",
+    "url": "https://github.com/vllm-project/vllm/blob/e49ea84e929e3d48a2bc500454dfcd4377f9a722/vllm/v1/core/kv_cache_manager.py",
+    "checked_at_utc": "2026-10-30T03:15:25.275796+00:00",
+    "command": [
+      "git",
+      "show",
+      "e49ea84e929e3d48a2bc500454dfcd4377f9a722:vllm/v1/core/kv_cache_manager.py"
+    ],
+    "exit_code": 0,
+    "bytes": 40616,
+    "sha256": "b5d5e05187fcdad166e09e85ed87dae632d67cf4d2709002e150e2976dfad310"
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "branch": "main",
+    "commit": "e49ea84e929e3d48a2bc500454dfcd4377f9a722",
+    "path": "vllm/v1/engine/core.py",
+    "local_path": "evidence/upstream/vllm-project/vllm/vllm/v1/engine/core.py",
+    "url": "https://github.com/vllm-project/vllm/blob/e49ea84e929e3d48a2bc500454dfcd4377f9a722/vllm/v1/engine/core.py",
+    "checked_at_utc": "2026-10-30T03:15:25.275796+00:00",
+    "command": [
+      "git",
+      "show",
+      "e49ea84e929e3d48a2bc500454dfcd4377f9a722:vllm/v1/engine/core.py"
+    ],
+    "exit_code": 0,
+    "bytes": 124567,
+    "sha256": "3b2e67f1a02759439867daa29f9b60817b66cf4babb94637d99ba860f52b14d8"
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "branch": "main",
+    "commit": "e49ea84e929e3d48a2bc500454dfcd4377f9a722",
+    "path": "vllm/v1/worker/gpu_worker.py",
+    "local_path": "evidence/upstream/vllm-project/vllm/vllm/v1/worker/gpu_worker.py",
+    "url": "https://github.com/vllm-project/vllm/blob/e49ea84e929e3d48a2bc500454dfcd4377f9a722/vllm/v1/worker/gpu_worker.py",
+    "checked_at_utc": "2026-10-30T03:15:25.275796+00:00",
+    "command": [
+      "git",
+      "show",
+      "e49ea84e929e3d48a2bc500454dfcd4377f9a722:vllm/v1/worker/gpu_worker.py"
+    ],
+    "exit_code": 0,
+    "bytes": 73864,
+    "sha256": "f7985d749e550c2f4af97a16c03fe890f6d231064ab164c77935b6001b770e6e"
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "branch": "main",
+    "commit": "e49ea84e929e3d48a2bc500454dfcd4377f9a722",
+    "path": "vllm/v1/worker/gpu_model_runner.py",
+    "local_path": "evidence/upstream/vllm-project/vllm/vllm/v1/worker/gpu_model_runner.py",
+    "url": "https://github.com/vllm-project/vllm/blob/e49ea84e929e3d48a2bc500454dfcd4377f9a722/vllm/v1/worker/gpu_model_runner.py",
+    "checked_at_utc": "2026-10-30T03:15:25.275796+00:00",
+    "command": [
+      "git",
+      "show",
+      "e49ea84e929e3d48a2bc500454dfcd4377f9a722:vllm/v1/worker/gpu_model_runner.py"
+    ],
+    "exit_code": 0,
+    "bytes": 318987,
+    "sha256": "3ba41733f7062b9b70801025ee263979a0b11b8c0cea418d5d18caa26de6524d"
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "branch": "main",
+    "commit": "e49ea84e929e3d48a2bc500454dfcd4377f9a722",
+    "path": "vllm/v1/attention/backends/flash_attn.py",
+    "local_path": "evidence/upstream/vllm-project/vllm/vllm/v1/attention/backends/flash_attn.py",
+    "url": "https://github.com/vllm-project/vllm/blob/e49ea84e929e3d48a2bc500454dfcd4377f9a722/vllm/v1/attention/backends/flash_attn.py",
+    "checked_at_utc": "2026-10-30T03:15:25.275796+00:00",
+    "command": [
+      "git",
+      "show",
+      "e49ea84e929e3d48a2bc500454dfcd4377f9a722:vllm/v1/attention/backends/flash_attn.py"
+    ],
+    "exit_code": 0,
+    "bytes": 74270,
+    "sha256": "7991393d7895994550028637790145d03d1fe28586cac03aa2946ba13afc99c5"
+  },
+  {
+    "repo": "vllm-project/vllm",
+    "branch": "main",
+    "commit": "e49ea84e929e3d48a2bc500454dfcd4377f9a722",
+    "path": "docs/configuration/optimization.md",
+    "local_path": "evidence/upstream/vllm-project/vllm/docs/configuration/optimization.md",
+    "url": "https://github.com/vllm-project/vllm/blob/e49ea84e929e3d48a2bc500454dfcd4377f9a722/docs/configuration/optimization.md",
+    "checked_at_utc": "2026-10-30T03:15:25.275796+00:00",
+    "command": [
+      "git",
+      "show",
+      "e49ea84e929e3d48a2bc500454dfcd4377f9a722:docs/configuration/optimization.md"
+    ],
+    "exit_code": 0,
+    "bytes": 27402,
+    "sha256": "ce3ab7d6af298815fc4807f2a2d54640489c131a5b248993a5fe828678390b21"
+  },
+  {
+    "repo": "microsoft/sarathi-serve",
+    "branch": "main",
+    "commit": "96f9911790ecc00af12ee9fae47cb8fa9ba0d199",
+    "path": "LICENSE",
+    "local_path": "evidence/upstream/microsoft/sarathi-serve/LICENSE",
+    "url": "https://github.com/microsoft/sarathi-serve/blob/96f9911790ecc00af12ee9fae47cb8fa9ba0d199/LICENSE",
+    "checked_at_utc": "2026-10-30T03:15:25.275796+00:00",
+    "command": [
+      "git",
+      "show",
+      "96f9911790ecc00af12ee9fae47cb8fa9ba0d199:LICENSE"
+    ],
+    "exit_code": 0,
+    "bytes": 11357,
+    "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+  },
+  {
+    "repo": "microsoft/sarathi-serve",
+    "branch": "main",
+    "commit": "96f9911790ecc00af12ee9fae47cb8fa9ba0d199",
+    "path": "sarathi/core/scheduler/sarathi_scheduler.py",
+    "local_path": "evidence/upstream/microsoft/sarathi-serve/sarathi/core/scheduler/sarathi_scheduler.py",
+    "url": "https://github.com/microsoft/sarathi-serve/blob/96f9911790ecc00af12ee9fae47cb8fa9ba0d199/sarathi/core/scheduler/sarathi_scheduler.py",
+    "checked_at_utc": "2026-10-30T03:15:25.275796+00:00",
+    "command": [
+      "git",
+      "show",
+      "96f9911790ecc00af12ee9fae47cb8fa9ba0d199:sarathi/core/scheduler/sarathi_scheduler.py"
+    ],
+    "exit_code": 0,
+    "bytes": 9880,
+    "sha256": "4cfc1208342cad49a7d854df357c1f922b3d280b659f6bf1add1b28f363e877a"
+  },
+  {
+    "repo": "microsoft/sarathi-serve",
+    "branch": "main",
+    "commit": "96f9911790ecc00af12ee9fae47cb8fa9ba0d199",
+    "path": "sarathi/config/config.py",
+    "local_path": "evidence/upstream/microsoft/sarathi-serve/sarathi/config/config.py",
+    "url": "https://github.com/microsoft/sarathi-serve/blob/96f9911790ecc00af12ee9fae47cb8fa9ba0d199/sarathi/config/config.py",
+    "checked_at_utc": "2026-10-30T03:15:25.275796+00:00",
+    "command": [
+      "git",
+      "show",
+      "96f9911790ecc00af12ee9fae47cb8fa9ba0d199:sarathi/config/config.py"
+    ],
+    "exit_code": 0,
+    "bytes": 15016,
+    "sha256": "3dc4dd78944a49690bef2ae5b463aaa945c95a7d871ea27dbd4f04450d924d2d"
+  }
+]

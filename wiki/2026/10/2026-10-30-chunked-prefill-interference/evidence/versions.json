@@ -1,0 +1,64 @@
+{
+  "checked_at_utc": "2026-10-30T03:15:25.275796+00:00",
+  "timezone": "Asia/Shanghai",
+  "repositories": [
+    {
+      "repository": "vllm-project/vllm",
+      "official_remote": "https://github.com/vllm-project/vllm.git",
+      "default_branch": "main",
+      "commit": "e49ea84e929e3d48a2bc500454dfcd4377f9a722",
+      "commit_time": "2026-10-29T21:53:35-05:00",
+      "update": {
+        "at_utc": "2026-10-30T03:07:15.273239+00:00",
+        "before": "0c81a0371f586cc50a0daad6d216fbac21cf1a2d",
+        "after": "e49ea84e929e3d48a2bc500454dfcd4377f9a722",
+        "fetch_command": [
+          "git",
+          "fetch",
+          "--depth=1",
+          "origin",
+          "main"
+        ],
+        "fetch_exit": 0,
+        "fetch_output": "From https://github.com/vllm-project/vllm\n * branch            main       -> FETCH_HEAD\n + 0c81a03...e49ea84 main       -> origin/main  (forced update)\n",
+        "checkout_command": [
+          "git",
+          "switch",
+          "--detach",
+          "origin/main"
+        ],
+        "checkout_exit": 0,
+        "checkout_output": "Warning: you are leaving 1 commit behind, not connected to\nany of your branches:\n\n  0c81a03 [KV Connector][NIXL] Add a ucx_backend_params key for UCX backend init params (#62905)\n\nIf you want to keep it by creating a new branch, this may be a good time\nto do so with:\n\n git branch <new-branch-name> 0c81a03\n\nHEAD is now at e49ea84 [ROCm][Perf][DSv4.1] Build the SWA decode metadata in one launch  (#63885)\n"
+      }
+    },
+    {
+      "repository": "microsoft/sarathi-serve",
+      "official_remote": "https://github.com/microsoft/sarathi-serve.git",
+      "default_branch": "main",
+      "commit": "96f9911790ecc00af12ee9fae47cb8fa9ba0d199",
+      "commit_time": "2026-01-08T10:40:57+05:30",
+      "update": {
+        "at_utc": "2026-10-30T03:12:13.250312+00:00",
+        "command": [
+          "git",
+          "clone",
+          "--depth=1",
+          "--filter=blob:none",
+          "--sparse",
+          "https://github.com/microsoft/sarathi-serve.git",
+          ".cache/upstream/sarathi-serve"
+        ],
+        "exit_code": 0,
+        "output": "Cloning into '.cache/upstream/sarathi-serve'...\nUpdating files:  13% (2/15)\nUpdating files:  20% (3/15)\nUpdating files:  26% (4/15)\nUpdating files:  33% (5/15)\nUpdating files:  40% (6/15)\nUpdating files:  46% (7/15)\nUpdating files:  53% (8/15)\nUpdating files:  60% (9/15)\nUpdating files:  66% (10/15)\nUpdating files:  73% (11/15)\nUpdating files:  80% (12/15)\nUpdating files:  86% (13/15)\nUpdating files:  93% (14/15)\nUpdating files: 100% (15/15)\nUpdating files: 100% (15/15), done.\n",
+        "commit": "96f9911790ecc00af12ee9fae47cb8fa9ba0d199"
+      }
+    }
+  ],
+  "vllm_latest_release_observed": {
+    "tag": "v0.32.0",
+    "published_at": "2026-10-18T06:50:48Z",
+    "url": "https://github.com/vllm-project/vllm/releases/tag/v0.32.0",
+    "commit": "5df63a7203cdb9328d824a27b682e77c7b9928be"
+  },
+  "scope": "Current main source reading only. Stable vLLM release metadata checked, stable implementation not separately analyzed. Upstream engines not installed or executed."
+}

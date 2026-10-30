@@ -1,0 +1,25 @@
+test_explicit_cpu_inputs_ignore_default_device (test_answers.AttentionTests) ... ok
+test_fp32_matches_with_explicit_tolerance (test_answers.AttentionTests) ... ok
+test_fp64_matches_full_sdpa_across_chunk_boundaries (test_answers.AttentionTests) ... ok
+test_future_values_do_not_leak_to_earlier_queries (test_answers.AttentionTests) ... ok
+test_inputs_are_not_modified (test_answers.AttentionTests) ... ok
+test_invalid_chunk_sizes (test_answers.AttentionTests) ... ok
+test_invalid_dtype_device_or_nonfinite_values (test_answers.AttentionTests) ... ok
+test_invalid_shapes (test_answers.AttentionTests) ... ok
+test_local_triangular_mask_is_a_real_counterexample (test_answers.AttentionTests) ... ok
+test_noncontiguous_inputs (test_answers.AttentionTests) ... ok
+test_uniform_attention_has_hand_computed_prefix_means (test_answers.AttentionTests) ... ok
+test_value_width_may_differ_from_query_width (test_answers.AttentionTests) ... ok
+test_chunk_size_grows_when_decodes_finish (test_answers.SchedulingTests) ... ok
+test_equal_budget_defers_prefill_until_decodes_finish (test_answers.SchedulingTests) ... ok
+test_full_prefill_uses_one_long_mixed_round (test_answers.SchedulingTests) ... ok
+test_generated_cases_conserve_work_and_global_budget (test_answers.SchedulingTests) ... ok
+test_invalid_or_infeasible_inputs (test_answers.SchedulingTests) ... ok
+test_medium_budget_interleaves_four_chunks (test_answers.SchedulingTests) ... ok
+test_no_decode_requests (test_answers.SchedulingTests) ... ok
+test_short_prompt_outputs_at_its_completion_only (test_answers.SchedulingTests) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.035s
+
+OK

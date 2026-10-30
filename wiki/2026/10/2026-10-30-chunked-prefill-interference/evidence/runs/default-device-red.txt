@@ -1,0 +1,53 @@
+test_explicit_cpu_inputs_ignore_default_device (test_answers.AttentionTests) ... ERROR
+test_fp32_matches_with_explicit_tolerance (test_answers.AttentionTests) ... ok
+test_fp64_matches_full_sdpa_across_chunk_boundaries (test_answers.AttentionTests) ... ok
+test_future_values_do_not_leak_to_earlier_queries (test_answers.AttentionTests) ... ok
+test_inputs_are_not_modified (test_answers.AttentionTests) ... ok
+test_invalid_chunk_sizes (test_answers.AttentionTests) ... ok
+test_invalid_dtype_device_or_nonfinite_values (test_answers.AttentionTests) ... ok
+test_invalid_shapes (test_answers.AttentionTests) ... ok
+test_local_triangular_mask_is_a_real_counterexample (test_answers.AttentionTests) ... ok
+test_noncontiguous_inputs (test_answers.AttentionTests) ... ok
+test_uniform_attention_has_hand_computed_prefix_means (test_answers.AttentionTests) ... ok
+test_value_width_may_differ_from_query_width (test_answers.AttentionTests) ... ok
+test_chunk_size_grows_when_decodes_finish (test_answers.SchedulingTests) ... ok
+test_equal_budget_defers_prefill_until_decodes_finish (test_answers.SchedulingTests) ... ok
+test_full_prefill_uses_one_long_mixed_round (test_answers.SchedulingTests) ... ok
+test_generated_cases_conserve_work_and_global_budget (test_answers.SchedulingTests) ... ok
+test_invalid_or_infeasible_inputs (test_answers.SchedulingTests) ... ok
+test_medium_budget_interleaves_four_chunks (test_answers.SchedulingTests) ... ok
+test_no_decode_requests (test_answers.SchedulingTests) ... ok
+test_short_prompt_outputs_at_its_completion_only (test_answers.SchedulingTests) ... ok
+
+======================================================================
+ERROR: test_explicit_cpu_inputs_ignore_default_device (test_answers.AttentionTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-10-30-chunked-prefill-interference/code/test_answers.py", line 105, in test_explicit_cpu_inputs_ignore_default_device
+    result = chunked_attention(*tensors, 3)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-10-30-chunked-prefill-interference/code/answers.py", line 45, in chunked_attention
+    probabilities = torch.softmax(scores.masked_fill(~allowed, -torch.inf), dim=-1)
+  File "/Users/wangyuxiao/conda3/lib/python3.10/site-packages/torch/utils/_device.py", line 103, in __torch_function__
+    return func(*args, **kwargs)
+  File "/Users/wangyuxiao/conda3/lib/python3.10/site-packages/torch/_prims_common/wrappers.py", line 309, in _fn
+    result = fn(*args, **kwargs)
+  File "/Users/wangyuxiao/conda3/lib/python3.10/site-packages/torch/_refs/__init__.py", line 5825, in masked_fill
+    r = torch.where(mask, value, a)  # type: ignore[arg-type]
+  File "/Users/wangyuxiao/conda3/lib/python3.10/site-packages/torch/_prims_common/wrappers.py", line 309, in _fn
+    result = fn(*args, **kwargs)
+  File "/Users/wangyuxiao/conda3/lib/python3.10/site-packages/torch/_compile.py", line 53, in inner
+    return disable_fn(*args, **kwargs)
+  File "/Users/wangyuxiao/conda3/lib/python3.10/site-packages/torch/_dynamo/eval_frame.py", line 1044, in _fn
+    return fn(*args, **kwargs)
+  File "/Users/wangyuxiao/conda3/lib/python3.10/site-packages/torch/_prims_common/wrappers.py", line 149, in _fn
+    result = fn(**bound.arguments)
+  File "/Users/wangyuxiao/conda3/lib/python3.10/site-packages/torch/_refs/__init__.py", line 2017, in where
+    utils.check_same_device(pred, a, b, allow_cpu_scalar_tensors=True)
+  File "/Users/wangyuxiao/conda3/lib/python3.10/site-packages/torch/_prims_common/__init__.py", line 878, in check_same_device
+    raise RuntimeError(msg)
+RuntimeError: Tensor on device cpu is not on the expected device meta!
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.659s
+
+FAILED (errors=1)

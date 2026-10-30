@@ -1,0 +1,97 @@
+{
+  "checked_at_utc": "2026-10-30T03:15:25.275796+00:00",
+  "local_attempts": [
+    {
+      "url": "https://www.usenix.org/system/files/osdi24-agrawal.pdf",
+      "command": [
+        "curl",
+        "-L",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "--connect-timeout",
+        "10",
+        "--max-time",
+        "45",
+        "https://www.usenix.org/system/files/osdi24-agrawal.pdf",
+        "-o",
+        ".cache/research15/sarathi-serve-osdi24.pdf"
+      ],
+      "exit_code": 28,
+      "error": "curl: (28) Operation timed out after 45010 milliseconds with 298997 out of 2137282 bytes received\n",
+      "checked_at_utc": "2026-10-30T03:08:34.589169+00:00"
+    },
+    {
+      "url": "https://arxiv.org/pdf/2308.16369v1",
+      "command": [
+        "curl",
+        "-L",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "--connect-timeout",
+        "10",
+        "--max-time",
+        "45",
+        "https://arxiv.org/pdf/2308.16369v1",
+        "-o",
+        ".cache/research15/sarathi-v1.pdf"
+      ],
+      "exit_code": 28,
+      "error": "curl: (28) Failed to connect to arxiv.org port 443 after 10011 ms: Timeout was reached\n",
+      "checked_at_utc": "2026-10-30T03:07:59.569952+00:00"
+    },
+    {
+      "at_utc": "2026-10-30T03:14:13.041593+00:00",
+      "command": [
+        "curl",
+        "-L",
+        "--fail",
+        "--silent",
+        "--show-error",
+        "--connect-timeout",
+        "10",
+        "--max-time",
+        "45",
+        "-C",
+        "-",
+        "https://www.usenix.org/system/files/osdi24-agrawal.pdf",
+        "-o",
+        ".cache/research15/sarathi-serve-osdi24.pdf"
+      ],
+      "exit_code": 28,
+      "error": "curl: (28) Operation timed out after 45010 milliseconds with 344019 out of 1838285 bytes received\n",
+      "bytes": 643016,
+      "sha256": "4bfae0f203240c51ad4112243c3807825abec0eeac9427f2a5529996fdc20d70"
+    }
+  ],
+  "successful_web_reads": [
+    {
+      "title": "SARATHI: Efficient LLM Inference by Piggybacking Decodes with Chunked Prefills",
+      "version": "arXiv:2308.16369v1",
+      "first_submitted": "2023-08-31",
+      "url": "https://arxiv.org/html/2308.16369v1",
+      "sections": [
+        "4.2 and Figure 6",
+        "4.3",
+        "5.4"
+      ],
+      "method": "Official arXiv full HTML accessed with web tool"
+    },
+    {
+      "title": "Taming Throughput-Latency Tradeoff in LLM Inference with Sarathi-Serve",
+      "version": "USENIX OSDI 2024 publisher PDF, pp. 117-134",
+      "published": "2024-07",
+      "url": "https://www.usenix.org/system/files/osdi24-agrawal.pdf",
+      "pages_with_cover": 19,
+      "sections": [
+        "4.1",
+        "4.2 and Algorithm 3",
+        "4.3",
+        "5.4.1"
+      ],
+      "method": "Official publisher full PDF accessed with web tool"
+    }
+  ],
+  "redistribution": "Only original reading notes and acquisition metadata are archived; full or incomplete downloads remain in ignored cache. Incomplete PDFs are not used as evidence."
+}
