@@ -21,7 +21,7 @@
 | 13 | [KV Cache 为什么需要分页，逻辑 token 怎样找到物理块？](wiki/2026/10/2026-10-28-paged-kv-block-table/README.md) | 推理引擎的块管理、碎片与地址映射 |
 | 14 | [请求为何需要逐步调度，batch 大小由什么决定？](wiki/2026/10/2026-10-29-continuous-batching-scheduling/README.md) | continuous batching、TTFT、ITL 与吞吐权衡 |
 | 15 | [长 Prompt 为什么会干扰其他请求，如何拆分 Prefill？](wiki/2026/10/2026-10-30-chunked-prefill-interference/README.md) | chunked prefill、调度预算与尾延迟 |
-| 16 | 多个请求什么时候能安全复用同一段前缀？ | prefix caching、命中条件、隔离与失效 |
+| 16 | [多个请求什么时候能安全复用同一段前缀？](wiki/2026/11/2026-11-02-prefix-cache-safe-reuse/README.md) | prefix caching、命中条件、隔离与失效 |
 | 17 | 训练的梯度为什么需要通信，通信能否与计算重叠？ | 数据并行、梯度桶、AllReduce 与慢节点 |
 | 18 | 参数之外，训练显存究竟花在哪里？ | 梯度、优化器状态、激活与容量估算 |
 | 19 | 用重算换显存的代价如何计算？ | activation checkpointing、随机性与训练吞吐 |

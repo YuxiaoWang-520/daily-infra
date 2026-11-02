@@ -1,0 +1,405 @@
+{
+  "scope": "Actual CPU hash and metadata execution only. No KV tensors, model accuracy or performance measurement.",
+  "comparisons": [
+    {
+      "case": "eight_common_positions",
+      "prompt_length": 10,
+      "hit_tokens": 8,
+      "new_positions": 2
+    },
+    {
+      "case": "seven_common_positions",
+      "prompt_length": 10,
+      "hit_tokens": 4,
+      "new_positions": 6
+    },
+    {
+      "case": "changed_first_position",
+      "prompt_length": 10,
+      "hit_tokens": 0,
+      "new_positions": 10
+    },
+    {
+      "case": "different_trust_group",
+      "prompt_length": 10,
+      "hit_tokens": 0,
+      "new_positions": 10
+    },
+    {
+      "case": "identical_eight_position_prompt",
+      "prompt_length": 8,
+      "hit_tokens": 4,
+      "new_positions": 4
+    }
+  ],
+  "lifecycle": [
+    {
+      "event": "empty",
+      "state": {
+        "blocks": [
+          {
+            "block_id": 0,
+            "key": null,
+            "ref_count": 0,
+            "ready": false
+          },
+          {
+            "block_id": 1,
+            "key": null,
+            "ref_count": 0,
+            "ready": false
+          },
+          {
+            "block_id": 2,
+            "key": null,
+            "ref_count": 0,
+            "ready": false
+          }
+        ],
+        "free_order": [
+          0,
+          1,
+          2
+        ],
+        "cache_entries": [],
+        "requests": []
+      }
+    },
+    {
+      "event": "r1_pending",
+      "state": {
+        "blocks": [
+          {
+            "block_id": 0,
+            "key": "a",
+            "ref_count": 1,
+            "ready": false
+          },
+          {
+            "block_id": 1,
+            "key": "b",
+            "ref_count": 1,
+            "ready": false
+          },
+          {
+            "block_id": 2,
+            "key": null,
+            "ref_count": 0,
+            "ready": false
+          }
+        ],
+        "free_order": [
+          2
+        ],
+        "cache_entries": [],
+        "requests": [
+          [
+            "r1",
+            [
+              0,
+              1
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "event": "r1_ready",
+      "state": {
+        "blocks": [
+          {
+            "block_id": 0,
+            "key": "a",
+            "ref_count": 1,
+            "ready": true
+          },
+          {
+            "block_id": 1,
+            "key": "b",
+            "ref_count": 1,
+            "ready": true
+          },
+          {
+            "block_id": 2,
+            "key": null,
+            "ref_count": 0,
+            "ready": false
+          }
+        ],
+        "free_order": [
+          2
+        ],
+        "cache_entries": [
+          [
+            "a",
+            [
+              0
+            ]
+          ],
+          [
+            "b",
+            [
+              1
+            ]
+          ]
+        ],
+        "requests": [
+          [
+            "r1",
+            [
+              0,
+              1
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "event": "r1_released_but_warm",
+      "state": {
+        "blocks": [
+          {
+            "block_id": 0,
+            "key": "a",
+            "ref_count": 0,
+            "ready": true
+          },
+          {
+            "block_id": 1,
+            "key": "b",
+            "ref_count": 0,
+            "ready": true
+          },
+          {
+            "block_id": 2,
+            "key": null,
+            "ref_count": 0,
+            "ready": false
+          }
+        ],
+        "free_order": [
+          2,
+          1,
+          0
+        ],
+        "cache_entries": [
+          [
+            "a",
+            [
+              0
+            ]
+          ],
+          [
+            "b",
+            [
+              1
+            ]
+          ]
+        ],
+        "requests": []
+      }
+    },
+    {
+      "event": "r2_reused_a_b_and_allocated_c",
+      "state": {
+        "blocks": [
+          {
+            "block_id": 0,
+            "key": "a",
+            "ref_count": 1,
+            "ready": true
+          },
+          {
+            "block_id": 1,
+            "key": "b",
+            "ref_count": 1,
+            "ready": true
+          },
+          {
+            "block_id": 2,
+            "key": "c",
+            "ref_count": 1,
+            "ready": false
+          }
+        ],
+        "free_order": [],
+        "cache_entries": [
+          [
+            "a",
+            [
+              0
+            ]
+          ],
+          [
+            "b",
+            [
+              1
+            ]
+          ]
+        ],
+        "requests": [
+          [
+            "r2",
+            [
+              0,
+              1,
+              2
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "event": "capacity_failure_without_mutation",
+      "state": {
+        "blocks": [
+          {
+            "block_id": 0,
+            "key": "a",
+            "ref_count": 1,
+            "ready": true
+          },
+          {
+            "block_id": 1,
+            "key": "b",
+            "ref_count": 1,
+            "ready": true
+          },
+          {
+            "block_id": 2,
+            "key": "c",
+            "ref_count": 1,
+            "ready": false
+          }
+        ],
+        "free_order": [],
+        "cache_entries": [
+          [
+            "a",
+            [
+              0
+            ]
+          ],
+          [
+            "b",
+            [
+              1
+            ]
+          ]
+        ],
+        "requests": [
+          [
+            "r2",
+            [
+              0,
+              1,
+              2
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "event": "r2_released",
+      "state": {
+        "blocks": [
+          {
+            "block_id": 0,
+            "key": "a",
+            "ref_count": 0,
+            "ready": true
+          },
+          {
+            "block_id": 1,
+            "key": "b",
+            "ref_count": 0,
+            "ready": true
+          },
+          {
+            "block_id": 2,
+            "key": "c",
+            "ref_count": 0,
+            "ready": true
+          }
+        ],
+        "free_order": [
+          2,
+          1,
+          0
+        ],
+        "cache_entries": [
+          [
+            "a",
+            [
+              0
+            ]
+          ],
+          [
+            "b",
+            [
+              1
+            ]
+          ],
+          [
+            "c",
+            [
+              2
+            ]
+          ]
+        ],
+        "requests": []
+      }
+    },
+    {
+      "event": "c_evicted_before_d_is_ready",
+      "state": {
+        "blocks": [
+          {
+            "block_id": 0,
+            "key": "a",
+            "ref_count": 0,
+            "ready": true
+          },
+          {
+            "block_id": 1,
+            "key": "b",
+            "ref_count": 0,
+            "ready": true
+          },
+          {
+            "block_id": 2,
+            "key": "d",
+            "ref_count": 1,
+            "ready": false
+          }
+        ],
+        "free_order": [
+          1,
+          0
+        ],
+        "cache_entries": [
+          [
+            "a",
+            [
+              0
+            ]
+          ],
+          [
+            "b",
+            [
+              1
+            ]
+          ]
+        ],
+        "requests": [
+          [
+            "r3",
+            [
+              2
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "checked_at_utc": "2026-11-02T03:15:49.945733+00:00",
+  "timezone": "Asia/Shanghai",
+  "repository": "vllm-project/vllm",
+  "official_remote": "https://github.com/vllm-project/vllm.git",
+  "default_branch": "main",
+  "commit": "e8ec12c5edc3e14598bb122237d2798a3d4f3fa0",
+  "commit_time": "2026-11-02T03:00:36Z",
+  "update": {
+    "at_utc": "2026-11-02T03:05:28.062977+00:00",
+    "before": "e49ea84e929e3d48a2bc500454dfcd4377f9a722",
+    "fetch": {
+      "command": [
+        "git",
+        "fetch",
+        "--depth=1",
+        "origin",
+        "main"
+      ],
+      "exit_code": 0,
+      "output": "From https://github.com/vllm-project/vllm\n * branch            main       -> FETCH_HEAD\n + e49ea84...e8ec12c main       -> origin/main  (forced update)\n"
+    },
+    "checkout": {
+      "command": [
+        "git",
+        "switch",
+        "--detach",
+        "origin/main"
+      ],
+      "exit_code": 0,
+      "output": "Warning: you are leaving 1 commit behind, not connected to\nany of your branches:\n\n  e49ea84 [ROCm][Perf][DSv4.1] Build the SWA decode metadata in one launch  (#63885)\n\nIf you want to keep it by creating a new branch, this may be a good time\nto do so with:\n\n git branch <new-branch-name> e49ea84\n\nHEAD is now at e8ec12c [Bugfix][Spec Decode] V2 rejection sampler: return logprob_token_ids scores (#61219)\n"
+    },
+    "after": "e8ec12c5edc3e14598bb122237d2798a3d4f3fa0",
+    "commit_time": "2026-11-02T03:00:36Z"
+  },
+  "latest_release_metadata": {
+    "tag": "v0.32.0",
+    "published_at": "2026-10-18T06:50:48Z",
+    "url": "https://github.com/vllm-project/vllm/releases/tag/v0.32.0",
+    "commit": "5df63a7203cdb9328d824a27b682e77c7b9928be"
+  },
+  "scope": "Current main source reading only. Stable release metadata checked; stable implementation not separately analyzed. Engine and GPU paths not executed."
+}

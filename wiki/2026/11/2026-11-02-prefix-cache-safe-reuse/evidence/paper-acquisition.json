@@ -1,0 +1,12 @@
+{
+  "access_date": "2026-11-02",
+  "timezone": "Asia/Shanghai",
+  "title": "Efficient Memory Management for Large Language Model Serving with PagedAttention",
+  "version": "arXiv:2309.06180v1",
+  "submitted_at_utc": "2023-09-12T12:50:04Z",
+  "official_metadata": "https://arxiv.org/abs/2309.06180v1",
+  "official_fulltext": "https://arxiv.org/html/2309.06180v1",
+  "method": "Official full HTML and metadata accessed with web tool; no local PDF download or PDF extraction claimed.",
+  "sections_read": ["4.2", "4.4 Parallel sampling and Shared prefix", "Figure 8 and Figure 10 accompanying text", "6.4"],
+  "archive": "Original reading notes and precise source locators; original article diagrams and synthetic examples. Full paper not redistributed."
+}

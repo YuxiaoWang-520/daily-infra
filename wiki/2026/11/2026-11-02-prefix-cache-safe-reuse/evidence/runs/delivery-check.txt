@@ -1,0 +1,9 @@
+Checked at 2026-11-02T11:41:11.926671+08:00
+PASS: Monday Shanghai date; exactly one article for 2026-11-02; published metadata.
+PASS: index and roadmap contain exactly one link to this article; all their local file links exist.
+PASS: two details answers; two inline Mermaid blocks exactly match original diagram sources.
+PASS: final archive-path tests, lab, Ruff and format exit 0; 29 tests, five hit counts, atomic capacity failure and expected lifecycle state.
+PASS: 13 original source files, 669945 bytes, exact pinned SHA and manifest digests.
+PASS: 42 publishable article files, no symlinks or matching credential patterns; 29 original files have no trailing whitespace or editorial placeholders.
+LIMIT: credential patterns are a focused check, not a guarantee of exhaustive secret detection; all content is original synthetic teaching material or licensed public source.
+LIMIT: Mermaid source structure reviewed, no pixel rendering acceptance or GPU/full-model execution.

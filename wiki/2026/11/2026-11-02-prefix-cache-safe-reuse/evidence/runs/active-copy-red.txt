@@ -1,0 +1,16 @@
+test_active_duplicate_is_preferred_to_preserve_free_capacity (test_answers.PoolTests) ... ERROR
+
+======================================================================
+ERROR: test_active_duplicate_is_preferred_to_preserve_free_capacity (test_answers.PoolTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-02-prefix-cache-safe-reuse/code/test_answers.py", line 258, in test_active_duplicate_is_preferred_to_preserve_free_capacity
+    self.assertEqual(pool.acquire("r3", ("a", "b")), (1, 0))
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-02-prefix-cache-safe-reuse/code/answers.py", line 100, in acquire
+    raise RuntimeError("insufficient unpinned blocks")
+RuntimeError: insufficient unpinned blocks
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (errors=1)
