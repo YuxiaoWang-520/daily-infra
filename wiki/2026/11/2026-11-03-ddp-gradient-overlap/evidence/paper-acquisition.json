@@ -1,0 +1,44 @@
+{
+  "url": "https://arxiv.org/pdf/2006.15704v1",
+  "html": "https://arxiv.org/html/2006.15704v1",
+  "download_command": [
+    "curl",
+    "-L",
+    "--fail",
+    "--max-time",
+    "45",
+    "https://arxiv.org/pdf/2006.15704v1",
+    "-o",
+    ".cache/research17/ddp-v1.pdf"
+  ],
+  "download_exit_code": 0,
+  "observed_at": "2026-11-03T03:05:48.748453+00:00",
+  "pdf_bytes": 1189823,
+  "pdf_sha256": "246af7a675cfb58a4110c1f92b952baa571038e0a57457459137e8c49f8fcf96",
+  "extract_command": [
+    "pdftotext",
+    "-layout",
+    ".cache/research17/ddp-v1.pdf",
+    ".cache/research17/ddp-v1.txt"
+  ],
+  "extract_exit_code": 0,
+  "text_bytes": 147655,
+  "text_sha256": "4f94a85a066a6ece1986618fd8bbb0a4064a4e63bcda37d9b912df8dc071d381",
+  "read_sections": [
+    "2.2",
+    "2.3",
+    "3.2.2",
+    "3.2.3",
+    "3.2.4",
+    "Algorithm 1",
+    "Figure 3"
+  ],
+  "rendered_and_inspected": "PDF page 5, Figure 3 and Algorithm 1; .cache/research17/paper-p5.png",
+  "archive_scope": "Own notes and exact locators only; full paper and render stay in ignored research cache.",
+  "cached_pdf_path": ".cache/upstream/papers/pytorch-ddp-2006.15704v1.pdf",
+  "cache_move": {
+    "from": ".cache/research17/ddp-v1.pdf",
+    "to": ".cache/upstream/papers/pytorch-ddp-2006.15704v1.pdf",
+    "sha256": "246af7a675cfb58a4110c1f92b952baa571038e0a57457459137e8c49f8fcf96"
+  }
+}

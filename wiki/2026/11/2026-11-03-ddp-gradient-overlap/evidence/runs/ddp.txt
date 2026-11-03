@@ -1,0 +1,10 @@
+rank0: initializing CPU Gloo
+rank1: initializing CPU Gloo
+rank1: SUM AllReduce passed
+rank0: SUM AllReduce passed
+rank1: DDP constructed for equal_counts
+rank0: DDP constructed for equal_counts
+rank0: DDP constructed for unequal_unweighted
+rank1: DDP constructed for unequal_unweighted
+rank0: DDP constructed for unequal_weighted
+rank1: DDP constructed for unequal_weighted

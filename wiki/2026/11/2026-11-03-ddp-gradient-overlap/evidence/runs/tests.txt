@@ -1,0 +1,29 @@
+test_equal_counts (test_answers.MeanTests) ... ok
+test_inputs_unchanged (test_answers.MeanTests) ... ok
+test_invalid_counts (test_answers.MeanTests) ... ok
+test_invalid_gradient_shapes (test_answers.MeanTests) ... ok
+test_invalid_gradient_values (test_answers.MeanTests) ... ok
+test_loss_scales (test_answers.MeanTests) ... ok
+test_partitioned_samples (test_answers.MeanTests) ... ok
+test_scaled_rank_average_matches_global_objective (test_answers.MeanTests) ... ok
+test_single_rank (test_answers.MeanTests) ... ok
+test_unequal_counts (test_answers.MeanTests) ... ok
+test_vector_gradient (test_answers.MeanTests) ... ok
+test_dependency_invariants (test_answers.TimelineTests) ... ok
+test_derived_time_overflow_uses_value_error (test_answers.TimelineTests) ... ok
+test_invalid_ready_times (test_answers.TimelineTests) ... ok
+test_invalid_sizes_and_communication_parameters (test_answers.TimelineTests) ... ok
+test_no_input_mutation_and_immutable_result (test_answers.TimelineTests) ... ok
+test_one_rank_one_gradient (test_answers.TimelineTests) ... ok
+test_order_blocks_early_ready_bucket (test_answers.TimelineTests) ... ok
+test_partition_must_cover_each_gradient_once (test_answers.TimelineTests) ... ok
+test_rank_readiness_is_maximum (test_answers.TimelineTests) ... ok
+test_smaller_is_not_always_faster (test_answers.TimelineTests) ... ok
+test_straggler_limits_progress (test_answers.TimelineTests) ... ok
+test_two_buckets_hand_calculation (test_answers.TimelineTests) ... ok
+test_zero_startup_allowed (test_answers.TimelineTests) ... ok
+
+----------------------------------------------------------------------
+Ran 24 tests in 0.001s
+
+OK

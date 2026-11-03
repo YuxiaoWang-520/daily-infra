@@ -1,0 +1,89 @@
+{
+  "scope": "Actual two-process CPU/Gloo DDP with default communication; no hooks, GPU or performance measurement.",
+  "torch": "2.9.1",
+  "torch_git": "5811a8d7da873dd699ff6687092c225caffcf1bb",
+  "backend": "gloo",
+  "world_size": 2,
+  "dtype": "float64",
+  "model": "Linear(1, 1, bias=False), w=1",
+  "loss": "0.5 * mean((w*x)^2)",
+  "sgd_lr": 0.1,
+  "ranks": [
+    {
+      "rank": 0,
+      "results": [
+        {
+          "case": "equal_counts",
+          "local_count": 1,
+          "local_mean_loss_scale": 1.0,
+          "gradient": 5.0,
+          "weight_after_sgd": 0.5
+        },
+        {
+          "case": "unequal_unweighted",
+          "local_count": 1,
+          "local_mean_loss_scale": 1.0,
+          "gradient": 5.333333333333333,
+          "weight_after_sgd": 0.4666666666666667
+        },
+        {
+          "case": "unequal_weighted",
+          "local_count": 1,
+          "local_mean_loss_scale": 0.5,
+          "gradient": 7.5,
+          "weight_after_sgd": 0.24999999999999994
+        },
+        {
+          "case": "accumulation_scaled",
+          "first_no_sync_local_gradient": 0.5,
+          "gradient": 7.5,
+          "weight_after_sgd": 0.24999999999999994
+        },
+        {
+          "case": "accumulation_unscaled",
+          "first_no_sync_local_gradient": 1.0,
+          "gradient": 15.0,
+          "weight_after_sgd": -0.5000000000000001
+        }
+      ]
+    },
+    {
+      "rank": 1,
+      "results": [
+        {
+          "case": "equal_counts",
+          "local_count": 1,
+          "local_mean_loss_scale": 1.0,
+          "gradient": 5.0,
+          "weight_after_sgd": 0.5
+        },
+        {
+          "case": "unequal_unweighted",
+          "local_count": 3,
+          "local_mean_loss_scale": 1.0,
+          "gradient": 5.333333333333333,
+          "weight_after_sgd": 0.4666666666666667
+        },
+        {
+          "case": "unequal_weighted",
+          "local_count": 3,
+          "local_mean_loss_scale": 1.5,
+          "gradient": 7.5,
+          "weight_after_sgd": 0.24999999999999994
+        },
+        {
+          "case": "accumulation_scaled",
+          "first_no_sync_local_gradient": 4.5,
+          "gradient": 7.5,
+          "weight_after_sgd": 0.24999999999999994
+        },
+        {
+          "case": "accumulation_unscaled",
+          "first_no_sync_local_gradient": 9.0,
+          "gradient": 15.0,
+          "weight_after_sgd": -0.5000000000000001
+        }
+      ]
+    }
+  ]
+}

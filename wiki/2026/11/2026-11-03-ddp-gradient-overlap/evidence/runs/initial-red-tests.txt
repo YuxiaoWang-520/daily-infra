@@ -1,0 +1,22 @@
+test_answers (unittest.loader._FailedTest) ... ERROR
+
+======================================================================
+ERROR: test_answers (unittest.loader._FailedTest)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_answers
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/conda3/lib/python3.10/unittest/loader.py", line 436, in _find_test_path
+    module = self._get_module_from_name(name)
+  File "/Users/wangyuxiao/conda3/lib/python3.10/unittest/loader.py", line 377, in _get_module_from_name
+    __import__(name)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-03-ddp-gradient-overlap/code/test_answers.py", line 10, in <module>
+    impl = importlib.import_module(os.environ.get("EXERCISE_IMPL", "answers"))
+  File "/Users/wangyuxiao/conda3/lib/python3.10/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+ModuleNotFoundError: No module named 'answers'
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (errors=1)

@@ -1,0 +1,16 @@
+{
+  "at": "2026-11-03T03:25:08.253199+00:00",
+  "command": [
+    "/Users/wangyuxiao/conda3/bin/python3",
+    "code/ddp_probe.py",
+    "--output",
+    "evidence/runs/ddp.json"
+  ],
+  "cwd": "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/wiki/2026/11/2026-11-03-ddp-gradient-overlap",
+  "environment_override": {
+    "GLOO_SOCKET_IFNAME": "lo0"
+  },
+  "exit_code": 0,
+  "output": "ddp.txt",
+  "structured_output": "ddp.json"
+}

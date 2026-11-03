@@ -1,0 +1,85 @@
+{
+  "at": "2026-11-03T03:25:08.248289+00:00",
+  "environment": {
+    "python": "3.10.13 (main, Sep 11 2023, 08:16:02) [Clang 14.0.6 ]",
+    "executable": "/Users/wangyuxiao/conda3/bin/python3",
+    "platform": "macOS-15.5-arm64-arm-64bit",
+    "torch": "2.9.1",
+    "torch_git": "5811a8d7da873dd699ff6687092c225caffcf1bb",
+    "cuda": false
+  },
+  "commands": [
+    {
+      "command": [
+        "/Users/wangyuxiao/conda3/bin/python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "code",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "cwd": "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/wiki/2026/11/2026-11-03-ddp-gradient-overlap",
+      "exit_code": 0,
+      "output": "tests.txt"
+    },
+    {
+      "command": [
+        "/Users/wangyuxiao/conda3/bin/python3",
+        "code/run_lab.py"
+      ],
+      "cwd": "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/wiki/2026/11/2026-11-03-ddp-gradient-overlap",
+      "exit_code": 0,
+      "output": "lab.json"
+    },
+    {
+      "command": [
+        "/Users/wangyuxiao/conda3/bin/python3",
+        "-m",
+        "ruff",
+        "check",
+        "--select",
+        "E,F,I,UP",
+        "--ignore",
+        "E501",
+        "code"
+      ],
+      "cwd": "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/wiki/2026/11/2026-11-03-ddp-gradient-overlap",
+      "exit_code": 0,
+      "output": "lint.txt"
+    },
+    {
+      "command": [
+        "/Users/wangyuxiao/conda3/bin/python3",
+        "-m",
+        "ruff",
+        "format",
+        "--check",
+        "code"
+      ],
+      "cwd": "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/wiki/2026/11/2026-11-03-ddp-gradient-overlap",
+      "exit_code": 0,
+      "output": "format.txt"
+    },
+    {
+      "at": "2026-11-03T03:25:08.253199+00:00",
+      "command": [
+        "/Users/wangyuxiao/conda3/bin/python3",
+        "code/ddp_probe.py",
+        "--output",
+        "evidence/runs/ddp.json"
+      ],
+      "cwd": "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/wiki/2026/11/2026-11-03-ddp-gradient-overlap",
+      "environment_override": {
+        "GLOO_SOCKET_IFNAME": "lo0"
+      },
+      "exit_code": 0,
+      "output": "ddp.txt",
+      "structured_output": "ddp.json"
+    }
+  ],
+  "scope": "CPU standard-library arithmetic and synthetic timelines; real two-process CPU/Gloo correctness with installed PyTorch 2.9.1. No GPU/NCCL, measured overlap, communication-count, performance, convergence or current-main executable validation.",
+  "finished_at": "2026-11-03T03:25:10.902741+00:00"
+}

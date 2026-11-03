@@ -1,0 +1,146 @@
+[
+  {
+    "repo": "pytorch/pytorch",
+    "commit": "6ddf1c556aafe0295f682a2822d1510eda4beab2",
+    "path": "LICENSE",
+    "local_path": "evidence/upstream/pytorch/pytorch/LICENSE",
+    "url": "https://github.com/pytorch/pytorch/blob/6ddf1c556aafe0295f682a2822d1510eda4beab2/LICENSE",
+    "read_at": "2026-11-03T03:05:48.748453+00:00",
+    "command": [
+      "git",
+      "show",
+      "6ddf1c556aafe0295f682a2822d1510eda4beab2:LICENSE"
+    ],
+    "exit_code": 0,
+    "bytes": 3464,
+    "sha256": "bd018feef8825e88181c84eb7e3aa4eafb8f08a20d9fd6ef948569610c4a3e43"
+  },
+  {
+    "repo": "pytorch/pytorch",
+    "commit": "6ddf1c556aafe0295f682a2822d1510eda4beab2",
+    "path": "torch/nn/parallel/distributed.py",
+    "local_path": "evidence/upstream/pytorch/pytorch/torch/nn/parallel/distributed.py",
+    "url": "https://github.com/pytorch/pytorch/blob/6ddf1c556aafe0295f682a2822d1510eda4beab2/torch/nn/parallel/distributed.py",
+    "read_at": "2026-11-03T03:05:48.748453+00:00",
+    "command": [
+      "git",
+      "show",
+      "6ddf1c556aafe0295f682a2822d1510eda4beab2:torch/nn/parallel/distributed.py"
+    ],
+    "exit_code": 0,
+    "bytes": 127165,
+    "sha256": "b19cc4e2c1bfee13ecfbf9a30ec3261aeb45f97fa86feddb29d69885b94646c5"
+  },
+  {
+    "repo": "pytorch/pytorch",
+    "commit": "6ddf1c556aafe0295f682a2822d1510eda4beab2",
+    "path": "torch/csrc/distributed/c10d/reducer.cpp",
+    "local_path": "evidence/upstream/pytorch/pytorch/torch/csrc/distributed/c10d/reducer.cpp",
+    "url": "https://github.com/pytorch/pytorch/blob/6ddf1c556aafe0295f682a2822d1510eda4beab2/torch/csrc/distributed/c10d/reducer.cpp",
+    "read_at": "2026-11-03T03:05:48.748453+00:00",
+    "command": [
+      "git",
+      "show",
+      "6ddf1c556aafe0295f682a2822d1510eda4beab2:torch/csrc/distributed/c10d/reducer.cpp"
+    ],
+    "exit_code": 0,
+    "bytes": 106698,
+    "sha256": "9af1f4473954093b496cd712bac89a1e1a2d90f42e08e46ccb36769817e30b51"
+  },
+  {
+    "repo": "pytorch/pytorch",
+    "commit": "6ddf1c556aafe0295f682a2822d1510eda4beab2",
+    "path": "torch/csrc/distributed/c10d/reducer.hpp",
+    "local_path": "evidence/upstream/pytorch/pytorch/torch/csrc/distributed/c10d/reducer.hpp",
+    "url": "https://github.com/pytorch/pytorch/blob/6ddf1c556aafe0295f682a2822d1510eda4beab2/torch/csrc/distributed/c10d/reducer.hpp",
+    "read_at": "2026-11-03T03:05:48.748453+00:00",
+    "command": [
+      "git",
+      "show",
+      "6ddf1c556aafe0295f682a2822d1510eda4beab2:torch/csrc/distributed/c10d/reducer.hpp"
+    ],
+    "exit_code": 0,
+    "bytes": 28004,
+    "sha256": "9da91c7f888745a70a1d720c48dec1f7ebe013ac5b8dcf73d75d444747d04a83"
+  },
+  {
+    "repo": "pytorch/pytorch",
+    "commit": "6ddf1c556aafe0295f682a2822d1510eda4beab2",
+    "path": "torch/csrc/distributed/c10d/default_comm_hooks.cpp",
+    "local_path": "evidence/upstream/pytorch/pytorch/torch/csrc/distributed/c10d/default_comm_hooks.cpp",
+    "url": "https://github.com/pytorch/pytorch/blob/6ddf1c556aafe0295f682a2822d1510eda4beab2/torch/csrc/distributed/c10d/default_comm_hooks.cpp",
+    "read_at": "2026-11-03T03:05:48.748453+00:00",
+    "command": [
+      "git",
+      "show",
+      "6ddf1c556aafe0295f682a2822d1510eda4beab2:torch/csrc/distributed/c10d/default_comm_hooks.cpp"
+    ],
+    "exit_code": 0,
+    "bytes": 2225,
+    "sha256": "1bfd0643f2a2a92feaa7e34a7b190054c5d2299e95802c81e54105b0b5544d38"
+  },
+  {
+    "repo": "pytorch/pytorch",
+    "commit": "6ddf1c556aafe0295f682a2822d1510eda4beab2",
+    "path": "torch/distributed/algorithms/ddp_comm_hooks/default_hooks.py",
+    "local_path": "evidence/upstream/pytorch/pytorch/torch/distributed/algorithms/ddp_comm_hooks/default_hooks.py",
+    "url": "https://github.com/pytorch/pytorch/blob/6ddf1c556aafe0295f682a2822d1510eda4beab2/torch/distributed/algorithms/ddp_comm_hooks/default_hooks.py",
+    "read_at": "2026-11-03T03:05:48.748453+00:00",
+    "command": [
+      "git",
+      "show",
+      "6ddf1c556aafe0295f682a2822d1510eda4beab2:torch/distributed/algorithms/ddp_comm_hooks/default_hooks.py"
+    ],
+    "exit_code": 0,
+    "bytes": 7961,
+    "sha256": "0cfffd20c52be726c45d72d362378c8816f0224a3aed64ab25be0df550044c21"
+  },
+  {
+    "repo": "pytorch/pytorch",
+    "commit": "6ddf1c556aafe0295f682a2822d1510eda4beab2",
+    "path": "torch/distributed/distributed_c10d.py",
+    "local_path": "evidence/upstream/pytorch/pytorch/torch/distributed/distributed_c10d.py",
+    "url": "https://github.com/pytorch/pytorch/blob/6ddf1c556aafe0295f682a2822d1510eda4beab2/torch/distributed/distributed_c10d.py",
+    "read_at": "2026-11-03T03:05:48.748453+00:00",
+    "command": [
+      "git",
+      "show",
+      "6ddf1c556aafe0295f682a2822d1510eda4beab2:torch/distributed/distributed_c10d.py"
+    ],
+    "exit_code": 0,
+    "bytes": 330166,
+    "sha256": "b94a2f9de9252629964aaf50a7e842af500d9d51105aee5b70d58c5930e4f302"
+  },
+  {
+    "repo": "pytorch/pytorch",
+    "commit": "6ddf1c556aafe0295f682a2822d1510eda4beab2",
+    "path": "docs/source/notes/ddp.md",
+    "local_path": "evidence/upstream/pytorch/pytorch/docs/source/notes/ddp.md",
+    "url": "https://github.com/pytorch/pytorch/blob/6ddf1c556aafe0295f682a2822d1510eda4beab2/docs/source/notes/ddp.md",
+    "read_at": "2026-11-03T03:05:48.748453+00:00",
+    "command": [
+      "git",
+      "show",
+      "6ddf1c556aafe0295f682a2822d1510eda4beab2:docs/source/notes/ddp.md"
+    ],
+    "exit_code": 0,
+    "bytes": 10909,
+    "sha256": "0430a902ee8d38fef7479ee7e7e3616cc9771b45417aded8e9fc3ab6e98cb011"
+  },
+  {
+    "repo": "pytorch/pytorch",
+    "commit": "6ddf1c556aafe0295f682a2822d1510eda4beab2",
+    "path": "torch/_dynamo/backends/distributed.py",
+    "local_path": "evidence/upstream/pytorch/pytorch/torch/_dynamo/backends/distributed.py",
+    "url": "https://github.com/pytorch/pytorch/blob/6ddf1c556aafe0295f682a2822d1510eda4beab2/torch/_dynamo/backends/distributed.py",
+    "read_at": "2026-11-03T03:05:48.748453+00:00",
+    "command": [
+      "git",
+      "show",
+      "6ddf1c556aafe0295f682a2822d1510eda4beab2:torch/_dynamo/backends/distributed.py"
+    ],
+    "exit_code": 0,
+    "bytes": 29960,
+    "sha256": "9600044ddb986475314fe8941b5cc53c16f845a15cd7c07c800f7bdc0f10bf8f"
+  }
+]
