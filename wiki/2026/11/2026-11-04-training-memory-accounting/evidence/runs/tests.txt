@@ -1,0 +1,26 @@
+test_alias_chain_and_name_reuse (test_answers.LifetimeTests) ... ok
+test_alias_does_not_allocate (test_answers.LifetimeTests) ... ok
+test_empty_trace_and_first_peak_tie (test_answers.LifetimeTests) ... ok
+test_hand_counted_peak_and_final (test_answers.LifetimeTests) ... ok
+test_input_and_output_immutability (test_answers.LifetimeTests) ... ok
+test_invalid_events (test_answers.LifetimeTests) ... ok
+test_last_reference_controls_release (test_answers.LifetimeTests) ... ok
+test_retained_view_raises_later_peak (test_answers.LifetimeTests) ... ok
+test_sum_of_component_maxima_overestimates (test_answers.LifetimeTests) ... ok
+test_trace_container_contract (test_answers.LifetimeTests) ... ok
+test_after_backward_before_first_step (test_answers.StateTests) ... ok
+test_amsgrad_adds_one_moment_sized_array (test_answers.StateTests) ... ok
+test_bad_counts_widths_and_flags (test_answers.StateTests) ... ok
+test_before_first_backward (test_answers.StateTests) ... ok
+test_explicit_master_is_an_additional_copy (test_answers.StateTests) ... ok
+test_fp32_adam (test_answers.StateTests) ... ok
+test_immutable_result (test_answers.StateTests) ... ok
+test_large_integer_counts_and_zero (test_answers.StateTests) ... ok
+test_low_precision_state_is_an_explicit_assumption (test_answers.StateTests) ... ok
+test_master_lifetime_is_independent_of_moment_initialization (test_answers.StateTests) ... ok
+test_zero_grad_none_keeps_optimizer_state (test_answers.StateTests) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 0.001s
+
+OK

@@ -1,0 +1,7 @@
+flowchart TD
+    A["构造模型与 Adam<br/>W：64 bytes"] --> B["第一次 backward 后<br/>W 64 + G 64 = 128 bytes"]
+    B --> C["第一次 step：初始化 m、v<br/>W 64 + G 64 + m 64 + v 64 = 256 bytes"]
+    C --> D["zero_grad：set_to_none=True<br/>W 64 + m 64 + v 64 = 192 bytes"]
+    D --> E["下一轮 forward / backward<br/>在已有 W、m、v 之上增加激活与梯度"]
+    E --> F["下一次 step<br/>复用已有 m、v，不重复创建两份历史数组"]
+    F --> D

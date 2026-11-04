@@ -1,0 +1,5 @@
+flowchart LR
+    A["activation 名字"] --> S["同一块 storage<br/>128 bytes"]
+    V["view 名字"] --> S
+    D["drop activation"] --> K["view 仍引用 storage<br/>128 bytes 继续存活"]
+    K --> E["再 drop view<br/>最后引用消失，模型释放 128 bytes"]

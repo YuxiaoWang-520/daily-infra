@@ -1,0 +1,37 @@
+{
+  "checked_at": "2026-11-04T11:16:30+08:00",
+  "upstream": {
+    "repo": "pytorch/pytorch",
+    "default_branch": "main",
+    "commit": "665ecdd5784fd7c8dfdf7dbb184fceb2b31c387f",
+    "commit_time": "2026-11-04T02:58:20Z",
+    "cache": ".cache/upstream/pytorch",
+    "clean": true,
+    "files": 10,
+    "bytes": 399859
+  },
+  "stable_metadata": {
+    "tag": "v2.15.0",
+    "published_at": "2026-10-28T17:09:49Z",
+    "commit": "31a77fc9c0a7c6fff15a1ff58c743f53b1a9d457",
+    "scope": "release metadata checked; tag implementation not separately analyzed"
+  },
+  "runtime_scope": "Installed PyTorch 2.9.1 CPU only; not the main or stable binary",
+  "acquisition": [
+    {
+      "command": "git fetch --depth=1 origin main",
+      "transport": "https://github.com/pytorch/pytorch.git",
+      "result": "subprocess.TimeoutExpired after 100 seconds; no successful fetch claim for this attempt"
+    },
+    {
+      "command": "git fetch --depth=1 --filter=blob:none git@github.com:pytorch/pytorch.git main",
+      "exit_code": 0,
+      "observed_output": "From github.com:pytorch/pytorch\n * branch main -> FETCH_HEAD"
+    },
+    {
+      "command": "git sparse-checkout set --no-cone [10 exact paths listed in source-manifest.json]; git checkout --detach FETCH_HEAD",
+      "exit_code": 0,
+      "result": "Sparse checkout and fixed detached HEAD; all original bytes match Git blobs"
+    }
+  ]
+}

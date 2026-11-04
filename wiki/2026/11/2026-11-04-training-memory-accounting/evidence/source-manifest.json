@@ -1,0 +1,112 @@
+[
+  {
+    "repo": "pytorch/pytorch",
+    "commit": "665ecdd5784fd7c8dfdf7dbb184fceb2b31c387f",
+    "path": "LICENSE",
+    "local_path": "evidence/upstream/pytorch/pytorch/LICENSE",
+    "url": "https://github.com/pytorch/pytorch/blob/665ecdd5784fd7c8dfdf7dbb184fceb2b31c387f/LICENSE",
+    "git_blob": "c23172f7aff0254e4f0f163fb2e6e355cbaec5f4",
+    "sha256": "bd018feef8825e88181c84eb7e3aa4eafb8f08a20d9fd6ef948569610c4a3e43",
+    "bytes": 3464,
+    "checked_at": "2026-11-04T11:16:30+08:00"
+  },
+  {
+    "repo": "pytorch/pytorch",
+    "commit": "665ecdd5784fd7c8dfdf7dbb184fceb2b31c387f",
+    "path": "torch/optim/adam.py",
+    "local_path": "evidence/upstream/pytorch/pytorch/torch/optim/adam.py",
+    "url": "https://github.com/pytorch/pytorch/blob/665ecdd5784fd7c8dfdf7dbb184fceb2b31c387f/torch/optim/adam.py",
+    "git_blob": "c02815ca78876771cadc4e74651ff3d87229212e",
+    "sha256": "5ecb37579ebbec6cdcf4aa69b394136b98d425144a549d679c6369f9c76146b8",
+    "bytes": 40308,
+    "checked_at": "2026-11-04T11:16:30+08:00"
+  },
+  {
+    "repo": "pytorch/pytorch",
+    "commit": "665ecdd5784fd7c8dfdf7dbb184fceb2b31c387f",
+    "path": "torch/optim/optimizer.py",
+    "local_path": "evidence/upstream/pytorch/pytorch/torch/optim/optimizer.py",
+    "url": "https://github.com/pytorch/pytorch/blob/665ecdd5784fd7c8dfdf7dbb184fceb2b31c387f/torch/optim/optimizer.py",
+    "git_blob": "66e27d82de6fa013e9a84928433cc4935cd76680",
+    "sha256": "8732a2a62c548b9ffec99f8e682b8eeaf824a6e1153d6ddeab30267158688e29",
+    "bytes": 55202,
+    "checked_at": "2026-11-04T11:16:30+08:00"
+  },
+  {
+    "repo": "pytorch/pytorch",
+    "commit": "665ecdd5784fd7c8dfdf7dbb184fceb2b31c387f",
+    "path": "torch/amp/autocast_mode.py",
+    "local_path": "evidence/upstream/pytorch/pytorch/torch/amp/autocast_mode.py",
+    "url": "https://github.com/pytorch/pytorch/blob/665ecdd5784fd7c8dfdf7dbb184fceb2b31c387f/torch/amp/autocast_mode.py",
+    "git_blob": "51a90f04e0dfa5be6b14c46385fa53864d89a9ed",
+    "sha256": "a927f545435b1ce7cfbe2754c2f44da316a234cf7eaac555a93266708ad8db03",
+    "bytes": 22041,
+    "checked_at": "2026-11-04T11:16:30+08:00"
+  },
+  {
+    "repo": "pytorch/pytorch",
+    "commit": "665ecdd5784fd7c8dfdf7dbb184fceb2b31c387f",
+    "path": "torch/autograd/graph.py",
+    "local_path": "evidence/upstream/pytorch/pytorch/torch/autograd/graph.py",
+    "url": "https://github.com/pytorch/pytorch/blob/665ecdd5784fd7c8dfdf7dbb184fceb2b31c387f/torch/autograd/graph.py",
+    "git_blob": "51d5e69513969fc337ce698b3558b09e46ec4f46",
+    "sha256": "84a49d0a7e3fa695d1d0dd3bf49d696213fdc026626a2ab5f33bb5fcbbf0c44b",
+    "bytes": 43905,
+    "checked_at": "2026-11-04T11:16:30+08:00"
+  },
+  {
+    "repo": "pytorch/pytorch",
+    "commit": "665ecdd5784fd7c8dfdf7dbb184fceb2b31c387f",
+    "path": "torch/cuda/memory.py",
+    "local_path": "evidence/upstream/pytorch/pytorch/torch/cuda/memory.py",
+    "url": "https://github.com/pytorch/pytorch/blob/665ecdd5784fd7c8dfdf7dbb184fceb2b31c387f/torch/cuda/memory.py",
+    "git_blob": "11fd6ce06230f9b8243290d1af17c4d81adff45b",
+    "sha256": "cd5882d9fcb3b8de65be9d4cf93558dc1844f605ac39d3bcbcaa8db6dbcd56ba",
+    "bytes": 82906,
+    "checked_at": "2026-11-04T11:16:30+08:00"
+  },
+  {
+    "repo": "pytorch/pytorch",
+    "commit": "665ecdd5784fd7c8dfdf7dbb184fceb2b31c387f",
+    "path": "torch/csrc/autograd/saved_variable.cpp",
+    "local_path": "evidence/upstream/pytorch/pytorch/torch/csrc/autograd/saved_variable.cpp",
+    "url": "https://github.com/pytorch/pytorch/blob/665ecdd5784fd7c8dfdf7dbb184fceb2b31c387f/torch/csrc/autograd/saved_variable.cpp",
+    "git_blob": "60587f7634cf2d82dac80a425d99caf028a15bc3",
+    "sha256": "3051d8fc2ac1a4c2715f0b567ab18d6d46b429edead6dc688aaa35efe65f04dd",
+    "bytes": 11205,
+    "checked_at": "2026-11-04T11:16:30+08:00"
+  },
+  {
+    "repo": "pytorch/pytorch",
+    "commit": "665ecdd5784fd7c8dfdf7dbb184fceb2b31c387f",
+    "path": "docs/source/notes/cuda.md",
+    "local_path": "evidence/upstream/pytorch/pytorch/docs/source/notes/cuda.md",
+    "url": "https://github.com/pytorch/pytorch/blob/665ecdd5784fd7c8dfdf7dbb184fceb2b31c387f/docs/source/notes/cuda.md",
+    "git_blob": "2e45252a4f4f85dae1383b569032c92c1faa1b86",
+    "sha256": "373cc8888bd3a5d828cce1be0a83c53bfdab429e0858c76a58bb9d283db1d957",
+    "bytes": 90034,
+    "checked_at": "2026-11-04T11:16:30+08:00"
+  },
+  {
+    "repo": "pytorch/pytorch",
+    "commit": "665ecdd5784fd7c8dfdf7dbb184fceb2b31c387f",
+    "path": "docs/source/notes/amp_examples.md",
+    "local_path": "evidence/upstream/pytorch/pytorch/docs/source/notes/amp_examples.md",
+    "url": "https://github.com/pytorch/pytorch/blob/665ecdd5784fd7c8dfdf7dbb184fceb2b31c387f/docs/source/notes/amp_examples.md",
+    "git_blob": "f5740df6d38e4279209ebdc063d1355f1a6e5b51",
+    "sha256": "cfcaf23662153f75dfe7a717925197dad204894b4df9d5e4bcb0b3b0d4eb41a4",
+    "bytes": 16205,
+    "checked_at": "2026-11-04T11:16:30+08:00"
+  },
+  {
+    "repo": "pytorch/pytorch",
+    "commit": "665ecdd5784fd7c8dfdf7dbb184fceb2b31c387f",
+    "path": "docs/source/optim.md",
+    "local_path": "evidence/upstream/pytorch/pytorch/docs/source/optim.md",
+    "url": "https://github.com/pytorch/pytorch/blob/665ecdd5784fd7c8dfdf7dbb184fceb2b31c387f/docs/source/optim.md",
+    "git_blob": "eaf1364a7ff6cc557feeca2084ee3d836df3b4e3",
+    "sha256": "6f2642417d92bdde67de25d5ea3123f900150143d649ab33d3ed09c188ad032a",
+    "bytes": 34589,
+    "checked_at": "2026-11-04T11:16:30+08:00"
+  }
+]

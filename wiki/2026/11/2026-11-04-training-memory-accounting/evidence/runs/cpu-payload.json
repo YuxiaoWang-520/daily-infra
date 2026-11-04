@@ -1,0 +1,785 @@
+{
+  "torch": "2.9.1",
+  "torch_git": "5811a8d7da873dd699ff6687092c225caffcf1bb",
+  "device": "cpu",
+  "cuda_available": false,
+  "scope": "selected CPU tensor payload snapshots; not RSS or a GPU peak",
+  "profiles": [
+    {
+      "name": "fp32",
+      "parameter_elements": 16,
+      "output_dtype": "torch.float32",
+      "autocast": false,
+      "snapshots": {
+        "constructed": {
+          "groups": {
+            "parameters": [
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "torch.float32",
+                "device": "cpu",
+                "numel": 16,
+                "logical_bytes": 64,
+                "storage_bytes": 64
+              }
+            ],
+            "gradients": [],
+            "first_moment": [],
+            "second_moment": [],
+            "step": []
+          },
+          "group_bytes": {
+            "parameters": 64,
+            "gradients": 0,
+            "first_moment": 0,
+            "second_moment": 0,
+            "step": 0
+          },
+          "optimizer_state_keys": [
+            []
+          ],
+          "logical_payload_bytes": 64,
+          "unique_storage_bytes": 64,
+          "unique_storage_count": 1
+        },
+        "after_backward": {
+          "groups": {
+            "parameters": [
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "torch.float32",
+                "device": "cpu",
+                "numel": 16,
+                "logical_bytes": 64,
+                "storage_bytes": 64
+              }
+            ],
+            "gradients": [
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "torch.float32",
+                "device": "cpu",
+                "numel": 16,
+                "logical_bytes": 64,
+                "storage_bytes": 64
+              }
+            ],
+            "first_moment": [],
+            "second_moment": [],
+            "step": []
+          },
+          "group_bytes": {
+            "parameters": 64,
+            "gradients": 64,
+            "first_moment": 0,
+            "second_moment": 0,
+            "step": 0
+          },
+          "optimizer_state_keys": [
+            []
+          ],
+          "logical_payload_bytes": 128,
+          "unique_storage_bytes": 128,
+          "unique_storage_count": 2
+        },
+        "after_step": {
+          "groups": {
+            "parameters": [
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "torch.float32",
+                "device": "cpu",
+                "numel": 16,
+                "logical_bytes": 64,
+                "storage_bytes": 64
+              }
+            ],
+            "gradients": [
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "torch.float32",
+                "device": "cpu",
+                "numel": 16,
+                "logical_bytes": 64,
+                "storage_bytes": 64
+              }
+            ],
+            "first_moment": [
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "torch.float32",
+                "device": "cpu",
+                "numel": 16,
+                "logical_bytes": 64,
+                "storage_bytes": 64
+              }
+            ],
+            "second_moment": [
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "torch.float32",
+                "device": "cpu",
+                "numel": 16,
+                "logical_bytes": 64,
+                "storage_bytes": 64
+              }
+            ],
+            "step": [
+              {
+                "shape": [],
+                "dtype": "torch.float32",
+                "device": "cpu",
+                "numel": 1,
+                "logical_bytes": 4,
+                "storage_bytes": 4
+              }
+            ]
+          },
+          "group_bytes": {
+            "parameters": 64,
+            "gradients": 64,
+            "first_moment": 64,
+            "second_moment": 64,
+            "step": 4
+          },
+          "optimizer_state_keys": [
+            [
+              "exp_avg",
+              "exp_avg_sq",
+              "step"
+            ]
+          ],
+          "logical_payload_bytes": 260,
+          "unique_storage_bytes": 260,
+          "unique_storage_count": 5
+        },
+        "after_zero_grad_none": {
+          "groups": {
+            "parameters": [
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "torch.float32",
+                "device": "cpu",
+                "numel": 16,
+                "logical_bytes": 64,
+                "storage_bytes": 64
+              }
+            ],
+            "gradients": [],
+            "first_moment": [
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "torch.float32",
+                "device": "cpu",
+                "numel": 16,
+                "logical_bytes": 64,
+                "storage_bytes": 64
+              }
+            ],
+            "second_moment": [
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "torch.float32",
+                "device": "cpu",
+                "numel": 16,
+                "logical_bytes": 64,
+                "storage_bytes": 64
+              }
+            ],
+            "step": [
+              {
+                "shape": [],
+                "dtype": "torch.float32",
+                "device": "cpu",
+                "numel": 1,
+                "logical_bytes": 4,
+                "storage_bytes": 4
+              }
+            ]
+          },
+          "group_bytes": {
+            "parameters": 64,
+            "gradients": 0,
+            "first_moment": 64,
+            "second_moment": 64,
+            "step": 4
+          },
+          "optimizer_state_keys": [
+            [
+              "exp_avg",
+              "exp_avg_sq",
+              "step"
+            ]
+          ],
+          "logical_payload_bytes": 196,
+          "unique_storage_bytes": 196,
+          "unique_storage_count": 4
+        }
+      }
+    },
+    {
+      "name": "fp32_parameters_cpu_autocast_bf16",
+      "parameter_elements": 16,
+      "output_dtype": "torch.bfloat16",
+      "autocast": true,
+      "snapshots": {
+        "constructed": {
+          "groups": {
+            "parameters": [
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "torch.float32",
+                "device": "cpu",
+                "numel": 16,
+                "logical_bytes": 64,
+                "storage_bytes": 64
+              }
+            ],
+            "gradients": [],
+            "first_moment": [],
+            "second_moment": [],
+            "step": []
+          },
+          "group_bytes": {
+            "parameters": 64,
+            "gradients": 0,
+            "first_moment": 0,
+            "second_moment": 0,
+            "step": 0
+          },
+          "optimizer_state_keys": [
+            []
+          ],
+          "logical_payload_bytes": 64,
+          "unique_storage_bytes": 64,
+          "unique_storage_count": 1
+        },
+        "after_backward": {
+          "groups": {
+            "parameters": [
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "torch.float32",
+                "device": "cpu",
+                "numel": 16,
+                "logical_bytes": 64,
+                "storage_bytes": 64
+              }
+            ],
+            "gradients": [
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "torch.float32",
+                "device": "cpu",
+                "numel": 16,
+                "logical_bytes": 64,
+                "storage_bytes": 64
+              }
+            ],
+            "first_moment": [],
+            "second_moment": [],
+            "step": []
+          },
+          "group_bytes": {
+            "parameters": 64,
+            "gradients": 64,
+            "first_moment": 0,
+            "second_moment": 0,
+            "step": 0
+          },
+          "optimizer_state_keys": [
+            []
+          ],
+          "logical_payload_bytes": 128,
+          "unique_storage_bytes": 128,
+          "unique_storage_count": 2
+        },
+        "after_step": {
+          "groups": {
+            "parameters": [
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "torch.float32",
+                "device": "cpu",
+                "numel": 16,
+                "logical_bytes": 64,
+                "storage_bytes": 64
+              }
+            ],
+            "gradients": [
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "torch.float32",
+                "device": "cpu",
+                "numel": 16,
+                "logical_bytes": 64,
+                "storage_bytes": 64
+              }
+            ],
+            "first_moment": [
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "torch.float32",
+                "device": "cpu",
+                "numel": 16,
+                "logical_bytes": 64,
+                "storage_bytes": 64
+              }
+            ],
+            "second_moment": [
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "torch.float32",
+                "device": "cpu",
+                "numel": 16,
+                "logical_bytes": 64,
+                "storage_bytes": 64
+              }
+            ],
+            "step": [
+              {
+                "shape": [],
+                "dtype": "torch.float32",
+                "device": "cpu",
+                "numel": 1,
+                "logical_bytes": 4,
+                "storage_bytes": 4
+              }
+            ]
+          },
+          "group_bytes": {
+            "parameters": 64,
+            "gradients": 64,
+            "first_moment": 64,
+            "second_moment": 64,
+            "step": 4
+          },
+          "optimizer_state_keys": [
+            [
+              "exp_avg",
+              "exp_avg_sq",
+              "step"
+            ]
+          ],
+          "logical_payload_bytes": 260,
+          "unique_storage_bytes": 260,
+          "unique_storage_count": 5
+        },
+        "after_zero_grad_none": {
+          "groups": {
+            "parameters": [
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "torch.float32",
+                "device": "cpu",
+                "numel": 16,
+                "logical_bytes": 64,
+                "storage_bytes": 64
+              }
+            ],
+            "gradients": [],
+            "first_moment": [
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "torch.float32",
+                "device": "cpu",
+                "numel": 16,
+                "logical_bytes": 64,
+                "storage_bytes": 64
+              }
+            ],
+            "second_moment": [
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "torch.float32",
+                "device": "cpu",
+                "numel": 16,
+                "logical_bytes": 64,
+                "storage_bytes": 64
+              }
+            ],
+            "step": [
+              {
+                "shape": [],
+                "dtype": "torch.float32",
+                "device": "cpu",
+                "numel": 1,
+                "logical_bytes": 4,
+                "storage_bytes": 4
+              }
+            ]
+          },
+          "group_bytes": {
+            "parameters": 64,
+            "gradients": 0,
+            "first_moment": 64,
+            "second_moment": 64,
+            "step": 4
+          },
+          "optimizer_state_keys": [
+            [
+              "exp_avg",
+              "exp_avg_sq",
+              "step"
+            ]
+          ],
+          "logical_payload_bytes": 196,
+          "unique_storage_bytes": 196,
+          "unique_storage_count": 4
+        }
+      }
+    },
+    {
+      "name": "explicit_bf16_parameters",
+      "parameter_elements": 16,
+      "output_dtype": "torch.bfloat16",
+      "autocast": false,
+      "snapshots": {
+        "constructed": {
+          "groups": {
+            "parameters": [
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "torch.bfloat16",
+                "device": "cpu",
+                "numel": 16,
+                "logical_bytes": 32,
+                "storage_bytes": 32
+              }
+            ],
+            "gradients": [],
+            "first_moment": [],
+            "second_moment": [],
+            "step": []
+          },
+          "group_bytes": {
+            "parameters": 32,
+            "gradients": 0,
+            "first_moment": 0,
+            "second_moment": 0,
+            "step": 0
+          },
+          "optimizer_state_keys": [
+            []
+          ],
+          "logical_payload_bytes": 32,
+          "unique_storage_bytes": 32,
+          "unique_storage_count": 1
+        },
+        "after_backward": {
+          "groups": {
+            "parameters": [
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "torch.bfloat16",
+                "device": "cpu",
+                "numel": 16,
+                "logical_bytes": 32,
+                "storage_bytes": 32
+              }
+            ],
+            "gradients": [
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "torch.bfloat16",
+                "device": "cpu",
+                "numel": 16,
+                "logical_bytes": 32,
+                "storage_bytes": 32
+              }
+            ],
+            "first_moment": [],
+            "second_moment": [],
+            "step": []
+          },
+          "group_bytes": {
+            "parameters": 32,
+            "gradients": 32,
+            "first_moment": 0,
+            "second_moment": 0,
+            "step": 0
+          },
+          "optimizer_state_keys": [
+            []
+          ],
+          "logical_payload_bytes": 64,
+          "unique_storage_bytes": 64,
+          "unique_storage_count": 2
+        },
+        "after_step": {
+          "groups": {
+            "parameters": [
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "torch.bfloat16",
+                "device": "cpu",
+                "numel": 16,
+                "logical_bytes": 32,
+                "storage_bytes": 32
+              }
+            ],
+            "gradients": [
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "torch.bfloat16",
+                "device": "cpu",
+                "numel": 16,
+                "logical_bytes": 32,
+                "storage_bytes": 32
+              }
+            ],
+            "first_moment": [
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "torch.bfloat16",
+                "device": "cpu",
+                "numel": 16,
+                "logical_bytes": 32,
+                "storage_bytes": 32
+              }
+            ],
+            "second_moment": [
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "torch.bfloat16",
+                "device": "cpu",
+                "numel": 16,
+                "logical_bytes": 32,
+                "storage_bytes": 32
+              }
+            ],
+            "step": [
+              {
+                "shape": [],
+                "dtype": "torch.float32",
+                "device": "cpu",
+                "numel": 1,
+                "logical_bytes": 4,
+                "storage_bytes": 4
+              }
+            ]
+          },
+          "group_bytes": {
+            "parameters": 32,
+            "gradients": 32,
+            "first_moment": 32,
+            "second_moment": 32,
+            "step": 4
+          },
+          "optimizer_state_keys": [
+            [
+              "exp_avg",
+              "exp_avg_sq",
+              "step"
+            ]
+          ],
+          "logical_payload_bytes": 132,
+          "unique_storage_bytes": 132,
+          "unique_storage_count": 5
+        },
+        "after_zero_grad_none": {
+          "groups": {
+            "parameters": [
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "torch.bfloat16",
+                "device": "cpu",
+                "numel": 16,
+                "logical_bytes": 32,
+                "storage_bytes": 32
+              }
+            ],
+            "gradients": [],
+            "first_moment": [
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "torch.bfloat16",
+                "device": "cpu",
+                "numel": 16,
+                "logical_bytes": 32,
+                "storage_bytes": 32
+              }
+            ],
+            "second_moment": [
+              {
+                "shape": [
+                  4,
+                  4
+                ],
+                "dtype": "torch.bfloat16",
+                "device": "cpu",
+                "numel": 16,
+                "logical_bytes": 32,
+                "storage_bytes": 32
+              }
+            ],
+            "step": [
+              {
+                "shape": [],
+                "dtype": "torch.float32",
+                "device": "cpu",
+                "numel": 1,
+                "logical_bytes": 4,
+                "storage_bytes": 4
+              }
+            ]
+          },
+          "group_bytes": {
+            "parameters": 32,
+            "gradients": 0,
+            "first_moment": 32,
+            "second_moment": 32,
+            "step": 4
+          },
+          "optimizer_state_keys": [
+            [
+              "exp_avg",
+              "exp_avg_sq",
+              "step"
+            ]
+          ],
+          "logical_payload_bytes": 100,
+          "unique_storage_bytes": 100,
+          "unique_storage_count": 4
+        }
+      }
+    }
+  ],
+  "alias": {
+    "tensors": {
+      "base": {
+        "shape": [
+          16
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "numel": 16,
+        "logical_bytes": 64,
+        "storage_bytes": 64
+      },
+      "view": {
+        "shape": [
+          8
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "numel": 8,
+        "logical_bytes": 32,
+        "storage_bytes": 64
+      },
+      "clone": {
+        "shape": [
+          8
+        ],
+        "dtype": "torch.float32",
+        "device": "cpu",
+        "numel": 8,
+        "logical_bytes": 32,
+        "storage_bytes": 32
+      }
+    },
+    "logical_sum_bytes": 128,
+    "unique_storage_bytes": 96,
+    "base_and_view_share_storage": true
+  },
+  "lazy_unused_parameter": {
+    "used_has_state": true,
+    "unused_has_state": false,
+    "unused_grad_is_none": true,
+    "scalar_adam_check": {
+      "dtype": "float64",
+      "gradient": 2.0,
+      "first_moment": 0.19999999999999996,
+      "second_moment": 0.0040000000000000036,
+      "weight_after_step": 0.999000000005,
+      "expected_weight": 0.999000000005
+    }
+  }
+}

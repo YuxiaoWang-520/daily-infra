@@ -1,0 +1,2 @@
+# Preserve exact upstream evidence, including existing whitespace.
+evidence/upstream/** -whitespace

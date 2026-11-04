@@ -1,0 +1,11 @@
+Checked at 2026-11-04T11:33:31.874270+08:00
+PASS: Wednesday Shanghai date; exactly one 2026-11-04 article; published metadata; original draft moved.
+PASS: index/roadmap each link this article exactly once; their local paths exist.
+PASS: two detailed exercise answers; two Mermaid blocks match sources; explicit zero_grad argument.
+PASS: final-path 21 tests, synthetic lab, Ruff check/format and real CPU PyTorch payload probe exit 0.
+PASS: four byte layouts; 384/480-byte lifetime peaks; three dtype profiles and four snapshots; alias 128 logical/96 storage bytes; scalar Adam moments and corrected update.
+PASS: 10 original source files, 399859 bytes, fixed main SHA, Git blob SHA-1 and SHA-256 match; Adam v9 acquisition/extraction and rendered-page reading recorded.
+PASS: 41 publishable article files, no symlinks or matching credential patterns; 31 original files have no trailing whitespace or editorial placeholders.
+LIMIT: secret-pattern check is focused, not exhaustive; public licensed source and synthetic inputs only.
+LIMIT: local Markdown files and pinned source ranges checked; upstream raw document links not mirrored; Mermaid checked structurally without pixel rendering.
+LIMIT: no RSS, CUDA allocator execution, GPU peak/performance, foreach/fused/functional GPU validation, convergence, distributed layout or main binary validation.

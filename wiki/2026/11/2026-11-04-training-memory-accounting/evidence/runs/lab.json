@@ -1,0 +1,287 @@
+{
+  "scope": "synthetic tensor payload, not measured GPU memory",
+  "layouts": {
+    "fp32_adam": {
+      "parameters": 64,
+      "gradients": 64,
+      "first_moment": 64,
+      "second_moment": 64,
+      "master": 0,
+      "amsgrad_max": 0,
+      "total": 256
+    },
+    "explicit_bf16_state": {
+      "parameters": 32,
+      "gradients": 32,
+      "first_moment": 32,
+      "second_moment": 32,
+      "master": 0,
+      "amsgrad_max": 0,
+      "total": 128
+    },
+    "explicit_master_layout": {
+      "parameters": 32,
+      "gradients": 32,
+      "first_moment": 64,
+      "second_moment": 64,
+      "master": 64,
+      "amsgrad_max": 0,
+      "total": 256
+    },
+    "after_zero_grad_none": {
+      "parameters": 64,
+      "gradients": 0,
+      "first_moment": 64,
+      "second_moment": 64,
+      "master": 0,
+      "amsgrad_max": 0,
+      "total": 192
+    }
+  },
+  "billion_fp32_payload_bytes": 16000000000,
+  "normal_lifetime": {
+    "peak_bytes": 384,
+    "peak_event_index": 5,
+    "final_bytes": 192,
+    "points": [
+      {
+        "event_index": 0,
+        "live_bytes": 64,
+        "live_storage_count": 1,
+        "live_names": [
+          "weights"
+        ]
+      },
+      {
+        "event_index": 1,
+        "live_bytes": 128,
+        "live_storage_count": 2,
+        "live_names": [
+          "m",
+          "weights"
+        ]
+      },
+      {
+        "event_index": 2,
+        "live_bytes": 192,
+        "live_storage_count": 3,
+        "live_names": [
+          "m",
+          "v",
+          "weights"
+        ]
+      },
+      {
+        "event_index": 3,
+        "live_bytes": 320,
+        "live_storage_count": 4,
+        "live_names": [
+          "activation",
+          "m",
+          "v",
+          "weights"
+        ]
+      },
+      {
+        "event_index": 4,
+        "live_bytes": 320,
+        "live_storage_count": 4,
+        "live_names": [
+          "activation",
+          "m",
+          "v",
+          "view",
+          "weights"
+        ]
+      },
+      {
+        "event_index": 5,
+        "live_bytes": 384,
+        "live_storage_count": 5,
+        "live_names": [
+          "activation",
+          "grad",
+          "m",
+          "v",
+          "view",
+          "weights"
+        ]
+      },
+      {
+        "event_index": 6,
+        "live_bytes": 384,
+        "live_storage_count": 5,
+        "live_names": [
+          "grad",
+          "m",
+          "v",
+          "view",
+          "weights"
+        ]
+      },
+      {
+        "event_index": 7,
+        "live_bytes": 256,
+        "live_storage_count": 4,
+        "live_names": [
+          "grad",
+          "m",
+          "v",
+          "weights"
+        ]
+      },
+      {
+        "event_index": 8,
+        "live_bytes": 352,
+        "live_storage_count": 5,
+        "live_names": [
+          "grad",
+          "m",
+          "temp",
+          "v",
+          "weights"
+        ]
+      },
+      {
+        "event_index": 9,
+        "live_bytes": 256,
+        "live_storage_count": 4,
+        "live_names": [
+          "grad",
+          "m",
+          "v",
+          "weights"
+        ]
+      },
+      {
+        "event_index": 10,
+        "live_bytes": 192,
+        "live_storage_count": 3,
+        "live_names": [
+          "m",
+          "v",
+          "weights"
+        ]
+      }
+    ]
+  },
+  "retained_view": {
+    "peak_bytes": 480,
+    "peak_event_index": 7,
+    "final_bytes": 320,
+    "points": [
+      {
+        "event_index": 0,
+        "live_bytes": 64,
+        "live_storage_count": 1,
+        "live_names": [
+          "weights"
+        ]
+      },
+      {
+        "event_index": 1,
+        "live_bytes": 128,
+        "live_storage_count": 2,
+        "live_names": [
+          "m",
+          "weights"
+        ]
+      },
+      {
+        "event_index": 2,
+        "live_bytes": 192,
+        "live_storage_count": 3,
+        "live_names": [
+          "m",
+          "v",
+          "weights"
+        ]
+      },
+      {
+        "event_index": 3,
+        "live_bytes": 320,
+        "live_storage_count": 4,
+        "live_names": [
+          "activation",
+          "m",
+          "v",
+          "weights"
+        ]
+      },
+      {
+        "event_index": 4,
+        "live_bytes": 320,
+        "live_storage_count": 4,
+        "live_names": [
+          "activation",
+          "m",
+          "v",
+          "view",
+          "weights"
+        ]
+      },
+      {
+        "event_index": 5,
+        "live_bytes": 384,
+        "live_storage_count": 5,
+        "live_names": [
+          "activation",
+          "grad",
+          "m",
+          "v",
+          "view",
+          "weights"
+        ]
+      },
+      {
+        "event_index": 6,
+        "live_bytes": 384,
+        "live_storage_count": 5,
+        "live_names": [
+          "grad",
+          "m",
+          "v",
+          "view",
+          "weights"
+        ]
+      },
+      {
+        "event_index": 7,
+        "live_bytes": 480,
+        "live_storage_count": 6,
+        "live_names": [
+          "grad",
+          "m",
+          "temp",
+          "v",
+          "view",
+          "weights"
+        ]
+      },
+      {
+        "event_index": 8,
+        "live_bytes": 384,
+        "live_storage_count": 5,
+        "live_names": [
+          "grad",
+          "m",
+          "v",
+          "view",
+          "weights"
+        ]
+      },
+      {
+        "event_index": 9,
+        "live_bytes": 320,
+        "live_storage_count": 4,
+        "live_names": [
+          "m",
+          "v",
+          "view",
+          "weights"
+        ]
+      }
+    ]
+  },
+  "sum_of_component_maxima_bytes": 480
+}

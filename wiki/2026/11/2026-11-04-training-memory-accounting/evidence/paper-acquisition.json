@@ -1,0 +1,43 @@
+{
+  "title": "Adam: A Method for Stochastic Optimization",
+  "authors": [
+    "Diederik P. Kingma",
+    "Jimmy Ba"
+  ],
+  "arxiv": "1412.6980v9",
+  "submitted_at": "2014-12-22T13:54:29Z",
+  "revised_at": "2017-01-30T01:27:54Z",
+  "url": "https://arxiv.org/abs/1412.6980v9",
+  "pdf_url": "https://arxiv.org/pdf/1412.6980v9",
+  "local_cache": ".cache/upstream/papers/adam-1412.6980v9.pdf",
+  "sha256": "eab9c73ae2ceda884b94830bda99312254bac4806f6c9f045cbab90721ecda31",
+  "bytes": 584641,
+  "download_command": "curl -L --fail --max-time 45 https://arxiv.org/pdf/1412.6980v9 -o .cache/upstream/papers/adam-1412.6980v9.pdf",
+  "download_exit_code": 0,
+  "checked_at": "2026-11-04T11:16:30+08:00",
+  "checks": [
+    {
+      "command": [
+        "pdftotext",
+        "-layout",
+        "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/.cache/upstream/papers/adam-1412.6980v9.pdf",
+        "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/.cache/research18/adam-v9.txt"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "Internal Error: xref num 342 not found but needed, try to reconstruct\n"
+    },
+    {
+      "command": [
+        "pdfinfo",
+        "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/.cache/upstream/papers/adam-1412.6980v9.pdf"
+      ],
+      "exit_code": 0,
+      "stdout": "Title:           Adam: A Method for Stochastic Optimization\nSubject:         \nKeywords:        \nAuthor:          Diederik P. Kingma, Jimmy Lei Ba\nCreator:         LaTeX with hyperref package\nProducer:        pdfTeX-1.40.12\nCreationDate:    Tue Jan 31 09:09:39 2017 CST\nModDate:         Tue Jan 31 09:09:39 2017 CST\nCustom Metadata: yes\nMetadata Stream: no\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           15\nEncrypted:       no\nPage size:       595.276 x 841.89 pts (A4)\nPage rot:        0\nFile size:       584641 bytes\nOptimized:       no\nPDF version:     1.5\n",
+      "stderr": ""
+    }
+  ],
+  "read_scope": "Algorithm 1, section 2 and bias correction in section 3; PDF page 2 rendered and visually inspected",
+  "redistribution": "PDF kept only in ignored upstream cache; article archives original reading notes and locators, not paper full text",
+  "pdf_warning": "pdfinfo reports missing xref and reconstruction; it exits 0; extracted Algorithm 1 was checked against the rendered page"
+}
