@@ -1,0 +1,21 @@
+test_arbitrary_integer_layers_with_zero_overhead (test_answers.UniformPlanTests.test_arbitrary_integer_layers_with_zero_overhead) ... ERROR
+
+======================================================================
+ERROR: test_arbitrary_integer_layers_with_zero_overhead (test_answers.UniformPlanTests.test_arbitrary_integer_layers_with_zero_overhead)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 53, in test_arbitrary_integer_layers_with_zero_overhead
+    plan = self.plan(
+           ^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 23, in plan
+    return impl.estimate_uniform(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/answers.py", line 62, in estimate_uniform
+    checkpoint_time = 2 * forward_us + backward_us + segments * overhead_us
+                                                     ~~~~~~~~~^~~~~~~~~~~~~
+OverflowError: int too large to convert to float
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (errors=1)

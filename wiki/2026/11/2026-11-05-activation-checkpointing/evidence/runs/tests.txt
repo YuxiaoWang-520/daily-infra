@@ -1,0 +1,36 @@
+test_exact_budget (test_answers.SelectionTests.test_exact_budget) ... ok
+test_invalid_budget (test_answers.SelectionTests.test_invalid_budget) ... ok
+test_larger_budget_reduces_per_segment_overhead (test_answers.SelectionTests.test_larger_budget_reduces_per_segment_overhead) ... ok
+test_no_feasible_plan (test_answers.SelectionTests.test_no_feasible_plan) ... ok
+test_no_overhead_tie_prefers_less_memory (test_answers.SelectionTests.test_no_overhead_tie_prefers_less_memory) ... ok
+test_arbitrary_integer_layers_with_zero_overhead (test_answers.UniformPlanTests.test_arbitrary_integer_layers_with_zero_overhead) ... ok
+test_combined_duration_overflow_is_rejected (test_answers.UniformPlanTests.test_combined_duration_overflow_is_rejected) ... ok
+test_fine_and_coarse_extremes_do_not_guarantee_savings (test_answers.UniformPlanTests.test_fine_and_coarse_extremes_do_not_guarantee_savings) ... ok
+test_hand_counted_four_segments (test_answers.UniformPlanTests.test_hand_counted_four_segments) ... ok
+test_huge_count_times_small_overhead_can_remain_finite (test_answers.UniformPlanTests.test_huge_count_times_small_overhead_can_remain_finite) ... ok
+test_invalid_sizes (test_answers.UniformPlanTests.test_invalid_sizes) ... ok
+test_invalid_times (test_answers.UniformPlanTests.test_invalid_times) ... ok
+test_large_integer_bytes_do_not_round (test_answers.UniformPlanTests.test_large_integer_bytes_do_not_round) ... ok
+test_no_overhead_gives_four_thirds_for_b_equals_two_f (test_answers.UniformPlanTests.test_no_overhead_gives_four_thirds_for_b_equals_two_f) ... ok
+test_non_two_to_one_backward_changes_the_ratio (test_answers.UniformPlanTests.test_non_two_to_one_backward_changes_the_ratio) ... ok
+test_one_layer_proxy_includes_two_slots (test_answers.UniformPlanTests.test_one_layer_proxy_includes_two_slots) ... ok
+test_result_is_immutable (test_answers.UniformPlanTests.test_result_is_immutable) ... ok
+test_segment_overhead_overflow_is_rejected (test_answers.UniformPlanTests.test_segment_overhead_overflow_is_rejected) ... ok
+test_tail_segment_uses_ceiling (test_answers.UniformPlanTests.test_tail_segment_uses_ceiling) ... ok
+test_invalid_fixture_configuration (test_torch_probe.FixtureBoundaryTests.test_invalid_fixture_configuration) ... ok
+test_no_dropout_is_equivalent_without_rng_preservation (test_torch_probe.FixtureBoundaryTests.test_no_dropout_is_equivalent_without_rng_preservation) ... ok
+test_single_block_has_no_extra_saved_boundary_activation (test_torch_probe.FixtureBoundaryTests.test_single_block_has_no_extra_saved_boundary_activation) ... ok
+test_trial_restores_callers_cpu_rng (test_torch_probe.FixtureBoundaryTests.test_trial_restores_callers_cpu_rng) ... ok
+test_all_parameter_gradients_are_finite_and_nonzero (test_torch_probe.ReplayTests.test_all_parameter_gradients_are_finite_and_nonzero) ... ok
+test_block_entries_show_replay_in_reverse_block_order (test_torch_probe.ReplayTests.test_block_entries_show_replay_in_reverse_block_order) ... ok
+test_checkpoint_saves_fewer_outer_forward_activation_bytes (test_torch_probe.ReplayTests.test_checkpoint_saves_fewer_outer_forward_activation_bytes) ... ok
+test_preserved_rng_keeps_the_next_cpu_random_sample (test_torch_probe.ReplayTests.test_preserved_rng_keeps_the_next_cpu_random_sample) ... ok
+test_preserved_rng_matches_every_sgd_updated_parameter (test_torch_probe.ReplayTests.test_preserved_rng_matches_every_sgd_updated_parameter) ... ok
+test_preserved_rng_matches_input_and_every_parameter_gradient (test_torch_probe.ReplayTests.test_preserved_rng_matches_input_and_every_parameter_gradient) ... ok
+test_same_original_forward_even_when_rng_is_not_preserved (test_torch_probe.ReplayTests.test_same_original_forward_even_when_rng_is_not_preserved) ... ok
+test_unpreserved_rng_exposes_gradient_mismatch (test_torch_probe.ReplayTests.test_unpreserved_rng_exposes_gradient_mismatch) ... ok
+
+----------------------------------------------------------------------
+Ran 31 tests in 0.580s
+
+OK

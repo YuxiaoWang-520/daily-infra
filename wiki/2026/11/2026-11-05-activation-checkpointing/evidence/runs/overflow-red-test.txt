@@ -1,0 +1,21 @@
+test_combined_duration_overflow_is_rejected (test_answers.UniformPlanTests.test_combined_duration_overflow_is_rejected) ... 
+  test_combined_duration_overflow_is_rejected (test_answers.UniformPlanTests.test_combined_duration_overflow_is_rejected) (duration=100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000) ... ERROR
+
+======================================================================
+ERROR: test_combined_duration_overflow_is_rejected (test_answers.UniformPlanTests.test_combined_duration_overflow_is_rejected) (duration=100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 85, in test_combined_duration_overflow_is_rejected
+    self.plan(forward_us=duration, backward_us=duration)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 23, in plan
+    return impl.estimate_uniform(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/answers.py", line 53, in estimate_uniform
+    checkpoint_time = 2 * forward_us + backward_us + segments * overhead_us
+                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~
+OverflowError: int too large to convert to float
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (errors=1)

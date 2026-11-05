@@ -1,0 +1,17 @@
+test_invalid_fixture_configuration (test_torch_probe.FixtureBoundaryTests.test_invalid_fixture_configuration) ... ok
+test_no_dropout_is_equivalent_without_rng_preservation (test_torch_probe.FixtureBoundaryTests.test_no_dropout_is_equivalent_without_rng_preservation) ... ok
+test_single_block_has_no_extra_saved_boundary_activation (test_torch_probe.FixtureBoundaryTests.test_single_block_has_no_extra_saved_boundary_activation) ... ok
+test_trial_restores_callers_cpu_rng (test_torch_probe.FixtureBoundaryTests.test_trial_restores_callers_cpu_rng) ... ok
+test_all_parameter_gradients_are_finite_and_nonzero (test_torch_probe.ReplayTests.test_all_parameter_gradients_are_finite_and_nonzero) ... ok
+test_block_entries_show_replay_in_reverse_block_order (test_torch_probe.ReplayTests.test_block_entries_show_replay_in_reverse_block_order) ... ok
+test_checkpoint_saves_fewer_outer_forward_activation_bytes (test_torch_probe.ReplayTests.test_checkpoint_saves_fewer_outer_forward_activation_bytes) ... ok
+test_preserved_rng_keeps_the_next_cpu_random_sample (test_torch_probe.ReplayTests.test_preserved_rng_keeps_the_next_cpu_random_sample) ... ok
+test_preserved_rng_matches_every_sgd_updated_parameter (test_torch_probe.ReplayTests.test_preserved_rng_matches_every_sgd_updated_parameter) ... ok
+test_preserved_rng_matches_input_and_every_parameter_gradient (test_torch_probe.ReplayTests.test_preserved_rng_matches_input_and_every_parameter_gradient) ... ok
+test_same_original_forward_even_when_rng_is_not_preserved (test_torch_probe.ReplayTests.test_same_original_forward_even_when_rng_is_not_preserved) ... ok
+test_unpreserved_rng_exposes_gradient_mismatch (test_torch_probe.ReplayTests.test_unpreserved_rng_exposes_gradient_mismatch) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.626s
+
+OK

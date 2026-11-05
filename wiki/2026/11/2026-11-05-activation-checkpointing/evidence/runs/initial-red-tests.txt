@@ -1,0 +1,584 @@
+test_exact_budget (test_answers.SelectionTests.test_exact_budget) ... ERROR
+test_invalid_budget (test_answers.SelectionTests.test_invalid_budget) ... 
+  test_invalid_budget (test_answers.SelectionTests.test_invalid_budget) (budget=-1) ... ERROR
+  test_invalid_budget (test_answers.SelectionTests.test_invalid_budget) (budget=True) ... ERROR
+  test_invalid_budget (test_answers.SelectionTests.test_invalid_budget) (budget=0.5) ... ERROR
+  test_invalid_budget (test_answers.SelectionTests.test_invalid_budget) (budget='8') ... ERROR
+test_larger_budget_reduces_per_segment_overhead (test_answers.SelectionTests.test_larger_budget_reduces_per_segment_overhead) ... ERROR
+test_no_feasible_plan (test_answers.SelectionTests.test_no_feasible_plan) ... ERROR
+test_no_overhead_tie_prefers_less_memory (test_answers.SelectionTests.test_no_overhead_tie_prefers_less_memory) ... ERROR
+test_fine_and_coarse_extremes_do_not_guarantee_savings (test_answers.UniformPlanTests.test_fine_and_coarse_extremes_do_not_guarantee_savings) ... 
+  test_fine_and_coarse_extremes_do_not_guarantee_savings (test_answers.UniformPlanTests.test_fine_and_coarse_extremes_do_not_guarantee_savings) (size=1) ... ERROR
+  test_fine_and_coarse_extremes_do_not_guarantee_savings (test_answers.UniformPlanTests.test_fine_and_coarse_extremes_do_not_guarantee_savings) (size=16) ... ERROR
+test_hand_counted_four_segments (test_answers.UniformPlanTests.test_hand_counted_four_segments) ... ERROR
+test_invalid_sizes (test_answers.UniformPlanTests.test_invalid_sizes) ... 
+  test_invalid_sizes (test_answers.UniformPlanTests.test_invalid_sizes) (overrides={'layers': 0}) ... ERROR
+  test_invalid_sizes (test_answers.UniformPlanTests.test_invalid_sizes) (overrides={'layers': True}) ... ERROR
+  test_invalid_sizes (test_answers.UniformPlanTests.test_invalid_sizes) (overrides={'layers': 2.5}) ... ERROR
+  test_invalid_sizes (test_answers.UniformPlanTests.test_invalid_sizes) (overrides={'segment_size': 0}) ... ERROR
+  test_invalid_sizes (test_answers.UniformPlanTests.test_invalid_sizes) (overrides={'segment_size': 17}) ... ERROR
+  test_invalid_sizes (test_answers.UniformPlanTests.test_invalid_sizes) (overrides={'segment_size': False}) ... ERROR
+  test_invalid_sizes (test_answers.UniformPlanTests.test_invalid_sizes) (overrides={'activation_bytes': -1}) ... ERROR
+  test_invalid_sizes (test_answers.UniformPlanTests.test_invalid_sizes) (overrides={'activation_bytes': 1.5}) ... ERROR
+test_invalid_times (test_answers.UniformPlanTests.test_invalid_times) ... 
+  test_invalid_times (test_answers.UniformPlanTests.test_invalid_times) (name='forward_us', value=-1) ... ERROR
+  test_invalid_times (test_answers.UniformPlanTests.test_invalid_times) (name='forward_us', value=True) ... ERROR
+  test_invalid_times (test_answers.UniformPlanTests.test_invalid_times) (name='forward_us', value=inf) ... ERROR
+  test_invalid_times (test_answers.UniformPlanTests.test_invalid_times) (name='forward_us', value=nan) ... ERROR
+  test_invalid_times (test_answers.UniformPlanTests.test_invalid_times) (name='forward_us', value='slow') ... ERROR
+  test_invalid_times (test_answers.UniformPlanTests.test_invalid_times) (name='backward_us', value=-1) ... ERROR
+  test_invalid_times (test_answers.UniformPlanTests.test_invalid_times) (name='backward_us', value=True) ... ERROR
+  test_invalid_times (test_answers.UniformPlanTests.test_invalid_times) (name='backward_us', value=inf) ... ERROR
+  test_invalid_times (test_answers.UniformPlanTests.test_invalid_times) (name='backward_us', value=nan) ... ERROR
+  test_invalid_times (test_answers.UniformPlanTests.test_invalid_times) (name='backward_us', value='slow') ... ERROR
+  test_invalid_times (test_answers.UniformPlanTests.test_invalid_times) (name='overhead_us', value=-1) ... ERROR
+  test_invalid_times (test_answers.UniformPlanTests.test_invalid_times) (name='overhead_us', value=True) ... ERROR
+  test_invalid_times (test_answers.UniformPlanTests.test_invalid_times) (name='overhead_us', value=inf) ... ERROR
+  test_invalid_times (test_answers.UniformPlanTests.test_invalid_times) (name='overhead_us', value=nan) ... ERROR
+  test_invalid_times (test_answers.UniformPlanTests.test_invalid_times) (name='overhead_us', value='slow') ... ERROR
+test_invalid_times (test_answers.UniformPlanTests.test_invalid_times) ... ERROR
+test_large_integer_bytes_do_not_round (test_answers.UniformPlanTests.test_large_integer_bytes_do_not_round) ... ERROR
+test_no_overhead_gives_four_thirds_for_b_equals_two_f (test_answers.UniformPlanTests.test_no_overhead_gives_four_thirds_for_b_equals_two_f) ... ERROR
+test_non_two_to_one_backward_changes_the_ratio (test_answers.UniformPlanTests.test_non_two_to_one_backward_changes_the_ratio) ... ERROR
+test_one_layer_proxy_includes_two_slots (test_answers.UniformPlanTests.test_one_layer_proxy_includes_two_slots) ... ERROR
+test_result_is_immutable (test_answers.UniformPlanTests.test_result_is_immutable) ... ERROR
+test_tail_segment_uses_ceiling (test_answers.UniformPlanTests.test_tail_segment_uses_ceiling) ... ERROR
+
+======================================================================
+ERROR: test_exact_budget (test_answers.SelectionTests.test_exact_budget)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 88, in test_exact_budget
+    self.assertEqual(self.choose(8).segment_size, 4)
+                     ^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 85, in choose
+    return impl.choose_plan(16, 1024**2, budget * 1024**2, 16, 32, overhead)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/exercises.py", line 41, in choose_plan
+    raise NotImplementedError("Exercise 1: enumerate the feasible segment sizes")
+NotImplementedError: Exercise 1: enumerate the feasible segment sizes
+
+======================================================================
+ERROR: test_invalid_budget (test_answers.SelectionTests.test_invalid_budget) (budget=-1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 105, in test_invalid_budget
+    impl.choose_plan(16, 1024, budget, 16, 32)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/exercises.py", line 41, in choose_plan
+    raise NotImplementedError("Exercise 1: enumerate the feasible segment sizes")
+NotImplementedError: Exercise 1: enumerate the feasible segment sizes
+
+======================================================================
+ERROR: test_invalid_budget (test_answers.SelectionTests.test_invalid_budget) (budget=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 105, in test_invalid_budget
+    impl.choose_plan(16, 1024, budget, 16, 32)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/exercises.py", line 41, in choose_plan
+    raise NotImplementedError("Exercise 1: enumerate the feasible segment sizes")
+NotImplementedError: Exercise 1: enumerate the feasible segment sizes
+
+======================================================================
+ERROR: test_invalid_budget (test_answers.SelectionTests.test_invalid_budget) (budget=0.5)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 105, in test_invalid_budget
+    impl.choose_plan(16, 1024, budget, 16, 32)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/exercises.py", line 41, in choose_plan
+    raise NotImplementedError("Exercise 1: enumerate the feasible segment sizes")
+NotImplementedError: Exercise 1: enumerate the feasible segment sizes
+
+======================================================================
+ERROR: test_invalid_budget (test_answers.SelectionTests.test_invalid_budget) (budget='8')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 105, in test_invalid_budget
+    impl.choose_plan(16, 1024, budget, 16, 32)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/exercises.py", line 41, in choose_plan
+    raise NotImplementedError("Exercise 1: enumerate the feasible segment sizes")
+NotImplementedError: Exercise 1: enumerate the feasible segment sizes
+
+======================================================================
+ERROR: test_larger_budget_reduces_per_segment_overhead (test_answers.SelectionTests.test_larger_budget_reduces_per_segment_overhead)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 91, in test_larger_budget_reduces_per_segment_overhead
+    plan = self.choose(10)
+           ^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 85, in choose
+    return impl.choose_plan(16, 1024**2, budget * 1024**2, 16, 32, overhead)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/exercises.py", line 41, in choose_plan
+    raise NotImplementedError("Exercise 1: enumerate the feasible segment sizes")
+NotImplementedError: Exercise 1: enumerate the feasible segment sizes
+
+======================================================================
+ERROR: test_no_feasible_plan (test_answers.SelectionTests.test_no_feasible_plan)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 96, in test_no_feasible_plan
+    self.assertIsNone(self.choose(7))
+                      ^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 85, in choose
+    return impl.choose_plan(16, 1024**2, budget * 1024**2, 16, 32, overhead)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/exercises.py", line 41, in choose_plan
+    raise NotImplementedError("Exercise 1: enumerate the feasible segment sizes")
+NotImplementedError: Exercise 1: enumerate the feasible segment sizes
+
+======================================================================
+ERROR: test_no_overhead_tie_prefers_less_memory (test_answers.SelectionTests.test_no_overhead_tie_prefers_less_memory)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 100, in test_no_overhead_tie_prefers_less_memory
+    self.assertEqual(self.choose(100, overhead=0).segment_size, 4)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 85, in choose
+    return impl.choose_plan(16, 1024**2, budget * 1024**2, 16, 32, overhead)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/exercises.py", line 41, in choose_plan
+    raise NotImplementedError("Exercise 1: enumerate the feasible segment sizes")
+NotImplementedError: Exercise 1: enumerate the feasible segment sizes
+
+======================================================================
+ERROR: test_fine_and_coarse_extremes_do_not_guarantee_savings (test_answers.UniformPlanTests.test_fine_and_coarse_extremes_do_not_guarantee_savings) (size=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 40, in test_fine_and_coarse_extremes_do_not_guarantee_savings
+    self.assertEqual(self.plan(segment_size=size).activation_slots, 17)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 23, in plan
+    return impl.estimate_uniform(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/exercises.py", line 29, in estimate_uniform
+    raise NotImplementedError("Exercise 1: derive the model before implementing it")
+NotImplementedError: Exercise 1: derive the model before implementing it
+
+======================================================================
+ERROR: test_fine_and_coarse_extremes_do_not_guarantee_savings (test_answers.UniformPlanTests.test_fine_and_coarse_extremes_do_not_guarantee_savings) (size=16)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 40, in test_fine_and_coarse_extremes_do_not_guarantee_savings
+    self.assertEqual(self.plan(segment_size=size).activation_slots, 17)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 23, in plan
+    return impl.estimate_uniform(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/exercises.py", line 29, in estimate_uniform
+    raise NotImplementedError("Exercise 1: derive the model before implementing it")
+NotImplementedError: Exercise 1: derive the model before implementing it
+
+======================================================================
+ERROR: test_hand_counted_four_segments (test_answers.UniformPlanTests.test_hand_counted_four_segments)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 26, in test_hand_counted_four_segments
+    plan = self.plan()
+           ^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 23, in plan
+    return impl.estimate_uniform(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/exercises.py", line 29, in estimate_uniform
+    raise NotImplementedError("Exercise 1: derive the model before implementing it")
+NotImplementedError: Exercise 1: derive the model before implementing it
+
+======================================================================
+ERROR: test_invalid_sizes (test_answers.UniformPlanTests.test_invalid_sizes) (overrides={'layers': 0})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 72, in test_invalid_sizes
+    self.plan(**overrides)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 23, in plan
+    return impl.estimate_uniform(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/exercises.py", line 29, in estimate_uniform
+    raise NotImplementedError("Exercise 1: derive the model before implementing it")
+NotImplementedError: Exercise 1: derive the model before implementing it
+
+======================================================================
+ERROR: test_invalid_sizes (test_answers.UniformPlanTests.test_invalid_sizes) (overrides={'layers': True})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 72, in test_invalid_sizes
+    self.plan(**overrides)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 23, in plan
+    return impl.estimate_uniform(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/exercises.py", line 29, in estimate_uniform
+    raise NotImplementedError("Exercise 1: derive the model before implementing it")
+NotImplementedError: Exercise 1: derive the model before implementing it
+
+======================================================================
+ERROR: test_invalid_sizes (test_answers.UniformPlanTests.test_invalid_sizes) (overrides={'layers': 2.5})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 72, in test_invalid_sizes
+    self.plan(**overrides)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 23, in plan
+    return impl.estimate_uniform(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/exercises.py", line 29, in estimate_uniform
+    raise NotImplementedError("Exercise 1: derive the model before implementing it")
+NotImplementedError: Exercise 1: derive the model before implementing it
+
+======================================================================
+ERROR: test_invalid_sizes (test_answers.UniformPlanTests.test_invalid_sizes) (overrides={'segment_size': 0})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 72, in test_invalid_sizes
+    self.plan(**overrides)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 23, in plan
+    return impl.estimate_uniform(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/exercises.py", line 29, in estimate_uniform
+    raise NotImplementedError("Exercise 1: derive the model before implementing it")
+NotImplementedError: Exercise 1: derive the model before implementing it
+
+======================================================================
+ERROR: test_invalid_sizes (test_answers.UniformPlanTests.test_invalid_sizes) (overrides={'segment_size': 17})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 72, in test_invalid_sizes
+    self.plan(**overrides)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 23, in plan
+    return impl.estimate_uniform(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/exercises.py", line 29, in estimate_uniform
+    raise NotImplementedError("Exercise 1: derive the model before implementing it")
+NotImplementedError: Exercise 1: derive the model before implementing it
+
+======================================================================
+ERROR: test_invalid_sizes (test_answers.UniformPlanTests.test_invalid_sizes) (overrides={'segment_size': False})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 72, in test_invalid_sizes
+    self.plan(**overrides)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 23, in plan
+    return impl.estimate_uniform(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/exercises.py", line 29, in estimate_uniform
+    raise NotImplementedError("Exercise 1: derive the model before implementing it")
+NotImplementedError: Exercise 1: derive the model before implementing it
+
+======================================================================
+ERROR: test_invalid_sizes (test_answers.UniformPlanTests.test_invalid_sizes) (overrides={'activation_bytes': -1})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 72, in test_invalid_sizes
+    self.plan(**overrides)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 23, in plan
+    return impl.estimate_uniform(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/exercises.py", line 29, in estimate_uniform
+    raise NotImplementedError("Exercise 1: derive the model before implementing it")
+NotImplementedError: Exercise 1: derive the model before implementing it
+
+======================================================================
+ERROR: test_invalid_sizes (test_answers.UniformPlanTests.test_invalid_sizes) (overrides={'activation_bytes': 1.5})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 72, in test_invalid_sizes
+    self.plan(**overrides)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 23, in plan
+    return impl.estimate_uniform(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/exercises.py", line 29, in estimate_uniform
+    raise NotImplementedError("Exercise 1: derive the model before implementing it")
+NotImplementedError: Exercise 1: derive the model before implementing it
+
+======================================================================
+ERROR: test_invalid_times (test_answers.UniformPlanTests.test_invalid_times) (name='forward_us', value=-1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 78, in test_invalid_times
+    self.plan(**{name: value})
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 23, in plan
+    return impl.estimate_uniform(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/exercises.py", line 29, in estimate_uniform
+    raise NotImplementedError("Exercise 1: derive the model before implementing it")
+NotImplementedError: Exercise 1: derive the model before implementing it
+
+======================================================================
+ERROR: test_invalid_times (test_answers.UniformPlanTests.test_invalid_times) (name='forward_us', value=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 78, in test_invalid_times
+    self.plan(**{name: value})
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 23, in plan
+    return impl.estimate_uniform(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/exercises.py", line 29, in estimate_uniform
+    raise NotImplementedError("Exercise 1: derive the model before implementing it")
+NotImplementedError: Exercise 1: derive the model before implementing it
+
+======================================================================
+ERROR: test_invalid_times (test_answers.UniformPlanTests.test_invalid_times) (name='forward_us', value=inf)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 78, in test_invalid_times
+    self.plan(**{name: value})
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 23, in plan
+    return impl.estimate_uniform(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/exercises.py", line 29, in estimate_uniform
+    raise NotImplementedError("Exercise 1: derive the model before implementing it")
+NotImplementedError: Exercise 1: derive the model before implementing it
+
+======================================================================
+ERROR: test_invalid_times (test_answers.UniformPlanTests.test_invalid_times) (name='forward_us', value=nan)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 78, in test_invalid_times
+    self.plan(**{name: value})
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 23, in plan
+    return impl.estimate_uniform(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/exercises.py", line 29, in estimate_uniform
+    raise NotImplementedError("Exercise 1: derive the model before implementing it")
+NotImplementedError: Exercise 1: derive the model before implementing it
+
+======================================================================
+ERROR: test_invalid_times (test_answers.UniformPlanTests.test_invalid_times) (name='forward_us', value='slow')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 78, in test_invalid_times
+    self.plan(**{name: value})
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 23, in plan
+    return impl.estimate_uniform(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/exercises.py", line 29, in estimate_uniform
+    raise NotImplementedError("Exercise 1: derive the model before implementing it")
+NotImplementedError: Exercise 1: derive the model before implementing it
+
+======================================================================
+ERROR: test_invalid_times (test_answers.UniformPlanTests.test_invalid_times) (name='backward_us', value=-1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 78, in test_invalid_times
+    self.plan(**{name: value})
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 23, in plan
+    return impl.estimate_uniform(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/exercises.py", line 29, in estimate_uniform
+    raise NotImplementedError("Exercise 1: derive the model before implementing it")
+NotImplementedError: Exercise 1: derive the model before implementing it
+
+======================================================================
+ERROR: test_invalid_times (test_answers.UniformPlanTests.test_invalid_times) (name='backward_us', value=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 78, in test_invalid_times
+    self.plan(**{name: value})
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 23, in plan
+    return impl.estimate_uniform(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/exercises.py", line 29, in estimate_uniform
+    raise NotImplementedError("Exercise 1: derive the model before implementing it")
+NotImplementedError: Exercise 1: derive the model before implementing it
+
+======================================================================
+ERROR: test_invalid_times (test_answers.UniformPlanTests.test_invalid_times) (name='backward_us', value=inf)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 78, in test_invalid_times
+    self.plan(**{name: value})
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 23, in plan
+    return impl.estimate_uniform(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/exercises.py", line 29, in estimate_uniform
+    raise NotImplementedError("Exercise 1: derive the model before implementing it")
+NotImplementedError: Exercise 1: derive the model before implementing it
+
+======================================================================
+ERROR: test_invalid_times (test_answers.UniformPlanTests.test_invalid_times) (name='backward_us', value=nan)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 78, in test_invalid_times
+    self.plan(**{name: value})
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 23, in plan
+    return impl.estimate_uniform(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/exercises.py", line 29, in estimate_uniform
+    raise NotImplementedError("Exercise 1: derive the model before implementing it")
+NotImplementedError: Exercise 1: derive the model before implementing it
+
+======================================================================
+ERROR: test_invalid_times (test_answers.UniformPlanTests.test_invalid_times) (name='backward_us', value='slow')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 78, in test_invalid_times
+    self.plan(**{name: value})
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 23, in plan
+    return impl.estimate_uniform(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/exercises.py", line 29, in estimate_uniform
+    raise NotImplementedError("Exercise 1: derive the model before implementing it")
+NotImplementedError: Exercise 1: derive the model before implementing it
+
+======================================================================
+ERROR: test_invalid_times (test_answers.UniformPlanTests.test_invalid_times) (name='overhead_us', value=-1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 78, in test_invalid_times
+    self.plan(**{name: value})
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 23, in plan
+    return impl.estimate_uniform(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/exercises.py", line 29, in estimate_uniform
+    raise NotImplementedError("Exercise 1: derive the model before implementing it")
+NotImplementedError: Exercise 1: derive the model before implementing it
+
+======================================================================
+ERROR: test_invalid_times (test_answers.UniformPlanTests.test_invalid_times) (name='overhead_us', value=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 78, in test_invalid_times
+    self.plan(**{name: value})
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 23, in plan
+    return impl.estimate_uniform(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/exercises.py", line 29, in estimate_uniform
+    raise NotImplementedError("Exercise 1: derive the model before implementing it")
+NotImplementedError: Exercise 1: derive the model before implementing it
+
+======================================================================
+ERROR: test_invalid_times (test_answers.UniformPlanTests.test_invalid_times) (name='overhead_us', value=inf)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 78, in test_invalid_times
+    self.plan(**{name: value})
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 23, in plan
+    return impl.estimate_uniform(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/exercises.py", line 29, in estimate_uniform
+    raise NotImplementedError("Exercise 1: derive the model before implementing it")
+NotImplementedError: Exercise 1: derive the model before implementing it
+
+======================================================================
+ERROR: test_invalid_times (test_answers.UniformPlanTests.test_invalid_times) (name='overhead_us', value=nan)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 78, in test_invalid_times
+    self.plan(**{name: value})
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 23, in plan
+    return impl.estimate_uniform(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/exercises.py", line 29, in estimate_uniform
+    raise NotImplementedError("Exercise 1: derive the model before implementing it")
+NotImplementedError: Exercise 1: derive the model before implementing it
+
+======================================================================
+ERROR: test_invalid_times (test_answers.UniformPlanTests.test_invalid_times) (name='overhead_us', value='slow')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 78, in test_invalid_times
+    self.plan(**{name: value})
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 23, in plan
+    return impl.estimate_uniform(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/exercises.py", line 29, in estimate_uniform
+    raise NotImplementedError("Exercise 1: derive the model before implementing it")
+NotImplementedError: Exercise 1: derive the model before implementing it
+
+======================================================================
+ERROR: test_invalid_times (test_answers.UniformPlanTests.test_invalid_times)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 80, in test_invalid_times
+    self.plan(forward_us=0)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 23, in plan
+    return impl.estimate_uniform(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/exercises.py", line 29, in estimate_uniform
+    raise NotImplementedError("Exercise 1: derive the model before implementing it")
+NotImplementedError: Exercise 1: derive the model before implementing it
+
+======================================================================
+ERROR: test_large_integer_bytes_do_not_round (test_answers.UniformPlanTests.test_large_integer_bytes_do_not_round)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 47, in test_large_integer_bytes_do_not_round
+    plan = self.plan(layers=10**12, segment_size=10**6, activation_bytes=10**12)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 23, in plan
+    return impl.estimate_uniform(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/exercises.py", line 29, in estimate_uniform
+    raise NotImplementedError("Exercise 1: derive the model before implementing it")
+NotImplementedError: Exercise 1: derive the model before implementing it
+
+======================================================================
+ERROR: test_no_overhead_gives_four_thirds_for_b_equals_two_f (test_answers.UniformPlanTests.test_no_overhead_gives_four_thirds_for_b_equals_two_f)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 51, in test_no_overhead_gives_four_thirds_for_b_equals_two_f
+    self.assertAlmostEqual(self.plan(overhead_us=0).slowdown, 4 / 3)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 23, in plan
+    return impl.estimate_uniform(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/exercises.py", line 29, in estimate_uniform
+    raise NotImplementedError("Exercise 1: derive the model before implementing it")
+NotImplementedError: Exercise 1: derive the model before implementing it
+
+======================================================================
+ERROR: test_non_two_to_one_backward_changes_the_ratio (test_answers.UniformPlanTests.test_non_two_to_one_backward_changes_the_ratio)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 54, in test_non_two_to_one_backward_changes_the_ratio
+    self.assertAlmostEqual(self.plan(backward_us=16, overhead_us=0).slowdown, 1.5)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 23, in plan
+    return impl.estimate_uniform(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/exercises.py", line 29, in estimate_uniform
+    raise NotImplementedError("Exercise 1: derive the model before implementing it")
+NotImplementedError: Exercise 1: derive the model before implementing it
+
+======================================================================
+ERROR: test_one_layer_proxy_includes_two_slots (test_answers.UniformPlanTests.test_one_layer_proxy_includes_two_slots)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 43, in test_one_layer_proxy_includes_two_slots
+    plan = self.plan(layers=1, segment_size=1)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 23, in plan
+    return impl.estimate_uniform(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/exercises.py", line 29, in estimate_uniform
+    raise NotImplementedError("Exercise 1: derive the model before implementing it")
+NotImplementedError: Exercise 1: derive the model before implementing it
+
+======================================================================
+ERROR: test_result_is_immutable (test_answers.UniformPlanTests.test_result_is_immutable)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 58, in test_result_is_immutable
+    self.plan().segments = 0
+    ^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 23, in plan
+    return impl.estimate_uniform(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/exercises.py", line 29, in estimate_uniform
+    raise NotImplementedError("Exercise 1: derive the model before implementing it")
+NotImplementedError: Exercise 1: derive the model before implementing it
+
+======================================================================
+ERROR: test_tail_segment_uses_ceiling (test_answers.UniformPlanTests.test_tail_segment_uses_ceiling)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 34, in test_tail_segment_uses_ceiling
+    plan = self.plan(layers=17)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_answers.py", line 23, in plan
+    return impl.estimate_uniform(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/exercises.py", line 29, in estimate_uniform
+    raise NotImplementedError("Exercise 1: derive the model before implementing it")
+NotImplementedError: Exercise 1: derive the model before implementing it
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.006s
+
+FAILED (errors=41)

@@ -1,0 +1,40 @@
+{
+  "suite": "19 model and boundary tests + 12 CPU replay tests",
+  "tests": 31,
+  "all_exit_codes_zero": true,
+  "checks": [
+    {
+      "name": "tests",
+      "command": "set -o pipefail\nPYTHONDONTWRITEBYTECODE=1 /Users/wangyuxiao/miniforge3/envs/ai-infra/bin/python -m unittest discover -s code -p 'test_*.py' -v 2>&1 | tee evidence/runs/tests.txt",
+      "working_directory_at_execution": "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing",
+      "archived_output": "evidence/runs/tests.txt",
+      "exit_code": 0,
+      "elapsed_wall_seconds": 1.717854625
+    },
+    {
+      "name": "lab",
+      "command": "set -o pipefail\nPYTHONDONTWRITEBYTECODE=1 /Users/wangyuxiao/miniforge3/envs/ai-infra/bin/python code/run_lab.py | tee evidence/runs/lab.json",
+      "working_directory_at_execution": "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing",
+      "archived_output": "evidence/runs/lab.json",
+      "exit_code": 0,
+      "elapsed_wall_seconds": 1.740918875
+    },
+    {
+      "name": "lint",
+      "command": "set -o pipefail\nPYTHONDONTWRITEBYTECODE=1 /Users/wangyuxiao/miniforge3/envs/ai-infra/bin/python -m ruff check code 2>&1 | tee evidence/runs/lint.txt",
+      "working_directory_at_execution": "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing",
+      "archived_output": "evidence/runs/lint.txt",
+      "exit_code": 0,
+      "elapsed_wall_seconds": 0.230009375
+    },
+    {
+      "name": "format",
+      "command": "set -o pipefail\nPYTHONDONTWRITEBYTECODE=1 /Users/wangyuxiao/miniforge3/envs/ai-infra/bin/python -m ruff format --check code 2>&1 | tee evidence/runs/format.txt",
+      "working_directory_at_execution": "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing",
+      "archived_output": "evidence/runs/format.txt",
+      "exit_code": 0,
+      "elapsed_wall_seconds": 0.100478875
+    }
+  ],
+  "scope": "CPU eager correctness, synthetic capacity model, existing Ruff; no GPU performance measurement"
+}

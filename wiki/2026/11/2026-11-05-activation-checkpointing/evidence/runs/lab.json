@@ -1,0 +1,135 @@
+{
+  "observed_at": "2026-11-05T11:22:52.844092+08:00",
+  "environment": {
+    "python": "3.12.16 (main, Oct 26 2026, 11:31:43) [Clang 21.1.8 ]",
+    "executable": "/Users/wangyuxiao/miniforge3/envs/ai-infra/bin/python",
+    "platform": "macOS-27.0-arm64-arm-64bit",
+    "machine": "arm64",
+    "torch": "2.15.0",
+    "torch_git": "d0f2af8b66b20da4baa50644c0cd3f887a2eae2e",
+    "device": "cpu",
+    "dtype": "float64",
+    "cpu_threads": 1,
+    "cpu_rng_state_bytes": 5056,
+    "cuda_available": false
+  },
+  "fixture": {
+    "blocks": 4,
+    "batch_size": 2,
+    "width": 8,
+    "block": "Linear(8, 8) -> sin -> Dropout(p=0.4)",
+    "loss": "output.square().mean()",
+    "optimizer": "SGD(lr=0.01)",
+    "seed": 2026,
+    "mode": "eager, use_reentrant=False, default early stop, no compile"
+  },
+  "synthetic_uniform_model": {
+    "units": "bytes and microseconds; assumed inputs, not measured time",
+    "plans": [
+      {
+        "segment_size": 1,
+        "segments": 16,
+        "activation_slots": 17,
+        "activation_bytes": 17825792,
+        "baseline_us": 48.0,
+        "checkpoint_us": 67.2
+      },
+      {
+        "segment_size": 2,
+        "segments": 8,
+        "activation_slots": 10,
+        "activation_bytes": 10485760,
+        "baseline_us": 48.0,
+        "checkpoint_us": 65.6
+      },
+      {
+        "segment_size": 4,
+        "segments": 4,
+        "activation_slots": 8,
+        "activation_bytes": 8388608,
+        "baseline_us": 48.0,
+        "checkpoint_us": 64.8
+      },
+      {
+        "segment_size": 8,
+        "segments": 2,
+        "activation_slots": 10,
+        "activation_bytes": 10485760,
+        "baseline_us": 48.0,
+        "checkpoint_us": 64.4
+      },
+      {
+        "segment_size": 16,
+        "segments": 1,
+        "activation_slots": 17,
+        "activation_bytes": 17825792,
+        "baseline_us": 48.0,
+        "checkpoint_us": 64.2
+      }
+    ],
+    "selected_for_10_MiB_activation_budget": {
+      "segment_size": 8,
+      "segments": 2,
+      "activation_slots": 10,
+      "activation_bytes": 10485760,
+      "baseline_us": 48.0,
+      "checkpoint_us": 64.4
+    }
+  },
+  "cpu_correctness_observations": {
+    "plain": {
+      "loss": 0.0930865327475642,
+      "output_max_abs_error": 0.0,
+      "input_gradient_max_abs_error": 0.0,
+      "parameter_gradient_max_abs_error": 0.0,
+      "updated_parameter_max_abs_error": 0.0,
+      "same_next_cpu_random_sample": true,
+      "saved_forward_activation_storage_bytes": 1408,
+      "block_entry_calls": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    "checkpoint_preserved": {
+      "loss": 0.0930865327475642,
+      "output_max_abs_error": 0.0,
+      "input_gradient_max_abs_error": 0.0,
+      "parameter_gradient_max_abs_error": 0.0,
+      "updated_parameter_max_abs_error": 0.0,
+      "same_next_cpu_random_sample": true,
+      "saved_forward_activation_storage_bytes": 384,
+      "block_entry_calls": [
+        0,
+        1,
+        2,
+        3,
+        3,
+        2,
+        1,
+        0
+      ]
+    },
+    "checkpoint_unpreserved": {
+      "loss": 0.0930865327475642,
+      "output_max_abs_error": 0.0,
+      "input_gradient_max_abs_error": 0.02673469552642904,
+      "parameter_gradient_max_abs_error": 0.12230596448717565,
+      "updated_parameter_max_abs_error": 0.001223059644871738,
+      "same_next_cpu_random_sample": false,
+      "saved_forward_activation_storage_bytes": 384,
+      "block_entry_calls": [
+        0,
+        1,
+        2,
+        3,
+        3,
+        2,
+        1,
+        0
+      ]
+    }
+  },
+  "measurement_scope": "unique non-parameter/non-input storage bytes observed by OUTER model-forward saved-tensor hooks; excludes loss, RNG snapshots, metadata and replay workspaces; not live peak memory, allocated/reserved bytes, or a throughput benchmark"
+}

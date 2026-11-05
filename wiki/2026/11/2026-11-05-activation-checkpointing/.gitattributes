@@ -1,0 +1,4 @@
+# Preserve exact upstream evidence, including existing whitespace.
+evidence/upstream/** -whitespace
+# Preserve captured unittest progress output without normalizing the raw logs.
+evidence/runs/*red-test*.txt -whitespace

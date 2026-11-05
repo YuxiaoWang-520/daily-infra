@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "verified_at": "2026-11-05T11:27:33.910334+08:00",
+  "published_article_count": 19,
+  "today_article_count": 1,
+  "local_markdown_links_checked": 79,
+  "mermaid_source_matches_inline": true,
+  "upstream_files_verified": 4,
+  "checksum_entries_verified": 21,
+  "tests": 31,
+  "cpu_replay_equivalence_and_rng_counterexample_verified": true,
+  "raw_paper_and_generated_caches_excluded": true,
+  "credential_pattern_scan": "no matches",
+  "unverified": [
+    "CUDA",
+    "torch.compile",
+    "SAC",
+    "distributed training",
+    "device peak memory",
+    "training throughput",
+    "convergence",
+    "Mermaid rendering"
+  ]
+}

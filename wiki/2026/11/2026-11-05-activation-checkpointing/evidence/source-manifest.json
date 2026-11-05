@@ -1,0 +1,43 @@
+{
+  "verified_at": "2026-11-05T11:19:18.302716+08:00",
+  "repository": "https://github.com/pytorch/pytorch",
+  "files": [
+    {
+      "local_path": "evidence/upstream/pytorch/main/torch/utils/checkpoint.py",
+      "upstream_path": "torch/utils/checkpoint.py",
+      "commit": "4892050dadb28d1ca1065268e35084747967e34e",
+      "bytes": 91807,
+      "lines": 2135,
+      "sha256": "b0f19e169bc109d557e042fb475baa4a356eb15c5d87f95372808255863f399d",
+      "permalink": "https://github.com/pytorch/pytorch/blob/4892050dadb28d1ca1065268e35084747967e34e/torch/utils/checkpoint.py"
+    },
+    {
+      "local_path": "evidence/upstream/pytorch/main/torch/autograd/graph.py",
+      "upstream_path": "torch/autograd/graph.py",
+      "commit": "4892050dadb28d1ca1065268e35084747967e34e",
+      "bytes": 43905,
+      "lines": 1123,
+      "sha256": "84a49d0a7e3fa695d1d0dd3bf49d696213fdc026626a2ab5f33bb5fcbbf0c44b",
+      "permalink": "https://github.com/pytorch/pytorch/blob/4892050dadb28d1ca1065268e35084747967e34e/torch/autograd/graph.py"
+    },
+    {
+      "local_path": "evidence/upstream/pytorch/v2.15.0/torch/utils/checkpoint.py",
+      "upstream_path": "torch/utils/checkpoint.py",
+      "commit": "31a77fc9c0a7c6fff15a1ff58c743f53b1a9d457",
+      "bytes": 90685,
+      "lines": 2117,
+      "sha256": "73e1f61d3134fe67a00cdf466ed4db911b3806e0b4f3cbe3500e4376314019b1",
+      "permalink": "https://github.com/pytorch/pytorch/blob/31a77fc9c0a7c6fff15a1ff58c743f53b1a9d457/torch/utils/checkpoint.py"
+    },
+    {
+      "local_path": "evidence/upstream/pytorch/LICENSE",
+      "upstream_path": "LICENSE",
+      "commit": "4892050dadb28d1ca1065268e35084747967e34e",
+      "bytes": 3464,
+      "lines": 84,
+      "sha256": "bd018feef8825e88181c84eb7e3aa4eafb8f08a20d9fd6ef948569610c4a3e43",
+      "permalink": "https://github.com/pytorch/pytorch/blob/4892050dadb28d1ca1065268e35084747967e34e/LICENSE"
+    }
+  ],
+  "archive_verification": "Every archived file byte-for-byte equals git show <commit>:<path>; original whitespace preserved."
+}

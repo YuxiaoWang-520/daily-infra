@@ -1,0 +1,30 @@
+{
+  "verified_at": "2026-11-05T11:19:18.302716+08:00",
+  "title": "Training Deep Nets with Sublinear Memory Cost",
+  "authors": [
+    "Tianqi Chen",
+    "Bing Xu",
+    "Chiyuan Zhang",
+    "Carlos Guestrin"
+  ],
+  "arxiv": "1604.06174v2",
+  "first_submitted": "2016-04-21",
+  "version_date": "2016-04-22",
+  "abstract_url": "https://arxiv.org/abs/1604.06174v2",
+  "pdf_url": "https://arxiv.org/pdf/1604.06174v2",
+  "doi": "10.48550/arXiv.1604.06174",
+  "download_http_status": 200,
+  "download_exit_code": 0,
+  "pdf_bytes": 608189,
+  "pdf_sha256": "fa7c0d5b846152159e9ac1033c2f082fd74d4200bffae896dc7d00a8808f0ffe",
+  "read_sections": [
+    "4.1",
+    "Algorithm 1 (page 5)",
+    "4.3, equation (1) (page 5)",
+    "5.1 measurement exclusions"
+  ],
+  "visual_verification": "Rendered PDF page 5 with pdftoppm -f 5 -l 5 -scale-to 1400 -singlefile -png; inspected Algorithm 1 and equation (1).",
+  "license_url": "https://arxiv.org/licenses/nonexclusive-distrib/1.0/license.html",
+  "raw_pdf_in_git": false,
+  "reason": "The displayed license grants distribution to arXiv; no general redistribution permission inferred. Only original reading notes and acquisition metadata are archived. Public PDF cached locally under .cache/papers/."
+}

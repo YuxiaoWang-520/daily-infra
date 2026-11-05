@@ -1,0 +1,152 @@
+test_invalid_fixture_configuration (test_torch_probe.FixtureBoundaryTests.test_invalid_fixture_configuration) ... 
+  test_invalid_fixture_configuration (test_torch_probe.FixtureBoundaryTests.test_invalid_fixture_configuration) (options={'checkpointed': True, 'blocks': 0}) ... ERROR
+  test_invalid_fixture_configuration (test_torch_probe.FixtureBoundaryTests.test_invalid_fixture_configuration) (options={'checkpointed': True, 'width': True}) ... ERROR
+  test_invalid_fixture_configuration (test_torch_probe.FixtureBoundaryTests.test_invalid_fixture_configuration) (options={'checkpointed': True, 'batch_size': -1}) ... ERROR
+  test_invalid_fixture_configuration (test_torch_probe.FixtureBoundaryTests.test_invalid_fixture_configuration) (options={'checkpointed': True, 'dropout_p': 1}) ... ERROR
+  test_invalid_fixture_configuration (test_torch_probe.FixtureBoundaryTests.test_invalid_fixture_configuration) (options={'checkpointed': True, 'dropout_p': nan}) ... ERROR
+  test_invalid_fixture_configuration (test_torch_probe.FixtureBoundaryTests.test_invalid_fixture_configuration) (options={'checkpointed': True, 'dropout_p': True}) ... ERROR
+  test_invalid_fixture_configuration (test_torch_probe.FixtureBoundaryTests.test_invalid_fixture_configuration) (options={'checkpointed': 1}) ... ERROR
+  test_invalid_fixture_configuration (test_torch_probe.FixtureBoundaryTests.test_invalid_fixture_configuration) (options={'checkpointed': True, 'preserve_rng_state': 'yes'}) ... ERROR
+  test_invalid_fixture_configuration (test_torch_probe.FixtureBoundaryTests.test_invalid_fixture_configuration) (options={'checkpointed': True, 'seed': -1}) ... ERROR
+test_no_dropout_is_equivalent_without_rng_preservation (test_torch_probe.FixtureBoundaryTests.test_no_dropout_is_equivalent_without_rng_preservation) ... ERROR
+test_single_block_has_no_extra_saved_boundary_activation (test_torch_probe.FixtureBoundaryTests.test_single_block_has_no_extra_saved_boundary_activation) ... ERROR
+test_trial_restores_callers_cpu_rng (test_torch_probe.FixtureBoundaryTests.test_trial_restores_callers_cpu_rng) ... ERROR
+setUpClass (test_torch_probe.ReplayTests) ... ERROR
+
+======================================================================
+ERROR: test_invalid_fixture_configuration (test_torch_probe.FixtureBoundaryTests.test_invalid_fixture_configuration) (options={'checkpointed': True, 'blocks': 0})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_torch_probe.py", line 105, in test_invalid_fixture_configuration
+    impl.run_trial(**options)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/exercise_checkpoint.py", line 17, in run_trial
+    raise NotImplementedError("Exercise 2: compare identical seeded CPU training steps")
+NotImplementedError: Exercise 2: compare identical seeded CPU training steps
+
+======================================================================
+ERROR: test_invalid_fixture_configuration (test_torch_probe.FixtureBoundaryTests.test_invalid_fixture_configuration) (options={'checkpointed': True, 'width': True})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_torch_probe.py", line 105, in test_invalid_fixture_configuration
+    impl.run_trial(**options)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/exercise_checkpoint.py", line 17, in run_trial
+    raise NotImplementedError("Exercise 2: compare identical seeded CPU training steps")
+NotImplementedError: Exercise 2: compare identical seeded CPU training steps
+
+======================================================================
+ERROR: test_invalid_fixture_configuration (test_torch_probe.FixtureBoundaryTests.test_invalid_fixture_configuration) (options={'checkpointed': True, 'batch_size': -1})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_torch_probe.py", line 105, in test_invalid_fixture_configuration
+    impl.run_trial(**options)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/exercise_checkpoint.py", line 17, in run_trial
+    raise NotImplementedError("Exercise 2: compare identical seeded CPU training steps")
+NotImplementedError: Exercise 2: compare identical seeded CPU training steps
+
+======================================================================
+ERROR: test_invalid_fixture_configuration (test_torch_probe.FixtureBoundaryTests.test_invalid_fixture_configuration) (options={'checkpointed': True, 'dropout_p': 1})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_torch_probe.py", line 105, in test_invalid_fixture_configuration
+    impl.run_trial(**options)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/exercise_checkpoint.py", line 17, in run_trial
+    raise NotImplementedError("Exercise 2: compare identical seeded CPU training steps")
+NotImplementedError: Exercise 2: compare identical seeded CPU training steps
+
+======================================================================
+ERROR: test_invalid_fixture_configuration (test_torch_probe.FixtureBoundaryTests.test_invalid_fixture_configuration) (options={'checkpointed': True, 'dropout_p': nan})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_torch_probe.py", line 105, in test_invalid_fixture_configuration
+    impl.run_trial(**options)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/exercise_checkpoint.py", line 17, in run_trial
+    raise NotImplementedError("Exercise 2: compare identical seeded CPU training steps")
+NotImplementedError: Exercise 2: compare identical seeded CPU training steps
+
+======================================================================
+ERROR: test_invalid_fixture_configuration (test_torch_probe.FixtureBoundaryTests.test_invalid_fixture_configuration) (options={'checkpointed': True, 'dropout_p': True})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_torch_probe.py", line 105, in test_invalid_fixture_configuration
+    impl.run_trial(**options)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/exercise_checkpoint.py", line 17, in run_trial
+    raise NotImplementedError("Exercise 2: compare identical seeded CPU training steps")
+NotImplementedError: Exercise 2: compare identical seeded CPU training steps
+
+======================================================================
+ERROR: test_invalid_fixture_configuration (test_torch_probe.FixtureBoundaryTests.test_invalid_fixture_configuration) (options={'checkpointed': 1})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_torch_probe.py", line 105, in test_invalid_fixture_configuration
+    impl.run_trial(**options)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/exercise_checkpoint.py", line 17, in run_trial
+    raise NotImplementedError("Exercise 2: compare identical seeded CPU training steps")
+NotImplementedError: Exercise 2: compare identical seeded CPU training steps
+
+======================================================================
+ERROR: test_invalid_fixture_configuration (test_torch_probe.FixtureBoundaryTests.test_invalid_fixture_configuration) (options={'checkpointed': True, 'preserve_rng_state': 'yes'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_torch_probe.py", line 105, in test_invalid_fixture_configuration
+    impl.run_trial(**options)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/exercise_checkpoint.py", line 17, in run_trial
+    raise NotImplementedError("Exercise 2: compare identical seeded CPU training steps")
+NotImplementedError: Exercise 2: compare identical seeded CPU training steps
+
+======================================================================
+ERROR: test_invalid_fixture_configuration (test_torch_probe.FixtureBoundaryTests.test_invalid_fixture_configuration) (options={'checkpointed': True, 'seed': -1})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_torch_probe.py", line 105, in test_invalid_fixture_configuration
+    impl.run_trial(**options)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/exercise_checkpoint.py", line 17, in run_trial
+    raise NotImplementedError("Exercise 2: compare identical seeded CPU training steps")
+NotImplementedError: Exercise 2: compare identical seeded CPU training steps
+
+======================================================================
+ERROR: test_no_dropout_is_equivalent_without_rng_preservation (test_torch_probe.FixtureBoundaryTests.test_no_dropout_is_equivalent_without_rng_preservation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_torch_probe.py", line 73, in test_no_dropout_is_equivalent_without_rng_preservation
+    plain = impl.run_trial(False, dropout_p=0)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/exercise_checkpoint.py", line 17, in run_trial
+    raise NotImplementedError("Exercise 2: compare identical seeded CPU training steps")
+NotImplementedError: Exercise 2: compare identical seeded CPU training steps
+
+======================================================================
+ERROR: test_single_block_has_no_extra_saved_boundary_activation (test_torch_probe.FixtureBoundaryTests.test_single_block_has_no_extra_saved_boundary_activation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_torch_probe.py", line 86, in test_single_block_has_no_extra_saved_boundary_activation
+    plain = impl.run_trial(False, blocks=1)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/exercise_checkpoint.py", line 17, in run_trial
+    raise NotImplementedError("Exercise 2: compare identical seeded CPU training steps")
+NotImplementedError: Exercise 2: compare identical seeded CPU training steps
+
+======================================================================
+ERROR: test_trial_restores_callers_cpu_rng (test_torch_probe.FixtureBoundaryTests.test_trial_restores_callers_cpu_rng)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_torch_probe.py", line 82, in test_trial_restores_callers_cpu_rng
+    impl.run_trial(True)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/exercise_checkpoint.py", line 17, in run_trial
+    raise NotImplementedError("Exercise 2: compare identical seeded CPU training steps")
+NotImplementedError: Exercise 2: compare identical seeded CPU training steps
+
+======================================================================
+ERROR: setUpClass (test_torch_probe.ReplayTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/test_torch_probe.py", line 15, in setUpClass
+    cls.plain = impl.run_trial(False)
+                ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-05-activation-checkpointing/code/exercise_checkpoint.py", line 17, in run_trial
+    raise NotImplementedError("Exercise 2: compare identical seeded CPU training steps")
+NotImplementedError: Exercise 2: compare identical seeded CPU training steps
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.004s
+
+FAILED (errors=13)

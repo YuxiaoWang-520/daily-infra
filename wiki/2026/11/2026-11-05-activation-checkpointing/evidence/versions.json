@@ -1,0 +1,31 @@
+{
+  "verified_at": "2026-11-05T11:19:18.302716+08:00",
+  "timezone": "Asia/Shanghai",
+  "host": "wyx-macmini.local",
+  "cpu": "Apple M6",
+  "platform": "macOS-27.0-arm64-arm-64bit",
+  "upstream": {
+    "remote": "https://github.com/pytorch/pytorch.git",
+    "default_branch": "main",
+    "main_commit": "4892050dadb28d1ca1065268e35084747967e34e",
+    "main_commit_date": "2026-11-05T02:22:42Z",
+    "stable_tag": "v2.15.0",
+    "stable_commit": "31a77fc9c0a7c6fff15a1ff58c743f53b1a9d457",
+    "release_published_at": "2026-10-28T17:09:49Z",
+    "clone_command": "git clone --depth 1 --filter=blob:none --sparse https://github.com/pytorch/pytorch.git .cache/upstream/pytorch",
+    "clone_exit_code": 0,
+    "sparse_command": "git -C .cache/upstream/pytorch sparse-checkout set --no-cone /torch/utils/checkpoint.py /torch/autograd/graph.py /docs/source/checkpoint.rst /docs/source/checkpoint.md /LICENSE",
+    "sparse_exit_code": 0,
+    "stable_fetch_command": "git -C .cache/upstream/pytorch fetch --depth 1 origin tag v2.15.0",
+    "stable_fetch_exit_code": 0
+  },
+  "runtime": {
+    "python": "/Users/wangyuxiao/miniforge3/envs/ai-infra/bin/python",
+    "python_version": "3.12.16",
+    "torch": "2.15.0",
+    "torch_build_git": "d0f2af8b66b20da4baa50644c0cd3f887a2eae2e",
+    "checkpoint_py_sha256": "73e1f61d3134fe67a00cdf466ed4db911b3806e0b4f3cbe3500e4376314019b1",
+    "checkpoint_py_equals_stable_tag": true,
+    "scope": "Only checkpoint.py compared byte-for-byte; not a full binary-package identity check. main was read, not executed."
+  }
+}

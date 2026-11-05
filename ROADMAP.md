@@ -24,7 +24,7 @@
 | 16 | [多个请求什么时候能安全复用同一段前缀？](wiki/2026/11/2026-11-02-prefix-cache-safe-reuse/README.md) | prefix caching、命中条件、隔离与失效 |
 | 17 | [训练的梯度为什么需要通信，通信能否与计算重叠？](wiki/2026/11/2026-11-03-ddp-gradient-overlap/README.md) | 数据并行、梯度桶、AllReduce 与慢节点 |
 | 18 | [参数之外，训练显存究竟花在哪里？](wiki/2026/11/2026-11-04-training-memory-accounting/README.md) | 梯度、优化器状态、激活与容量估算 |
-| 19 | 用重算换显存的代价如何计算？ | activation checkpointing、随机性与训练吞吐 |
+| 19 | [用重算换显存的代价如何计算？](wiki/2026/11/2026-11-05-activation-checkpointing/README.md) | activation checkpointing、随机性与训练吞吐 |
 | 20 | 模型和数据读得慢，怎样判断瓶颈在磁盘、CPU 还是传输？ | DataLoader、预取、pinned memory 与输入流水线 |
 
 每篇既要独立可读，也要链接已有前置文章。较新的实现可以作为当天的进阶部分，但不能让读者先理解尚未解释的术语。
