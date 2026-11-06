@@ -1,0 +1,181 @@
+test_dataset_index_bounds (test_loader_probe.BoundaryTests.test_dataset_index_bounds) ... ERROR
+test_dataset_rejects_a_mismatched_record_id (test_loader_probe.BoundaryTests.test_dataset_rejects_a_mismatched_record_id) ... ERROR
+test_dataset_rejects_malformed_payload (test_loader_probe.BoundaryTests.test_dataset_rejects_malformed_payload) ... ERROR
+test_global_cpu_rng_is_preserved (test_loader_probe.BoundaryTests.test_global_cpu_rng_is_preserved) ... ERROR
+test_invalid_configuration_fails_before_iteration (test_loader_probe.BoundaryTests.test_invalid_configuration_fails_before_iteration) ... 
+  test_invalid_configuration_fails_before_iteration (test_loader_probe.BoundaryTests.test_invalid_configuration_fails_before_iteration) (changes={'workers': -1}) ... ERROR
+  test_invalid_configuration_fails_before_iteration (test_loader_probe.BoundaryTests.test_invalid_configuration_fails_before_iteration) (changes={'workers': True}) ... ERROR
+  test_invalid_configuration_fails_before_iteration (test_loader_probe.BoundaryTests.test_invalid_configuration_fails_before_iteration) (changes={'prefetch_factor': 0}) ... ERROR
+  test_invalid_configuration_fails_before_iteration (test_loader_probe.BoundaryTests.test_invalid_configuration_fails_before_iteration) (changes={'sample_count': 0}) ... ERROR
+  test_invalid_configuration_fails_before_iteration (test_loader_probe.BoundaryTests.test_invalid_configuration_fails_before_iteration) (changes={'batch_size': 0}) ... ERROR
+  test_invalid_configuration_fails_before_iteration (test_loader_probe.BoundaryTests.test_invalid_configuration_fails_before_iteration) (changes={'source_pause_ms': -1}) ... ERROR
+  test_invalid_configuration_fails_before_iteration (test_loader_probe.BoundaryTests.test_invalid_configuration_fails_before_iteration) (changes={'source_pause_ms': 1001}) ... ERROR
+  test_invalid_configuration_fails_before_iteration (test_loader_probe.BoundaryTests.test_invalid_configuration_fails_before_iteration) (changes={'consumer_pause_ms': nan}) ... ERROR
+  test_invalid_configuration_fails_before_iteration (test_loader_probe.BoundaryTests.test_invalid_configuration_fails_before_iteration) (changes={'consumer_pause_ms': True}) ... ERROR
+  test_invalid_configuration_fails_before_iteration (test_loader_probe.BoundaryTests.test_invalid_configuration_fails_before_iteration) (changes={'warmup_batches': 10}) ... ERROR
+test_one_sample_and_warmup_exclusion (test_loader_probe.BoundaryTests.test_one_sample_and_warmup_exclusion) ... ERROR
+setUpClass (test_loader_probe.LoaderTests) ... ERROR
+
+======================================================================
+ERROR: test_dataset_index_bounds (test_loader_probe.BoundaryTests.test_dataset_index_bounds)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_loader_probe.py", line 98, in test_dataset_index_bounds
+    dataset = impl.JsonDataset(Path(directory), 1, 0)
+              ^^^^^^^^^^^^^^^^
+AttributeError: module 'probe_exercises' has no attribute 'JsonDataset'
+
+======================================================================
+ERROR: test_dataset_rejects_a_mismatched_record_id (test_loader_probe.BoundaryTests.test_dataset_rejects_a_mismatched_record_id)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_loader_probe.py", line 84, in test_dataset_rejects_a_mismatched_record_id
+    dataset = impl.JsonDataset(root, 1, 0)
+              ^^^^^^^^^^^^^^^^
+AttributeError: module 'probe_exercises' has no attribute 'JsonDataset'
+
+======================================================================
+ERROR: test_dataset_rejects_malformed_payload (test_loader_probe.BoundaryTests.test_dataset_rejects_malformed_payload)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_loader_probe.py", line 92, in test_dataset_rejects_malformed_payload
+    dataset = impl.JsonDataset(root, 1, 0)
+              ^^^^^^^^^^^^^^^^
+AttributeError: module 'probe_exercises' has no attribute 'JsonDataset'
+
+======================================================================
+ERROR: test_global_cpu_rng_is_preserved (test_loader_probe.BoundaryTests.test_global_cpu_rng_is_preserved)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_loader_probe.py", line 76, in test_global_cpu_rng_is_preserved
+    impl.run_trial(0, sample_count=1, source_pause_ms=0,
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/probe_exercises.py", line 16, in run_trial
+    raise NotImplementedError("Exercise 2: instrument next(), startup and CPU phases")
+NotImplementedError: Exercise 2: instrument next(), startup and CPU phases
+
+======================================================================
+ERROR: test_invalid_configuration_fails_before_iteration (test_loader_probe.BoundaryTests.test_invalid_configuration_fails_before_iteration) (changes={'workers': -1})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_loader_probe.py", line 72, in test_invalid_configuration_fails_before_iteration
+    impl.run_trial(**{"workers": 0, **changes})
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/probe_exercises.py", line 16, in run_trial
+    raise NotImplementedError("Exercise 2: instrument next(), startup and CPU phases")
+NotImplementedError: Exercise 2: instrument next(), startup and CPU phases
+
+======================================================================
+ERROR: test_invalid_configuration_fails_before_iteration (test_loader_probe.BoundaryTests.test_invalid_configuration_fails_before_iteration) (changes={'workers': True})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_loader_probe.py", line 72, in test_invalid_configuration_fails_before_iteration
+    impl.run_trial(**{"workers": 0, **changes})
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/probe_exercises.py", line 16, in run_trial
+    raise NotImplementedError("Exercise 2: instrument next(), startup and CPU phases")
+NotImplementedError: Exercise 2: instrument next(), startup and CPU phases
+
+======================================================================
+ERROR: test_invalid_configuration_fails_before_iteration (test_loader_probe.BoundaryTests.test_invalid_configuration_fails_before_iteration) (changes={'prefetch_factor': 0})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_loader_probe.py", line 72, in test_invalid_configuration_fails_before_iteration
+    impl.run_trial(**{"workers": 0, **changes})
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/probe_exercises.py", line 16, in run_trial
+    raise NotImplementedError("Exercise 2: instrument next(), startup and CPU phases")
+NotImplementedError: Exercise 2: instrument next(), startup and CPU phases
+
+======================================================================
+ERROR: test_invalid_configuration_fails_before_iteration (test_loader_probe.BoundaryTests.test_invalid_configuration_fails_before_iteration) (changes={'sample_count': 0})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_loader_probe.py", line 72, in test_invalid_configuration_fails_before_iteration
+    impl.run_trial(**{"workers": 0, **changes})
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/probe_exercises.py", line 16, in run_trial
+    raise NotImplementedError("Exercise 2: instrument next(), startup and CPU phases")
+NotImplementedError: Exercise 2: instrument next(), startup and CPU phases
+
+======================================================================
+ERROR: test_invalid_configuration_fails_before_iteration (test_loader_probe.BoundaryTests.test_invalid_configuration_fails_before_iteration) (changes={'batch_size': 0})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_loader_probe.py", line 72, in test_invalid_configuration_fails_before_iteration
+    impl.run_trial(**{"workers": 0, **changes})
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/probe_exercises.py", line 16, in run_trial
+    raise NotImplementedError("Exercise 2: instrument next(), startup and CPU phases")
+NotImplementedError: Exercise 2: instrument next(), startup and CPU phases
+
+======================================================================
+ERROR: test_invalid_configuration_fails_before_iteration (test_loader_probe.BoundaryTests.test_invalid_configuration_fails_before_iteration) (changes={'source_pause_ms': -1})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_loader_probe.py", line 72, in test_invalid_configuration_fails_before_iteration
+    impl.run_trial(**{"workers": 0, **changes})
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/probe_exercises.py", line 16, in run_trial
+    raise NotImplementedError("Exercise 2: instrument next(), startup and CPU phases")
+NotImplementedError: Exercise 2: instrument next(), startup and CPU phases
+
+======================================================================
+ERROR: test_invalid_configuration_fails_before_iteration (test_loader_probe.BoundaryTests.test_invalid_configuration_fails_before_iteration) (changes={'source_pause_ms': 1001})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_loader_probe.py", line 72, in test_invalid_configuration_fails_before_iteration
+    impl.run_trial(**{"workers": 0, **changes})
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/probe_exercises.py", line 16, in run_trial
+    raise NotImplementedError("Exercise 2: instrument next(), startup and CPU phases")
+NotImplementedError: Exercise 2: instrument next(), startup and CPU phases
+
+======================================================================
+ERROR: test_invalid_configuration_fails_before_iteration (test_loader_probe.BoundaryTests.test_invalid_configuration_fails_before_iteration) (changes={'consumer_pause_ms': nan})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_loader_probe.py", line 72, in test_invalid_configuration_fails_before_iteration
+    impl.run_trial(**{"workers": 0, **changes})
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/probe_exercises.py", line 16, in run_trial
+    raise NotImplementedError("Exercise 2: instrument next(), startup and CPU phases")
+NotImplementedError: Exercise 2: instrument next(), startup and CPU phases
+
+======================================================================
+ERROR: test_invalid_configuration_fails_before_iteration (test_loader_probe.BoundaryTests.test_invalid_configuration_fails_before_iteration) (changes={'consumer_pause_ms': True})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_loader_probe.py", line 72, in test_invalid_configuration_fails_before_iteration
+    impl.run_trial(**{"workers": 0, **changes})
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/probe_exercises.py", line 16, in run_trial
+    raise NotImplementedError("Exercise 2: instrument next(), startup and CPU phases")
+NotImplementedError: Exercise 2: instrument next(), startup and CPU phases
+
+======================================================================
+ERROR: test_invalid_configuration_fails_before_iteration (test_loader_probe.BoundaryTests.test_invalid_configuration_fails_before_iteration) (changes={'warmup_batches': 10})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_loader_probe.py", line 72, in test_invalid_configuration_fails_before_iteration
+    impl.run_trial(**{"workers": 0, **changes})
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/probe_exercises.py", line 16, in run_trial
+    raise NotImplementedError("Exercise 2: instrument next(), startup and CPU phases")
+NotImplementedError: Exercise 2: instrument next(), startup and CPU phases
+
+======================================================================
+ERROR: test_one_sample_and_warmup_exclusion (test_loader_probe.BoundaryTests.test_one_sample_and_warmup_exclusion)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_loader_probe.py", line 59, in test_one_sample_and_warmup_exclusion
+    report = impl.run_trial(0, sample_count=1, batch_size=4, source_pause_ms=0,
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/probe_exercises.py", line 16, in run_trial
+    raise NotImplementedError("Exercise 2: instrument next(), startup and CPU phases")
+NotImplementedError: Exercise 2: instrument next(), startup and CPU phases
+
+======================================================================
+ERROR: setUpClass (test_loader_probe.LoaderTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_loader_probe.py", line 20, in setUpClass
+    cls.single = impl.run_trial(0, **options)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/probe_exercises.py", line 16, in run_trial
+    raise NotImplementedError("Exercise 2: instrument next(), startup and CPU phases")
+NotImplementedError: Exercise 2: instrument next(), startup and CPU phases
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.006s
+
+FAILED (errors=16)

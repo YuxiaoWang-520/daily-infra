@@ -1,0 +1,38 @@
+{
+  "verified_at": "2026-11-06T11:33:04.304703+08:00",
+  "official_repository": "https://github.com/pytorch/pytorch.git",
+  "default_branch": "main",
+  "default_branch_verified_by": "gh api repos/pytorch/pytorch --jq {full_name,default_branch}",
+  "fetch": {
+    "command": "git -C .cache/upstream/pytorch fetch --depth 1 origin main",
+    "executed_on": "2026-11-06",
+    "exit_code": 0
+  },
+  "main": {
+    "sha": "b79f21bab5e9e221b05bc903f7d8171a8c04a8a0",
+    "commit_time": "2026-11-06T02:08:49Z",
+    "subject": "Include <cstdint> in caffe2/utils/string_utils.h for int32_t (#203668)"
+  },
+  "cache_checkout_sha": "4892050dadb28d1ca1065268e35084747967e34e",
+  "source_reading": "git show <fixed SHA>:<path>; independent of cache checkout",
+  "stable": {
+    "tag": "v2.15.0",
+    "sha": "31a77fc9c0a7c6fff15a1ff58c743f53b1a9d457",
+    "published_at": "2026-10-28T17:09:49Z",
+    "release_url": "https://github.com/pytorch/pytorch/releases/tag/v2.15.0",
+    "verified_by": "gh api repos/pytorch/pytorch/releases/latest"
+  },
+  "runtime": {
+    "executable": "/Users/wangyuxiao/miniforge3/envs/ai-infra/bin/python",
+    "python": "3.12.16 (main, Oct 26 2026, 11:31:43) [Clang 21.1.8 ]",
+    "torch": "2.15.0",
+    "torch_build_git": "d0f2af8b66b20da4baa50644c0cd3f887a2eae2e",
+    "platform": "macOS-27.0-arm64-arm-64bit",
+    "machine": "arm64",
+    "computer_name": "U-7H06R6JQ-0309",
+    "hostname": "wyx-macmini.local",
+    "cpu": "Apple M6",
+    "cuda_available": false
+  },
+  "comparison": "Selected runtime files compared against stable tag in source-manifest.json."
+}

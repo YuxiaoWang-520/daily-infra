@@ -1,0 +1,38 @@
+test_all_tied_stages_are_reported (test_answers.BudgetTests.test_all_tied_stages_are_reported) ... ok
+test_cpu_capacity_scales_until_another_stage_limits (test_answers.BudgetTests.test_cpu_capacity_scales_until_another_stage_limits) ... ok
+test_explicit_device_overlap_changes_the_lower_bound (test_answers.BudgetTests.test_explicit_device_overlap_changes_the_lower_bound) ... ok
+test_invalid_and_overflowing_durations (test_answers.BudgetTests.test_invalid_and_overflowing_durations) ... ok
+test_invalid_counts_and_overlap_flag (test_answers.BudgetTests.test_invalid_counts_and_overlap_flag) ... ok
+test_large_integer_task_payloads_are_exact (test_answers.BudgetTests.test_large_integer_task_payloads_are_exact) ... ok
+test_prefetch_changes_payload_without_creating_capacity (test_answers.BudgetTests.test_prefetch_changes_payload_without_creating_capacity) ... ok
+test_result_is_immutable (test_answers.BudgetTests.test_result_is_immutable) ... ok
+test_same_stream_copy_and_compute_add (test_answers.BudgetTests.test_same_stream_copy_and_compute_add) ... ok
+test_shared_storage_does_not_scale_with_workers (test_answers.BudgetTests.test_shared_storage_does_not_scale_with_workers) ... ok
+test_single_worker_combined_overflow_uses_the_contract_error (test_answers.BudgetTests.test_single_worker_combined_overflow_uses_the_contract_error) ... ok
+test_transfer_can_limit_even_with_fast_data_loading (test_answers.BudgetTests.test_transfer_can_limit_even_with_fast_data_loading) ... ok
+test_worker_remains_occupied_during_reads (test_answers.BudgetTests.test_worker_remains_occupied_during_reads) ... ok
+test_empty_queue_exposes_the_whole_pause (test_answers.QueueCoverageTests.test_empty_queue_exposes_the_whole_pause) ... ok
+test_four_ready_batches_cover_the_pause (test_answers.QueueCoverageTests.test_four_ready_batches_cover_the_pause) ... ok
+test_fractional_durations (test_answers.QueueCoverageTests.test_fractional_durations) ... ok
+test_huge_ready_count_does_not_overflow (test_answers.QueueCoverageTests.test_huge_ready_count_does_not_overflow) ... ok
+test_invalid_queue_inputs (test_answers.QueueCoverageTests.test_invalid_queue_inputs) ... ok
+test_two_ready_batches_cover_twenty_six_ms (test_answers.QueueCoverageTests.test_two_ready_batches_cover_twenty_six_ms) ... ok
+test_zero_pause_and_exact_boundary (test_answers.QueueCoverageTests.test_zero_pause_and_exact_boundary) ... ok
+test_dataset_index_bounds (test_loader_probe.BoundaryTests.test_dataset_index_bounds) ... ok
+test_dataset_rejects_a_mismatched_record_id (test_loader_probe.BoundaryTests.test_dataset_rejects_a_mismatched_record_id) ... ok
+test_dataset_rejects_malformed_payload (test_loader_probe.BoundaryTests.test_dataset_rejects_malformed_payload) ... ok
+test_global_cpu_rng_is_preserved (test_loader_probe.BoundaryTests.test_global_cpu_rng_is_preserved) ... ok
+test_invalid_configuration_fails_before_iteration (test_loader_probe.BoundaryTests.test_invalid_configuration_fails_before_iteration) ... ok
+test_iteration_failure_closes_workers_with_iterator_still_referenced (test_loader_probe.BoundaryTests.test_iteration_failure_closes_workers_with_iterator_still_referenced) ... ok
+test_one_sample_and_warmup_exclusion (test_loader_probe.BoundaryTests.test_one_sample_and_warmup_exclusion) ... ok
+test_every_id_arrives_once_and_in_order (test_loader_probe.LoaderTests.test_every_id_arrives_once_and_in_order) ... ok
+test_payload_checksums_match_hand_calculation (test_loader_probe.LoaderTests.test_payload_checksums_match_hand_calculation) ... ok
+test_phase_measurements_are_nonnegative (test_loader_probe.LoaderTests.test_phase_measurements_are_nonnegative) ... ok
+test_single_process_work_happens_in_the_main_process (test_loader_probe.LoaderTests.test_single_process_work_happens_in_the_main_process) ... ok
+test_spawn_workers_actually_fetch_records (test_loader_probe.LoaderTests.test_spawn_workers_actually_fetch_records) ... ok
+test_tail_batch_is_retained (test_loader_probe.LoaderTests.test_tail_batch_is_retained) ... ok
+
+----------------------------------------------------------------------
+Ran 33 tests in 11.281s
+
+OK

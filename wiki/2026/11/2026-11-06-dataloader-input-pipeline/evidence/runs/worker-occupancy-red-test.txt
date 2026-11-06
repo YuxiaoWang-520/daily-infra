@@ -1,0 +1,14 @@
+test_worker_remains_occupied_during_reads (test_answers.BudgetTests.test_worker_remains_occupied_during_reads) ... FAIL
+
+======================================================================
+FAIL: test_worker_remains_occupied_during_reads (test_answers.BudgetTests.test_worker_remains_occupied_during_reads)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 62, in test_worker_remains_occupied_during_reads
+    self.assertEqual(result.ideal_interval_ms, 10)
+AssertionError: 8.0 != 10
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (failures=1)

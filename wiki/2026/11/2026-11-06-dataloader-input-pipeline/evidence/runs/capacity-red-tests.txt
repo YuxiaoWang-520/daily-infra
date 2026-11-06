@@ -1,0 +1,729 @@
+test_all_tied_stages_are_reported (test_answers.BudgetTests.test_all_tied_stages_are_reported) ... ERROR
+test_cpu_capacity_scales_until_another_stage_limits (test_answers.BudgetTests.test_cpu_capacity_scales_until_another_stage_limits) ... ERROR
+test_explicit_device_overlap_changes_the_lower_bound (test_answers.BudgetTests.test_explicit_device_overlap_changes_the_lower_bound) ... ERROR
+test_invalid_and_overflowing_durations (test_answers.BudgetTests.test_invalid_and_overflowing_durations) ... 
+  test_invalid_and_overflowing_durations (test_answers.BudgetTests.test_invalid_and_overflowing_durations) (key='storage_ms', value=-1) ... ERROR
+  test_invalid_and_overflowing_durations (test_answers.BudgetTests.test_invalid_and_overflowing_durations) (key='storage_ms', value=True) ... ERROR
+  test_invalid_and_overflowing_durations (test_answers.BudgetTests.test_invalid_and_overflowing_durations) (key='storage_ms', value=inf) ... ERROR
+  test_invalid_and_overflowing_durations (test_answers.BudgetTests.test_invalid_and_overflowing_durations) (key='storage_ms', value=nan) ... ERROR
+  test_invalid_and_overflowing_durations (test_answers.BudgetTests.test_invalid_and_overflowing_durations) (key='storage_ms', value='slow') ... ERROR
+  test_invalid_and_overflowing_durations (test_answers.BudgetTests.test_invalid_and_overflowing_durations) (key='storage_ms', value=10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000) ... ERROR
+  test_invalid_and_overflowing_durations (test_answers.BudgetTests.test_invalid_and_overflowing_durations) (key='cpu_ms', value=-1) ... ERROR
+  test_invalid_and_overflowing_durations (test_answers.BudgetTests.test_invalid_and_overflowing_durations) (key='cpu_ms', value=True) ... ERROR
+  test_invalid_and_overflowing_durations (test_answers.BudgetTests.test_invalid_and_overflowing_durations) (key='cpu_ms', value=inf) ... ERROR
+  test_invalid_and_overflowing_durations (test_answers.BudgetTests.test_invalid_and_overflowing_durations) (key='cpu_ms', value=nan) ... ERROR
+  test_invalid_and_overflowing_durations (test_answers.BudgetTests.test_invalid_and_overflowing_durations) (key='cpu_ms', value='slow') ... ERROR
+  test_invalid_and_overflowing_durations (test_answers.BudgetTests.test_invalid_and_overflowing_durations) (key='cpu_ms', value=10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000) ... ERROR
+  test_invalid_and_overflowing_durations (test_answers.BudgetTests.test_invalid_and_overflowing_durations) (key='transfer_ms', value=-1) ... ERROR
+  test_invalid_and_overflowing_durations (test_answers.BudgetTests.test_invalid_and_overflowing_durations) (key='transfer_ms', value=True) ... ERROR
+  test_invalid_and_overflowing_durations (test_answers.BudgetTests.test_invalid_and_overflowing_durations) (key='transfer_ms', value=inf) ... ERROR
+  test_invalid_and_overflowing_durations (test_answers.BudgetTests.test_invalid_and_overflowing_durations) (key='transfer_ms', value=nan) ... ERROR
+  test_invalid_and_overflowing_durations (test_answers.BudgetTests.test_invalid_and_overflowing_durations) (key='transfer_ms', value='slow') ... ERROR
+  test_invalid_and_overflowing_durations (test_answers.BudgetTests.test_invalid_and_overflowing_durations) (key='transfer_ms', value=10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000) ... ERROR
+  test_invalid_and_overflowing_durations (test_answers.BudgetTests.test_invalid_and_overflowing_durations) (key='compute_ms', value=-1) ... ERROR
+  test_invalid_and_overflowing_durations (test_answers.BudgetTests.test_invalid_and_overflowing_durations) (key='compute_ms', value=True) ... ERROR
+  test_invalid_and_overflowing_durations (test_answers.BudgetTests.test_invalid_and_overflowing_durations) (key='compute_ms', value=inf) ... ERROR
+  test_invalid_and_overflowing_durations (test_answers.BudgetTests.test_invalid_and_overflowing_durations) (key='compute_ms', value=nan) ... ERROR
+  test_invalid_and_overflowing_durations (test_answers.BudgetTests.test_invalid_and_overflowing_durations) (key='compute_ms', value='slow') ... ERROR
+  test_invalid_and_overflowing_durations (test_answers.BudgetTests.test_invalid_and_overflowing_durations) (key='compute_ms', value=10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000) ... ERROR
+  test_invalid_and_overflowing_durations (test_answers.BudgetTests.test_invalid_and_overflowing_durations) (overrides={'compute_ms': 0}) ... ERROR
+  test_invalid_and_overflowing_durations (test_answers.BudgetTests.test_invalid_and_overflowing_durations) (overrides={'storage_ms': 1e+308, 'cpu_ms': 1e+308}) ... ERROR
+test_invalid_counts_and_overlap_flag (test_answers.BudgetTests.test_invalid_counts_and_overlap_flag) ... 
+  test_invalid_counts_and_overlap_flag (test_answers.BudgetTests.test_invalid_counts_and_overlap_flag) (overrides={'workers': 0}) ... ERROR
+  test_invalid_counts_and_overlap_flag (test_answers.BudgetTests.test_invalid_counts_and_overlap_flag) (overrides={'workers': True}) ... ERROR
+  test_invalid_counts_and_overlap_flag (test_answers.BudgetTests.test_invalid_counts_and_overlap_flag) (overrides={'workers': 1.5}) ... ERROR
+  test_invalid_counts_and_overlap_flag (test_answers.BudgetTests.test_invalid_counts_and_overlap_flag) (overrides={'prefetch_factor': 0}) ... ERROR
+  test_invalid_counts_and_overlap_flag (test_answers.BudgetTests.test_invalid_counts_and_overlap_flag) (overrides={'batch_bytes': -1}) ... ERROR
+  test_invalid_counts_and_overlap_flag (test_answers.BudgetTests.test_invalid_counts_and_overlap_flag) (overrides={'allow_device_overlap': 'yes'}) ... ERROR
+test_large_integer_task_payloads_are_exact (test_answers.BudgetTests.test_large_integer_task_payloads_are_exact) ... ERROR
+test_prefetch_changes_payload_without_creating_capacity (test_answers.BudgetTests.test_prefetch_changes_payload_without_creating_capacity) ... ERROR
+test_result_is_immutable (test_answers.BudgetTests.test_result_is_immutable) ... ERROR
+test_same_stream_copy_and_compute_add (test_answers.BudgetTests.test_same_stream_copy_and_compute_add) ... ERROR
+test_shared_storage_does_not_scale_with_workers (test_answers.BudgetTests.test_shared_storage_does_not_scale_with_workers) ... ERROR
+test_transfer_can_limit_even_with_fast_data_loading (test_answers.BudgetTests.test_transfer_can_limit_even_with_fast_data_loading) ... ERROR
+test_empty_queue_exposes_the_whole_pause (test_answers.QueueCoverageTests.test_empty_queue_exposes_the_whole_pause) ... ERROR
+test_four_ready_batches_cover_the_pause (test_answers.QueueCoverageTests.test_four_ready_batches_cover_the_pause) ... ERROR
+test_fractional_durations (test_answers.QueueCoverageTests.test_fractional_durations) ... ERROR
+test_huge_ready_count_does_not_overflow (test_answers.QueueCoverageTests.test_huge_ready_count_does_not_overflow) ... ERROR
+test_invalid_queue_inputs (test_answers.QueueCoverageTests.test_invalid_queue_inputs) ... 
+  test_invalid_queue_inputs (test_answers.QueueCoverageTests.test_invalid_queue_inputs) (arguments=(40, -1, 13)) ... ERROR
+  test_invalid_queue_inputs (test_answers.QueueCoverageTests.test_invalid_queue_inputs) (arguments=(40, True, 13)) ... ERROR
+  test_invalid_queue_inputs (test_answers.QueueCoverageTests.test_invalid_queue_inputs) (arguments=(40, 1.5, 13)) ... ERROR
+  test_invalid_queue_inputs (test_answers.QueueCoverageTests.test_invalid_queue_inputs) (arguments=(40, 2, 0)) ... ERROR
+  test_invalid_queue_inputs (test_answers.QueueCoverageTests.test_invalid_queue_inputs) (arguments=(inf, 2, 13)) ... ERROR
+  test_invalid_queue_inputs (test_answers.QueueCoverageTests.test_invalid_queue_inputs) (arguments=(40, 2, nan)) ... ERROR
+test_two_ready_batches_cover_twenty_six_ms (test_answers.QueueCoverageTests.test_two_ready_batches_cover_twenty_six_ms) ... ERROR
+test_zero_pause_and_exact_boundary (test_answers.QueueCoverageTests.test_zero_pause_and_exact_boundary) ... ERROR
+
+======================================================================
+ERROR: test_all_tied_stages_are_reported (test_answers.BudgetTests.test_all_tied_stages_are_reported)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 57, in test_all_tied_stages_are_reported
+    result = self.budget(storage_ms=13, cpu_ms=26)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 24, in budget
+    return impl.pipeline_budget(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/exercises.py", line 17, in pipeline_budget
+    raise NotImplementedError("Exercise 1: derive the capacity and payload model")
+NotImplementedError: Exercise 1: derive the capacity and payload model
+
+======================================================================
+ERROR: test_cpu_capacity_scales_until_another_stage_limits (test_answers.BudgetTests.test_cpu_capacity_scales_until_another_stage_limits)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 47, in test_cpu_capacity_scales_until_another_stage_limits
+    self.assertEqual(self.budget(cpu_ms=24).ideal_interval_ms, 13)
+                     ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 24, in budget
+    return impl.pipeline_budget(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/exercises.py", line 17, in pipeline_budget
+    raise NotImplementedError("Exercise 1: derive the capacity and payload model")
+NotImplementedError: Exercise 1: derive the capacity and payload model
+
+======================================================================
+ERROR: test_explicit_device_overlap_changes_the_lower_bound (test_answers.BudgetTests.test_explicit_device_overlap_changes_the_lower_bound)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 37, in test_explicit_device_overlap_changes_the_lower_bound
+    result = self.budget(allow_device_overlap=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 24, in budget
+    return impl.pipeline_budget(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/exercises.py", line 17, in pipeline_budget
+    raise NotImplementedError("Exercise 1: derive the capacity and payload model")
+NotImplementedError: Exercise 1: derive the capacity and payload model
+
+======================================================================
+ERROR: test_invalid_and_overflowing_durations (test_answers.BudgetTests.test_invalid_and_overflowing_durations) (key='storage_ms', value=-1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 87, in test_invalid_and_overflowing_durations
+    self.budget(**{key: value})
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 24, in budget
+    return impl.pipeline_budget(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/exercises.py", line 17, in pipeline_budget
+    raise NotImplementedError("Exercise 1: derive the capacity and payload model")
+NotImplementedError: Exercise 1: derive the capacity and payload model
+
+======================================================================
+ERROR: test_invalid_and_overflowing_durations (test_answers.BudgetTests.test_invalid_and_overflowing_durations) (key='storage_ms', value=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 87, in test_invalid_and_overflowing_durations
+    self.budget(**{key: value})
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 24, in budget
+    return impl.pipeline_budget(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/exercises.py", line 17, in pipeline_budget
+    raise NotImplementedError("Exercise 1: derive the capacity and payload model")
+NotImplementedError: Exercise 1: derive the capacity and payload model
+
+======================================================================
+ERROR: test_invalid_and_overflowing_durations (test_answers.BudgetTests.test_invalid_and_overflowing_durations) (key='storage_ms', value=inf)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 87, in test_invalid_and_overflowing_durations
+    self.budget(**{key: value})
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 24, in budget
+    return impl.pipeline_budget(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/exercises.py", line 17, in pipeline_budget
+    raise NotImplementedError("Exercise 1: derive the capacity and payload model")
+NotImplementedError: Exercise 1: derive the capacity and payload model
+
+======================================================================
+ERROR: test_invalid_and_overflowing_durations (test_answers.BudgetTests.test_invalid_and_overflowing_durations) (key='storage_ms', value=nan)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 87, in test_invalid_and_overflowing_durations
+    self.budget(**{key: value})
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 24, in budget
+    return impl.pipeline_budget(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/exercises.py", line 17, in pipeline_budget
+    raise NotImplementedError("Exercise 1: derive the capacity and payload model")
+NotImplementedError: Exercise 1: derive the capacity and payload model
+
+======================================================================
+ERROR: test_invalid_and_overflowing_durations (test_answers.BudgetTests.test_invalid_and_overflowing_durations) (key='storage_ms', value='slow')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 87, in test_invalid_and_overflowing_durations
+    self.budget(**{key: value})
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 24, in budget
+    return impl.pipeline_budget(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/exercises.py", line 17, in pipeline_budget
+    raise NotImplementedError("Exercise 1: derive the capacity and payload model")
+NotImplementedError: Exercise 1: derive the capacity and payload model
+
+======================================================================
+ERROR: test_invalid_and_overflowing_durations (test_answers.BudgetTests.test_invalid_and_overflowing_durations) (key='storage_ms', value=10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 87, in test_invalid_and_overflowing_durations
+    self.budget(**{key: value})
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 24, in budget
+    return impl.pipeline_budget(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/exercises.py", line 17, in pipeline_budget
+    raise NotImplementedError("Exercise 1: derive the capacity and payload model")
+NotImplementedError: Exercise 1: derive the capacity and payload model
+
+======================================================================
+ERROR: test_invalid_and_overflowing_durations (test_answers.BudgetTests.test_invalid_and_overflowing_durations) (key='cpu_ms', value=-1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 87, in test_invalid_and_overflowing_durations
+    self.budget(**{key: value})
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 24, in budget
+    return impl.pipeline_budget(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/exercises.py", line 17, in pipeline_budget
+    raise NotImplementedError("Exercise 1: derive the capacity and payload model")
+NotImplementedError: Exercise 1: derive the capacity and payload model
+
+======================================================================
+ERROR: test_invalid_and_overflowing_durations (test_answers.BudgetTests.test_invalid_and_overflowing_durations) (key='cpu_ms', value=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 87, in test_invalid_and_overflowing_durations
+    self.budget(**{key: value})
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 24, in budget
+    return impl.pipeline_budget(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/exercises.py", line 17, in pipeline_budget
+    raise NotImplementedError("Exercise 1: derive the capacity and payload model")
+NotImplementedError: Exercise 1: derive the capacity and payload model
+
+======================================================================
+ERROR: test_invalid_and_overflowing_durations (test_answers.BudgetTests.test_invalid_and_overflowing_durations) (key='cpu_ms', value=inf)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 87, in test_invalid_and_overflowing_durations
+    self.budget(**{key: value})
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 24, in budget
+    return impl.pipeline_budget(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/exercises.py", line 17, in pipeline_budget
+    raise NotImplementedError("Exercise 1: derive the capacity and payload model")
+NotImplementedError: Exercise 1: derive the capacity and payload model
+
+======================================================================
+ERROR: test_invalid_and_overflowing_durations (test_answers.BudgetTests.test_invalid_and_overflowing_durations) (key='cpu_ms', value=nan)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 87, in test_invalid_and_overflowing_durations
+    self.budget(**{key: value})
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 24, in budget
+    return impl.pipeline_budget(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/exercises.py", line 17, in pipeline_budget
+    raise NotImplementedError("Exercise 1: derive the capacity and payload model")
+NotImplementedError: Exercise 1: derive the capacity and payload model
+
+======================================================================
+ERROR: test_invalid_and_overflowing_durations (test_answers.BudgetTests.test_invalid_and_overflowing_durations) (key='cpu_ms', value='slow')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 87, in test_invalid_and_overflowing_durations
+    self.budget(**{key: value})
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 24, in budget
+    return impl.pipeline_budget(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/exercises.py", line 17, in pipeline_budget
+    raise NotImplementedError("Exercise 1: derive the capacity and payload model")
+NotImplementedError: Exercise 1: derive the capacity and payload model
+
+======================================================================
+ERROR: test_invalid_and_overflowing_durations (test_answers.BudgetTests.test_invalid_and_overflowing_durations) (key='cpu_ms', value=10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 87, in test_invalid_and_overflowing_durations
+    self.budget(**{key: value})
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 24, in budget
+    return impl.pipeline_budget(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/exercises.py", line 17, in pipeline_budget
+    raise NotImplementedError("Exercise 1: derive the capacity and payload model")
+NotImplementedError: Exercise 1: derive the capacity and payload model
+
+======================================================================
+ERROR: test_invalid_and_overflowing_durations (test_answers.BudgetTests.test_invalid_and_overflowing_durations) (key='transfer_ms', value=-1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 87, in test_invalid_and_overflowing_durations
+    self.budget(**{key: value})
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 24, in budget
+    return impl.pipeline_budget(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/exercises.py", line 17, in pipeline_budget
+    raise NotImplementedError("Exercise 1: derive the capacity and payload model")
+NotImplementedError: Exercise 1: derive the capacity and payload model
+
+======================================================================
+ERROR: test_invalid_and_overflowing_durations (test_answers.BudgetTests.test_invalid_and_overflowing_durations) (key='transfer_ms', value=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 87, in test_invalid_and_overflowing_durations
+    self.budget(**{key: value})
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 24, in budget
+    return impl.pipeline_budget(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/exercises.py", line 17, in pipeline_budget
+    raise NotImplementedError("Exercise 1: derive the capacity and payload model")
+NotImplementedError: Exercise 1: derive the capacity and payload model
+
+======================================================================
+ERROR: test_invalid_and_overflowing_durations (test_answers.BudgetTests.test_invalid_and_overflowing_durations) (key='transfer_ms', value=inf)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 87, in test_invalid_and_overflowing_durations
+    self.budget(**{key: value})
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 24, in budget
+    return impl.pipeline_budget(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/exercises.py", line 17, in pipeline_budget
+    raise NotImplementedError("Exercise 1: derive the capacity and payload model")
+NotImplementedError: Exercise 1: derive the capacity and payload model
+
+======================================================================
+ERROR: test_invalid_and_overflowing_durations (test_answers.BudgetTests.test_invalid_and_overflowing_durations) (key='transfer_ms', value=nan)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 87, in test_invalid_and_overflowing_durations
+    self.budget(**{key: value})
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 24, in budget
+    return impl.pipeline_budget(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/exercises.py", line 17, in pipeline_budget
+    raise NotImplementedError("Exercise 1: derive the capacity and payload model")
+NotImplementedError: Exercise 1: derive the capacity and payload model
+
+======================================================================
+ERROR: test_invalid_and_overflowing_durations (test_answers.BudgetTests.test_invalid_and_overflowing_durations) (key='transfer_ms', value='slow')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 87, in test_invalid_and_overflowing_durations
+    self.budget(**{key: value})
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 24, in budget
+    return impl.pipeline_budget(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/exercises.py", line 17, in pipeline_budget
+    raise NotImplementedError("Exercise 1: derive the capacity and payload model")
+NotImplementedError: Exercise 1: derive the capacity and payload model
+
+======================================================================
+ERROR: test_invalid_and_overflowing_durations (test_answers.BudgetTests.test_invalid_and_overflowing_durations) (key='transfer_ms', value=10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 87, in test_invalid_and_overflowing_durations
+    self.budget(**{key: value})
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 24, in budget
+    return impl.pipeline_budget(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/exercises.py", line 17, in pipeline_budget
+    raise NotImplementedError("Exercise 1: derive the capacity and payload model")
+NotImplementedError: Exercise 1: derive the capacity and payload model
+
+======================================================================
+ERROR: test_invalid_and_overflowing_durations (test_answers.BudgetTests.test_invalid_and_overflowing_durations) (key='compute_ms', value=-1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 87, in test_invalid_and_overflowing_durations
+    self.budget(**{key: value})
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 24, in budget
+    return impl.pipeline_budget(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/exercises.py", line 17, in pipeline_budget
+    raise NotImplementedError("Exercise 1: derive the capacity and payload model")
+NotImplementedError: Exercise 1: derive the capacity and payload model
+
+======================================================================
+ERROR: test_invalid_and_overflowing_durations (test_answers.BudgetTests.test_invalid_and_overflowing_durations) (key='compute_ms', value=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 87, in test_invalid_and_overflowing_durations
+    self.budget(**{key: value})
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 24, in budget
+    return impl.pipeline_budget(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/exercises.py", line 17, in pipeline_budget
+    raise NotImplementedError("Exercise 1: derive the capacity and payload model")
+NotImplementedError: Exercise 1: derive the capacity and payload model
+
+======================================================================
+ERROR: test_invalid_and_overflowing_durations (test_answers.BudgetTests.test_invalid_and_overflowing_durations) (key='compute_ms', value=inf)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 87, in test_invalid_and_overflowing_durations
+    self.budget(**{key: value})
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 24, in budget
+    return impl.pipeline_budget(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/exercises.py", line 17, in pipeline_budget
+    raise NotImplementedError("Exercise 1: derive the capacity and payload model")
+NotImplementedError: Exercise 1: derive the capacity and payload model
+
+======================================================================
+ERROR: test_invalid_and_overflowing_durations (test_answers.BudgetTests.test_invalid_and_overflowing_durations) (key='compute_ms', value=nan)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 87, in test_invalid_and_overflowing_durations
+    self.budget(**{key: value})
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 24, in budget
+    return impl.pipeline_budget(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/exercises.py", line 17, in pipeline_budget
+    raise NotImplementedError("Exercise 1: derive the capacity and payload model")
+NotImplementedError: Exercise 1: derive the capacity and payload model
+
+======================================================================
+ERROR: test_invalid_and_overflowing_durations (test_answers.BudgetTests.test_invalid_and_overflowing_durations) (key='compute_ms', value='slow')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 87, in test_invalid_and_overflowing_durations
+    self.budget(**{key: value})
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 24, in budget
+    return impl.pipeline_budget(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/exercises.py", line 17, in pipeline_budget
+    raise NotImplementedError("Exercise 1: derive the capacity and payload model")
+NotImplementedError: Exercise 1: derive the capacity and payload model
+
+======================================================================
+ERROR: test_invalid_and_overflowing_durations (test_answers.BudgetTests.test_invalid_and_overflowing_durations) (key='compute_ms', value=10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 87, in test_invalid_and_overflowing_durations
+    self.budget(**{key: value})
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 24, in budget
+    return impl.pipeline_budget(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/exercises.py", line 17, in pipeline_budget
+    raise NotImplementedError("Exercise 1: derive the capacity and payload model")
+NotImplementedError: Exercise 1: derive the capacity and payload model
+
+======================================================================
+ERROR: test_invalid_and_overflowing_durations (test_answers.BudgetTests.test_invalid_and_overflowing_durations) (overrides={'compute_ms': 0})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 90, in test_invalid_and_overflowing_durations
+    self.budget(**overrides)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 24, in budget
+    return impl.pipeline_budget(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/exercises.py", line 17, in pipeline_budget
+    raise NotImplementedError("Exercise 1: derive the capacity and payload model")
+NotImplementedError: Exercise 1: derive the capacity and payload model
+
+======================================================================
+ERROR: test_invalid_and_overflowing_durations (test_answers.BudgetTests.test_invalid_and_overflowing_durations) (overrides={'storage_ms': 1e+308, 'cpu_ms': 1e+308})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 90, in test_invalid_and_overflowing_durations
+    self.budget(**overrides)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 24, in budget
+    return impl.pipeline_budget(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/exercises.py", line 17, in pipeline_budget
+    raise NotImplementedError("Exercise 1: derive the capacity and payload model")
+NotImplementedError: Exercise 1: derive the capacity and payload model
+
+======================================================================
+ERROR: test_invalid_counts_and_overlap_flag (test_answers.BudgetTests.test_invalid_counts_and_overlap_flag) (overrides={'workers': 0})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 81, in test_invalid_counts_and_overlap_flag
+    self.budget(**overrides)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 24, in budget
+    return impl.pipeline_budget(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/exercises.py", line 17, in pipeline_budget
+    raise NotImplementedError("Exercise 1: derive the capacity and payload model")
+NotImplementedError: Exercise 1: derive the capacity and payload model
+
+======================================================================
+ERROR: test_invalid_counts_and_overlap_flag (test_answers.BudgetTests.test_invalid_counts_and_overlap_flag) (overrides={'workers': True})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 81, in test_invalid_counts_and_overlap_flag
+    self.budget(**overrides)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 24, in budget
+    return impl.pipeline_budget(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/exercises.py", line 17, in pipeline_budget
+    raise NotImplementedError("Exercise 1: derive the capacity and payload model")
+NotImplementedError: Exercise 1: derive the capacity and payload model
+
+======================================================================
+ERROR: test_invalid_counts_and_overlap_flag (test_answers.BudgetTests.test_invalid_counts_and_overlap_flag) (overrides={'workers': 1.5})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 81, in test_invalid_counts_and_overlap_flag
+    self.budget(**overrides)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 24, in budget
+    return impl.pipeline_budget(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/exercises.py", line 17, in pipeline_budget
+    raise NotImplementedError("Exercise 1: derive the capacity and payload model")
+NotImplementedError: Exercise 1: derive the capacity and payload model
+
+======================================================================
+ERROR: test_invalid_counts_and_overlap_flag (test_answers.BudgetTests.test_invalid_counts_and_overlap_flag) (overrides={'prefetch_factor': 0})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 81, in test_invalid_counts_and_overlap_flag
+    self.budget(**overrides)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 24, in budget
+    return impl.pipeline_budget(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/exercises.py", line 17, in pipeline_budget
+    raise NotImplementedError("Exercise 1: derive the capacity and payload model")
+NotImplementedError: Exercise 1: derive the capacity and payload model
+
+======================================================================
+ERROR: test_invalid_counts_and_overlap_flag (test_answers.BudgetTests.test_invalid_counts_and_overlap_flag) (overrides={'batch_bytes': -1})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 81, in test_invalid_counts_and_overlap_flag
+    self.budget(**overrides)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 24, in budget
+    return impl.pipeline_budget(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/exercises.py", line 17, in pipeline_budget
+    raise NotImplementedError("Exercise 1: derive the capacity and payload model")
+NotImplementedError: Exercise 1: derive the capacity and payload model
+
+======================================================================
+ERROR: test_invalid_counts_and_overlap_flag (test_answers.BudgetTests.test_invalid_counts_and_overlap_flag) (overrides={'allow_device_overlap': 'yes'})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 81, in test_invalid_counts_and_overlap_flag
+    self.budget(**overrides)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 24, in budget
+    return impl.pipeline_budget(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/exercises.py", line 17, in pipeline_budget
+    raise NotImplementedError("Exercise 1: derive the capacity and payload model")
+NotImplementedError: Exercise 1: derive the capacity and payload model
+
+======================================================================
+ERROR: test_large_integer_task_payloads_are_exact (test_answers.BudgetTests.test_large_integer_task_payloads_are_exact)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 66, in test_large_integer_task_payloads_are_exact
+    result = self.budget(workers=10**309, batch_bytes=10**50)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 24, in budget
+    return impl.pipeline_budget(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/exercises.py", line 17, in pipeline_budget
+    raise NotImplementedError("Exercise 1: derive the capacity and payload model")
+NotImplementedError: Exercise 1: derive the capacity and payload model
+
+======================================================================
+ERROR: test_prefetch_changes_payload_without_creating_capacity (test_answers.BudgetTests.test_prefetch_changes_payload_without_creating_capacity)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 61, in test_prefetch_changes_payload_without_creating_capacity
+    one, four = self.budget(prefetch_factor=1), self.budget(prefetch_factor=4)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 24, in budget
+    return impl.pipeline_budget(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/exercises.py", line 17, in pipeline_budget
+    raise NotImplementedError("Exercise 1: derive the capacity and payload model")
+NotImplementedError: Exercise 1: derive the capacity and payload model
+
+======================================================================
+ERROR: test_result_is_immutable (test_answers.BudgetTests.test_result_is_immutable)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 72, in test_result_is_immutable
+    self.budget().task_slots = 0
+    ^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 24, in budget
+    return impl.pipeline_budget(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/exercises.py", line 17, in pipeline_budget
+    raise NotImplementedError("Exercise 1: derive the capacity and payload model")
+NotImplementedError: Exercise 1: derive the capacity and payload model
+
+======================================================================
+ERROR: test_same_stream_copy_and_compute_add (test_answers.BudgetTests.test_same_stream_copy_and_compute_add)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 27, in test_same_stream_copy_and_compute_add
+    result = self.budget()
+             ^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 24, in budget
+    return impl.pipeline_budget(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/exercises.py", line 17, in pipeline_budget
+    raise NotImplementedError("Exercise 1: derive the capacity and payload model")
+NotImplementedError: Exercise 1: derive the capacity and payload model
+
+======================================================================
+ERROR: test_shared_storage_does_not_scale_with_workers (test_answers.BudgetTests.test_shared_storage_does_not_scale_with_workers)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 42, in test_shared_storage_does_not_scale_with_workers
+    result = self.budget(storage_ms=20, workers=32)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 24, in budget
+    return impl.pipeline_budget(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/exercises.py", line 17, in pipeline_budget
+    raise NotImplementedError("Exercise 1: derive the capacity and payload model")
+NotImplementedError: Exercise 1: derive the capacity and payload model
+
+======================================================================
+ERROR: test_transfer_can_limit_even_with_fast_data_loading (test_answers.BudgetTests.test_transfer_can_limit_even_with_fast_data_loading)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 52, in test_transfer_can_limit_even_with_fast_data_loading
+    result = self.budget(transfer_ms=14, allow_device_overlap=True)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 24, in budget
+    return impl.pipeline_budget(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/exercises.py", line 17, in pipeline_budget
+    raise NotImplementedError("Exercise 1: derive the capacity and payload model")
+NotImplementedError: Exercise 1: derive the capacity and payload model
+
+======================================================================
+ERROR: test_empty_queue_exposes_the_whole_pause (test_answers.QueueCoverageTests.test_empty_queue_exposes_the_whole_pause)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 101, in test_empty_queue_exposes_the_whole_pause
+    self.assertEqual(impl.exposed_pause(40, 0, 13), 40)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/exercises.py", line 24, in exposed_pause
+    raise NotImplementedError("Exercise 1: distinguish ready batches from task slots")
+NotImplementedError: Exercise 1: distinguish ready batches from task slots
+
+======================================================================
+ERROR: test_four_ready_batches_cover_the_pause (test_answers.QueueCoverageTests.test_four_ready_batches_cover_the_pause)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 98, in test_four_ready_batches_cover_the_pause
+    self.assertEqual(impl.exposed_pause(40, 4, 13), 0)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/exercises.py", line 24, in exposed_pause
+    raise NotImplementedError("Exercise 1: distinguish ready batches from task slots")
+NotImplementedError: Exercise 1: distinguish ready batches from task slots
+
+======================================================================
+ERROR: test_fractional_durations (test_answers.QueueCoverageTests.test_fractional_durations)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 111, in test_fractional_durations
+    self.assertAlmostEqual(impl.exposed_pause(0.3, 1, 0.1), 0.2)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/exercises.py", line 24, in exposed_pause
+    raise NotImplementedError("Exercise 1: distinguish ready batches from task slots")
+NotImplementedError: Exercise 1: distinguish ready batches from task slots
+
+======================================================================
+ERROR: test_huge_ready_count_does_not_overflow (test_answers.QueueCoverageTests.test_huge_ready_count_does_not_overflow)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 108, in test_huge_ready_count_does_not_overflow
+    self.assertEqual(impl.exposed_pause(40, 10**309, 13), 0)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/exercises.py", line 24, in exposed_pause
+    raise NotImplementedError("Exercise 1: distinguish ready batches from task slots")
+NotImplementedError: Exercise 1: distinguish ready batches from task slots
+
+======================================================================
+ERROR: test_invalid_queue_inputs (test_answers.QueueCoverageTests.test_invalid_queue_inputs) (arguments=(40, -1, 13))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 117, in test_invalid_queue_inputs
+    impl.exposed_pause(*arguments)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/exercises.py", line 24, in exposed_pause
+    raise NotImplementedError("Exercise 1: distinguish ready batches from task slots")
+NotImplementedError: Exercise 1: distinguish ready batches from task slots
+
+======================================================================
+ERROR: test_invalid_queue_inputs (test_answers.QueueCoverageTests.test_invalid_queue_inputs) (arguments=(40, True, 13))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 117, in test_invalid_queue_inputs
+    impl.exposed_pause(*arguments)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/exercises.py", line 24, in exposed_pause
+    raise NotImplementedError("Exercise 1: distinguish ready batches from task slots")
+NotImplementedError: Exercise 1: distinguish ready batches from task slots
+
+======================================================================
+ERROR: test_invalid_queue_inputs (test_answers.QueueCoverageTests.test_invalid_queue_inputs) (arguments=(40, 1.5, 13))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 117, in test_invalid_queue_inputs
+    impl.exposed_pause(*arguments)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/exercises.py", line 24, in exposed_pause
+    raise NotImplementedError("Exercise 1: distinguish ready batches from task slots")
+NotImplementedError: Exercise 1: distinguish ready batches from task slots
+
+======================================================================
+ERROR: test_invalid_queue_inputs (test_answers.QueueCoverageTests.test_invalid_queue_inputs) (arguments=(40, 2, 0))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 117, in test_invalid_queue_inputs
+    impl.exposed_pause(*arguments)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/exercises.py", line 24, in exposed_pause
+    raise NotImplementedError("Exercise 1: distinguish ready batches from task slots")
+NotImplementedError: Exercise 1: distinguish ready batches from task slots
+
+======================================================================
+ERROR: test_invalid_queue_inputs (test_answers.QueueCoverageTests.test_invalid_queue_inputs) (arguments=(inf, 2, 13))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 117, in test_invalid_queue_inputs
+    impl.exposed_pause(*arguments)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/exercises.py", line 24, in exposed_pause
+    raise NotImplementedError("Exercise 1: distinguish ready batches from task slots")
+NotImplementedError: Exercise 1: distinguish ready batches from task slots
+
+======================================================================
+ERROR: test_invalid_queue_inputs (test_answers.QueueCoverageTests.test_invalid_queue_inputs) (arguments=(40, 2, nan))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 117, in test_invalid_queue_inputs
+    impl.exposed_pause(*arguments)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/exercises.py", line 24, in exposed_pause
+    raise NotImplementedError("Exercise 1: distinguish ready batches from task slots")
+NotImplementedError: Exercise 1: distinguish ready batches from task slots
+
+======================================================================
+ERROR: test_two_ready_batches_cover_twenty_six_ms (test_answers.QueueCoverageTests.test_two_ready_batches_cover_twenty_six_ms)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 95, in test_two_ready_batches_cover_twenty_six_ms
+    self.assertEqual(impl.exposed_pause(40, 2, 13), 14)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/exercises.py", line 24, in exposed_pause
+    raise NotImplementedError("Exercise 1: distinguish ready batches from task slots")
+NotImplementedError: Exercise 1: distinguish ready batches from task slots
+
+======================================================================
+ERROR: test_zero_pause_and_exact_boundary (test_answers.QueueCoverageTests.test_zero_pause_and_exact_boundary)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 104, in test_zero_pause_and_exact_boundary
+    self.assertEqual(impl.exposed_pause(0, 2, 13), 0)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/exercises.py", line 24, in exposed_pause
+    raise NotImplementedError("Exercise 1: distinguish ready batches from task slots")
+NotImplementedError: Exercise 1: distinguish ready batches from task slots
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.007s
+
+FAILED (errors=53)

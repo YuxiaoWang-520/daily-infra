@@ -1,0 +1,17 @@
+test_dataset_index_bounds (test_loader_probe.BoundaryTests.test_dataset_index_bounds) ... ok
+test_dataset_rejects_a_mismatched_record_id (test_loader_probe.BoundaryTests.test_dataset_rejects_a_mismatched_record_id) ... ok
+test_dataset_rejects_malformed_payload (test_loader_probe.BoundaryTests.test_dataset_rejects_malformed_payload) ... ok
+test_global_cpu_rng_is_preserved (test_loader_probe.BoundaryTests.test_global_cpu_rng_is_preserved) ... ok
+test_invalid_configuration_fails_before_iteration (test_loader_probe.BoundaryTests.test_invalid_configuration_fails_before_iteration) ... ok
+test_one_sample_and_warmup_exclusion (test_loader_probe.BoundaryTests.test_one_sample_and_warmup_exclusion) ... ok
+test_every_id_arrives_once_and_in_order (test_loader_probe.LoaderTests.test_every_id_arrives_once_and_in_order) ... ok
+test_payload_checksums_match_hand_calculation (test_loader_probe.LoaderTests.test_payload_checksums_match_hand_calculation) ... ok
+test_phase_measurements_are_nonnegative (test_loader_probe.LoaderTests.test_phase_measurements_are_nonnegative) ... ok
+test_single_process_work_happens_in_the_main_process (test_loader_probe.LoaderTests.test_single_process_work_happens_in_the_main_process) ... ok
+test_spawn_workers_actually_fetch_records (test_loader_probe.LoaderTests.test_spawn_workers_actually_fetch_records) ... ok
+test_tail_batch_is_retained (test_loader_probe.LoaderTests.test_tail_batch_is_retained) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 11.078s
+
+OK

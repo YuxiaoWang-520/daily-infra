@@ -1,0 +1,126 @@
+{
+  "verified_at": "2026-11-06T11:33:04.304703+08:00",
+  "archived_file_count": 9,
+  "archived_files": [
+    {
+      "archive": "evidence/upstream/pytorch/main/torch/utils/data/dataloader.py",
+      "upstream_path": "torch/utils/data/dataloader.py",
+      "revision": "b79f21bab5e9e221b05bc903f7d8171a8c04a8a0",
+      "bytes": 81379,
+      "sha256": "b0e3b33e3f119bb815fa76699effa68514f38d920e611e66a7e23f46ea1c2c43",
+      "matches_git_blob": true
+    },
+    {
+      "archive": "evidence/upstream/pytorch/main/torch/utils/data/_utils/fetch.py",
+      "upstream_path": "torch/utils/data/_utils/fetch.py",
+      "revision": "b79f21bab5e9e221b05bc903f7d8171a8c04a8a0",
+      "bytes": 2010,
+      "sha256": "dc5d6761c1b90c60ad4c377f2e11cb9d8382e29ce3cf4c3c053909894cbd13b5",
+      "matches_git_blob": true
+    },
+    {
+      "archive": "evidence/upstream/pytorch/main/torch/utils/data/_utils/worker.py",
+      "upstream_path": "torch/utils/data/_utils/worker.py",
+      "revision": "b79f21bab5e9e221b05bc903f7d8171a8c04a8a0",
+      "bytes": 14911,
+      "sha256": "9a4a472bd0c07b68ab7e289d81c101618b00e5ed5df85de6051b27e1696f517e",
+      "matches_git_blob": true
+    },
+    {
+      "archive": "evidence/upstream/pytorch/main/torch/utils/data/_utils/pin_memory.py",
+      "upstream_path": "torch/utils/data/_utils/pin_memory.py",
+      "revision": "b79f21bab5e9e221b05bc903f7d8171a8c04a8a0",
+      "bytes": 4142,
+      "sha256": "b9d35b6f01db566fe4c85170b3fe2ffbcc772e14f02ccbb88a268020d30af085",
+      "matches_git_blob": true
+    },
+    {
+      "archive": "evidence/upstream/pytorch/main/torch/utils/data/_utils/collate.py",
+      "upstream_path": "torch/utils/data/_utils/collate.py",
+      "revision": "b79f21bab5e9e221b05bc903f7d8171a8c04a8a0",
+      "bytes": 15936,
+      "sha256": "4a7892712b94aca8f78da63d3017f77a450cc56319912967671595849d5a25fb",
+      "matches_git_blob": true
+    },
+    {
+      "archive": "evidence/upstream/pytorch/main/docs/source/utils/data.md",
+      "upstream_path": "docs/source/utils/data.md",
+      "revision": "b79f21bab5e9e221b05bc903f7d8171a8c04a8a0",
+      "bytes": 21828,
+      "sha256": "e3f1e3d8e29045a1e9103f99c8f0c287d675a7fa2a7a15154ab1156ba80d7158",
+      "matches_git_blob": true
+    },
+    {
+      "archive": "evidence/upstream/pytorch/main/aten/src/ATen/native/Memory.cpp",
+      "upstream_path": "aten/src/ATen/native/Memory.cpp",
+      "revision": "b79f21bab5e9e221b05bc903f7d8171a8c04a8a0",
+      "bytes": 2625,
+      "sha256": "34dea04b33ed14b1262666a4331b78b1463a9222ec7eed6d4ab7c1768927f739",
+      "matches_git_blob": true
+    },
+    {
+      "archive": "evidence/upstream/pytorch/LICENSE",
+      "upstream_path": "LICENSE",
+      "revision": "b79f21bab5e9e221b05bc903f7d8171a8c04a8a0",
+      "bytes": 3464,
+      "sha256": "bd018feef8825e88181c84eb7e3aa4eafb8f08a20d9fd6ef948569610c4a3e43",
+      "matches_git_blob": true
+    },
+    {
+      "archive": "evidence/upstream/pytorch/v2.15.0/torch/utils/data/dataloader.py",
+      "upstream_path": "torch/utils/data/dataloader.py",
+      "revision": "31a77fc9c0a7c6fff15a1ff58c743f53b1a9d457",
+      "bytes": 81408,
+      "sha256": "793f8e638fe953b55111b54c6efe007a44cc57abf031b3105f6a487ec666d58a",
+      "matches_git_blob": true
+    }
+  ],
+  "runtime_and_stable_comparisons": [
+    {
+      "path": "torch/utils/data/dataloader.py",
+      "installed_path": "/Users/wangyuxiao/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/utils/data/dataloader.py",
+      "stable_sha256": "793f8e638fe953b55111b54c6efe007a44cc57abf031b3105f6a487ec666d58a",
+      "main_sha256": "b0e3b33e3f119bb815fa76699effa68514f38d920e611e66a7e23f46ea1c2c43",
+      "installed_sha256": "793f8e638fe953b55111b54c6efe007a44cc57abf031b3105f6a487ec666d58a",
+      "installed_matches_stable": true,
+      "main_matches_stable": false
+    },
+    {
+      "path": "torch/utils/data/_utils/fetch.py",
+      "installed_path": "/Users/wangyuxiao/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/utils/data/_utils/fetch.py",
+      "stable_sha256": "dc5d6761c1b90c60ad4c377f2e11cb9d8382e29ce3cf4c3c053909894cbd13b5",
+      "main_sha256": "dc5d6761c1b90c60ad4c377f2e11cb9d8382e29ce3cf4c3c053909894cbd13b5",
+      "installed_sha256": "dc5d6761c1b90c60ad4c377f2e11cb9d8382e29ce3cf4c3c053909894cbd13b5",
+      "installed_matches_stable": true,
+      "main_matches_stable": true
+    },
+    {
+      "path": "torch/utils/data/_utils/worker.py",
+      "installed_path": "/Users/wangyuxiao/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/utils/data/_utils/worker.py",
+      "stable_sha256": "9a4a472bd0c07b68ab7e289d81c101618b00e5ed5df85de6051b27e1696f517e",
+      "main_sha256": "9a4a472bd0c07b68ab7e289d81c101618b00e5ed5df85de6051b27e1696f517e",
+      "installed_sha256": "9a4a472bd0c07b68ab7e289d81c101618b00e5ed5df85de6051b27e1696f517e",
+      "installed_matches_stable": true,
+      "main_matches_stable": true
+    },
+    {
+      "path": "torch/utils/data/_utils/pin_memory.py",
+      "installed_path": "/Users/wangyuxiao/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/utils/data/_utils/pin_memory.py",
+      "stable_sha256": "b9d35b6f01db566fe4c85170b3fe2ffbcc772e14f02ccbb88a268020d30af085",
+      "main_sha256": "b9d35b6f01db566fe4c85170b3fe2ffbcc772e14f02ccbb88a268020d30af085",
+      "installed_sha256": "b9d35b6f01db566fe4c85170b3fe2ffbcc772e14f02ccbb88a268020d30af085",
+      "installed_matches_stable": true,
+      "main_matches_stable": true
+    },
+    {
+      "path": "torch/utils/data/_utils/collate.py",
+      "installed_path": "/Users/wangyuxiao/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/utils/data/_utils/collate.py",
+      "stable_sha256": "4a7892712b94aca8f78da63d3017f77a450cc56319912967671595849d5a25fb",
+      "main_sha256": "4a7892712b94aca8f78da63d3017f77a450cc56319912967671595849d5a25fb",
+      "installed_sha256": "4a7892712b94aca8f78da63d3017f77a450cc56319912967671595849d5a25fb",
+      "installed_matches_stable": true,
+      "main_matches_stable": true
+    }
+  ],
+  "scope": "Byte equality applies only to the selected files, not the whole installed build."
+}

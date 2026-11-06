@@ -1,0 +1,23 @@
+test_single_worker_combined_overflow_uses_the_contract_error (test_answers.BudgetTests.test_single_worker_combined_overflow_uses_the_contract_error) ... ERROR
+
+======================================================================
+ERROR: test_single_worker_combined_overflow_uses_the_contract_error (test_answers.BudgetTests.test_single_worker_combined_overflow_uses_the_contract_error)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 115, in test_single_worker_combined_overflow_uses_the_contract_error
+    self.budget(storage_ms=1e308, cpu_ms=1e308, workers=1)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_answers.py", line 24, in budget
+    return impl.pipeline_budget(**arguments)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/answers.py", line 57, in pipeline_budget
+    worker_interval = float((Fraction(storage) + Fraction(cpu)) / workers)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/miniforge3/envs/ai-infra/lib/python3.12/numbers.py", line 316, in __float__
+    return int(self.numerator) / int(self.denominator)
+           ~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~
+OverflowError: integer division result too large for a float
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (errors=1)

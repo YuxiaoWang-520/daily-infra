@@ -1,0 +1,23 @@
+test_all_tied_stages_are_reported (test_answers.BudgetTests.test_all_tied_stages_are_reported) ... ok
+test_cpu_capacity_scales_until_another_stage_limits (test_answers.BudgetTests.test_cpu_capacity_scales_until_another_stage_limits) ... ok
+test_explicit_device_overlap_changes_the_lower_bound (test_answers.BudgetTests.test_explicit_device_overlap_changes_the_lower_bound) ... ok
+test_invalid_and_overflowing_durations (test_answers.BudgetTests.test_invalid_and_overflowing_durations) ... ok
+test_invalid_counts_and_overlap_flag (test_answers.BudgetTests.test_invalid_counts_and_overlap_flag) ... ok
+test_large_integer_task_payloads_are_exact (test_answers.BudgetTests.test_large_integer_task_payloads_are_exact) ... ok
+test_prefetch_changes_payload_without_creating_capacity (test_answers.BudgetTests.test_prefetch_changes_payload_without_creating_capacity) ... ok
+test_result_is_immutable (test_answers.BudgetTests.test_result_is_immutable) ... ok
+test_same_stream_copy_and_compute_add (test_answers.BudgetTests.test_same_stream_copy_and_compute_add) ... ok
+test_shared_storage_does_not_scale_with_workers (test_answers.BudgetTests.test_shared_storage_does_not_scale_with_workers) ... ok
+test_transfer_can_limit_even_with_fast_data_loading (test_answers.BudgetTests.test_transfer_can_limit_even_with_fast_data_loading) ... ok
+test_empty_queue_exposes_the_whole_pause (test_answers.QueueCoverageTests.test_empty_queue_exposes_the_whole_pause) ... ok
+test_four_ready_batches_cover_the_pause (test_answers.QueueCoverageTests.test_four_ready_batches_cover_the_pause) ... ok
+test_fractional_durations (test_answers.QueueCoverageTests.test_fractional_durations) ... ok
+test_huge_ready_count_does_not_overflow (test_answers.QueueCoverageTests.test_huge_ready_count_does_not_overflow) ... ok
+test_invalid_queue_inputs (test_answers.QueueCoverageTests.test_invalid_queue_inputs) ... ok
+test_two_ready_batches_cover_twenty_six_ms (test_answers.QueueCoverageTests.test_two_ready_batches_cover_twenty_six_ms) ... ok
+test_zero_pause_and_exact_boundary (test_answers.QueueCoverageTests.test_zero_pause_and_exact_boundary) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.001s
+
+OK

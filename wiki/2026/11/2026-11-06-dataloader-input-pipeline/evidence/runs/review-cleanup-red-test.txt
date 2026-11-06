@@ -1,0 +1,14 @@
+test_iteration_failure_closes_workers_with_iterator_still_referenced (test_loader_probe.BoundaryTests.test_iteration_failure_closes_workers_with_iterator_still_referenced) ... FAIL
+
+======================================================================
+FAIL: test_iteration_failure_closes_workers_with_iterator_still_referenced (test_loader_probe.BoundaryTests.test_iteration_failure_closes_workers_with_iterator_still_referenced)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-06-dataloader-input-pipeline/code/test_loader_probe.py", line 137, in test_iteration_failure_closes_workers_with_iterator_still_referenced
+    self.assertFalse(worker.is_alive())
+AssertionError: True is not false
+
+----------------------------------------------------------------------
+Ran 1 test in 0.780s
+
+FAILED (failures=1)

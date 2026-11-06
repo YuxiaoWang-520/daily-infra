@@ -1,0 +1,4 @@
+# Preserve original whitespace in upstream code, diffs and failing test output.
+evidence/upstream/** -whitespace
+evidence/stable-main.diff -whitespace
+evidence/runs/*red-test*.txt -whitespace

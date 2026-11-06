@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "verified_at": "2026-11-06T11:37:30.793041+08:00",
+  "article_files": 45,
+  "authored_markdown_files": 7,
+  "local_link_checks": 110,
+  "missing_links": [],
+  "index_articles": 20,
+  "articles_on_publication_date": 1,
+  "mermaid_matches_source": true,
+  "source_files_verified": 9,
+  "runtime_files_matched_to_stable": 5,
+  "checksum_files_verified": 40,
+  "final_answer_tests": 33,
+  "exercise_python_files": 8,
+  "code_hashes_match_tested_version": true,
+  "credential_pattern_matches": 0,
+  "caches_in_article": 0,
+  "hash_scope": "SHA256SUMS covers source, code, assets, references and evidence. Article README, review, delivery-check and checksum output are excluded to avoid mutable status/self-reference.",
+  "checks_performed": [
+    "Relative Markdown file targets in seven authored files, wiki/index.md and ROADMAP.md exist.",
+    "Publication status, chronological index order and exactly one article for 2026-11-06 agree.",
+    "Inline Mermaid equals the separately archived diagram source.",
+    "Source-mirror hashes match the verified Git-blob manifest.",
+    "Current exercise Python hashes equal the final tested files.",
+    "All six CPU trials preserve every ID and expected transformed value, with checksum 92080 each.",
+    "No cache directories or matching private-key/GitHub-token/AWS-key patterns in the article files."
+  ]
+}

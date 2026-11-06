@@ -1,0 +1,11 @@
+flowchart LR
+  S["主进程 sampler<br/>生成一批样本索引"] --> IQ["index queues"]
+  IQ --> W0["worker 0<br/>读取 → 解码 → 变换 → collate"]
+  IQ --> W1["worker 1<br/>读取 → 解码 → 变换 → collate"]
+  W0 --> RQ["worker result queue"]
+  W1 --> RQ
+  RQ --> P["可选主进程线程<br/>pin memory"]
+  P --> N["主进程 next<br/>得到 CPU batch"]
+  RQ -->|"未启用 pinning"| N
+  N --> H["H2D 拷贝"]
+  H --> G["模型计算"]

@@ -1,0 +1,108 @@
+{
+  "verified_at": "2026-11-06T11:34:58.334166+08:00",
+  "working_directory": "article root",
+  "environment": {
+    "python": "3.12.16 (main, Oct 26 2026, 11:31:43) [Clang 21.1.8 ]",
+    "executable": "/Users/wangyuxiao/miniforge3/envs/ai-infra/bin/python",
+    "platform": "macOS-27.0-arm64-arm-64bit",
+    "machine": "arm64",
+    "torch": "2.15.0",
+    "torch_build_git": "d0f2af8b66b20da4baa50644c0cd3f887a2eae2e",
+    "main_cpu_threads": 1,
+    "cuda_available": false
+  },
+  "commands": [
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 /Users/wangyuxiao/miniforge3/envs/ai-infra/bin/python -m unittest discover -s code -p 'test_*.py' -v",
+      "exit_code": 0,
+      "tests": 33,
+      "seconds": 11.281,
+      "output": "tests.txt"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 /Users/wangyuxiao/miniforge3/envs/ai-infra/bin/python -m ruff check code",
+      "exit_code": 0,
+      "output": "lint.txt"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 /Users/wangyuxiao/miniforge3/envs/ai-infra/bin/python -m ruff format --check code",
+      "exit_code": 0,
+      "output": "format.txt"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 /Users/wangyuxiao/miniforge3/envs/ai-infra/bin/python code/run_lab.py",
+      "exit_code": 0,
+      "output": "lab.json",
+      "repetitions": 6,
+      "samples_per_repetition": 40,
+      "checksum_per_repetition": 92080
+    }
+  ],
+  "code_sha256_at_verification": {
+    "code/answers.py": "51ab07b66b22c410cc691742a9f6016453da59c264cc8e1000f072e3c5ccb21c",
+    "code/exercises.py": "5b1a6a5b877a8e541911079ca1a016810a3b2d043c8284c5c652b5940ce34d05",
+    "code/loader_probe.py": "3fd756d9d596d080fbf0929310930636ec06658769a1e2d4b689b9a0c275e01a",
+    "code/models.py": "7bdccaaf341c246e3693c62237ca4a7a37c46e2b87f3d1439e09d2bf55154abc",
+    "code/probe_exercises.py": "72b2222d7d50598986a3fa846cc0d454f8c3aab5ecf8542927167a22d29052e7",
+    "code/run_lab.py": "6c35af4b2dc7c76fd96599514e36efa6bf7ad7e0aa4d1c7353996df52280fc4e",
+    "code/test_answers.py": "bb899b6bac41dea134540a040874a87331a8e992aeebf661e0ba77d2635ab244",
+    "code/test_loader_probe.py": "736da150cd09c3deea65284f6ca7945f99840048e0c01a0f8a13fe12f962dcff"
+  },
+  "tdd_history": [
+    {
+      "output": "capacity-red-tests.txt",
+      "expected_exit_code": 1,
+      "purpose": "exercise 1 stubs before answers"
+    },
+    {
+      "output": "loader-red-tests.txt",
+      "expected_exit_code": 1,
+      "purpose": "exercise 2 stub before answer"
+    },
+    {
+      "output": "worker-occupancy-red-test.txt",
+      "expected_exit_code": 1,
+      "purpose": "worker remains occupied while reading"
+    },
+    {
+      "output": "review-overflow-red-test.txt",
+      "expected_exit_code": 1,
+      "purpose": "single worker combined overflow contract"
+    },
+    {
+      "output": "review-cleanup-red-test.txt",
+      "expected_exit_code": 1,
+      "purpose": "close workers despite retained iterator and exception"
+    }
+  ],
+  "intermediate_green_runs": [
+    {
+      "output": "capacity-tests.txt",
+      "tests": 18,
+      "note": "before worker occupancy and overflow regressions"
+    },
+    {
+      "output": "loader-tests.txt",
+      "tests": 12,
+      "note": "before exceptional cleanup regression"
+    }
+  ],
+  "independent_review": {
+    "agent": "/root/checkpoint_python_fallback",
+    "initial_findings": {
+      "CRITICAL": 0,
+      "HIGH": 0,
+      "MEDIUM": 2
+    },
+    "followup_targeted_tests": 2,
+    "followup_seconds": 0.759,
+    "unresolved": 0
+  },
+  "measurement_scope": "Real CPU DataLoader, JSON parsing, tensor transform and spawn worker behavior. Artificial source/consumer sleeps dominate this tiny fixture. First-next timing and iterator creation separate from steady-state waits. No GPU/H2D measurements or cold-storage throughput measurements.",
+  "unexecuted_device_cases": [
+    "CUDA H2D and pinned-memory timing",
+    "real model training throughput",
+    "cold-storage throughput",
+    "persistent worker cross-epoch state"
+  ]
+}

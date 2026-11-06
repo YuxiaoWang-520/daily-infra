@@ -1,0 +1,14 @@
+diff --git a/torch/utils/data/dataloader.py b/torch/utils/data/dataloader.py
+index 068c57e..774c10a 100644
+--- a/torch/utils/data/dataloader.py
++++ b/torch/utils/data/dataloader.py
+@@ -19,8 +19,7 @@ import threading
+ import warnings
+ import weakref
+ from collections.abc import Callable
+-from typing import Any, Generic, NoReturn, TYPE_CHECKING, TypeVar
+-from typing_extensions import Self
++from typing import Any, Generic, NoReturn, Self, TYPE_CHECKING, TypeVar
+ 
+ import torch
+ import torch.distributed as dist
