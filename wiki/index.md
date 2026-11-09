@@ -24,8 +24,9 @@
 | 18 | 2026-11-04 | [参数之外，训练显存究竟花在哪里？](2026/11/2026-11-04-training-memory-accounting/README.md) | 训练容量、Adam 状态、混合精度、激活、storage 生命周期与 allocator 口径 | 第 01、03、17 篇 |
 | 19 | 2026-11-05 | [用重算换显存的代价如何计算？](2026/11/2026-11-05-activation-checkpointing/README.md) | activation checkpointing、分段预算、非重入重算、RNG 与梯度验收 | 第 01、03、18 篇 |
 | 20 | 2026-11-06 | [训练在等数据，怎样判断瓶颈在磁盘、CPU 还是传输？](2026/11/2026-11-06-dataloader-input-pipeline/README.md) | DataLoader、输入流水线、worker 容量、预取队列、pinned memory 与分阶段计时 | 第 04、06、18 篇 |
+| 21 | 2026-11-09 | [FSDP／ZeRO 怎样分片参数、梯度与优化器状态？](2026/11/2026-11-09-fsdp-zero-state-sharding/README.md) | 模型状态分片、FSDP2、AllGather、ReduceScatter、容量与通信取舍 | 第 17—19 篇 |
 
-下一篇候选为 FSDP／ZeRO 怎样分片参数、梯度与优化器状态？
+下一篇候选为训练中断后，checkpoint 怎样恢复一致的进度？
 
 2026-10-22 起按用户要求集中完成起步前 10 篇，使用实际归档日期；日常定时任务仍按工作日每天一篇执行。范围见 [本次任务说明](../docs/BOOTSTRAP10.md)。
 

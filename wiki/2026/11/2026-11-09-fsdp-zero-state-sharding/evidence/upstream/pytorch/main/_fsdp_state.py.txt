@@ -1,0 +1,166 @@
+L00118 |         auto_reshard_after_forward: bool,
+L00119 |     ) -> None:
+L00120 |         for module in modules:
+L00121 |             _insert_module_state(module, self)
+L00122 |         self._modules = modules
+L00123 |         self._device = device
+L00124 |         self._device_handle = _get_device_handle(device.type)
+L00125 |         self._mp_policy = replace(mp_policy, param_dtype_override_fn=None)
+L00126 |         self._auto_reshard_after_forward = auto_reshard_after_forward
+L00127 |         if len(modules) == 1:
+L00128 |             self._pre_forward_hook_handle = modules[0].register_forward_pre_hook(
+L00129 |                 self._pre_forward, prepend=True, with_kwargs=True
+L00130 |             )
+L00131 |             self._post_forward_hook_handle = modules[0].register_forward_hook(
+L00132 |                 self._post_forward, prepend=False
+L00133 |             )
+L00134 |         else:
+L00135 |             hook_handle = _register_group_forward_hooks(
+L00136 |                 modules,
+L00137 |                 self._pre_forward,
+L00138 |                 self._post_forward,
+L00139 |                 self._modules_to_run_forward,
+L00140 |                 self._cast_output_dtype,
+L00141 |             )
+L00142 |             self._pre_forward_hook_handle = hook_handle
+L00143 |             self._post_forward_hook_handle = hook_handle
+L00144 | 
+L00145 |     def _root_pre_forward(
+
+L00179 |     def _lazy_init(self) -> None:
+L00180 |         """
+L00181 |         Lazy initialization represents when all modules' parallelisms have
+L00182 |         finalized (e.g. FSDP has been applied to all desired modules). This
+L00183 |         means that we can determine which state is the root, and we do so by
+L00184 |         the 1st state to run forward.
+L00185 |         """
+L00186 |         if self._is_root is not None:
+L00187 |             return  # no-op: already initialized
+L00188 |         if len(self._modules) > 1:
+L00189 |             raise RuntimeError(
+L00190 |                 f"{self._state_name} requires a single root module but got {self._modules}"
+L00191 |             )
+L00192 |         root_module = self._modules[0]
+L00193 |         for module in root_module.modules():
+L00194 |             state = self._get_state_for_module(module)
+L00195 |             if (
+L00196 |                 state is not None
+L00197 |                 and state is not self
+L00198 |                 and state._state_ctx.manual_backward_finalization
+L00199 |             ):
+L00200 |                 raise RuntimeError(
+L00201 |                     "set_manual_backward_finalization must be called on the "
+L00202 |                     f"root {self._state_name} module"
+L00203 |                 )
+L00204 |         self._is_root = True
+L00205 |         visited_states: set[FSDPState] = set()
+L00206 |         for module_name, module in root_module.named_modules():
+L00207 |             if (state := self._get_state_for_module(module)) is None:
+L00208 |                 continue
+L00209 |             if module is not root_module:
+L00210 |                 if state not in visited_states and state._is_root is not None:
+L00211 |                     raise RuntimeError(
+L00212 |                         f"{self._state_name} state has already been lazily initialized for "
+L00213 |                         f"{module_name}\n{self._state_name} requires running forward through "
+L00214 |                         "the root module first"
+L00215 |                     )
+L00216 |                 state._is_root = False
+L00217 |             # A single state can map to multiple modules (e.g.
+L00218 |             # fully_shard([mod_a, mod_b, mod_c])), so dedup here.
+L00219 |             if state not in visited_states:
+L00220 |                 self._state_ctx.all_states.append(state)
+L00221 |             visited_states.add(state)
+L00222 |         # For the root, do not reshard after forward since for training,
+L00223 |         # the parameters would be freed and all-gathered immediately
+L00224 |         if self._auto_reshard_after_forward:
+L00225 |             for fsdp_param_group in self._fsdp_param_groups:
+L00226 |                 fsdp_param_group.post_forward_mesh_info = None
+L00227 |         self._init_fqns()
+L00228 |         self._init_shared_state()
+L00229 |         self._validate_no_duplicate_params()
+L00230 |         # Run parameter group lazy inits after initializing FQNs for improved
+L00231 |         # error messages
+L00232 |         for state in self._state_ctx.all_states:
+
+L00309 |     def _pre_forward(
+L00310 |         self, module: nn.Module, args: tuple[Any, ...], kwargs: dict[str, Any]
+L00311 |     ) -> tuple[tuple[Any, ...], dict[str, Any]]:
+L00312 |         if (
+L00313 |             self._state_ctx.gradient_reduction_pending
+L00314 |             or self._comm_ctx.active_gradient_reduction is not None
+L00315 |         ):
+L00316 |             raise RuntimeError(
+L00317 |                 "The previous gradient reduction must be waited on before forward"
+L00318 |             )
+L00319 |         # When composing with module-hook-based activation checkpointing, the
+L00320 |         # pre-backward hook is responsible for the unshard
+L00321 |         if self._training_state == TrainingState.PRE_BACKWARD:
+L00322 |             with _spmd_no_typecheck():
+L00323 |                 # With nested FSDP and multiple forward passes before backward,
+L00324 |                 # the params might have been resharded by a previous post_backward.
+L00325 |                 # We need to ensure params are unsharded for AC recomputation.
+L00326 |                 for fsdp_param_group in self._fsdp_param_groups:
+L00327 |                     if not fsdp_param_group.is_unsharded:
+L00328 |                         fsdp_param_group.unshard()
+L00329 |                         fsdp_param_group.wait_for_unshard()
+L00330 |             return self._cast_forward_inputs(args, kwargs)
+L00331 | 
+L00332 |         # With grouped ``fully_shard([a, b, ...])`` the pre-hook fires per
+L00333 |         # module (so ``cast_forward_inputs`` and ``fsdp_param_group.pre_forward``
+L00334 |         # run for each). Root setup and forward prefetch are one-shot, gated
+L00335 |         # on the first module's entry.
+L00336 |         with _spmd_no_typecheck():
+L00337 |             state_first_in_pass = self._training_state != TrainingState.FORWARD
+L00338 |             self._training_state = TrainingState.FORWARD
+L00339 |             if state_first_in_pass:
+L00340 |                 args, kwargs = self._root_pre_forward(module, args, kwargs)
+L00341 |         args, kwargs = self._cast_forward_inputs(args, kwargs)
+L00342 |         for fsdp_param_group in self._fsdp_param_groups:
+L00343 |             args, kwargs = fsdp_param_group.pre_forward(module, args, kwargs)
+L00344 |         with _spmd_no_typecheck():
+L00345 |             if state_first_in_pass:
+L00346 |                 for fsdp_state in self._states_to_forward_prefetch:
+L00347 |                     # Forward order (not reversed) to match forward execution
+L00348 |                     # order; contrast with reversed() in _pre_backward.
+L00349 |                     for target_param_group in fsdp_state._fsdp_param_groups:
+L00350 |                         FSDPParamGroup._prefetch_unshard(target_param_group, "forward")
+L00351 |             return args, kwargs
+L00352 | 
+L00353 |     @_dynamo_disable
+L00354 |     def _post_forward(self, module: nn.Module, input: Any, output: Any) -> Any:
+L00355 |         with _spmd_no_typecheck():
+L00356 |             # When composing with module-hook-based activation checkpointing, the
+L00357 |             # post-backward hook is responsible for the reshard
+L00358 |             if self._training_state == TrainingState.PRE_BACKWARD:
+L00359 |                 return self._cast_output_dtype(output)
+L00360 |             for fsdp_param_group in self._fsdp_param_groups:
+L00361 |                 output = fsdp_param_group.post_forward(module, input, output)
+L00362 |             output = self._register_pre_backward_hook(output)
+L00363 |             self._training_state = TrainingState.IDLE
+L00364 |             if self._state_ctx.iter_forward_root is self:
+L00365 |                 output = self._force_complete_incomplete_states(output)
+
+L00407 |     def _pre_backward(self, grad: torch.Tensor) -> torch.Tensor:
+L00408 |         with _spmd_no_typecheck():
+L00409 |             self._training_state = TrainingState.PRE_BACKWARD
+L00410 |             self._register_root_post_backward_final_callback()
+L00411 |             default_prefetch = len(self._states_to_backward_prefetch) == 0
+L00412 |             for fsdp_param_group in self._fsdp_param_groups:
+L00413 |                 fsdp_param_group.pre_backward(default_prefetch)
+L00414 |             for fsdp_state in self._states_to_backward_prefetch:
+L00415 |                 # Reverse so higher-indexed groups are prefetched first,
+L00416 |                 # matching backward execution order (reverse of forward).
+L00417 |                 for target_param_group in reversed(fsdp_state._fsdp_param_groups):
+L00418 |                     FSDPParamGroup._prefetch_unshard(target_param_group, "backward")
+L00419 |             return grad
+L00420 | 
+L00421 |     @_dynamo_disable
+L00422 |     def _root_post_backward_final_callback(self) -> None:
+L00423 |         logger.debug("FSDP::root_post_backward")
+L00424 |         with torch.profiler.record_function("FSDP::root_post_backward_callback"):
+L00425 |             manual_finalization = self._state_ctx.manual_backward_finalization_active
+L00426 |             if manual_finalization is None:
+L00427 |                 raise AssertionError(
+L00428 |                     "Expected manual backward finalization mode to be set"
+L00429 |                 )
+L00430 |             # Reset per-iteration state. With chunked loss, each standalone

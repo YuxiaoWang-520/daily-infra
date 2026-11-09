@@ -1,0 +1,29 @@
+test_invalid_gather_count_and_widths (test_answers.RingTests.test_invalid_gather_count_and_widths) ... ok
+test_mixed_reduction_width_changes_ratio (test_answers.RingTests.test_mixed_reduction_width_changes_ratio) ... ok
+test_one_gather_retains_parameters (test_answers.RingTests.test_one_gather_retains_parameters) ... ok
+test_padding_is_included_in_ring_volume (test_answers.RingTests.test_padding_is_included_in_ring_volume) ... ok
+test_single_rank_has_no_network_send (test_answers.RingTests.test_single_rank_has_no_network_send) ... ok
+test_two_gathers_equal_widths (test_answers.RingTests.test_two_gathers_equal_widths) ... ok
+test_billion_parameters_eight_ranks (test_answers.StateTests.test_billion_parameters_eight_ranks) ... ok
+test_empty_logical_shards_still_have_padding_slots (test_answers.StateTests.test_empty_logical_shards_still_have_padding_slots) ... ok
+test_individual_state_ownership (test_answers.StateTests.test_individual_state_ownership) ... ok
+test_invalid_counts_and_stage (test_answers.StateTests.test_invalid_counts_and_stage) ... ok
+test_invalid_state_widths (test_answers.StateTests.test_invalid_state_widths) ... ok
+test_large_integer_arithmetic_is_exact (test_answers.StateTests.test_large_integer_arithmetic_is_exact) ... ok
+test_one_rank_has_identical_budgets (test_answers.StateTests.test_one_rank_has_identical_budgets) ... ok
+test_replicated_states_use_real_count (test_answers.StateTests.test_replicated_states_use_real_count) ... ok
+test_result_is_immutable (test_answers.StateTests.test_result_is_immutable) ... ok
+test_uniform_padding_for_uneven_partition (test_answers.StateTests.test_uniform_padding_for_uneven_partition) ... ok
+test_first_gradient_matches_hand_calculation (test_sharded_probe.DistributedTests.test_first_gradient_matches_hand_calculation) ... ok
+test_only_local_adam_vector_states_persist (test_sharded_probe.DistributedTests.test_only_local_adam_vector_states_persist) ... ok
+test_rank_mean_negative_control_is_detected (test_sharded_probe.DistributedTests.test_rank_mean_negative_control_is_detected) ... ok
+test_sample_weighted_adam_matches_reference (test_sharded_probe.DistributedTests.test_sample_weighted_adam_matches_reference) ... ok
+test_training_collectives_have_consistent_order (test_sharded_probe.DistributedTests.test_training_collectives_have_consistent_order) ... ok
+test_two_real_ranks_and_gloo (test_sharded_probe.DistributedTests.test_two_real_ranks_and_gloo) ... ok
+test_unequal_counts_use_global_denominator (test_sharded_probe.DistributedTests.test_unequal_counts_use_global_denominator) ... ok
+test_invalid_step_count_fails_before_spawn (test_sharded_probe.InputTests.test_invalid_step_count_fails_before_spawn) ... ok
+
+----------------------------------------------------------------------
+Ran 24 tests in 1.899s
+
+OK

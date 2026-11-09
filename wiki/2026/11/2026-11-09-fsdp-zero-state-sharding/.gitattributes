@@ -1,0 +1,3 @@
+# Preserve original whitespace in archived source and captured failing tests.
+evidence/upstream/** -whitespace
+evidence/runs/*red-test*.txt -whitespace

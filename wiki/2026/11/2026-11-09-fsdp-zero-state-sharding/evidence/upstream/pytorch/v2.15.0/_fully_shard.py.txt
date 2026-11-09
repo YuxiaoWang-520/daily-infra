@@ -1,0 +1,79 @@
+L00100 | def fully_shard(
+L00101 |     module,
+L00102 |     *,
+L00103 |     mesh: DeviceMesh | None = None,
+L00104 |     reshard_after_forward: bool | int | None = None,
+L00105 |     shard_placement_fn: Callable[[nn.Parameter], ShardPlacementFnResult] | None = None,
+L00106 |     mp_policy: MixedPrecisionPolicy = MixedPrecisionPolicy(),
+L00107 |     offload_policy: OffloadPolicy = OffloadPolicy(),
+L00108 |     ignored_params: set[nn.Parameter] | None = None,
+L00109 |     dp_mesh_dims: DataParallelMeshDims | None = None,
+L00110 | ):
+L00111 |     """
+L00112 |     Apply fully sharded data parallelism (FSDP) to ``module``, where FSDP
+L00113 |     shards module parameters, gradients, and optimizer states across data
+L00114 |     parallel workers to save memory at the cost of communication.
+L00115 | 
+L00116 |     At initialization, FSDP shards the module's parameters across the data
+L00117 |     parallel workers given by ``mesh``. Before forward, FSDP all-gathers the
+L00118 |     sharded parameters across the data-parallel workers to get the unsharded
+L00119 |     parameters for forward computation. If ``reshard_after_forward`` is
+L00120 |     ``True``, then FSDP frees the unsharded parameters after forward and
+L00121 |     re-all-gathers them in backward before gradient computation. After gradient
+L00122 |     computation, FSDP frees the unsharded parameters and reduce-scatters the
+L00123 |     unsharded gradients across data-parallel workers.
+L00124 | 
+L00125 |     This implementation represents the sharded parameters as :class:`DTensor` s
+L00126 |     sharded on dim-0, while the unsharded parameters will be like the original
+L00127 |     parameters on ``module`` (e.g. :class:`torch.Tensor` if originally
+L00128 |     :class:`torch.Tensor`). A module
+L00129 |     `forward pre-hook <https://pytorch.org/docs/main/generated/torch.nn.Module.html#torch.nn.Module.register_forward_pre_hook>`_
+L00130 |     on ``module`` all-gathers the parameters, and a module
+L00131 |     `forward hook <https://pytorch.org/docs/main/generated/torch.nn.Module.html#torch.nn.Module.register_forward_hook>`_
+L00132 |     on ``module`` frees them (if needed). Similar backward hooks all-gather
+
+L00258 |     auto_reshard_after_forward = reshard_after_forward is None
+L00259 |     # If the user does not provide ``reshard_after_forward``, we set it to True.
+L00260 |     # During lazy_init, we identify which module is the root and override its value to False
+L00261 |     if isinstance(mesh_info, FSDPMeshInfo):
+L00262 |         if (
+L00263 |             mesh_info.is_spmd_mesh
+L00264 |             and not isinstance(reshard_after_forward, bool)
+L00265 |             and isinstance(reshard_after_forward, int)
+L00266 |         ):
+L00267 |             raise NotImplementedError(
+L00268 |                 "reshard_after_forward as int is not yet supported with "
+L00269 |                 "SPMD mesh (dp_mesh_dims)"
+L00270 |             )
+L00271 |         post_forward_mesh_info = _get_post_forward_mesh_info(
+L00272 |             reshard_after_forward if not auto_reshard_after_forward else True,  # type: ignore[arg-type]
+L00273 |             mesh_info,
+L00274 |         )
+L00275 |     else:
+L00276 |         # DDPMeshInfo: no sharding, so no post-forward resharding needed
+L00277 |         post_forward_mesh_info = None
+L00278 |     arg_module, modules, managed_modules, params, buffers = _get_modules_and_states(
+L00279 |         module, device, ignored_params
+L00280 |     )
+L00281 |     state = fully_shard.state(modules[0])  # type: ignore[attr-defined]
+L00282 |     state.init(modules, device, mp_policy, auto_reshard_after_forward)
+L00283 | 
+L00284 |     _init_param_group(
+L00285 |         state,
+L00286 |         params,
+L00287 |         modules,
+L00288 |         mesh_info,
+L00289 |         post_forward_mesh_info,
+L00290 |         device,
+L00291 |         shard_placement_fn,
+L00292 |         mp_policy,
+L00293 |         offload_policy,
+L00294 |         reshard_after_forward=reshard_after_forward
+L00295 |         if not auto_reshard_after_forward
+L00296 |         else True,
+L00297 |     )
+L00298 | 
+L00299 |     # For Dynamo
+L00300 |     for managed_module in managed_modules:
+L00301 |         managed_module._is_fsdp_managed_module = True  # type: ignore[assignment]
+L00302 |         managed_module._fsdp_use_orig_params = True  # type: ignore[assignment]

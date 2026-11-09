@@ -1,0 +1,465 @@
+test_invalid_gather_count_and_widths (test_answers.RingTests.test_invalid_gather_count_and_widths) ... 
+  test_invalid_gather_count_and_widths (test_answers.RingTests.test_invalid_gather_count_and_widths) (options={'all_gather_calls': 0}) ... ERROR
+  test_invalid_gather_count_and_widths (test_answers.RingTests.test_invalid_gather_count_and_widths) (options={'all_gather_calls': 3}) ... ERROR
+  test_invalid_gather_count_and_widths (test_answers.RingTests.test_invalid_gather_count_and_widths) (options={'all_gather_calls': True}) ... ERROR
+  test_invalid_gather_count_and_widths (test_answers.RingTests.test_invalid_gather_count_and_widths) (options={'parameter_bytes': 0}) ... ERROR
+  test_invalid_gather_count_and_widths (test_answers.RingTests.test_invalid_gather_count_and_widths) (options={'gradient_bytes': False}) ... ERROR
+test_mixed_reduction_width_changes_ratio (test_answers.RingTests.test_mixed_reduction_width_changes_ratio) ... ERROR
+test_one_gather_retains_parameters (test_answers.RingTests.test_one_gather_retains_parameters) ... ERROR
+test_padding_is_included_in_ring_volume (test_answers.RingTests.test_padding_is_included_in_ring_volume) ... ERROR
+test_single_rank_has_no_network_send (test_answers.RingTests.test_single_rank_has_no_network_send) ... ERROR
+test_two_gathers_equal_widths (test_answers.RingTests.test_two_gathers_equal_widths) ... ERROR
+test_billion_parameters_eight_ranks (test_answers.StateTests.test_billion_parameters_eight_ranks) ... 
+  test_billion_parameters_eight_ranks (test_answers.StateTests.test_billion_parameters_eight_ranks) (stage=0) ... ERROR
+  test_billion_parameters_eight_ranks (test_answers.StateTests.test_billion_parameters_eight_ranks) (stage=1) ... ERROR
+  test_billion_parameters_eight_ranks (test_answers.StateTests.test_billion_parameters_eight_ranks) (stage=2) ... ERROR
+  test_billion_parameters_eight_ranks (test_answers.StateTests.test_billion_parameters_eight_ranks) (stage=3) ... ERROR
+test_empty_logical_shards_still_have_padding_slots (test_answers.StateTests.test_empty_logical_shards_still_have_padding_slots) ... ERROR
+test_individual_state_ownership (test_answers.StateTests.test_individual_state_ownership) ... ERROR
+test_invalid_counts_and_stage (test_answers.StateTests.test_invalid_counts_and_stage) ... 
+  test_invalid_counts_and_stage (test_answers.StateTests.test_invalid_counts_and_stage) (values=(0, 2, 3)) ... ERROR
+  test_invalid_counts_and_stage (test_answers.StateTests.test_invalid_counts_and_stage) (values=(5, 0, 3)) ... ERROR
+  test_invalid_counts_and_stage (test_answers.StateTests.test_invalid_counts_and_stage) (values=(True, 2, 3)) ... ERROR
+  test_invalid_counts_and_stage (test_answers.StateTests.test_invalid_counts_and_stage) (values=(5, 2.0, 3)) ... ERROR
+  test_invalid_counts_and_stage (test_answers.StateTests.test_invalid_counts_and_stage) (values=(5, 2, True)) ... ERROR
+  test_invalid_counts_and_stage (test_answers.StateTests.test_invalid_counts_and_stage) (values=(5, 2, -1)) ... ERROR
+  test_invalid_counts_and_stage (test_answers.StateTests.test_invalid_counts_and_stage) (values=(5, 2, 4)) ... ERROR
+test_invalid_state_widths (test_answers.StateTests.test_invalid_state_widths) ... 
+  test_invalid_state_widths (test_answers.StateTests.test_invalid_state_widths) (key='parameter_bytes', value=0) ... ERROR
+  test_invalid_state_widths (test_answers.StateTests.test_invalid_state_widths) (key='parameter_bytes', value=-1) ... ERROR
+  test_invalid_state_widths (test_answers.StateTests.test_invalid_state_widths) (key='parameter_bytes', value=True) ... ERROR
+  test_invalid_state_widths (test_answers.StateTests.test_invalid_state_widths) (key='parameter_bytes', value=2.0) ... ERROR
+  test_invalid_state_widths (test_answers.StateTests.test_invalid_state_widths) (key='gradient_bytes', value=0) ... ERROR
+  test_invalid_state_widths (test_answers.StateTests.test_invalid_state_widths) (key='gradient_bytes', value=-1) ... ERROR
+  test_invalid_state_widths (test_answers.StateTests.test_invalid_state_widths) (key='gradient_bytes', value=True) ... ERROR
+  test_invalid_state_widths (test_answers.StateTests.test_invalid_state_widths) (key='gradient_bytes', value=2.0) ... ERROR
+  test_invalid_state_widths (test_answers.StateTests.test_invalid_state_widths) (key='optimizer_bytes', value=0) ... ERROR
+  test_invalid_state_widths (test_answers.StateTests.test_invalid_state_widths) (key='optimizer_bytes', value=-1) ... ERROR
+  test_invalid_state_widths (test_answers.StateTests.test_invalid_state_widths) (key='optimizer_bytes', value=True) ... ERROR
+  test_invalid_state_widths (test_answers.StateTests.test_invalid_state_widths) (key='optimizer_bytes', value=2.0) ... ERROR
+test_large_integer_arithmetic_is_exact (test_answers.StateTests.test_large_integer_arithmetic_is_exact) ... ERROR
+test_one_rank_has_identical_budgets (test_answers.StateTests.test_one_rank_has_identical_budgets) ... ERROR
+test_replicated_states_use_real_count (test_answers.StateTests.test_replicated_states_use_real_count) ... ERROR
+test_result_is_immutable (test_answers.StateTests.test_result_is_immutable) ... ERROR
+test_uniform_padding_for_uneven_partition (test_answers.StateTests.test_uniform_padding_for_uneven_partition) ... ERROR
+
+======================================================================
+ERROR: test_invalid_gather_count_and_widths (test_answers.RingTests.test_invalid_gather_count_and_widths) (options={'all_gather_calls': 0})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/test_answers.py", line 81, in test_invalid_gather_count_and_widths
+    impl.ring_budget(5, 2, **options)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/exercises.py", line 26, in ring_budget
+    raise NotImplementedError("Derive one or two gathers plus reduce-scatter")
+NotImplementedError: Derive one or two gathers plus reduce-scatter
+
+======================================================================
+ERROR: test_invalid_gather_count_and_widths (test_answers.RingTests.test_invalid_gather_count_and_widths) (options={'all_gather_calls': 3})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/test_answers.py", line 81, in test_invalid_gather_count_and_widths
+    impl.ring_budget(5, 2, **options)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/exercises.py", line 26, in ring_budget
+    raise NotImplementedError("Derive one or two gathers plus reduce-scatter")
+NotImplementedError: Derive one or two gathers plus reduce-scatter
+
+======================================================================
+ERROR: test_invalid_gather_count_and_widths (test_answers.RingTests.test_invalid_gather_count_and_widths) (options={'all_gather_calls': True})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/test_answers.py", line 81, in test_invalid_gather_count_and_widths
+    impl.ring_budget(5, 2, **options)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/exercises.py", line 26, in ring_budget
+    raise NotImplementedError("Derive one or two gathers plus reduce-scatter")
+NotImplementedError: Derive one or two gathers plus reduce-scatter
+
+======================================================================
+ERROR: test_invalid_gather_count_and_widths (test_answers.RingTests.test_invalid_gather_count_and_widths) (options={'parameter_bytes': 0})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/test_answers.py", line 81, in test_invalid_gather_count_and_widths
+    impl.ring_budget(5, 2, **options)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/exercises.py", line 26, in ring_budget
+    raise NotImplementedError("Derive one or two gathers plus reduce-scatter")
+NotImplementedError: Derive one or two gathers plus reduce-scatter
+
+======================================================================
+ERROR: test_invalid_gather_count_and_widths (test_answers.RingTests.test_invalid_gather_count_and_widths) (options={'gradient_bytes': False})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/test_answers.py", line 81, in test_invalid_gather_count_and_widths
+    impl.ring_budget(5, 2, **options)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/exercises.py", line 26, in ring_budget
+    raise NotImplementedError("Derive one or two gathers plus reduce-scatter")
+NotImplementedError: Derive one or two gathers plus reduce-scatter
+
+======================================================================
+ERROR: test_mixed_reduction_width_changes_ratio (test_answers.RingTests.test_mixed_reduction_width_changes_ratio)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/test_answers.py", line 68, in test_mixed_reduction_width_changes_ratio
+    result = impl.ring_budget(8, 4, gradient_bytes=4)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/exercises.py", line 26, in ring_budget
+    raise NotImplementedError("Derive one or two gathers plus reduce-scatter")
+NotImplementedError: Derive one or two gathers plus reduce-scatter
+
+======================================================================
+ERROR: test_one_gather_retains_parameters (test_answers.RingTests.test_one_gather_retains_parameters)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/test_answers.py", line 64, in test_one_gather_retains_parameters
+    result = impl.ring_budget(8, 4, all_gather_calls=1)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/exercises.py", line 26, in ring_budget
+    raise NotImplementedError("Derive one or two gathers plus reduce-scatter")
+NotImplementedError: Derive one or two gathers plus reduce-scatter
+
+======================================================================
+ERROR: test_padding_is_included_in_ring_volume (test_answers.RingTests.test_padding_is_included_in_ring_volume)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/test_answers.py", line 72, in test_padding_is_included_in_ring_volume
+    result = impl.ring_budget(5, 2)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/exercises.py", line 26, in ring_budget
+    raise NotImplementedError("Derive one or two gathers plus reduce-scatter")
+NotImplementedError: Derive one or two gathers plus reduce-scatter
+
+======================================================================
+ERROR: test_single_rank_has_no_network_send (test_answers.RingTests.test_single_rank_has_no_network_send)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/test_answers.py", line 76, in test_single_rank_has_no_network_send
+    self.assertEqual(impl.ring_budget(5, 1).total_sent_bytes, 0)
+                     ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/exercises.py", line 26, in ring_budget
+    raise NotImplementedError("Derive one or two gathers plus reduce-scatter")
+NotImplementedError: Derive one or two gathers plus reduce-scatter
+
+======================================================================
+ERROR: test_two_gathers_equal_widths (test_answers.RingTests.test_two_gathers_equal_widths)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/test_answers.py", line 60, in test_two_gathers_equal_widths
+    result = impl.ring_budget(8, 4)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/exercises.py", line 26, in ring_budget
+    raise NotImplementedError("Derive one or two gathers plus reduce-scatter")
+NotImplementedError: Derive one or two gathers plus reduce-scatter
+
+======================================================================
+ERROR: test_billion_parameters_eight_ranks (test_answers.StateTests.test_billion_parameters_eight_ranks) (stage=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/test_answers.py", line 15, in test_billion_parameters_eight_ranks
+    self.assertEqual(impl.state_budget(10**9, 8, stage).total_bytes, expected)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/exercises.py", line 15, in state_budget
+    raise NotImplementedError("Implement the four model-state budgets")
+NotImplementedError: Implement the four model-state budgets
+
+======================================================================
+ERROR: test_billion_parameters_eight_ranks (test_answers.StateTests.test_billion_parameters_eight_ranks) (stage=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/test_answers.py", line 15, in test_billion_parameters_eight_ranks
+    self.assertEqual(impl.state_budget(10**9, 8, stage).total_bytes, expected)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/exercises.py", line 15, in state_budget
+    raise NotImplementedError("Implement the four model-state budgets")
+NotImplementedError: Implement the four model-state budgets
+
+======================================================================
+ERROR: test_billion_parameters_eight_ranks (test_answers.StateTests.test_billion_parameters_eight_ranks) (stage=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/test_answers.py", line 15, in test_billion_parameters_eight_ranks
+    self.assertEqual(impl.state_budget(10**9, 8, stage).total_bytes, expected)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/exercises.py", line 15, in state_budget
+    raise NotImplementedError("Implement the four model-state budgets")
+NotImplementedError: Implement the four model-state budgets
+
+======================================================================
+ERROR: test_billion_parameters_eight_ranks (test_answers.StateTests.test_billion_parameters_eight_ranks) (stage=3)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/test_answers.py", line 15, in test_billion_parameters_eight_ranks
+    self.assertEqual(impl.state_budget(10**9, 8, stage).total_bytes, expected)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/exercises.py", line 15, in state_budget
+    raise NotImplementedError("Implement the four model-state budgets")
+NotImplementedError: Implement the four model-state budgets
+
+======================================================================
+ERROR: test_empty_logical_shards_still_have_padding_slots (test_answers.StateTests.test_empty_logical_shards_still_have_padding_slots)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/test_answers.py", line 32, in test_empty_logical_shards_still_have_padding_slots
+    result = impl.state_budget(1, 4, 3)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/exercises.py", line 15, in state_budget
+    raise NotImplementedError("Implement the four model-state budgets")
+NotImplementedError: Implement the four model-state budgets
+
+======================================================================
+ERROR: test_individual_state_ownership (test_answers.StateTests.test_individual_state_ownership)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/test_answers.py", line 20, in test_individual_state_ownership
+    result = impl.state_budget(8, 4, stage)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/exercises.py", line 15, in state_budget
+    raise NotImplementedError("Implement the four model-state budgets")
+NotImplementedError: Implement the four model-state budgets
+
+======================================================================
+ERROR: test_invalid_counts_and_stage (test_answers.StateTests.test_invalid_counts_and_stage) (values=(0, 2, 3))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/test_answers.py", line 49, in test_invalid_counts_and_stage
+    impl.state_budget(*values)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/exercises.py", line 15, in state_budget
+    raise NotImplementedError("Implement the four model-state budgets")
+NotImplementedError: Implement the four model-state budgets
+
+======================================================================
+ERROR: test_invalid_counts_and_stage (test_answers.StateTests.test_invalid_counts_and_stage) (values=(5, 0, 3))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/test_answers.py", line 49, in test_invalid_counts_and_stage
+    impl.state_budget(*values)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/exercises.py", line 15, in state_budget
+    raise NotImplementedError("Implement the four model-state budgets")
+NotImplementedError: Implement the four model-state budgets
+
+======================================================================
+ERROR: test_invalid_counts_and_stage (test_answers.StateTests.test_invalid_counts_and_stage) (values=(True, 2, 3))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/test_answers.py", line 49, in test_invalid_counts_and_stage
+    impl.state_budget(*values)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/exercises.py", line 15, in state_budget
+    raise NotImplementedError("Implement the four model-state budgets")
+NotImplementedError: Implement the four model-state budgets
+
+======================================================================
+ERROR: test_invalid_counts_and_stage (test_answers.StateTests.test_invalid_counts_and_stage) (values=(5, 2.0, 3))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/test_answers.py", line 49, in test_invalid_counts_and_stage
+    impl.state_budget(*values)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/exercises.py", line 15, in state_budget
+    raise NotImplementedError("Implement the four model-state budgets")
+NotImplementedError: Implement the four model-state budgets
+
+======================================================================
+ERROR: test_invalid_counts_and_stage (test_answers.StateTests.test_invalid_counts_and_stage) (values=(5, 2, True))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/test_answers.py", line 49, in test_invalid_counts_and_stage
+    impl.state_budget(*values)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/exercises.py", line 15, in state_budget
+    raise NotImplementedError("Implement the four model-state budgets")
+NotImplementedError: Implement the four model-state budgets
+
+======================================================================
+ERROR: test_invalid_counts_and_stage (test_answers.StateTests.test_invalid_counts_and_stage) (values=(5, 2, -1))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/test_answers.py", line 49, in test_invalid_counts_and_stage
+    impl.state_budget(*values)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/exercises.py", line 15, in state_budget
+    raise NotImplementedError("Implement the four model-state budgets")
+NotImplementedError: Implement the four model-state budgets
+
+======================================================================
+ERROR: test_invalid_counts_and_stage (test_answers.StateTests.test_invalid_counts_and_stage) (values=(5, 2, 4))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/test_answers.py", line 49, in test_invalid_counts_and_stage
+    impl.state_budget(*values)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/exercises.py", line 15, in state_budget
+    raise NotImplementedError("Implement the four model-state budgets")
+NotImplementedError: Implement the four model-state budgets
+
+======================================================================
+ERROR: test_invalid_state_widths (test_answers.StateTests.test_invalid_state_widths) (key='parameter_bytes', value=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/test_answers.py", line 55, in test_invalid_state_widths
+    impl.state_budget(5, 2, 3, **{key: value})
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/exercises.py", line 15, in state_budget
+    raise NotImplementedError("Implement the four model-state budgets")
+NotImplementedError: Implement the four model-state budgets
+
+======================================================================
+ERROR: test_invalid_state_widths (test_answers.StateTests.test_invalid_state_widths) (key='parameter_bytes', value=-1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/test_answers.py", line 55, in test_invalid_state_widths
+    impl.state_budget(5, 2, 3, **{key: value})
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/exercises.py", line 15, in state_budget
+    raise NotImplementedError("Implement the four model-state budgets")
+NotImplementedError: Implement the four model-state budgets
+
+======================================================================
+ERROR: test_invalid_state_widths (test_answers.StateTests.test_invalid_state_widths) (key='parameter_bytes', value=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/test_answers.py", line 55, in test_invalid_state_widths
+    impl.state_budget(5, 2, 3, **{key: value})
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/exercises.py", line 15, in state_budget
+    raise NotImplementedError("Implement the four model-state budgets")
+NotImplementedError: Implement the four model-state budgets
+
+======================================================================
+ERROR: test_invalid_state_widths (test_answers.StateTests.test_invalid_state_widths) (key='parameter_bytes', value=2.0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/test_answers.py", line 55, in test_invalid_state_widths
+    impl.state_budget(5, 2, 3, **{key: value})
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/exercises.py", line 15, in state_budget
+    raise NotImplementedError("Implement the four model-state budgets")
+NotImplementedError: Implement the four model-state budgets
+
+======================================================================
+ERROR: test_invalid_state_widths (test_answers.StateTests.test_invalid_state_widths) (key='gradient_bytes', value=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/test_answers.py", line 55, in test_invalid_state_widths
+    impl.state_budget(5, 2, 3, **{key: value})
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/exercises.py", line 15, in state_budget
+    raise NotImplementedError("Implement the four model-state budgets")
+NotImplementedError: Implement the four model-state budgets
+
+======================================================================
+ERROR: test_invalid_state_widths (test_answers.StateTests.test_invalid_state_widths) (key='gradient_bytes', value=-1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/test_answers.py", line 55, in test_invalid_state_widths
+    impl.state_budget(5, 2, 3, **{key: value})
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/exercises.py", line 15, in state_budget
+    raise NotImplementedError("Implement the four model-state budgets")
+NotImplementedError: Implement the four model-state budgets
+
+======================================================================
+ERROR: test_invalid_state_widths (test_answers.StateTests.test_invalid_state_widths) (key='gradient_bytes', value=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/test_answers.py", line 55, in test_invalid_state_widths
+    impl.state_budget(5, 2, 3, **{key: value})
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/exercises.py", line 15, in state_budget
+    raise NotImplementedError("Implement the four model-state budgets")
+NotImplementedError: Implement the four model-state budgets
+
+======================================================================
+ERROR: test_invalid_state_widths (test_answers.StateTests.test_invalid_state_widths) (key='gradient_bytes', value=2.0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/test_answers.py", line 55, in test_invalid_state_widths
+    impl.state_budget(5, 2, 3, **{key: value})
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/exercises.py", line 15, in state_budget
+    raise NotImplementedError("Implement the four model-state budgets")
+NotImplementedError: Implement the four model-state budgets
+
+======================================================================
+ERROR: test_invalid_state_widths (test_answers.StateTests.test_invalid_state_widths) (key='optimizer_bytes', value=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/test_answers.py", line 55, in test_invalid_state_widths
+    impl.state_budget(5, 2, 3, **{key: value})
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/exercises.py", line 15, in state_budget
+    raise NotImplementedError("Implement the four model-state budgets")
+NotImplementedError: Implement the four model-state budgets
+
+======================================================================
+ERROR: test_invalid_state_widths (test_answers.StateTests.test_invalid_state_widths) (key='optimizer_bytes', value=-1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/test_answers.py", line 55, in test_invalid_state_widths
+    impl.state_budget(5, 2, 3, **{key: value})
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/exercises.py", line 15, in state_budget
+    raise NotImplementedError("Implement the four model-state budgets")
+NotImplementedError: Implement the four model-state budgets
+
+======================================================================
+ERROR: test_invalid_state_widths (test_answers.StateTests.test_invalid_state_widths) (key='optimizer_bytes', value=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/test_answers.py", line 55, in test_invalid_state_widths
+    impl.state_budget(5, 2, 3, **{key: value})
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/exercises.py", line 15, in state_budget
+    raise NotImplementedError("Implement the four model-state budgets")
+NotImplementedError: Implement the four model-state budgets
+
+======================================================================
+ERROR: test_invalid_state_widths (test_answers.StateTests.test_invalid_state_widths) (key='optimizer_bytes', value=2.0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/test_answers.py", line 55, in test_invalid_state_widths
+    impl.state_budget(5, 2, 3, **{key: value})
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/exercises.py", line 15, in state_budget
+    raise NotImplementedError("Implement the four model-state budgets")
+NotImplementedError: Implement the four model-state budgets
+
+======================================================================
+ERROR: test_large_integer_arithmetic_is_exact (test_answers.StateTests.test_large_integer_arithmetic_is_exact)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/test_answers.py", line 39, in test_large_integer_arithmetic_is_exact
+    result = impl.state_budget(10**100 + 1, 3, 3)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/exercises.py", line 15, in state_budget
+    raise NotImplementedError("Implement the four model-state budgets")
+NotImplementedError: Implement the four model-state budgets
+
+======================================================================
+ERROR: test_one_rank_has_identical_budgets (test_answers.StateTests.test_one_rank_has_identical_budgets)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/test_answers.py", line 36, in test_one_rank_has_identical_budgets
+    self.assertEqual({impl.state_budget(7, 1, stage).total_bytes for stage in range(4)}, {112})
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/exercises.py", line 15, in state_budget
+    raise NotImplementedError("Implement the four model-state budgets")
+NotImplementedError: Implement the four model-state budgets
+
+======================================================================
+ERROR: test_replicated_states_use_real_count (test_answers.StateTests.test_replicated_states_use_real_count)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/test_answers.py", line 28, in test_replicated_states_use_real_count
+    result = impl.state_budget(5, 2, 1)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/exercises.py", line 15, in state_budget
+    raise NotImplementedError("Implement the four model-state budgets")
+NotImplementedError: Implement the four model-state budgets
+
+======================================================================
+ERROR: test_result_is_immutable (test_answers.StateTests.test_result_is_immutable)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/test_answers.py", line 44, in test_result_is_immutable
+    impl.state_budget(5, 2, 3).total_bytes = 0
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/exercises.py", line 15, in state_budget
+    raise NotImplementedError("Implement the four model-state budgets")
+NotImplementedError: Implement the four model-state budgets
+
+======================================================================
+ERROR: test_uniform_padding_for_uneven_partition (test_answers.StateTests.test_uniform_padding_for_uneven_partition)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/test_answers.py", line 24, in test_uniform_padding_for_uneven_partition
+    result = impl.state_budget(5, 2, 3)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/exercises.py", line 15, in state_budget
+    raise NotImplementedError("Implement the four model-state budgets")
+NotImplementedError: Implement the four model-state budgets
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.002s
+
+FAILED (errors=40)

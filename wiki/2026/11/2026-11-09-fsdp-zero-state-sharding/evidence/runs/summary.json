@@ -1,0 +1,75 @@
+{
+  "verified_at": "2026-11-09T11:17:35.354881+08:00",
+  "environment": {
+    "python": "3.12.16 (main, Oct 26 2026, 11:31:43) [Clang 21.1.8 ]",
+    "executable": "/Users/wangyuxiao/miniforge3/envs/ai-infra/bin/python",
+    "torch": "2.15.0",
+    "torch_build_git": "d0f2af8b66b20da4baa50644c0cd3f887a2eae2e",
+    "platform": "macOS-27.0-arm64-arm-64bit",
+    "hostname": "wyx-macmini.local",
+    "computer_name": "U-7H06R6JQ-0309",
+    "cpu": "Apple M6",
+    "cuda_available": false,
+    "gloo_available": true
+  },
+  "working_directory": "article root",
+  "commands": [
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 /Users/wangyuxiao/miniforge3/envs/ai-infra/bin/python -m unittest discover -s code -p 'test_*.py' -v",
+      "exit_code": 0,
+      "tests": 24,
+      "seconds": 1.899,
+      "output": "tests.txt"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 /Users/wangyuxiao/miniforge3/envs/ai-infra/bin/python -m ruff check code",
+      "exit_code": 0,
+      "output": "lint.txt"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 /Users/wangyuxiao/miniforge3/envs/ai-infra/bin/python -m ruff format --check code",
+      "exit_code": 0,
+      "output": "format.txt"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 /Users/wangyuxiao/miniforge3/envs/ai-infra/bin/python code/run_lab.py --output evidence/runs/lab.json",
+      "exit_code": 0,
+      "output": "lab.json",
+      "console": "lab-console.txt"
+    }
+  ],
+  "tdd_history": [
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 /Users/wangyuxiao/miniforge3/envs/ai-infra/bin/python -m unittest discover -s code -p test_answers.py -v",
+      "environment_override": "EXERCISE_IMPL=exercises",
+      "exit_code": 1,
+      "output": "capacity-red-tests.txt"
+    },
+    {
+      "command": "PYTHONDONTWRITEBYTECODE=1 /Users/wangyuxiao/miniforge3/envs/ai-infra/bin/python -m unittest discover -s code -p test_sharded_probe.py -v",
+      "environment_override": "PROBE_IMPL=probe_exercises",
+      "exit_code": 1,
+      "output": "probe-red-tests.txt"
+    }
+  ],
+  "independent_review": {
+    "role": "independent default agent performing Python review",
+    "agent": "/root/checkpoint_python_fallback",
+    "targeted_tests_passed": 10,
+    "failure_injection_passed": true,
+    "active_children_after_completion": 0,
+    "unresolved_findings": 0,
+    "specialist_attempt": "python-reviewer failed because gpt-5.4 is unsupported for current ChatGPT account"
+  },
+  "code_sha256_at_verification": {
+    "code/answers.py": "5b83e3fb09e55c0d4e525c4b026d3254d1b4482b6386108febf8f2178bbf1668",
+    "code/exercises.py": "15d6e9c5b2275f840919f7069917a1070fb966e394f989a83e4329c4314b77a8",
+    "code/models.py": "b15d555cbe05d3352ae7b2f93bd168aa585ff8b10403670e65923da75f584440",
+    "code/probe_exercises.py": "d1235dc2863985270414e104319d879179a579feb1f70fc52fecdb670aa784f9",
+    "code/run_lab.py": "504c738806795101cb5ace52b856828e2f5300b4dc419f1d39aa1b7d39dd10b2",
+    "code/sharded_probe.py": "429946a8bc2b03ad41749d397dfeaa9bc5e9afd1e087ea52de2d93d3edb23cbe",
+    "code/test_answers.py": "d0cebcc68a2c667cb3590e3b903035db67229f559eb6f787f7bc2da45bcc6bad",
+    "code/test_sharded_probe.py": "9946aab39aa388e08e784386479bb734863aaa1d90bfb8c5dc5517893ad806b4"
+  },
+  "scope": "CPU/Gloo, FP64, explicit collective ownership and local Adam correctness. No direct FSDP2 GPU, peak memory or performance measurement."
+}

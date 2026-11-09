@@ -1,0 +1,248 @@
+{
+  "verified_at": "2026-11-09T11:15:45.770003+08:00",
+  "main_sha": "cbee6335ae15a556794e2552c553f5befda84516",
+  "stable_tag": "v2.15.0",
+  "stable_sha": "31a77fc9c0a7c6fff15a1ff58c743f53b1a9d457",
+  "files": [
+    {
+      "archive": "evidence/upstream/pytorch/main/_fully_shard.py.txt",
+      "upstream_path": "torch/distributed/fsdp/_fully_shard/_fully_shard.py",
+      "revision": "cbee6335ae15a556794e2552c553f5befda84516",
+      "line_ranges": [
+        [
+          100,
+          137
+        ],
+        [
+          179,
+          215
+        ],
+        [
+          260,
+          325
+        ]
+      ],
+      "upstream_blob_sha256": "0c2104e253471121ceae5af07a22fa6aed72878d24320d3b41235643788973b4",
+      "archive_sha256": "5558f3723ba8fdcfc5a32aae2f4d2ba838b21ec1e83454e6bb35641b0e2a8e06",
+      "format": "Original source lines prefixed with original line numbers; separated ranges have a blank line.",
+      "stable_file_sha256": "fcff8a351d6bc4038ef7f67fc3218b179efb62a810cc864448963f2de95bea2d",
+      "main_file_equals_stable": false
+    },
+    {
+      "archive": "evidence/upstream/pytorch/main/_fsdp_state.py.txt",
+      "upstream_path": "torch/distributed/fsdp/_fully_shard/_fsdp_state.py",
+      "revision": "cbee6335ae15a556794e2552c553f5befda84516",
+      "line_ranges": [
+        [
+          118,
+          145
+        ],
+        [
+          179,
+          232
+        ],
+        [
+          309,
+          365
+        ],
+        [
+          407,
+          430
+        ]
+      ],
+      "upstream_blob_sha256": "8ec25348d2ef732c36dec837a70fbef5903c6a18e5c7d25087eb88a271be93ed",
+      "archive_sha256": "f164511f3ed5281ed408f58a0e6016b8a6d97bbebbb0bf2d8ec3d360e4e6bd39",
+      "format": "Original source lines prefixed with original line numbers; separated ranges have a blank line.",
+      "stable_file_sha256": "8ec25348d2ef732c36dec837a70fbef5903c6a18e5c7d25087eb88a271be93ed",
+      "main_file_equals_stable": true
+    },
+    {
+      "archive": "evidence/upstream/pytorch/main/_fsdp_param.py.txt",
+      "upstream_path": "torch/distributed/fsdp/_fully_shard/_fsdp_param.py",
+      "revision": "cbee6335ae15a556794e2552c553f5befda84516",
+      "line_ranges": [
+        [
+          279,
+          316
+        ],
+        [
+          355,
+          408
+        ],
+        [
+          1029,
+          1035
+        ],
+        [
+          1122,
+          1142
+        ]
+      ],
+      "upstream_blob_sha256": "7f83881e60af721dc131b8c0aadb5a7fe90a9d0cdeaee6f4a3238b54e6ea43b3",
+      "archive_sha256": "722f1e573b167c4f7c6aae314214843e43b72187fb9534c95e079d3b1cfd62a5",
+      "format": "Original source lines prefixed with original line numbers; separated ranges have a blank line.",
+      "stable_file_sha256": "ba2c091403383dca06611329600c6b9f90e047c79f9d3610678722599bd333d8",
+      "main_file_equals_stable": false
+    },
+    {
+      "archive": "evidence/upstream/pytorch/main/_fsdp_param_group.py.txt",
+      "upstream_path": "torch/distributed/fsdp/_fully_shard/_fsdp_param_group.py",
+      "revision": "cbee6335ae15a556794e2552c553f5befda84516",
+      "line_ranges": [
+        [
+          450,
+          495
+        ],
+        [
+          580,
+          592
+        ],
+        [
+          627,
+          724
+        ],
+        [
+          788,
+          835
+        ]
+      ],
+      "upstream_blob_sha256": "775c519751f229e855b45624ca84ff18b21b7cc2f336b2a8fbbe407c4e50bfcc",
+      "archive_sha256": "bf5c89186664bd9ed1b6aab1696e55e812a5f2f0eced13cef84ed345b7d2fd10",
+      "format": "Original source lines prefixed with original line numbers; separated ranges have a blank line.",
+      "stable_file_sha256": "2bee5efe1e76e8b6b9217d1e009bfe253d27ff5cbd670c5070a72565b23122ca",
+      "main_file_equals_stable": false
+    },
+    {
+      "archive": "evidence/upstream/pytorch/main/_fsdp_collectives.py.txt",
+      "upstream_path": "torch/distributed/fsdp/_fully_shard/_fsdp_collectives.py",
+      "revision": "cbee6335ae15a556794e2552c553f5befda84516",
+      "line_ranges": [
+        [
+          108,
+          123
+        ],
+        [
+          172,
+          190
+        ],
+        [
+          342,
+          400
+        ],
+        [
+          648,
+          698
+        ],
+        [
+          720,
+          746
+        ],
+        [
+          1000,
+          1064
+        ]
+      ],
+      "upstream_blob_sha256": "420f22d5617887094e66961a41d7a235dfac7bebd02f2861436bc12e83d3e162",
+      "archive_sha256": "525d39454c23e780e7ad89ff6bfac20f4960f7f88c7c12671065e8c0be66ba52",
+      "format": "Original source lines prefixed with original line numbers; separated ranges have a blank line.",
+      "stable_file_sha256": "30f4b196c95d30b598d091c693e4c5d83ee1b8b6ffd06082a9a65aedf8128f03",
+      "main_file_equals_stable": false
+    },
+    {
+      "archive": "evidence/upstream/pytorch/main/_fsdp_api.py.txt",
+      "upstream_path": "torch/distributed/fsdp/_fully_shard/_fsdp_api.py",
+      "revision": "cbee6335ae15a556794e2552c553f5befda84516",
+      "line_ranges": [
+        [
+          1,
+          137
+        ]
+      ],
+      "upstream_blob_sha256": "f4ccab5c8101e139cc9a3917fa89de708459510d758e3defe04ae44ba0167db8",
+      "archive_sha256": "166e61013cc778db0b136ff796de91f0260c89be3a32dfa994ab7c2c08c1ef2b",
+      "format": "Original source lines prefixed with original line numbers; separated ranges have a blank line.",
+      "stable_file_sha256": "78cc4cd4d244d2d5d7f0070a43edde95d9509118cefb49c00baff20e5cef0fd0",
+      "main_file_equals_stable": false
+    },
+    {
+      "archive": "evidence/upstream/pytorch/LICENSE",
+      "upstream_path": "LICENSE",
+      "revision": "cbee6335ae15a556794e2552c553f5befda84516",
+      "upstream_blob_sha256": "bd018feef8825e88181c84eb7e3aa4eafb8f08a20d9fd6ef948569610c4a3e43",
+      "archive_sha256": "bd018feef8825e88181c84eb7e3aa4eafb8f08a20d9fd6ef948569610c4a3e43",
+      "format": "Complete original license"
+    },
+    {
+      "archive": "evidence/upstream/pytorch/v2.15.0/_fully_shard.py.txt",
+      "upstream_path": "torch/distributed/fsdp/_fully_shard/_fully_shard.py",
+      "revision": "31a77fc9c0a7c6fff15a1ff58c743f53b1a9d457",
+      "line_ranges": [
+        [
+          100,
+          132
+        ],
+        [
+          258,
+          302
+        ]
+      ],
+      "upstream_blob_sha256": "fcff8a351d6bc4038ef7f67fc3218b179efb62a810cc864448963f2de95bea2d",
+      "archive_sha256": "dcc149e61431c2f35bb2ef0f4456b4e2edf746769afca7b5a2bc8239612c0db8",
+      "format": "Original source lines prefixed with original line numbers"
+    },
+    {
+      "archive": "evidence/upstream/pytorch/v2.15.0/_fsdp_state.py.txt",
+      "upstream_path": "torch/distributed/fsdp/_fully_shard/_fsdp_state.py",
+      "revision": "31a77fc9c0a7c6fff15a1ff58c743f53b1a9d457",
+      "line_ranges": [
+        [
+          179,
+          232
+        ]
+      ],
+      "upstream_blob_sha256": "8ec25348d2ef732c36dec837a70fbef5903c6a18e5c7d25087eb88a271be93ed",
+      "archive_sha256": "3afcd2312cd4f7ab79d8375b394204e1d796d90bb1c8159588bbd94a7e2da445",
+      "format": "Original source lines prefixed with original line numbers"
+    },
+    {
+      "archive": "evidence/upstream/pytorch/main/adam.py.txt",
+      "upstream_path": "torch/optim/adam.py",
+      "revision": "cbee6335ae15a556794e2552c553f5befda84516",
+      "line_ranges": [
+        [
+          454,
+          463
+        ],
+        [
+          469,
+          494
+        ],
+        [
+          522,
+          537
+        ],
+        [
+          544,
+          553
+        ]
+      ],
+      "upstream_blob_sha256": "5ecb37579ebbec6cdcf4aa69b394136b98d425144a549d679c6369f9c76146b8",
+      "archive_sha256": "e22df92aebaa9b8c15fed21983822d004390fd3cc7005a3af18f2a2df865c8dd",
+      "format": "Original source lines prefixed with original line numbers"
+    }
+  ],
+  "runtime_selected_file_comparisons": [
+    {
+      "path": "torch/distributed/fsdp/_fully_shard/_fully_shard.py",
+      "stable_sha256": "fcff8a351d6bc4038ef7f67fc3218b179efb62a810cc864448963f2de95bea2d",
+      "installed_sha256": "fcff8a351d6bc4038ef7f67fc3218b179efb62a810cc864448963f2de95bea2d",
+      "installed_matches_stable": true
+    },
+    {
+      "path": "torch/distributed/fsdp/_fully_shard/_fsdp_state.py",
+      "stable_sha256": "8ec25348d2ef732c36dec837a70fbef5903c6a18e5c7d25087eb88a271be93ed",
+      "installed_sha256": "8ec25348d2ef732c36dec837a70fbef5903c6a18e5c7d25087eb88a271be93ed",
+      "installed_matches_stable": true
+    }
+  ]
+}

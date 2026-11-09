@@ -1,0 +1,143 @@
+L00100 | # such that caller can still get correct return types based on input type
+L00101 | @contract(state_cls=FSDPState)  # type: ignore[misc] # see [1]
+L00102 | def fully_shard(
+L00103 |     module,
+L00104 |     *,
+L00105 |     mesh: DeviceMesh | None = None,
+L00106 |     reshard_after_forward: bool | int | None = None,
+L00107 |     shard_placement_fn: Callable[[nn.Parameter], ShardPlacementFnResult] | None = None,
+L00108 |     mp_policy: MixedPrecisionPolicy = MixedPrecisionPolicy(),
+L00109 |     offload_policy: OffloadPolicy = OffloadPolicy(),
+L00110 |     ignored_params: set[nn.Parameter] | None = None,
+L00111 |     dp_mesh_dims: DataParallelMeshDims | None = None,
+L00112 | ):
+L00113 |     """
+L00114 |     Apply fully sharded data parallelism (FSDP) to ``module``, where FSDP
+L00115 |     shards module parameters, gradients, and optimizer states across data
+L00116 |     parallel workers to save memory at the cost of communication.
+L00117 | 
+L00118 |     At initialization, FSDP shards the module's parameters across the data
+L00119 |     parallel workers given by ``mesh``. Before forward, FSDP all-gathers the
+L00120 |     sharded parameters across the data-parallel workers to get the unsharded
+L00121 |     parameters for forward computation. If ``reshard_after_forward`` is
+L00122 |     ``True``, then FSDP frees the unsharded parameters after forward and
+L00123 |     re-all-gathers them in backward before gradient computation. After gradient
+L00124 |     computation, FSDP frees the unsharded parameters and reduce-scatters the
+L00125 |     unsharded gradients across data-parallel workers.
+L00126 | 
+L00127 |     This implementation represents the sharded parameters as :class:`DTensor` s
+L00128 |     sharded on dim-0, while the unsharded parameters will be like the original
+L00129 |     parameters on ``module`` (e.g. :class:`torch.Tensor` if originally
+L00130 |     :class:`torch.Tensor`). A module
+L00131 |     `forward pre-hook <https://pytorch.org/docs/main/generated/torch.nn.Module.html#torch.nn.Module.register_forward_pre_hook>`_
+L00132 |     on ``module`` all-gathers the parameters, and a module
+L00133 |     `forward hook <https://pytorch.org/docs/main/generated/torch.nn.Module.html#torch.nn.Module.register_forward_hook>`_
+L00134 |     on ``module`` frees them (if needed). Similar backward hooks all-gather
+L00135 |     parameters and later free parameters and reduce-scatter gradients.
+L00136 | 
+L00137 |     Parameter dtypes and ``grad_dtype`` may change (e.g. ``module.bfloat16()``)
+
+L00179 |        state.
+L00180 | 
+L00181 |     Args:
+L00182 |         module (Union[nn.Module, List[nn.Module]]): The module or modules to
+L00183 |             shard with FSDP and group together for communication.
+L00184 |         mesh (Optional[DeviceMesh]): This data parallel mesh defines the
+L00185 |             sharding and device. If 1D, then parameters are fully sharded
+L00186 |             across the 1D mesh (FSDP) with ``(Shard(0),)`` placement. If 2D,
+L00187 |             then parameters are sharded across the 1st dim and replicated
+L00188 |             across the 0th dim (HSDP) with ``(Replicate(), Shard(0))``
+L00189 |             placement. The mesh's device type gives the device type used for
+L00190 |             communication; if a CUDA or CUDA-like device type, then we use the
+L00191 |             current device.
+L00192 |         reshard_after_forward (Optional[Union[bool, int]]): This controls the parameter
+L00193 |             behavior after forward and can trade off memory and communication:
+L00194 | 
+L00195 |             - If ``True``, then this reshards parameters after forward and
+L00196 |               re-all-gathers in backward.
+L00197 |             - If ``False``, then this keeps the unsharded parameters in memory
+L00198 |               after forward and avoids the all-gather in backward. For best performance,
+L00199 |               we usually set ``False`` for the root module, because the root module
+L00200 |               is typically required immediately when the backward pass begins.
+L00201 |             - If ``None``, it is set to ``True`` for non-root modules and ``False``
+L00202 |               for root modules.
+L00203 |             - If an ``int``, then this represents the world size to reshard to
+L00204 |               after forward. It should be a non-trivial divisor of the ``mesh``
+L00205 |               shard dim size (i.e. excluding 1 and the dim size itself). A
+L00206 |               choice may be the intra-node size (e.g. ``torch.cuda.device_count()``).
+L00207 |               This allows the all-gather in backward to be over a smaller world
+L00208 |               size at the cost of higher memory usage than setting to ``True``.
+L00209 |             - After forward, the parameters registered to the module depend on
+L00210 |               to this: The registered parameters are the sharded parameters if
+L00211 |               ``True``; unsharded parameters if ``False``; and the parameters
+L00212 |               resharded to the smaller mesh otherwise. For ``False`` or an
+L00213 |               ``int``, the sharded parameters can be registered by manually
+L00214 |               resharding via :meth:`reshard`.
+L00215 |             - Modifying the parameters between forward and backward is not
+
+L00260 |         FSDPModule: The module with FSDP applied (in-place).
+L00261 |     """
+L00262 |     torch._C._log_api_usage_once("torch.distributed.fsdp.fully_shard")
+L00263 |     _validate_module(module, "fully_shard")
+L00264 |     mesh = mesh or _init_default_mesh()
+L00265 |     _validate_mesh(mesh, dp_mesh_dims)
+L00266 |     mesh_info = _get_mesh_info(mesh, dp_mesh_dims)
+L00267 |     device = _get_device_from_mesh(mesh)
+L00268 |     auto_reshard_after_forward = reshard_after_forward is None
+L00269 |     # If the user does not provide ``reshard_after_forward``, we set it to True.
+L00270 |     # During lazy_init, we identify which module is the root and override its value to False
+L00271 |     if isinstance(mesh_info, FSDPMeshInfo):
+L00272 |         if (
+L00273 |             mesh_info.is_spmd_mesh
+L00274 |             and not isinstance(reshard_after_forward, bool)
+L00275 |             and isinstance(reshard_after_forward, int)
+L00276 |         ):
+L00277 |             raise NotImplementedError(
+L00278 |                 "reshard_after_forward as int is not yet supported with "
+L00279 |                 "SPMD mesh (dp_mesh_dims)"
+L00280 |             )
+L00281 |         post_forward_mesh_info = _get_post_forward_mesh_info(
+L00282 |             reshard_after_forward if not auto_reshard_after_forward else True,  # type: ignore[arg-type]
+L00283 |             mesh_info,
+L00284 |         )
+L00285 |     else:
+L00286 |         # DDPMeshInfo: no sharding, so no post-forward resharding needed
+L00287 |         post_forward_mesh_info = None
+L00288 |     arg_module, modules, managed_modules, params, buffers = _get_modules_and_states(
+L00289 |         module, device, ignored_params
+L00290 |     )
+L00291 |     state = fully_shard.state(modules[0])  # type: ignore[attr-defined]
+L00292 |     state.init(modules, device, mp_policy, auto_reshard_after_forward)
+L00293 | 
+L00294 |     _init_param_group(
+L00295 |         state,
+L00296 |         params,
+L00297 |         modules,
+L00298 |         mesh_info,
+L00299 |         post_forward_mesh_info,
+L00300 |         device,
+L00301 |         shard_placement_fn,
+L00302 |         mp_policy,
+L00303 |         offload_policy,
+L00304 |         reshard_after_forward=reshard_after_forward
+L00305 |         if not auto_reshard_after_forward
+L00306 |         else True,
+L00307 |     )
+L00308 | 
+L00309 |     # For Dynamo
+L00310 |     for managed_module in managed_modules:
+L00311 |         managed_module._is_fsdp_managed_module = True  # type: ignore[assignment]
+L00312 |         managed_module._fsdp_use_orig_params = True  # type: ignore[assignment]
+L00313 | 
+L00314 |     # Place FSDP leftmost for highest priority in the method resolution order
+L00315 |     _apply_to_module(
+L00316 |         modules, cls_to_fsdp_cls, FSDPModule, "FSDP", _unimplemented_deepcopy
+L00317 |     )
+L00318 |     return arg_module
+L00319 | 
+L00320 | 
+L00321 | def _unimplemented_deepcopy(*args: Any, **kwargs: Any) -> NoReturn:
+L00322 |     raise AssertionError(
+L00323 |         "FSDP does not support deepcopy. Please use state dict for serialization."
+L00324 |     )
+L00325 | 

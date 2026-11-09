@@ -1,0 +1,73 @@
+setUpClass (test_sharded_probe.DistributedTests) ... ERROR
+test_invalid_step_count_fails_before_spawn (test_sharded_probe.InputTests.test_invalid_step_count_fails_before_spawn) ... 
+  test_invalid_step_count_fails_before_spawn (test_sharded_probe.InputTests.test_invalid_step_count_fails_before_spawn) (steps=0) ... ERROR
+  test_invalid_step_count_fails_before_spawn (test_sharded_probe.InputTests.test_invalid_step_count_fails_before_spawn) (steps=-1) ... ERROR
+  test_invalid_step_count_fails_before_spawn (test_sharded_probe.InputTests.test_invalid_step_count_fails_before_spawn) (steps=True) ... ERROR
+  test_invalid_step_count_fails_before_spawn (test_sharded_probe.InputTests.test_invalid_step_count_fails_before_spawn) (steps=1.5) ... ERROR
+  test_invalid_step_count_fails_before_spawn (test_sharded_probe.InputTests.test_invalid_step_count_fails_before_spawn) (steps=11) ... ERROR
+
+======================================================================
+ERROR: setUpClass (test_sharded_probe.DistributedTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/test_sharded_probe.py", line 13, in setUpClass
+    cls.report = impl.run_probe()
+                 ^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/probe_exercises.py", line 6, in run_probe
+    raise NotImplementedError("Gather parameters, reduce-scatter gradients, update shards")
+NotImplementedError: Gather parameters, reduce-scatter gradients, update shards
+
+======================================================================
+ERROR: test_invalid_step_count_fails_before_spawn (test_sharded_probe.InputTests.test_invalid_step_count_fails_before_spawn) (steps=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/test_sharded_probe.py", line 56, in test_invalid_step_count_fails_before_spawn
+    impl.run_probe(steps)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/probe_exercises.py", line 6, in run_probe
+    raise NotImplementedError("Gather parameters, reduce-scatter gradients, update shards")
+NotImplementedError: Gather parameters, reduce-scatter gradients, update shards
+
+======================================================================
+ERROR: test_invalid_step_count_fails_before_spawn (test_sharded_probe.InputTests.test_invalid_step_count_fails_before_spawn) (steps=-1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/test_sharded_probe.py", line 56, in test_invalid_step_count_fails_before_spawn
+    impl.run_probe(steps)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/probe_exercises.py", line 6, in run_probe
+    raise NotImplementedError("Gather parameters, reduce-scatter gradients, update shards")
+NotImplementedError: Gather parameters, reduce-scatter gradients, update shards
+
+======================================================================
+ERROR: test_invalid_step_count_fails_before_spawn (test_sharded_probe.InputTests.test_invalid_step_count_fails_before_spawn) (steps=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/test_sharded_probe.py", line 56, in test_invalid_step_count_fails_before_spawn
+    impl.run_probe(steps)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/probe_exercises.py", line 6, in run_probe
+    raise NotImplementedError("Gather parameters, reduce-scatter gradients, update shards")
+NotImplementedError: Gather parameters, reduce-scatter gradients, update shards
+
+======================================================================
+ERROR: test_invalid_step_count_fails_before_spawn (test_sharded_probe.InputTests.test_invalid_step_count_fails_before_spawn) (steps=1.5)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/test_sharded_probe.py", line 56, in test_invalid_step_count_fails_before_spawn
+    impl.run_probe(steps)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/probe_exercises.py", line 6, in run_probe
+    raise NotImplementedError("Gather parameters, reduce-scatter gradients, update shards")
+NotImplementedError: Gather parameters, reduce-scatter gradients, update shards
+
+======================================================================
+ERROR: test_invalid_step_count_fails_before_spawn (test_sharded_probe.InputTests.test_invalid_step_count_fails_before_spawn) (steps=11)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/test_sharded_probe.py", line 56, in test_invalid_step_count_fails_before_spawn
+    impl.run_probe(steps)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-09-fsdp-zero-state-sharding/code/probe_exercises.py", line 6, in run_probe
+    raise NotImplementedError("Gather parameters, reduce-scatter gradients, update shards")
+NotImplementedError: Gather parameters, reduce-scatter gradients, update shards
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (errors=6)

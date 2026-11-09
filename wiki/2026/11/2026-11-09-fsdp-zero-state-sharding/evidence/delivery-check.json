@@ -1,0 +1,23 @@
+{
+  "status": "passed",
+  "verified_at": "2026-11-09T11:22:24.645809+08:00",
+  "article_files": 43,
+  "authored_markdown_files": 8,
+  "local_links_verified": 109,
+  "missing_links": [],
+  "index_articles": 21,
+  "articles_for_2026_11_09": 1,
+  "source_files_reconstructed_from_git": 10,
+  "selected_runtime_files_matching_stable": 2,
+  "checksums_verified": 38,
+  "exercise_python_files": 8,
+  "final_tests": 24,
+  "final_test_seconds": 1.582,
+  "tested_code_hashes_match": true,
+  "two_real_gloo_ranks": true,
+  "correct_and_negative_control_checked": true,
+  "mermaid_matches_source": true,
+  "credential_pattern_matches": 0,
+  "caches_in_article": 0,
+  "hash_scope": "Source, code, assets, references and evidence. Article README, review, delivery-check and checksum log excluded to avoid mutable status and self-reference."
+}

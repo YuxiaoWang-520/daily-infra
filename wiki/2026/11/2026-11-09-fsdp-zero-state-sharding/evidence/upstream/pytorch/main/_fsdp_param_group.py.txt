@@ -1,0 +1,208 @@
+L00450 |     def unshard(self, async_op: bool = False):
+L00451 |         if self._all_gather_result is not None:  # already called, pending wait
+L00452 |             return
+L00453 |         if self.is_unsharded:
+L00454 |             return  # no-op
+L00455 |         if (
+L00456 |             not self.unshard_in_backward
+L00457 |             and self._training_state == TrainingState.PRE_BACKWARD
+L00458 |         ):
+L00459 |             return
+L00460 |         if self._reshard_after_forward_event is not None:
+L00461 |             # Resharded parameter data is allocated in the default stream and
+L00462 |             # used in the all-gather streams
+L00463 |             self.comm_ctx.wait_all_gather_streams_on_event(
+L00464 |                 self._reshard_after_forward_event
+L00465 |             )
+L00466 |             self._reshard_after_forward_event = None
+L00467 | 
+L00468 |         if isinstance(self.mesh_info, FSDPMeshInfo):
+L00469 |             world_size = self._all_gather_process_group.size()
+L00470 |         else:
+L00471 |             world_size = 1
+L00472 |         if world_size == 1:
+L00473 |             # can't skip due to early return in wait_for_unshard if
+L00474 |             # no self._all_gather_result
+L00475 |             self._all_gather_result = AllGatherResult(
+L00476 |                 all_gather_output=self._all_gather_output,
+L00477 |                 all_gather_event=self.device_handle.Event().record(),
+L00478 |                 all_gather_work=None,
+L00479 |                 param_all_gather_input_dtypes=[],
+L00480 |                 param_all_gather_input_numels=[],
+L00481 |                 all_gather_input_split_sizes=[],
+L00482 |             )
+L00483 | 
+L00484 |             return
+L00485 | 
+L00486 |         with record_function(self._with_fqn("FSDP::all_gather")):
+L00487 |             self._all_gather_result = foreach_all_gather(
+L00488 |                 self.fsdp_params,
+L00489 |                 self._all_gather_process_group,
+L00490 |                 async_op,
+L00491 |                 *self.comm_ctx.get_all_gather_streams(async_op, self._training_state),
+L00492 |                 self.device,
+L00493 |                 self._all_gather_comm,
+L00494 |             )
+L00495 | 
+
+L00580 |     def reshard(self):
+L00581 |         if self._training_state == TrainingState.FORWARD:
+L00582 |             if not self._reshard_after_forward:
+L00583 |                 return
+L00584 |             if self._use_post_forward_mesh:
+L00585 |                 self._to_sharded_post_forward()
+L00586 |                 self._reshard_after_forward_event = self.device_handle.Event()
+L00587 |                 if self._reshard_after_forward_event is not None:
+L00588 |                     self._reshard_after_forward_event.record()
+L00589 |                 return
+L00590 |         self._to_sharded()
+L00591 | 
+L00592 |     def _reset_iter_state(self) -> None:
+
+L00627 |     def pre_forward(
+L00628 |         self, module: nn.Module, args: tuple[Any, ...], kwargs: dict[str, Any]
+L00629 |     ) -> tuple[tuple[Any, ...], dict[str, Any]]:
+L00630 |         logger.debug("%s", self._with_fqn("FSDP::pre_forward"))
+L00631 |         with record_function(self._with_fqn("FSDP::pre_forward")):
+L00632 |             # FORWARD at entry means another module in the grouped
+L00633 |             # ``fully_shard([a, b])`` already registered post_backward this
+L00634 |             # pass; skip to avoid duplicate ``RegisterPostBackwardFunction``
+L00635 |             # autograd nodes.
+L00636 |             with _spmd_no_typecheck():
+L00637 |                 entering_forward_pass = self._training_state != TrainingState.FORWARD
+L00638 |                 self._training_state = TrainingState.FORWARD
+L00639 |                 self.unshard(self.unshard_async_op)
+L00640 |                 self.wait_for_unshard()
+L00641 |                 # No-grad forwards have no backward, and recomputation keeps the
+L00642 |                 # choice of the forward it recomputes
+L00643 |                 if torch.is_grad_enabled() and not is_bw():
+L00644 |                     self._set_unsharded_grad_dtypes()
+L00645 |             for fsdp_param in self.fsdp_params:
+L00646 |                 fsdp_param._restore_spmd_types(fsdp_param.unsharded_param)
+L00647 |             if entering_forward_pass:
+L00648 |                 args, kwargs = self._register_post_backward_hook(args, kwargs)
+L00649 |             return args, kwargs
+L00650 | 
+L00651 |     def post_forward(self, module: nn.Module, input: Any, output: Any):
+L00652 |         logger.debug("%s", self._with_fqn("FSDP::post_forward"))
+L00653 |         with (
+L00654 |             _spmd_no_typecheck(),
+L00655 |             record_function(self._with_fqn("FSDP::post_forward")),
+L00656 |         ):
+L00657 |             # for AC(fully_shard(model)), AC runs fsdp's _pre_forward
+L00658 |             # it shouldn't change post_forward_order
+L00659 |             if not is_bw():
+L00660 |                 self.reshard()
+L00661 |                 self._record_post_forward()
+L00662 |             self._training_state = TrainingState.IDLE
+L00663 |             return output
+L00664 | 
+L00665 |     def _record_post_forward(self) -> None:
+L00666 |         # Since a group has one pre-backward unshard for each forward call
+L00667 |         # before the backward, we record each usage (with multiplicity)
+L00668 |         post_forward_index = len(self.comm_ctx.post_forward_order)
+L00669 |         self.comm_ctx.post_forward_order.append(self)
+L00670 |         self._post_forward_indices.append(post_forward_index)
+L00671 | 
+L00672 |     @_dynamo_disable
+L00673 |     def pre_backward(self, default_prefetch: bool, *unused: Any):
+L00674 |         if self._training_state == TrainingState.PRE_BACKWARD:
+L00675 |             return
+L00676 |         logger.debug("%s", self._with_fqn("FSDP::pre_backward"))
+L00677 |         with (
+L00678 |             _spmd_no_typecheck(),
+L00679 |             record_function(self._with_fqn("FSDP::pre_backward")),
+L00680 |         ):
+L00681 |             self._training_state = TrainingState.PRE_BACKWARD
+L00682 |             self.unshard(self.unshard_async_op)  # no-op if prefetched
+L00683 |             self.wait_for_unshard()
+L00684 |             if default_prefetch:
+L00685 |                 self._backward_prefetch()
+L00686 | 
+L00687 |     @_dynamo_disable
+L00688 |     def post_backward(self, *unused: Any):
+L00689 |         with _spmd_no_typecheck():
+L00690 |             # This method should be idempotent and safe to call even when this
+L00691 |             # FSDP parameter group was not used in backward (should be a no-op)
+L00692 |             logger.debug("%s", self._with_fqn("FSDP::post_backward"))
+L00693 |             # Partial-group-forward detection: grouped ``fully_shard([a, b, ...])``
+L00694 |             # where the forward ran only a subset of the group's modules (chunked
+L00695 |             # loss, 1F1B, etc.). The wrapped post-hook took its partial path, so
+L00696 |             # ``state._post_forward`` never ran and no ``_pre_backward`` hook was
+L00697 |             # registered — ``pre_backward`` therefore never fired and state stays
+L00698 |             # at FORWARD instead of transitioning IDLE → PRE_BACKWARD.
+L00699 |             is_partial_group_backward = (
+L00700 |                 len(self.modules) > 1  # grouped (structural)
+L00701 |                 and self._training_state == TrainingState.FORWARD  # partial path taken
+L00702 |             )
+L00703 |             self._training_state = TrainingState.POST_BACKWARD
+L00704 |             with record_function(self._with_fqn("FSDP::post_backward_reshard")):
+L00705 |                 if not self.reduce_grads:
+L00706 |                     self._post_backward_pending = True
+L00707 |                     self._restore_unsharded_grad_dtypes()
+L00708 |                     if self.reshard_after_backward:
+L00709 |                         self.reshard()
+L00710 |                     return
+L00711 |                 self._post_backward_pending = False
+L00712 |                 self._validate_unused_param_grad_dtypes()
+L00713 |                 # Save the autograd-computed gradients before resharding to only
+L00714 |                 # access the unsharded parameters when their data is present
+L00715 |                 fsdp_params_with_grad, unsharded_grads = (
+L00716 |                     self._take_unsharded_grads_to_reduce()
+L00717 |                 )
+L00718 |                 self._restore_unsharded_grad_dtypes()
+L00719 |                 if self.reshard_after_backward:
+L00720 |                     self.reshard()
+L00721 |             # Recycle prior modules' reduce-scatter input buffers, keeping at most
+L00722 |             # `max_input_buffers` in flight: reclaim the oldest (wait on its
+L00723 |             # reduce-scatter, then drop the keepalive ref that was deferring the
+L00724 |             # allocator's reuse of its memory) until fewer than that remain, before
+
+L00788 |                     # Allocate on the RS stream so reuse is ordered after consumption.
+L00789 |                     with self.device_handle.stream(rs_stream):
+L00790 |                         partial_input = self._prepare_partial_reduce_output(
+L00791 |                             fsdp_params_with_grad, partial_sizes, reduce_dtype
+L00792 |                         )
+L00793 |                 (
+L00794 |                     reduce_scatter_input,
+L00795 |                     reduce_scatter_event,
+L00796 |                     post_reduce_stream,
+L00797 |                     self._post_reduce_event,
+L00798 |                     all_reduce_input,
+L00799 |                     all_reduce_event,
+L00800 |                     self._partial_reduce_output,
+L00801 |                 ) = foreach_reduce(
+L00802 |                     fsdp_params_with_grad,
+L00803 |                     unsharded_grads,
+L00804 |                     (
+L00805 |                         # pyrefly: ignore [bad-argument-type]
+L00806 |                         self._reduce_scatter_process_group
+L00807 |                         if isinstance(self.mesh_info, FSDPMeshInfo)
+L00808 |                         else None  # pyre-fixme[6]
+L00809 |                     ),
+L00810 |                     self.comm_ctx.reduce_scatter_stream,
+L00811 |                     self._reduce_scatter_comm,
+L00812 |                     reduce_dtype,
+L00813 |                     self.device,
+L00814 |                     self.gradient_divide_factor,
+L00815 |                     (
+L00816 |                         self._all_reduce_process_group
+L00817 |                         if isinstance(self.mesh_info, DDPMeshInfo)
+L00818 |                         else None
+L00819 |                     ),
+L00820 |                     all_reduce_stream,
+L00821 |                     self.all_reduce_grads,
+L00822 |                     partial_input,
+L00823 |                     self._all_reduce_hook,
+L00824 |                     self.force_sum_reduction_for_comms,
+L00825 |                     prepare_reduce_scatter_inputs=self._prepare_reduce_scatter_inputs,
+L00826 |                 )
+L00827 |                 self.comm_ctx._last_post_reduce_events[post_reduce_stream] = (
+L00828 |                     self._post_reduce_event
+L00829 |                 )
+L00830 |                 self.comm_ctx.reduce_scatter_states.append(
+L00831 |                     ReduceScatterState(
+L00832 |                         reduce_scatter_input,
+L00833 |                         reduce_scatter_event,
+L00834 |                         self.device_handle.current_stream(),
+L00835 |                         self,

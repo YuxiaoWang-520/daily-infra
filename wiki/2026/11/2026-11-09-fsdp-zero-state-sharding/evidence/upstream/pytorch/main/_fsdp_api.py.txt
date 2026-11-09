@@ -1,0 +1,137 @@
+L00001 | # mypy: allow-untyped-defs
+L00002 | from abc import ABC, abstractmethod
+L00003 | from collections.abc import Callable, Sequence
+L00004 | from dataclasses import dataclass, field, replace
+L00005 | 
+L00006 | import torch
+L00007 | import torch.distributed as dist
+L00008 | import torch.nn as nn
+L00009 | 
+L00010 | 
+L00011 | _ReduceOp = dist.ReduceOp | dist.ReduceOp.RedOpType
+L00012 | 
+L00013 | 
+L00014 | @dataclass(frozen=True)
+L00015 | class MixedPrecisionPolicy:
+L00016 |     r"""
+L00017 |     This configures FSDP's mixed precision. Unlike autocast, parameter casting
+L00018 |     happens when parameters are all-gathered, while optional input and output
+L00019 |     casting happens at module boundaries. This means low-precision activations
+L00020 |     are saved for backward and high-to-low-precision casts are incurred only at
+L00021 |     those boundaries.
+L00022 | 
+L00023 |     FSDP works well with module-level mixed precision since it keeps the
+L00024 |     high-precision sharded parameters in memory anyway. In other words, FSDP
+L00025 |     does not require any extra memory to keep a high-precision copy of the
+L00026 |     parameters for the optimizer step.
+L00027 | 
+L00028 |     .. warning::
+L00029 |         ``param_dtype_override_fn`` must return the same result for each logical parameter
+L00030 |         on every rank. Rank-dependent results may cause ranks to build incompatible
+L00031 |         collective buffers, which can fail or hang.
+L00032 | 
+L00033 |     Attributes:
+L00034 |         param_dtype (Optional[torch.dtype]): This specifies the default dtype
+L00035 |             for the unsharded parameters and hence the dtype for
+L00036 |             forward/backward computation and the parameter all-gather. Forward
+L00037 |             input casting also uses this dtype. If this is ``None``, then the
+L00038 |             unsharded parameters use their original dtype. The optimizer step
+L00039 |             uses the sharded parameters in the original dtype. (Default:
+L00040 |             ``None``)
+L00041 |         reduce_dtype (Optional[torch.dtype]): The dtype for gradient reduction
+L00042 |             (reduce-scatter or all-reduce) and for accumulating gradients while
+L00043 |             reduction is disabled via :meth:`FSDPModule.set_requires_gradient_sync`.
+L00044 |             If ``None``, follows the parameter's ``grad_dtype`` configured before
+L00045 |             lazy initialization (the first forward or :meth:`FSDPModule.unshard`):
+L00046 |             unset uses the original parameter dtype;
+L00047 |             explicit ``None`` accepts any incoming gradient dtype. This fallback
+L00048 |             is independent of ``param_dtype``. Gradients with different dtypes
+L00049 |             in one communication group are reduced in their promoted dtype
+L00050 |             (e.g. fp32 for bf16 and fp32). Reduced shards retain the input
+L00051 |             ``grad_dtype`` policy. (Default: ``None``)
+L00052 | 
+L00053 |             .. versionchanged:: 2.15
+L00054 |                 With ``reduce_dtype=None``, gradients were previously reduced
+L00055 |                 in ``param_dtype`` when it was set. They now follow the
+L00056 |                 parameter's ``grad_dtype`` as described above, e.g. fp32 for fp32
+L00057 |                 parameters with ``param_dtype=torch.bfloat16``. Set
+L00058 |                 ``reduce_dtype=torch.bfloat16`` to keep the previous behavior.
+L00059 |                 FSDP1 still reduces in ``param_dtype``.
+L00060 |         output_dtype (Optional[torch.dtype]): This specifies the dtype for
+L00061 |             casting floating-point forward outputs. This can be used to
+L00062 |             help implement cases where different modules have different mixed
+L00063 |             precision policies. (Default: ``None``)
+L00064 |         cast_forward_inputs (bool): This specifies whether FSDP should cast the
+L00065 |             forward's floating-point input tensors to ``param_dtype`` or not.
+L00066 |             For grouped ``fully_shard([a, b, ...])``, the cast is applied per
+L00067 |             module, before each module's forward.
+L00068 |         param_dtype_override_fn (Optional[Callable[[nn.Parameter], Optional[torch.dtype]]]):
+L00069 |             Optional per-parameter override for ``param_dtype``. The callable
+L00070 |             is evaluated once for each managed parameter when FSDP is applied.
+L00071 |             Returning the parameter's original dtype preserves that parameter
+L00072 |             in its original dtype; returning ``None`` or ``param_dtype`` uses
+L00073 |             the default ``param_dtype``. Other dtypes are not supported.
+L00074 |             Forward input casting continues to use ``param_dtype``.
+L00075 |             (Default: ``None``)
+L00076 |     """
+L00077 | 
+L00078 |     param_dtype: torch.dtype | None = None
+L00079 |     reduce_dtype: torch.dtype | None = None
+L00080 |     output_dtype: torch.dtype | None = None
+L00081 |     cast_forward_inputs: bool = True
+L00082 |     param_dtype_override_fn: Callable[[nn.Parameter], torch.dtype | None] | None = (
+L00083 |         field(default=None, kw_only=True)
+L00084 |     )
+L00085 | 
+L00086 |     def _resolve_for_param(self, param: nn.Parameter) -> "MixedPrecisionPolicy":
+L00087 |         if self.param_dtype_override_fn is None:
+L00088 |             return self
+L00089 |         param_dtype = self.param_dtype
+L00090 |         if self.param_dtype_override_fn is not None:
+L00091 |             param_dtype_override = self.param_dtype_override_fn(param)
+L00092 |             if param_dtype_override is not None:
+L00093 |                 if not isinstance(param_dtype_override, torch.dtype):
+L00094 |                     raise ValueError(
+L00095 |                         "param_dtype_override_fn must return a torch.dtype or None but got "
+L00096 |                         f"{type(param_dtype_override)}"
+L00097 |                     )
+L00098 |                 if param_dtype_override not in (self.param_dtype, param.dtype):
+L00099 |                     raise ValueError(
+L00100 |                         "param_dtype_override_fn must return None, param_dtype, or the "
+L00101 |                         "parameter's original dtype but got "
+L00102 |                         f"{param_dtype_override} for a parameter with dtype "
+L00103 |                         f"{param.dtype} and param_dtype {self.param_dtype}"
+L00104 |                     )
+L00105 |                 param_dtype = param_dtype_override
+L00106 |         return replace(
+L00107 |             self,
+L00108 |             param_dtype=param_dtype,
+L00109 |             param_dtype_override_fn=None,
+L00110 |         )
+L00111 | 
+L00112 | 
+L00113 | class Comm(ABC):
+L00114 |     """
+L00115 |     Interface for communication primitives.
+L00116 |     A primitive primarily needs to handle 3 tasks, namely:
+L00117 | 
+L00118 |     1. How to allocate memory for communication
+L00119 |        Depending on the goal, an implementation can choose to:
+L00120 |        a. associate each call to a temporary buffer
+L00121 |           (best for flexibility and simplicity)
+L00122 |        b. reuse a persistent buffer for efficiency reasons
+L00123 | 
+L00124 |     2. Where to allocate memory
+L00125 |        (e.g. NCCL mem pool or regular cuda caching allocator)
+L00126 | 
+L00127 |     3. What to do/call upon the comm is called
+L00128 |        (see `AllGather` interface as an example)
+L00129 |     """
+L00130 | 
+L00131 |     @abstractmethod
+L00132 |     def allocate(
+L00133 |         self,
+L00134 |         size: Sequence[int | torch.SymInt],
+L00135 |         *,
+L00136 |         dtype: torch.dtype,
+L00137 |         device: torch.device,

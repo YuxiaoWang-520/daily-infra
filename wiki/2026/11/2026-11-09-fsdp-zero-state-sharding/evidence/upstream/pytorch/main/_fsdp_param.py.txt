@@ -1,0 +1,123 @@
+L00279 |     def _init_sharded_param(
+L00280 |         self,
+L00281 |         param: nn.Parameter,
+L00282 |         device: torch.device,
+L00283 |         shard_placement_fn: Callable[[nn.Parameter], ShardPlacementFnResult] | None,
+L00284 |         mesh_info: DataParallelMeshInfo,
+L00285 |     ):
+L00286 |         shard_placement_result = None
+L00287 |         if callable(shard_placement_fn):
+L00288 |             shard_placement_result = resolve_shard_placement(
+L00289 |                 shard_placement_fn(param),
+L00290 |                 cast(FSDPMeshInfo, mesh_info),
+L00291 |             )
+L00292 |             self.mesh_info = shard_placement_result.mesh_info
+L00293 |             fsdp_placement = shard_placement_result.placement
+L00294 |         else:
+L00295 |             self.mesh_info = mesh_info  # pyrefly: ignore[bad-assignment]
+L00296 |             fsdp_placement = None
+L00297 |         self._shard_mesh = self._init_shard_mesh()
+L00298 |         if param.device != device and param.device.type != "meta":
+L00299 |             raise AssertionError(
+L00300 |                 f"Expects the parameter to already be moved to device {device} but got {param.device}"
+L00301 |             )
+L00302 |         if not param.is_contiguous():
+L00303 |             raise NotImplementedError(
+L00304 |                 f"FSDP does not support non-contiguous parameters yet: {param.shape=} {param.stride()=}"
+L00305 |             )
+L00306 |         # Capture the policy before parameter rewrites (e.g. spmd_types -> DTensor).
+L00307 |         self._has_sharded_grad_dtype_override = param._has_grad_dtype_override
+L00308 |         self.sharded_grad_dtype = param.grad_dtype
+L00309 |         if fsdp_placement is None:
+L00310 |             fsdp_placement = Shard(0)
+L00311 |         elif fsdp_placement.dim < 0:
+L00312 |             fsdp_placement = Shard(fsdp_placement.dim + param.ndim)
+L00313 |         if not isinstance(fsdp_placement, Shard):
+L00314 |             raise AssertionError(
+L00315 |                 f"Expected Shard, got {type(fsdp_placement)}: {fsdp_placement}"
+L00316 |             )
+
+L00355 | 
+L00356 |         chunks = _chunk_with_empty(param_data, shard_world_size, dim=shard_dim)
+L00357 |         sharded_param = chunks[shard_rank]
+L00358 |         self.sharded_size = _get_dim_chunked_size(
+L00359 |             sharded_param, param_data.size(), dim=shard_dim
+L00360 |         )
+L00361 |         self.contiguous_sharded_stride = make_contiguous_strides_for(self.sharded_size)
+L00362 |         padded_sharded_size = chunks[0].size()  # 0th always padded
+L00363 |         self.padded_sharded_param_size = padded_sharded_size
+L00364 |         self.needs_nonzero_dim_padding = (
+L00365 |             shard_dim != 0 and self.sharded_size != padded_sharded_size
+L00366 |         )
+L00367 |         self._default_all_gather_output_layouts = (
+L00368 |             _get_all_gather_output_layout(
+L00369 |                 padded_sharded_size, shard_dim, shard_world_size
+L00370 |             ),
+L00371 |         )
+L00372 |         # Pre-pad the sharded parameter to avoid padding before all-gather. For
+L00373 |         # Shard(i), i > 0, padding would sit between the rows of the dims before
+L00374 |         # i, so keep the shard itself and pad it in all_gather_inputs if uneven.
+L00375 |         padded_sharded_param = param_data.new_zeros(
+L00376 |             padded_sharded_size if shard_dim == 0 else self.sharded_size
+L00377 |         )
+L00378 |         if sharded_param.numel() > 0:
+L00379 |             padded_sharded_param.narrow(
+L00380 |                 dim=shard_dim, start=0, length=sharded_param.size(shard_dim)
+L00381 |             ).copy_(sharded_param)
+L00382 |         if self.offload_to_cpu and not padded_sharded_param.is_meta:
+L00383 |             padded_sharded_param = padded_sharded_param.cpu()
+L00384 |             if self.pin_memory:
+L00385 |                 padded_sharded_param = padded_sharded_param.pin_memory()
+L00386 |         self._sharded_param_data = padded_sharded_param.view(-1)
+L00387 |         length = sharded_param.size(shard_dim) if sharded_param.numel() > 0 else 0
+L00388 |         sharded_param = padded_sharded_param.narrow(
+L00389 |             dim=shard_dim, start=0, length=length
+L00390 |         )
+L00391 |         if not sharded_param.is_contiguous():
+L00392 |             raise AssertionError(
+L00393 |                 f"Expected contiguous tensor with {self.fsdp_placement=}"
+L00394 |             )
+L00395 |         self.sharded_param = nn.Parameter(
+L00396 |             self.to_sharded_dtensor(sharded_param),
+L00397 |             requires_grad=param.requires_grad,
+L00398 |         )
+L00399 |         if self._has_sharded_grad_dtype_override:
+L00400 |             self.sharded_param.grad_dtype = self.sharded_grad_dtype
+L00401 |         # Let `param_data` be freed normally when its ref count reaches 0 when
+L00402 |         # the `fully_shard` call returns to allow provided parameters to alias
+L00403 |         self._setattr_on_modules(self.sharded_param)
+L00404 |         self.sharded_state = ShardedState.SHARDED
+L00405 | 
+L00406 |     def _resolve_spmd_types_for_storage(
+L00407 |         self,
+L00408 |         param: nn.Parameter,
+
+L01029 |     def to_sharded(self) -> None:
+L01030 |         self._setattr_on_modules(self.sharded_param)
+L01031 |         if not self.keep_unsharded_storage:
+L01032 |             self.free_unsharded_param()
+L01033 |         self.sharded_state = ShardedState.SHARDED
+L01034 | 
+L01035 |     def check_post_forward_reshard(self) -> None:
+
+L01122 |     def to_unsharded(self) -> None:
+L01123 |         # Assume that the data has been allocated and all-gathered
+L01124 |         set_requires_grad_if_needed(self.sharded_param, self._unsharded_param)
+L01125 |         self._setattr_on_modules(self._unsharded_param)
+L01126 |         if self.sharded_state == ShardedState.SHARDED_POST_FORWARD:
+L01127 |             # The data is allocated in the default stream via the post-forward
+L01128 |             # reshard and must be kept alive for the next all-gather copy-in.
+L01129 |             # Since we call this method after the copy-out, the data's lifetime
+L01130 |             # is ensured without further synchronization.
+L01131 |             self._sharded_post_forward_param = None
+L01132 |             self._sharded_post_forward_param_data = None  # free
+L01133 |         self.sharded_state = ShardedState.UNSHARDED
+L01134 | 
+L01135 |     def _setattr_on_modules(self, param: nn.Parameter) -> None:
+L01136 |         unsafe_setattr_param(
+L01137 |             self._module_info.module, self._module_info.param_name, param
+L01138 |         )
+L01139 |         for shared_module, shared_param_name in zip(
+L01140 |             self._module_info.shared_modules, self._module_info.shared_param_names
+L01141 |         ):
+L01142 |             unsafe_setattr_param(shared_module, shared_param_name, param)

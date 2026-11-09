@@ -1,0 +1,54 @@
+L00179 |     def _lazy_init(self) -> None:
+L00180 |         """
+L00181 |         Lazy initialization represents when all modules' parallelisms have
+L00182 |         finalized (e.g. FSDP has been applied to all desired modules). This
+L00183 |         means that we can determine which state is the root, and we do so by
+L00184 |         the 1st state to run forward.
+L00185 |         """
+L00186 |         if self._is_root is not None:
+L00187 |             return  # no-op: already initialized
+L00188 |         if len(self._modules) > 1:
+L00189 |             raise RuntimeError(
+L00190 |                 f"{self._state_name} requires a single root module but got {self._modules}"
+L00191 |             )
+L00192 |         root_module = self._modules[0]
+L00193 |         for module in root_module.modules():
+L00194 |             state = self._get_state_for_module(module)
+L00195 |             if (
+L00196 |                 state is not None
+L00197 |                 and state is not self
+L00198 |                 and state._state_ctx.manual_backward_finalization
+L00199 |             ):
+L00200 |                 raise RuntimeError(
+L00201 |                     "set_manual_backward_finalization must be called on the "
+L00202 |                     f"root {self._state_name} module"
+L00203 |                 )
+L00204 |         self._is_root = True
+L00205 |         visited_states: set[FSDPState] = set()
+L00206 |         for module_name, module in root_module.named_modules():
+L00207 |             if (state := self._get_state_for_module(module)) is None:
+L00208 |                 continue
+L00209 |             if module is not root_module:
+L00210 |                 if state not in visited_states and state._is_root is not None:
+L00211 |                     raise RuntimeError(
+L00212 |                         f"{self._state_name} state has already been lazily initialized for "
+L00213 |                         f"{module_name}\n{self._state_name} requires running forward through "
+L00214 |                         "the root module first"
+L00215 |                     )
+L00216 |                 state._is_root = False
+L00217 |             # A single state can map to multiple modules (e.g.
+L00218 |             # fully_shard([mod_a, mod_b, mod_c])), so dedup here.
+L00219 |             if state not in visited_states:
+L00220 |                 self._state_ctx.all_states.append(state)
+L00221 |             visited_states.add(state)
+L00222 |         # For the root, do not reshard after forward since for training,
+L00223 |         # the parameters would be freed and all-gathered immediately
+L00224 |         if self._auto_reshard_after_forward:
+L00225 |             for fsdp_param_group in self._fsdp_param_groups:
+L00226 |                 fsdp_param_group.post_forward_mesh_info = None
+L00227 |         self._init_fqns()
+L00228 |         self._init_shared_state()
+L00229 |         self._validate_no_duplicate_params()
+L00230 |         # Run parameter group lazy inits after initializing FQNs for improved
+L00231 |         # error messages
+L00232 |         for state in self._state_ctx.all_states:

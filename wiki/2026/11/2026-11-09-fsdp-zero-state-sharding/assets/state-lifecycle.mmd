@@ -1,0 +1,9 @@
+flowchart LR
+  A["长期状态<br/>参数分片 + 本地优化器状态"] --> B["前向前 AllGather<br/>物化本组完整参数"]
+  B --> C["本地样本前向<br/>保存所需激活"]
+  C --> D["前向后 reshard<br/>释放完整参数副本"]
+  D --> E["反向前 AllGather<br/>再次物化完整参数"]
+  E --> F["反向产生本地梯度"]
+  F --> G["ReduceScatter<br/>交付归约后的梯度分片"]
+  G --> H["各 rank 本地 Adam<br/>只更新自己负责的状态"]
+  H --> A

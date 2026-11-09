@@ -1,0 +1,24 @@
+{
+  "requested_on": "2026-11-09",
+  "timezone": "Asia/Shanghai",
+  "method": "web search, official page/PDF opening, PDF section reading, GitHub API and official Git fetch",
+  "queries": [
+    "site.arxiv.org 1910.02054 ZeRO memory optimizations training trillion parameter models",
+    "site.docs.pytorch.org docs 2.15 fully_shard FSDP2 reshard_after_forward reduce scatter"
+  ],
+  "primary_urls": [
+    "https://arxiv.org/abs/1910.02054v3",
+    "https://arxiv.org/pdf/1910.02054v3",
+    "https://docs.pytorch.org/docs/2.15/distributed.fsdp.fully_shard.html",
+    "https://docs.pytorch.org/docs/2.15/generated/torch.optim.Adam.html",
+    "https://github.com/pytorch/pytorch"
+  ],
+  "paper_reading": [
+    "Section 3.1 mixed-precision model state",
+    "Section 4.1 ownership and temporal use",
+    "Section 5.1-5.3 partition stages",
+    "Section 7.1-7.2 collective communication analysis",
+    "Figure 1 caption and model-state comparison"
+  ],
+  "notes": "Only primary sources support claims. Main HTML page had no readable text, so current implementation was read from freshly fetched pinned Git source. Official stable API and algorithm docs were read separately."
+}

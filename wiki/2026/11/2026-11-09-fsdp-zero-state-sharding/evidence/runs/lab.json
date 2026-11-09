@@ -1,0 +1,227 @@
+{
+  "observed_at": "2026-11-09T11:09:57.269745+08:00",
+  "environment": {
+    "python": "3.12.16 (main, Oct 26 2026, 11:31:43) [Clang 21.1.8 ]",
+    "executable": "/Users/wangyuxiao/miniforge3/envs/ai-infra/bin/python",
+    "torch": "2.15.0",
+    "torch_build_git": "d0f2af8b66b20da4baa50644c0cd3f887a2eae2e",
+    "platform": "macOS-27.0-arm64-arm-64bit",
+    "cuda_available": false
+  },
+  "state_budgets_billion_parameters_eight_ranks": {
+    "0": {
+      "shard_elements": 125000000,
+      "padded_elements": 1000000000,
+      "parameter_bytes": 2000000000,
+      "gradient_bytes": 2000000000,
+      "optimizer_bytes": 12000000000,
+      "total_bytes": 16000000000
+    },
+    "1": {
+      "shard_elements": 125000000,
+      "padded_elements": 1000000000,
+      "parameter_bytes": 2000000000,
+      "gradient_bytes": 2000000000,
+      "optimizer_bytes": 1500000000,
+      "total_bytes": 5500000000
+    },
+    "2": {
+      "shard_elements": 125000000,
+      "padded_elements": 1000000000,
+      "parameter_bytes": 2000000000,
+      "gradient_bytes": 250000000,
+      "optimizer_bytes": 1500000000,
+      "total_bytes": 3750000000
+    },
+    "3": {
+      "shard_elements": 125000000,
+      "padded_elements": 1000000000,
+      "parameter_bytes": 250000000,
+      "gradient_bytes": 250000000,
+      "optimizer_bytes": 1500000000,
+      "total_bytes": 2000000000
+    }
+  },
+  "ideal_ring_eight_elements_four_ranks": {
+    "all_gather_calls": 2,
+    "all_gather_sent_bytes": 24,
+    "reduce_scatter_sent_bytes": 12,
+    "total_sent_bytes": 36,
+    "ddp_sent_bytes": 24
+  },
+  "probe": {
+    "backend": "gloo",
+    "world_size": 2,
+    "dtype": "float64",
+    "parameter_schedule": "one gather before forward; retain full parameters through backward",
+    "scope": "explicit teaching collectives and local Adam; logical state counts, CPU correctness",
+    "ranks": [
+      {
+        "rank": 0,
+        "cases": [
+          {
+            "rank": 0,
+            "normalization": "sample_weighted",
+            "steps": 3,
+            "local_samples": 1,
+            "global_samples": 4,
+            "parameters": 5,
+            "shard_elements": 3,
+            "local_parameter_and_moments_elements": 9,
+            "local_gradient_elements": 3,
+            "padding_zero": true,
+            "training_collectives": [
+              "all_gather_parameters",
+              "reduce_scatter_gradients",
+              "all_gather_parameters",
+              "reduce_scatter_gradients",
+              "all_gather_parameters",
+              "reduce_scatter_gradients"
+            ],
+            "validation_all_gathers": 5,
+            "first_global_gradient": [
+              0.175,
+              0.4125,
+              0.525,
+              0.7625,
+              0.9374999999999999
+            ],
+            "final_parameter": [
+              0.07012730486099678,
+              0.17004227921456624,
+              0.27003188957267926,
+              0.37002094043537925,
+              0.4700363668049371
+            ],
+            "parameter_error": 0.0,
+            "first_moment_error": 2.7755575615628914e-17,
+            "second_moment_error": 2.168404344971009e-19,
+            "gradient_error": 1.1102230246251565e-16
+          },
+          {
+            "rank": 0,
+            "normalization": "rank_mean",
+            "steps": 3,
+            "local_samples": 1,
+            "global_samples": 4,
+            "parameters": 5,
+            "shard_elements": 3,
+            "local_parameter_and_moments_elements": 9,
+            "local_gradient_elements": 3,
+            "padding_zero": true,
+            "training_collectives": [
+              "all_gather_parameters",
+              "reduce_scatter_gradients",
+              "all_gather_parameters",
+              "reduce_scatter_gradients",
+              "all_gather_parameters",
+              "reduce_scatter_gradients"
+            ],
+            "validation_all_gathers": 5,
+            "first_global_gradient": [
+              0.3333333333333333,
+              0.27499999999999997,
+              0.5666666666666667,
+              0.5083333333333333,
+              0.8416666666666666
+            ],
+            "final_parameter": [
+              0.07007866400005407,
+              0.17004228261304993,
+              0.27004080836167,
+              0.37002093992423546,
+              0.4700412880760105
+            ],
+            "parameter_error": 4.8640860942708586e-05,
+            "first_moment_error": 0.06742950783942334,
+            "second_moment_error": 0.0009305638603049216,
+            "gradient_error": 0.24417007836549054
+          }
+        ]
+      },
+      {
+        "rank": 1,
+        "cases": [
+          {
+            "rank": 1,
+            "normalization": "sample_weighted",
+            "steps": 3,
+            "local_samples": 3,
+            "global_samples": 4,
+            "parameters": 5,
+            "shard_elements": 3,
+            "local_parameter_and_moments_elements": 9,
+            "local_gradient_elements": 3,
+            "padding_zero": true,
+            "training_collectives": [
+              "all_gather_parameters",
+              "reduce_scatter_gradients",
+              "all_gather_parameters",
+              "reduce_scatter_gradients",
+              "all_gather_parameters",
+              "reduce_scatter_gradients"
+            ],
+            "validation_all_gathers": 5,
+            "first_global_gradient": [
+              0.175,
+              0.4125,
+              0.525,
+              0.7625,
+              0.9374999999999999
+            ],
+            "final_parameter": [
+              0.07012730486099678,
+              0.17004227921456624,
+              0.27003188957267926,
+              0.37002094043537925,
+              0.4700363668049371
+            ],
+            "parameter_error": 0.0,
+            "first_moment_error": 2.7755575615628914e-17,
+            "second_moment_error": 2.168404344971009e-19,
+            "gradient_error": 1.1102230246251565e-16
+          },
+          {
+            "rank": 1,
+            "normalization": "rank_mean",
+            "steps": 3,
+            "local_samples": 3,
+            "global_samples": 4,
+            "parameters": 5,
+            "shard_elements": 3,
+            "local_parameter_and_moments_elements": 9,
+            "local_gradient_elements": 3,
+            "padding_zero": true,
+            "training_collectives": [
+              "all_gather_parameters",
+              "reduce_scatter_gradients",
+              "all_gather_parameters",
+              "reduce_scatter_gradients",
+              "all_gather_parameters",
+              "reduce_scatter_gradients"
+            ],
+            "validation_all_gathers": 5,
+            "first_global_gradient": [
+              0.3333333333333333,
+              0.27499999999999997,
+              0.5666666666666667,
+              0.5083333333333333,
+              0.8416666666666666
+            ],
+            "final_parameter": [
+              0.07007866400005407,
+              0.17004228261304993,
+              0.27004080836167,
+              0.37002093992423546,
+              0.4700412880760105
+            ],
+            "parameter_error": 4.8640860942708586e-05,
+            "first_moment_error": 0.06742950783942334,
+            "second_moment_error": 0.0009305638603049216,
+            "gradient_error": 0.24417007836549054
+          }
+        ]
+      }
+    ]
+  }
+}

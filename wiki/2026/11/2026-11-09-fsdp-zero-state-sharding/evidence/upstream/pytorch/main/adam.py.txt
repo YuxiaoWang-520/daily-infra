@@ -1,0 +1,65 @@
+L00454 | 
+L00455 |         # Decay the first and second moment running average coefficient
+L00456 | 
+L00457 |         exp_avg.lerp_(grad, 1 - device_beta1)
+L00458 | 
+L00459 |         # Nested if is necessary to bypass jitscript rules
+L00460 |         if differentiable and isinstance(beta2, Tensor):
+L00461 |             if beta2.requires_grad:
+L00462 |                 # Using lerp to only use 2 operations bc addcmul's value cannot be a tensor
+L00463 |                 # Showing equivalence of differentiable path and nondifferentiable path
+
+L00469 |                 # expavg.lerp(grad^2, 1-beta2)
+L00470 |                 exp_avg_sq.lerp_(torch.square(grad), weight=1 - beta2)
+L00471 |             else:
+L00472 |                 exp_avg_sq.mul_(beta2).addcmul_(
+L00473 |                     grad, grad, value=cast(float, 1 - beta2)
+L00474 |                 )
+L00475 |         else:
+L00476 |             exp_avg_sq.mul_(beta2).addcmul_(grad, grad, value=1 - beta2)  # type: ignore[arg-type]
+L00477 | 
+L00478 |         if capturable or differentiable:
+L00479 |             step = step_t
+L00480 | 
+L00481 |             # Nested if is necessary to bypass jitscript rules
+L00482 |             if differentiable and isinstance(beta1, Tensor):
+L00483 |                 if beta1.requires_grad:
+L00484 |                     bias_correction1 = 1 - beta1 ** step.clone()
+L00485 |                 else:
+L00486 |                     bias_correction1 = 1 - beta1**step
+L00487 |             else:
+L00488 |                 bias_correction1 = 1 - beta1**step
+L00489 | 
+L00490 |             # Nested if is necessary to bypass jitscript rules
+L00491 |             if differentiable and isinstance(beta2, Tensor):
+L00492 |                 if beta2.requires_grad:
+L00493 |                     bias_correction2 = 1 - beta2 ** step.clone()
+L00494 |                 else:
+
+L00522 |                 ).add_(eps / step_size_neg)
+L00523 | 
+L00524 |             if differentiable:
+L00525 |                 param.addcdiv_(exp_avg.clone(), denom)
+L00526 |             else:
+L00527 |                 param.addcdiv_(exp_avg, denom)
+L00528 |         else:
+L00529 |             step = _get_value(step_t)
+L00530 | 
+L00531 |             bias_correction1 = 1 - beta1**step
+L00532 |             bias_correction2 = 1 - beta2**step
+L00533 | 
+L00534 |             step_size = lr / bias_correction1
+L00535 | 
+L00536 |             bias_correction2_sqrt = bias_correction2**0.5
+L00537 | 
+
+L00544 |             else:
+L00545 |                 denom = (exp_avg_sq.sqrt() / bias_correction2_sqrt).add_(eps)
+L00546 | 
+L00547 |             param.addcdiv_(exp_avg, denom, value=-step_size)  # type: ignore[arg-type]
+L00548 | 
+L00549 |         # Lastly, switch back to complex view
+L00550 |         if amsgrad and torch.is_complex(params[i]):
+L00551 |             max_exp_avg_sqs[i] = torch.view_as_complex(max_exp_avg_sqs[i])
+L00552 | 
+L00553 | 
