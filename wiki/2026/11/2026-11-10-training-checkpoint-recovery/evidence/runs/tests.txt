@@ -1,0 +1,31 @@
+test_first_save_failure_does_not_publish_partial_file (test_checkpoint_io.CheckpointIOTests.test_first_save_failure_does_not_publish_partial_file) ... ok
+test_fsync_failure_preserves_previous_checkpoint (test_checkpoint_io.CheckpointIOTests.test_fsync_failure_preserves_previous_checkpoint) ... ok
+test_loader_rejects_non_dictionary_root (test_checkpoint_io.CheckpointIOTests.test_loader_rejects_non_dictionary_root) ... ok
+test_parent_must_already_exist (test_checkpoint_io.CheckpointIOTests.test_parent_must_already_exist) ... ok
+test_partial_serialization_failure_preserves_previous_checkpoint (test_checkpoint_io.CheckpointIOTests.test_partial_serialization_failure_preserves_previous_checkpoint) ... ok
+test_replace_failure_preserves_previous_checkpoint (test_checkpoint_io.CheckpointIOTests.test_replace_failure_preserves_previous_checkpoint) ... ok
+test_roundtrip_tensor_and_primitive_state (test_checkpoint_io.CheckpointIOTests.test_roundtrip_tensor_and_primitive_state) ... ok
+test_success_replaces_previous_checkpoint (test_checkpoint_io.CheckpointIOTests.test_success_replaces_previous_checkpoint) ... ok
+test_full_restore_matches_every_recorded_state (test_resume_probe.FreshProcessTests.test_full_restore_matches_every_recorded_state) ... ok
+test_omitting_cursor_replays_wrong_examples (test_resume_probe.FreshProcessTests.test_omitting_cursor_replays_wrong_examples) ... ok
+test_omitting_optimizer_changes_parameters (test_resume_probe.FreshProcessTests.test_omitting_optimizer_changes_parameters) ... ok
+test_omitting_rng_changes_loss (test_resume_probe.FreshProcessTests.test_omitting_rng_changes_loss) ... ok
+test_omitting_scheduler_changes_lr (test_resume_probe.FreshProcessTests.test_omitting_scheduler_changes_lr) ... ok
+test_probe_preserves_callers_rng_and_thread_setting (test_resume_probe.FreshProcessTests.test_probe_preserves_callers_rng_and_thread_setting) ... ok
+test_runs_five_new_processes_after_losing_three_steps (test_resume_probe.FreshProcessTests.test_runs_five_new_processes_after_losing_three_steps) ... ok
+test_rejects_boolean_progress (test_resume_probe.SnapshotTests.test_rejects_boolean_progress) ... ok
+test_rejects_changed_training_configuration (test_resume_probe.SnapshotTests.test_rejects_changed_training_configuration) ... ok
+test_rejects_duplicate_sample_order (test_resume_probe.SnapshotTests.test_rejects_duplicate_sample_order) ... ok
+test_rejects_inconsistent_consumed_cursor (test_resume_probe.SnapshotTests.test_rejects_inconsistent_consumed_cursor) ... ok
+test_rejects_unknown_negative_control (test_resume_probe.SnapshotTests.test_rejects_unknown_negative_control) ... ok
+test_rejects_unknown_schema (test_resume_probe.SnapshotTests.test_rejects_unknown_schema) ... ok
+test_repeated_restores_from_same_snapshot_are_equivalent (test_resume_probe.SnapshotTests.test_repeated_restores_from_same_snapshot_are_equivalent) ... ok
+test_restore_reproduces_next_batch_and_loss (test_resume_probe.SnapshotTests.test_restore_reproduces_next_batch_and_loss) ... ok
+test_restored_training_does_not_mutate_input_optimizer_snapshot (test_resume_probe.SnapshotTests.test_restored_training_does_not_mutate_input_optimizer_snapshot) ... ok
+test_snapshot_does_not_alias_live_model_or_optimizer (test_resume_probe.SnapshotTests.test_snapshot_does_not_alias_live_model_or_optimizer) ... ok
+test_snapshot_tracks_committed_boundary (test_resume_probe.SnapshotTests.test_snapshot_tracks_committed_boundary) ... ok
+
+----------------------------------------------------------------------
+Ran 26 tests in 5.664s
+
+OK

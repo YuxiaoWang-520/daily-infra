@@ -1,0 +1,78 @@
+Source: https://github.com/pytorch/pytorch/blob/a68f117948121cdff578ff7813c5c906ff529b57/torch/distributed/checkpoint/staging.py
+Commit: a68f117948121cdff578ff7813c5c906ff529b57
+Ranges: 40-64, 106-130, 196-219
+
+L00040 | class AsyncStager(Protocol):
+L00041 |     """
+L00042 |     This protocol is meant to provide customization and extensibility for dcp.async_save, allowing users
+L00043 |     to customize how data is staged previous to executing the usual dcp.save path in parallel.
+L00044 |     The expected order of operations (concretely defined in `torch.distributed.state_dict_saver.async_save`)
+L00045 |     is the following:
+L00046 | 
+L00047 |     1. AsyncStager.stage_data(state_dict):
+L00048 |         This call gives the AsyncStager the opportunity to 'stage'
+L00049 |         the state_dict. The expectation and purpose of staging in this context is to create a "training-safe"
+L00050 |         representation of the state dict, meaning that any updates to module data after staging is complete
+L00051 |         should not be reflected in the state dict returned from this method. For example, in the default
+L00052 |         case a copy of the entire state dict is created on CPU RAM and returned here, allowing users
+L00053 |         to continue training without risking changes to data which is being serialized.
+L00054 | 
+L00055 |     2. dcp.save is called on the state_dict returned from stage in parallel. This call is responsible
+L00056 |         for serializing the state_dict and writing it to storage.
+L00057 | 
+L00058 |     3. If AsyncStager.should_synchronize_after_execute is True, this method will be called immediately after
+L00059 |         the serialization thread starts and before returning from dcp.async_save. If this is set to False,
+L00060 |         the assumption is the user has defined a custom synchronization point for the purpose of further
+L00061 |         optimizing save latency in the training loop (for example, by overlapping staging with the
+L00062 |         forward/backward pass), and it is the respondsibility of the user to call `AsyncStager.synchronize_staging`
+L00063 |         at the appropriate time.
+L00064 | 
+L00106 | class StagingOptions:
+L00107 |     """
+L00108 |     Configuration options for checkpoint staging behavior.
+L00109 | 
+L00110 |     Attributes:
+L00111 |         use_pinned_memory (bool): Enable pinned memory allocation for faster
+L00112 |             CPU-GPU transfers. Requires CUDA to be available. Default: True
+L00113 |         use_shared_memory (bool): Enable shared memory for multi-process
+L00114 |             scenarios. Useful when multiple processes need access to the
+L00115 |             same staged data. Default: True
+L00116 |         use_async_staging (bool): Enable asynchronous staging using a
+L00117 |             background thread pool. Allows overlapping computation with
+L00118 |             staging operations. Requires CUDA. Default: True
+L00119 |         use_non_blocking_copy (bool): Use non-blocking device memory
+L00120 |             copies with stream synchronization. Improves performance by
+L00121 |             allowing CPU work to continue during GPU transfers. Default: True
+L00122 | 
+L00123 |     Note:
+L00124 |         CUDA-dependent features will raise exception if CUDA is not available.
+L00125 |     """
+L00126 | 
+L00127 |     use_pinned_memory: bool = True
+L00128 |     use_shared_memory: bool = True
+L00129 |     use_async_staging: bool = True
+L00130 |     use_non_blocking_copy: bool = True
+L00196 |     def stage(
+L00197 |         self,
+L00198 |         state_dict: STATE_DICT_TYPE,
+L00199 |         **kwargs: Any,
+L00200 |     ) -> STATE_DICT_TYPE | Future[STATE_DICT_TYPE]:
+L00201 |         """
+L00202 |         This function is responsible for staging the state_dict.
+L00203 |         See class docstring for more details on staging.
+L00204 |         If use_async_staging is True, it will return a Future object that will be
+L00205 |         fulfilled when staging is complete.
+L00206 |         If use_async_staging is False, it will return the fully staged state_dict.
+L00207 | 
+L00208 |         Args:
+L00209 |             state_dict (STATE_DICT_TYPE): The state_dict to be staged.
+L00210 |         """
+L00211 |         if self._config.use_async_staging:
+L00212 |             if self._staging_executor is None:
+L00213 |                 raise AssertionError(
+L00214 |                     "staging_executor should not be None for async staging"
+L00215 |                 )
+L00216 |             self._staging_future = self._staging_executor.submit(
+L00217 |                 self._stage,
+L00218 |                 state_dict,
+L00219 |                 **kwargs,

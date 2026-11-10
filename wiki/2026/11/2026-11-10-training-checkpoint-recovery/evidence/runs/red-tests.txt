@@ -1,0 +1,218 @@
+test_first_save_failure_does_not_publish_partial_file (test_checkpoint_io.CheckpointIOTests.test_first_save_failure_does_not_publish_partial_file) ... ERROR
+test_fsync_failure_preserves_previous_checkpoint (test_checkpoint_io.CheckpointIOTests.test_fsync_failure_preserves_previous_checkpoint) ... ERROR
+test_loader_rejects_non_dictionary_root (test_checkpoint_io.CheckpointIOTests.test_loader_rejects_non_dictionary_root) ... ERROR
+test_parent_must_already_exist (test_checkpoint_io.CheckpointIOTests.test_parent_must_already_exist) ... ERROR
+test_partial_serialization_failure_preserves_previous_checkpoint (test_checkpoint_io.CheckpointIOTests.test_partial_serialization_failure_preserves_previous_checkpoint) ... ERROR
+test_replace_failure_preserves_previous_checkpoint (test_checkpoint_io.CheckpointIOTests.test_replace_failure_preserves_previous_checkpoint) ... ERROR
+test_roundtrip_tensor_and_primitive_state (test_checkpoint_io.CheckpointIOTests.test_roundtrip_tensor_and_primitive_state) ... ERROR
+test_success_replaces_previous_checkpoint (test_checkpoint_io.CheckpointIOTests.test_success_replaces_previous_checkpoint) ... ERROR
+setUpClass (test_resume_probe.FreshProcessTests) ... ERROR
+test_rejects_boolean_progress (test_resume_probe.SnapshotTests.test_rejects_boolean_progress) ... ERROR
+test_rejects_changed_training_configuration (test_resume_probe.SnapshotTests.test_rejects_changed_training_configuration) ... ERROR
+test_rejects_duplicate_sample_order (test_resume_probe.SnapshotTests.test_rejects_duplicate_sample_order) ... ERROR
+test_rejects_inconsistent_consumed_cursor (test_resume_probe.SnapshotTests.test_rejects_inconsistent_consumed_cursor) ... ERROR
+test_rejects_unknown_negative_control (test_resume_probe.SnapshotTests.test_rejects_unknown_negative_control) ... ERROR
+test_rejects_unknown_schema (test_resume_probe.SnapshotTests.test_rejects_unknown_schema) ... ERROR
+test_restore_reproduces_next_batch_and_loss (test_resume_probe.SnapshotTests.test_restore_reproduces_next_batch_and_loss) ... ERROR
+test_snapshot_does_not_alias_live_model_or_optimizer (test_resume_probe.SnapshotTests.test_snapshot_does_not_alias_live_model_or_optimizer) ... ERROR
+test_snapshot_tracks_committed_boundary (test_resume_probe.SnapshotTests.test_snapshot_tracks_committed_boundary) ... ERROR
+
+======================================================================
+ERROR: test_first_save_failure_does_not_publish_partial_file (test_checkpoint_io.CheckpointIOTests.test_first_save_failure_does_not_publish_partial_file)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-10-training-checkpoint-recovery/code/test_checkpoint_io.py", line 64, in test_first_save_failure_does_not_publish_partial_file
+    with patch("checkpoint_io.torch.save", side_effect=OSError("injected write")):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/miniforge3/envs/ai-infra/lib/python3.12/unittest/mock.py", line 1451, in __enter__
+    self.target = self.getter()
+                  ^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/miniforge3/envs/ai-infra/lib/python3.12/pkgutil.py", line 528, in resolve_name
+    result = getattr(result, p)
+             ^^^^^^^^^^^^^^^^^^
+AttributeError: module 'checkpoint_io' has no attribute 'torch'
+
+======================================================================
+ERROR: test_fsync_failure_preserves_previous_checkpoint (test_checkpoint_io.CheckpointIOTests.test_fsync_failure_preserves_previous_checkpoint)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-10-training-checkpoint-recovery/code/test_checkpoint_io.py", line 50, in test_fsync_failure_preserves_previous_checkpoint
+    atomic_save(self.old, self.path)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-10-training-checkpoint-recovery/code/checkpoint_io.py", line 7, in atomic_save
+    raise NotImplementedError("write, flush, fsync and publish one frozen payload")
+NotImplementedError: write, flush, fsync and publish one frozen payload
+
+======================================================================
+ERROR: test_loader_rejects_non_dictionary_root (test_checkpoint_io.CheckpointIOTests.test_loader_rejects_non_dictionary_root)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-10-training-checkpoint-recovery/code/test_checkpoint_io.py", line 77, in test_loader_rejects_non_dictionary_root
+    load_checkpoint(self.path)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-10-training-checkpoint-recovery/code/checkpoint_io.py", line 11, in load_checkpoint
+    raise NotImplementedError("load a CPU checkpoint with weights_only=True")
+NotImplementedError: load a CPU checkpoint with weights_only=True
+
+======================================================================
+ERROR: test_parent_must_already_exist (test_checkpoint_io.CheckpointIOTests.test_parent_must_already_exist)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-10-training-checkpoint-recovery/code/test_checkpoint_io.py", line 71, in test_parent_must_already_exist
+    atomic_save(self.old, self.root / "missing" / "latest.pt")
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-10-training-checkpoint-recovery/code/checkpoint_io.py", line 7, in atomic_save
+    raise NotImplementedError("write, flush, fsync and publish one frozen payload")
+NotImplementedError: write, flush, fsync and publish one frozen payload
+
+======================================================================
+ERROR: test_partial_serialization_failure_preserves_previous_checkpoint (test_checkpoint_io.CheckpointIOTests.test_partial_serialization_failure_preserves_previous_checkpoint)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-10-training-checkpoint-recovery/code/test_checkpoint_io.py", line 38, in test_partial_serialization_failure_preserves_previous_checkpoint
+    atomic_save(self.old, self.path)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-10-training-checkpoint-recovery/code/checkpoint_io.py", line 7, in atomic_save
+    raise NotImplementedError("write, flush, fsync and publish one frozen payload")
+NotImplementedError: write, flush, fsync and publish one frozen payload
+
+======================================================================
+ERROR: test_replace_failure_preserves_previous_checkpoint (test_checkpoint_io.CheckpointIOTests.test_replace_failure_preserves_previous_checkpoint)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-10-training-checkpoint-recovery/code/test_checkpoint_io.py", line 57, in test_replace_failure_preserves_previous_checkpoint
+    atomic_save(self.old, self.path)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-10-training-checkpoint-recovery/code/checkpoint_io.py", line 7, in atomic_save
+    raise NotImplementedError("write, flush, fsync and publish one frozen payload")
+NotImplementedError: write, flush, fsync and publish one frozen payload
+
+======================================================================
+ERROR: test_roundtrip_tensor_and_primitive_state (test_checkpoint_io.CheckpointIOTests.test_roundtrip_tensor_and_primitive_state)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-10-training-checkpoint-recovery/code/test_checkpoint_io.py", line 27, in test_roundtrip_tensor_and_primitive_state
+    atomic_save({**self.old, "rng": (3, (1, 2), None)}, self.path)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-10-training-checkpoint-recovery/code/checkpoint_io.py", line 7, in atomic_save
+    raise NotImplementedError("write, flush, fsync and publish one frozen payload")
+NotImplementedError: write, flush, fsync and publish one frozen payload
+
+======================================================================
+ERROR: test_success_replaces_previous_checkpoint (test_checkpoint_io.CheckpointIOTests.test_success_replaces_previous_checkpoint)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-10-training-checkpoint-recovery/code/test_checkpoint_io.py", line 32, in test_success_replaces_previous_checkpoint
+    atomic_save(self.old, self.path)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-10-training-checkpoint-recovery/code/checkpoint_io.py", line 7, in atomic_save
+    raise NotImplementedError("write, flush, fsync and publish one frozen payload")
+NotImplementedError: write, flush, fsync and publish one frozen payload
+
+======================================================================
+ERROR: setUpClass (test_resume_probe.FreshProcessTests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-10-training-checkpoint-recovery/code/test_resume_probe.py", line 84, in setUpClass
+    cls.result = run_probe()
+                 ^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-10-training-checkpoint-recovery/code/resume_probe.py", line 21, in run_probe
+    raise NotImplementedError("compare fresh-process resumes with continuous training")
+NotImplementedError: compare fresh-process resumes with continuous training
+
+======================================================================
+ERROR: test_rejects_boolean_progress (test_resume_probe.SnapshotTests.test_rejects_boolean_progress)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-10-training-checkpoint-recovery/code/test_resume_probe.py", line 17, in setUp
+    self.trainer = Trainer()
+                   ^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-10-training-checkpoint-recovery/code/resume_probe.py", line 7, in __init__
+    raise NotImplementedError("construct the fixed CPU training fixture")
+NotImplementedError: construct the fixed CPU training fixture
+
+======================================================================
+ERROR: test_rejects_changed_training_configuration (test_resume_probe.SnapshotTests.test_rejects_changed_training_configuration)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-10-training-checkpoint-recovery/code/test_resume_probe.py", line 17, in setUp
+    self.trainer = Trainer()
+                   ^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-10-training-checkpoint-recovery/code/resume_probe.py", line 7, in __init__
+    raise NotImplementedError("construct the fixed CPU training fixture")
+NotImplementedError: construct the fixed CPU training fixture
+
+======================================================================
+ERROR: test_rejects_duplicate_sample_order (test_resume_probe.SnapshotTests.test_rejects_duplicate_sample_order)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-10-training-checkpoint-recovery/code/test_resume_probe.py", line 17, in setUp
+    self.trainer = Trainer()
+                   ^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-10-training-checkpoint-recovery/code/resume_probe.py", line 7, in __init__
+    raise NotImplementedError("construct the fixed CPU training fixture")
+NotImplementedError: construct the fixed CPU training fixture
+
+======================================================================
+ERROR: test_rejects_inconsistent_consumed_cursor (test_resume_probe.SnapshotTests.test_rejects_inconsistent_consumed_cursor)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-10-training-checkpoint-recovery/code/test_resume_probe.py", line 17, in setUp
+    self.trainer = Trainer()
+                   ^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-10-training-checkpoint-recovery/code/resume_probe.py", line 7, in __init__
+    raise NotImplementedError("construct the fixed CPU training fixture")
+NotImplementedError: construct the fixed CPU training fixture
+
+======================================================================
+ERROR: test_rejects_unknown_negative_control (test_resume_probe.SnapshotTests.test_rejects_unknown_negative_control)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-10-training-checkpoint-recovery/code/test_resume_probe.py", line 17, in setUp
+    self.trainer = Trainer()
+                   ^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-10-training-checkpoint-recovery/code/resume_probe.py", line 7, in __init__
+    raise NotImplementedError("construct the fixed CPU training fixture")
+NotImplementedError: construct the fixed CPU training fixture
+
+======================================================================
+ERROR: test_rejects_unknown_schema (test_resume_probe.SnapshotTests.test_rejects_unknown_schema)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-10-training-checkpoint-recovery/code/test_resume_probe.py", line 17, in setUp
+    self.trainer = Trainer()
+                   ^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-10-training-checkpoint-recovery/code/resume_probe.py", line 7, in __init__
+    raise NotImplementedError("construct the fixed CPU training fixture")
+NotImplementedError: construct the fixed CPU training fixture
+
+======================================================================
+ERROR: test_restore_reproduces_next_batch_and_loss (test_resume_probe.SnapshotTests.test_restore_reproduces_next_batch_and_loss)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-10-training-checkpoint-recovery/code/test_resume_probe.py", line 17, in setUp
+    self.trainer = Trainer()
+                   ^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-10-training-checkpoint-recovery/code/resume_probe.py", line 7, in __init__
+    raise NotImplementedError("construct the fixed CPU training fixture")
+NotImplementedError: construct the fixed CPU training fixture
+
+======================================================================
+ERROR: test_snapshot_does_not_alias_live_model_or_optimizer (test_resume_probe.SnapshotTests.test_snapshot_does_not_alias_live_model_or_optimizer)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-10-training-checkpoint-recovery/code/test_resume_probe.py", line 17, in setUp
+    self.trainer = Trainer()
+                   ^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-10-training-checkpoint-recovery/code/resume_probe.py", line 7, in __init__
+    raise NotImplementedError("construct the fixed CPU training fixture")
+NotImplementedError: construct the fixed CPU training fixture
+
+======================================================================
+ERROR: test_snapshot_tracks_committed_boundary (test_resume_probe.SnapshotTests.test_snapshot_tracks_committed_boundary)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-10-training-checkpoint-recovery/code/test_resume_probe.py", line 17, in setUp
+    self.trainer = Trainer()
+                   ^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-10-training-checkpoint-recovery/code/resume_probe.py", line 7, in __init__
+    raise NotImplementedError("construct the fixed CPU training fixture")
+NotImplementedError: construct the fixed CPU training fixture
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.008s
+
+FAILED (errors=18)

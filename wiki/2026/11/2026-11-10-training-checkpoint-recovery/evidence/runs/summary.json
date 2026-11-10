@@ -1,0 +1,42 @@
+{
+  "tested_code_sha256": {
+    "code/checkpoint_io.py": "692794f706e6f926b0636a689ddfccffbe251c238004b75412aa2b18d990cf34",
+    "code/exercise_1.py": "d8353fbe31bba1da0e8509588d8d231e573752a07942c96184c8e3d9046fd135",
+    "code/exercise_2.py": "d7c54bc5f1533b82f0ebf1542192416811455f641b17856d113770e66bf424a0",
+    "code/resume_probe.py": "f14a7eaaa842af2d339fa65d4af0d71259770fdd347800e8b487491b65ae7e7a",
+    "code/run_lab.py": "70bcf15b0146c00e05176598c23d16e1cb23027626c3d35824e4c1493086d7db",
+    "code/test_checkpoint_io.py": "c05eb29cd05b810ada480401b461d04bd660029741af90848d7efa3ac0d2a478",
+    "code/test_resume_probe.py": "2bb78049ce7d85df621ec82e729459c92441b9784919cbef026ddfc51cabfb89"
+  },
+  "tests": {
+    "count": 26,
+    "exit_code": 0,
+    "command": "PYTHONDONTWRITEBYTECODE=1 /Users/wangyuxiao/miniforge3/envs/ai-infra/bin/python -m unittest discover -s code -p 'test_*.py' -v",
+    "elapsed_seconds_from_unittest": 5.664
+  },
+  "environment": {
+    "hostname": "wyx-macmini.local",
+    "cpu": "Apple M6",
+    "platform": "macOS-27.0-arm64-arm-64bit",
+    "python": "3.12.16 (main, Oct 26 2026, 11:31:43) [Clang 21.1.8 ]",
+    "python_executable": "/Users/wangyuxiao/miniforge3/envs/ai-infra/bin/python",
+    "torch": "2.15.0",
+    "torch_git": "d0f2af8b66b20da4baa50644c0cd3f887a2eae2e",
+    "cuda_available": false
+  },
+  "lab": {
+    "exit_code": 0,
+    "command": "PYTHONDONTWRITEBYTECODE=1 /Users/wangyuxiao/miniforge3/envs/ai-infra/bin/python code/run_lab.py --output /tmp/daily-infra-nov10-final-lab.json",
+    "fresh_processes": 5
+  },
+  "lint": {
+    "ruff_check_exit_code": 0,
+    "ruff_format_check_exit_code": 0
+  },
+  "regressions": {
+    "new_tests": 2,
+    "red_failures": 2,
+    "fixed": "deepcopy optimizer state on restore",
+    "negative_controls_unchanged": true
+  }
+}

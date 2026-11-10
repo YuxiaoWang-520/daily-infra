@@ -1,0 +1,20 @@
+{
+  "research_date": "2026-11-10",
+  "timezone": "Asia/Shanghai",
+  "official_repository": "https://github.com/pytorch/pytorch",
+  "official_remote": "https://github.com/pytorch/pytorch.git",
+  "default_branch": "main",
+  "source_commit": "a68f117948121cdff578ff7813c5c906ff529b57",
+  "source_commit_time": "2026-11-10T02:02:46Z",
+  "stable_release": "v2.15.0",
+  "stable_release_published_at": "2026-10-28T17:09:49Z",
+  "stable_tag_commit": "31a77fc9c0a7c6fff15a1ff58c743f53b1a9d457",
+  "runtime": {
+    "python": "3.12.16",
+    "torch": "2.15.0",
+    "torch_git": "d0f2af8b66b20da4baa50644c0cd3f887a2eae2e",
+    "device": "cpu",
+    "dtype": "float64"
+  },
+  "comparison": "Savers/staging whole files identical between tag and selected main; see manifest and stable-to-main.diff for other files. Runtime build differs from both source references."
+}

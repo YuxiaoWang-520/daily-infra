@@ -1,0 +1,15 @@
+sequenceDiagram
+    participant T as 训练主线程
+    participant S as 独立快照
+    participant F as 存储
+    participant R as 新进程
+    T->>T: 完成 optimizer / scheduler / zero_grad，第 5 步
+    T->>S: 冻结模型、优化器、RNG、已消费游标 10
+    Note over T,S: staging 完成后才能修改被保存的状态
+    S->>F: 写临时文件并同步
+    F->>F: 发布完整 checkpoint
+    Note over S,F: 保存完成才可声明可恢复
+    T->>T: 继续到第 8 步，随后放弃内存状态
+    R->>F: 读取第 5 步 checkpoint
+    R->>R: 构造对象，再装入状态，最后恢复 RNG
+    R->>R: 从样本位置 10 运行第 6—10 步

@@ -1,0 +1,25 @@
+test_full_restore_matches_every_recorded_state (test_resume_probe.FreshProcessTests.test_full_restore_matches_every_recorded_state) ... ok
+test_repeated_restores_from_same_snapshot_are_equivalent (test_resume_probe.SnapshotTests.test_repeated_restores_from_same_snapshot_are_equivalent) ... FAIL
+test_restore_reproduces_next_batch_and_loss (test_resume_probe.SnapshotTests.test_restore_reproduces_next_batch_and_loss) ... ok
+test_restored_training_does_not_mutate_input_optimizer_snapshot (test_resume_probe.SnapshotTests.test_restored_training_does_not_mutate_input_optimizer_snapshot) ... FAIL
+
+======================================================================
+FAIL: test_repeated_restores_from_same_snapshot_are_equivalent (test_resume_probe.SnapshotTests.test_repeated_restores_from_same_snapshot_are_equivalent)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-10-training-checkpoint-recovery/code/test_resume_probe.py", line 68, in test_repeated_restores_from_same_snapshot_are_equivalent
+    self.assertTrue(torch.equal(expected, actual))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_restored_training_does_not_mutate_input_optimizer_snapshot (test_resume_probe.SnapshotTests.test_restored_training_does_not_mutate_input_optimizer_snapshot)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-10-training-checkpoint-recovery/code/test_resume_probe.py", line 56, in test_restored_training_does_not_mutate_input_optimizer_snapshot
+    self.assertTrue(
+AssertionError: False is not true : input snapshot changed: 0/step
+
+----------------------------------------------------------------------
+Ran 4 tests in 6.271s
+
+FAILED (failures=2)

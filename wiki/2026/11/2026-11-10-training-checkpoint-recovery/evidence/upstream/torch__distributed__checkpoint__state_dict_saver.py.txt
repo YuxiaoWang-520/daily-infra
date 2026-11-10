@@ -1,0 +1,148 @@
+Source: https://github.com/pytorch/pytorch/blob/a68f117948121cdff578ff7813c5c906ff529b57/torch/distributed/checkpoint/state_dict_saver.py
+Commit: a68f117948121cdff578ff7813c5c906ff529b57
+Ranges: 206-238, 313-397, 494-519
+
+L00206 | @dataclass
+L00207 | class AsyncSaveResponse:
+L00208 |     """This class contains futures for staging and upload completion.
+L00209 |     It is returned by async_save().
+L00210 |     staging_completion is a future that indicates when local copy
+L00211 |     of state_dict is complete.
+L00212 |     upload_completion is a future that indicates when a checkpoint
+L00213 |     completed saving.
+L00214 |     """
+L00215 | 
+L00216 |     staging_completion: Future[None]
+L00217 |     upload_completion: Future[None]
+L00218 | 
+L00219 | 
+L00220 | @_dcp_method_logger(log_exceptions=True)
+L00221 | def async_save(
+L00222 |     state_dict: STATE_DICT_TYPE,
+L00223 |     *,
+L00224 |     checkpoint_id: str | os.PathLike | None = None,
+L00225 |     storage_writer: StorageWriter | None = None,
+L00226 |     planner: SavePlanner | None = None,
+L00227 |     process_group: dist.ProcessGroup | None = None,
+L00228 |     async_checkpointer_type: AsyncCheckpointerType = AsyncCheckpointerType.THREAD,
+L00229 |     async_stager: AsyncStager | None = None,
+L00230 |     no_dist: bool = False,
+L00231 |     use_collectives: bool = True,
+L00232 | ) -> Future | AsyncSaveResponse:
+L00233 |     """Asynchronous version of ``save``. This code first de-stages the state_dict on to the
+L00234 |     staging storage (defaults to CPU memory), and then calls the `save` in a separate thread.
+L00235 | 
+L00236 |     .. warning::
+L00237 |         This feature is experimental and subject to change.
+L00238 |         If you provide an ``async_stager``, call ``close()`` after the last
+L00313 |             async_stager = DefaultStager(
+L00314 |                 StagingOptions(
+L00315 |                     False,
+L00316 |                     False,
+L00317 |                     False,
+L00318 |                     False,
+L00319 |                 )
+L00320 |             )
+L00321 |             owned_async_stager = async_stager
+L00322 | 
+L00323 |     state_dict = _stateful_to_state_dict(state_dict)
+L00324 | 
+L00325 |     owned_async_stager_closed = False
+L00326 | 
+L00327 |     def maybe_close_owned_async_stager() -> None:
+L00328 |         nonlocal owned_async_stager_closed
+L00329 |         if owned_async_stager is not None and not owned_async_stager_closed:
+L00330 |             owned_async_stager_closed = True
+L00331 |             owned_async_stager.close()
+L00332 | 
+L00333 |     @_dcp_method_logger(log_exceptions=True)
+L00334 |     def stage_state_dict() -> Future[STATE_DICT_TYPE] | STATE_DICT_TYPE:
+L00335 |         return async_stager.stage(state_dict)
+L00336 | 
+L00337 |     with contextlib.ExitStack() as stack:
+L00338 |         if owned_async_stager is not None:
+L00339 |             stack.callback(maybe_close_owned_async_stager)
+L00340 | 
+L00341 |         staging_future_or_state_dict = stage_state_dict()
+L00342 | 
+L00343 |         upload_executor: _AsyncCheckpointExecutor = (
+L00344 |             _ProcessBasedAsyncCheckpointExecutor()
+L00345 |             if async_checkpointer_type == AsyncCheckpointerType.PROCESS
+L00346 |             else _ThreadBasedAsyncCheckpointExecutor()
+L00347 |         )
+L00348 | 
+L00349 |         upload_future: Future = upload_executor.execute_save(
+L00350 |             staging_future_or_state_dict,
+L00351 |             checkpoint_id=checkpoint_id,
+L00352 |             storage_writer=storage_writer,
+L00353 |             planner=planner,
+L00354 |             process_group=process_group,
+L00355 |             no_dist=no_dist,
+L00356 |             use_collectives=use_collectives,
+L00357 |         )
+L00358 | 
+L00359 |         if owned_async_stager is not None:
+L00360 |             upload_future.add_done_callback(lambda _: maybe_close_owned_async_stager())
+L00361 |             # in the success path transfer cleanup ownership to the upload future
+L00362 |             stack.pop_all()
+L00363 | 
+L00364 |     if isinstance(staging_future_or_state_dict, Future):
+L00365 |         staging_future = staging_future_or_state_dict
+L00366 |         return_staging_future: Future[None] = Future()
+L00367 | 
+L00368 |         def callback(
+L00369 |             original_staging_future: Future[STATE_DICT_TYPE],
+L00370 |             return_staging_future: Future[None] = return_staging_future,
+L00371 |         ):
+L00372 |             try:
+L00373 |                 original_staging_future.result()
+L00374 |                 return_staging_future.set_result(None)
+L00375 |             except Exception as e:
+L00376 |                 return_staging_future.set_exception(e)
+L00377 | 
+L00378 |         if not staging_future.done():
+L00379 |             staging_future.add_done_callback(callback)
+L00380 |         else:
+L00381 |             return_staging_future.set_result(None)
+L00382 | 
+L00383 |         # return new AsyncSaveResponse for users using new ZOC implementation
+L00384 |         return AsyncSaveResponse(
+L00385 |             staging_completion=return_staging_future, upload_completion=upload_future
+L00386 |         )
+L00387 |     else:
+L00388 | 
+L00389 |         @_dcp_method_logger(log_exceptions=True)
+L00390 |         def maybe_synchronize_staging():
+L00391 |             if async_stager.should_synchronize_after_execute:
+L00392 |                 async_stager.synchronize_staging()
+L00393 | 
+L00394 |         maybe_synchronize_staging()
+L00395 |         return upload_future
+L00396 | 
+L00397 | 
+L00494 |     def write_data():
+L00495 |         if planner is None:
+L00496 |             raise AssertionError("planner is None")
+L00497 |         if central_plan is None:
+L00498 |             raise AssertionError("central_plan is None")
+L00499 |         final_local_plan = planner.finish_plan(central_plan)
+L00500 |         all_writes = storage_writer.write_data(final_local_plan, planner)
+L00501 | 
+L00502 |         all_writes.wait()
+L00503 |         return all_writes.value()
+L00504 | 
+L00505 |     @_dcp_method_logger(**ckpt_kwargs)
+L00506 |     def finish_checkpoint(all_results):
+L00507 |         if global_metadata is None:
+L00508 |             raise AssertionError("global_metadata is None")
+L00509 |         storage_writer.finish(metadata=global_metadata, results=all_results)
+L00510 |         return global_metadata
+L00511 | 
+L00512 |     if use_collectives:
+L00513 |         metadata = distW.all_reduce("write", write_data, finish_checkpoint)
+L00514 |     else:
+L00515 |         write_results: list[WriteResult] = write_data()
+L00516 |         metadata = finish_checkpoint([write_results])
+L00517 |         distW.barrier()
+L00518 | 
+L00519 |     return metadata

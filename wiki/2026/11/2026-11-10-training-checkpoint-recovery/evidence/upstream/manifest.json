@@ -1,0 +1,140 @@
+[
+  {
+    "upstream_path": "torch/nn/modules/module.py",
+    "commit": "a68f117948121cdff578ff7813c5c906ff529b57",
+    "ranges": [
+      [
+        2203,
+        2220
+      ]
+    ],
+    "original_blob_sha256": "3a5b6b55e673a533e6302de5c1d8b8097fcbb43a273aa2c4df99ed652011d00c",
+    "stable_tag": "v2.15.0",
+    "stable_commit": "31a77fc9c0a7c6fff15a1ff58c743f53b1a9d457",
+    "stable_blob_sha256": "6e1d498b3b1997725aae48fcda347149d2fa093f4f5854490268bb4af75b1b81",
+    "whole_file_identical_to_stable": false,
+    "excerpt": "evidence/upstream/torch__nn__modules__module.py.txt",
+    "excerpt_sha256": "ef8cbb1b4d094208234eadb2c6bd7ffe4a4daeeb705fbc06e8504e664bf7987e"
+  },
+  {
+    "upstream_path": "torch/optim/optimizer.py",
+    "commit": "a68f117948121cdff578ff7813c5c906ff529b57",
+    "ranges": [
+      [
+        724,
+        744
+      ],
+      [
+        934,
+        985
+      ],
+      [
+        996,
+        1023
+      ]
+    ],
+    "original_blob_sha256": "8732a2a62c548b9ffec99f8e682b8eeaf824a6e1153d6ddeab30267158688e29",
+    "stable_tag": "v2.15.0",
+    "stable_commit": "31a77fc9c0a7c6fff15a1ff58c743f53b1a9d457",
+    "stable_blob_sha256": "4b0ecf48fa034f60e6ac1e5055846bbc907ec63c2f174b1bb81472354593075b",
+    "whole_file_identical_to_stable": false,
+    "excerpt": "evidence/upstream/torch__optim__optimizer.py.txt",
+    "excerpt_sha256": "5edde07b07df226bcff2daef6e82a4eaa6b95527073e54f17e543b0f31f134dd"
+  },
+  {
+    "upstream_path": "torch/optim/lr_scheduler.py",
+    "commit": "a68f117948121cdff578ff7813c5c906ff529b57",
+    "ranges": [
+      [
+        182,
+        205
+      ],
+      [
+        278,
+        300
+      ]
+    ],
+    "original_blob_sha256": "3f43bd4c3d4da4dda35d5d2c8496e155a719fb34109440163e0442497b76a5db",
+    "stable_tag": "v2.15.0",
+    "stable_commit": "31a77fc9c0a7c6fff15a1ff58c743f53b1a9d457",
+    "stable_blob_sha256": "86de19442f38e8817ee3283853ef4377565d3b6b936a779ce7f5f599f1312849",
+    "whole_file_identical_to_stable": false,
+    "excerpt": "evidence/upstream/torch__optim__lr_scheduler.py.txt",
+    "excerpt_sha256": "0f148a850d6f77a1f96ad1eb95c35876258cced10efb3a5040b3992a347d09dd"
+  },
+  {
+    "upstream_path": "torch/distributed/checkpoint/state_dict_saver.py",
+    "commit": "a68f117948121cdff578ff7813c5c906ff529b57",
+    "ranges": [
+      [
+        206,
+        238
+      ],
+      [
+        313,
+        397
+      ],
+      [
+        494,
+        519
+      ]
+    ],
+    "original_blob_sha256": "0e778621ca959ed8496dd662af4814350eb13070dfbd65f85dce3f0c0daa3e18",
+    "stable_tag": "v2.15.0",
+    "stable_commit": "31a77fc9c0a7c6fff15a1ff58c743f53b1a9d457",
+    "stable_blob_sha256": "0e778621ca959ed8496dd662af4814350eb13070dfbd65f85dce3f0c0daa3e18",
+    "whole_file_identical_to_stable": true,
+    "excerpt": "evidence/upstream/torch__distributed__checkpoint__state_dict_saver.py.txt",
+    "excerpt_sha256": "9f61c40901d60b963a30cb30494436bc4b02b275762c2a9156fa6147c6f52175"
+  },
+  {
+    "upstream_path": "torch/distributed/checkpoint/filesystem.py",
+    "commit": "a68f117948121cdff578ff7813c5c906ff529b57",
+    "ranges": [
+      [
+        460,
+        483
+      ],
+      [
+        766,
+        803
+      ],
+      [
+        977,
+        1021
+      ]
+    ],
+    "original_blob_sha256": "4b61ba7647da343016385f72956300b94011d9db451260b0906813b148d1ff56",
+    "stable_tag": "v2.15.0",
+    "stable_commit": "31a77fc9c0a7c6fff15a1ff58c743f53b1a9d457",
+    "stable_blob_sha256": "951f55c19c01c52f219d2cc12c48ebe38be62ecaf0b57b066722eaededbc96d6",
+    "whole_file_identical_to_stable": false,
+    "excerpt": "evidence/upstream/torch__distributed__checkpoint__filesystem.py.txt",
+    "excerpt_sha256": "2636c0c18cf4ad87aec02cde17eb781c4bb9a09d756a262d002a86b099b52dd3"
+  },
+  {
+    "upstream_path": "torch/distributed/checkpoint/staging.py",
+    "commit": "a68f117948121cdff578ff7813c5c906ff529b57",
+    "ranges": [
+      [
+        40,
+        64
+      ],
+      [
+        106,
+        130
+      ],
+      [
+        196,
+        219
+      ]
+    ],
+    "original_blob_sha256": "67be3d542f9769d10cfdc51649c083610db9779d6fd21b948aae64f4c0cf2c0c",
+    "stable_tag": "v2.15.0",
+    "stable_commit": "31a77fc9c0a7c6fff15a1ff58c743f53b1a9d457",
+    "stable_blob_sha256": "67be3d542f9769d10cfdc51649c083610db9779d6fd21b948aae64f4c0cf2c0c",
+    "whole_file_identical_to_stable": true,
+    "excerpt": "evidence/upstream/torch__distributed__checkpoint__staging.py.txt",
+    "excerpt_sha256": "88c148fa8721a50a990db399d94dfcfa88fd829f4bd21762cd514acc67eb9473"
+  }
+]

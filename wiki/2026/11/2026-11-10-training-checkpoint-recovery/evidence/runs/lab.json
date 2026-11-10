@@ -1,0 +1,202 @@
+{
+  "schema": 1,
+  "python": "3.12.16",
+  "torch": "2.15.0",
+  "torch_git": "d0f2af8b66b20da4baa50644c0cd3f887a2eae2e",
+  "platform": "macOS-27.0-arm64-arm-64bit",
+  "device": "cpu",
+  "dtype": "float64",
+  "threads": 1,
+  "config": {
+    "fixture": "linear-tanh-dropout-v1",
+    "dataset": "synthetic-arange-20x3-v1",
+    "batch_size": 2,
+    "total_steps": 10,
+    "dtype": "float64",
+    "adam_lr": 0.03,
+    "scheduler_step_size": 3,
+    "scheduler_gamma": 0.8
+  },
+  "saved_step": 5,
+  "discarded_at_step": 8,
+  "resume_steps": 5,
+  "fresh_processes": 5,
+  "modes": {
+    "none": {
+      "parameter_max_abs_error": 0.0,
+      "moment_max_abs_error": 0.0,
+      "loss_max_abs_error": 0.0,
+      "sample_ids_equal": true,
+      "rng_equal": true,
+      "lr_equal": true,
+      "optimizer_steps_equal": true,
+      "completed_steps": 10,
+      "cursor": 20,
+      "next_lr": 0.015360000000000002,
+      "scheduler_epoch": 10,
+      "resumed_sample_ids": [
+        [
+          17,
+          9
+        ],
+        [
+          3,
+          11
+        ],
+        [
+          7,
+          18
+        ],
+        [
+          4,
+          19
+        ],
+        [
+          14,
+          13
+        ]
+      ]
+    },
+    "optimizer": {
+      "parameter_max_abs_error": 0.037297181248882094,
+      "moment_max_abs_error": 0.39449731112278846,
+      "loss_max_abs_error": 0.13271100160428084,
+      "sample_ids_equal": true,
+      "rng_equal": true,
+      "lr_equal": false,
+      "optimizer_steps_equal": false,
+      "completed_steps": 10,
+      "cursor": 20,
+      "next_lr": 0.019200000000000002,
+      "scheduler_epoch": 10,
+      "resumed_sample_ids": [
+        [
+          17,
+          9
+        ],
+        [
+          3,
+          11
+        ],
+        [
+          7,
+          18
+        ],
+        [
+          4,
+          19
+        ],
+        [
+          14,
+          13
+        ]
+      ]
+    },
+    "rng": {
+      "parameter_max_abs_error": 0.010229967175158311,
+      "moment_max_abs_error": 0.06091019588204691,
+      "loss_max_abs_error": 0.250260610986878,
+      "sample_ids_equal": true,
+      "rng_equal": false,
+      "lr_equal": true,
+      "optimizer_steps_equal": true,
+      "completed_steps": 10,
+      "cursor": 20,
+      "next_lr": 0.015360000000000002,
+      "scheduler_epoch": 10,
+      "resumed_sample_ids": [
+        [
+          17,
+          9
+        ],
+        [
+          3,
+          11
+        ],
+        [
+          7,
+          18
+        ],
+        [
+          4,
+          19
+        ],
+        [
+          14,
+          13
+        ]
+      ]
+    },
+    "cursor": {
+      "parameter_max_abs_error": 0.01652138650840429,
+      "moment_max_abs_error": 0.24451608971120486,
+      "loss_max_abs_error": 0.4846541748214772,
+      "sample_ids_equal": false,
+      "rng_equal": true,
+      "lr_equal": true,
+      "optimizer_steps_equal": true,
+      "completed_steps": 10,
+      "cursor": 10,
+      "next_lr": 0.015360000000000002,
+      "scheduler_epoch": 10,
+      "resumed_sample_ids": [
+        [
+          15,
+          6
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          0,
+          12
+        ],
+        [
+          16,
+          5
+        ],
+        [
+          1,
+          10
+        ]
+      ]
+    },
+    "scheduler": {
+      "parameter_max_abs_error": 0.011891731873199696,
+      "moment_max_abs_error": 0.016385968359328595,
+      "loss_max_abs_error": 0.03834322005405033,
+      "sample_ids_equal": true,
+      "rng_equal": true,
+      "lr_equal": false,
+      "optimizer_steps_equal": true,
+      "completed_steps": 10,
+      "cursor": 20,
+      "next_lr": 0.019200000000000002,
+      "scheduler_epoch": 5,
+      "resumed_sample_ids": [
+        [
+          17,
+          9
+        ],
+        [
+          3,
+          11
+        ],
+        [
+          7,
+          18
+        ],
+        [
+          4,
+          19
+        ],
+        [
+          14,
+          13
+        ]
+      ]
+    }
+  },
+  "scope": "Same runtime, CPU, data, one process and post-update boundary."
+}

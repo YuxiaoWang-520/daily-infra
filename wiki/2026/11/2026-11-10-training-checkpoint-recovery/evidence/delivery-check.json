@@ -1,0 +1,20 @@
+{
+  "checked_at": "2026-11-10 Asia/Shanghai",
+  "local_links_checked": 66,
+  "local_link_errors": [],
+  "mermaid_matches_source": true,
+  "source_blobs_checked": 6,
+  "source_excerpts_exact": true,
+  "stable_tag_comparison_verified": true,
+  "tested_code_hashes_match": true,
+  "tests": 26,
+  "fresh_processes": 5,
+  "full_restore_exact_for_recorded_state": true,
+  "four_negative_controls_detected": true,
+  "index_articles": 22,
+  "today_articles": 1,
+  "published_frontmatter": true,
+  "no_cache_or_credentials_in_article": true,
+  "scope": "CPU deterministic fixture; no GPU/DCP/power-loss claim",
+  "checksum_verification": "passed: 37 files, shasum exit code 0; see evidence/runs/checksums.txt"
+}

@@ -1,0 +1,51 @@
+Source: https://github.com/pytorch/pytorch/blob/a68f117948121cdff578ff7813c5c906ff529b57/torch/optim/lr_scheduler.py
+Commit: a68f117948121cdff578ff7813c5c906ff529b57
+Ranges: 182-205, 278-300
+
+L00182 |     def state_dict(self) -> dict[str, Any]:
+L00183 |         """Return the state of the scheduler as a :class:`dict`.
+L00184 | 
+L00185 |         It contains an entry for every variable in ``self.__dict__`` which
+L00186 |         is not the optimizer.
+L00187 |         """
+L00188 |         return {
+L00189 |             key: value for key, value in self.__dict__.items() if key != "optimizer"
+L00190 |         }
+L00191 | 
+L00192 |     def load_state_dict(self, state_dict: dict[str, Any]) -> None:
+L00193 |         """Load the scheduler's state.
+L00194 | 
+L00195 |         Args:
+L00196 |             state_dict (dict): scheduler state. Should be an object returned
+L00197 |                 from a call to :meth:`state_dict`.
+L00198 |         """
+L00199 |         self.__dict__.update(state_dict)
+L00200 | 
+L00201 |     def get_last_lr(self) -> list[float | Tensor]:
+L00202 |         r"""Get the most recent learning rates computed by this scheduler.
+L00203 | 
+L00204 |         Returns:
+L00205 |             list[float | Tensor]: A :class:`list` of learning rates with entries
+L00278 | 
+L00279 |         self._step_count += 1
+L00280 |         if epoch is not None:
+L00281 |             warnings.warn(EPOCH_DEPRECATION_WARNING, UserWarning, stacklevel=2)
+L00282 |         self._update_lr(epoch)
+L00283 | 
+L00284 |     def _update_lr(self, epoch: int | None = None) -> None:
+L00285 |         with _enable_get_lr_call(self):
+L00286 |             if epoch is None:
+L00287 |                 self.last_epoch += 1
+L00288 |                 values = self.get_lr()
+L00289 |             else:
+L00290 |                 self.last_epoch = epoch
+L00291 |                 if hasattr(self, "_get_closed_form_lr"):
+L00292 |                     values = cast(list[float | Tensor], self._get_closed_form_lr())
+L00293 |                 else:
+L00294 |                     values = self.get_lr()
+L00295 | 
+L00296 |         for param_group, lr in zip(self.optimizer.param_groups, values, strict=True):
+L00297 |             _update_param_group_val(param_group, "lr", lr)
+L00298 | 
+L00299 |         self._last_lr: list[float | Tensor] = _param_groups_val_list(
+L00300 |             self.optimizer, "lr"

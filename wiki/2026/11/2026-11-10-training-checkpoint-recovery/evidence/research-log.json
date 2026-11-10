@@ -1,0 +1,70 @@
+{
+  "research_date": "2026-11-10",
+  "timezone": "Asia/Shanghai",
+  "primary_search": {
+    "provider": "Parallel",
+    "session_id": "session_d6ef631db02167900f83cc732a8f168e",
+    "search_id": "search_d6ef631db02167900f83cc732a8f168e",
+    "objective": "Find current official PyTorch guidance for a training checkpoint that restores model, optimizer, scheduler, RNG and data progress, and distributed checkpoint completion guarantees.",
+    "queries": [
+      "site:pytorch.org saving loading general checkpoint optimizer",
+      "site:docs.pytorch.org distributed checkpoint async_save staging completion",
+      "site:docs.python.org os replace fsync"
+    ],
+    "selected_authorities": [
+      "docs.pytorch.org",
+      "github.com/pytorch/pytorch",
+      "docs.python.org"
+    ]
+  },
+  "fetches": [
+    {
+      "extract_id": "extract_31bb600653ae47e2b5cf33f9f1f8e3d7",
+      "errors": [],
+      "results": [
+        {
+          "url": "https://docs.pytorch.org/tutorials/beginner/saving_loading_models.html",
+          "title": "Saving and Loading Models #",
+          "provider_acquired_at": "2026-11-07T00:00:00Z"
+        },
+        {
+          "url": "https://docs.pytorch.org/tutorials/recipes/distributed_async_checkpoint_recipe.html",
+          "title": "Asynchronous Saving with Distributed Checkpoint (DCP) #",
+          "provider_acquired_at": "2026-11-06T00:00:00Z"
+        },
+        {
+          "url": "https://docs.python.org/3.12/library/os.html#os.replace",
+          "title": "os — Miscellaneous operating system interfaces — Python 3.12.16 documentation",
+          "provider_acquired_at": "2026-11-07T00:00:00Z"
+        },
+        {
+          "url": "https://docs.pytorch.org/docs/2.15/distributed.checkpoint.html",
+          "title": "Distributed Checkpoint - torch.distributed.checkpoint #",
+          "provider_acquired_at": "2026-11-06T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "extract_id": "extract_2d9808d5ac7583bda3ba9202cea9fa92",
+      "errors": [],
+      "results": [
+        {
+          "url": "https://docs.python.org/3.12/library/os.html#os.fsync",
+          "title": "os — Miscellaneous operating system interfaces — Python 3.12.16 documentation",
+          "provider_acquired_at": "2026-11-07T00:00:00Z"
+        }
+      ]
+    }
+  ],
+  "date_boundary": "Requests were made on 2026-11-10 Asia/Shanghai; provider cached acquisition dates above are retained separately. Git source was actually fetched today.",
+  "source_fetch": {
+    "remote": "https://github.com/pytorch/pytorch.git",
+    "default_branch": "main",
+    "command": "git -C .cache/upstream/pytorch fetch --depth 1 origin main",
+    "exit_code": 0,
+    "pinned_commit": "a68f117948121cdff578ff7813c5c906ff529b57",
+    "commit_time": "2026-11-10T02:02:46Z",
+    "cache_policy": "Existing checkout was clean; fetch only, no reset or checkout."
+  },
+  "source_archival": "Small line-numbered BSD-licensed excerpts, original LICENSE, original blob SHA256 and excerpt SHA256; no wholesale tutorial or Python documentation copies."
+}

@@ -1,0 +1,111 @@
+Source: https://github.com/pytorch/pytorch/blob/a68f117948121cdff578ff7813c5c906ff529b57/torch/distributed/checkpoint/filesystem.py
+Commit: a68f117948121cdff578ff7813c5c906ff529b57
+Ranges: 460-483, 766-803, 977-1021
+
+L00460 |                 if serialization_format == SerializationFormat.SAFETENSORS:
+L00461 |                     from safetensors.torch import save  # type: ignore[import-not-found]
+L00462 | 
+L00463 |                     stream.write(
+L00464 |                         save(
+L00465 |                             tensor_dict,
+L00466 |                             metadata={
+L00467 |                                 CUSTOM_METADATA_KEY: json.dumps(metadata_dict),
+L00468 |                                 DCP_VERSION_KEY: str(HF_DCP_VERSION),
+L00469 |                                 FORMAT_KEY: FORMAT_VALUE,
+L00470 |                             },
+L00471 |                         )
+L00472 |                     )
+L00473 | 
+L00474 |                 if use_fsync:
+L00475 |                     # Flush Python-level buffers (OS for local files, network for cloud storage) before fsync.
+L00476 |                     stream.flush()
+L00477 |                     try:
+L00478 |                         os.fsync(stream.fileno())
+L00479 |                     except (AttributeError, UnsupportedOperation) as e:
+L00480 |                         warnings.warn(
+L00481 |                             f"fsync not supported for this stream, relying on flush(): {e}"
+L00482 |                         )
+L00483 |                 stream.close()
+L00766 |     def finish(self, metadata: Metadata, results: list[list[WriteResult]]) -> None:
+L00767 |         metadata.version = CURRENT_DCP_VERSION
+L00768 | 
+L00769 |         storage_md = {}
+L00770 |         for wr_list in results:
+L00771 |             storage_md.update({wr.index: wr.storage_data for wr in wr_list})
+L00772 |         metadata.storage_data = storage_md
+L00773 | 
+L00774 |         metadata.storage_meta = self.storage_meta()
+L00775 |         tmp_filename = (
+L00776 |             f"__{self.rank}{_metadata_fn}.tmp"
+L00777 |             if not self.use_collectives and self.rank is not None
+L00778 |             else f"{_metadata_fn}.tmp"
+L00779 |         )
+L00780 |         tmp_path = cast(Path, self.fs.concat_path(self.path, tmp_filename))
+L00781 |         with self.fs.create_stream(tmp_path, "wb") as metadata_file:
+L00782 |             pickle.dump(metadata, metadata_file)
+L00783 |             if self.sync_files:
+L00784 |                 # Flush Python-level buffers (OS for local files, network for cloud storage) before fsync.
+L00785 |                 metadata_file.flush()
+L00786 |                 try:
+L00787 |                     os.fsync(metadata_file.fileno())
+L00788 |                 except (AttributeError, UnsupportedOperation) as e:
+L00789 |                     warnings.warn(
+L00790 |                         f"fsync not supported for this stream, relying on flush(): {e}"
+L00791 |                     )
+L00792 | 
+L00793 |         # delete in-case other checkpoints were present.
+L00794 |         if not self.use_collectives and self.rank is not None:
+L00795 |             metadata_path = self._get_metadata_path(self.rank)
+L00796 |         else:
+L00797 |             metadata_path = self._get_metadata_path()
+L00798 | 
+L00799 |         if self.fs.exists(metadata_path):
+L00800 |             self.fs.rm_file(metadata_path)
+L00801 | 
+L00802 |         self.fs.rename(tmp_path, metadata_path)
+L00803 | 
+L00977 | class FileSystemWriter(_FileSystemWriter, BlockingAsyncStager):
+L00978 |     """
+L00979 |     Basic implementation of StorageWriter using file IO.
+L00980 | 
+L00981 |     This implementation makes the following assumptions and simplifications:
+L00982 | 
+L00983 |     * The checkpoint path is an empty or non-existing directory.
+L00984 |     * File creation is atomic
+L00985 | 
+L00986 |     The checkpoint consist of one file per write request plus
+L00987 |     a global `.metadata` file with the serialized metadata if rank coordination is enabled.
+L00988 |     a rank local `__{rank}.metadata` file with the serialized metadata if rank coordination is NOT enabled.
+L00989 | 
+L00990 |     """
+L00991 | 
+L00992 |     def __init__(
+L00993 |         self,
+L00994 |         path: str | os.PathLike,
+L00995 |         single_file_per_rank: bool = True,
+L00996 |         sync_files: bool = True,
+L00997 |         thread_count: int = 1,
+L00998 |         per_thread_copy_ahead: int = 10_000_000,
+L00999 |         cache_staged_state_dict: bool = False,
+L01000 |         overwrite: bool = True,
+L01001 |         _extensions: Sequence[StreamTransformExtension] | None = None,
+L01002 |         serialization_format: SerializationFormat = SerializationFormat.TORCH_SAVE,
+L01003 |     ) -> None:
+L01004 |         """
+L01005 |         Initialize the writer pointing to `path`.
+L01006 | 
+L01007 |         Args:
+L01008 |             path: directory where the checkpoint will be written to.
+L01009 |             single_file_per_rank: Produce one file per rank instead of one file per tensor/blob. Default to True.
+L01010 |             sync_files : force files to be synced to permanent storage. Default to True.
+L01011 |             thread_count: Number of IO threads to use to write. Default to 1.
+L01012 |             per_thread_copy_ahead: How many bytes to copy from the GPU ahead of saving them. Default 10Mb.
+L01013 |             cache_staged_state_dict: Whether to cache the staged state_dict. This option decreases staging latency
+L01014 |                 at the cost of increased memory usage. Additionally, if this parameter is set to True, it's the expectation
+L01015 |                 that the stager is maintained and reused for multiple dcp.async_save calls. Default to False.
+L01016 |             overwrite: Whether to allow overwriting existing checkpoints. Defaults to True.
+L01017 |             _extensions: Extensions to apply to output streams (EXPERIMENTAL)
+L01018 | 
+L01019 |         N. B. If sync_files is disabled, there's no guarantee that the checkpoint will be consistent in the case of a failure.
+L01020 |         """
+L01021 |         _FileSystemWriter.__init__(

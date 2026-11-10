@@ -1,0 +1,105 @@
+Source: https://github.com/pytorch/pytorch/blob/a68f117948121cdff578ff7813c5c906ff529b57/torch/optim/optimizer.py
+Commit: a68f117948121cdff578ff7813c5c906ff529b57
+Ranges: 724-744, 934-985, 996-1023
+
+L00724 |         * ``state``: a Dict holding current optimization state. Its content
+L00725 |             differs between optimizer classes, but some common characteristics
+L00726 |             hold. For example, state is saved per parameter, and the parameter
+L00727 |             itself is NOT saved. ``state`` is a Dictionary mapping parameter ids
+L00728 |             to a Dict with state corresponding to each parameter.
+L00729 |         * ``param_groups``: a List containing all parameter groups where each
+L00730 |             parameter group is a Dict. Each parameter group contains metadata
+L00731 |             specific to the optimizer, such as learning rate and weight decay,
+L00732 |             as well as a List of parameter IDs of the parameters in the group.
+L00733 |             If a param group was initialized with ``named_parameters()`` the names
+L00734 |             content will also be saved in the state dict.
+L00735 | 
+L00736 |         NOTE: The parameter IDs may look like indices but they are just IDs
+L00737 |         associating state with param_group. When loading from a state_dict,
+L00738 |         the optimizer will zip the param_group ``params`` (int IDs) and the
+L00739 |         optimizer ``param_groups`` (actual ``nn.Parameter`` s) in order to
+L00740 |         match state WITHOUT additional verification.
+L00741 | 
+L00742 |         A returned state dict might look something like:
+L00743 | 
+L00744 |         .. code-block:: text
+L00934 | 
+L00935 |         .. note::
+L00936 |             When preserving dtypes, state tensors must be compatible with the
+L00937 |             selected optimizer implementation for :meth:`step`. Use
+L00938 |             :func:`torch.optim.preserve_state_dtype_on_load` with ``False`` to
+L00939 |             retain automatic casting, or explicitly convert state tensors before
+L00940 |             stepping, for example with :meth:`register_load_state_dict_post_hook`.
+L00941 | 
+L00942 |         .. warning::
+L00943 |             Make sure this method is called after initializing :class:`torch.optim.lr_scheduler.LRScheduler`,
+L00944 |             as calling it beforehand will overwrite the loaded learning rates.
+L00945 | 
+L00946 |         .. note::
+L00947 |             The ``step`` tensor keeps its saved dtype and device unless the parameter
+L00948 |             group is fused or capturable, which moves it to the parameter's device as
+L00949 |             ``torch.float32``. This behavior is independent of the dtype preservation
+L00950 |             setting.
+L00951 | 
+L00952 |         .. note::
+L00953 |             The names of the parameters (if they exist under the "param_names" key of each param group
+L00954 |             in :meth:`state_dict`) will not affect the loading process.
+L00955 |             To use the parameters' names for custom cases (such as when the parameters in the loaded state dict
+L00956 |             differ from those initialized in the optimizer),
+L00957 |             a custom ``register_load_state_dict_pre_hook`` should be implemented to adapt the loaded dict
+L00958 |             accordingly.
+L00959 |             If ``param_names`` exist in loaded state dict ``param_groups`` they will be saved and override
+L00960 |             the current names, if present, in the optimizer state. If they do not exist in loaded state dict,
+L00961 |             the optimizer ``param_names`` will remain unchanged.
+L00962 | 
+L00963 |         Example:
+L00964 |             >>> # xdoctest: +SKIP
+L00965 |             >>> optimizer = ...  # initialized optimizer matching the saved state
+L00966 |             >>> scheduler1 = torch.optim.lr_scheduler.LinearLR(
+L00967 |             ...     optimizer,
+L00968 |             ...     start_factor=0.1,
+L00969 |             ...     end_factor=1,
+L00970 |             ...     total_iters=20,
+L00971 |             ... )
+L00972 |             >>> scheduler2 = torch.optim.lr_scheduler.CosineAnnealingLR(
+L00973 |             ...     optimizer,
+L00974 |             ...     T_max=80,
+L00975 |             ...     eta_min=3e-5,
+L00976 |             ... )
+L00977 |             >>> lr = torch.optim.lr_scheduler.SequentialLR(
+L00978 |             ...     optimizer,
+L00979 |             ...     schedulers=[scheduler1, scheduler2],
+L00980 |             ...     milestones=[20],
+L00981 |             ... )
+L00982 |             >>> lr.load_state_dict(torch.load("./save_seq.pt"))
+L00983 |             >>> # now load the optimizer checkpoint after loading the LRScheduler
+L00984 |             >>> optimizer.load_state_dict(torch.load("./save_optim.pt"))
+L00985 | 
+L00996 |         groups = self.param_groups
+L00997 | 
+L00998 |         # Deepcopy as we write into saved_groups later to update state
+L00999 |         saved_groups = deepcopy(state_dict["param_groups"])
+L01000 | 
+L01001 |         if len(groups) != len(saved_groups):
+L01002 |             raise ValueError(
+L01003 |                 "loaded state dict has a different number of parameter groups"
+L01004 |             )
+L01005 |         param_lens = (len(g["params"]) for g in groups)
+L01006 |         saved_lens = (len(g["params"]) for g in saved_groups)
+L01007 |         if any(
+L01008 |             p_len != s_len for p_len, s_len in zip(param_lens, saved_lens, strict=True)
+L01009 |         ):
+L01010 |             raise ValueError(
+L01011 |                 "loaded state dict contains a parameter group "
+L01012 |                 "that doesn't match the size of optimizer's group"
+L01013 |             )
+L01014 | 
+L01015 |         # Update the state
+L01016 |         id_map = dict(
+L01017 |             zip(
+L01018 |                 chain.from_iterable(g["params"] for g in saved_groups),
+L01019 |                 chain.from_iterable(g["params"] for g in groups),
+L01020 |                 strict=True,
+L01021 |             )
+L01022 |         )
+L01023 | 
