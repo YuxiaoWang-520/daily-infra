@@ -1,0 +1,95 @@
+Source: https://github.com/NVIDIA/nccl/blob/ad2d192c1f279aefcaf340f67e07880b65a1116b/src/tuning/ring.cc
+Commit: ad2d192c1f279aefcaf340f67e07880b65a1116b
+Ranges: 1-6, 24-48, 77-87, 93-141
+
+L00001 |  /*************************************************************************
+L00002 |  * SPDX-FileCopyrightText: Copyright (c) 2015-2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+L00003 |  * SPDX-License-Identifier: Apache-2.0
+L00004 |  *
+L00005 |  * See LICENSE.txt for more license information
+L00006 |  *************************************************************************/
+L00024 |   int algo, proto;
+L00025 |   NCCLCHECK(ncclTuningExpandId(id, &algo, &proto, nullptr, nullptr));
+L00026 | 
+L00027 |   int compCapIndex = ncclTuningGetCompCapIndex(comm);
+L00028 |   int index1, index2;
+L00029 |   ncclTuningGetConstantsIndexes(comm, &index1, &index2);
+L00030 |   double llMaxBw = comm->tuningContext.tuningConstants.llMaxBws[index1][index2];
+L00031 |   double perChMaxRingLL128Bw = comm->tuningContext.tuningConstants.perChMaxRingLL128Bws[compCapIndex][index2];
+L00032 |   for (int c = 0; c < NCCL_NUM_FUNCTIONS; c++) {
+L00033 |     comm->tuningContext.generalLatencies[c][algo][proto] = -1.0;
+L00034 |     comm->tuningContext.generalBandwidths[c][algo][proto] = -1.0;
+L00035 |     int nSteps = ncclTuningGetNsteps(c, comm->nRanks);
+L00036 |     float bw = (comm->nNodes == 1 || (comm->nNodes <= 2 && comm->minCompCap < 100)) ? comm->graphs[algo].bwIntra :
+L00037 |                                                                                       comm->graphs[algo].bwInter;
+L00038 |     float busBw = bw * comm->graphs[algo].nChannels;
+L00039 |     if (proto == NCCL_PROTO_LL) {
+L00040 |       busBw = std::min(llMaxBw, busBw * .5);
+L00041 |     }
+L00042 |     if (proto == NCCL_PROTO_LL128)
+L00043 |       busBw = std::min(busBw * (0.92 /*120.0/128.0*/), comm->graphs[algo].nChannels * perChMaxRingLL128Bw);
+L00044 | 
+L00045 |     comm->tuningContext.generalLatencies[c][algo][proto] =
+L00046 |       comm->tuningContext.tuningConstants.baseLatencies[algo][proto];
+L00047 |     comm->tuningContext.generalBandwidths[c][algo][proto] = busBw * comm->nRanks / nSteps;
+L00048 | 
+L00077 |     } else {
+L00078 |       // Inter-node rings still have to launch nsteps * net overhead.
+L00079 |       float netOverhead = 0.0;
+L00080 |       if (comm->nNodes > 1) {
+L00081 |         netOverhead = getNetOverhead(comm);
+L00082 |         if (proto == NCCL_PROTO_SIMPLE) netOverhead *= 3;
+L00083 |       }
+L00084 |       intraLat = std::max(intraLat, netOverhead);
+L00085 |       int nInterSteps = comm->nNodes == 1 ? 0 : c == ncclFuncAllReduce ? 2 * (comm->nNodes - 1) : comm->nNodes - 1;
+L00086 |       comm->tuningContext.generalLatencies[c][algo][proto] +=
+L00087 |         (nSteps - nInterSteps) * intraLat + nInterSteps * interLat;
+L00093 | ncclResult_t ncclTuningRingModelSim(struct ncclTuningInput_t* const inputs, struct ncclTuningResult_t* const tuning,
+L00094 |                                     struct ncclTuningModelState* /*internal*/) {
+L00095 |   ncclResult_t ret = ncclSuccess;
+L00096 |   if (inputs->comm->tuningContext.generalBandwidths[inputs->func][tuning->algo][tuning->proto] == -1.0f) {
+L00097 |     tuning->valid = 0;
+L00098 |     return ncclSuccess;
+L00099 |   }
+L00100 |   float lat = inputs->comm->tuningContext.generalLatencies[inputs->func][tuning->algo][tuning->proto];
+L00101 |   float bw = inputs->comm->tuningContext.generalBandwidths[inputs->func][tuning->algo][tuning->proto];
+L00102 |   if (bw == -1.0f) {
+L00103 |     tuning->valid = 0;
+L00104 |     tuning->timeUs = -1.0;
+L00105 |     return ret;
+L00106 |   }
+L00107 |   // Update Ring/Simple latency for multi-node AllReduce and
+L00108 |   // single NVL Domain AllReduce/AllGather/ReduceScatter for Blackwell
+L00109 |   bool isBlackwellNvLink =
+L00110 |     inputs->comm->minCompCap >= 100 && inputs->comm->graphs[NCCL_ALGO_RING].typeIntra == PATH_NVL;
+L00111 |   bool ringSimplePlateau =
+L00112 |     (inputs->comm->nNodes > 1 && inputs->func == ncclFuncAllReduce) ||
+L00113 |     (inputs->comm->nNodes == 1 && isBlackwellNvLink &&
+L00114 |      (inputs->func == ncclFuncAllReduce || inputs->func == ncclFuncAllGather || inputs->func == ncclFuncReduceScatter));
+L00115 |   size_t bytesPerRankPerChannel = inputs->nBytes / (inputs->comm->nChannels * inputs->comm->nRanks);
+L00116 | 
+L00117 |   if (tuning->algo == NCCL_ALGO_RING && tuning->proto == NCCL_PROTO_SIMPLE && ringSimplePlateau &&
+L00118 |       bytesPerRankPerChannel >= 64) {
+L00119 |     float plateauFactor = inputs->comm->minCompCap < 80 ? 1.9 : 1.4;
+L00120 | 
+L00121 |     // Adjust the plateau factor based on per-rank/channel bytes and intra-node Ring steps.
+L00122 |     if (inputs->comm->nNodes == 1 && isBlackwellNvLink) {
+L00123 |       constexpr float plateauDelta = 0.1f;
+L00124 |       float maxPlateauDelta = plateauFactor - 1.0f;
+L00125 |       int nSteps = ncclTuningGetNsteps(inputs->func, inputs->comm->nRanks);
+L00126 |       // A one-step Ring has zero step scale. Each additional step retains plateauDelta / maxPlateauDelta
+L00127 |       // of the remaining distance to full scale.
+L00128 |       float stepScale = 1.0f - powf(plateauDelta / maxPlateauDelta, std::max(0, nSteps - 1));
+L00129 |       float effectivePlateauDelta = maxPlateauDelta;
+L00130 | 
+L00131 |       if (bytesPerRankPerChannel > 256 * 1024) {
+L00132 |         // Normalize 256-512 KiB per rank/channel to [0, 1], reducing the effective delta by up to plateauDelta.
+L00133 |         float bytesPerRankPerChannelScale = std::min(1.0f, (bytesPerRankPerChannel - 256 * 1024) / (256.0f * 1024));
+L00134 |         effectivePlateauDelta -= plateauDelta * bytesPerRankPerChannelScale;
+L00135 |       }
+L00136 |       plateauFactor = 1.0f + stepScale * effectivePlateauDelta;
+L00137 |     }
+L00138 |     lat *= plateauFactor; // Plateau effect of ring
+L00139 |   }
+L00140 |   tuning->timeUs = ncclTuningGetTime(inputs, tuning->algo, lat, bw);
+L00141 |   return ret;

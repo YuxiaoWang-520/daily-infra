@@ -1,0 +1,29 @@
+Source: https://github.com/NVIDIA/nccl/blob/ad2d192c1f279aefcaf340f67e07880b65a1116b/src/enqueue/task_prep/task_prep.cc
+Commit: ad2d192c1f279aefcaf340f67e07880b65a1116b
+Ranges: 1-6, 11-29
+
+L00001 | /*************************************************************************
+L00002 |  * SPDX-FileCopyrightText: Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+L00003 |  * SPDX-License-Identifier: Apache-2.0
+L00004 |  *
+L00005 |  * See LICENSE.txt for more license information
+L00006 |  *************************************************************************/
+L00011 | ncclResult_t ncclTaskPrepare(struct ncclComm* comm, ncclSimInfo_t* simInfo) {
+L00012 |   struct ncclTaskTuningInfo* tInfo;
+L00013 |   struct ncclTaskTuningInfoQueue taskTuningInfoQueue;
+L00014 | 
+L00015 |   ncclIntruQueueConstruct(&taskTuningInfoQueue.queue);
+L00016 |   NCCLCHECK(ncclTaskPreTuning(comm, &comm->rawTaskQueue, &taskTuningInfoQueue));
+L00017 | 
+L00018 |   tInfo = ncclIntruQueueHead(&taskTuningInfoQueue.queue);
+L00019 |   for (; tInfo != nullptr; tInfo = tInfo->next) {
+L00020 |     if (tInfo->raw->kind == ncclTaskKindColl && ncclTuningFuncIndex(tInfo->tuningIn.func) >= 0) {
+L00021 |       NCCLCHECK(ncclTuningCompute(&tInfo->tuningIn, &tInfo->tuningOut));
+L00022 |     }
+L00023 |   }
+L00024 | 
+L00025 |   NCCLCHECK(ncclTaskClassification(comm, &taskTuningInfoQueue, &comm->classifiedTaskQueues));
+L00026 | 
+L00027 |   NCCLCHECK(ncclTaskPostTuning(comm, &comm->classifiedTaskQueues, simInfo));
+L00028 | 
+L00029 |   return ncclSuccess;

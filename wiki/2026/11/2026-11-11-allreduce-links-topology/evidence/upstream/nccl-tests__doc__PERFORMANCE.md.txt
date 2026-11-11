@@ -1,0 +1,65 @@
+Source: https://github.com/NVIDIA/nccl-tests/blob/afd59abab774a6a4b492eb344bd0c845a0b7bb4d/doc/PERFORMANCE.md
+Commit: afd59abab774a6a4b492eb344bd0c845a0b7bb4d
+Ranges: 1-40, 125-145
+
+L00001 | # Performance reported by NCCL tests
+L00002 | 
+L00003 | NCCL tests report the average operation time in ms, and two bandwidths in GB/s : algorithm bandwidth and bus bandwidth. This page explains what those numbers mean and what you should expect depending on the hardware used.
+L00004 | 
+L00005 | # Time
+L00006 | 
+L00007 | Time is useful with small sizes, to measure the constant overhead (or latency) associated with operations.
+L00008 | 
+L00009 | On large sizes, the time becomes linear with the size (since it is roughly equal to overhead + size / bw) and is no longer measuring the latency but
+L00010 | also the bandwidth multiplied by the size.
+L00011 | 
+L00012 | Therefore, on large sizes, it makes more sense to look at the bandwidth.
+L00013 | 
+L00014 | # Bandwidth
+L00015 | 
+L00016 | ## Algorithm bandwidth
+L00017 | 
+L00018 | Algorithm bandwidth is using the most commonly used formula for bandwidth : size (_S_) / time (_t_). It is useful to compute how much time any large operation would take by simply dividing the size of the operation by the algorithm bandwidth.
+L00019 | 
+L00020 | `algbw = S/t`
+L00021 | 
+L00022 | ## Bus bandwidth
+L00023 | 
+L00024 | While the algorithm bandwidth makes sense for point-to-point operations like Send/Receive, it is not always helpful to measure collective operations speed, since the theoretical peak algorithm bandwidth is not equal to the hardware peak bandwidth, usually depending on the number of ranks.
+L00025 | Most benchmarks only provide time measurements, which is hard to interpret for large sizes. Some others also provide algorithms bandwidth, but see that depending on the number of ranks, that bandwidth varies (and decreases as the number of ranks increase).
+L00026 | 
+L00027 | To provide a number which reflects how optimally the hardware is used, NCCL tests introduce the notion of "Bus Bandwidth" ("busbw" column in the tests output).
+L00028 | This number is obtained applying a formula to the algorithm bandwidth to reflect the speed of the inter-GPU communication.
+L00029 | Using this bus bandwidth, we can compare it with the hardware peak bandwidth, independently of the number of ranks used.
+L00030 | 
+L00031 | The formula depends on the collective operation.
+L00032 | 
+L00033 | ### AllReduce
+L00034 | 
+L00035 | An allreduce operation, for each element of the N arrays (input i_X and output o_X, each situated on rank X), is performing the following operation :
+L00036 | 
+L00037 | `o_0 = o_1 = o_2 = ... = o_{n-1} = i_0 + i_1 + i_2 + ... + i_{n-1}`
+L00038 | 
+L00039 | **Note : this is independent of the algorithm used (ring, tree, or other) as long as they use point-to-point operations (send/receive).**
+L00040 | 
+L00125 | 
+L00126 | Similarly to broadcast, all data need to be sent to the root, hence :
+L00127 | 
+L00128 |  `t = S/B`
+L00129 | 
+L00130 | And :
+L00131 | 
+L00132 |  `B = S/t`
+L00133 | 
+L00134 | ### Summary
+L00135 | 
+L00136 | To obtain a bus bandwidth which should be independent of the number of ranks _n_, we apply a correction factor to the algorithm bandwidth :
+L00137 | 
+L00138 | * AllReduce : 2*(_n_-1)/_n_
+L00139 | * ReduceScatter : (_n_-1)/_n_
+L00140 | * AllGather : (_n_-1)/_n_
+L00141 | * Broadcast : 1
+L00142 | * Reduce : 1
+L00143 | * AlltoAll: (_n_-1)/_n_
+L00144 | 
+L00145 | The bus bandwidth should reflect the speed of the hardware bottleneck : NVLink, PCI, QPI, or network.

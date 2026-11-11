@@ -1,0 +1,17 @@
+Source: https://github.com/NVIDIA/nccl/blob/ad2d192c1f279aefcaf340f67e07880b65a1116b/src/group.cc
+Commit: ad2d192c1f279aefcaf340f67e07880b65a1116b
+Ranges: 1-6, 295-301
+
+L00001 | /*************************************************************************
+L00002 |  * SPDX-FileCopyrightText: Copyright (c) 2015-2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+L00003 |  * SPDX-License-Identifier: Apache-2.0
+L00004 |  *
+L00005 |  * See LICENSE.txt for more license information
+L00006 |  *************************************************************************/
+L00295 | static ncclResult_t ncclTaskPrepareJobFunc(struct ncclAsyncJob* job_) {
+L00296 |   struct ncclTaskPrepareJob* job = (struct ncclTaskPrepareJob*)job_;
+L00297 |   struct ncclComm* comm = job->comm;
+L00298 |   CUDACHECK(cudaSetDevice(comm->cudaDev));
+L00299 |   if (!job_->isThreadMain && ncclOsCpuCount(comm->cpuAffinity)) ncclOsSetAffinity(comm->cpuAffinity);
+L00300 |   NCCLCHECK(ncclTaskPrepare(comm, job->simInfo));
+L00301 |   return ncclSuccess;

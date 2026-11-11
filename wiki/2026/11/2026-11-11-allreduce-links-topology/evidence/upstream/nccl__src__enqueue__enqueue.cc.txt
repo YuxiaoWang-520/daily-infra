@@ -1,0 +1,53 @@
+Source: https://github.com/NVIDIA/nccl/blob/ad2d192c1f279aefcaf340f67e07880b65a1116b/src/enqueue/enqueue.cc
+Commit: ad2d192c1f279aefcaf340f67e07880b65a1116b
+Ranges: 1-6, 3570-3612
+
+L00001 | /*************************************************************************
+L00002 |  * SPDX-FileCopyrightText: Copyright (c) 2017-2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+L00003 |  * SPDX-License-Identifier: Apache-2.0
+L00004 |  *
+L00005 |  * See LICENSE.txt for more license information
+L00006 |  *************************************************************************/
+L03570 | ncclResult_t ncclEnqueueCheck(struct ncclInfo* info) {
+L03571 |   // Early-out on invalid or revoked communicator
+L03572 |   ncclResult_t ret = CommCheck(info->comm, info->opName, "comm");
+L03573 |   if (ret != ncclSuccess) return ncclGroupErrCheck(ret);
+L03574 |   if (info->comm->revokedFlag) {
+L03575 |     WARN("%s: communicator was revoked", info->opName);
+L03576 |     return ncclGroupErrCheck(ncclInvalidUsage);
+L03577 |   }
+L03578 |   // Profiler - If a group API event has already started, update the profilerGroupDepth so that the depth
+L03579 |   // updates correctly for implicit ncclGroupStartInternal and ncclGroupEndInternal calls
+L03580 |   if (ncclProfilerApiState.profilerGroupDepth > 0) {
+L03581 |     ncclProfilerApiState.profilerGroupDepth++;
+L03582 |   }
+L03583 |   NCCLCHECK(ncclGroupStartInternal());
+L03584 |   ret = ncclSuccess;
+L03585 |   int devOld = -1;
+L03586 |   // Check whether communicator is ready to communicate
+L03587 |   NCCLCHECKGOTO(ncclCommEnsureReady(info->comm), ret, fail);
+L03588 | 
+L03589 |   if (info->comm->checkMode != ncclCheckModeDefault) {
+L03590 |     CUDACHECKGOTO(cudaGetDevice(&devOld), ret, fail);
+L03591 |     CUDACHECKGOTO(cudaSetDevice(info->comm->cudaDev), ret, fail);
+L03592 |   }
+L03593 |   // If info->comm->checkMode == ncclCheckModeDebugGlobal, ArgsCheck will enqueue info
+L03594 |   // for collectives and the pairs of peers for sendrecv for global check later
+L03595 |   NCCLCHECKGOTO(ArgsCheck(info), ret, fail);
+L03596 | 
+L03597 |   INFO(NCCL_COLL,
+L03598 |        "%s: opCount %lx sendbuff %p recvbuff %p count %zu datatype %d op %d root %d comm %p [nranks=%d] stream %p",
+L03599 |        info->opName, info->comm->opCount, info->sendbuff, info->recvbuff, info->count, info->datatype, info->op,
+L03600 |        info->root, info->comm, info->comm->nRanks, info->stream);
+L03601 |   TRACE_CALL("nccl%s(%" PRIx64 ",%" PRIx64 ",%zu,%d,%d,%d,%p,%p)", info->opName,
+L03602 |              reinterpret_cast<int64_t>(info->sendbuff), reinterpret_cast<int64_t>(info->recvbuff), info->count,
+L03603 |              info->datatype, info->op, info->root, info->comm, info->stream);
+L03604 | 
+L03605 |   NCCLCHECKGOTO(taskAppend(info->comm, info), ret, fail);
+L03606 | 
+L03607 |   info->comm->opCount++;
+L03608 | exit:
+L03609 |   if (devOld != -1) CUDACHECK(cudaSetDevice(devOld));
+L03610 |   ncclGroupErrCheck(ret);
+L03611 |   NCCLCHECK(ncclGroupEndInternal());
+L03612 |   /* if depth is 1, ncclGroupEndInternal() will trigger group ops. The state can change

@@ -1,0 +1,119 @@
+Source: https://github.com/NVIDIA/nccl/blob/ad2d192c1f279aefcaf340f67e07880b65a1116b/src/tuning/tuning.cc
+Commit: ad2d192c1f279aefcaf340f67e07880b65a1116b
+Ranges: 1-6, 125-173, 180-239
+
+L00001 | /*************************************************************************
+L00002 |  * SPDX-FileCopyrightText: Copyright (c) 2015-2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+L00003 |  * SPDX-License-Identifier: Apache-2.0
+L00004 |  *
+L00005 |  * See LICENSE.txt for more license information
+L00006 |  *************************************************************************/
+L00125 | */
+L00126 | ncclResult_t ncclTuningComputeAllTunings(struct ncclTuningInput_t* const input,
+L00127 |                                          struct ncclTuningResultList_t* const tunings) {
+L00128 |   ncclResult_t ret = ncclSuccess;
+L00129 | 
+L00130 |   for (int i = 0; i < NCCL_TUNING_COUNT; i++) {
+L00131 |     struct ncclTuningResult_t tuning = NCCL_TUNING_RESULT_INIT;
+L00132 |     tuning.id = i;
+L00133 |     tuning.valid = 1;
+L00134 | 
+L00135 |     if (!(input->tuningMask & (1ULL << i))) {
+L00136 |       tuning.valid = 0;
+L00137 |       continue;
+L00138 |     }
+L00139 |     NCCLCHECK(ncclTuningExpandId(i, &tuning.algo, &tuning.proto, &tuning.symKernelId, &tuning.ceMethodId));
+L00140 |     NCCLCHECKGOTO(ncclTuningComputeTuning(i, input, &tuning), ret, fail);
+L00141 |     if (tuning.valid) NCCLCHECKGOTO(ncclTuningResultListPushFront(tunings, tuning), ret, fail);
+L00142 |   }
+L00143 | exit:
+L00144 |   return ret;
+L00145 | fail:
+L00146 |   goto exit;
+L00147 | }
+L00148 | 
+L00149 | /*
+L00150 |   Select the best tuning from the given list of tunings.
+L00151 |   The tuning with the lowest simulated time/cost is determined to be best.
+L00152 | */
+L00153 | static ncclResult_t ncclTuningSelectBestTuning(
+L00154 |   struct ncclTuningResultList_t* tunings, struct ncclTuningResult_t* const bestTuning, uint64_t kernelExcludeMask = 0) {
+L00155 |   bestTuning->timeUs = FLT_MAX;
+L00156 |   float bestSelectionTimeUs = FLT_MAX;
+L00157 |   struct ncclTuningResultListNode* node = tunings->head;
+L00158 |   while (node != nullptr) {
+L00159 |     const struct ncclTuningResult_t& tuning = node->result;
+L00160 |     if (((1ull << tuning.symKernelId) & kernelExcludeMask) == 0) {
+L00161 |       float selectionTimeUs = tuning.selectionTimeUs > 0.0f ? tuning.selectionTimeUs : tuning.timeUs;
+L00162 |       TRACE(NCCL_TUNING, "A/P/S %s/%s/%s, time: %f, selection time: %f", ncclAlgoToString(tuning.algo),
+L00163 |             ncclProtoToString(tuning.proto), ncclSymkKernelIdToString(tuning.symKernelId), tuning.timeUs,
+L00164 |             selectionTimeUs);
+L00165 |       if (selectionTimeUs < bestSelectionTimeUs) {
+L00166 |         *bestTuning = tuning;
+L00167 |         bestSelectionTimeUs = selectionTimeUs;
+L00168 |       }
+L00169 |     }
+L00170 |     node = node->next;
+L00171 |   }
+L00172 |   return ncclSuccess;
+L00173 | }
+L00180 | ncclResult_t ncclTuningCompute(struct ncclTuningInput_t* const input, struct ncclTuningResult_t* const result) {
+L00181 |   ncclResult_t ret = ncclSuccess;
+L00182 |   TRACE(NCCL_TUNING,
+L00183 |         "Input: { .comm = %p, .tuningMask = 0x%lx, .func = %s, .redOp = %d, .devRedop = %d, .dataType = %d, .nBytes = "
+L00184 |         "%lu, .numPipeOps = %d, .count = %lu, .countMax = %lu, .nWorks = %d, .winRegType = %d, .regBuff = %d }",
+L00185 |         input->comm, input->tuningMask, ncclFuncToString(input->func), input->redOp, input->devRedOp, input->datatype,
+L00186 |         input->nBytes, input->numPipeOps, input->count, input->countMax, input->nWorks, input->winRegType,
+L00187 |         input->regBuff);
+L00188 |   struct ncclTuningResultList_t tunings;
+L00189 |   tunings.head = nullptr;
+L00190 |   struct ncclTuningResult_t bestTuning = NCCL_TUNING_RESULT_INIT;
+L00191 |   ncclSymkKernelMask symkLLMask = (ncclSymkLLKernelMask() & ~ncclGenkKernelMask());
+L00192 |   // Set tuning to Ring/Simple for single rank case
+L00193 |   if (input->comm->nRanks <= 1) {
+L00194 |     bestTuning.algo = NCCL_ALGO_RING;
+L00195 |     bestTuning.proto = NCCL_PROTO_SIMPLE;
+L00196 |     bestTuning.symKernelId = ncclSymkKernelId_Count;
+L00197 |     bestTuning.ceMethodId = ncclCeMethodId_Count;
+L00198 |     bestTuning.nChannels = 0;
+L00199 |     bestTuning.maxChannels = 0;
+L00200 |     bestTuning.nWarps = 0;
+L00201 |     bestTuning.forced = 0;
+L00202 |   } else if (input->func == ncclFuncAlltoAll && !ncclSymkAlltoAllLLForced(input->comm)) {
+L00203 |     *result = NCCL_TUNING_RESULT_INIT;
+L00204 |     result->valid = 0;
+L00205 |     goto exit;
+L00206 |   } else {
+L00207 |     NCCLCHECKGOTO(ncclTuningComputeAllTunings(input, &tunings), ret, exit);
+L00208 |     // The tuner plugin API covers the five standard collectives only.
+L00209 |     if (input->comm->tuner != NULL && (unsigned)input->func < NCCL_NUM_FUNCTIONS) {
+L00210 |       float generalTable[NCCL_NUM_ALGORITHMS][NCCL_NUM_PROTOCOLS];
+L00211 |       for (int i = 0; i < NCCL_NUM_ALGORITHMS; i++) {
+L00212 |         for (int j = 0; j < NCCL_NUM_PROTOCOLS; j++) {
+L00213 |           generalTable[i][j] = NCCL_TUNING_IGNORE;
+L00214 |         }
+L00215 |       }
+L00216 |       struct ncclTuningResultListNode* node = tunings.head;
+L00217 |       while (node != nullptr) {
+L00218 |         const struct ncclTuningResult_t& tuning = node->result;
+L00219 |         node = node->next;
+L00220 |         if (tuning.algo == NCCL_ALGO_UNDEF || tuning.proto == NCCL_PROTO_UNDEF) continue;
+L00221 |         generalTable[tuning.algo][tuning.proto] = tuning.timeUs;
+L00222 |       }
+L00223 |       node = tunings.head;
+L00224 |       int nMaxChannels = 0;
+L00225 |       NCCLCHECKGOTO(input->comm->tuner->getCollInfo(input->comm->tunerContext, input->func, input->nBytes,
+L00226 |                                                     input->numPipeOps, (float**)generalTable, NCCL_NUM_ALGORITHMS,
+L00227 |                                                     NCCL_NUM_PROTOCOLS, input->regBuff, &nMaxChannels),
+L00228 |                     ret, exit);
+L00229 |       while (node != nullptr) {
+L00230 |         struct ncclTuningResult_t& tuning = node->result;
+L00231 |         node = node->next;
+L00232 |         if (tuning.algo == NCCL_ALGO_UNDEF || tuning.proto == NCCL_PROTO_UNDEF) continue;
+L00233 |         tuning.maxChannels = nMaxChannels;
+L00234 |         tuning.timeUs = generalTable[tuning.algo][tuning.proto];
+L00235 |       }
+L00236 |     }
+L00237 |     NCCLCHECKGOTO(ncclTuningSelectBestTuning(&tunings, &bestTuning), ret, exit);
+L00238 |   }
+L00239 |   if (bestTuning.algo != NCCL_ALGO_UNDEF && bestTuning.proto != NCCL_PROTO_UNDEF) {

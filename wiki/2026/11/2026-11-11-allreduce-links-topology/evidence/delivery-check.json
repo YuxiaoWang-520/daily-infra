@@ -1,0 +1,22 @@
+{
+  "checked_on": "2026-11-11",
+  "timezone": "Asia/Shanghai",
+  "local_links_checked": 117,
+  "broken_links": [],
+  "mermaid_figures_match_source": 2,
+  "source_originals_and_excerpts_checked": 10,
+  "fixed_source_line_ranges_valid": true,
+  "stable_tag_equals_selected_default_commit": true,
+  "nccl_cache_clean": true,
+  "paper_cached_hash_verified": true,
+  "tested_python_hashes_match": 7,
+  "unittest_passed": 28,
+  "gloo_processes_correct": 4,
+  "ring_tx_bytes_per_rank": 48,
+  "modeled_times_verified": true,
+  "index_count": 23,
+  "today_articles": 1,
+  "credential_pattern_scan": "no matching token or private-key patterns",
+  "article_has_no_caches": true,
+  "checksum_verification": "passed: 43 files, shasum exit code 0; see evidence/runs/checksums.txt"
+}

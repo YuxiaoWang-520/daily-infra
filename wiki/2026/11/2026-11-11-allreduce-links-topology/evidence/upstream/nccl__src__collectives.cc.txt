@@ -1,0 +1,30 @@
+Source: https://github.com/NVIDIA/nccl/blob/ad2d192c1f279aefcaf340f67e07880b65a1116b/src/collectives.cc
+Commit: ad2d192c1f279aefcaf340f67e07880b65a1116b
+Ranges: 1-6, 192-211
+
+L00001 | /*************************************************************************
+L00002 |  * SPDX-FileCopyrightText: Copyright (c) 2015-2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+L00003 |  * SPDX-License-Identifier: Apache-2.0
+L00004 |  *
+L00005 |  * See LICENSE.txt for more license information
+L00006 |  *************************************************************************/
+L00192 | static inline ncclResult_t ncclAllReduceConfigImpl(const void* sendbuff, void* recvbuff, size_t count,
+L00193 |                                                    ncclDataType_t datatype, ncclRedOp_t op, ncclComm_t comm,
+L00194 |                                                    cudaStream_t stream, const ncclCollConfig_t* config) {
+L00195 |   // clang-format off
+L00196 |   struct ncclInfo info = {ncclFuncAllReduce, "AllReduce",
+L00197 |                           sendbuff, recvbuff, count, datatype, op, 0, comm, stream, /* Args */
+L00198 |                           ALLREDUCE_CHUNKSTEPS, ALLREDUCE_SLICESTEPS};
+L00199 |   // clang-format on
+L00200 |   NCCLCHECK(ncclParseCollConfig(config, &info.collConfig));
+L00201 |   return ncclEnqueueCheck(&info);
+L00202 | }
+L00203 | 
+L00204 | NCCL_API(ncclResult_t, ncclAllReduce, const void* sendbuff, void* recvbuff, size_t count, ncclDataType_t datatype,
+L00205 |          ncclRedOp_t op, ncclComm* comm, cudaStream_t stream);
+L00206 | ncclResult_t ncclAllReduce(const void* sendbuff, void* recvbuff, size_t count, ncclDataType_t datatype, ncclRedOp_t op,
+L00207 |                            ncclComm* comm, cudaStream_t stream) {
+L00208 |   NVTX3_FUNC_WITH_PARAMS(AllReduce, NcclNvtxParamsAllReduce,
+L00209 |                          NVTX3_PAYLOAD(comm ? comm->commHash : 0, count * ncclTypeSize(datatype), op));
+L00210 |   return ncclAllReduceConfigImpl(sendbuff, recvbuff, count, datatype, op, comm, stream, nullptr);
+L00211 | }

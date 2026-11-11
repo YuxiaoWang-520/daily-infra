@@ -28,7 +28,8 @@
 | 20 | [训练在等数据，怎样判断瓶颈在磁盘、CPU 还是传输？](wiki/2026/11/2026-11-06-dataloader-input-pipeline/README.md) | DataLoader、预取、pinned memory 与输入流水线 |
 | 21 | [FSDP／ZeRO 怎样分片参数、梯度与优化器状态？](wiki/2026/11/2026-11-09-fsdp-zero-state-sharding/README.md) | 训练状态分片、通信与容量，前置为第 17—19 篇 |
 | 22 | [训练中断后，checkpoint 怎样恢复一致的进度？](wiki/2026/11/2026-11-10-training-checkpoint-recovery/README.md) | 模型、优化器、随机性和数据进度，前置为第 18—21 篇 |
-| 23 | AllReduce 的数据怎样沿链路流动，为什么增加 GPU 后通信反而更慢？ | 通信量、环／树直觉与链路瓶颈，前置为第 04、17、21 篇 |
+| 23 | [AllReduce 的数据怎样沿链路流动，为什么增加 GPU 后通信反而更慢？](wiki/2026/11/2026-11-11-allreduce-links-topology/README.md) | 通信量、环／树直觉与链路瓶颈，前置为第 04、17、21 篇 |
+| 24 | CUDA Graph 怎样减少重复提交开销，哪些动态行为会让捕获失效？ | 重复提交、图捕获、动态形状与执行约束，前置为第 06、09 篇 |
 
 每篇既要独立可读，也要链接已有前置文章。较新的实现可以作为当天的进阶部分，但不能让读者先理解尚未解释的术语。
 

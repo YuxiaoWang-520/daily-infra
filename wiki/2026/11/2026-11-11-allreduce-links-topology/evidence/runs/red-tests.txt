@@ -1,0 +1,521 @@
+test_flat_ring_matches_alpha_beta_formula (test_answers.CostTests.test_flat_ring_matches_alpha_beta_formula) ... ERROR
+test_large_payload_full_block_tree_has_more_critical_path_bytes (test_answers.CostTests.test_large_payload_full_block_tree_has_more_critical_path_bytes) ... ERROR
+test_more_ranks_at_same_payload_adds_rounds_and_traffic (test_answers.CostTests.test_more_ranks_at_same_payload_adds_rounds_and_traffic) ... ERROR
+test_rejects_invalid_payload_or_startup (test_answers.CostTests.test_rejects_invalid_payload_or_startup) ... 
+  test_rejects_invalid_payload_or_startup (test_answers.CostTests.test_rejects_invalid_payload_or_startup) (payload=0) ... ERROR
+  test_rejects_invalid_payload_or_startup (test_answers.CostTests.test_rejects_invalid_payload_or_startup) (payload=-2) ... ERROR
+  test_rejects_invalid_payload_or_startup (test_answers.CostTests.test_rejects_invalid_payload_or_startup) (payload=3) ... ERROR
+  test_rejects_invalid_payload_or_startup (test_answers.CostTests.test_rejects_invalid_payload_or_startup) (payload=True) ... ERROR
+  test_rejects_invalid_payload_or_startup (test_answers.CostTests.test_rejects_invalid_payload_or_startup) (alpha=-1) ... ERROR
+  test_rejects_invalid_payload_or_startup (test_answers.CostTests.test_rejects_invalid_payload_or_startup) (alpha=nan) ... ERROR
+  test_rejects_invalid_payload_or_startup (test_answers.CostTests.test_rejects_invalid_payload_or_startup) (alpha=inf) ... ERROR
+  test_rejects_invalid_payload_or_startup (test_answers.CostTests.test_rejects_invalid_payload_or_startup) (alpha=True) ... ERROR
+test_rejects_invalid_rank_order (test_answers.CostTests.test_rejects_invalid_rank_order) ... 
+  test_rejects_invalid_rank_order (test_answers.CostTests.test_rejects_invalid_rank_order) (order=()) ... ERROR
+  test_rejects_invalid_rank_order (test_answers.CostTests.test_rejects_invalid_rank_order) (order=(0, 0)) ... ERROR
+  test_rejects_invalid_rank_order (test_answers.CostTests.test_rejects_invalid_rank_order) (order=(1, 2)) ... ERROR
+  test_rejects_invalid_rank_order (test_answers.CostTests.test_rejects_invalid_rank_order) (order=(False, 1)) ... ERROR
+test_rejects_missing_or_empty_routes (test_answers.CostTests.test_rejects_missing_or_empty_routes) ... 
+  test_rejects_missing_or_empty_routes (test_answers.CostTests.test_rejects_missing_or_empty_routes) (bad={}) ... ERROR
+  test_rejects_missing_or_empty_routes (test_answers.CostTests.test_rejects_missing_or_empty_routes) (bad={(0, 1): (), (1, 0): ('link-1',)}) ... ERROR
+test_rejects_non_finite_or_non_positive_capacity (test_answers.CostTests.test_rejects_non_finite_or_non_positive_capacity) ... 
+  test_rejects_non_finite_or_non_positive_capacity (test_answers.CostTests.test_rejects_non_finite_or_non_positive_capacity) (value=0) ... ERROR
+  test_rejects_non_finite_or_non_positive_capacity (test_answers.CostTests.test_rejects_non_finite_or_non_positive_capacity) (value=-1) ... ERROR
+  test_rejects_non_finite_or_non_positive_capacity (test_answers.CostTests.test_rejects_non_finite_or_non_positive_capacity) (value=inf) ... ERROR
+  test_rejects_non_finite_or_non_positive_capacity (test_answers.CostTests.test_rejects_non_finite_or_non_positive_capacity) (value=nan) ... ERROR
+  test_rejects_non_finite_or_non_positive_capacity (test_answers.CostTests.test_rejects_non_finite_or_non_positive_capacity) (value=True) ... ERROR
+test_rejects_unknown_or_duplicate_resource_in_route (test_answers.CostTests.test_rejects_unknown_or_duplicate_resource_in_route) ... 
+  test_rejects_unknown_or_duplicate_resource_in_route (test_answers.CostTests.test_rejects_unknown_or_duplicate_resource_in_route) (bad=('unknown',)) ... ERROR
+  test_rejects_unknown_or_duplicate_resource_in_route (test_answers.CostTests.test_rejects_unknown_or_duplicate_resource_in_route) (bad=('link-0', 'link-0')) ... ERROR
+test_shared_nic_counts_both_concurrent_cross_node_edges (test_answers.CostTests.test_shared_nic_counts_both_concurrent_cross_node_edges) ... ERROR
+test_single_rank_has_zero_cost_without_routes (test_answers.CostTests.test_single_rank_has_zero_cost_without_routes) ... ERROR
+test_slow_resource_sets_capacity_term (test_answers.CostTests.test_slow_resource_sets_capacity_term) ... ERROR
+test_tiny_payload_tree_has_fewer_startups_in_ideal_model (test_answers.CostTests.test_tiny_payload_tree_has_fewer_startups_in_ideal_model) ... ERROR
+test_tree_restricts_rank_count_to_power_of_two (test_answers.CostTests.test_tree_restricts_rank_count_to_power_of_two) ... ERROR
+test_each_rank_sends_exactly_one_and_half_payloads (test_answers.RingTests.test_each_rank_sends_exactly_one_and_half_payloads) ... ERROR
+test_four_rank_sum_and_reduce_scatter_ownership (test_answers.RingTests.test_four_rank_sum_and_reduce_scatter_ownership) ... ERROR
+test_negative_values_and_cancellation (test_answers.RingTests.test_negative_values_and_cancellation) ... ERROR
+test_non_power_of_two_ring_is_supported (test_answers.RingTests.test_non_power_of_two_ring_is_supported) ... ERROR
+test_rejects_empty_or_ragged_inputs (test_answers.RingTests.test_rejects_empty_or_ragged_inputs) ... 
+  test_rejects_empty_or_ragged_inputs (test_answers.RingTests.test_rejects_empty_or_ragged_inputs) (inputs=[]) ... ERROR
+  test_rejects_empty_or_ragged_inputs (test_answers.RingTests.test_rejects_empty_or_ragged_inputs) (inputs=[[]]) ... ERROR
+  test_rejects_empty_or_ragged_inputs (test_answers.RingTests.test_rejects_empty_or_ragged_inputs) (inputs=[[1, 2], [1]]) ... ERROR
+test_rejects_invalid_element_width (test_answers.RingTests.test_rejects_invalid_element_width) ... 
+  test_rejects_invalid_element_width (test_answers.RingTests.test_rejects_invalid_element_width) (width=0) ... ERROR
+  test_rejects_invalid_element_width (test_answers.RingTests.test_rejects_invalid_element_width) (width=-1) ... ERROR
+  test_rejects_invalid_element_width (test_answers.RingTests.test_rejects_invalid_element_width) (width=True) ... ERROR
+  test_rejects_invalid_element_width (test_answers.RingTests.test_rejects_invalid_element_width) (width=1.5) ... ERROR
+test_rejects_non_integer_or_boolean_elements (test_answers.RingTests.test_rejects_non_integer_or_boolean_elements) ... 
+  test_rejects_non_integer_or_boolean_elements (test_answers.RingTests.test_rejects_non_integer_or_boolean_elements) (value=1.2) ... ERROR
+  test_rejects_non_integer_or_boolean_elements (test_answers.RingTests.test_rejects_non_integer_or_boolean_elements) (value=True) ... ERROR
+test_rejects_unequal_chunks_in_this_teaching_interface (test_answers.RingTests.test_rejects_unequal_chunks_in_this_teaching_interface) ... ERROR
+test_single_rank_is_identity_with_no_communication (test_answers.RingTests.test_single_rank_is_identity_with_no_communication) ... ERROR
+test_trace_has_two_phases_and_no_missing_round_or_edge (test_answers.RingTests.test_trace_has_two_phases_and_no_missing_round_or_edge) ... ERROR
+
+======================================================================
+ERROR: test_flat_ring_matches_alpha_beta_formula (test_answers.CostTests.test_flat_ring_matches_alpha_beta_formula)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/test_answers.py", line 104, in test_flat_ring_matches_alpha_beta_formula
+    result = ring_cost(256 * 2**20, (0, 1, 2, 3), routes, capacities, 5e-6)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/costs.py", line 21, in ring_cost
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_large_payload_full_block_tree_has_more_critical_path_bytes (test_answers.CostTests.test_large_payload_full_block_tree_has_more_critical_path_bytes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/test_answers.py", line 147, in test_large_payload_full_block_tree_has_more_critical_path_bytes
+    ring = ring_cost(256 * 2**20, tuple(range(8)), routes, capacities, 5e-6)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/costs.py", line 21, in ring_cost
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_more_ranks_at_same_payload_adds_rounds_and_traffic (test_answers.CostTests.test_more_ranks_at_same_payload_adds_rounds_and_traffic)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/test_answers.py", line 124, in test_more_ranks_at_same_payload_adds_rounds_and_traffic
+    small4 = ring_cost(4096, tuple(range(4)), r4, b4, 5e-6)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/costs.py", line 21, in ring_cost
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_invalid_payload_or_startup (test_answers.CostTests.test_rejects_invalid_payload_or_startup) (payload=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/test_answers.py", line 180, in test_rejects_invalid_payload_or_startup
+    ring_cost(payload, (0, 1), routes, capacities, 0)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/costs.py", line 21, in ring_cost
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_invalid_payload_or_startup (test_answers.CostTests.test_rejects_invalid_payload_or_startup) (payload=-2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/test_answers.py", line 180, in test_rejects_invalid_payload_or_startup
+    ring_cost(payload, (0, 1), routes, capacities, 0)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/costs.py", line 21, in ring_cost
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_invalid_payload_or_startup (test_answers.CostTests.test_rejects_invalid_payload_or_startup) (payload=3)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/test_answers.py", line 180, in test_rejects_invalid_payload_or_startup
+    ring_cost(payload, (0, 1), routes, capacities, 0)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/costs.py", line 21, in ring_cost
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_invalid_payload_or_startup (test_answers.CostTests.test_rejects_invalid_payload_or_startup) (payload=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/test_answers.py", line 180, in test_rejects_invalid_payload_or_startup
+    ring_cost(payload, (0, 1), routes, capacities, 0)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/costs.py", line 21, in ring_cost
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_invalid_payload_or_startup (test_answers.CostTests.test_rejects_invalid_payload_or_startup) (alpha=-1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/test_answers.py", line 183, in test_rejects_invalid_payload_or_startup
+    ring_cost(64, (0, 1), routes, capacities, alpha)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/costs.py", line 21, in ring_cost
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_invalid_payload_or_startup (test_answers.CostTests.test_rejects_invalid_payload_or_startup) (alpha=nan)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/test_answers.py", line 183, in test_rejects_invalid_payload_or_startup
+    ring_cost(64, (0, 1), routes, capacities, alpha)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/costs.py", line 21, in ring_cost
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_invalid_payload_or_startup (test_answers.CostTests.test_rejects_invalid_payload_or_startup) (alpha=inf)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/test_answers.py", line 183, in test_rejects_invalid_payload_or_startup
+    ring_cost(64, (0, 1), routes, capacities, alpha)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/costs.py", line 21, in ring_cost
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_invalid_payload_or_startup (test_answers.CostTests.test_rejects_invalid_payload_or_startup) (alpha=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/test_answers.py", line 183, in test_rejects_invalid_payload_or_startup
+    ring_cost(64, (0, 1), routes, capacities, alpha)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/costs.py", line 21, in ring_cost
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_invalid_rank_order (test_answers.CostTests.test_rejects_invalid_rank_order) (order=())
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/test_answers.py", line 154, in test_rejects_invalid_rank_order
+    ring_cost(64, order, {}, {}, 0)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/costs.py", line 21, in ring_cost
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_invalid_rank_order (test_answers.CostTests.test_rejects_invalid_rank_order) (order=(0, 0))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/test_answers.py", line 154, in test_rejects_invalid_rank_order
+    ring_cost(64, order, {}, {}, 0)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/costs.py", line 21, in ring_cost
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_invalid_rank_order (test_answers.CostTests.test_rejects_invalid_rank_order) (order=(1, 2))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/test_answers.py", line 154, in test_rejects_invalid_rank_order
+    ring_cost(64, order, {}, {}, 0)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/costs.py", line 21, in ring_cost
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_invalid_rank_order (test_answers.CostTests.test_rejects_invalid_rank_order) (order=(False, 1))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/test_answers.py", line 154, in test_rejects_invalid_rank_order
+    ring_cost(64, order, {}, {}, 0)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/costs.py", line 21, in ring_cost
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_missing_or_empty_routes (test_answers.CostTests.test_rejects_missing_or_empty_routes) (bad={})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/test_answers.py", line 160, in test_rejects_missing_or_empty_routes
+    ring_cost(64, (0, 1), bad, capacities, 0)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/costs.py", line 21, in ring_cost
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_missing_or_empty_routes (test_answers.CostTests.test_rejects_missing_or_empty_routes) (bad={(0, 1): (), (1, 0): ('link-1',)})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/test_answers.py", line 160, in test_rejects_missing_or_empty_routes
+    ring_cost(64, (0, 1), bad, capacities, 0)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/costs.py", line 21, in ring_cost
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_non_finite_or_non_positive_capacity (test_answers.CostTests.test_rejects_non_finite_or_non_positive_capacity) (value=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/test_answers.py", line 174, in test_rejects_non_finite_or_non_positive_capacity
+    ring_cost(64, (0, 1), routes, capacities, 0)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/costs.py", line 21, in ring_cost
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_non_finite_or_non_positive_capacity (test_answers.CostTests.test_rejects_non_finite_or_non_positive_capacity) (value=-1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/test_answers.py", line 174, in test_rejects_non_finite_or_non_positive_capacity
+    ring_cost(64, (0, 1), routes, capacities, 0)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/costs.py", line 21, in ring_cost
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_non_finite_or_non_positive_capacity (test_answers.CostTests.test_rejects_non_finite_or_non_positive_capacity) (value=inf)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/test_answers.py", line 174, in test_rejects_non_finite_or_non_positive_capacity
+    ring_cost(64, (0, 1), routes, capacities, 0)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/costs.py", line 21, in ring_cost
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_non_finite_or_non_positive_capacity (test_answers.CostTests.test_rejects_non_finite_or_non_positive_capacity) (value=nan)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/test_answers.py", line 174, in test_rejects_non_finite_or_non_positive_capacity
+    ring_cost(64, (0, 1), routes, capacities, 0)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/costs.py", line 21, in ring_cost
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_non_finite_or_non_positive_capacity (test_answers.CostTests.test_rejects_non_finite_or_non_positive_capacity) (value=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/test_answers.py", line 174, in test_rejects_non_finite_or_non_positive_capacity
+    ring_cost(64, (0, 1), routes, capacities, 0)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/costs.py", line 21, in ring_cost
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_unknown_or_duplicate_resource_in_route (test_answers.CostTests.test_rejects_unknown_or_duplicate_resource_in_route) (bad=('unknown',))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/test_answers.py", line 167, in test_rejects_unknown_or_duplicate_resource_in_route
+    ring_cost(64, (0, 1), routes, capacities, 0)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/costs.py", line 21, in ring_cost
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_unknown_or_duplicate_resource_in_route (test_answers.CostTests.test_rejects_unknown_or_duplicate_resource_in_route) (bad=('link-0', 'link-0'))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/test_answers.py", line 167, in test_rejects_unknown_or_duplicate_resource_in_route
+    ring_cost(64, (0, 1), routes, capacities, 0)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/costs.py", line 21, in ring_cost
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_shared_nic_counts_both_concurrent_cross_node_edges (test_answers.CostTests.test_shared_nic_counts_both_concurrent_cross_node_edges)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/test_answers.py", line 112, in test_shared_nic_counts_both_concurrent_cross_node_edges
+    grouped = ring_cost(256 * 2**20, (0, 1, 2, 3), routes, capacities, 5e-6)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/costs.py", line 21, in ring_cost
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_single_rank_has_zero_cost_without_routes (test_answers.CostTests.test_single_rank_has_zero_cost_without_routes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/test_answers.py", line 135, in test_single_rank_has_zero_cost_without_routes
+    result = ring_cost(64, (0,), {}, {}, 0)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/costs.py", line 21, in ring_cost
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_slow_resource_sets_capacity_term (test_answers.CostTests.test_slow_resource_sets_capacity_term)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/test_answers.py", line 131, in test_slow_resource_sets_capacity_term
+    result = ring_cost(4000, (0, 1, 2, 3), routes, capacities, 0)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/costs.py", line 21, in ring_cost
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_tiny_payload_tree_has_fewer_startups_in_ideal_model (test_answers.CostTests.test_tiny_payload_tree_has_fewer_startups_in_ideal_model)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/test_answers.py", line 141, in test_tiny_payload_tree_has_fewer_startups_in_ideal_model
+    ring = ring_cost(4096, tuple(range(8)), routes, capacities, 5e-6)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/costs.py", line 21, in ring_cost
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_tree_restricts_rank_count_to_power_of_two (test_answers.CostTests.test_tree_restricts_rank_count_to_power_of_two)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/test_answers.py", line 187, in test_tree_restricts_rank_count_to_power_of_two
+    binomial_tree_cost(4096, 3, 50e9, 5e-6)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/costs.py", line 27, in binomial_tree_cost
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_each_rank_sends_exactly_one_and_half_payloads (test_answers.RingTests.test_each_rank_sends_exactly_one_and_half_payloads)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/test_answers.py", line 63, in test_each_rank_sends_exactly_one_and_half_payloads
+    result = ring_allreduce([[rank] * 8 for rank in range(4)], element_bytes=4)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/ring.py", line 27, in ring_allreduce
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_four_rank_sum_and_reduce_scatter_ownership (test_answers.RingTests.test_four_rank_sum_and_reduce_scatter_ownership)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/test_answers.py", line 40, in test_four_rank_sum_and_reduce_scatter_ownership
+    result = ring_allreduce(inputs, element_bytes=4)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/ring.py", line 27, in ring_allreduce
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_negative_values_and_cancellation (test_answers.RingTests.test_negative_values_and_cancellation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/test_answers.py", line 78, in test_negative_values_and_cancellation
+    result = ring_allreduce([[2, -3], [-2, 3]])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/ring.py", line 27, in ring_allreduce
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_non_power_of_two_ring_is_supported (test_answers.RingTests.test_non_power_of_two_ring_is_supported)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/test_answers.py", line 68, in test_non_power_of_two_ring_is_supported
+    result = ring_allreduce([[1, 2, 3, 4, 5, 6]] * 3)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/ring.py", line 27, in ring_allreduce
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_empty_or_ragged_inputs (test_answers.RingTests.test_rejects_empty_or_ragged_inputs) (inputs=[])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/test_answers.py", line 84, in test_rejects_empty_or_ragged_inputs
+    ring_allreduce(inputs)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/ring.py", line 27, in ring_allreduce
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_empty_or_ragged_inputs (test_answers.RingTests.test_rejects_empty_or_ragged_inputs) (inputs=[[]])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/test_answers.py", line 84, in test_rejects_empty_or_ragged_inputs
+    ring_allreduce(inputs)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/ring.py", line 27, in ring_allreduce
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_empty_or_ragged_inputs (test_answers.RingTests.test_rejects_empty_or_ragged_inputs) (inputs=[[1, 2], [1]])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/test_answers.py", line 84, in test_rejects_empty_or_ragged_inputs
+    ring_allreduce(inputs)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/ring.py", line 27, in ring_allreduce
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_invalid_element_width (test_answers.RingTests.test_rejects_invalid_element_width) (width=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/test_answers.py", line 98, in test_rejects_invalid_element_width
+    ring_allreduce([[1]], element_bytes=width)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/ring.py", line 27, in ring_allreduce
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_invalid_element_width (test_answers.RingTests.test_rejects_invalid_element_width) (width=-1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/test_answers.py", line 98, in test_rejects_invalid_element_width
+    ring_allreduce([[1]], element_bytes=width)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/ring.py", line 27, in ring_allreduce
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_invalid_element_width (test_answers.RingTests.test_rejects_invalid_element_width) (width=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/test_answers.py", line 98, in test_rejects_invalid_element_width
+    ring_allreduce([[1]], element_bytes=width)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/ring.py", line 27, in ring_allreduce
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_invalid_element_width (test_answers.RingTests.test_rejects_invalid_element_width) (width=1.5)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/test_answers.py", line 98, in test_rejects_invalid_element_width
+    ring_allreduce([[1]], element_bytes=width)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/ring.py", line 27, in ring_allreduce
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_non_integer_or_boolean_elements (test_answers.RingTests.test_rejects_non_integer_or_boolean_elements) (value=1.2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/test_answers.py", line 93, in test_rejects_non_integer_or_boolean_elements
+    ring_allreduce([[value]])
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/ring.py", line 27, in ring_allreduce
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_non_integer_or_boolean_elements (test_answers.RingTests.test_rejects_non_integer_or_boolean_elements) (value=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/test_answers.py", line 93, in test_rejects_non_integer_or_boolean_elements
+    ring_allreduce([[value]])
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/ring.py", line 27, in ring_allreduce
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_unequal_chunks_in_this_teaching_interface (test_answers.RingTests.test_rejects_unequal_chunks_in_this_teaching_interface)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/test_answers.py", line 88, in test_rejects_unequal_chunks_in_this_teaching_interface
+    ring_allreduce([[1, 2, 3], [4, 5, 6]])
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/ring.py", line 27, in ring_allreduce
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_single_rank_is_identity_with_no_communication (test_answers.RingTests.test_single_rank_is_identity_with_no_communication)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/test_answers.py", line 72, in test_single_rank_is_identity_with_no_communication
+    result = ring_allreduce([[7, -2]])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/ring.py", line 27, in ring_allreduce
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_trace_has_two_phases_and_no_missing_round_or_edge (test_answers.RingTests.test_trace_has_two_phases_and_no_missing_round_or_edge)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/test_answers.py", line 50, in test_trace_has_two_phases_and_no_missing_round_or_edge
+    result = ring_allreduce([[rank] * 4 for rank in range(4)])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-11-allreduce-links-topology/code/ring.py", line 27, in ring_allreduce
+    raise NotImplementedError
+NotImplementedError
+
+----------------------------------------------------------------------
+Ran 23 tests in 0.003s
+
+FAILED (errors=45)

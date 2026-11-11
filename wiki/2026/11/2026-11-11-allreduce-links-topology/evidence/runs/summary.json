@@ -1,0 +1,40 @@
+{
+  "environment": {
+    "hostname": "wyx-macmini.local",
+    "cpu": "Apple M6",
+    "platform": "macOS-27.0-arm64-arm-64bit",
+    "python": "3.12.16 (main, Oct 26 2026, 11:31:43) [Clang 21.1.8 ]",
+    "python_executable": "/Users/wangyuxiao/miniforge3/envs/ai-infra/bin/python",
+    "torch": "2.15.0",
+    "torch_git": "d0f2af8b66b20da4baa50644c0cd3f887a2eae2e"
+  },
+  "tested_code_sha256": {
+    "code/costs.py": "0dfac6a5150f54cffc31cdf3e6959da61abb6fbf82a6bb56d207b6dc4594eb0c",
+    "code/exercise_costs.py": "a75b61ffe9beb6cff2b8302d15bc344d4c0a390b3f624156a703d1a6be5270d5",
+    "code/exercise_ring.py": "68df8747ddeb020447146ae3c1d1c95a7d9fe5402246288ec5ab92d0917d1cff",
+    "code/gloo_probe.py": "7cb0961c06d634c44c261e0193cdf3bf50969e3ee50bce7d40ba570e3279f4f0",
+    "code/ring.py": "b492c88fbf0898fb06af601f439626c00ce0ef2f55edbc2c6eaa05e84e137788",
+    "code/run_lab.py": "195a34c64c8ea55bf6e76f0c5aa1c767abbeba8cd452b0874fe377342774cb0d",
+    "code/test_answers.py": "40536f75e79ceeb92b7d75865bf6c7e78c1d9b8c9379534f3dbc65ee0049af1b"
+  },
+  "unittest": {
+    "count": 28,
+    "elapsed_seconds": 0.001,
+    "exit_code": 0,
+    "command": "PYTHONDONTWRITEBYTECODE=1 /Users/wangyuxiao/miniforge3/envs/ai-infra/bin/python -m unittest discover -s code -p test_answers.py -v"
+  },
+  "ruff_check_exit_code": 0,
+  "ruff_format_check_exit_code": 0,
+  "lab": {
+    "exit_code": 0,
+    "command": "PYTHONDONTWRITEBYTECODE=1 /Users/wangyuxiao/miniforge3/envs/ai-infra/bin/python code/run_lab.py --output /tmp/daily-infra-nov11-archival-lab.json",
+    "actual_fresh_cpu_processes": 4,
+    "scope": "Actual same-host CPU SUM; modeled costs use invented inputs."
+  },
+  "regression": {
+    "new_tests": 5,
+    "red_failures": 1,
+    "red_errors": 4,
+    "fixed": "integer loads, rational ratios, explicit float range and single-rank zero"
+  }
+}

@@ -1,0 +1,28 @@
+test_flat_ring_matches_alpha_beta_formula (test_answers.CostTests.test_flat_ring_matches_alpha_beta_formula) ... ok
+test_large_payload_full_block_tree_has_more_critical_path_bytes (test_answers.CostTests.test_large_payload_full_block_tree_has_more_critical_path_bytes) ... ok
+test_more_ranks_at_same_payload_adds_rounds_and_traffic (test_answers.CostTests.test_more_ranks_at_same_payload_adds_rounds_and_traffic) ... ok
+test_rejects_invalid_payload_or_startup (test_answers.CostTests.test_rejects_invalid_payload_or_startup) ... ok
+test_rejects_invalid_rank_order (test_answers.CostTests.test_rejects_invalid_rank_order) ... ok
+test_rejects_missing_or_empty_routes (test_answers.CostTests.test_rejects_missing_or_empty_routes) ... ok
+test_rejects_non_finite_or_non_positive_capacity (test_answers.CostTests.test_rejects_non_finite_or_non_positive_capacity) ... ok
+test_rejects_unknown_or_duplicate_resource_in_route (test_answers.CostTests.test_rejects_unknown_or_duplicate_resource_in_route) ... ok
+test_shared_nic_counts_both_concurrent_cross_node_edges (test_answers.CostTests.test_shared_nic_counts_both_concurrent_cross_node_edges) ... ok
+test_single_rank_has_zero_cost_without_routes (test_answers.CostTests.test_single_rank_has_zero_cost_without_routes) ... ok
+test_slow_resource_sets_capacity_term (test_answers.CostTests.test_slow_resource_sets_capacity_term) ... ok
+test_tiny_payload_tree_has_fewer_startups_in_ideal_model (test_answers.CostTests.test_tiny_payload_tree_has_fewer_startups_in_ideal_model) ... ok
+test_tree_restricts_rank_count_to_power_of_two (test_answers.CostTests.test_tree_restricts_rank_count_to_power_of_two) ... ok
+test_each_rank_sends_exactly_one_and_half_payloads (test_answers.RingTests.test_each_rank_sends_exactly_one_and_half_payloads) ... ok
+test_four_rank_sum_and_reduce_scatter_ownership (test_answers.RingTests.test_four_rank_sum_and_reduce_scatter_ownership) ... ok
+test_negative_values_and_cancellation (test_answers.RingTests.test_negative_values_and_cancellation) ... ok
+test_non_power_of_two_ring_is_supported (test_answers.RingTests.test_non_power_of_two_ring_is_supported) ... ok
+test_rejects_empty_or_ragged_inputs (test_answers.RingTests.test_rejects_empty_or_ragged_inputs) ... ok
+test_rejects_invalid_element_width (test_answers.RingTests.test_rejects_invalid_element_width) ... ok
+test_rejects_non_integer_or_boolean_elements (test_answers.RingTests.test_rejects_non_integer_or_boolean_elements) ... ok
+test_rejects_unequal_chunks_in_this_teaching_interface (test_answers.RingTests.test_rejects_unequal_chunks_in_this_teaching_interface) ... ok
+test_single_rank_is_identity_with_no_communication (test_answers.RingTests.test_single_rank_is_identity_with_no_communication) ... ok
+test_trace_has_two_phases_and_no_missing_round_or_edge (test_answers.RingTests.test_trace_has_two_phases_and_no_missing_round_or_edge) ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 0.001s
+
+OK

@@ -1,0 +1,35 @@
+Source: https://github.com/NVIDIA/nccl/blob/ad2d192c1f279aefcaf340f67e07880b65a1116b/src/tuning/tuning_general.cc
+Commit: ad2d192c1f279aefcaf340f67e07880b65a1116b
+Ranges: 1-6, 18-26, 58-73
+
+L00001 |  /*************************************************************************
+L00002 |  * SPDX-FileCopyrightText: Copyright (c) 2015-2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+L00003 |  * SPDX-License-Identifier: Apache-2.0
+L00004 |  *
+L00005 |  * See LICENSE.txt for more license information
+L00006 |  *************************************************************************/
+L00018 | int ncclTuningGetNsteps(int coll, int nRanks) {
+L00019 |   if (coll == ncclFuncAllReduce) {
+L00020 |     return 2 * (nRanks - 1);
+L00021 |   } else if (coll == ncclFuncReduceScatter || coll == ncclFuncAllGather) {
+L00022 |     return nRanks - 1;
+L00023 |   } else {
+L00024 |     return nRanks;
+L00025 |   }
+L00026 | }
+L00058 | float ncclTuningGetTime(struct ncclTuningInput_t* const inputs, int a, float lat /* usec */, float bw /* GB/s */) {
+L00059 |   int latCount = a == NCCL_ALGO_RING ? inputs->numPipeOps : DIVUP(inputs->numPipeOps, NCCL_MAX_DEV_WORK_BATCH_COLLS);
+L00060 | 
+L00061 |   // Relegate fp8 reduction trees of sufficient depth that they incur precision loss
+L00062 |   // to be least preferred.
+L00063 |   float precision_ratio = 1.0;
+L00064 |   if (inputs->datatype == ncclFloat8e4m3 || inputs->datatype == ncclFloat8e5m2) {
+L00065 |     if (a == NCCL_ALGO_RING && inputs->comm->nRanks > 8) {
+L00066 |       precision_ratio = 1024.0; // Any factor large enough to act as a partition between lossy and non-lossy algos.
+L00067 |     }
+L00068 |   }
+L00069 | 
+L00070 |   float time = lat * latCount * precision_ratio;
+L00071 |   if (bw > 0) time += inputs->nBytes / (1000 * bw) * precision_ratio;
+L00072 |   return time;
+L00073 | }

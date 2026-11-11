@@ -1,0 +1,3 @@
+# Preserve upstream original whitespace and real failing-test output.
+evidence/upstream/** -whitespace
+evidence/runs/*red-test*.txt -whitespace

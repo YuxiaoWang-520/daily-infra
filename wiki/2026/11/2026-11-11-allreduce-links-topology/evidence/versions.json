@@ -1,0 +1,41 @@
+{
+  "date": "2026-11-11",
+  "timezone": "Asia/Shanghai",
+  "nccl": {
+    "repository": "https://github.com/NVIDIA/nccl",
+    "remote": "https://github.com/NVIDIA/nccl.git",
+    "default_branch": "master",
+    "commit": "ad2d192c1f279aefcaf340f67e07880b65a1116b",
+    "commit_time": "2026-11-09T11:24:48-08:00",
+    "stable_release": "v2.32.6-1",
+    "stable_release_published_at": "2026-11-09T19:28:46Z",
+    "stable_tag_commit": "ad2d192c1f279aefcaf340f67e07880b65a1116b",
+    "stable_tag_matches_selected_default_commit": true,
+    "execution": "Read source only; not built or run on this Mac."
+  },
+  "nccl_tests": {
+    "default_branch": "master",
+    "commit": "afd59abab774a6a4b492eb344bd0c845a0b7bb4d",
+    "commit_date": "2026-10-05T19:40:17Z",
+    "execution": "Read fixed source and docs only; no GPU benchmark."
+  },
+  "documentation": {
+    "returned_page_version": "2.32.3",
+    "request_date": "2026-11-11",
+    "provider_acquired_at": "See research-log.json; cached dates differ by page."
+  },
+  "runtime": {
+    "python": "3.12.16",
+    "torch": "2.15.0",
+    "torch_git": "d0f2af8b66b20da4baa50644c0cd3f887a2eae2e",
+    "device": "cpu",
+    "backend": "gloo",
+    "dtype": "float64",
+    "ranks": 4
+  },
+  "paper": {
+    "doi": "10.1016/j.jpdc.2008.09.002",
+    "published_print": "2009-02",
+    "version": "Author-hosted manuscript; PDF page numbers differ from journal pagination."
+  }
+}

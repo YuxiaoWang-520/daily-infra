@@ -1,0 +1,19 @@
+Source: https://github.com/NVIDIA/nccl-tests/blob/afd59abab774a6a4b492eb344bd0c845a0b7bb4d/src/all_reduce.cu
+Commit: afd59abab774a6a4b492eb344bd0c845a0b7bb4d
+Ranges: 1-6, 59-67
+
+L00001 | /*************************************************************************
+L00002 |  * Copyright (c) 2016-2022, NVIDIA CORPORATION. All rights reserved.
+L00003 |  *
+L00004 |  * See LICENSE.txt for license information
+L00005 |  ************************************************************************/
+L00006 | 
+L00059 | void AllReduceGetBw(size_t count, size_t typesize, double sec, double* algBw, double* busBw, int nranks) {
+L00060 |   double baseBw = (double)(count * typesize) / 1.0E9 / sec;
+L00061 | 
+L00062 |   *algBw = baseBw;
+L00063 |   double factor = ((double)(2*(nranks - 1)))/((double)nranks);
+L00064 |   *busBw = baseBw * factor;
+L00065 | }
+L00066 | 
+L00067 | #if NCCL_VERSION_CODE >= NCCL_VERSION(2,29,0)

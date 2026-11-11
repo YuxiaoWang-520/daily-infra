@@ -1,0 +1,220 @@
+[
+  {
+    "repository": "NVIDIA/nccl",
+    "path": "src/collectives.cc",
+    "commit": "ad2d192c1f279aefcaf340f67e07880b65a1116b",
+    "ranges": [
+      [
+        1,
+        6
+      ],
+      [
+        192,
+        211
+      ]
+    ],
+    "original_blob_sha256": "ec1ab0d268cad919bbb368f1ab5275cfac3e19d60ae403aa4bdf458a107d6d6d",
+    "excerpt": "evidence/upstream/nccl__src__collectives.cc.txt",
+    "excerpt_sha256": "3fc968b29e564e9cf9d52bf78031e0df58550af14a971f27685221ad315bcc9d",
+    "stable_tag": "v2.32.6-1",
+    "stable_tag_same_commit": true
+  },
+  {
+    "repository": "NVIDIA/nccl",
+    "path": "src/enqueue/enqueue.cc",
+    "commit": "ad2d192c1f279aefcaf340f67e07880b65a1116b",
+    "ranges": [
+      [
+        1,
+        6
+      ],
+      [
+        3570,
+        3612
+      ]
+    ],
+    "original_blob_sha256": "e6b7149463237d739623ab0dd52228cf7b266685e3a60eb49d18d6e86ae022ff",
+    "excerpt": "evidence/upstream/nccl__src__enqueue__enqueue.cc.txt",
+    "excerpt_sha256": "fb9b9580515d28908a24761b40d13b131b35cc6d6cec81c0e5538d89f16383ae",
+    "stable_tag": "v2.32.6-1",
+    "stable_tag_same_commit": true
+  },
+  {
+    "repository": "NVIDIA/nccl",
+    "path": "src/group.cc",
+    "commit": "ad2d192c1f279aefcaf340f67e07880b65a1116b",
+    "ranges": [
+      [
+        1,
+        6
+      ],
+      [
+        295,
+        301
+      ]
+    ],
+    "original_blob_sha256": "e77a240930244c7a382c07b024d7f3a3e28ea9aeaaa470c63f68981e1d674639",
+    "excerpt": "evidence/upstream/nccl__src__group.cc.txt",
+    "excerpt_sha256": "4b62dda5c7f5626b2b8e09239fcccf2cfd9dc05ef058eaf75370393f44db2d4e",
+    "stable_tag": "v2.32.6-1",
+    "stable_tag_same_commit": true
+  },
+  {
+    "repository": "NVIDIA/nccl",
+    "path": "src/enqueue/task_prep/task_prep.cc",
+    "commit": "ad2d192c1f279aefcaf340f67e07880b65a1116b",
+    "ranges": [
+      [
+        1,
+        6
+      ],
+      [
+        11,
+        29
+      ]
+    ],
+    "original_blob_sha256": "3159553912ee142915df0c42ce5b1297706f373e0f5d2b34993770f37c907d34",
+    "excerpt": "evidence/upstream/nccl__src__enqueue__task_prep__task_prep.cc.txt",
+    "excerpt_sha256": "906493c1853ccb730d1f20390c2d7b1298fb2a3a745ba87de8d9726fa957a524",
+    "stable_tag": "v2.32.6-1",
+    "stable_tag_same_commit": true
+  },
+  {
+    "repository": "NVIDIA/nccl",
+    "path": "src/tuning/tuning.cc",
+    "commit": "ad2d192c1f279aefcaf340f67e07880b65a1116b",
+    "ranges": [
+      [
+        1,
+        6
+      ],
+      [
+        125,
+        173
+      ],
+      [
+        180,
+        239
+      ]
+    ],
+    "original_blob_sha256": "e31e6a864107845b15bc2ed1acb9a92422c652779fd1790161c68a03d74c6dcd",
+    "excerpt": "evidence/upstream/nccl__src__tuning__tuning.cc.txt",
+    "excerpt_sha256": "cf11ee1b4c39cc1db7584c391967509eff9b9353869556118494512ad5a69c4b",
+    "stable_tag": "v2.32.6-1",
+    "stable_tag_same_commit": true
+  },
+  {
+    "repository": "NVIDIA/nccl",
+    "path": "src/tuning/ring.cc",
+    "commit": "ad2d192c1f279aefcaf340f67e07880b65a1116b",
+    "ranges": [
+      [
+        1,
+        6
+      ],
+      [
+        24,
+        48
+      ],
+      [
+        77,
+        87
+      ],
+      [
+        93,
+        141
+      ]
+    ],
+    "original_blob_sha256": "71bff107191879a0e9ec18209dd60cc1873b0389d222ca477c0899d210b13d8c",
+    "excerpt": "evidence/upstream/nccl__src__tuning__ring.cc.txt",
+    "excerpt_sha256": "6e6e1e78e40e89ebe87f7f249106bc6aa88e379d03d651521ec1c61028dbf9ab",
+    "stable_tag": "v2.32.6-1",
+    "stable_tag_same_commit": true
+  },
+  {
+    "repository": "NVIDIA/nccl",
+    "path": "src/tuning/tuning_general.cc",
+    "commit": "ad2d192c1f279aefcaf340f67e07880b65a1116b",
+    "ranges": [
+      [
+        1,
+        6
+      ],
+      [
+        18,
+        26
+      ],
+      [
+        58,
+        73
+      ]
+    ],
+    "original_blob_sha256": "6907d038baeac74753e4fc643395efea1c52ad0c4edb0dd34e6feb0c2b802baf",
+    "excerpt": "evidence/upstream/nccl__src__tuning__tuning_general.cc.txt",
+    "excerpt_sha256": "b33bd659abd38f85d701020e79abcb03fd566d68b0a9d8e043a1064b3c3230da",
+    "stable_tag": "v2.32.6-1",
+    "stable_tag_same_commit": true
+  },
+  {
+    "repository": "NVIDIA/nccl",
+    "path": "src/device/all_reduce.h",
+    "commit": "ad2d192c1f279aefcaf340f67e07880b65a1116b",
+    "ranges": [
+      [
+        1,
+        6
+      ],
+      [
+        14,
+        81
+      ],
+      [
+        229,
+        234
+      ]
+    ],
+    "original_blob_sha256": "ccb105ac04a983c9520c5d6711d655ca1cdd01edc64f8aeabdf8346c677d252b",
+    "excerpt": "evidence/upstream/nccl__src__device__all_reduce.h.txt",
+    "excerpt_sha256": "afbecc20238d8b8fd9481f77b8d863f71cc7d7a976cd76fe7ebfa9b1e74deed5",
+    "stable_tag": "v2.32.6-1",
+    "stable_tag_same_commit": true
+  },
+  {
+    "repository": "NVIDIA/nccl-tests",
+    "path": "doc/PERFORMANCE.md",
+    "commit": "afd59abab774a6a4b492eb344bd0c845a0b7bb4d",
+    "ranges": [
+      [
+        1,
+        40
+      ],
+      [
+        125,
+        145
+      ]
+    ],
+    "original_blob_sha256": "2242493053a6f9d5db1c6542a8ce7740be919778645125b94eeae440efd31edf",
+    "excerpt": "evidence/upstream/nccl-tests__doc__PERFORMANCE.md.txt",
+    "excerpt_sha256": "5a4a47593d2c9fc38f15ddcb483bdc60ea818324c61f3b3de84e7692a7fb78f2",
+    "source_url": "https://raw.githubusercontent.com/NVIDIA/nccl-tests/afd59abab774a6a4b492eb344bd0c845a0b7bb4d/doc/PERFORMANCE.md"
+  },
+  {
+    "repository": "NVIDIA/nccl-tests",
+    "path": "src/all_reduce.cu",
+    "commit": "afd59abab774a6a4b492eb344bd0c845a0b7bb4d",
+    "ranges": [
+      [
+        1,
+        6
+      ],
+      [
+        59,
+        67
+      ]
+    ],
+    "original_blob_sha256": "c98bb6d5bc6c54ebfedd9eef36976d45063c8a18ba6ed2877ef3b770092fffde",
+    "excerpt": "evidence/upstream/nccl-tests__src__all_reduce.cu.txt",
+    "excerpt_sha256": "b367c51ff8edb74cf11334776133384f76a66819cc64c0a804f88d75e4bf7e57",
+    "source_url": "https://raw.githubusercontent.com/NVIDIA/nccl-tests/afd59abab774a6a4b492eb344bd0c845a0b7bb4d/src/all_reduce.cu"
+  }
+]

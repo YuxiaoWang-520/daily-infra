@@ -1,0 +1,10 @@
+flowchart LR
+    subgraph A["节点 A：rank 0、1"]
+        A0["rank 0"] -->|"同轮 64 MiB"| AT["共享 A NIC 发送方向：50 GB/s"]
+        A1["rank 1"] -->|"同轮 64 MiB"| AT
+    end
+    AT -->|"合计 128 MiB"| BR["共享 B NIC 接收方向：50 GB/s"]
+    subgraph B["节点 B：rank 2、3"]
+        BR --> B0["rank 2"]
+        BR --> B1["rank 3"]
+    end
