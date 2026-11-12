@@ -1,0 +1,14 @@
+{
+  "date": "2026-11-12",
+  "pytorch_main": "18f2eae1b30a6057d56ad2585a89fb3b965c3f43",
+  "pytorch_stable_tag": "v2.15.0",
+  "pytorch_stable": "31a77fc9c0a7c6fff15a1ff58c743f53b1a9d457",
+  "pytorch_stable_released_at": "2026-10-28T17:09:49Z",
+  "runtime_torch": "2.15.0",
+  "runtime_torch_git": "d0f2af8b66b20da4baa50644c0cd3f887a2eae2e",
+  "cuda_guide": "rolling online documentation",
+  "cuda_guide_url": "https://docs.nvidia.com/cuda/cuda-programming-guide/04-special-topics/cuda-graphs.html",
+  "guide_publish_date_from_fetch": "2026-10-31",
+  "hardware_validation": "CPU only",
+  "cuda_capture_replay": "pending CUDA device"
+}

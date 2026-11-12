@@ -1,0 +1,42 @@
+test_expected_device_independent_of_default_context (test_answers.CUDADemoTests.test_expected_device_independent_of_default_context) ... ok
+test_expected_dtype_independent_of_global_default (test_answers.CUDADemoTests.test_expected_dtype_independent_of_global_default) ... ok
+test_unavailable_reports_pending (test_answers.CUDADemoTests.test_unavailable_reports_pending) ... ok
+test_wrong_shape_rejected (test_answers.CUDADemoTests.test_wrong_shape_rejected) ... ok
+test_all_zero_costs (test_answers.LaunchModelTests.test_all_zero_costs) ... ok
+test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) ... ok
+test_compute_bound (test_answers.LaunchModelTests.test_compute_bound) ... ok
+test_empty_kernels (test_answers.LaunchModelTests.test_empty_kernels) ... ok
+test_equal_time_is_not_faster (test_answers.LaunchModelTests.test_equal_time_is_not_faster) ... ok
+test_first_replay_already_faster (test_answers.LaunchModelTests.test_first_replay_already_faster) ... ok
+test_graph_queue_formula (test_answers.LaunchModelTests.test_graph_queue_formula) ... ok
+test_huge_replay_count_with_zero_cost (test_answers.LaunchModelTests.test_huge_replay_count_with_zero_cost) ... ok
+test_invalid_costs (test_answers.LaunchModelTests.test_invalid_costs) ... ok
+test_invalid_replays (test_answers.LaunchModelTests.test_invalid_replays) ... ok
+test_large_finite_costs (test_answers.LaunchModelTests.test_large_finite_costs) ... ok
+test_launch_bound_example (test_answers.LaunchModelTests.test_launch_bound_example) ... ok
+test_output_overflow (test_answers.LaunchModelTests.test_output_overflow) ... ok
+test_result_is_immutable (test_answers.LaunchModelTests.test_result_is_immutable) ... ok
+test_strict_break_even_boundary (test_answers.LaunchModelTests.test_strict_break_even_boundary) ... ok
+test_worse_graph_submission (test_answers.LaunchModelTests.test_worse_graph_submission) ... ok
+test_borrowed_output_and_clone (test_answers.StaticBufferTests.test_borrowed_output_and_clone) ... ok
+test_float64_and_negative_scale (test_answers.StaticBufferTests.test_float64_and_negative_scale) ... ok
+test_forward_only (test_answers.StaticBufferTests.test_forward_only) ... ok
+test_independent_input_storage (test_answers.StaticBufferTests.test_independent_input_storage) ... ok
+test_invalid_dtype_preserves_input (test_answers.StaticBufferTests.test_invalid_dtype_preserves_input) ... ok
+test_invalid_examples (test_answers.StaticBufferTests.test_invalid_examples) ... ok
+test_invalid_scalars (test_answers.StaticBufferTests.test_invalid_scalars) ... ok
+test_invalid_shape_preserves_input (test_answers.StaticBufferTests.test_invalid_shape_preserves_input) ... ok
+test_meta_device_rejected_before_copy (test_answers.StaticBufferTests.test_meta_device_rejected_before_copy) ... ok
+test_non_tensor_copy_rejected (test_answers.StaticBufferTests.test_non_tensor_copy_rejected) ... ok
+test_noncontiguous_source (test_answers.StaticBufferTests.test_noncontiguous_source) ... ok
+test_overlapping_transposed_input (test_answers.StaticBufferTests.test_overlapping_transposed_input) ... ok
+test_pointer_stability (test_answers.StaticBufferTests.test_pointer_stability) ... ok
+test_python_scalar_rebinding (test_answers.StaticBufferTests.test_python_scalar_rebinding) ... ok
+test_rebinding_does_not_change_retained_input (test_answers.StaticBufferTests.test_rebinding_does_not_change_retained_input) ... ok
+test_sparse_example_rejected (test_answers.StaticBufferTests.test_sparse_example_rejected) ... ok
+test_values (test_answers.StaticBufferTests.test_values) ... ok
+
+----------------------------------------------------------------------
+Ran 37 tests in 0.312s
+
+OK

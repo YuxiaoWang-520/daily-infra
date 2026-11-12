@@ -1,0 +1,6 @@
+{
+  "status": "cuda_unavailable",
+  "cuda_executed": false,
+  "torch": "2.15.0",
+  "capture_replay_validation": "pending CUDA device"
+}

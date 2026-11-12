@@ -1,0 +1,262 @@
+Upstream https://github.com/pytorch/pytorch
+Commit 18f2eae1b30a6057d56ad2585a89fb3b965c3f43
+Path aten/src/ATen/cuda/CUDAGraph.cpp
+License ../LICENSE
+
+--- lines 157-269 ---
+157: void CUDAGraph::capture_begin(MempoolId_t pool/*={0,0}*/, cudaStreamCaptureMode capture_mode) {
+158:   TORCH_CHECK(!has_graph_exec_ && !has_graph_ && !allocated_pool_,
+159:               "This CUDAGraph instance already owns a captured graph. "
+160:               "To capture a new graph, call reset() or create a new instance.");
+161: 
+162:   capture_mode_ = capture_mode;
+163: 
+164:   auto stream = at::cuda::getCurrentCUDAStream();
+165: 
+166:   TORCH_CHECK(stream != at::cuda::getDefaultCUDAStream(),
+167:               "CUDA graphs must be captured on a non-default stream. "
+168:               "(However, after capture, it's ok to replay them on the "
+169:               "default stream.)");
+170: 
+171:   capture_stream_ = stream;
+172:   capture_dev_ = c10::cuda::current_device();
+173: 
+174:   // Allocate on the capture stream, before execution-pool routing starts.
+175:   // Recycled storage may still be used by earlier work on this stream.
+176:   // Callers must order that work before replay on another stream.
+177:   if (num_rng_states_ != 0) {
+178:     // A failed allocation before capture starts may leave a partial reserve.
+179:     captured_generator_states_.clear();
+180:     captured_generator_states_.reserve(num_rng_states_);
+181:     for (int64_t i = 0; i < num_rng_states_; ++i) {
+182:       auto state = c10::make_intrusive<at::CUDAGeneratorCaptureState>();
+183:       state->initialize(capture_dev_);
+184:       captured_generator_states_.push_back({std::move(state), nullptr});
+185:     }
+186:   }
+187: 
+188: #if defined(USE_ROCM)
+189:   // hipBLASLt handles are per-(device, stream) on ROCm and lazily created.
+190:   // Ensure the handle for the intended capture stream exists before
+191:   // capture begins, because hipblasLtCreate performs internal allocations
+192:   // that are not allowed once stream capture is active. Some ops (e.g.
+193:   // _scaled_mm, _int_mm) use hipBLASLt whatever the preferred backend is, so
+194:   // this is keyed on hipBLASLt being usable on the device.
+195:   auto& hooks = at::detail::getCUDAHooks();
+196:   if (at::globalContext().hasCuBLASLt() &&
+197:       hooks.isGPUArch(hooks.getHipblasltSupportedArchs(), capture_dev_)) {
+198:     (void)at::cuda::getCurrentCUDABlasLtHandle();
+199:     // The line above only covers this thread. Backward inside the capture
+200:     // region runs its gemms from an autograd worker thread, whose first
+201:     // hipblaslt use on the capture stream would create a handle mid-capture;
+202:     // stock a spare in the shared pool for it to reserve instead.
+203:     at::cuda::ensureCublasLtHandlesAvailable(1);
+204:   }
+205:   // With caching disabled, the public BLAS handle under capture is a capture
+206:   // handle, and handles cannot be created once capture is active.
+207:   at::cuda::prepareCaptureCublasHandles();
+208: #endif
+209: 
+210:   if (pool.first != 0 || pool.second != 0) {
+211:     // Either value being nonzero means the user supplied a pool to share.
+212:     // But only one should be nonzero.
+213:     // If pool was created by another graph's capture_begin, first should be nonzero.
+214:     // If pool was created by graph_pool_handle, second should be nonzero.
+215:     TORCH_INTERNAL_ASSERT(!(pool.first && pool.second));
+216:   }
+217: #if !defined(USE_ROCM)
+218:   if (pool.second != 0 &&
+219:       c10::cuda::CUDACachingAllocator::name() == "cudaMallocAsync") {
+220:     TORCH_WARN_ONCE(
+221:         "CUDA graph capture ignores a user-created memory pool with "
+222:         "backend:cudaMallocAsync; CUDA manages captured graph memory through "
+223:         "the default async pool.");
+224:     pool = {0, 0};
+225:   }
+226: #endif
+227:   if (pool.first != 0 || pool.second != 0) {
+228:     mempool_id_ = pool;
+229:   } else {
+230:     // No supported pool was supplied. Create graph pool handle using
+231:     // is_user_created=false. Sets just the first value, to distinguish it from
+232:     // MempoolId_ts created by graph_pool_handle().
+233:     mempool_id_ = at::cuda::MemPool::graph_pool_handle(false);
+234:     TORCH_INTERNAL_ASSERT(mempool_id_.first > 0);
+235:   }
+236: 
+237:   // Addendum: beginAllocateStreamToPool is now called before cudaStreamBeginCapture to prevent an
+238:   // autograd thread's free() call triggering an invalid cudaEventRecord in the caching allocator
+239:   // due to the capture status being updated _after_ a capture had already started.
+240:   c10::cuda::CUDACachingAllocator::beginAllocateToPool(
+241:       capture_dev_, mempool_id_, create_allocate_filter<cudaStream_t>());
+242:   record_retained_pool(mempool_id_);
+243: 
+244:   at::getHostAllocator(at::kCUDA)->begin_allocate_to_pool(mempool_id_, create_allocate_filter<c10::Stream>());
+245: 
+246:   // The pool is now acquired and being recorded to. Track this so reset() can
+247:   // release it even if the capture fails before capture_end() completes.
+248:   allocated_pool_ = true;
+249:   capturing_to_pool_ = true;
+250: 
+251:   // cudaStreamCaptureModeGlobal is the most conservative option to
+252:   // prevent potentially unsafe CUDA API calls during capture.  See
+253:   // https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__STREAM.html#group__CUDART__STREAM_1g9d0535d93a214cbf126835257b16ba85
+254:   AT_CUDA_CHECK(cudaStreamBeginCapture(capture_stream_, capture_mode));
+255: 
+256:   auto capture_id_opt = c10::cuda::captureIdMayInitCtx(stream);
+257:   TORCH_INTERNAL_ASSERT(capture_id_opt.has_value(),
+258:       "Stream should be actively capturing after cudaStreamBeginCapture");
+259:   capture_id_ = capture_id_opt.value();
+260:   c10::cuda::CUDAGraphMemory::markCaptureBegin(
+261:       capture_dev_,
+262:       c10::cuda::CUDAGraphMemory::CaptureRegistration{
+263:           capture_id_, std::nullopt});
+264: 
+265:   {
+266:     std::lock_guard<std::mutex> lock(_currently_capturing_graphs_mutex);
+267:     _currently_capturing_graphs.emplace(capture_id_, this);
+268:   }
+269: }
+
+--- lines 278-344 ---
+278: void CUDAGraph::capture_end_pre() {
+279:   auto stream = at::cuda::getCurrentCUDAStream();
+280: 
+281:   TORCH_CHECK(stream.stream() == capture_stream_.stream(),
+282:               "Capture must end on the same stream it began on.");
+283: 
+284:   // Capture is over once cudaStreamEndCapture returns (success or failure).
+285:   // Clear bookkeeping before propagating the return status so watchdog-side
+286:   // checks cannot observe stale "capture active" state on error paths.
+287:   cudaError_t endCaptureErr = cudaStreamEndCapture(capture_stream_, &graph_);
+288:   if (endCaptureErr == cudaSuccess && graph_ != nullptr) {
+289:     // Own the returned graph immediately so reset() destroys it if validation
+290:     // below rejects the capture.
+291:     has_graph_ = true;
+292:   }
+293:   const size_t invalid_capture_free_count =
+294:       c10::cuda::CUDAGraphMemory::markCaptureEnd(capture_dev_, capture_id_);
+295:   {
+296:     std::unique_lock<std::mutex> lock(_currently_capturing_graphs_mutex);
+297:     TORCH_CHECK(
+298:         _currently_capturing_graphs.count(capture_id_),
+299:         "capture_end() called before capture_begin().");
+300:     _currently_capturing_graphs.erase(capture_id_);
+301:   }
+302: 
+303:   // End pool allocation before checking the capture error. This ensures
+304:   // captures_underway is cleaned up even if cudaStreamEndCapture failed
+305:   // (e.g. due to an illegal operation during capture). These calls are
+306:   // safe regardless of whether the capture succeeded — they simply
+307:   // remove the pool routing entry added by beginAllocateToPool.
+308:   c10::cuda::CUDACachingAllocator::endAllocateToPool(capture_dev_, mempool_id_);
+309:   at::getHostAllocator(at::kCUDA)->end_allocate_to_pool(mempool_id_);
+310:   // Allocation recording has stopped (even if endCaptureErr is a failure), so
+311:   // reset() must not end the pool again.
+312:   capturing_to_pool_ = false;
+313: #if defined(USE_ROCM)
+314:   at::cuda::releaseCaptureCublasWorkspaces(capture_id_);
+315: #endif
+316:   while (!captured_generator_states_.empty() &&
+317:          !captured_generator_states_.back().generator_state) {
+318:     captured_generator_states_.pop_back();
+319:   }
+320:   AT_CUDA_CHECK(endCaptureErr);
+321:   TORCH_CHECK(
+322:       invalid_capture_free_count == 0,
+323:       "A CUDA graph allocation was freed from an invalid conditional capture "
+324:       "scope. A conditional body may free its own allocations, and an "
+325:       "ancestor may free a child's allocation, but a child may not free an "
+326:       "ancestor or sibling allocation.");
+327: 
+328:   TORCH_CHECK(graph_ != nullptr, "Invalid capture.");
+329: 
+330:   for (auto& captured_state : captured_generator_states_) {
+331:     if (captured_state.capture_id == capture_id_) {
+332:       captured_state.wholegraph_increment = captured_state.capture_state->finalize();
+333:     }
+334:   }
+335: 
+336:   size_t numCUDAGraphNodes = 0;
+337:   AT_CUDA_CHECK(cudaGraphGetNodes(graph_, nullptr, &numCUDAGraphNodes));
+338:   if (numCUDAGraphNodes == 0) {
+339:       TORCH_WARN("The CUDA Graph is empty. This usually means that the graph was ",
+340:                  "attempted to be captured on wrong device or stream.");
+341:   }
+342: 
+343:   capture_ended_ = true;
+344: }
+
+--- lines 346-354 ---
+346: void CUDAGraph::capture_end_post() {
+347:   // Destroy-only: when keep_graph=false the template is not retained. The graph
+348:   // must already be instantiated (capture_end and the Python wrapper instantiate
+349:   // before calling this).
+350:   if (!keep_graph_ && has_graph_) {
+351:     AT_CUDA_CHECK(cudaGraphDestroy(graph_));
+352:     has_graph_ = false;
+353:   }
+354: }
+
+--- lines 356-362 ---
+356: void CUDAGraph::capture_end() {
+357:   capture_end_pre();
+358:   if (!keep_graph_) {
+359:     instantiate();
+360:   }
+361:   capture_end_post();
+362: }
+
+--- lines 364-392 ---
+364: void CUDAGraph::instantiate() {
+365:   TORCH_CHECK(capture_ended_, "capture_end() must have been called before calling instantiate");
+366: 
+367:   if (has_graph_exec_) {
+368:     TORCH_CHECK(keep_graph_, "instantiate() is intended to be called by the user only when keep_graph=true");
+369:     AT_CUDA_CHECK(cudaGraphExecDestroy(graph_exec_));
+370:   }
+371:   // In typical graph usage some tensors (e.g. the tensors used for graph IO) are not freed
+372:   // between replays.
+373:   // If Pytorch compiles and runs with a CUDA 11.4+ toolkit, there's a chance the allocator backend
+374:   // is cudaMallocAsync.
+375:   // cudaMallocAsync is generally graph-safe, but if some tensors are not freed between replays,
+376:   // the graph's internal bookkeeping requires that we instantiate with
+377:   // cudaGraphInstantiateFlagAutoFreeOnLaunch. See
+378:   // cudaGraphLaunch
+379:   // https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__GRAPH.html#group__CUDART__GRAPH_1g1accfe1da0c605a577c22d9751a09597
+380:   // cudaGraphInstantiateWithFlags
+381:   // https://docs.nvidia.com/cuda/cuda-runtime-api/group__CUDART__GRAPH.html#group__CUDART__GRAPH_1ga2c652a24ba93e52b99a47bec0888233
+382: #if !defined(USE_ROCM)
+383:     AT_CUDA_CHECK(cudaGraphInstantiateWithFlags(&graph_exec_,
+384:                                                 graph_,
+385:                                                 cudaGraphInstantiateFlagAutoFreeOnLaunch | cudaGraphInstantiateFlagUseNodePriority));
+386: #else
+387:     AT_CUDA_CHECK(cudaGraphInstantiateWithFlags(&graph_exec_,
+388:                                                 graph_,
+389:                                                 cudaGraphInstantiateFlagAutoFreeOnLaunch));
+390: #endif
+391:   has_graph_exec_ = true;
+392: }
+
+--- lines 405-424 ---
+405: void CUDAGraph::replay() {
+406:   TORCH_CHECK(capture_ended_,
+407:               "Called CUDAGraph::replay without a preceding successful capture.");
+408:   // Instantiating on demand is handled by the Python replay() wrapper (which
+409:   // can do so for keep_graph=true). At this level the exec graph must exist.
+410:   TORCH_CHECK(has_graph_exec_,
+411:               "Called CUDAGraph::replay before the graph was instantiated; "
+412:               "call instantiate() first.");
+413: 
+414:   c10::OptionalDeviceGuard device_guard{capture_stream_.device()};
+415: 
+416:   for (auto& captured_state : captured_generator_states_) {
+417:     if (captured_state.capture_id == capture_id_) {
+418:       captured_state.generator_state->replay_prologue(
+419:           *captured_state.capture_state, captured_state.wholegraph_increment);
+420:     }
+421:   }
+422:   // graph_exec_ may be replayed in any stream.
+423:   AT_CUDA_CHECK(cudaGraphLaunch(graph_exec_, at::cuda::getCurrentCUDAStream()));
+424: }
+

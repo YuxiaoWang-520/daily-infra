@@ -1,0 +1,109 @@
+Upstream https://github.com/pytorch/pytorch
+Commit 18f2eae1b30a6057d56ad2585a89fb3b965c3f43
+Path docs/source/notes/cuda.md
+License ../LICENSE
+
+--- lines 1663-1696 ---
+1663: #### Constraints
+1664: 
+1665: A set of ops is *capturable* if it doesn't violate any of the following constraints.
+1666: 
+1667: Constraints apply to all work in a
+1668: {class}`torch.cuda.graph` context and all work in the forward and backward passes
+1669: of any callable you pass to {func}`torch.cuda.make_graphed_callables`.
+1670: 
+1671: Violating any of these will likely cause a runtime error:
+1672: 
+1673: * Capture must occur on a non-default stream. (This is only a concern if you use the raw
+1674:   {meth}`CUDAGraph.capture_begin<torch.cuda.CUDAGraph.capture_begin>` and
+1675:   {meth}`CUDAGraph.capture_end<torch.cuda.CUDAGraph.capture_end>` calls.
+1676:   {class}`~torch.cuda.graph` and
+1677:   {func}`~torch.cuda.make_graphed_callables` set a side stream for you.)
+1678: * Ops that synchronize the CPU with the GPU (e.g., `.item()` calls) are prohibited.
+1679: * CUDA RNG operations are permitted, and when using multiple {class}`torch.Generator` instances within a graph,
+1680:   Avoid using {meth}`Generator.get_state<torch.get_state>` and {meth}`Generator.set_state<torch.set_state>` during capture;
+1681:   instead, utilize {meth}`Generator.graphsafe_set_state<torch.Generator.graphsafe_set_state>` and {meth}`Generator.graphsafe_get_state<torch.Generator.graphsafe_get_state>`
+1682:   for managing generator states safely within the graph context. This ensures proper RNG operation and generator management within CUDA graphs.
+1683: * Dynamic control flow (based on CPU or GPU data) is prohibited, unless it is based on GPU data and implemented via higher order operator
+1684:   torch.cond(). See {ref}`Data Dependent Control Flow<graph-data-dependent-control-flow>`.
+1685: 
+1686: 
+1687: Violating any of these will likely cause silent numerical errors or undefined behavior:
+1688: 
+1689: * Within a process, only one capture may be underway at a time.
+1690: * No non-captured CUDA work may run in this process (on any thread) while capture is underway.
+1691: * CPU work is not captured. If the captured ops include CPU work, that work will be elided during replay.
+1692: * Every replay reads from and writes to the same (virtual) memory addresses.
+1693: * Dynamic shapes are prohibited. The graph assumes every tensor in the captured op sequence
+1694:   has the same size and layout in every replay.
+1695: * Using multiple streams in a capture is allowed, but there are {ref}`restrictions<multistream-capture>`.
+1696: 
+
+--- lines 1947-1979 ---
+1947: ### Graph memory management
+1948: 
+1949: A captured graph acts on the same virtual addresses every time it replays.
+1950: If PyTorch frees the memory, a later replay can hit an illegal memory access.
+1951: If PyTorch reassigns the memory to new tensors, the replay can corrupt the values
+1952: seen by those tensors.  Therefore, the virtual addresses used by the graph must be
+1953: reserved for the graph across replays. The PyTorch caching allocator achieves this
+1954: by detecting when capture is underway and satisfying the capture's allocations
+1955: from a graph-private memory pool. The private pool stays alive until its
+1956: {class}`~torch.cuda.CUDAGraph` object and all tensors created during capture
+1957: go out of scope.
+1958: 
+1959: Private pools are maintained automatically. By default, the allocator creates a
+1960: separate private pool for each capture. If you capture multiple graphs,
+1961: this conservative approach ensures graph replays never corrupt each other's values,
+1962: but sometimes needlessly wastes memory.
+1963: 
+1964: #### Sharing memory across captures
+1965: 
+1966: To economize the memory stashed in private pools, {class}`torch.cuda.graph`
+1967: and {func}`torch.cuda.make_graphed_callables` optionally allow different
+1968: captures to share the same private pool.
+1969: It's safe for a set of graphs to share a private pool if you know they'll always
+1970: be replayed in the same order they were captured,
+1971: and never be replayed concurrently.
+1972: 
+1973: {class}`torch.cuda.graph`'s `pool` argument is a hint to use a particular private pool,
+1974: and can be used to share memory across graphs as shown:
+1975: 
+1976: ```python
+1977: g1 = torch.cuda.CUDAGraph()
+1978: g2 = torch.cuda.CUDAGraph()
+1979: 
+
+--- lines 2040-2070 ---
+2040: ### Data Dependent Control Flow
+2041: 
+2042: Data-dependent control flow can with cuda graphs if the control flow
+2043: is implemented using torch.cond(). If your function uses this
+2044: function, compiling it with the "cudagraphs" backend will enable
+2045: control flow in the resulting cuda graph via [conditional nodes](https://developer.nvidia.com/blog/dynamic-control-flow-in-cuda-graphs-with-conditional-nodes/).
+2046: 
+2047: Doing cuda graph capture of eager mode code using torch.cond() will
+2048: also work.
+2049: 
+2050: Support for inductor backend to torch.compile is not available yet,
+2051: but there is no fundamental blocker.
+2052: 
+2053: An example of using the cudagraphs backend to torch.compile on code
+2054: using torch.cond is demonstrated below:
+2055: 
+2056: ```python
+2057: import torch
+2058: 
+2059: def true_fn(x):
+2060:     return x.sin()
+2061: 
+2062: def false_fn(x):
+2063:     return x.cos()
+2064: 
+2065: x = torch.randn(4, device="cuda", requires_grad=False)
+2066: pred = torch.tensor(False, device="cuda", requires_grad=False)
+2067: def foo(pred, x):
+2068:     with torch.inference_mode():
+2069:         return torch.cond(pred, true_fn, false_fn, [x])
+2070: 
+

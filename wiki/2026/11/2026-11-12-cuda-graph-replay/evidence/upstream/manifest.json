@@ -1,0 +1,271 @@
+{
+  "retrieved_at": "2026-11-12T11:09:26.295997+08:00",
+  "upstream": "https://github.com/pytorch/pytorch.git",
+  "main_commit": "18f2eae1b30a6057d56ad2585a89fb3b965c3f43",
+  "stable_tag": "v2.15.0",
+  "stable_commit": "31a77fc9c0a7c6fff15a1ff58c743f53b1a9d457",
+  "records": [
+    {
+      "label": "main",
+      "commit": "18f2eae1b30a6057d56ad2585a89fb3b965c3f43",
+      "path": "torch/cuda/graphs.py",
+      "blob_sha256": "4702ded1d3f4f15d78134fac417720e39c5b35c6d151f353a1851f6565dd76ed",
+      "ranges": [
+        [
+          601,
+          650
+        ],
+        [
+          652,
+          659
+        ],
+        [
+          661,
+          667
+        ],
+        [
+          669,
+          692
+        ],
+        [
+          694,
+          715
+        ],
+        [
+          717,
+          746
+        ],
+        [
+          1299,
+          1329
+        ],
+        [
+          1331,
+          1487
+        ],
+        [
+          1489,
+          1533
+        ],
+        [
+          1849,
+          1858
+        ]
+      ],
+      "excerpt": "main/graphs.py.lines.txt",
+      "excerpt_sha256": "ad7208cedafe758495add692b0210c5338eb374833bdf24a4e460a0b3277b95e"
+    },
+    {
+      "label": "main",
+      "commit": "18f2eae1b30a6057d56ad2585a89fb3b965c3f43",
+      "path": "aten/src/ATen/cuda/CUDAGraph.cpp",
+      "blob_sha256": "d53e95d98d302bf13e9aa19ecef0180c94760c5ae391921d305ad024b43752f2",
+      "ranges": [
+        [
+          157,
+          269
+        ],
+        [
+          278,
+          344
+        ],
+        [
+          346,
+          354
+        ],
+        [
+          356,
+          362
+        ],
+        [
+          364,
+          392
+        ],
+        [
+          405,
+          424
+        ]
+      ],
+      "excerpt": "main/CUDAGraph.cpp.lines.txt",
+      "excerpt_sha256": "47d5ad3c79fd83ea05a96837f2c85eaa5e5ad2b918b7dee793beb73c4f06e3a2"
+    },
+    {
+      "label": "main",
+      "commit": "18f2eae1b30a6057d56ad2585a89fb3b965c3f43",
+      "path": "c10/cuda/CUDACachingAllocator.cpp",
+      "blob_sha256": "9c8b207f35c42a9e149e09d1bf455cb4b14881d6532d5fff3b8726ebee7968f8",
+      "ranges": [
+        [
+          141,
+          171
+        ]
+      ],
+      "excerpt": "main/CUDACachingAllocator.cpp.lines.txt",
+      "excerpt_sha256": "79a216144a7145e12f296220f5030570031f01f4ebfc253b538dc0d596798b10"
+    },
+    {
+      "label": "main",
+      "commit": "18f2eae1b30a6057d56ad2585a89fb3b965c3f43",
+      "path": "docs/source/notes/cuda.md",
+      "blob_sha256": "373cc8888bd3a5d828cce1be0a83c53bfdab429e0858c76a58bb9d283db1d957",
+      "ranges": [
+        [
+          1663,
+          1696
+        ],
+        [
+          1947,
+          1979
+        ],
+        [
+          2040,
+          2070
+        ]
+      ],
+      "excerpt": "main/cuda.md.lines.txt",
+      "excerpt_sha256": "57bb66c1f951bc400a7c05cf7577acd75bffbef621043f704f0424c1af00e579"
+    },
+    {
+      "label": "v2.15.0",
+      "commit": "31a77fc9c0a7c6fff15a1ff58c743f53b1a9d457",
+      "path": "torch/cuda/graphs.py",
+      "blob_sha256": "5a7fce9de0314377e41a6229d34545e8f3d192b9cc69ed651a60b531473e0bd1",
+      "ranges": [
+        [
+          593,
+          641
+        ],
+        [
+          643,
+          647
+        ],
+        [
+          649,
+          655
+        ],
+        [
+          657,
+          680
+        ],
+        [
+          682,
+          703
+        ],
+        [
+          705,
+          731
+        ],
+        [
+          1280,
+          1310
+        ],
+        [
+          1312,
+          1456
+        ],
+        [
+          1458,
+          1496
+        ],
+        [
+          1801,
+          1810
+        ]
+      ],
+      "excerpt": "v2.15.0/graphs.py.lines.txt",
+      "excerpt_sha256": "aa350d0edb1f3087014ca8fb066803362f1c4ba1f870822832c7ac19f548e936"
+    },
+    {
+      "label": "v2.15.0",
+      "commit": "31a77fc9c0a7c6fff15a1ff58c743f53b1a9d457",
+      "path": "aten/src/ATen/cuda/CUDAGraph.cpp",
+      "blob_sha256": "b1f0f2582cee5cdb8d2020d68614c1fcedc620224c8c8c0c04eeedd0124a0d0b",
+      "ranges": [
+        [
+          130,
+          212
+        ],
+        [
+          221,
+          271
+        ],
+        [
+          273,
+          281
+        ],
+        [
+          283,
+          289
+        ],
+        [
+          291,
+          319
+        ],
+        [
+          321,
+          338
+        ]
+      ],
+      "excerpt": "v2.15.0/CUDAGraph.cpp.lines.txt",
+      "excerpt_sha256": "49ddff7c73fd6b8665b9ad5fa6630ce3dd0b80f4e47f69d4b918098e1e41de16"
+    },
+    {
+      "label": "v2.15.0",
+      "commit": "31a77fc9c0a7c6fff15a1ff58c743f53b1a9d457",
+      "path": "c10/cuda/CUDACachingAllocator.cpp",
+      "blob_sha256": "9213950d664615c45ba251d76af7c3e0f6ed5eb2dda75ac0a4dfab4450ffecf5",
+      "ranges": [
+        [
+          138,
+          168
+        ]
+      ],
+      "excerpt": "v2.15.0/CUDACachingAllocator.cpp.lines.txt",
+      "excerpt_sha256": "95c68188383ec7884b1300258c211b8c5050922212dc8c487bc8c27573803dd3"
+    },
+    {
+      "label": "v2.15.0",
+      "commit": "31a77fc9c0a7c6fff15a1ff58c743f53b1a9d457",
+      "path": "docs/source/notes/cuda.md",
+      "blob_sha256": "e1ceb9ba99a1fe305f6668cab8ae9b48c0eac16d9845cf9544361965f0b2cf8a",
+      "ranges": [
+        [
+          1482,
+          1515
+        ],
+        [
+          1766,
+          1798
+        ],
+        [
+          1859,
+          1889
+        ]
+      ],
+      "excerpt": "v2.15.0/cuda.md.lines.txt",
+      "excerpt_sha256": "c9939916d4672e4977762e44157aed4be77951a32b3c214589c9a850ac32ea0b"
+    }
+  ],
+  "comparison": [
+    {
+      "path": "torch/cuda/graphs.py",
+      "identical": false,
+      "numstat": "65\t17\ttorch/cuda/graphs.py"
+    },
+    {
+      "path": "aten/src/ATen/cuda/CUDAGraph.cpp",
+      "identical": false,
+      "numstat": "127\t30\taten/src/ATen/cuda/CUDAGraph.cpp"
+    },
+    {
+      "path": "c10/cuda/CUDACachingAllocator.cpp",
+      "identical": false,
+      "numstat": "690\t228\tc10/cuda/CUDACachingAllocator.cpp"
+    },
+    {
+      "path": "docs/source/notes/cuda.md",
+      "identical": false,
+      "numstat": "182\t1\tdocs/source/notes/cuda.md"
+    }
+  ]
+}

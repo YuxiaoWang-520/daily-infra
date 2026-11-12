@@ -1,0 +1,38 @@
+Upstream https://github.com/pytorch/pytorch
+Commit 18f2eae1b30a6057d56ad2585a89fb3b965c3f43
+Path c10/cuda/CUDACachingAllocator.cpp
+License ../LICENSE
+
+--- lines 141-171 ---
+141:  * Note [Interaction with CUDA graph capture]
+142:  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+143:  * Graph capture performs a dry run of a region of execution, freezing all CUDA
+144:  * work (and virtual addresses used during that work) into a "graph." The graph
+145:  * may be "replayed" like a single giant kernel, with greatly reduced CPU
+146:  * overhead as well as modestly improved GPU performance.
+147:  *
+148:  * Because capture bakes in memory addresses, the memory used during capture
+149:  * must be available for the graph to use during replay. DeviceCachingAllocator
+150:  * assigns and frees memory eagerly and dynamically, so if we're not careful
+151:  * about managing graphs' memory, at replay time those memory addresses could be
+152:  * used by other tensors.
+153:  *
+154:  * To guarantee a graph's baked in addresses are safe to reuse in replay,
+155:  * DeviceAllocator satisfies allocations from a graph-private memory pool during
+156:  * capture, and doesn't begin cudaFreeing those addresses until the graph is
+157:  * destroyed.
+158:  *
+159:  * Within the private pool, allocations are freed and reassigned as usual during
+160:  * capture. Memory regions will be used in a consistent order during replay. So
+161:  * a private pool doesn't use memory more wastefully than the default pools
+162:  * during capture, but it does reserve its high-water mark of used memory away
+163:  * from the default pools as long as the capture(s) it served survive
+164:  * (regardless whether those captures are idle or replaying).
+165:  *
+166:  * CUDAGraph's requests for private pools are mediated by
+167:  * DeviceAllocator::notifyCaptureBegin,
+168:  *                  notifyCaptureAboutToEnd,
+169:  *                  notifyCaptureEnded,
+170:  *                  notifyCaptureDestroy.
+171:  */
+

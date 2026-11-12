@@ -1,0 +1,26 @@
+{
+  "started_at": "2026-11-12T11:23:15.662308+08:00",
+  "cwd": "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/wiki/2026/11/2026-11-12-cuda-graph-replay",
+  "argv": [
+    "/Users/wangyuxiao/miniforge3/envs/ai-infra/bin/python",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "code",
+    "-p",
+    "test_answers.py",
+    "-v"
+  ],
+  "exit_code": 0,
+  "log": "10-archive-tests.txt",
+  "code_sha256": {
+    "cuda_demo.py": "b7f935c00254215f3b305e9a77570dd16fe23b421e7a911172100e2ffddda6fe",
+    "exercise_buffers.py": "5b307a0bacf026ca59752ab64f93c05fa1a28863640aca4d0a2d966b1ee6a53f",
+    "exercise_launch.py": "079de51ed362a1f75f9d567c81c0c9b7bc402023e1b35adbcd88de27058f3408",
+    "launch_model.py": "c37f8d5bdc430d69bd61fc3126446c27cc6bfb66711a4e8d4c247300744d2817",
+    "run_lab.py": "348d7a126dab96570fa42b95ca0e4fe17e8cfcc71b5a8d59fe32aaad7cc29a82",
+    "static_buffers.py": "e56ce72d58baf6d80e431988f4484e896f8ae9dfcb572185273b9c29c8e5ca2c",
+    "test_answers.py": "d4ca22bc0258812fb5306a70c26df917a8f5982a6804103ef12b1fc054570b92"
+  }
+}

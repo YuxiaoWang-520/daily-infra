@@ -1,0 +1,21 @@
+{
+  "checked_at": "2026-11-12T11:24:56.986243+08:00",
+  "article": "wiki/2026/11/2026-11-12-cuda-graph-replay",
+  "file_count": 44,
+  "local_links_checked": 139,
+  "source_records_reconstructed": 8,
+  "source_lines_verified": 1443,
+  "code_files_matched_to_runs": 7,
+  "test_count": 37,
+  "index_articles": 24,
+  "same_day_articles": 1,
+  "math_delimiters_balanced": true,
+  "mermaid_matches_source": true,
+  "modeled_rows_verified": 5,
+  "cuda_capture_replay_executed": false,
+  "cuda_scope": "pending CUDA device",
+  "secret_pattern_hits": 0,
+  "status": "passed",
+  "checksummed_files": 41,
+  "checksum_command_exit_code": 0
+}

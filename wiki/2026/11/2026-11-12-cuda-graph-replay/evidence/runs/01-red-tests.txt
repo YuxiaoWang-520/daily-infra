@@ -1,0 +1,1325 @@
+test_all_zero_costs (test_answers.LaunchModelTests.test_all_zero_costs) ... ERROR
+test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) ... 
+  test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[1, 8, 2], host=0, repeats=1) ... ERROR
+  test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[1, 8, 2], host=0, repeats=2) ... ERROR
+  test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[1, 8, 2], host=0, repeats=7) ... ERROR
+  test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[1, 8, 2], host=1, repeats=1) ... ERROR
+  test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[1, 8, 2], host=1, repeats=2) ... ERROR
+  test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[1, 8, 2], host=1, repeats=7) ... ERROR
+  test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[1, 8, 2], host=3, repeats=1) ... ERROR
+  test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[1, 8, 2], host=3, repeats=2) ... ERROR
+  test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[1, 8, 2], host=3, repeats=7) ... ERROR
+  test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[1, 8, 2], host=8, repeats=1) ... ERROR
+  test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[1, 8, 2], host=8, repeats=2) ... ERROR
+  test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[1, 8, 2], host=8, repeats=7) ... ERROR
+  test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[9, 0, 1], host=0, repeats=1) ... ERROR
+  test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[9, 0, 1], host=0, repeats=2) ... ERROR
+  test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[9, 0, 1], host=0, repeats=7) ... ERROR
+  test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[9, 0, 1], host=1, repeats=1) ... ERROR
+  test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[9, 0, 1], host=1, repeats=2) ... ERROR
+  test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[9, 0, 1], host=1, repeats=7) ... ERROR
+  test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[9, 0, 1], host=3, repeats=1) ... ERROR
+  test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[9, 0, 1], host=3, repeats=2) ... ERROR
+  test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[9, 0, 1], host=3, repeats=7) ... ERROR
+  test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[9, 0, 1], host=8, repeats=1) ... ERROR
+  test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[9, 0, 1], host=8, repeats=2) ... ERROR
+  test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[9, 0, 1], host=8, repeats=7) ... ERROR
+  test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[0, 4], host=0, repeats=1) ... ERROR
+  test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[0, 4], host=0, repeats=2) ... ERROR
+  test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[0, 4], host=0, repeats=7) ... ERROR
+  test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[0, 4], host=1, repeats=1) ... ERROR
+  test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[0, 4], host=1, repeats=2) ... ERROR
+  test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[0, 4], host=1, repeats=7) ... ERROR
+  test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[0, 4], host=3, repeats=1) ... ERROR
+  test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[0, 4], host=3, repeats=2) ... ERROR
+  test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[0, 4], host=3, repeats=7) ... ERROR
+  test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[0, 4], host=8, repeats=1) ... ERROR
+  test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[0, 4], host=8, repeats=2) ... ERROR
+  test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[0, 4], host=8, repeats=7) ... ERROR
+  test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[2.5, 0.25], host=0, repeats=1) ... ERROR
+  test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[2.5, 0.25], host=0, repeats=2) ... ERROR
+  test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[2.5, 0.25], host=0, repeats=7) ... ERROR
+  test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[2.5, 0.25], host=1, repeats=1) ... ERROR
+  test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[2.5, 0.25], host=1, repeats=2) ... ERROR
+  test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[2.5, 0.25], host=1, repeats=7) ... ERROR
+  test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[2.5, 0.25], host=3, repeats=1) ... ERROR
+  test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[2.5, 0.25], host=3, repeats=2) ... ERROR
+  test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[2.5, 0.25], host=3, repeats=7) ... ERROR
+  test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[2.5, 0.25], host=8, repeats=1) ... ERROR
+  test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[2.5, 0.25], host=8, repeats=2) ... ERROR
+  test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[2.5, 0.25], host=8, repeats=7) ... ERROR
+test_compute_bound (test_answers.LaunchModelTests.test_compute_bound) ... ERROR
+test_empty_kernels (test_answers.LaunchModelTests.test_empty_kernels) ... ERROR
+test_equal_time_is_not_faster (test_answers.LaunchModelTests.test_equal_time_is_not_faster) ... ERROR
+test_first_replay_already_faster (test_answers.LaunchModelTests.test_first_replay_already_faster) ... ERROR
+test_graph_queue_formula (test_answers.LaunchModelTests.test_graph_queue_formula) ... ERROR
+test_huge_replay_count_with_zero_cost (test_answers.LaunchModelTests.test_huge_replay_count_with_zero_cost) ... ERROR
+test_invalid_costs (test_answers.LaunchModelTests.test_invalid_costs) ... 
+  test_invalid_costs (test_answers.LaunchModelTests.test_invalid_costs) (value='-1', position=0) ... ERROR
+  test_invalid_costs (test_answers.LaunchModelTests.test_invalid_costs) (value='-1', position=1) ... ERROR
+  test_invalid_costs (test_answers.LaunchModelTests.test_invalid_costs) (value='-1', position=2) ... ERROR
+  test_invalid_costs (test_answers.LaunchModelTests.test_invalid_costs) (value='-1', position=3) ... ERROR
+  test_invalid_costs (test_answers.LaunchModelTests.test_invalid_costs) (value='nan', position=0) ... ERROR
+  test_invalid_costs (test_answers.LaunchModelTests.test_invalid_costs) (value='nan', position=1) ... ERROR
+  test_invalid_costs (test_answers.LaunchModelTests.test_invalid_costs) (value='nan', position=2) ... ERROR
+  test_invalid_costs (test_answers.LaunchModelTests.test_invalid_costs) (value='nan', position=3) ... ERROR
+  test_invalid_costs (test_answers.LaunchModelTests.test_invalid_costs) (value='inf', position=0) ... ERROR
+  test_invalid_costs (test_answers.LaunchModelTests.test_invalid_costs) (value='inf', position=1) ... ERROR
+  test_invalid_costs (test_answers.LaunchModelTests.test_invalid_costs) (value='inf', position=2) ... ERROR
+  test_invalid_costs (test_answers.LaunchModelTests.test_invalid_costs) (value='inf', position=3) ... ERROR
+  test_invalid_costs (test_answers.LaunchModelTests.test_invalid_costs) (value='True', position=0) ... ERROR
+  test_invalid_costs (test_answers.LaunchModelTests.test_invalid_costs) (value='True', position=1) ... ERROR
+  test_invalid_costs (test_answers.LaunchModelTests.test_invalid_costs) (value='True', position=2) ... ERROR
+  test_invalid_costs (test_answers.LaunchModelTests.test_invalid_costs) (value='True', position=3) ... ERROR
+  test_invalid_costs (test_answers.LaunchModelTests.test_invalid_costs) (value='3', position=0) ... ERROR
+  test_invalid_costs (test_answers.LaunchModelTests.test_invalid_costs) (value='3', position=1) ... ERROR
+  test_invalid_costs (test_answers.LaunchModelTests.test_invalid_costs) (value='3', position=2) ... ERROR
+  test_invalid_costs (test_answers.LaunchModelTests.test_invalid_costs) (value='3', position=3) ... ERROR
+  test_invalid_costs (test_answers.LaunchModelTests.test_invalid_costs) (value='10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000', position=0) ... ERROR
+  test_invalid_costs (test_answers.LaunchModelTests.test_invalid_costs) (value='10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000', position=1) ... ERROR
+  test_invalid_costs (test_answers.LaunchModelTests.test_invalid_costs) (value='10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000', position=2) ... ERROR
+  test_invalid_costs (test_answers.LaunchModelTests.test_invalid_costs) (value='10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000', position=3) ... ERROR
+test_invalid_replays (test_answers.LaunchModelTests.test_invalid_replays) ... 
+  test_invalid_replays (test_answers.LaunchModelTests.test_invalid_replays) (value=0) ... ERROR
+  test_invalid_replays (test_answers.LaunchModelTests.test_invalid_replays) (value=-1) ... ERROR
+  test_invalid_replays (test_answers.LaunchModelTests.test_invalid_replays) (value=True) ... ERROR
+  test_invalid_replays (test_answers.LaunchModelTests.test_invalid_replays) (value=1.5) ... ERROR
+  test_invalid_replays (test_answers.LaunchModelTests.test_invalid_replays) (value='2') ... ERROR
+test_large_finite_costs (test_answers.LaunchModelTests.test_large_finite_costs) ... ERROR
+test_launch_bound_example (test_answers.LaunchModelTests.test_launch_bound_example) ... ERROR
+test_output_overflow (test_answers.LaunchModelTests.test_output_overflow) ... ERROR
+test_result_is_immutable (test_answers.LaunchModelTests.test_result_is_immutable) ... ERROR
+test_strict_break_even_boundary (test_answers.LaunchModelTests.test_strict_break_even_boundary) ... ERROR
+test_worse_graph_submission (test_answers.LaunchModelTests.test_worse_graph_submission) ... ERROR
+test_borrowed_output_and_clone (test_answers.StaticBufferTests.test_borrowed_output_and_clone) ... ERROR
+test_float64_and_negative_scale (test_answers.StaticBufferTests.test_float64_and_negative_scale) ... ERROR
+test_forward_only (test_answers.StaticBufferTests.test_forward_only) ... ERROR
+test_independent_input_storage (test_answers.StaticBufferTests.test_independent_input_storage) ... ERROR
+test_invalid_dtype_preserves_input (test_answers.StaticBufferTests.test_invalid_dtype_preserves_input) ... ERROR
+test_invalid_examples (test_answers.StaticBufferTests.test_invalid_examples) ... 
+  test_invalid_examples (test_answers.StaticBufferTests.test_invalid_examples) (example='None') ... ERROR
+  test_invalid_examples (test_answers.StaticBufferTests.test_invalid_examples) (example='tensor([1., 1., 1.])') ... ERROR
+  test_invalid_examples (test_answers.StaticBufferTests.test_invalid_examples) (example='tensor([], size=(0, 3))') ... ERROR
+  test_invalid_examples (test_answers.StaticBufferTests.test_invalid_examples) (example='tensor([[1, 1, 1],\n        [1, 1, 1]])') ... ERROR
+test_invalid_scalars (test_answers.StaticBufferTests.test_invalid_scalars) ... 
+  test_invalid_scalars (test_answers.StaticBufferTests.test_invalid_scalars) (value='True') ... ERROR
+  test_invalid_scalars (test_answers.StaticBufferTests.test_invalid_scalars) (value='inf') ... ERROR
+  test_invalid_scalars (test_answers.StaticBufferTests.test_invalid_scalars) (value='nan') ... ERROR
+  test_invalid_scalars (test_answers.StaticBufferTests.test_invalid_scalars) (value='2') ... ERROR
+  test_invalid_scalars (test_answers.StaticBufferTests.test_invalid_scalars) (value='10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000') ... ERROR
+test_invalid_shape_preserves_input (test_answers.StaticBufferTests.test_invalid_shape_preserves_input) ... ERROR
+test_meta_device_rejected_before_copy (test_answers.StaticBufferTests.test_meta_device_rejected_before_copy) ... ERROR
+test_non_tensor_copy_rejected (test_answers.StaticBufferTests.test_non_tensor_copy_rejected) ... ERROR
+test_noncontiguous_source (test_answers.StaticBufferTests.test_noncontiguous_source) ... ERROR
+test_pointer_stability (test_answers.StaticBufferTests.test_pointer_stability) ... ERROR
+test_python_scalar_rebinding (test_answers.StaticBufferTests.test_python_scalar_rebinding) ... ERROR
+test_rebinding_does_not_change_retained_input (test_answers.StaticBufferTests.test_rebinding_does_not_change_retained_input) ... ERROR
+test_sparse_example_rejected (test_answers.StaticBufferTests.test_sparse_example_rejected) ... ERROR
+test_values (test_answers.StaticBufferTests.test_values) ... ERROR
+
+======================================================================
+ERROR: test_all_zero_costs (test_answers.LaunchModelTests.test_all_zero_costs)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 45, in test_all_zero_costs
+    result = estimate_replays([0, 0], 0, 0, 0, 100)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[1, 8, 2], host=0, repeats=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 66, in test_closed_form_matches_queue_simulation
+    result = estimate_replays(kernels, host, 2, 3, repeats)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[1, 8, 2], host=0, repeats=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 66, in test_closed_form_matches_queue_simulation
+    result = estimate_replays(kernels, host, 2, 3, repeats)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[1, 8, 2], host=0, repeats=7)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 66, in test_closed_form_matches_queue_simulation
+    result = estimate_replays(kernels, host, 2, 3, repeats)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[1, 8, 2], host=1, repeats=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 66, in test_closed_form_matches_queue_simulation
+    result = estimate_replays(kernels, host, 2, 3, repeats)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[1, 8, 2], host=1, repeats=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 66, in test_closed_form_matches_queue_simulation
+    result = estimate_replays(kernels, host, 2, 3, repeats)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[1, 8, 2], host=1, repeats=7)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 66, in test_closed_form_matches_queue_simulation
+    result = estimate_replays(kernels, host, 2, 3, repeats)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[1, 8, 2], host=3, repeats=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 66, in test_closed_form_matches_queue_simulation
+    result = estimate_replays(kernels, host, 2, 3, repeats)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[1, 8, 2], host=3, repeats=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 66, in test_closed_form_matches_queue_simulation
+    result = estimate_replays(kernels, host, 2, 3, repeats)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[1, 8, 2], host=3, repeats=7)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 66, in test_closed_form_matches_queue_simulation
+    result = estimate_replays(kernels, host, 2, 3, repeats)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[1, 8, 2], host=8, repeats=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 66, in test_closed_form_matches_queue_simulation
+    result = estimate_replays(kernels, host, 2, 3, repeats)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[1, 8, 2], host=8, repeats=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 66, in test_closed_form_matches_queue_simulation
+    result = estimate_replays(kernels, host, 2, 3, repeats)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[1, 8, 2], host=8, repeats=7)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 66, in test_closed_form_matches_queue_simulation
+    result = estimate_replays(kernels, host, 2, 3, repeats)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[9, 0, 1], host=0, repeats=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 66, in test_closed_form_matches_queue_simulation
+    result = estimate_replays(kernels, host, 2, 3, repeats)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[9, 0, 1], host=0, repeats=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 66, in test_closed_form_matches_queue_simulation
+    result = estimate_replays(kernels, host, 2, 3, repeats)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[9, 0, 1], host=0, repeats=7)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 66, in test_closed_form_matches_queue_simulation
+    result = estimate_replays(kernels, host, 2, 3, repeats)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[9, 0, 1], host=1, repeats=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 66, in test_closed_form_matches_queue_simulation
+    result = estimate_replays(kernels, host, 2, 3, repeats)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[9, 0, 1], host=1, repeats=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 66, in test_closed_form_matches_queue_simulation
+    result = estimate_replays(kernels, host, 2, 3, repeats)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[9, 0, 1], host=1, repeats=7)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 66, in test_closed_form_matches_queue_simulation
+    result = estimate_replays(kernels, host, 2, 3, repeats)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[9, 0, 1], host=3, repeats=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 66, in test_closed_form_matches_queue_simulation
+    result = estimate_replays(kernels, host, 2, 3, repeats)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[9, 0, 1], host=3, repeats=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 66, in test_closed_form_matches_queue_simulation
+    result = estimate_replays(kernels, host, 2, 3, repeats)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[9, 0, 1], host=3, repeats=7)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 66, in test_closed_form_matches_queue_simulation
+    result = estimate_replays(kernels, host, 2, 3, repeats)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[9, 0, 1], host=8, repeats=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 66, in test_closed_form_matches_queue_simulation
+    result = estimate_replays(kernels, host, 2, 3, repeats)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[9, 0, 1], host=8, repeats=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 66, in test_closed_form_matches_queue_simulation
+    result = estimate_replays(kernels, host, 2, 3, repeats)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[9, 0, 1], host=8, repeats=7)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 66, in test_closed_form_matches_queue_simulation
+    result = estimate_replays(kernels, host, 2, 3, repeats)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[0, 4], host=0, repeats=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 66, in test_closed_form_matches_queue_simulation
+    result = estimate_replays(kernels, host, 2, 3, repeats)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[0, 4], host=0, repeats=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 66, in test_closed_form_matches_queue_simulation
+    result = estimate_replays(kernels, host, 2, 3, repeats)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[0, 4], host=0, repeats=7)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 66, in test_closed_form_matches_queue_simulation
+    result = estimate_replays(kernels, host, 2, 3, repeats)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[0, 4], host=1, repeats=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 66, in test_closed_form_matches_queue_simulation
+    result = estimate_replays(kernels, host, 2, 3, repeats)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[0, 4], host=1, repeats=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 66, in test_closed_form_matches_queue_simulation
+    result = estimate_replays(kernels, host, 2, 3, repeats)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[0, 4], host=1, repeats=7)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 66, in test_closed_form_matches_queue_simulation
+    result = estimate_replays(kernels, host, 2, 3, repeats)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[0, 4], host=3, repeats=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 66, in test_closed_form_matches_queue_simulation
+    result = estimate_replays(kernels, host, 2, 3, repeats)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[0, 4], host=3, repeats=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 66, in test_closed_form_matches_queue_simulation
+    result = estimate_replays(kernels, host, 2, 3, repeats)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[0, 4], host=3, repeats=7)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 66, in test_closed_form_matches_queue_simulation
+    result = estimate_replays(kernels, host, 2, 3, repeats)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[0, 4], host=8, repeats=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 66, in test_closed_form_matches_queue_simulation
+    result = estimate_replays(kernels, host, 2, 3, repeats)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[0, 4], host=8, repeats=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 66, in test_closed_form_matches_queue_simulation
+    result = estimate_replays(kernels, host, 2, 3, repeats)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[0, 4], host=8, repeats=7)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 66, in test_closed_form_matches_queue_simulation
+    result = estimate_replays(kernels, host, 2, 3, repeats)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[2.5, 0.25], host=0, repeats=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 66, in test_closed_form_matches_queue_simulation
+    result = estimate_replays(kernels, host, 2, 3, repeats)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[2.5, 0.25], host=0, repeats=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 66, in test_closed_form_matches_queue_simulation
+    result = estimate_replays(kernels, host, 2, 3, repeats)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[2.5, 0.25], host=0, repeats=7)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 66, in test_closed_form_matches_queue_simulation
+    result = estimate_replays(kernels, host, 2, 3, repeats)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[2.5, 0.25], host=1, repeats=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 66, in test_closed_form_matches_queue_simulation
+    result = estimate_replays(kernels, host, 2, 3, repeats)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[2.5, 0.25], host=1, repeats=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 66, in test_closed_form_matches_queue_simulation
+    result = estimate_replays(kernels, host, 2, 3, repeats)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[2.5, 0.25], host=1, repeats=7)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 66, in test_closed_form_matches_queue_simulation
+    result = estimate_replays(kernels, host, 2, 3, repeats)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[2.5, 0.25], host=3, repeats=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 66, in test_closed_form_matches_queue_simulation
+    result = estimate_replays(kernels, host, 2, 3, repeats)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[2.5, 0.25], host=3, repeats=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 66, in test_closed_form_matches_queue_simulation
+    result = estimate_replays(kernels, host, 2, 3, repeats)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[2.5, 0.25], host=3, repeats=7)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 66, in test_closed_form_matches_queue_simulation
+    result = estimate_replays(kernels, host, 2, 3, repeats)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[2.5, 0.25], host=8, repeats=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 66, in test_closed_form_matches_queue_simulation
+    result = estimate_replays(kernels, host, 2, 3, repeats)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[2.5, 0.25], host=8, repeats=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 66, in test_closed_form_matches_queue_simulation
+    result = estimate_replays(kernels, host, 2, 3, repeats)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_closed_form_matches_queue_simulation (test_answers.LaunchModelTests.test_closed_form_matches_queue_simulation) (kernels=[2.5, 0.25], host=8, repeats=7)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 66, in test_closed_form_matches_queue_simulation
+    result = estimate_replays(kernels, host, 2, 3, repeats)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_compute_bound (test_answers.LaunchModelTests.test_compute_bound)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 34, in test_compute_bound
+    result = estimate_replays([100] * 10, 3, 4, 10000, 1000)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_empty_kernels (test_answers.LaunchModelTests.test_empty_kernels)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 75, in test_empty_kernels
+    estimate_replays([], 1, 1, 1, 1)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_equal_time_is_not_faster (test_answers.LaunchModelTests.test_equal_time_is_not_faster)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 29, in test_equal_time_is_not_faster
+    result = estimate_replays([1], 3, 1, 4, 3)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_first_replay_already_faster (test_answers.LaunchModelTests.test_first_replay_already_faster)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 41, in test_first_replay_already_faster
+    estimate_replays([1, 1], 3, 1, 0, 1).first_faster_replays, 1
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_graph_queue_formula (test_answers.LaunchModelTests.test_graph_queue_formula)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 70, in test_graph_queue_formula
+    result = estimate_replays([1, 2], 2, 5, 7, 4)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_huge_replay_count_with_zero_cost (test_answers.LaunchModelTests.test_huge_replay_count_with_zero_cost)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 101, in test_huge_replay_count_with_zero_cost
+    self.assertEqual(estimate_replays([0], 0, 0, 0, 10**400).eager_us, 0)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_invalid_costs (test_answers.LaunchModelTests.test_invalid_costs) (value='-1', position=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 89, in test_invalid_costs
+    estimate_replays(*args)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_invalid_costs (test_answers.LaunchModelTests.test_invalid_costs) (value='-1', position=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 89, in test_invalid_costs
+    estimate_replays(*args)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_invalid_costs (test_answers.LaunchModelTests.test_invalid_costs) (value='-1', position=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 89, in test_invalid_costs
+    estimate_replays(*args)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_invalid_costs (test_answers.LaunchModelTests.test_invalid_costs) (value='-1', position=3)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 89, in test_invalid_costs
+    estimate_replays(*args)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_invalid_costs (test_answers.LaunchModelTests.test_invalid_costs) (value='nan', position=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 89, in test_invalid_costs
+    estimate_replays(*args)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_invalid_costs (test_answers.LaunchModelTests.test_invalid_costs) (value='nan', position=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 89, in test_invalid_costs
+    estimate_replays(*args)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_invalid_costs (test_answers.LaunchModelTests.test_invalid_costs) (value='nan', position=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 89, in test_invalid_costs
+    estimate_replays(*args)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_invalid_costs (test_answers.LaunchModelTests.test_invalid_costs) (value='nan', position=3)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 89, in test_invalid_costs
+    estimate_replays(*args)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_invalid_costs (test_answers.LaunchModelTests.test_invalid_costs) (value='inf', position=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 89, in test_invalid_costs
+    estimate_replays(*args)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_invalid_costs (test_answers.LaunchModelTests.test_invalid_costs) (value='inf', position=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 89, in test_invalid_costs
+    estimate_replays(*args)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_invalid_costs (test_answers.LaunchModelTests.test_invalid_costs) (value='inf', position=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 89, in test_invalid_costs
+    estimate_replays(*args)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_invalid_costs (test_answers.LaunchModelTests.test_invalid_costs) (value='inf', position=3)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 89, in test_invalid_costs
+    estimate_replays(*args)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_invalid_costs (test_answers.LaunchModelTests.test_invalid_costs) (value='True', position=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 89, in test_invalid_costs
+    estimate_replays(*args)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_invalid_costs (test_answers.LaunchModelTests.test_invalid_costs) (value='True', position=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 89, in test_invalid_costs
+    estimate_replays(*args)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_invalid_costs (test_answers.LaunchModelTests.test_invalid_costs) (value='True', position=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 89, in test_invalid_costs
+    estimate_replays(*args)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_invalid_costs (test_answers.LaunchModelTests.test_invalid_costs) (value='True', position=3)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 89, in test_invalid_costs
+    estimate_replays(*args)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_invalid_costs (test_answers.LaunchModelTests.test_invalid_costs) (value='3', position=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 89, in test_invalid_costs
+    estimate_replays(*args)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_invalid_costs (test_answers.LaunchModelTests.test_invalid_costs) (value='3', position=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 89, in test_invalid_costs
+    estimate_replays(*args)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_invalid_costs (test_answers.LaunchModelTests.test_invalid_costs) (value='3', position=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 89, in test_invalid_costs
+    estimate_replays(*args)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_invalid_costs (test_answers.LaunchModelTests.test_invalid_costs) (value='3', position=3)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 89, in test_invalid_costs
+    estimate_replays(*args)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_invalid_costs (test_answers.LaunchModelTests.test_invalid_costs) (value='10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000', position=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 89, in test_invalid_costs
+    estimate_replays(*args)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_invalid_costs (test_answers.LaunchModelTests.test_invalid_costs) (value='10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000', position=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 89, in test_invalid_costs
+    estimate_replays(*args)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_invalid_costs (test_answers.LaunchModelTests.test_invalid_costs) (value='10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000', position=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 89, in test_invalid_costs
+    estimate_replays(*args)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_invalid_costs (test_answers.LaunchModelTests.test_invalid_costs) (value='10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000', position=3)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 89, in test_invalid_costs
+    estimate_replays(*args)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_invalid_replays (test_answers.LaunchModelTests.test_invalid_replays) (value=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 80, in test_invalid_replays
+    estimate_replays([1], 1, 1, 1, value)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_invalid_replays (test_answers.LaunchModelTests.test_invalid_replays) (value=-1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 80, in test_invalid_replays
+    estimate_replays([1], 1, 1, 1, value)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_invalid_replays (test_answers.LaunchModelTests.test_invalid_replays) (value=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 80, in test_invalid_replays
+    estimate_replays([1], 1, 1, 1, value)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_invalid_replays (test_answers.LaunchModelTests.test_invalid_replays) (value=1.5)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 80, in test_invalid_replays
+    estimate_replays([1], 1, 1, 1, value)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_invalid_replays (test_answers.LaunchModelTests.test_invalid_replays) (value='2')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 80, in test_invalid_replays
+    estimate_replays([1], 1, 1, 1, value)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_large_finite_costs (test_answers.LaunchModelTests.test_large_finite_costs)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 96, in test_large_finite_costs
+    result = estimate_replays([1e307], 1e307, 1e307, 0, 2)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_launch_bound_example (test_answers.LaunchModelTests.test_launch_bound_example)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 14, in test_launch_bound_example
+    result = estimate_replays([1] * 10, 3, 4, 10000, 1000)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_output_overflow (test_answers.LaunchModelTests.test_output_overflow)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 93, in test_output_overflow
+    estimate_replays([1e308, 1e308], 1, 1, 1, 2)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_result_is_immutable (test_answers.LaunchModelTests.test_result_is_immutable)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 107, in test_result_is_immutable
+    estimate_replays([1], 1, 1, 1, 1).eager_us = 10
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_strict_break_even_boundary (test_answers.LaunchModelTests.test_strict_break_even_boundary)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 23, in test_strict_break_even_boundary
+    before = estimate_replays([1] * 10, 3, 4, 10000, 500)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_worse_graph_submission (test_answers.LaunchModelTests.test_worse_graph_submission)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 51, in test_worse_graph_submission
+    result = estimate_replays([1], 1, 3, 0, 10)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/launch_model.py", line 25, in estimate_replays
+    raise NotImplementedError("Implement the queue recurrence and break-even rule")
+NotImplementedError: Implement the queue recurrence and break-even rule
+
+======================================================================
+ERROR: test_borrowed_output_and_clone (test_answers.StaticBufferTests.test_borrowed_output_and_clone)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 143, in test_borrowed_output_and_clone
+    buffers = StaticAffine(self.source, 2, 1)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/static_buffers.py", line 10, in __init__
+    raise NotImplementedError("Allocate independent, retained CPU buffers")
+NotImplementedError: Allocate independent, retained CPU buffers
+
+======================================================================
+ERROR: test_float64_and_negative_scale (test_answers.StaticBufferTests.test_float64_and_negative_scale)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 196, in test_float64_and_negative_scale
+    buffers = StaticAffine(self.source.double(), -0.5, 0)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/static_buffers.py", line 10, in __init__
+    raise NotImplementedError("Allocate independent, retained CPU buffers")
+NotImplementedError: Allocate independent, retained CPU buffers
+
+======================================================================
+ERROR: test_forward_only (test_answers.StaticBufferTests.test_forward_only)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 200, in test_forward_only
+    buffers = StaticAffine(self.source.requires_grad_(), 2, 1)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/static_buffers.py", line 10, in __init__
+    raise NotImplementedError("Allocate independent, retained CPU buffers")
+NotImplementedError: Allocate independent, retained CPU buffers
+
+======================================================================
+ERROR: test_independent_input_storage (test_answers.StaticBufferTests.test_independent_input_storage)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 119, in test_independent_input_storage
+    buffers = StaticAffine(self.source, 2, 1)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/static_buffers.py", line 10, in __init__
+    raise NotImplementedError("Allocate independent, retained CPU buffers")
+NotImplementedError: Allocate independent, retained CPU buffers
+
+======================================================================
+ERROR: test_invalid_dtype_preserves_input (test_answers.StaticBufferTests.test_invalid_dtype_preserves_input)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 166, in test_invalid_dtype_preserves_input
+    buffers = StaticAffine(self.source, 2, 1)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/static_buffers.py", line 10, in __init__
+    raise NotImplementedError("Allocate independent, retained CPU buffers")
+NotImplementedError: Allocate independent, retained CPU buffers
+
+======================================================================
+ERROR: test_invalid_examples (test_answers.StaticBufferTests.test_invalid_examples) (example='None')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 180, in test_invalid_examples
+    StaticAffine(example, 2, 1)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/static_buffers.py", line 10, in __init__
+    raise NotImplementedError("Allocate independent, retained CPU buffers")
+NotImplementedError: Allocate independent, retained CPU buffers
+
+======================================================================
+ERROR: test_invalid_examples (test_answers.StaticBufferTests.test_invalid_examples) (example='tensor([1., 1., 1.])')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 180, in test_invalid_examples
+    StaticAffine(example, 2, 1)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/static_buffers.py", line 10, in __init__
+    raise NotImplementedError("Allocate independent, retained CPU buffers")
+NotImplementedError: Allocate independent, retained CPU buffers
+
+======================================================================
+ERROR: test_invalid_examples (test_answers.StaticBufferTests.test_invalid_examples) (example='tensor([], size=(0, 3))')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 180, in test_invalid_examples
+    StaticAffine(example, 2, 1)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/static_buffers.py", line 10, in __init__
+    raise NotImplementedError("Allocate independent, retained CPU buffers")
+NotImplementedError: Allocate independent, retained CPU buffers
+
+======================================================================
+ERROR: test_invalid_examples (test_answers.StaticBufferTests.test_invalid_examples) (example='tensor([[1, 1, 1],\n        [1, 1, 1]])')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 180, in test_invalid_examples
+    StaticAffine(example, 2, 1)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/static_buffers.py", line 10, in __init__
+    raise NotImplementedError("Allocate independent, retained CPU buffers")
+NotImplementedError: Allocate independent, retained CPU buffers
+
+======================================================================
+ERROR: test_invalid_scalars (test_answers.StaticBufferTests.test_invalid_scalars) (value='True')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 193, in test_invalid_scalars
+    StaticAffine(self.source, value, 1)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/static_buffers.py", line 10, in __init__
+    raise NotImplementedError("Allocate independent, retained CPU buffers")
+NotImplementedError: Allocate independent, retained CPU buffers
+
+======================================================================
+ERROR: test_invalid_scalars (test_answers.StaticBufferTests.test_invalid_scalars) (value='inf')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 193, in test_invalid_scalars
+    StaticAffine(self.source, value, 1)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/static_buffers.py", line 10, in __init__
+    raise NotImplementedError("Allocate independent, retained CPU buffers")
+NotImplementedError: Allocate independent, retained CPU buffers
+
+======================================================================
+ERROR: test_invalid_scalars (test_answers.StaticBufferTests.test_invalid_scalars) (value='nan')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 193, in test_invalid_scalars
+    StaticAffine(self.source, value, 1)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/static_buffers.py", line 10, in __init__
+    raise NotImplementedError("Allocate independent, retained CPU buffers")
+NotImplementedError: Allocate independent, retained CPU buffers
+
+======================================================================
+ERROR: test_invalid_scalars (test_answers.StaticBufferTests.test_invalid_scalars) (value='2')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 193, in test_invalid_scalars
+    StaticAffine(self.source, value, 1)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/static_buffers.py", line 10, in __init__
+    raise NotImplementedError("Allocate independent, retained CPU buffers")
+NotImplementedError: Allocate independent, retained CPU buffers
+
+======================================================================
+ERROR: test_invalid_scalars (test_answers.StaticBufferTests.test_invalid_scalars) (value='10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 193, in test_invalid_scalars
+    StaticAffine(self.source, value, 1)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/static_buffers.py", line 10, in __init__
+    raise NotImplementedError("Allocate independent, retained CPU buffers")
+NotImplementedError: Allocate independent, retained CPU buffers
+
+======================================================================
+ERROR: test_invalid_shape_preserves_input (test_answers.StaticBufferTests.test_invalid_shape_preserves_input)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 160, in test_invalid_shape_preserves_input
+    buffers = StaticAffine(self.source, 2, 1)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/static_buffers.py", line 10, in __init__
+    raise NotImplementedError("Allocate independent, retained CPU buffers")
+NotImplementedError: Allocate independent, retained CPU buffers
+
+======================================================================
+ERROR: test_meta_device_rejected_before_copy (test_answers.StaticBufferTests.test_meta_device_rejected_before_copy)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 172, in test_meta_device_rejected_before_copy
+    buffers = StaticAffine(self.source, 2, 1)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/static_buffers.py", line 10, in __init__
+    raise NotImplementedError("Allocate independent, retained CPU buffers")
+NotImplementedError: Allocate independent, retained CPU buffers
+
+======================================================================
+ERROR: test_non_tensor_copy_rejected (test_answers.StaticBufferTests.test_non_tensor_copy_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 188, in test_non_tensor_copy_rejected
+    StaticAffine(self.source, 2, 1).copy_input([[1, 2, 3], [4, 5, 6]])
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/static_buffers.py", line 10, in __init__
+    raise NotImplementedError("Allocate independent, retained CPU buffers")
+NotImplementedError: Allocate independent, retained CPU buffers
+
+======================================================================
+ERROR: test_noncontiguous_source (test_answers.StaticBufferTests.test_noncontiguous_source)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 154, in test_noncontiguous_source
+    buffers = StaticAffine(torch.zeros_like(source), 2, 1)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/static_buffers.py", line 10, in __init__
+    raise NotImplementedError("Allocate independent, retained CPU buffers")
+NotImplementedError: Allocate independent, retained CPU buffers
+
+======================================================================
+ERROR: test_pointer_stability (test_answers.StaticBufferTests.test_pointer_stability)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 125, in test_pointer_stability
+    buffers = StaticAffine(self.source, 2, 1)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/static_buffers.py", line 10, in __init__
+    raise NotImplementedError("Allocate independent, retained CPU buffers")
+NotImplementedError: Allocate independent, retained CPU buffers
+
+======================================================================
+ERROR: test_python_scalar_rebinding (test_answers.StaticBufferTests.test_python_scalar_rebinding)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 206, in test_python_scalar_rebinding
+    buffers = StaticAffine(self.source, scale, 1)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/static_buffers.py", line 10, in __init__
+    raise NotImplementedError("Allocate independent, retained CPU buffers")
+NotImplementedError: Allocate independent, retained CPU buffers
+
+======================================================================
+ERROR: test_rebinding_does_not_change_retained_input (test_answers.StaticBufferTests.test_rebinding_does_not_change_retained_input)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 136, in test_rebinding_does_not_change_retained_input
+    buffers = StaticAffine(source, 2, 1)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/static_buffers.py", line 10, in __init__
+    raise NotImplementedError("Allocate independent, retained CPU buffers")
+NotImplementedError: Allocate independent, retained CPU buffers
+
+======================================================================
+ERROR: test_sparse_example_rejected (test_answers.StaticBufferTests.test_sparse_example_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 184, in test_sparse_example_rejected
+    StaticAffine(self.source.to_sparse(), 2, 1)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/static_buffers.py", line 10, in __init__
+    raise NotImplementedError("Allocate independent, retained CPU buffers")
+NotImplementedError: Allocate independent, retained CPU buffers
+
+======================================================================
+ERROR: test_values (test_answers.StaticBufferTests.test_values)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/test_answers.py", line 115, in test_values
+    buffers = StaticAffine(self.source, 2, 1)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-12-cuda-graph-replay/code/static_buffers.py", line 10, in __init__
+    raise NotImplementedError("Allocate independent, retained CPU buffers")
+NotImplementedError: Allocate independent, retained CPU buffers
+
+----------------------------------------------------------------------
+Ran 32 tests in 0.022s
+
+FAILED (errors=113)

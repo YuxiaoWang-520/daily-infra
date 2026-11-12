@@ -1,0 +1,12 @@
+flowchart TB
+    W[side stream 上 eager warmup] --> C[Python 运行捕获区域]
+    C --> T[记录 CUDA 节点和依赖]
+    T --> I[实例化可执行图]
+    N[本轮新数据] --> P[copy_ 到保留的输入 storage]
+    I --> R[每轮一次 replay 提交]
+    P --> R
+    R --> A[读取固定输入地址]
+    A --> K1[kernel 1]
+    K1 --> K2[kernel 2 及后续节点]
+    K2 --> O[写入固定输出 storage]
+    O --> S[需要保留结果时 clone]

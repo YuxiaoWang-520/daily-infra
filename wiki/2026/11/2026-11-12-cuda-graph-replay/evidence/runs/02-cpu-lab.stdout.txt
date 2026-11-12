@@ -1,0 +1,124 @@
+{
+  "recorded_at": "2026-11-12T11:19:12.170118+08:00",
+  "environment": {
+    "hostname": "wyx-macmini.local",
+    "platform": "macOS-27.0-arm64-arm-64bit",
+    "python": "3.12.16 (main, Oct 26 2026, 11:31:43) [Clang 21.1.8 ]",
+    "executable": "/Users/wangyuxiao/miniforge3/envs/ai-infra/bin/python",
+    "torch": "2.15.0",
+    "torch_git": "d0f2af8b66b20da4baa50644c0cd3f887a2eae2e",
+    "cuda_available": false
+  },
+  "code_sha256": {
+    "cuda_demo.py": "b7f935c00254215f3b305e9a77570dd16fe23b421e7a911172100e2ffddda6fe",
+    "exercise_buffers.py": "5b307a0bacf026ca59752ab64f93c05fa1a28863640aca4d0a2d966b1ee6a53f",
+    "exercise_launch.py": "079de51ed362a1f75f9d567c81c0c9b7bc402023e1b35adbcd88de27058f3408",
+    "launch_model.py": "c37f8d5bdc430d69bd61fc3126446c27cc6bfb66711a4e8d4c247300744d2817",
+    "run_lab.py": "348d7a126dab96570fa42b95ca0e4fe17e8cfcc71b5a8d59fe32aaad7cc29a82",
+    "static_buffers.py": "e56ce72d58baf6d80e431988f4484e896f8ae9dfcb572185273b9c29c8e5ca2c",
+    "test_answers.py": "d4ca22bc0258812fb5306a70c26df917a8f5982a6804103ef12b1fc054570b92"
+  },
+  "modeled_costs_us": {
+    "1": {
+      "eager_us": 31.0,
+      "graph_us": 10014.0,
+      "device_us": 10.0,
+      "eager_steady_us": 30.0,
+      "graph_steady_us": 10.0,
+      "first_faster_replays": 501
+    },
+    "100": {
+      "eager_us": 3001.0,
+      "graph_us": 11004.0,
+      "device_us": 10.0,
+      "eager_steady_us": 30.0,
+      "graph_steady_us": 10.0,
+      "first_faster_replays": 501
+    },
+    "500": {
+      "eager_us": 15001.0,
+      "graph_us": 15004.0,
+      "device_us": 10.0,
+      "eager_steady_us": 30.0,
+      "graph_steady_us": 10.0,
+      "first_faster_replays": 501
+    },
+    "501": {
+      "eager_us": 15031.0,
+      "graph_us": 15014.0,
+      "device_us": 10.0,
+      "eager_steady_us": 30.0,
+      "graph_steady_us": 10.0,
+      "first_faster_replays": 501
+    },
+    "1000": {
+      "eager_us": 30001.0,
+      "graph_us": 20004.0,
+      "device_us": 10.0,
+      "eager_steady_us": 30.0,
+      "graph_steady_us": 10.0,
+      "first_faster_replays": 501
+    }
+  },
+  "compute_bound_model_us": {
+    "eager_us": 1000003.0,
+    "graph_us": 1010004.0,
+    "device_us": 1000.0,
+    "eager_steady_us": 1000.0,
+    "graph_steady_us": 1000.0,
+    "first_faster_replays": null
+  },
+  "cpu_observations": {
+    "saved_first_output": [
+      [
+        1.0,
+        3.0,
+        5.0
+      ],
+      [
+        7.0,
+        9.0,
+        11.0
+      ]
+    ],
+    "after_source_rebinding": [
+      [
+        1.0,
+        3.0,
+        5.0
+      ],
+      [
+        7.0,
+        9.0,
+        11.0
+      ]
+    ],
+    "after_input_copy": [
+      [
+        9.0,
+        9.0,
+        9.0
+      ],
+      [
+        9.0,
+        9.0,
+        9.0
+      ]
+    ],
+    "borrowed_first_output_after_second_run": [
+      [
+        9.0,
+        9.0,
+        9.0
+      ],
+      [
+        9.0,
+        9.0,
+        9.0
+      ]
+    ],
+    "input_and_output_addresses_stable": true,
+    "output_object_reused": true
+  },
+  "validation_scope": "CPU tensor storage and analytical timing model"
+}
