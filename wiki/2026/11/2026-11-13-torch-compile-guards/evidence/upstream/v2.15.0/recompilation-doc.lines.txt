@@ -1,0 +1,155 @@
+Upstream https://github.com/pytorch/pytorch
+Commit 31a77fc9c0a7c6fff15a1ff58c743f53b1a9d457
+Path docs/source/user_guide/torch_compiler/compile/programming_model.recompilation.md
+License ../LICENSE
+
+--- lines 20-140 ---
+20: # Dealing with Recompilations
+21: 
+22: Recompilations are necessary for `torch.compile` soundness, but can result in significantly increased compile time.
+23: Thus, minimizing recompilations while preserving soundness is essential for reducing compile time.
+24: 
+25: You can view recompilations and their reasons using tlparse or `TORCH_LOGS=recompiles`.
+26: 
+27: ## Is Dynamic Shapes Enabled?
+28: 
+29: In the below example, we recompile due to mismatched shapes:
+30: 
+31: ```{code-cell}
+32: @torch.compile
+33: def fn(x):
+34:     return x + 1
+35: fn(torch.ones(3))
+36: fn(torch.ones(4))
+37: ```
+38: 
+39: Make sure that the dynamic option of `torch.compile` is not set to `False`.
+40: The default option, `dynamic=None`, will only attempt dynamic shapes after the first compilation.
+41: You can set `dynamic=True` to upfront compile as dynamic as possible:
+42: 
+43: ```{code-cell}
+44: @torch.compile(dynamic=True)
+45: def gn(x):
+46:     return x + 1
+47: gn(torch.ones(3))
+48: gn(torch.ones(4))
+49: ```
+50: 
+51: For more information on dynamic shapes, including dealing with errors/recompilations due to
+52: dynamic shapes, see [the dynamic shapes manual](https://docs.google.com/document/d/1GgvOe7C8_NVOMLOCwDaYV1mXXyHMXY7ExoewHqooxrs/edit?tab=t.0#heading=h.fh8zzonyw8ng).
+53: 
+54: ## Wrapping Constants with Tensors
+55: By default, `int` / `float` variables are treated as constants and are guarded on their exact value.
+56: In the below example, we have a recompilation for each function call.
+57: 
+58: ```{code-cell}
+59: @torch.compile
+60: def fn(x, c):
+61:     return x + c
+62: for i in range(5):
+63:     fn(torch.ones(i), 0.5 + i)
+64: ```
+65: 
+66: In particular, for LR schedulers, initializing with a constant can lead to recompilations:
+67: 
+68: ```{code-cell}
+69: mod = torch.nn.Linear(3, 3)
+70: opt = torch.optim.Adam(mod.parameters(), lr=0.01)
+71: sched = torch.optim.lr_scheduler.ExponentialLR(opt, 0.9)
+72: @torch.compile
+73: def gn(inp):
+74:     opt.zero_grad(True)
+75:     out = mod(inp).sum()
+76:     out.backward()
+77:     opt.step()
+78:     sched.step()
+79: for i in range(5):
+80:     gn(torch.ones(3, 3))
+81: ```
+82: 
+83: In both examples, we can wrap `float` variables in tensors in order to prevent recompilations.
+84: 
+85: ```{code-cell}
+86: :tags: [remove-cell]
+87: torch._dynamo.reset()
+88: ```
+89: 
+90: ```{code-cell}
+91: # first example
+92: for i in range(5):
+93:     fn(torch.ones(i), torch.tensor(0.5 + i))
+94: # second example
+95: opt = torch.optim.Adam(mod.parameters(), lr=torch.tensor(0.01))
+96: sched = torch.optim.lr_scheduler.ExponentialLR(opt, torch.tensor(0.9))
+97: for i in range(5):
+98:     gn(torch.ones(3, 3))
+99: ```
+100: 
+101: ## Unspecializing Integer Attributes on `nn.Module`s
+102: 
+103: By default, Dynamo specializes on (guards the exact value of) integer attributes of an `nn.Module`.
+104: An integer that changes every call -- such as a step counter incremented inside `forward` --
+105: therefore triggers a recompilation on each call, quickly hitting the recompilation limit and falling back to eager.
+106: 
+107: ```{code-cell}
+108: class Mod(torch.nn.Module):
+109:     def __init__(self):
+110:         super().__init__()
+111:         self.c = 0
+112: 
+113:     def forward(self, x):
+114:         self.c += 1  # specialized on -> recompiles every call
+115:         return x * self.c
+116: 
+117: mod = Mod()
+118: opt_mod = torch.compile(mod, backend="eager")
+119: for _ in range(5):
+120:     opt_mod(torch.randn(4))
+121: ```
+122: 
+123: If you do not need the integer specialized, set the flag below so Dynamo treats it as dynamic instead of recompiling.
+124: See {ref}`dynamic_shapes_advanced_control_options` for related static/dynamic control flags.
+125: 
+126: ```{code-cell}
+127: :tags: [remove-cell]
+128: torch._dynamo.reset()
+129: ```
+130: 
+131: ```{code-cell}
+132: torch._dynamo.config.allow_unspec_int_on_nn_module = True
+133: mod = Mod()
+134: opt_mod = torch.compile(mod, backend="eager")
+135: for _ in range(5):
+136:     opt_mod(torch.randn(4))
+137: torch._dynamo.config.allow_unspec_int_on_nn_module = False
+138: ```
+139: 
+140: (programming_model.recompilation.changing_cache_size_limit)=
+
+--- lines 180-204 ---
+180: ## Graph Breaking to Reduce Recompilation Costs
+181: If a large graph is recompiling and causing high compile time, you can intentionally introduce
+182: a graph break in order to reduce recompilation costs, at the expense of introducing a performance hit.
+183: 
+184: ```{code-cell}
+185: def very_large_function(x):
+186:     return x + 1
+187: 
+188: @torch.compile(dynamic=False)
+189: def fn(x, c):
+190:     y = very_large_function(x)  # recompiled every time
+191:     return y + c
+192: 
+193: for i in range(1, 5):
+194:     fn(torch.ones(3), i)
+195: 
+196: @torch.compile(dynamic=False)
+197: def gn(x, c):
+198:     y = very_large_function(x)  # compiled only once
+199:     torch._dynamo.graph_break()
+200:     return y + c  # recompiled every time
+201: 
+202: for i in range(1, 5):
+203:     gn(torch.ones(3), i)
+204: ```
+

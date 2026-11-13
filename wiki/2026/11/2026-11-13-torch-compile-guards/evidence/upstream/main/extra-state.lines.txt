@@ -1,0 +1,63 @@
+Upstream https://github.com/pytorch/pytorch
+Commit a0d96468b7f2089907f400411eda3b09feda8f76
+Path torch/csrc/dynamo/extra_state.cpp
+License ../LICENSE
+
+--- lines 128-183 ---
+128: CacheEntry* lookup_in_list(
+129:     std::list<CacheEntry>& entries,
+130:     FrameLocalsMapping* f_locals,
+131:     PyObject* backend,
+132:     bool is_skip_guard_eval_unsafe,
+133:     bool* guard_error) {
+134:   size_t index = 0;
+135:   for (CacheEntry& cache_entry : entries) {
+136:     bool valid = Py_IsFalse(backend) ||
+137:         backend_match(cache_entry.backend.ptr(), backend);
+138: 
+139:     if (valid) {
+140:       // Guards can run Python code (e.g. lambda guards), so a weakref finalizer
+141:       // can invalidate this very entry mid-evaluation and free the guard tree
+142:       // being walked.
+143:       py::object guard_manager_keepalive = cache_entry.guard_manager;
+144:       try {
+145:         if (is_skip_guard_eval_unsafe) {
+146:           valid = cache_entry_has_no_guards(
+147:                       cache_entry, /*is_skip_guard_eval_unsafe=*/true) ||
+148:               torch::dynamo::run_root_guard_manager(
+149:                       cache_entry.diff_guard_root_mgr, f_locals);
+150:         } else {
+151:           valid = torch::dynamo::run_root_guard_manager(
+152:               cache_entry.root_mgr, f_locals);
+153:         }
+154:       } catch (py::error_already_set& e) {
+155:         if (guard_error_hook) {
+156:           py::handle guard_error_hook_handle(guard_error_hook);
+157:           py::handle f_locals_dict = (PyObject*)f_locals->to_dict();
+158:           guard_error_hook_handle(
+159:               cache_entry.guard_manager,
+160:               cache_entry.code,
+161:               f_locals_dict,
+162:               index,
+163:               index == entries.size() - 1);
+164:         }
+165:         e.restore();
+166:         *guard_error = true;
+167:         return nullptr;
+168:       }
+169:       if (!cache_entry.guard_manager.is(guard_manager_keepalive)) {
+170:         // Invalidation also moved the entry to the back of `entries`, so the
+171:         // entries after it have not been checked yet. An entry is invalidated
+172:         // at most once, so the rescan terminates.
+173:         return lookup_in_list(
+174:             entries, f_locals, backend, is_skip_guard_eval_unsafe, guard_error);
+175:       }
+176:     }
+177:     if (valid) {
+178:       return &cache_entry;
+179:     }
+180:     ++index;
+181:   }
+182:   return nullptr;
+183: }
+

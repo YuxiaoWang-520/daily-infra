@@ -1,0 +1,31 @@
+{
+  "checked_at": "2026-11-13T11:51:07.599283+08:00",
+  "status": "passed",
+  "article": "wiki/2026/11/2026-11-13-torch-compile-guards",
+  "article_files": 51,
+  "local_links_checked": 158,
+  "source_records_reconstructed": 16,
+  "source_lines_verified": 1018,
+  "code_files_matched_to_runs": 7,
+  "cpu_tests": 22,
+  "compile_cases": 11,
+  "numerical_checks": 27,
+  "expected_fullgraph_rejections": 2,
+  "index_articles": 25,
+  "same_day_articles": 1,
+  "mermaid_source_matches": true,
+  "formula_delimiters_valid": true,
+  "cost_table_ms": [
+    470,
+    570,
+    600
+  ],
+  "optimizing_codegen_executed": false,
+  "checksummed_files": 48,
+  "checksum_exit_code": 0,
+  "secret_pattern_hits": 0,
+  "git_sync_status": "ready_to_commit",
+  "github_private": false,
+  "public_operation_authorized": true,
+  "automation_public_instruction_verified": true
+}

@@ -1,0 +1,12 @@
+{
+  "checked_date": "2026-11-13",
+  "timezone": "Asia/Shanghai",
+  "pytorch_main": "a0d96468b7f2089907f400411eda3b09feda8f76",
+  "stable_tag": "v2.15.0",
+  "stable_commit": "31a77fc9c0a7c6fff15a1ff58c743f53b1a9d457",
+  "runtime_commit": "d0f2af8b66b20da4baa50644c0cd3f887a2eae2e",
+  "stable_release_date": "2026-10-28T17:09:49Z",
+  "runtime_torch": "2.15.0",
+  "experiment_backend": "custom counting backend returning GraphModule.forward",
+  "optimizing_codegen_executed": false
+}

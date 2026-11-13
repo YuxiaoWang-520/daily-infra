@@ -1,0 +1,56 @@
+Upstream https://github.com/pytorch/pytorch
+Commit 31a77fc9c0a7c6fff15a1ff58c743f53b1a9d457
+Path torch/_dynamo/eval_frame.py
+License ../LICENSE
+
+--- lines 1881-1929 ---
+1881:     if nopython and not config.debug_force_graph_break_on_leaf_return:
+1882:         return optimize_assert(
+1883:             backend,
+1884:             dynamic=dynamic,
+1885:             hooks=hooks,
+1886:             rebuild_ctx=rebuild_ctx,
+1887:             package=package,
+1888:             recompile_limit=recompile_limit,
+1889:             isolate_recompiles=isolate_recompiles,
+1890:             dynamic_shapes=dynamic_shapes,
+1891:         )
+1892: 
+1893:     backend = get_compiler_fn(backend)
+1894: 
+1895:     # Find if backend has any extra context manager
+1896:     backend_ctx_ctor = getattr(backend, "backend_ctx_ctor", null_context)
+1897: 
+1898:     # The backend function is stashed in the callable returned by
+1899:     # _optimize_catch_errors in the field _torchdynamo_orig_backend. This can
+1900:     # be used by eval_frame.c to insert a guard on the backend.
+1901: 
+1902:     # With CachingPrecompile, instantiate an uninitialized CompilePackage
+1903:     # which gets initialized by _optimize_catch_errors.__call__ once we have a function
+1904:     if config.caching_precompile and package is None:
+1905:         from .package import CompilePackage
+1906: 
+1907:         package = CompilePackage(fn=None, dynamo=None, ignore_inlined_sources=False)
+1908: 
+1909:     return _optimize_catch_errors(
+1910:         convert_frame.convert_frame(
+1911:             backend,
+1912:             hooks,
+1913:             package=package,
+1914:             recompile_limit=recompile_limit,
+1915:         ),
+1916:         hooks,
+1917:         backend_ctx_ctor,
+1918:         fullgraph=False,
+1919:         error_on_graph_break=error_on_graph_break
+1920:         and not config.debug_force_graph_break_on_leaf_return,
+1921:         dynamic=dynamic,
+1922:         compiler_config=(
+1923:             cast(CompilerConfigProvider, backend).get_compiler_config()
+1924:             if hasattr(backend, "get_compiler_config")
+1925:             else None
+1926:         ),
+1927:         rebuild_ctx=rebuild_ctx,
+1928:         package=package,
+1929:         isolate_recompiles=isolate_recompiles,
+

@@ -1,0 +1,26 @@
+{
+  "started_at": "2026-11-13T11:28:34.868092+08:00",
+  "cwd": "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/wiki/2026/11/2026-11-13-torch-compile-guards",
+  "argv": [
+    "/Users/wangyuxiao/miniforge3/envs/ai-infra/bin/python",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "code",
+    "-p",
+    "test_answers.py",
+    "-v"
+  ],
+  "exit_code": 0,
+  "log": "10-archive-tests.txt",
+  "code_sha256": {
+    "counting_backend.py": "1203e09f6bd94637948e6de7d69865a3b58d4d1def5954ffed2a7ba3c9e041fd",
+    "exercise_backend.py": "14a0fad3d0152d12b827a7f0d15e2d352c7a82ed77d17feb4e4d28e8145ac114",
+    "exercise_rewrites.py": "054302956834e5a7652dc76030149c2a4e90c2c89e96a0633eeecc624ac28ee1",
+    "run_lab.py": "ba3f9775d6b3714c4c8046f61076e98aedcfa737b0e8078e008ab3f39203c4ca",
+    "solutions.py": "440ca3c84f555e0ebeccf2e88d36947fbc7e446025b7c2e0b15cca704b5026b0",
+    "test_answers.py": "d23be9a45d52fbf89e9979e048fd6ef86ed118b3f9bd54dcf6114aeaad02ca97",
+    "workloads.py": "1e5b6e959db7a65a4cc5cee38093527c860fbc01f65d62ab7dfcc94c96300528"
+  }
+}

@@ -1,0 +1,34 @@
+Upstream https://github.com/pytorch/pytorch
+Commit a0d96468b7f2089907f400411eda3b09feda8f76
+Path torch/_dynamo/convert_frame.py
+License ../LICENSE
+
+--- lines 1994-2020 ---
+1994:             check_fn = dynamo_output.build_guards(
+1995:                 code,
+1996:                 hooks=hooks,
+1997:                 save=output.package is not None,
+1998:                 cache_entries=cache_entries,
+1999:             )
+2000: 
+2001:         # bypass_package sets output.package to None when this compile cannot be
+2002:         # packaged (the local `package` still holds the object). Skip the whole
+2003:         # block in that case: a bypassed compile contributes none of its guards,
+2004:         # inlined source, or device type to the package.
+2005:         if output.package is not None:
+2006:             if check_fn.guards_state is None:
+2007:                 raise AssertionError("check_fn.guards_state must not be None")
+2008:             output.package.add_guarded_code(check_fn.guards_state, out_code)
+2009:             output.package.add_inlined_source(output.tracing_context.traced_code)
+2010:             output.package.update_device_type(output.current_tracer.graph)
+2011: 
+2012:         compile_id_str = str(compile_id) if compile_id is not None else "Unknown"
+2013:         annotation_str = "Torch-Compiled Region: " + compile_id_str
+2014:         guarded_code = GuardedCode(
+2015:             out_code,
+2016:             check_fn.guard_manager,  # type: ignore[arg-type]
+2017:             compile_id,
+2018:             annotation_str,
+2019:         )
+2020: 
+

@@ -1,0 +1,86 @@
+Upstream https://github.com/pytorch/pytorch
+Commit a0d96468b7f2089907f400411eda3b09feda8f76
+Path torch/_dynamo/output_graph.py
+License ../LICENSE
+
+--- lines 3499-3577 ---
+3499:     def call_user_compiler(
+3500:         self, gm: fx.GraphModule, example_inputs: list[Tensor]
+3501:     ) -> CompiledFn:
+3502:         with dynamo_timed(
+3503:             "OutputGraph.call_user_compiler",
+3504:             phase_name="backend_compile",
+3505:             log_pt2_compile_event=True,
+3506:             log_waitcounter=True,
+3507:             waitcounter_name_override="compile_aot_autograd",
+3508:             dynamo_compile_column_us="aot_autograd_cumulative_compile_time_us",
+3509:         ):
+3510:             return self._call_user_compiler(gm, example_inputs)
+3511: 
+3512:     def _call_user_compiler(
+3513:         self, gm: fx.GraphModule, example_inputs: list[Tensor]
+3514:     ) -> CompiledFn:
+3515:         if self.compiler_fn is None:
+3516:             raise AssertionError("compiler_fn must not be None")
+3517:         tot = 0
+3518:         placeholders = []
+3519:         for node in gm.graph.nodes:
+3520:             if node.op in ("call_function", "call_method", "call_module"):
+3521:                 tot += 1
+3522:             if node.op == "placeholder":
+3523:                 placeholders.append(node)
+3524:         increment_op_count(tot)
+3525:         for pl in placeholders:
+3526:             if not hasattr(pl, "_dynamo_source"):
+3527:                 arg = pl.meta["grapharg"]
+3528:                 # TODO: Why isn't this stored in meta :think:
+3529:                 # NOTE: can't move these into meta: https://github.com/pytorch/pytorch/issues/141640
+3530:                 pl._dynamo_source = arg.source
+3531: 
+3532:         # NOTE: can't move these into meta: https://github.com/pytorch/pytorch/issues/141640
+3533:         gm._param_name_to_source = self.param_name_to_source  # type: ignore[assignment]
+3534:         gm._source_to_user_stacks = self.source_to_user_stacks  # type: ignore[assignment]
+3535: 
+3536:         # Check for per-graph backend override (for debugging/bisecting)
+3537:         compiler_fn = (
+3538:             get_backend_override_for_compile_id(
+3539:                 self.dynamo_compile_id, config.debug_backend_override
+3540:             )
+3541:             or self.compiler_fn
+3542:         )
+3543: 
+3544:         # Check for per-graph inductor config override (for debugging/bisecting)
+3545:         inductor_config_override = get_inductor_config_override_for_compile_id(
+3546:             self.dynamo_compile_id, config.debug_inductor_config_override
+3547:         )
+3548:         if inductor_config_override:
+3549:             compiler_fn = _wrap_with_inductor_config(
+3550:                 compiler_fn, inductor_config_override
+3551:             )
+3552: 
+3553:         name = (
+3554:             compiler_fn.__name__
+3555:             if hasattr(compiler_fn, "__name__")
+3556:             else "<unknown compiler_fn>"
+3557:         )
+3558:         from torch._higher_order_ops.passes.inline_invoke_subgraph import (
+3559:             inline_invoke_subgraph,
+3560:             inline_single_use_invoke_subgraph,
+3561:         )
+3562: 
+3563:         if config.inline_invoke_subgraph:
+3564:             gm = inline_invoke_subgraph(gm)
+3565:         elif config.inline_single_use_invoke_subgraph:
+3566:             gm = inline_single_use_invoke_subgraph(gm)
+3567: 
+3568:         try:
+3569:             _step_logger()(logging.INFO, f"calling compiler function {name}")
+3570:             if config.verify_correctness:
+3571:                 compiler_fn = WrapperBackend(compiler_fn)
+3572:             compiled_fn = compiler_fn(gm, example_inputs)
+3573:             _step_logger()(logging.INFO, f"done compiler function {name}")
+3574:             if not callable(compiled_fn):
+3575:                 raise AssertionError("compiler_fn did not return callable")
+3576:         except (TensorifyScalarRestartAnalysis, ShortenTraceback, IndexError):
+3577:             # Re-raise IndexError so dim out-of-range errors from tensor ops
+

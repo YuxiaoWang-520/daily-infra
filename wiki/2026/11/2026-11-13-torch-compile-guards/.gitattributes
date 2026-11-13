@@ -1,0 +1,4 @@
+evidence/upstream/** -whitespace
+evidence/runs/*red-tests.txt -whitespace
+evidence/runs/00-upstream-fetch.txt -whitespace
+evidence/runs/03-torch-logs.txt -whitespace

@@ -1,0 +1,176 @@
+{
+  "checked_date": "2026-11-13",
+  "timezone": "Asia/Shanghai",
+  "search_queries": [
+    "site:docs.pytorch.org torch.compile guards recompilation",
+    "site:docs.pytorch.org graph breaks fullgraph dynamic",
+    "site:docs.pytorch.org custom backends GraphModule callable",
+    "site:docs.pytorch.org torch.compile custom backend example_inputs"
+  ],
+  "records": [
+    {
+      "key": "nov13_compile_search",
+      "search_id": "search_42d276a61b39aebe13f475e9f1148aba",
+      "results": [
+        {
+          "url": "https://docs.pytorch.org/docs/2.15/user_guide/torch_compiler/torch.compiler_troubleshooting.html",
+          "title": "torch.compile Troubleshooting — PyTorch 2.15 documentation",
+          "publish_date": null
+        },
+        {
+          "url": "http://docs.pytorch.org/docs/main/generated/torch.compile.html",
+          "title": "torch.compile — PyTorch main documentation",
+          "publish_date": null
+        },
+        {
+          "url": "https://docs.pytorch.org/docs/stable/user_guide/torch_compiler/compile/programming_model.fullgraph_true.html",
+          "title": "Use fullgraph=True to Identify and Eliminate Graph Breaks — PyTorch 2.10 documentation",
+          "publish_date": "2025-07-28"
+        },
+        {
+          "url": "http://docs.pytorch.org/docs/2.3/generated/torch.compile.html",
+          "title": "torch.compile ¶",
+          "publish_date": null
+        },
+        {
+          "url": "https://docs.pytorch.org/docs/2.15/user_guide/torch_compiler/compile/programming_model.recompilation.html",
+          "title": "Dealing with Recompilations #",
+          "publish_date": null
+        },
+        {
+          "url": "https://docs.pytorch.org/docs/main/torch.compiler_troubleshooting.html",
+          "title": "torch.compile Troubleshooting — PyTorch main documentation",
+          "publish_date": "2022-11-28"
+        },
+        {
+          "url": "https://docs.pytorch.org/docs/main/user_guide/torch_compiler/compile/programming_model.recompilation.html",
+          "title": "Dealing with Recompilations #",
+          "publish_date": null
+        },
+        {
+          "url": "https://docs.pytorch.org/docs/stable/user_guide/torch_compiler/torch.compiler_faq.html",
+          "title": "Frequently Asked Questions — PyTorch 2.11 documentation",
+          "publish_date": "2025-06-16"
+        },
+        {
+          "url": "https://docs.pytorch.org/tutorials/intermediate/compiled_autograd_tutorial.html",
+          "title": "Compiled Autograd: Capturing a larger backward graph for torch.compile#",
+          "publish_date": null
+        },
+        {
+          "url": "https://docs.pytorch.org/docs/main/user_guide/torch_compiler/compile/programming_model.reducing_compile_time.html",
+          "title": "Reducing Compile Time — PyTorch main documentation",
+          "publish_date": null
+        }
+      ]
+    },
+    {
+      "key": "nov13_backend_search",
+      "search_id": "search_ecab833027d1735d4920c032b8349a49",
+      "results": [
+        {
+          "url": "https://docs.pytorch.org/docs/2.15/user_guide/torch_compiler/torch.compiler_custom_backends.html",
+          "title": "Custom Backends #",
+          "publish_date": null
+        },
+        {
+          "url": "https://docs.pytorch.org/docs/2.3/torch.compiler_custom_backends.html",
+          "title": "Custom Backends ¶",
+          "publish_date": null
+        },
+        {
+          "url": "https://docs.pytorch.org/docs/2.7/torch.compiler_custom_backends.html",
+          "title": "Custom Backends¶",
+          "publish_date": null
+        },
+        {
+          "url": "https://docs.pytorch.org/docs/2.0/dynamo/custom-backends.html",
+          "title": "Custom Backends¶",
+          "publish_date": null
+        },
+        {
+          "url": "https://docs.pytorch.org/docs/2.2/torch.compiler_custom_backends.html",
+          "title": "Custom Backends ¶",
+          "publish_date": null
+        },
+        {
+          "url": "https://docs.pytorch.org/docs/2.1/torch.compiler_custom_backends.html",
+          "title": "Custom Backends ¶",
+          "publish_date": null
+        },
+        {
+          "url": "https://docs.pytorch.org/docs/2.13/user_guide/torch_compiler/torch.compiler_custom_backends.html",
+          "title": "Custom Backends#",
+          "publish_date": null
+        },
+        {
+          "url": "https://docs.pytorch.org/docs/2.15/user_guide/torch_compiler/torch.compiler_aot_compile.html",
+          "title": "Ahead-of-Time Compilation with torch.compile #",
+          "publish_date": null
+        },
+        {
+          "url": "https://docs.pytorch.org/docs/2.11/user_guide/torch_compiler/torch.compiler_custom_backends.html",
+          "title": "Custom Backends #",
+          "publish_date": null
+        },
+        {
+          "url": "http://docs.pytorch.org/docs/2.9/torch.compiler_custom_backends.html",
+          "title": "Custom Backends #",
+          "publish_date": null
+        }
+      ]
+    },
+    {
+      "key": "nov13_compile_docs",
+      "extract_id": "extract_5e7313c6d219956e9fc552f9386dc842",
+      "errors": [],
+      "results": [
+        {
+          "url": "https://docs.pytorch.org/docs/2.15/generated/torch.compile.html",
+          "title": "torch.compile #",
+          "publish_date": null,
+          "acquired_at": "2026-11-08T00:00:00Z"
+        },
+        {
+          "url": "https://docs.pytorch.org/docs/2.15/user_guide/torch_compiler/torch.compiler_troubleshooting.html",
+          "title": "torch.compile Troubleshooting #",
+          "publish_date": null,
+          "acquired_at": "2026-11-10T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "key": "nov13_recompile_docs",
+      "extract_id": "extract_57f475a8ffa71448fb35b9324864c8dd",
+      "errors": [
+        {
+          "url": "https://docs.pytorch.org/docs/2.15/user_guide/torch_compiler/custom_backends.html",
+          "error_type": "http_error",
+          "http_status_code": 404,
+          "content": null
+        }
+      ],
+      "results": [
+        {
+          "url": "https://docs.pytorch.org/docs/2.15/user_guide/torch_compiler/compile/programming_model.recompilation.html",
+          "title": "Dealing with Recompilations #",
+          "publish_date": null,
+          "acquired_at": "2026-11-10T00:00:00Z"
+        }
+      ]
+    },
+    {
+      "key": "nov13_backend_docs",
+      "extract_id": "extract_746c8b5c6ef602286ab4833c4b2c0fe1",
+      "errors": [],
+      "results": [
+        {
+          "url": "https://docs.pytorch.org/docs/2.15/user_guide/torch_compiler/torch.compiler_custom_backends.html",
+          "title": "Custom Backends #",
+          "publish_date": null,
+          "acquired_at": "2026-10-30T00:00:00Z"
+        }
+      ]
+    }
+  ]
+}

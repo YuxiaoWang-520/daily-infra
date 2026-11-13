@@ -1,0 +1,27 @@
+test_manual_fx_execution (test_answers.BackendTests.test_manual_fx_execution) ... ok
+test_multiple_graph_records (test_answers.BackendTests.test_multiple_graph_records) ... ok
+test_record_is_json_serializable (test_answers.BackendTests.test_record_is_json_serializable) ... ok
+test_records_are_immutable_values (test_answers.BackendTests.test_records_are_immutable_values) ... ok
+test_automatic_dynamic_shapes (test_answers.CompileBehaviorTests.test_automatic_dynamic_shapes) ... ok
+test_combined_shape_scale_and_sign_changes (test_answers.CompileBehaviorTests.test_combined_shape_scale_and_sign_changes) ... ok
+test_dtype_guard (test_answers.CompileBehaviorTests.test_dtype_guard) ... ok
+test_dynamic_shapes_upfront (test_answers.CompileBehaviorTests.test_dynamic_shapes_upfront) ... ok
+test_fullgraph_rejects_explicit_break (test_answers.CompileBehaviorTests.test_fullgraph_rejects_explicit_break) ... ok
+test_fullgraph_rejects_python_data_branch (test_answers.CompileBehaviorTests.test_fullgraph_rejects_python_data_branch) ... ok
+test_original_branch_eager_reference (test_answers.CompileBehaviorTests.test_original_branch_eager_reference) ... ok
+test_python_scalar_value_guard_and_cache_reuse (test_answers.CompileBehaviorTests.test_python_scalar_value_guard_and_cache_reuse) ... ok
+test_rewrites_with_empty_and_unit_shapes (test_answers.CompileBehaviorTests.test_rewrites_with_empty_and_unit_shapes) ... ok
+test_same_metadata_reuses_graph (test_answers.CompileBehaviorTests.test_same_metadata_reuses_graph) ... ok
+test_split_default_two_regions_and_cached_repeat (test_answers.CompileBehaviorTests.test_split_default_two_regions_and_cached_repeat) ... ok
+test_static_shape_specializations (test_answers.CompileBehaviorTests.test_static_shape_specializations) ... ok
+test_stride_guard (test_answers.CompileBehaviorTests.test_stride_guard) ... ok
+test_tensor_affine_float64 (test_answers.CompileBehaviorTests.test_tensor_affine_float64) ... ok
+test_tensor_branch_handles_sign_changes (test_answers.CompileBehaviorTests.test_tensor_branch_handles_sign_changes) ... ok
+test_tensor_branch_with_mixed_input (test_answers.CompileBehaviorTests.test_tensor_branch_with_mixed_input) ... ok
+test_tensor_scalar_changes_reuse_graph (test_answers.CompileBehaviorTests.test_tensor_scalar_changes_reuse_graph) ... ok
+test_zero_one_dimensions_have_separate_specializations (test_answers.CompileBehaviorTests.test_zero_one_dimensions_have_separate_specializations) ... ok
+
+----------------------------------------------------------------------
+Ran 22 tests in 0.657s
+
+OK

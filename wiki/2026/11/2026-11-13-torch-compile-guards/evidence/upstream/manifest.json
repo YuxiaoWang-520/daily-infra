@@ -1,0 +1,291 @@
+{
+  "retrieved_at": "2026-11-13T11:13:25.191578+08:00",
+  "upstream": "https://github.com/pytorch/pytorch.git",
+  "main_commit": "a0d96468b7f2089907f400411eda3b09feda8f76",
+  "stable_tag": "v2.15.0",
+  "stable_commit": "31a77fc9c0a7c6fff15a1ff58c743f53b1a9d457",
+  "records": [
+    {
+      "label": "main",
+      "commit": "a0d96468b7f2089907f400411eda3b09feda8f76",
+      "path": "torch/__init__.py",
+      "blob_sha256": "a731805c442acd3e1a39938a26a353c18114662fb0d961bd7c7d0575f2876f5a",
+      "ranges": [
+        [
+          3095,
+          3160
+        ],
+        [
+          3330,
+          3339
+        ]
+      ],
+      "excerpt": "main/torch-init.lines.txt",
+      "excerpt_sha256": "a25205e0a6676351060dde7d7485688ca5511337c0b6e838d2bd22689edddca2"
+    },
+    {
+      "label": "main",
+      "commit": "a0d96468b7f2089907f400411eda3b09feda8f76",
+      "path": "torch/_dynamo/eval_frame.py",
+      "blob_sha256": "3ae7c0ef64101f4d97c7ae9ca55bfceffd2afb47154515bf6a8f4584ba1e47e2",
+      "ranges": [
+        [
+          1981,
+          2029
+        ]
+      ],
+      "excerpt": "main/eval-frame.lines.txt",
+      "excerpt_sha256": "53803985a9b8897b548f359865a9e18658f872ff0a5bbfb5131e6a91cf21106c"
+    },
+    {
+      "label": "main",
+      "commit": "a0d96468b7f2089907f400411eda3b09feda8f76",
+      "path": "torch/_dynamo/output_graph.py",
+      "blob_sha256": "7fce77dafef300fb35bc446cf1f7e647991c975bf10ec704394a118688a552a3",
+      "ranges": [
+        [
+          3499,
+          3577
+        ]
+      ],
+      "excerpt": "main/output-graph.lines.txt",
+      "excerpt_sha256": "10238b9ae00327b2cdea5bcdbcaa03975ce2e0168797ec463315720726279709"
+    },
+    {
+      "label": "main",
+      "commit": "a0d96468b7f2089907f400411eda3b09feda8f76",
+      "path": "torch/_dynamo/convert_frame.py",
+      "blob_sha256": "9871326f96b7cd9f237a7ec0396dabc2a60dc6e97e716fdaff70870bc4ce350b",
+      "ranges": [
+        [
+          1994,
+          2020
+        ]
+      ],
+      "excerpt": "main/convert-frame.lines.txt",
+      "excerpt_sha256": "8ef9037aae734d4e9fae375b4d1bcd217eb443f9351a323e1f5283ff5c18fdb3"
+    },
+    {
+      "label": "main",
+      "commit": "a0d96468b7f2089907f400411eda3b09feda8f76",
+      "path": "torch/csrc/dynamo/extra_state.cpp",
+      "blob_sha256": "ece3aa5676fa2f6cc17cab857e22364233c6d5efe763c297dcb836bac52b2784",
+      "ranges": [
+        [
+          128,
+          183
+        ]
+      ],
+      "excerpt": "main/extra-state.lines.txt",
+      "excerpt_sha256": "c111e274a6e1371603e8393f3b79664584890c879e2e784be31ea1a920f4de18"
+    },
+    {
+      "label": "main",
+      "commit": "a0d96468b7f2089907f400411eda3b09feda8f76",
+      "path": "torch/_dynamo/variables/builder.py",
+      "blob_sha256": "66d7aacab6f31e95826ca217957ea007a473c0216ffc34dc248f53e5f3c936eb",
+      "ranges": [
+        [
+          3947,
+          3993
+        ]
+      ],
+      "excerpt": "main/float-builder.lines.txt",
+      "excerpt_sha256": "19b23a406ddc34485a325f46198ee5e7290f0344963e6a5922f62609cef1263e"
+    },
+    {
+      "label": "main",
+      "commit": "a0d96468b7f2089907f400411eda3b09feda8f76",
+      "path": "docs/source/user_guide/torch_compiler/compile/programming_model.recompilation.md",
+      "blob_sha256": "0240bbc4fc9ead047c5039d4bcab93e201c65bd7768c8995e09ee3eb654eaf59",
+      "ranges": [
+        [
+          20,
+          140
+        ],
+        [
+          180,
+          204
+        ]
+      ],
+      "excerpt": "main/recompilation-doc.lines.txt",
+      "excerpt_sha256": "7b3ffe2863fa0e55eb1a12fee9c89577cffc6d58cb948bbca3fe2df70d763726"
+    },
+    {
+      "label": "main",
+      "commit": "a0d96468b7f2089907f400411eda3b09feda8f76",
+      "path": "docs/source/user_guide/torch_compiler/compile/dynamic_shapes_zero_one_specialization.md",
+      "blob_sha256": "355a474c509e72ba8a2ab8c0686341fa9632f233d4c3bbe2487f299fbc29fc4e",
+      "ranges": [
+        [
+          1,
+          33
+        ]
+      ],
+      "excerpt": "main/zero-one-doc.lines.txt",
+      "excerpt_sha256": "0c4c8d8851ff49ada29aab995720f3fd88b8ce69f37c3fc096fbb49aa3d0068e"
+    },
+    {
+      "label": "v2.15.0",
+      "commit": "31a77fc9c0a7c6fff15a1ff58c743f53b1a9d457",
+      "path": "torch/__init__.py",
+      "blob_sha256": "7ed81103f3d256de131b886e67be458b3205784e3b4af9c495041282391e19db",
+      "ranges": [
+        [
+          3100,
+          3165
+        ],
+        [
+          3335,
+          3344
+        ]
+      ],
+      "excerpt": "v2.15.0/torch-init.lines.txt",
+      "excerpt_sha256": "45ee6414e50868f9d3439b924b8f420e2defc42d773b8c95f48e3155e1266740"
+    },
+    {
+      "label": "v2.15.0",
+      "commit": "31a77fc9c0a7c6fff15a1ff58c743f53b1a9d457",
+      "path": "torch/_dynamo/eval_frame.py",
+      "blob_sha256": "70238d34897ea62fc289a722ad4012f99819cdffd7e88e07d0ecf529d7185057",
+      "ranges": [
+        [
+          1881,
+          1929
+        ]
+      ],
+      "excerpt": "v2.15.0/eval-frame.lines.txt",
+      "excerpt_sha256": "26392f9c1eefc281ddef2a70e9be8dab6240d8aceaf0efc0d5bac2bc775377f9"
+    },
+    {
+      "label": "v2.15.0",
+      "commit": "31a77fc9c0a7c6fff15a1ff58c743f53b1a9d457",
+      "path": "torch/_dynamo/output_graph.py",
+      "blob_sha256": "3b309cba9b15e6a921918a36b0ace90ed04c6044d56e453a1114a82199772cf5",
+      "ranges": [
+        [
+          3219,
+          3297
+        ]
+      ],
+      "excerpt": "v2.15.0/output-graph.lines.txt",
+      "excerpt_sha256": "08c25ae4e78bfb13e71726a9b4dbf6a53b7ceef47b372d203e7673093fbf5920"
+    },
+    {
+      "label": "v2.15.0",
+      "commit": "31a77fc9c0a7c6fff15a1ff58c743f53b1a9d457",
+      "path": "torch/_dynamo/convert_frame.py",
+      "blob_sha256": "1c445cae3b8c8f23699a6014daf285cbebdb93b4d2609b86e1b83394ebaf088b",
+      "ranges": [
+        [
+          1966,
+          1992
+        ]
+      ],
+      "excerpt": "v2.15.0/convert-frame.lines.txt",
+      "excerpt_sha256": "d802f082c67b6d06981f126735d1871ceed796cdc77a3043ea561e98da7c8387"
+    },
+    {
+      "label": "v2.15.0",
+      "commit": "31a77fc9c0a7c6fff15a1ff58c743f53b1a9d457",
+      "path": "torch/csrc/dynamo/extra_state.cpp",
+      "blob_sha256": "65d90b471f558a6b0209f1c8e3a24c3dc579b3f388447c6a0d409c72d5e845a5",
+      "ranges": [
+        [
+          209,
+          255
+        ]
+      ],
+      "excerpt": "v2.15.0/extra-state.lines.txt",
+      "excerpt_sha256": "25f8600a971f28b63f47a51961fad95cb76462a4efcc279add97876b45b0e24e"
+    },
+    {
+      "label": "v2.15.0",
+      "commit": "31a77fc9c0a7c6fff15a1ff58c743f53b1a9d457",
+      "path": "torch/_dynamo/variables/builder.py",
+      "blob_sha256": "d9190f45e0b7a111d525ebab7775787a89214b7e2f55fe9d90be10b141901757",
+      "ranges": [
+        [
+          3596,
+          3643
+        ]
+      ],
+      "excerpt": "v2.15.0/float-builder.lines.txt",
+      "excerpt_sha256": "674039443add755016c61800789dc47977b6411d70d05fa2d7c7d5226c4fa4e3"
+    },
+    {
+      "label": "v2.15.0",
+      "commit": "31a77fc9c0a7c6fff15a1ff58c743f53b1a9d457",
+      "path": "docs/source/user_guide/torch_compiler/compile/programming_model.recompilation.md",
+      "blob_sha256": "0240bbc4fc9ead047c5039d4bcab93e201c65bd7768c8995e09ee3eb654eaf59",
+      "ranges": [
+        [
+          20,
+          140
+        ],
+        [
+          180,
+          204
+        ]
+      ],
+      "excerpt": "v2.15.0/recompilation-doc.lines.txt",
+      "excerpt_sha256": "77d6397390b8fef2e09b0e12996a99ab1387061e79a511d2b030a2fca61f7163"
+    },
+    {
+      "label": "v2.15.0",
+      "commit": "31a77fc9c0a7c6fff15a1ff58c743f53b1a9d457",
+      "path": "docs/source/user_guide/torch_compiler/compile/dynamic_shapes_zero_one_specialization.md",
+      "blob_sha256": "355a474c509e72ba8a2ab8c0686341fa9632f233d4c3bbe2487f299fbc29fc4e",
+      "ranges": [
+        [
+          1,
+          33
+        ]
+      ],
+      "excerpt": "v2.15.0/zero-one-doc.lines.txt",
+      "excerpt_sha256": "5ebc88ab83835894b5c3ad86803e7fdd1fdcc924140a3329f9e90df95f019180"
+    }
+  ],
+  "comparison": [
+    {
+      "path": "torch/__init__.py",
+      "identical": false,
+      "numstat": "68\t73\ttorch/__init__.py"
+    },
+    {
+      "path": "torch/_dynamo/eval_frame.py",
+      "identical": false,
+      "numstat": "155\t54\ttorch/_dynamo/eval_frame.py"
+    },
+    {
+      "path": "torch/_dynamo/output_graph.py",
+      "identical": false,
+      "numstat": "456\t101\ttorch/_dynamo/output_graph.py"
+    },
+    {
+      "path": "torch/_dynamo/convert_frame.py",
+      "identical": false,
+      "numstat": "86\t30\ttorch/_dynamo/convert_frame.py"
+    },
+    {
+      "path": "torch/csrc/dynamo/extra_state.cpp",
+      "identical": false,
+      "numstat": "267\t200\ttorch/csrc/dynamo/extra_state.cpp"
+    },
+    {
+      "path": "torch/_dynamo/variables/builder.py",
+      "identical": false,
+      "numstat": "539\t126\ttorch/_dynamo/variables/builder.py"
+    },
+    {
+      "path": "docs/source/user_guide/torch_compiler/compile/programming_model.recompilation.md",
+      "identical": true,
+      "numstat": ""
+    },
+    {
+      "path": "docs/source/user_guide/torch_compiler/compile/dynamic_shapes_zero_one_specialization.md",
+      "identical": true,
+      "numstat": ""
+    }
+  ]
+}

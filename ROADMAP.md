@@ -30,7 +30,8 @@
 | 22 | [训练中断后，checkpoint 怎样恢复一致的进度？](wiki/2026/11/2026-11-10-training-checkpoint-recovery/README.md) | 模型、优化器、随机性和数据进度，前置为第 18—21 篇 |
 | 23 | [AllReduce 的数据怎样沿链路流动，为什么增加 GPU 后通信反而更慢？](wiki/2026/11/2026-11-11-allreduce-links-topology/README.md) | 通信量、环／树直觉与链路瓶颈，前置为第 04、17、21 篇 |
 | 24 | [CUDA Graph 怎样减少重复提交开销，哪些动态行为会让捕获失效？](wiki/2026/11/2026-11-12-cuda-graph-replay/README.md) | 重复提交、图捕获、固定地址与动态行为约束，前置为第 06、09 篇 |
-| 25 | torch.compile 怎样捕获计算，graph break 与重新编译各会增加什么开销？ | 计算图、guards、动态输入与编译成本，前置为第 06、09、24 篇 |
+| 25 | [torch.compile 怎样捕获计算，graph break 与重新编译各会增加什么开销？](wiki/2026/11/2026-11-13-torch-compile-guards/README.md) | 计算图、guards、动态输入与编译成本，前置为第 06、09、24 篇 |
+| 26 | CUDA caching allocator 怎样复用显存，为什么会出现碎片与 OOM？ | 显存池、分配与回收、碎片及容量排障，前置为第 01、18、24 篇 |
 
 每篇既要独立可读，也要链接已有前置文章。较新的实现可以作为当天的进阶部分，但不能让读者先理解尚未解释的术语。
 

@@ -1,0 +1,1074 @@
+{
+  "recorded_at": "2026-11-13T11:25:43.207591+08:00",
+  "environment": {
+    "hostname": "wyx-macmini.local",
+    "platform": "macOS-27.0-arm64-arm-64bit",
+    "python": "3.12.16 (main, Oct 26 2026, 11:31:43) [Clang 21.1.8 ]",
+    "executable": "/Users/wangyuxiao/miniforge3/envs/ai-infra/bin/python",
+    "torch": "2.15.0",
+    "torch_git": "d0f2af8b66b20da4baa50644c0cd3f887a2eae2e",
+    "cuda_available": false
+  },
+  "backend": "custom counting backend returning GraphModule.forward",
+  "scope": "CPU Dynamo/FX capture, cache reuse, graph breaks and guards",
+  "optimizing_codegen_executed": false,
+  "code_sha256": {
+    "counting_backend.py": "1203e09f6bd94637948e6de7d69865a3b58d4d1def5954ffed2a7ba3c9e041fd",
+    "exercise_backend.py": "14a0fad3d0152d12b827a7f0d15e2d352c7a82ed77d17feb4e4d28e8145ac114",
+    "exercise_rewrites.py": "054302956834e5a7652dc76030149c2a4e90c2c89e96a0633eeecc624ac28ee1",
+    "run_lab.py": "ba3f9775d6b3714c4c8046f61076e98aedcfa737b0e8078e008ab3f39203c4ca",
+    "solutions.py": "440ca3c84f555e0ebeccf2e88d36947fbc7e446025b7c2e0b15cca704b5026b0",
+    "test_answers.py": "d23be9a45d52fbf89e9979e048fd6ef86ed118b3f9bd54dcf6114aeaad02ca97",
+    "workloads.py": "1e5b6e959db7a65a4cc5cee38093527c860fbc01f65d62ab7dfcc94c96300528"
+  },
+  "cases": [
+    {
+      "name": "same_metadata",
+      "dynamic": false,
+      "fullgraph": true,
+      "calls": [
+        {
+          "input_shapes": [
+            [
+              2,
+              3
+            ]
+          ],
+          "graphs_total": 1,
+          "output": [
+            [
+              3.0,
+              3.0,
+              3.0
+            ],
+            [
+              3.0,
+              3.0,
+              3.0
+            ]
+          ]
+        },
+        {
+          "input_shapes": [
+            [
+              2,
+              3
+            ]
+          ],
+          "graphs_total": 1,
+          "output": [
+            [
+              3.0,
+              3.0,
+              3.0
+            ],
+            [
+              3.0,
+              3.0,
+              3.0
+            ]
+          ]
+        },
+        {
+          "input_shapes": [
+            [
+              2,
+              3
+            ]
+          ],
+          "graphs_total": 1,
+          "output": [
+            [
+              3.0,
+              3.0,
+              3.0
+            ],
+            [
+              3.0,
+              3.0,
+              3.0
+            ]
+          ]
+        }
+      ],
+      "expected_rejection": null,
+      "graphs": [
+        {
+          "code": "\n\n\ndef forward(self, L_x_ : torch.Tensor):\n    l_x_ = L_x_\n    mul = l_x_ * 2.0;  l_x_ = None\n    add = mul + 1;  mul = None\n    relu = add.relu();  add = None\n    return (relu,)\n    ",
+          "operators": [
+            "<built-in function mul>",
+            "<built-in function add>",
+            "relu"
+          ],
+          "placeholders": [
+            "L_x_"
+          ],
+          "input_kinds": [
+            "Tensor"
+          ]
+        }
+      ],
+      "numerical_checks": 3
+    },
+    {
+      "name": "static_shapes",
+      "dynamic": false,
+      "fullgraph": true,
+      "calls": [
+        {
+          "input_shapes": [
+            [
+              2,
+              3
+            ]
+          ],
+          "graphs_total": 1,
+          "output": [
+            [
+              3.0,
+              3.0,
+              3.0
+            ],
+            [
+              3.0,
+              3.0,
+              3.0
+            ]
+          ]
+        },
+        {
+          "input_shapes": [
+            [
+              4,
+              3
+            ]
+          ],
+          "graphs_total": 2,
+          "output": [
+            [
+              3.0,
+              3.0,
+              3.0
+            ],
+            [
+              3.0,
+              3.0,
+              3.0
+            ],
+            [
+              3.0,
+              3.0,
+              3.0
+            ],
+            [
+              3.0,
+              3.0,
+              3.0
+            ]
+          ]
+        },
+        {
+          "input_shapes": [
+            [
+              5,
+              3
+            ]
+          ],
+          "graphs_total": 3,
+          "output": [
+            [
+              3.0,
+              3.0,
+              3.0
+            ],
+            [
+              3.0,
+              3.0,
+              3.0
+            ],
+            [
+              3.0,
+              3.0,
+              3.0
+            ],
+            [
+              3.0,
+              3.0,
+              3.0
+            ],
+            [
+              3.0,
+              3.0,
+              3.0
+            ]
+          ]
+        }
+      ],
+      "expected_rejection": null,
+      "graphs": [
+        {
+          "code": "\n\n\ndef forward(self, L_x_ : torch.Tensor):\n    l_x_ = L_x_\n    mul = l_x_ * 2.0;  l_x_ = None\n    add = mul + 1;  mul = None\n    relu = add.relu();  add = None\n    return (relu,)\n    ",
+          "operators": [
+            "<built-in function mul>",
+            "<built-in function add>",
+            "relu"
+          ],
+          "placeholders": [
+            "L_x_"
+          ],
+          "input_kinds": [
+            "Tensor"
+          ]
+        },
+        {
+          "code": "\n\n\ndef forward(self, L_x_ : torch.Tensor):\n    l_x_ = L_x_\n    mul = l_x_ * 2.0;  l_x_ = None\n    add = mul + 1;  mul = None\n    relu = add.relu();  add = None\n    return (relu,)\n    ",
+          "operators": [
+            "<built-in function mul>",
+            "<built-in function add>",
+            "relu"
+          ],
+          "placeholders": [
+            "L_x_"
+          ],
+          "input_kinds": [
+            "Tensor"
+          ]
+        },
+        {
+          "code": "\n\n\ndef forward(self, L_x_ : torch.Tensor):\n    l_x_ = L_x_\n    mul = l_x_ * 2.0;  l_x_ = None\n    add = mul + 1;  mul = None\n    relu = add.relu();  add = None\n    return (relu,)\n    ",
+          "operators": [
+            "<built-in function mul>",
+            "<built-in function add>",
+            "relu"
+          ],
+          "placeholders": [
+            "L_x_"
+          ],
+          "input_kinds": [
+            "Tensor"
+          ]
+        }
+      ],
+      "numerical_checks": 3
+    },
+    {
+      "name": "automatic_shapes",
+      "dynamic": null,
+      "fullgraph": true,
+      "calls": [
+        {
+          "input_shapes": [
+            [
+              2,
+              3
+            ]
+          ],
+          "graphs_total": 1,
+          "output": [
+            [
+              3.0,
+              3.0,
+              3.0
+            ],
+            [
+              3.0,
+              3.0,
+              3.0
+            ]
+          ]
+        },
+        {
+          "input_shapes": [
+            [
+              4,
+              3
+            ]
+          ],
+          "graphs_total": 2,
+          "output": [
+            [
+              3.0,
+              3.0,
+              3.0
+            ],
+            [
+              3.0,
+              3.0,
+              3.0
+            ],
+            [
+              3.0,
+              3.0,
+              3.0
+            ],
+            [
+              3.0,
+              3.0,
+              3.0
+            ]
+          ]
+        },
+        {
+          "input_shapes": [
+            [
+              5,
+              3
+            ]
+          ],
+          "graphs_total": 2,
+          "output": [
+            [
+              3.0,
+              3.0,
+              3.0
+            ],
+            [
+              3.0,
+              3.0,
+              3.0
+            ],
+            [
+              3.0,
+              3.0,
+              3.0
+            ],
+            [
+              3.0,
+              3.0,
+              3.0
+            ],
+            [
+              3.0,
+              3.0,
+              3.0
+            ]
+          ]
+        }
+      ],
+      "expected_rejection": null,
+      "graphs": [
+        {
+          "code": "\n\n\ndef forward(self, L_x_ : torch.Tensor):\n    l_x_ = L_x_\n    mul = l_x_ * 2.0;  l_x_ = None\n    add = mul + 1;  mul = None\n    relu = add.relu();  add = None\n    return (relu,)\n    ",
+          "operators": [
+            "<built-in function mul>",
+            "<built-in function add>",
+            "relu"
+          ],
+          "placeholders": [
+            "L_x_"
+          ],
+          "input_kinds": [
+            "Tensor"
+          ]
+        },
+        {
+          "code": "\n\n\ndef forward(self, s77 : torch.SymInt, L_x_ : torch.Tensor):\n    l_x_ = L_x_\n    mul = l_x_ * 2.0;  l_x_ = None\n    add = mul + 1;  mul = None\n    relu = add.relu();  add = None\n    return (relu,)\n    ",
+          "operators": [
+            "<built-in function mul>",
+            "<built-in function add>",
+            "relu"
+          ],
+          "placeholders": [
+            "s77",
+            "L_x_"
+          ],
+          "input_kinds": [
+            "SymInt",
+            "Tensor"
+          ]
+        }
+      ],
+      "numerical_checks": 3
+    },
+    {
+      "name": "dynamic_shapes",
+      "dynamic": true,
+      "fullgraph": true,
+      "calls": [
+        {
+          "input_shapes": [
+            [
+              2,
+              3
+            ]
+          ],
+          "graphs_total": 1,
+          "output": [
+            [
+              3.0,
+              3.0,
+              3.0
+            ],
+            [
+              3.0,
+              3.0,
+              3.0
+            ]
+          ]
+        },
+        {
+          "input_shapes": [
+            [
+              4,
+              3
+            ]
+          ],
+          "graphs_total": 1,
+          "output": [
+            [
+              3.0,
+              3.0,
+              3.0
+            ],
+            [
+              3.0,
+              3.0,
+              3.0
+            ],
+            [
+              3.0,
+              3.0,
+              3.0
+            ],
+            [
+              3.0,
+              3.0,
+              3.0
+            ]
+          ]
+        },
+        {
+          "input_shapes": [
+            [
+              5,
+              3
+            ]
+          ],
+          "graphs_total": 1,
+          "output": [
+            [
+              3.0,
+              3.0,
+              3.0
+            ],
+            [
+              3.0,
+              3.0,
+              3.0
+            ],
+            [
+              3.0,
+              3.0,
+              3.0
+            ],
+            [
+              3.0,
+              3.0,
+              3.0
+            ],
+            [
+              3.0,
+              3.0,
+              3.0
+            ]
+          ]
+        }
+      ],
+      "expected_rejection": null,
+      "graphs": [
+        {
+          "code": "\n\n\ndef forward(self, s77 : torch.SymInt, s27 : torch.SymInt, L_x_ : torch.Tensor, L_scale_ : torch.Tensor):\n    l_x_ = L_x_\n    l_scale_ = L_scale_\n    item = l_scale_.item();  l_scale_ = None\n    mul = l_x_ * item;  l_x_ = item = None\n    add = mul + 1;  mul = None\n    relu = add.relu();  add = None\n    return (relu,)\n    ",
+          "operators": [
+            "item",
+            "<built-in function mul>",
+            "<built-in function add>",
+            "relu"
+          ],
+          "placeholders": [
+            "s77",
+            "s27",
+            "L_x_",
+            "L_scale_"
+          ],
+          "input_kinds": [
+            "SymInt",
+            "SymInt",
+            "Tensor",
+            "Tensor"
+          ]
+        }
+      ],
+      "numerical_checks": 3
+    },
+    {
+      "name": "python_scalar",
+      "dynamic": false,
+      "fullgraph": true,
+      "calls": [
+        {
+          "input_shapes": [
+            [
+              2,
+              3
+            ]
+          ],
+          "graphs_total": 1,
+          "output": [
+            [
+              3.0,
+              3.0,
+              3.0
+            ],
+            [
+              3.0,
+              3.0,
+              3.0
+            ]
+          ]
+        },
+        {
+          "input_shapes": [
+            [
+              2,
+              3
+            ]
+          ],
+          "graphs_total": 2,
+          "output": [
+            [
+              4.0,
+              4.0,
+              4.0
+            ],
+            [
+              4.0,
+              4.0,
+              4.0
+            ]
+          ]
+        },
+        {
+          "input_shapes": [
+            [
+              2,
+              3
+            ]
+          ],
+          "graphs_total": 2,
+          "output": [
+            [
+              3.0,
+              3.0,
+              3.0
+            ],
+            [
+              3.0,
+              3.0,
+              3.0
+            ]
+          ]
+        }
+      ],
+      "expected_rejection": null,
+      "graphs": [
+        {
+          "code": "\n\n\ndef forward(self, L_x_ : torch.Tensor):\n    l_x_ = L_x_\n    mul = l_x_ * 2.0;  l_x_ = None\n    add = mul + 1;  mul = None\n    relu = add.relu();  add = None\n    return (relu,)\n    ",
+          "operators": [
+            "<built-in function mul>",
+            "<built-in function add>",
+            "relu"
+          ],
+          "placeholders": [
+            "L_x_"
+          ],
+          "input_kinds": [
+            "Tensor"
+          ]
+        },
+        {
+          "code": "\n\n\ndef forward(self, L_x_ : torch.Tensor):\n    l_x_ = L_x_\n    mul = l_x_ * 3.0;  l_x_ = None\n    add = mul + 1;  mul = None\n    relu = add.relu();  add = None\n    return (relu,)\n    ",
+          "operators": [
+            "<built-in function mul>",
+            "<built-in function add>",
+            "relu"
+          ],
+          "placeholders": [
+            "L_x_"
+          ],
+          "input_kinds": [
+            "Tensor"
+          ]
+        }
+      ],
+      "numerical_checks": 3
+    },
+    {
+      "name": "tensor_scalar",
+      "dynamic": false,
+      "fullgraph": true,
+      "calls": [
+        {
+          "input_shapes": [
+            [
+              2,
+              3
+            ],
+            []
+          ],
+          "graphs_total": 1,
+          "output": [
+            [
+              3.0,
+              3.0,
+              3.0
+            ],
+            [
+              3.0,
+              3.0,
+              3.0
+            ]
+          ]
+        },
+        {
+          "input_shapes": [
+            [
+              2,
+              3
+            ],
+            []
+          ],
+          "graphs_total": 1,
+          "output": [
+            [
+              4.0,
+              4.0,
+              4.0
+            ],
+            [
+              4.0,
+              4.0,
+              4.0
+            ]
+          ]
+        },
+        {
+          "input_shapes": [
+            [
+              2,
+              3
+            ],
+            []
+          ],
+          "graphs_total": 1,
+          "output": [
+            [
+              3.0,
+              3.0,
+              3.0
+            ],
+            [
+              3.0,
+              3.0,
+              3.0
+            ]
+          ]
+        }
+      ],
+      "expected_rejection": null,
+      "graphs": [
+        {
+          "code": "\n\n\ndef forward(self, L_x_ : torch.Tensor, L_scale_ : torch.Tensor):\n    l_x_ = L_x_\n    l_scale_ = L_scale_\n    mul = l_x_ * l_scale_;  l_x_ = l_scale_ = None\n    add = mul + 1;  mul = None\n    relu = add.relu();  add = None\n    return (relu,)\n    ",
+          "operators": [
+            "<built-in function mul>",
+            "<built-in function add>",
+            "relu"
+          ],
+          "placeholders": [
+            "L_x_",
+            "L_scale_"
+          ],
+          "input_kinds": [
+            "Tensor",
+            "Tensor"
+          ]
+        }
+      ],
+      "numerical_checks": 3
+    },
+    {
+      "name": "explicit_break",
+      "dynamic": false,
+      "fullgraph": false,
+      "calls": [
+        {
+          "input_shapes": [
+            [
+              2,
+              3
+            ]
+          ],
+          "graphs_total": 2,
+          "output": [
+            [
+              3.0,
+              3.0,
+              3.0
+            ],
+            [
+              3.0,
+              3.0,
+              3.0
+            ]
+          ]
+        },
+        {
+          "input_shapes": [
+            [
+              2,
+              3
+            ]
+          ],
+          "graphs_total": 2,
+          "output": [
+            [
+              3.0,
+              3.0,
+              3.0
+            ],
+            [
+              3.0,
+              3.0,
+              3.0
+            ]
+          ]
+        }
+      ],
+      "expected_rejection": null,
+      "graphs": [
+        {
+          "code": "\n\n\ndef forward(self, L_x_ : torch.Tensor):\n    l_x_ = L_x_\n    y = l_x_ * 2;  l_x_ = None\n    return (y,)\n    ",
+          "operators": [
+            "<built-in function mul>"
+          ],
+          "placeholders": [
+            "L_x_"
+          ],
+          "input_kinds": [
+            "Tensor"
+          ]
+        },
+        {
+          "code": "\n\n\ndef forward(self, L_y_ : torch.Tensor):\n    l_y_ = L_y_\n    relu = l_y_.relu();  l_y_ = None\n    add = relu + 1;  relu = None\n    return (add,)\n    ",
+          "operators": [
+            "relu",
+            "<built-in function add>"
+          ],
+          "placeholders": [
+            "L_y_"
+          ],
+          "input_kinds": [
+            "Tensor"
+          ]
+        }
+      ],
+      "numerical_checks": 2
+    },
+    {
+      "name": "fullgraph_break_rejected",
+      "dynamic": false,
+      "fullgraph": true,
+      "calls": [],
+      "expected_rejection": {
+        "type": "Unsupported",
+        "message": "Call to `torch._dynamo.graph_break()`\n  Explanation: User-inserted graph break. Message: None\n  Hint: Remove the `torch._dynamo.graph_break()` call.\n\n  Developer debug context: Called `torch._dynamo.graph_break()` with args `[]`, kwargs `{}`\n\n For more details about this graph break, please visit: https://meta-pytorch.github.io/compile-graph-break-site/gb/gb0025.html\n\nfrom user code:\n   File \"/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-13-torch-compile-guards/code/workloads.py\", line 13, in split_affine\n    torch._dynamo.graph_break()\n    ~~~~~~~~~~~~~~~~~~~~~~~~~^^\n\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\n"
+      },
+      "graphs": [],
+      "numerical_checks": 0
+    },
+    {
+      "name": "python_branch_rejected",
+      "dynamic": false,
+      "fullgraph": true,
+      "calls": [],
+      "expected_rejection": {
+        "type": "Unsupported",
+        "message": "Data-dependent branching\n  Explanation: Detected data-dependent branching (e.g. `if my_tensor.sum() > 0:`). Dynamo does not support tracing dynamic control flow.\n\n      The branch condition involves a tensor computed as follows:\n        # File \"/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-13-torch-compile-guards/code/workloads.py\", line 19, in python_branch, code: if x.sum() > 0:\n        gt = gt(sum_1, 0)\n    \n  Hint: For the common pattern `if tensor_cond: x = transform(x)` (e.g. clamping inf/nan values), consider making the code branchless by always applying the transform. Operations like torch.clamp, torch.nan_to_num, and torch.where are typically no-ops on well-behaved inputs and compile without graph breaks.\n  Hint: This graph break is fundamental - it is unlikely that Dynamo will ever be able to trace through your code. Consider finding a workaround.\n  Hint: Use `torch.cond` to express dynamic control flow.\n\n  Developer debug context: attempted to jump with TensorVariable()\n\n For more details about this graph break, please visit: https://meta-pytorch.github.io/compile-graph-break-site/gb/gb0170.html\n\nfrom user code:\n   File \"/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-13-torch-compile-guards/code/workloads.py\", line 19, in python_branch\n    if x.sum() > 0:\n       ^^^^^^^^^^^\n\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\n"
+      },
+      "graphs": [],
+      "numerical_checks": 0
+    },
+    {
+      "name": "tensor_selection",
+      "dynamic": true,
+      "fullgraph": true,
+      "calls": [
+        {
+          "input_shapes": [
+            [
+              2,
+              3
+            ],
+            []
+          ],
+          "graphs_total": 1,
+          "output": [
+            [
+              3.0,
+              3.0,
+              3.0
+            ],
+            [
+              3.0,
+              3.0,
+              3.0
+            ]
+          ]
+        },
+        {
+          "input_shapes": [
+            [
+              4,
+              3
+            ],
+            []
+          ],
+          "graphs_total": 1,
+          "output": [
+            [
+              -4.0,
+              -4.0,
+              -4.0
+            ],
+            [
+              -4.0,
+              -4.0,
+              -4.0
+            ],
+            [
+              -4.0,
+              -4.0,
+              -4.0
+            ],
+            [
+              -4.0,
+              -4.0,
+              -4.0
+            ]
+          ]
+        },
+        {
+          "input_shapes": [
+            [
+              5,
+              3
+            ],
+            []
+          ],
+          "graphs_total": 1,
+          "output": [
+            [
+              -1.0,
+              -1.0,
+              -1.0
+            ],
+            [
+              -1.0,
+              -1.0,
+              -1.0
+            ],
+            [
+              -1.0,
+              -1.0,
+              -1.0
+            ],
+            [
+              -1.0,
+              -1.0,
+              -1.0
+            ],
+            [
+              -1.0,
+              -1.0,
+              -1.0
+            ]
+          ]
+        }
+      ],
+      "expected_rejection": null,
+      "graphs": [
+        {
+          "code": "\n\n\ndef forward(self, s77 : torch.SymInt, s27 : torch.SymInt, L_x_ : torch.Tensor, L_scale_ : torch.Tensor):\n    l_x_ = L_x_\n    l_scale_ = L_scale_\n    y = l_x_ * l_scale_;  l_scale_ = None\n    sum_1 = l_x_.sum();  l_x_ = None\n    gt = sum_1 > 0;  sum_1 = None\n    add = y + 1\n    sub = y - 1;  y = None\n    where = torch.where(gt, add, sub);  gt = add = sub = None\n    return (where,)\n    ",
+          "operators": [
+            "<built-in function mul>",
+            "sum",
+            "<built-in function gt>",
+            "<built-in function add>",
+            "<built-in function sub>",
+            "<built-in method where of type object at 0x106c01f28>"
+          ],
+          "placeholders": [
+            "s77",
+            "s27",
+            "L_x_",
+            "L_scale_"
+          ],
+          "input_kinds": [
+            "SymInt",
+            "SymInt",
+            "Tensor",
+            "Tensor"
+          ]
+        }
+      ],
+      "numerical_checks": 3
+    },
+    {
+      "name": "zero_one_dimensions",
+      "dynamic": true,
+      "fullgraph": true,
+      "calls": [
+        {
+          "input_shapes": [
+            [
+              0,
+              3
+            ]
+          ],
+          "graphs_total": 1,
+          "output": []
+        },
+        {
+          "input_shapes": [
+            [
+              1,
+              3
+            ]
+          ],
+          "graphs_total": 2,
+          "output": [
+            [
+              3.0,
+              3.0,
+              3.0
+            ]
+          ]
+        },
+        {
+          "input_shapes": [
+            [
+              2,
+              3
+            ]
+          ],
+          "graphs_total": 3,
+          "output": [
+            [
+              3.0,
+              3.0,
+              3.0
+            ],
+            [
+              3.0,
+              3.0,
+              3.0
+            ]
+          ]
+        },
+        {
+          "input_shapes": [
+            [
+              4,
+              3
+            ]
+          ],
+          "graphs_total": 3,
+          "output": [
+            [
+              3.0,
+              3.0,
+              3.0
+            ],
+            [
+              3.0,
+              3.0,
+              3.0
+            ],
+            [
+              3.0,
+              3.0,
+              3.0
+            ],
+            [
+              3.0,
+              3.0,
+              3.0
+            ]
+          ]
+        }
+      ],
+      "expected_rejection": null,
+      "graphs": [
+        {
+          "code": "\n\n\ndef forward(self, s27 : torch.SymInt, L_x_ : torch.Tensor, L_scale_ : torch.Tensor):\n    l_x_ = L_x_\n    l_scale_ = L_scale_\n    item = l_scale_.item();  l_scale_ = None\n    mul = l_x_ * item;  l_x_ = item = None\n    add = mul + 1;  mul = None\n    relu = add.relu();  add = None\n    return (relu,)\n    ",
+          "operators": [
+            "item",
+            "<built-in function mul>",
+            "<built-in function add>",
+            "relu"
+          ],
+          "placeholders": [
+            "s27",
+            "L_x_",
+            "L_scale_"
+          ],
+          "input_kinds": [
+            "SymInt",
+            "Tensor",
+            "Tensor"
+          ]
+        },
+        {
+          "code": "\n\n\ndef forward(self, s27 : torch.SymInt, L_x_ : torch.Tensor, L_scale_ : torch.Tensor):\n    l_x_ = L_x_\n    l_scale_ = L_scale_\n    item = l_scale_.item();  l_scale_ = None\n    mul = l_x_ * item;  l_x_ = item = None\n    add = mul + 1;  mul = None\n    relu = add.relu();  add = None\n    return (relu,)\n    ",
+          "operators": [
+            "item",
+            "<built-in function mul>",
+            "<built-in function add>",
+            "relu"
+          ],
+          "placeholders": [
+            "s27",
+            "L_x_",
+            "L_scale_"
+          ],
+          "input_kinds": [
+            "SymInt",
+            "Tensor",
+            "Tensor"
+          ]
+        },
+        {
+          "code": "\n\n\ndef forward(self, s77 : torch.SymInt, s27 : torch.SymInt, L_x_ : torch.Tensor, L_scale_ : torch.Tensor):\n    l_x_ = L_x_\n    l_scale_ = L_scale_\n    item = l_scale_.item();  l_scale_ = None\n    mul = l_x_ * item;  l_x_ = item = None\n    add = mul + 1;  mul = None\n    relu = add.relu();  add = None\n    return (relu,)\n    ",
+          "operators": [
+            "item",
+            "<built-in function mul>",
+            "<built-in function add>",
+            "relu"
+          ],
+          "placeholders": [
+            "s77",
+            "s27",
+            "L_x_",
+            "L_scale_"
+          ],
+          "input_kinds": [
+            "SymInt",
+            "SymInt",
+            "Tensor",
+            "Tensor"
+          ]
+        }
+      ],
+      "numerical_checks": 4
+    }
+  ]
+}

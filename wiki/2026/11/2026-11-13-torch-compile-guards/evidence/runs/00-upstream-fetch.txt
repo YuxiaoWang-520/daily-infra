@@ -1,0 +1,12 @@
+Checked 2026-11-13 Asia/Shanghai
+Command git -C .cache/upstream/pytorch fetch --depth 1 origin main
+Command git -C .cache/upstream/pytorch rev-parse origin/main
+Command git -C .cache/upstream/pytorch log -1 origin/main --format='%H %cI %s'
+Exit code 0
+
+From https://github.com/pytorch/pytorch
+ * branch            main       -> FETCH_HEAD
+ + 18f2eae...a0d9646 main       -> origin/main  (forced update)
+a0d96468b7f2089907f400411eda3b09feda8f76
+a0d96468b7f2089907f400411eda3b09feda8f76 2026-11-13T02:46:28Z [AI Codemod][DevmateAiInfraStaleJkCleanup] pytorch/compiler:unspecialize_float_killswitch (#204503)
+

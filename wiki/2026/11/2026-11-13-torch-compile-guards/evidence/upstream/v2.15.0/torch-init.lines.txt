@@ -1,0 +1,85 @@
+Upstream https://github.com/pytorch/pytorch
+Commit 31a77fc9c0a7c6fff15a1ff58c743f53b1a9d457
+Path torch/__init__.py
+License ../LICENSE
+
+--- lines 3100-3165 ---
+3100: def compile(
+3101:     model: _Callable[_InputT, _RetT] | None = None,
+3102:     *,
+3103:     fullgraph: builtins.bool = False,
+3104:     dynamic: builtins.bool | None = None,
+3105:     backend: str | _Callable[..., _Any] | None = None,
+3106:     mode: str | None = None,
+3107:     options: dict[str, str | builtins.int | builtins.bool | _Callable[..., _Any]]
+3108:     | None = None,
+3109:     name: str | None = None,
+3110:     disable: builtins.bool = False,
+3111:     recompile_limit: builtins.int | None = None,
+3112:     isolate_recompiles: builtins.bool = False,
+3113:     dynamic_shapes: _Any = None,
+3114: ) -> (
+3115:     _Callable[[_Callable[_InputT, _RetT]], _Callable[_InputT, _RetT]]
+3116:     | _Callable[_InputT, _RetT]
+3117: ):
+3118:     """
+3119:     Optimizes given model/function using TorchDynamo and specified backend.
+3120:     If you are compiling an :class:`torch.nn.Module`, you can also use :meth:`torch.nn.Module.compile`
+3121:     to compile the module inplace without changing its structure.
+3122: 
+3123:     Concretely, for every frame executed within the compiled region, we will attempt
+3124:     to compile it and cache the compiled result on the code object for future
+3125:     use.  A single frame may be compiled multiple times if previous compiled
+3126:     results are not applicable for subsequent calls (this is called a "guard
+3127:     failure"), you can use TORCH_LOGS=guards to debug these situations.
+3128:     Multiple compiled results can be associated with a frame up to
+3129:     ``torch._dynamo.config.recompile_limit``, which defaults to 8; at which
+3130:     point we will fall back to eager.  Note that compile caches are per
+3131:     *code object*, not frame; if you dynamically create multiple copies of a
+3132:     function, they will all share the same code cache.
+3133: 
+3134:     Args:
+3135:        model (Callable or None): Module/function to optimize
+3136:        fullgraph (bool): If False (default), torch.compile attempts to discover compilable regions
+3137:         in the function that it will optimize. If True, then we require that the entire function be
+3138:         capturable into a single graph. If this is not possible (that is, if there are graph breaks),
+3139:         then this will raise an error. This also opts into unbacked semantics, notably it will turn on
+3140:         capture_scalar_outputs and capture_dynamic_output_shape_ops on by default.
+3141:        dynamic (bool or None): Use dynamic shape tracing.  When this is True, we will up-front attempt
+3142:         to generate a kernel that is as dynamic as possible to avoid recompilations when
+3143:         sizes change.  This may not always work as some operations/optimizations will
+3144:         force specialization; use TORCH_LOGS=dynamic to debug overspecialization.
+3145:         When this is False, we will NEVER generate dynamic kernels, we will always specialize.
+3146:         By default (None), we automatically detect if dynamism has occurred and compile a more
+3147:         dynamic kernel upon recompile.
+3148:        backend (str or Callable): backend to be used
+3149: 
+3150:         - "inductor" is the default backend, which is a good balance between performance and overhead
+3151: 
+3152:         - Non experimental in-tree backends can be seen with `torch._dynamo.list_backends()`
+3153: 
+3154:         - Experimental or debug in-tree backends can be seen with `torch._dynamo.list_backends(None)`
+3155: 
+3156:         - To register an out-of-tree custom backend:
+3157:           https://docs.pytorch.org/docs/main/user_guide/torch_compiler/torch.compiler_custom_backends.html#registering-custom-backends
+3158:        mode (str): Can be either "default", "reduce-overhead", "max-autotune" or "max-autotune-no-cudagraphs"
+3159: 
+3160:         - "default" is the default mode, which is a good balance between performance and overhead
+3161: 
+3162:         - "reduce-overhead" is a mode that reduces the overhead of python with CUDA graphs,
+3163:           useful for small batches.  Reduction of overhead can come at the cost of more memory
+3164:           usage, as we will cache the workspace memory required for the invocation so that we
+3165:           do not have to reallocate it on subsequent runs.  Reduction of overhead is not guaranteed
+
+--- lines 3335-3344 ---
+3335:     return torch._dynamo.optimize(
+3336:         backend=backend,
+3337:         nopython=fullgraph,
+3338:         dynamic=dynamic,
+3339:         disable=disable,
+3340:         guard_filter_fn=guard_filter_fn,
+3341:         recompile_limit=recompile_limit,
+3342:         isolate_recompiles=isolate_recompiles,
+3343:         dynamic_shapes=dynamic_shapes,
+3344:     )(model)  # type: ignore[return-value]
+

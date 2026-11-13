@@ -1,0 +1,54 @@
+Upstream https://github.com/pytorch/pytorch
+Commit 31a77fc9c0a7c6fff15a1ff58c743f53b1a9d457
+Path torch/csrc/dynamo/extra_state.cpp
+License ../LICENSE
+
+--- lines 209-255 ---
+209: static CacheEntry* lookup_in_list(
+210:     std::list<CacheEntry>& entries,
+211:     FrameLocalsMapping* f_locals,
+212:     PyObject* backend,
+213:     bool is_skip_guard_eval_unsafe,
+214:     bool* guard_error,
+215:     PyObject** maybe_cached_code) {
+216:   size_t index = 0;
+217:   for (CacheEntry& cache_entry : entries) {
+218:     bool valid = Py_IsFalse(backend) ||
+219:         backend_match(cache_entry.backend.ptr(), backend);
+220: 
+221:     if (valid) {
+222:       try {
+223:         if (is_skip_guard_eval_unsafe) {
+224:           valid = cache_entry_has_no_guards(
+225:                       cache_entry, /*is_skip_guard_eval_unsafe=*/true) ||
+226:               torch::dynamo::run_root_guard_manager(
+227:                       cache_entry.diff_guard_root_mgr, f_locals);
+228:         } else {
+229:           valid = torch::dynamo::run_root_guard_manager(
+230:               cache_entry.root_mgr, f_locals);
+231:         }
+232:       } catch (py::error_already_set& e) {
+233:         if (guard_error_hook) {
+234:           py::handle guard_error_hook_handle(guard_error_hook);
+235:           py::handle f_locals_dict = (PyObject*)f_locals->to_dict();
+236:           guard_error_hook_handle(
+237:               cache_entry.guard_manager,
+238:               cache_entry.code,
+239:               f_locals_dict,
+240:               index,
+241:               index == entries.size() - 1);
+242:         }
+243:         e.restore();
+244:         *maybe_cached_code = nullptr;
+245:         *guard_error = true;
+246:         return nullptr;
+247:       }
+248:     }
+249:     if (valid) {
+250:       return &cache_entry;
+251:     }
+252:     ++index;
+253:   }
+254:   return nullptr;
+255: }
+

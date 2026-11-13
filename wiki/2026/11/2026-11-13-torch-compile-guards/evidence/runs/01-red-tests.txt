@@ -1,0 +1,438 @@
+test_manual_fx_execution (test_answers.BackendTests.test_manual_fx_execution) ... ERROR
+test_multiple_graph_records (test_answers.BackendTests.test_multiple_graph_records) ... ERROR
+test_record_is_json_serializable (test_answers.BackendTests.test_record_is_json_serializable) ... ERROR
+test_records_are_immutable_values (test_answers.BackendTests.test_records_are_immutable_values) ... ERROR
+test_automatic_dynamic_shapes (test_answers.CompileBehaviorTests.test_automatic_dynamic_shapes) ... ERROR
+test_combined_shape_scale_and_sign_changes (test_answers.CompileBehaviorTests.test_combined_shape_scale_and_sign_changes) ... ERROR
+test_dtype_guard (test_answers.CompileBehaviorTests.test_dtype_guard) ... ERROR
+test_dynamic_shapes_upfront (test_answers.CompileBehaviorTests.test_dynamic_shapes_upfront) ... ERROR
+test_fullgraph_rejects_explicit_break (test_answers.CompileBehaviorTests.test_fullgraph_rejects_explicit_break) ... ok
+test_fullgraph_rejects_python_data_branch (test_answers.CompileBehaviorTests.test_fullgraph_rejects_python_data_branch) ... ok
+test_original_branch_eager_reference (test_answers.CompileBehaviorTests.test_original_branch_eager_reference) ... ok
+test_python_scalar_value_guard_and_cache_reuse (test_answers.CompileBehaviorTests.test_python_scalar_value_guard_and_cache_reuse) ... ERROR
+test_same_metadata_reuses_graph (test_answers.CompileBehaviorTests.test_same_metadata_reuses_graph) ... ERROR
+test_split_default_two_regions_and_cached_repeat (test_answers.CompileBehaviorTests.test_split_default_two_regions_and_cached_repeat) ... ERROR
+test_static_shape_specializations (test_answers.CompileBehaviorTests.test_static_shape_specializations) ... ERROR
+test_stride_guard (test_answers.CompileBehaviorTests.test_stride_guard) ... ERROR
+test_tensor_affine_float64 (test_answers.CompileBehaviorTests.test_tensor_affine_float64) ... ERROR
+test_tensor_branch_handles_sign_changes (test_answers.CompileBehaviorTests.test_tensor_branch_handles_sign_changes) ... ERROR
+test_tensor_branch_with_mixed_input (test_answers.CompileBehaviorTests.test_tensor_branch_with_mixed_input) ... ERROR
+test_tensor_scalar_changes_reuse_graph (test_answers.CompileBehaviorTests.test_tensor_scalar_changes_reuse_graph) ... ERROR
+
+======================================================================
+ERROR: test_manual_fx_execution (test_answers.BackendTests.test_manual_fx_execution)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-13-torch-compile-guards/code/test_answers.py", line 28, in test_manual_fx_execution
+    executable = backend(graph, [x])
+                 ^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-13-torch-compile-guards/code/counting_backend.py", line 27, in __call__
+    raise NotImplementedError("Record graph structure and return its forward callable")
+NotImplementedError: Record graph structure and return its forward callable
+
+======================================================================
+ERROR: test_multiple_graph_records (test_answers.BackendTests.test_multiple_graph_records)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-13-torch-compile-guards/code/test_answers.py", line 39, in test_multiple_graph_records
+    backend(first, [matrix()])
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-13-torch-compile-guards/code/counting_backend.py", line 27, in __call__
+    raise NotImplementedError("Record graph structure and return its forward callable")
+NotImplementedError: Record graph structure and return its forward callable
+
+======================================================================
+ERROR: test_record_is_json_serializable (test_answers.BackendTests.test_record_is_json_serializable)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-13-torch-compile-guards/code/test_answers.py", line 52, in test_record_is_json_serializable
+    backend(torch.fx.symbolic_trace(lambda x: x + 1), [matrix()])
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-13-torch-compile-guards/code/counting_backend.py", line 27, in __call__
+    raise NotImplementedError("Record graph structure and return its forward callable")
+NotImplementedError: Record graph structure and return its forward callable
+
+======================================================================
+ERROR: test_records_are_immutable_values (test_answers.BackendTests.test_records_are_immutable_values)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-13-torch-compile-guards/code/test_answers.py", line 46, in test_records_are_immutable_values
+    backend(torch.fx.symbolic_trace(lambda x: x + 1), [matrix()])
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-13-torch-compile-guards/code/counting_backend.py", line 27, in __call__
+    raise NotImplementedError("Record graph structure and return its forward callable")
+NotImplementedError: Record graph structure and return its forward callable
+
+======================================================================
+ERROR: test_automatic_dynamic_shapes (test_answers.CompileBehaviorTests.test_automatic_dynamic_shapes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-13-torch-compile-guards/code/test_answers.py", line 92, in test_automatic_dynamic_shapes
+    torch.testing.assert_close(compiled(x, 2.0), affine(x, 2.0))
+                               ^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1282, in compile_wrapper
+    raise e.remove_dynamo_frames() from None
+  File "/Users/wangyuxiao/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/_dynamo/output_graph.py", line 3324, in _call_user_compiler
+    raise BackendCompilerFailed(
+  File "/Users/wangyuxiao/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/_dynamo/output_graph.py", line 3292, in _call_user_compiler
+    compiled_fn = compiler_fn(gm, example_inputs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/_dynamo/repro/after_dynamo.py", line 163, in __call__
+    compiled_gm = compiler_fn(gm, example_inputs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/__init__.py", line 3050, in __call__
+    return self.compiler_fn(model_, inputs_, **self.kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-13-torch-compile-guards/code/counting_backend.py", line 27, in __call__
+    raise NotImplementedError("Record graph structure and return its forward callable")
+torch._dynamo.exc.BackendCompilerFailed: backend='<counting_backend.CountingBackend object at 0x107a801a0>' raised:
+NotImplementedError: Record graph structure and return its forward callable
+
+Set TORCHDYNAMO_VERBOSE=1 for the full Dynamo stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS="+dynamo"
+
+
+======================================================================
+ERROR: test_combined_shape_scale_and_sign_changes (test_answers.CompileBehaviorTests.test_combined_shape_scale_and_sign_changes)
+----------------------------------------------------------------------
+torch._dynamo.exc.ObservedNotImplementedError: raised exception NotImplementedError('Express the fixed-shape selection with tensor operations')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-13-torch-compile-guards/code/test_answers.py", line 176, in test_combined_shape_scale_and_sign_changes
+    torch.testing.assert_close(compiled(x, scalar(scale)), expected)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1276, in compile_wrapper
+    raise e.with_traceback(
+torch._dynamo.exc.Unsupported: Observed exception
+  Explanation: Dynamo found no exception handler at the top-level compiled function when encountering an exception. Exception will propagate outside the compiled region.
+  Hint: Your code may result in an error when running in eager. Please double check that your code doesn't contain a similar error when actually running eager/uncompiled. You can do this by removing the `torch.compile` call, or by using `torch.compiler.set_stance("force_eager")`. 
+  Hint: It may be possible to write Dynamo tracing rules for this code. Please report an issue to PyTorch if you encounter this graph break often and it is causing performance issues.
+
+  Developer debug context: raised exception NotImplementedError('Express the fixed-shape selection with tensor operations')
+
+ For more details about this graph break, please visit: https://meta-pytorch.github.io/compile-graph-break-site/gb/gb0088.html
+
+from user code:
+   File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-13-torch-compile-guards/code/solutions.py", line 13, in tensor_branch
+    raise NotImplementedError("Express the fixed-shape selection with tensor operations")
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Set TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS="+dynamo"
+
+
+======================================================================
+ERROR: test_dtype_guard (test_answers.CompileBehaviorTests.test_dtype_guard)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-13-torch-compile-guards/code/test_answers.py", line 108, in test_dtype_guard
+    compiled(matrix(), 2.0)
+  File "/Users/wangyuxiao/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1282, in compile_wrapper
+    raise e.remove_dynamo_frames() from None
+  File "/Users/wangyuxiao/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/_dynamo/output_graph.py", line 3324, in _call_user_compiler
+    raise BackendCompilerFailed(
+  File "/Users/wangyuxiao/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/_dynamo/output_graph.py", line 3292, in _call_user_compiler
+    compiled_fn = compiler_fn(gm, example_inputs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/_dynamo/repro/after_dynamo.py", line 163, in __call__
+    compiled_gm = compiler_fn(gm, example_inputs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/__init__.py", line 3050, in __call__
+    return self.compiler_fn(model_, inputs_, **self.kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-13-torch-compile-guards/code/counting_backend.py", line 27, in __call__
+    raise NotImplementedError("Record graph structure and return its forward callable")
+torch._dynamo.exc.BackendCompilerFailed: backend='<counting_backend.CountingBackend object at 0x115804ef0>' raised:
+NotImplementedError: Record graph structure and return its forward callable
+
+Set TORCHDYNAMO_VERBOSE=1 for the full Dynamo stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS="+dynamo"
+
+
+======================================================================
+ERROR: test_dynamic_shapes_upfront (test_answers.CompileBehaviorTests.test_dynamic_shapes_upfront)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-13-torch-compile-guards/code/test_answers.py", line 100, in test_dynamic_shapes_upfront
+    torch.testing.assert_close(compiled(x, 2.0), affine(x, 2.0))
+                               ^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1282, in compile_wrapper
+    raise e.remove_dynamo_frames() from None
+  File "/Users/wangyuxiao/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/_dynamo/output_graph.py", line 3324, in _call_user_compiler
+    raise BackendCompilerFailed(
+  File "/Users/wangyuxiao/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/_dynamo/output_graph.py", line 3292, in _call_user_compiler
+    compiled_fn = compiler_fn(gm, example_inputs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/_dynamo/repro/after_dynamo.py", line 163, in __call__
+    compiled_gm = compiler_fn(gm, example_inputs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/__init__.py", line 3050, in __call__
+    return self.compiler_fn(model_, inputs_, **self.kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-13-torch-compile-guards/code/counting_backend.py", line 27, in __call__
+    raise NotImplementedError("Record graph structure and return its forward callable")
+torch._dynamo.exc.BackendCompilerFailed: backend='<counting_backend.CountingBackend object at 0x1156417f0>' raised:
+NotImplementedError: Record graph structure and return its forward callable
+
+Set TORCHDYNAMO_VERBOSE=1 for the full Dynamo stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS="+dynamo"
+
+
+======================================================================
+ERROR: test_python_scalar_value_guard_and_cache_reuse (test_answers.CompileBehaviorTests.test_python_scalar_value_guard_and_cache_reuse)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-13-torch-compile-guards/code/test_answers.py", line 125, in test_python_scalar_value_guard_and_cache_reuse
+    torch.testing.assert_close(compiled(x, value), affine(x, value))
+                               ^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1282, in compile_wrapper
+    raise e.remove_dynamo_frames() from None
+  File "/Users/wangyuxiao/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/_dynamo/output_graph.py", line 3324, in _call_user_compiler
+    raise BackendCompilerFailed(
+  File "/Users/wangyuxiao/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/_dynamo/output_graph.py", line 3292, in _call_user_compiler
+    compiled_fn = compiler_fn(gm, example_inputs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/_dynamo/repro/after_dynamo.py", line 163, in __call__
+    compiled_gm = compiler_fn(gm, example_inputs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/__init__.py", line 3050, in __call__
+    return self.compiler_fn(model_, inputs_, **self.kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-13-torch-compile-guards/code/counting_backend.py", line 27, in __call__
+    raise NotImplementedError("Record graph structure and return its forward callable")
+torch._dynamo.exc.BackendCompilerFailed: backend='<counting_backend.CountingBackend object at 0x115726db0>' raised:
+NotImplementedError: Record graph structure and return its forward callable
+
+Set TORCHDYNAMO_VERBOSE=1 for the full Dynamo stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS="+dynamo"
+
+
+======================================================================
+ERROR: test_same_metadata_reuses_graph (test_answers.CompileBehaviorTests.test_same_metadata_reuses_graph)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-13-torch-compile-guards/code/test_answers.py", line 75, in test_same_metadata_reuses_graph
+    torch.testing.assert_close(compiled(x, 2.0), affine(x, 2.0))
+                               ^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1282, in compile_wrapper
+    raise e.remove_dynamo_frames() from None
+  File "/Users/wangyuxiao/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/_dynamo/output_graph.py", line 3324, in _call_user_compiler
+    raise BackendCompilerFailed(
+  File "/Users/wangyuxiao/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/_dynamo/output_graph.py", line 3292, in _call_user_compiler
+    compiled_fn = compiler_fn(gm, example_inputs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/_dynamo/repro/after_dynamo.py", line 163, in __call__
+    compiled_gm = compiler_fn(gm, example_inputs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/__init__.py", line 3050, in __call__
+    return self.compiler_fn(model_, inputs_, **self.kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-13-torch-compile-guards/code/counting_backend.py", line 27, in __call__
+    raise NotImplementedError("Record graph structure and return its forward callable")
+torch._dynamo.exc.BackendCompilerFailed: backend='<counting_backend.CountingBackend object at 0x1175e1d30>' raised:
+NotImplementedError: Record graph structure and return its forward callable
+
+Set TORCHDYNAMO_VERBOSE=1 for the full Dynamo stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS="+dynamo"
+
+
+======================================================================
+ERROR: test_split_default_two_regions_and_cached_repeat (test_answers.CompileBehaviorTests.test_split_default_two_regions_and_cached_repeat)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-13-torch-compile-guards/code/test_answers.py", line 141, in test_split_default_two_regions_and_cached_repeat
+    torch.testing.assert_close(compiled(x), (x * 2).relu() + 1)
+                               ^^^^^^^^^^^
+  File "/Users/wangyuxiao/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1282, in compile_wrapper
+    raise e.remove_dynamo_frames() from None
+  File "/Users/wangyuxiao/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/_dynamo/output_graph.py", line 3324, in _call_user_compiler
+    raise BackendCompilerFailed(
+  File "/Users/wangyuxiao/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/_dynamo/output_graph.py", line 3292, in _call_user_compiler
+    compiled_fn = compiler_fn(gm, example_inputs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/_dynamo/repro/after_dynamo.py", line 163, in __call__
+    compiled_gm = compiler_fn(gm, example_inputs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/__init__.py", line 3050, in __call__
+    return self.compiler_fn(model_, inputs_, **self.kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-13-torch-compile-guards/code/counting_backend.py", line 27, in __call__
+    raise NotImplementedError("Record graph structure and return its forward callable")
+torch._dynamo.exc.BackendCompilerFailed: backend='<counting_backend.CountingBackend object at 0x123696ba0>' raised:
+NotImplementedError: Record graph structure and return its forward callable
+
+Set TORCHDYNAMO_VERBOSE=1 for the full Dynamo stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS="+dynamo"
+
+
+======================================================================
+ERROR: test_static_shape_specializations (test_answers.CompileBehaviorTests.test_static_shape_specializations)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-13-torch-compile-guards/code/test_answers.py", line 83, in test_static_shape_specializations
+    torch.testing.assert_close(compiled(x, 2.0), affine(x, 2.0))
+                               ^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1282, in compile_wrapper
+    raise e.remove_dynamo_frames() from None
+  File "/Users/wangyuxiao/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/_dynamo/output_graph.py", line 3324, in _call_user_compiler
+    raise BackendCompilerFailed(
+  File "/Users/wangyuxiao/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/_dynamo/output_graph.py", line 3292, in _call_user_compiler
+    compiled_fn = compiler_fn(gm, example_inputs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/_dynamo/repro/after_dynamo.py", line 163, in __call__
+    compiled_gm = compiler_fn(gm, example_inputs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/__init__.py", line 3050, in __call__
+    return self.compiler_fn(model_, inputs_, **self.kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-13-torch-compile-guards/code/counting_backend.py", line 27, in __call__
+    raise NotImplementedError("Record graph structure and return its forward callable")
+torch._dynamo.exc.BackendCompilerFailed: backend='<counting_backend.CountingBackend object at 0x123693470>' raised:
+NotImplementedError: Record graph structure and return its forward callable
+
+Set TORCHDYNAMO_VERBOSE=1 for the full Dynamo stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS="+dynamo"
+
+
+======================================================================
+ERROR: test_stride_guard (test_answers.CompileBehaviorTests.test_stride_guard)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-13-torch-compile-guards/code/test_answers.py", line 116, in test_stride_guard
+    compiled(x, 2.0)
+  File "/Users/wangyuxiao/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1282, in compile_wrapper
+    raise e.remove_dynamo_frames() from None
+  File "/Users/wangyuxiao/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/_dynamo/output_graph.py", line 3324, in _call_user_compiler
+    raise BackendCompilerFailed(
+  File "/Users/wangyuxiao/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/_dynamo/output_graph.py", line 3292, in _call_user_compiler
+    compiled_fn = compiler_fn(gm, example_inputs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/_dynamo/repro/after_dynamo.py", line 163, in __call__
+    compiled_gm = compiler_fn(gm, example_inputs)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/__init__.py", line 3050, in __call__
+    return self.compiler_fn(model_, inputs_, **self.kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-13-torch-compile-guards/code/counting_backend.py", line 27, in __call__
+    raise NotImplementedError("Record graph structure and return its forward callable")
+torch._dynamo.exc.BackendCompilerFailed: backend='<counting_backend.CountingBackend object at 0x123736000>' raised:
+NotImplementedError: Record graph structure and return its forward callable
+
+Set TORCHDYNAMO_VERBOSE=1 for the full Dynamo stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS="+dynamo"
+
+
+======================================================================
+ERROR: test_tensor_affine_float64 (test_answers.CompileBehaviorTests.test_tensor_affine_float64)
+----------------------------------------------------------------------
+torch._dynamo.exc.ObservedNotImplementedError: raised exception NotImplementedError('Keep scale as tensor data throughout the computation')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-13-torch-compile-guards/code/test_answers.py", line 183, in test_tensor_affine_float64
+    torch.testing.assert_close(compiled(x, scale), (x * scale + 1).relu())
+                               ^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1276, in compile_wrapper
+    raise e.with_traceback(
+torch._dynamo.exc.Unsupported: Observed exception
+  Explanation: Dynamo found no exception handler at the top-level compiled function when encountering an exception. Exception will propagate outside the compiled region.
+  Hint: Your code may result in an error when running in eager. Please double check that your code doesn't contain a similar error when actually running eager/uncompiled. You can do this by removing the `torch.compile` call, or by using `torch.compiler.set_stance("force_eager")`. 
+  Hint: It may be possible to write Dynamo tracing rules for this code. Please report an issue to PyTorch if you encounter this graph break often and it is causing performance issues.
+
+  Developer debug context: raised exception NotImplementedError('Keep scale as tensor data throughout the computation')
+
+ For more details about this graph break, please visit: https://meta-pytorch.github.io/compile-graph-break-site/gb/gb0088.html
+
+from user code:
+   File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-13-torch-compile-guards/code/solutions.py", line 8, in tensor_affine
+    raise NotImplementedError("Keep scale as tensor data throughout the computation")
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Set TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS="+dynamo"
+
+
+======================================================================
+ERROR: test_tensor_branch_handles_sign_changes (test_answers.CompileBehaviorTests.test_tensor_branch_handles_sign_changes)
+----------------------------------------------------------------------
+torch._dynamo.exc.ObservedNotImplementedError: raised exception NotImplementedError('Express the fixed-shape selection with tensor operations')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-13-torch-compile-guards/code/test_answers.py", line 163, in test_tensor_branch_handles_sign_changes
+    torch.testing.assert_close(compiled(x, scalar()), expected)
+                               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1276, in compile_wrapper
+    raise e.with_traceback(
+torch._dynamo.exc.Unsupported: Observed exception
+  Explanation: Dynamo found no exception handler at the top-level compiled function when encountering an exception. Exception will propagate outside the compiled region.
+  Hint: Your code may result in an error when running in eager. Please double check that your code doesn't contain a similar error when actually running eager/uncompiled. You can do this by removing the `torch.compile` call, or by using `torch.compiler.set_stance("force_eager")`. 
+  Hint: It may be possible to write Dynamo tracing rules for this code. Please report an issue to PyTorch if you encounter this graph break often and it is causing performance issues.
+
+  Developer debug context: raised exception NotImplementedError('Express the fixed-shape selection with tensor operations')
+
+ For more details about this graph break, please visit: https://meta-pytorch.github.io/compile-graph-break-site/gb/gb0088.html
+
+from user code:
+   File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-13-torch-compile-guards/code/solutions.py", line 13, in tensor_branch
+    raise NotImplementedError("Express the fixed-shape selection with tensor operations")
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Set TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS="+dynamo"
+
+
+======================================================================
+ERROR: test_tensor_branch_with_mixed_input (test_answers.CompileBehaviorTests.test_tensor_branch_with_mixed_input)
+----------------------------------------------------------------------
+torch._dynamo.exc.ObservedNotImplementedError: raised exception NotImplementedError('Express the fixed-shape selection with tensor operations')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-13-torch-compile-guards/code/test_answers.py", line 169, in test_tensor_branch_with_mixed_input
+    torch.testing.assert_close(compiled(x, scalar(3)), x * 3 + 1)
+                               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1276, in compile_wrapper
+    raise e.with_traceback(
+torch._dynamo.exc.Unsupported: Observed exception
+  Explanation: Dynamo found no exception handler at the top-level compiled function when encountering an exception. Exception will propagate outside the compiled region.
+  Hint: Your code may result in an error when running in eager. Please double check that your code doesn't contain a similar error when actually running eager/uncompiled. You can do this by removing the `torch.compile` call, or by using `torch.compiler.set_stance("force_eager")`. 
+  Hint: It may be possible to write Dynamo tracing rules for this code. Please report an issue to PyTorch if you encounter this graph break often and it is causing performance issues.
+
+  Developer debug context: raised exception NotImplementedError('Express the fixed-shape selection with tensor operations')
+
+ For more details about this graph break, please visit: https://meta-pytorch.github.io/compile-graph-break-site/gb/gb0088.html
+
+from user code:
+   File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-13-torch-compile-guards/code/solutions.py", line 13, in tensor_branch
+    raise NotImplementedError("Express the fixed-shape selection with tensor operations")
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Set TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS="+dynamo"
+
+
+======================================================================
+ERROR: test_tensor_scalar_changes_reuse_graph (test_answers.CompileBehaviorTests.test_tensor_scalar_changes_reuse_graph)
+----------------------------------------------------------------------
+torch._dynamo.exc.ObservedNotImplementedError: raised exception NotImplementedError('Keep scale as tensor data throughout the computation')
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-13-torch-compile-guards/code/test_answers.py", line 134, in test_tensor_scalar_changes_reuse_graph
+    torch.testing.assert_close(compiled(x, scale), affine(x, value))
+                               ^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/_dynamo/eval_frame.py", line 1276, in compile_wrapper
+    raise e.with_traceback(
+torch._dynamo.exc.Unsupported: Observed exception
+  Explanation: Dynamo found no exception handler at the top-level compiled function when encountering an exception. Exception will propagate outside the compiled region.
+  Hint: Your code may result in an error when running in eager. Please double check that your code doesn't contain a similar error when actually running eager/uncompiled. You can do this by removing the `torch.compile` call, or by using `torch.compiler.set_stance("force_eager")`. 
+  Hint: It may be possible to write Dynamo tracing rules for this code. Please report an issue to PyTorch if you encounter this graph break often and it is causing performance issues.
+
+  Developer debug context: raised exception NotImplementedError('Keep scale as tensor data throughout the computation')
+
+ For more details about this graph break, please visit: https://meta-pytorch.github.io/compile-graph-break-site/gb/gb0088.html
+
+from user code:
+   File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-13-torch-compile-guards/code/solutions.py", line 8, in tensor_affine
+    raise NotImplementedError("Keep scale as tensor data throughout the computation")
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Set TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS="+dynamo"
+
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.526s
+
+FAILED (errors=17)

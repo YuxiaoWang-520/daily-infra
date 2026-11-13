@@ -1,0 +1,54 @@
+Upstream https://github.com/pytorch/pytorch
+Commit a0d96468b7f2089907f400411eda3b09feda8f76
+Path torch/_dynamo/variables/builder.py
+License ../LICENSE
+
+--- lines 3947-3993 ---
+3947:     def wrap_symfloat(self, value: float) -> VariableTracker:
+3948:         # SymFloat wrapping is special.  We first wrap it in the same way we
+3949:         # do an unspecialized primitive, and then we item() it into a
+3950:         # SymFloat.  Removal of the item() call is left to a later FX pass,
+3951:         # mostly because that pass is more easily done after we have lowered
+3952:         # to ATen ops.  (Dynamo doesn't do decomposition right now).
+3953: 
+3954:         if self.name in self.tx.output.unspec_variable_map:
+3955:             return self.tx.output.unspec_variable_map[self.name]
+3956: 
+3957:         frame_state_entry = process_automatic_dynamic(
+3958:             self.tx,
+3959:             self.source.name,
+3960:             # type: ignore[arg-type]
+3961:             FrameStateSizeEntry.make_scalar(value),
+3962:             is_unspecialized_nn_module=self.source.guard_source.is_unspecialized_nn_module(),
+3963:         )
+3964: 
+3965:         # NB: we specialize on nan input, because our guard modeling in
+3966:         # ShapeEnv cannot deal with nan
+3967:         if (
+3968:             torch._dynamo.config.specialize_float
+3969:             or is_constant_source(self.get_source())
+3970:             or math.isnan(value)
+3971:             or math.isinf(value)
+3972:             # We don't support cudagraphs for now. Without this cudagraphs
+3973:             # break because they expect all cuda inputs but our tensorified
+3974:             # float will be a f64[] cpu tensor. Fixes the following test
+3975:             # when specialize_float=False
+3976:             # python test/inductor/test_compiled_optimizers.py CompiledOptimizerTests.test_rmsprop_weight_decay_maximize_capturable_cuda
+3977:             or torch._inductor.config.triton.cudagraphs
+3978:             or (
+3979:                 config.assume_static_by_default
+3980:                 and frame_state_entry.scalar is not auto_dynamic
+3981:             )
+3982:         ):
+3983:             self.install_guards(GuardBuilder.CONSTANT_MATCH)
+3984:             return ConstantVariable.create(value=value, source=self.source)
+3985: 
+3986:         # NB: At the point we've gotten here, we don't assume static by
+3987:         # default.  Since we have a guard mechanism, there isn't really any
+3988:         # downside to trying to be dynamic for float all the time.  Unlike
+3989:         # ints, this won't make codegen perf worse.  Modest cost to compile
+3990:         # time.
+3991: 
+3992:         wrapped_value = torch.tensor(value, dtype=torch.float64)
+3993: 
+

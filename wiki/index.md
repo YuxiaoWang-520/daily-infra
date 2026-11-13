@@ -28,8 +28,9 @@
 | 22 | 2026-11-10 | [训练中断后，checkpoint 怎样恢复一致的进度？](2026/11/2026-11-10-training-checkpoint-recovery/README.md) | 训练恢复、状态快照、RNG、数据进度与存储完成边界 | 第 18—21 篇 |
 | 23 | 2026-11-11 | [AllReduce 的数据怎样沿链路流动，为什么增加 GPU 后通信反而更慢？](2026/11/2026-11-11-allreduce-links-topology/README.md) | 环归约、启动成本、共享链路、拓扑与带宽口径 | 第 04、17、21 篇 |
 | 24 | 2026-11-12 | [CUDA Graph 怎样减少重复提交开销，哪些动态行为会让捕获失效？](2026/11/2026-11-12-cuda-graph-replay/README.md) | 图捕获、重复提交、固定地址、缓冲区生命周期与成本摊销 | 第 06、09 篇 |
+| 25 | 2026-11-13 | [torch.compile 怎样捕获计算，graph break 与重新编译各会增加什么开销？](2026/11/2026-11-13-torch-compile-guards/README.md) | Dynamo／FX、guards、图分段、动态形状与编译成本 | 第 06、09、24 篇 |
 
-下一篇候选为 torch.compile 怎样捕获计算，graph break 与重新编译各会增加什么开销？
+下一篇候选为 CUDA caching allocator 怎样复用显存，为什么会出现碎片与 OOM？
 
 2026-10-22 起按用户要求集中完成起步前 10 篇，使用实际归档日期；日常定时任务仍按工作日每天一篇执行。范围见 [本次任务说明](../docs/BOOTSTRAP10.md)。
 
