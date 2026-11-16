@@ -1,0 +1,5 @@
+From https://github.com/pytorch/pytorch
+ * branch            main       -> FETCH_HEAD
+   a0d9646..2a2d844  main       -> origin/main
+From github.com:YuxiaoWang-520/daily-infra
+ * branch            main       -> FETCH_HEAD

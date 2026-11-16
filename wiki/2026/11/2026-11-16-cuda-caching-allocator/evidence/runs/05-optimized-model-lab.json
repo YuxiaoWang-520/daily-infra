@@ -1,0 +1,281 @@
+{
+  "checked_at": "2026-11-16T11:37:27.169562+08:00",
+  "python": "3.12.16",
+  "platform": "macOS-27.0-arm64-arm-64bit",
+  "torch": "2.15.0",
+  "torch_git": "d0f2af8b66b20da4baa50644c0cd3f887a2eae2e",
+  "cuda_available": false,
+  "cuda_runtime_executed": false,
+  "unit": "bytes",
+  "scope": "CPU single-pool ordinary-segment teaching model",
+  "code_sha256": {
+    "allocator_model.py": "e8d481fb40a9665fc76ffddad24f8f21e69a694c51d87acc91066feafd9936d5",
+    "exercise_allocator.py": "205b30b445d596cc5538d7309d9b39370edeb9d36402838bd5d04c45e18eb061",
+    "exercise_stats.py": "9b7ea620ca8a615b3ea036fafa1fcfa441bb14cb5865472c6394289885719164",
+    "model_types.py": "35f3c9d456bf05ada0f98141e3865faed448544fa881e2e95bde7939702c3a9a",
+    "run_lab.py": "b39d7efca952a309b4e20340375e6d57800f913428c7c922e6775d33dc2cccc9",
+    "snapshot_stats.py": "48dd4ff4f509f8433f1b07712bc7133806bf3fceede94c13caa5b4b4b829521c",
+    "test_answers.py": "6007a0592512a0c7bf75200ddabc69889393ebe93331d669623ecce57972be3f"
+  },
+  "fragmentation": {
+    "before": {
+      "totals": {
+        "reserved_bytes": 16777216,
+        "allocated_bytes": 4194304,
+        "awaiting_bytes": 0,
+        "inactive_bytes": 12582912,
+        "releasable_bytes": 0,
+        "trapped_bytes": 12582912,
+        "largest_free_bytes": 6291456,
+        "segment_count": 2
+      },
+      "segments": [
+        {
+          "identifier": 0,
+          "blocks": [
+            {
+              "size": 6291456,
+              "state": "inactive",
+              "handle": null
+            },
+            {
+              "size": 2097152,
+              "state": "active_allocated",
+              "handle": 2
+            }
+          ]
+        },
+        {
+          "identifier": 1,
+          "blocks": [
+            {
+              "size": 6291456,
+              "state": "inactive",
+              "handle": null
+            },
+            {
+              "size": 2097152,
+              "state": "active_allocated",
+              "handle": 4
+            }
+          ]
+        }
+      ],
+      "segment_allocations": 2,
+      "allocation_retries": 0,
+      "ooms": 0
+    },
+    "expected_rejection": "MemoryError",
+    "after": {
+      "totals": {
+        "reserved_bytes": 16777216,
+        "allocated_bytes": 9437184,
+        "awaiting_bytes": 0,
+        "inactive_bytes": 7340032,
+        "releasable_bytes": 0,
+        "trapped_bytes": 7340032,
+        "largest_free_bytes": 6291456,
+        "segment_count": 2
+      },
+      "segments": [
+        {
+          "identifier": 0,
+          "blocks": [
+            {
+              "size": 7340032,
+              "state": "active_allocated",
+              "handle": 5
+            },
+            {
+              "size": 1048576,
+              "state": "inactive",
+              "handle": null
+            }
+          ]
+        },
+        {
+          "identifier": 1,
+          "blocks": [
+            {
+              "size": 6291456,
+              "state": "inactive",
+              "handle": null
+            },
+            {
+              "size": 2097152,
+              "state": "active_allocated",
+              "handle": 4
+            }
+          ]
+        }
+      ],
+      "segment_allocations": 2,
+      "allocation_retries": 1,
+      "ooms": 1
+    }
+  },
+  "whole_segment_retry": {
+    "before": {
+      "totals": {
+        "reserved_bytes": 16777216,
+        "allocated_bytes": 0,
+        "awaiting_bytes": 0,
+        "inactive_bytes": 16777216,
+        "releasable_bytes": 16777216,
+        "trapped_bytes": 0,
+        "largest_free_bytes": 8388608,
+        "segment_count": 2
+      },
+      "segments": [
+        {
+          "identifier": 0,
+          "blocks": [
+            {
+              "size": 8388608,
+              "state": "inactive",
+              "handle": null
+            }
+          ]
+        },
+        {
+          "identifier": 1,
+          "blocks": [
+            {
+              "size": 8388608,
+              "state": "inactive",
+              "handle": null
+            }
+          ]
+        }
+      ],
+      "segment_allocations": 2,
+      "allocation_retries": 0,
+      "ooms": 0
+    },
+    "after": {
+      "totals": {
+        "reserved_bytes": 12582912,
+        "allocated_bytes": 12582912,
+        "awaiting_bytes": 0,
+        "inactive_bytes": 0,
+        "releasable_bytes": 0,
+        "trapped_bytes": 0,
+        "largest_free_bytes": 0,
+        "segment_count": 1
+      },
+      "segments": [
+        {
+          "identifier": 2,
+          "blocks": [
+            {
+              "size": 12582912,
+              "state": "active_allocated",
+              "handle": 3
+            }
+          ]
+        }
+      ],
+      "segment_allocations": 3,
+      "allocation_retries": 1,
+      "ooms": 0
+    }
+  },
+  "deferred": {
+    "before": {
+      "totals": {
+        "reserved_bytes": 8388608,
+        "allocated_bytes": 0,
+        "awaiting_bytes": 8388608,
+        "inactive_bytes": 0,
+        "releasable_bytes": 0,
+        "trapped_bytes": 0,
+        "largest_free_bytes": 0,
+        "segment_count": 1
+      },
+      "segments": [
+        {
+          "identifier": 0,
+          "blocks": [
+            {
+              "size": 8388608,
+              "state": "active_awaiting_free",
+              "handle": 1
+            }
+          ]
+        }
+      ],
+      "segment_allocations": 1,
+      "allocation_retries": 0,
+      "ooms": 0
+    },
+    "after": {
+      "totals": {
+        "reserved_bytes": 8388608,
+        "allocated_bytes": 8388608,
+        "awaiting_bytes": 0,
+        "inactive_bytes": 0,
+        "releasable_bytes": 0,
+        "trapped_bytes": 0,
+        "largest_free_bytes": 0,
+        "segment_count": 1
+      },
+      "segments": [
+        {
+          "identifier": 0,
+          "blocks": [
+            {
+              "size": 8388608,
+              "state": "active_allocated",
+              "handle": 2
+            }
+          ]
+        }
+      ],
+      "segment_allocations": 1,
+      "allocation_retries": 0,
+      "ooms": 0
+    }
+  },
+  "cache_reuse": {
+    "iterations": 200,
+    "model_segment_allocations": 1,
+    "model_final_segment_releases": 1,
+    "released_bytes": 8388608,
+    "final_reserved_bytes": 0,
+    "uncached_reference_allocations": 200,
+    "uncached_reference_frees": 200,
+    "measurement": "Teaching operation counts, without GPU latency measurements"
+  },
+  "same_reserved_gap": {
+    "releasable": {
+      "reserved_bytes": 8388608,
+      "allocated_bytes": 0,
+      "awaiting_bytes": 0,
+      "inactive_bytes": 8388608,
+      "releasable_bytes": 8388608,
+      "trapped_bytes": 0,
+      "largest_free_bytes": 8388608,
+      "segment_count": 1
+    },
+    "awaiting": {
+      "reserved_bytes": 8388608,
+      "allocated_bytes": 0,
+      "awaiting_bytes": 8388608,
+      "inactive_bytes": 0,
+      "releasable_bytes": 0,
+      "trapped_bytes": 0,
+      "largest_free_bytes": 0,
+      "segment_count": 1
+    },
+    "trapped": {
+      "reserved_bytes": 16777216,
+      "allocated_bytes": 8388608,
+      "awaiting_bytes": 0,
+      "inactive_bytes": 8388608,
+      "releasable_bytes": 0,
+      "trapped_bytes": 8388608,
+      "largest_free_bytes": 8388608,
+      "segment_count": 1
+    }
+  }
+}

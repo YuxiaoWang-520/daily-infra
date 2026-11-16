@@ -29,8 +29,9 @@
 | 23 | 2026-11-11 | [AllReduce 的数据怎样沿链路流动，为什么增加 GPU 后通信反而更慢？](2026/11/2026-11-11-allreduce-links-topology/README.md) | 环归约、启动成本、共享链路、拓扑与带宽口径 | 第 04、17、21 篇 |
 | 24 | 2026-11-12 | [CUDA Graph 怎样减少重复提交开销，哪些动态行为会让捕获失效？](2026/11/2026-11-12-cuda-graph-replay/README.md) | 图捕获、重复提交、固定地址、缓冲区生命周期与成本摊销 | 第 06、09 篇 |
 | 25 | 2026-11-13 | [torch.compile 怎样捕获计算，graph break 与重新编译各会增加什么开销？](2026/11/2026-11-13-torch-compile-guards/README.md) | Dynamo／FX、guards、图分段、动态形状与编译成本 | 第 06、09、24 篇 |
+| 26 | 2026-11-16 | [CUDA caching allocator 怎样复用显存，为什么会出现碎片与 OOM？](2026/11/2026-11-16-cuda-caching-allocator/README.md) | 分配器、块复用、碎片、stream 生命周期与容量排障 | 第 01、18、24 篇 |
 
-下一篇候选为 CUDA caching allocator 怎样复用显存，为什么会出现碎片与 OOM？
+下一篇候选为 Tensor Parallel 怎样切分线性层，AllReduce 与 AllGather 分别出现在何处？
 
 2026-10-22 起按用户要求集中完成起步前 10 篇，使用实际归档日期；日常定时任务仍按工作日每天一篇执行。范围见 [本次任务说明](../docs/BOOTSTRAP10.md)。
 

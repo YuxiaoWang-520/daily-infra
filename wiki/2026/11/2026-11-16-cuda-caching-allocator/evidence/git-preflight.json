@@ -1,0 +1,25 @@
+{
+  "checked_at": "2026-11-16T11:40:57.447399+08:00",
+  "phase": "pre_commit",
+  "target": "YuxiaoWang-520/daily-infra",
+  "branch": "main",
+  "origin_fetch": "git@github.com:YuxiaoWang-520/daily-infra.git",
+  "origin_push": "git@github.com:YuxiaoWang-520/daily-infra.git",
+  "actual_visibility": "public",
+  "actual_private": false,
+  "repo_view_private": false,
+  "github_login": "YuxiaoWang-520",
+  "git_author": "YuxiaoWang-520 <13917046839@163.com>",
+  "local_head_before_commit": "b08f00b65bce3555ef4afbac2d84afaa2654af4e",
+  "origin_main_before_commit": "b08f00b65bce3555ef4afbac2d84afaa2654af4e",
+  "github_main_before_commit": "b08f00b65bce3555ef4afbac2d84afaa2654af4e",
+  "staged_files_before_task": 0,
+  "commit_scope": [
+    "wiki/2026/11/2026-11-16-cuda-caching-allocator/",
+    "wiki/index.md",
+    "ROADMAP.md"
+  ],
+  "checks_passed": true,
+  "sync_status": "ready_to_commit",
+  "public_operation_authorized_by_user": "2026-11-13"
+}

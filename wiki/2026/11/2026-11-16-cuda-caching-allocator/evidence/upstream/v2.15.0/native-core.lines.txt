@@ -1,0 +1,304 @@
+Upstream https://github.com/pytorch/pytorch
+Commit 31a77fc9c0a7c6fff15a1ff58c743f53b1a9d457
+Path c10/cuda/CUDACachingAllocator.cpp
+License ../LICENSE
+
+--- lines 1825-1908 ---
+1825:   Block* malloc(size_t orig_size, cudaStream_t stream) {
+1826:     // done outside the lock because we don't know what locks the recorder needs
+1827:     // to have...
+1828:     auto context = maybeGatherContext(RecordContext::STATE);
+1829: 
+1830:     std::unique_lock<std::recursive_mutex> lock(mutex);
+1831: 
+1832:     prepare_for_malloc(context, stream);
+1833: 
+1834:     size_t size = round_size(orig_size);
+1835:     auto& pool = get_pool(size, stream);
+1836:     const size_t alloc_size = get_allocation_size(size);
+1837:     bool active_user_pool =
+1838:         pool.owner_PrivatePool && pool.owner_PrivatePool->allocator();
+1839:     // The expandable segments are only active on the default pool.
+1840:     bool is_expandable_segments_active =
+1841:         CUDAAllocatorConfig::expandable_segments() && !active_user_pool;
+1842:     AllocParams params(
+1843:         device_id,
+1844:         size,
+1845:         stream,
+1846:         &pool,
+1847:         alloc_size,
+1848:         is_expandable_segments_active);
+1849:     params.stat_types = get_stat_types_for_pool(pool);
+1850: 
+1851:     // First, try to get a block from the existing pool.
+1852:     bool block_found =
+1853:         // Search pool
+1854:         get_free_block(params)
+1855:         // Trigger callbacks and retry search
+1856:         || (trigger_free_memory_callbacks(params) && get_free_block(params));
+1857: 
+1858:     // Can't reuse an existing block; try to get a new one.
+1859:     if (!block_found) {
+1860:       // Do garbage collection if the flag is set.
+1861:       if (C10_UNLIKELY(
+1862:               allowed_memory_maximum.has_value() &&
+1863:               AcceleratorAllocatorConfig::garbage_collection_threshold() >
+1864:                   0.0)) {
+1865:         garbage_collect_cached_blocks(context);
+1866:       }
+1867: 
+1868:       // Attempt allocate
+1869:       // WARNING: alloc_block may release the allocator lock when calling
+1870:       // cudaMalloc. So far this function has not modified allocator state, but
+1871:       // keep in mind that any observed allocator state may change across calls
+1872:       // to alloc_block since it may release the lock.
+1873:       block_found = alloc_block(params, false, context, lock);
+1874: 
+1875:       // If allocation was rejected by OOM policy, skip retry chain and fail
+1876:       // immediately
+1877:       if (!block_found && params.oom_rejection_info.rejected) {
+1878:         // Skip retry chain - will be handled below in the !block_found path
+1879:       } else if (!block_found) {
+1880:         // Normal retry chain: try various strategies to free memory and retry
+1881:         block_found =
+1882:             // Try to use memory pools that have opted in as overflow before
+1883:             // expensive memory freeing operations.
+1884:             try_mempool_fallback(
+1885:                 params, size, stream, device_id, alloc_size, stats)
+1886:             // Free enough available cached blocks to satisfy alloc and retry
+1887:             // alloc.
+1888:             || (release_available_cached_blocks(params, context) &&
+1889:                 alloc_block(params, false, context, lock))
+1890:             // Free all non-split cached blocks and retry alloc.
+1891:             // Only skip this during actual graph capture; user mempools
+1892:             // should be able to reclaim cached memory.
+1893:             || (C10_LIKELY(!is_capture_context()) &&
+1894:                 release_cached_blocks(context, {0, 0}) &&
+1895:                 alloc_block(params, true, context, lock));
+1896:       }
+1897:     }
+1898: 
+1899:     if (!block_found) {
+1900:       // For any error code other than cudaErrorMemoryAllocation,
+1901:       // alloc_block should have thrown an exception already.
+1902:       TORCH_INTERNAL_ASSERT(params.err == cudaErrorMemoryAllocation);
+1903: 
+1904:       // Handle OOM rejection separately - return nullptr instead of throwing
+1905:       // This allows callers to handle rejection gracefully without crashing
+1906:       if (params.oom_rejection_info.rejected) {
+1907:         if (!oom_rejection_observers_.empty()) {
+1908:           auto observers_local = oom_rejection_observers_;
+
+--- lines 2560-2613 ---
+2560:   void free_locked(
+2561:       Block* block,
+2562:       const std::shared_ptr<GatheredContext>& context) {
+2563:     block->allocated = false;
+2564: 
+2565:     // following logic might modifying underlying Block, causing the size
+2566:     // changed. We store ahead for reporting
+2567:     auto orig_block_ptr = block->ptr;
+2568:     auto orig_block_size = block->size;
+2569: 
+2570:     StatTypes stat_types = get_stat_types_for_pool(*block->pool);
+2571:     for_each_selected_stat_type(stat_types, [&](size_t stat_type) {
+2572:       stats.allocation[stat_type].decrease(1);
+2573:       stats.allocated_bytes[stat_type].decrease(block->size);
+2574:     });
+2575:     auto allocated_bytes_gauge =
+2576:         STATIC_GAUGE(pytorch.CUDACachingAllocator.allocated_bytes);
+2577:     allocated_bytes_gauge.record(
+2578:         stats.allocated_bytes[static_cast<int64_t>(StatType::AGGREGATE)]
+2579:             .current);
+2580: 
+2581:     record_trace(
+2582:         TraceEntry::FREE_REQUESTED,
+2583:         int64_t(block->ptr),
+2584:         block->requested_size,
+2585:         block->stream,
+2586:         block->device,
+2587:         block->pool->owner_MempoolId(),
+2588:         context ? context : block->context_when_allocated);
+2589: 
+2590:     if (block->size >= AcceleratorAllocatorConfig::max_split_size())
+2591:       stats.oversize_allocations.decrease(1);
+2592: 
+2593:     // If the block has been used on more than one stream, handle accordingly.
+2594:     if (!block->stream_uses.empty()) {
+2595:       if (C10_UNLIKELY(is_capture_context())) {
+2596:         if (CUDAAllocatorConfig::graph_capture_record_stream_reuse()) {
+2597:           // record_free_markers returns a vector of free markers,
+2598:           // or an empty vector if any associated stream is not currently
+2599:           // capturing. The empty vector means that we will defer the free until
+2600:           // capture is finished.
+2601:           deferred_blocks.emplace(block, record_free_markers(block));
+2602:         } else {
+2603:           // If graph_capture_record_stream_reuse is not enabled, always defer
+2604:           // the free until capture is finished.
+2605:           deferred_blocks.emplace(block, std::vector<cudaGraphNode_t>{});
+2606:         }
+2607:       } else {
+2608:         // If not in a capture, insert events for the block.
+2609:         insert_events(block);
+2610:       }
+2611:     } else {
+2612:       free_block(block, context);
+2613:     }
+
+--- lines 3684-3748 ---
+3684:     auto& pool = *block->pool;
+3685:     int64_t net_change_inactive_split_blocks = 0;
+3686:     int64_t net_change_inactive_split_size = 0;
+3687: 
+3688:     const std::array<Block*, 2> merge_candidates = {block->prev, block->next};
+3689:     for (Block* merge_candidate : merge_candidates) {
+3690:       const auto subsumed_size = try_merge_blocks(block, merge_candidate, pool);
+3691:       if (subsumed_size > 0) {
+3692:         net_change_inactive_split_blocks -= 1;
+3693:         net_change_inactive_split_size -= static_cast<int64_t>(subsumed_size);
+3694:       }
+3695:     }
+3696: 
+3697:     active_blocks.erase(block);
+3698:     // Makes sure the Block* isn't already present in the pool we're freeing it
+3699:     // back into.
+3700:     // NOLINTNEXTLINE(clang-analyzer-deadcode.DeadStores)
+3701:     bool inserted = pool.insert_into_blocks(block).second;
+3702:     TORCH_INTERNAL_ASSERT(inserted);
+3703: 
+3704:     if (block->is_split()) {
+3705:       net_change_inactive_split_blocks += 1;
+3706:       net_change_inactive_split_size += static_cast<int64_t>(block->size);
+3707:     }
+3708: 
+3709:     StatTypes stat_types = get_stat_types_for_pool(pool);
+3710: 
+3711:     for_each_selected_stat_type(stat_types, [&](size_t stat_type) {
+3712:       // inactive_split tries to capture the idea that blocks
+3713:       // cannot be freed when requested, but fully free pages
+3714:       // of expandable blocks can always be freed.
+3715:       // The logic to track this as statistic is pretty involved,
+3716:       // so we simply just exclude expandable segments from
+3717:       // inactive_split
+3718:       if (!block->expandable_segment_) {
+3719:         if (net_change_inactive_split_blocks > 0) {
+3720:           stats.inactive_split[stat_type].increase(
+3721:               static_cast<size_t>(net_change_inactive_split_blocks));
+3722:         } else if (net_change_inactive_split_blocks < 0) {
+3723:           stats.inactive_split[stat_type].decrease(
+3724:               static_cast<size_t>(-net_change_inactive_split_blocks));
+3725:         }
+3726:         if (net_change_inactive_split_size > 0) {
+3727:           stats.inactive_split_bytes[stat_type].increase(
+3728:               static_cast<size_t>(net_change_inactive_split_size));
+3729:         } else if (net_change_inactive_split_size < 0) {
+3730:           stats.inactive_split_bytes[stat_type].decrease(
+3731:               static_cast<size_t>(-net_change_inactive_split_size));
+3732:         }
+3733:       }
+3734:       stats.active[stat_type].decrease(1);
+3735:       stats.active_bytes[stat_type].decrease(original_block_size);
+3736:       stats.requested_bytes[stat_type].decrease(requested_size);
+3737:     });
+3738:   }
+3739: 
+3740:   /** combine previously split blocks. returns the size of the subsumed block,
+3741:    * or 0 on failure. */
+3742:   size_t try_merge_blocks(Block* dst, Block* src, BlockPool& pool) {
+3743:     if (!src || src->allocated || src->event_count > 0 ||
+3744:         !src->stream_uses.empty() || dst->mapped != src->mapped) {
+3745:       return 0;
+3746:     }
+3747: 
+3748:     AT_ASSERT(dst->is_split() && src->is_split());
+
+--- lines 3837-3878 ---
+3837:   bool should_split(
+3838:       const Block* block,
+3839:       size_t size,
+3840:       bool is_expandable_segments_active) {
+3841:     // If the pool is marked as not splitting a segment, do not split
+3842:     if (no_split_pools.find(block->pool->owner_MempoolId()) !=
+3843:         no_split_pools.end()) {
+3844:       return false;
+3845:     }
+3846:     // Otherwise, check if the remaining size is greater than the minimum block
+3847:     // size
+3848:     size_t remaining = block->size - size;
+3849:     if (block->pool->is_small || is_expandable_segments_active) {
+3850:       return remaining >= kMinBlockSize;
+3851:     } else {
+3852:       return (size < AcceleratorAllocatorConfig::max_split_size()) &&
+3853:           (remaining > kSmallSize);
+3854:     }
+3855:   }
+3856: 
+3857:   static size_t get_allocation_size(size_t size) {
+3858:     if (size <= kSmallSize) {
+3859:       return kSmallBuffer;
+3860:     } else if (size < kMinLargeAlloc) {
+3861:       return AcceleratorAllocatorConfig::large_segment_size();
+3862:     } else {
+3863:       return kRoundLarge * ((size + kRoundLarge - 1) / kRoundLarge);
+3864:     }
+3865:   }
+3866: 
+3867:   bool get_free_block(AllocParams& p) {
+3868:     BlockPool& pool = *p.pool;
+3869: 
+3870:     if (C10_UNLIKELY(
+3871:             allowed_memory_maximum.has_value() &&
+3872:             AcceleratorAllocatorConfig::garbage_collection_threshold() > 0.0)) {
+3873:       // Track block reuse interval only when garbage collection is enabled.
+3874:       ++pool.get_free_blocks_call_count;
+3875:     }
+3876:     auto it = pool.blocks.lower_bound(&p.search_key);
+3877:     if (it == pool.blocks.end() || (*it)->stream != p.stream())
+3878:       return false;
+
+--- lines 4218-4234 ---
+4218:   bool release_cached_blocks(
+4219:       const std::shared_ptr<GatheredContext>& context,
+4220:       MempoolId_t mempool_id) {
+4221:     if (mempool_id.first == 0 && mempool_id.second == 0 &&
+4222:         !is_capture_context()) {
+4223:       // If no graph capture is underway, we can release *all* default pool
+4224:       // blocks.
+4225: 
+4226:       // First ensure that all blocks that can't currently be allocated due to
+4227:       // outstanding events are returned to the pool.
+4228:       synchronize_and_free_events(context);
+4229: 
+4230:       // Free all non-split cached blocks to system allocator
+4231:       release_blocks(large_blocks, context);
+4232:       release_blocks(small_blocks, context);
+4233:     }
+4234: 
+
+--- lines 4408-4432 ---
+4408:   void release_blocks(
+4409:       BlockPool& pool,
+4410:       const std::shared_ptr<GatheredContext>& context) {
+4411:     std::vector<Block*> to_unmap;
+4412:     // Frees all non-split blocks
+4413:     auto it = pool.blocks.begin();
+4414:     while (it != pool.blocks.end()) {
+4415:       Block* block = *it;
+4416:       ++it;
+4417:       if (block->expandable_segment_) {
+4418:         // unmapping will mutate the free pool
+4419:         // so just gather what needs to be freed
+4420:         // to avoid invalidating the iterator
+4421:         to_unmap.push_back(block);
+4422:       } else if (!block->prev && !block->next) {
+4423:         release_block(block, context);
+4424:       }
+4425:     }
+4426:     for (Block* block : to_unmap) {
+4427:       unmap_block(block, context);
+4428:       if (!block->prev && !block->next) {
+4429:         release_expandable_segment(block);
+4430:       }
+4431:     }
+4432:   }
+

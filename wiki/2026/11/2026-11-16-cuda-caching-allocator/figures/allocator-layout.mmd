@@ -1,0 +1,9 @@
+flowchart LR
+    subgraph S0["segment 0，共 8 MiB"]
+        F0["空闲 6 MiB"] --> A0["使用中 2 MiB"]
+    end
+    subgraph S1["segment 1，共 8 MiB"]
+        F1["空闲 6 MiB"] --> A1["使用中 2 MiB"]
+    end
+    Q["请求一个 7 MiB 块"] -. "最大空闲块为 6 MiB" .-> F0
+    Q -. "其余预算为 0" .-> S1

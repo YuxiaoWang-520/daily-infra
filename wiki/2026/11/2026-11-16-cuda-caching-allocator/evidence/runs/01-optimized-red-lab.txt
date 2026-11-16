@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-16-cuda-caching-allocator/code/run_lab.py", line 145, in <module>
+    main()
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-16-cuda-caching-allocator/code/run_lab.py", line 137, in main
+    "deferred": deferred_case(),
+                ^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-16-cuda-caching-allocator/code/run_lab.py", line 77, in deferred_case
+    allocator.malloc(8 * MIB)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-16-cuda-caching-allocator/code/allocator_model.py", line 49, in malloc
+    raise MemoryError("No sufficient block or capacity for a new segment")
+MemoryError: No sufficient block or capacity for a new segment

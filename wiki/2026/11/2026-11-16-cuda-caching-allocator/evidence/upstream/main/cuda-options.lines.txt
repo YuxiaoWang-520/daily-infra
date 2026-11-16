@@ -1,0 +1,61 @@
+Upstream https://github.com/pytorch/pytorch
+Commit 2a2d844941bf776d1a49a8ff8730e90f5242f836
+Path c10/cuda/CUDAAllocatorConfig.cpp
+License ../LICENSE
+
+--- lines 16-28 ---
+16: bool CUDAAllocatorConfig::expandable_segments() {
+17:   bool enabled = c10::CachingAllocator::AcceleratorAllocatorConfig::
+18:       use_expandable_segments();
+19: #if !defined(PYTORCH_C10_DRIVER_API_SUPPORTED) && \
+20:     (!defined(USE_ROCM) || (ROCM_VERSION < 70000))
+21:   if (enabled) {
+22:     TORCH_WARN_ONCE("expandable_segments not supported on this platform")
+23:   }
+24:   return false;
+25: #else
+26:   return enabled;
+27: #endif
+28: }
+
+--- lines 109-147 ---
+109:     } else if (key == "graph_capture_record_stream_reuse") {
+110:       i = parseGraphCaptureRecordStreamReuse(tokenizer, i);
+111:       used_native_specific_option = true;
+112:     } else if (key == "per_process_memory_fraction") {
+113:       i = parsePerProcessMemoryFraction(tokenizer, i);
+114:       used_native_specific_option = true;
+115:     } else if (key == "pinned_free_catch_all") {
+116:       i = parsePinnedFreeCatchAll(tokenizer, i);
+117:       used_native_specific_option = true;
+118:     } else if (key == "throw_on_cudamalloc_oom") {
+119:       i = parseThrowOnCudaMallocOom(tokenizer, i);
+120:       used_native_specific_option = true;
+121:     } else if (key == "expandable_segments_reserve") {
+122:       i = parseExpandableSegmentsReserve(tokenizer, i);
+123:       used_native_specific_option = true;
+124:     } else if (key == "expandable_segments_reserve_by_class") {
+125:       i = parseExpandableSegmentsReserveByClass(tokenizer, i);
+126:       used_native_specific_option = true;
+127:     } else {
+128:       const auto& keys =
+129:           c10::CachingAllocator::AcceleratorAllocatorConfig::getKeys();
+130:       TORCH_CHECK_VALUE(
+131:           keys.find(key) != keys.end(),
+132:           "Unrecognized key '",
+133:           key,
+134:           "' in CUDA allocator config.");
+135:       // Skip the key and its value
+136:       i = tokenizer.skipKey(i);
+137:     }
+138: 
+139:     if (i + 1 < tokenizer.size()) {
+140:       tokenizer.checkToken(++i, ",");
+141:     }
+142:   }
+143: 
+144:   if (used_cudaMallocAsync && used_native_specific_option) {
+145:     TORCH_WARN(
+146:         "backend:cudaMallocAsync ignores max_split_size_mb,"
+147:         "roundup_power2_divisions, and garbage_collect_threshold.");
+

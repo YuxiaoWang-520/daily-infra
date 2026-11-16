@@ -1,0 +1,314 @@
+test_best_fit_chooses_smallest_sufficient_block (test_answers.AllocatorTests.test_best_fit_chooses_smallest_sufficient_block) ... ERROR
+test_deferred_free_stays_active_until_completion (test_answers.AllocatorTests.test_deferred_free_stays_active_until_completion) ... ERROR
+test_different_segments_do_not_merge (test_answers.AllocatorTests.test_different_segments_do_not_merge) ... ERROR
+test_exact_fit_has_no_empty_remainder (test_answers.AllocatorTests.test_exact_fit_has_no_empty_remainder) ... ERROR
+test_fragmented_oom_then_neighbor_release (test_answers.AllocatorTests.test_fragmented_oom_then_neighbor_release) ... ERROR
+test_free_coalesces_both_neighbors (test_answers.AllocatorTests.test_free_coalesces_both_neighbors) ... ERROR
+test_invalid_capacity_and_segment_size (test_answers.AllocatorTests.test_invalid_capacity_and_segment_size) ... 
+  test_invalid_capacity_and_segment_size (test_answers.AllocatorTests.test_invalid_capacity_and_segment_size) (value=0) ... ERROR
+  test_invalid_capacity_and_segment_size (test_answers.AllocatorTests.test_invalid_capacity_and_segment_size) (value=0) ... ERROR
+  test_invalid_capacity_and_segment_size (test_answers.AllocatorTests.test_invalid_capacity_and_segment_size) (value=-1) ... ERROR
+  test_invalid_capacity_and_segment_size (test_answers.AllocatorTests.test_invalid_capacity_and_segment_size) (value=-1) ... ERROR
+  test_invalid_capacity_and_segment_size (test_answers.AllocatorTests.test_invalid_capacity_and_segment_size) (value=1.5) ... ERROR
+  test_invalid_capacity_and_segment_size (test_answers.AllocatorTests.test_invalid_capacity_and_segment_size) (value=1.5) ... ERROR
+  test_invalid_capacity_and_segment_size (test_answers.AllocatorTests.test_invalid_capacity_and_segment_size) (value=True) ... ERROR
+  test_invalid_capacity_and_segment_size (test_answers.AllocatorTests.test_invalid_capacity_and_segment_size) (value=True) ... ERROR
+test_invalid_requests_preserve_state (test_answers.AllocatorTests.test_invalid_requests_preserve_state) ... ERROR
+test_oom_retry_returns_whole_segments_before_growing (test_answers.AllocatorTests.test_oom_retry_returns_whole_segments_before_growing) ... ERROR
+test_randomized_traces_preserve_byte_accounting (test_answers.AllocatorTests.test_randomized_traces_preserve_byte_accounting) ... ERROR
+test_recovery_releases_cache_even_if_final_request_fails (test_answers.AllocatorTests.test_recovery_releases_cache_even_if_final_request_fails) ... ERROR
+test_release_does_not_wait_for_deferred_blocks (test_answers.AllocatorTests.test_release_does_not_wait_for_deferred_blocks) ... ERROR
+test_snapshot_is_detached_from_later_mutation (test_answers.AllocatorTests.test_snapshot_is_detached_from_later_mutation) ... ERROR
+test_split_and_reuse (test_answers.AllocatorTests.test_split_and_reuse) ... ERROR
+test_unknown_double_and_pending_free_are_rejected (test_answers.AllocatorTests.test_unknown_double_and_pending_free_are_rejected) ... ERROR
+test_empty_segment_is_invalid (test_answers.SnapshotTests.test_empty_segment_is_invalid) ... ok
+test_empty_snapshot (test_answers.SnapshotTests.test_empty_snapshot) ... ERROR
+test_invalid_block_sizes (test_answers.SnapshotTests.test_invalid_block_sizes) ... ok
+test_invalid_state (test_answers.SnapshotTests.test_invalid_state) ... ok
+test_reserved_gap_can_be_all_awaiting (test_answers.SnapshotTests.test_reserved_gap_can_be_all_awaiting) ... ERROR
+test_same_gap_can_be_all_releasable (test_answers.SnapshotTests.test_same_gap_can_be_all_releasable) ... ERROR
+test_snapshot_types_are_immutable (test_answers.SnapshotTests.test_snapshot_types_are_immutable) ... ok
+test_three_states_and_whole_segment_release (test_answers.SnapshotTests.test_three_states_and_whole_segment_release) ... ERROR
+
+======================================================================
+ERROR: test_best_fit_chooses_smallest_sufficient_block (test_answers.AllocatorTests.test_best_fit_chooses_smallest_sufficient_block)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-16-cuda-caching-allocator/code/test_answers.py", line 89, in test_best_fit_chooses_smallest_sufficient_block
+    allocator = Allocator(24, 8)
+                ^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-16-cuda-caching-allocator/code/allocator_model.py", line 10, in __init__
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_deferred_free_stays_active_until_completion (test_answers.AllocatorTests.test_deferred_free_stays_active_until_completion)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-16-cuda-caching-allocator/code/test_answers.py", line 149, in test_deferred_free_stays_active_until_completion
+    allocator = Allocator(8, 8)
+                ^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-16-cuda-caching-allocator/code/allocator_model.py", line 10, in __init__
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_different_segments_do_not_merge (test_answers.AllocatorTests.test_different_segments_do_not_merge)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-16-cuda-caching-allocator/code/test_answers.py", line 106, in test_different_segments_do_not_merge
+    allocator = Allocator(16, 8)
+                ^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-16-cuda-caching-allocator/code/allocator_model.py", line 10, in __init__
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_exact_fit_has_no_empty_remainder (test_answers.AllocatorTests.test_exact_fit_has_no_empty_remainder)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-16-cuda-caching-allocator/code/test_answers.py", line 84, in test_exact_fit_has_no_empty_remainder
+    allocator = Allocator(8, 8)
+                ^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-16-cuda-caching-allocator/code/allocator_model.py", line 10, in __init__
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_fragmented_oom_then_neighbor_release (test_answers.AllocatorTests.test_fragmented_oom_then_neighbor_release)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-16-cuda-caching-allocator/code/test_answers.py", line 115, in test_fragmented_oom_then_neighbor_release
+    allocator = Allocator(16, 8)
+                ^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-16-cuda-caching-allocator/code/allocator_model.py", line 10, in __init__
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_free_coalesces_both_neighbors (test_answers.AllocatorTests.test_free_coalesces_both_neighbors)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-16-cuda-caching-allocator/code/test_answers.py", line 98, in test_free_coalesces_both_neighbors
+    allocator = Allocator(8, 8)
+                ^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-16-cuda-caching-allocator/code/allocator_model.py", line 10, in __init__
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_invalid_capacity_and_segment_size (test_answers.AllocatorTests.test_invalid_capacity_and_segment_size) (value=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-16-cuda-caching-allocator/code/test_answers.py", line 59, in test_invalid_capacity_and_segment_size
+    Allocator(value, 8)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-16-cuda-caching-allocator/code/allocator_model.py", line 10, in __init__
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_invalid_capacity_and_segment_size (test_answers.AllocatorTests.test_invalid_capacity_and_segment_size) (value=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-16-cuda-caching-allocator/code/test_answers.py", line 61, in test_invalid_capacity_and_segment_size
+    Allocator(16, value)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-16-cuda-caching-allocator/code/allocator_model.py", line 10, in __init__
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_invalid_capacity_and_segment_size (test_answers.AllocatorTests.test_invalid_capacity_and_segment_size) (value=-1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-16-cuda-caching-allocator/code/test_answers.py", line 59, in test_invalid_capacity_and_segment_size
+    Allocator(value, 8)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-16-cuda-caching-allocator/code/allocator_model.py", line 10, in __init__
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_invalid_capacity_and_segment_size (test_answers.AllocatorTests.test_invalid_capacity_and_segment_size) (value=-1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-16-cuda-caching-allocator/code/test_answers.py", line 61, in test_invalid_capacity_and_segment_size
+    Allocator(16, value)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-16-cuda-caching-allocator/code/allocator_model.py", line 10, in __init__
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_invalid_capacity_and_segment_size (test_answers.AllocatorTests.test_invalid_capacity_and_segment_size) (value=1.5)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-16-cuda-caching-allocator/code/test_answers.py", line 59, in test_invalid_capacity_and_segment_size
+    Allocator(value, 8)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-16-cuda-caching-allocator/code/allocator_model.py", line 10, in __init__
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_invalid_capacity_and_segment_size (test_answers.AllocatorTests.test_invalid_capacity_and_segment_size) (value=1.5)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-16-cuda-caching-allocator/code/test_answers.py", line 61, in test_invalid_capacity_and_segment_size
+    Allocator(16, value)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-16-cuda-caching-allocator/code/allocator_model.py", line 10, in __init__
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_invalid_capacity_and_segment_size (test_answers.AllocatorTests.test_invalid_capacity_and_segment_size) (value=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-16-cuda-caching-allocator/code/test_answers.py", line 59, in test_invalid_capacity_and_segment_size
+    Allocator(value, 8)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-16-cuda-caching-allocator/code/allocator_model.py", line 10, in __init__
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_invalid_capacity_and_segment_size (test_answers.AllocatorTests.test_invalid_capacity_and_segment_size) (value=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-16-cuda-caching-allocator/code/test_answers.py", line 61, in test_invalid_capacity_and_segment_size
+    Allocator(16, value)
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-16-cuda-caching-allocator/code/allocator_model.py", line 10, in __init__
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_invalid_requests_preserve_state (test_answers.AllocatorTests.test_invalid_requests_preserve_state)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-16-cuda-caching-allocator/code/test_answers.py", line 64, in test_invalid_requests_preserve_state
+    allocator = Allocator(16, 8)
+                ^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-16-cuda-caching-allocator/code/allocator_model.py", line 10, in __init__
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_oom_retry_returns_whole_segments_before_growing (test_answers.AllocatorTests.test_oom_retry_returns_whole_segments_before_growing)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-16-cuda-caching-allocator/code/test_answers.py", line 130, in test_oom_retry_returns_whole_segments_before_growing
+    allocator = Allocator(16, 8)
+                ^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-16-cuda-caching-allocator/code/allocator_model.py", line 10, in __init__
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_randomized_traces_preserve_byte_accounting (test_answers.AllocatorTests.test_randomized_traces_preserve_byte_accounting)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-16-cuda-caching-allocator/code/test_answers.py", line 192, in test_randomized_traces_preserve_byte_accounting
+    allocator = Allocator(64, 8)
+                ^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-16-cuda-caching-allocator/code/allocator_model.py", line 10, in __init__
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_recovery_releases_cache_even_if_final_request_fails (test_answers.AllocatorTests.test_recovery_releases_cache_even_if_final_request_fails)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-16-cuda-caching-allocator/code/test_answers.py", line 140, in test_recovery_releases_cache_even_if_final_request_fails
+    allocator = Allocator(8, 8)
+                ^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-16-cuda-caching-allocator/code/allocator_model.py", line 10, in __init__
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_release_does_not_wait_for_deferred_blocks (test_answers.AllocatorTests.test_release_does_not_wait_for_deferred_blocks)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-16-cuda-caching-allocator/code/test_answers.py", line 163, in test_release_does_not_wait_for_deferred_blocks
+    allocator = Allocator(16, 8)
+                ^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-16-cuda-caching-allocator/code/allocator_model.py", line 10, in __init__
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_snapshot_is_detached_from_later_mutation (test_answers.AllocatorTests.test_snapshot_is_detached_from_later_mutation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-16-cuda-caching-allocator/code/test_answers.py", line 183, in test_snapshot_is_detached_from_later_mutation
+    allocator = Allocator(8, 8)
+                ^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-16-cuda-caching-allocator/code/allocator_model.py", line 10, in __init__
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_split_and_reuse (test_answers.AllocatorTests.test_split_and_reuse)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-16-cuda-caching-allocator/code/test_answers.py", line 73, in test_split_and_reuse
+    allocator = Allocator(16, 8)
+                ^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-16-cuda-caching-allocator/code/allocator_model.py", line 10, in __init__
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_unknown_double_and_pending_free_are_rejected (test_answers.AllocatorTests.test_unknown_double_and_pending_free_are_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-16-cuda-caching-allocator/code/test_answers.py", line 171, in test_unknown_double_and_pending_free_are_rejected
+    allocator = Allocator(8, 8)
+                ^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-16-cuda-caching-allocator/code/allocator_model.py", line 10, in __init__
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_empty_snapshot (test_answers.SnapshotTests.test_empty_snapshot)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-16-cuda-caching-allocator/code/test_answers.py", line 14, in test_empty_snapshot
+    self.assertEqual(summarize(()), Totals(0, 0, 0, 0, 0, 0, 0, 0))
+                     ^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-16-cuda-caching-allocator/code/snapshot_stats.py", line 10, in summarize
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_reserved_gap_can_be_all_awaiting (test_answers.SnapshotTests.test_reserved_gap_can_be_all_awaiting)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-16-cuda-caching-allocator/code/test_answers.py", line 25, in test_reserved_gap_can_be_all_awaiting
+    totals = summarize((Segment(0, (Block(8, "active_awaiting_free"),)),))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-16-cuda-caching-allocator/code/snapshot_stats.py", line 10, in summarize
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_same_gap_can_be_all_releasable (test_answers.SnapshotTests.test_same_gap_can_be_all_releasable)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-16-cuda-caching-allocator/code/test_answers.py", line 31, in test_same_gap_can_be_all_releasable
+    totals = summarize((Segment(0, (Block(8, "inactive"),)),))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-16-cuda-caching-allocator/code/snapshot_stats.py", line 10, in summarize
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_three_states_and_whole_segment_release (test_answers.SnapshotTests.test_three_states_and_whole_segment_release)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-16-cuda-caching-allocator/code/test_answers.py", line 22, in test_three_states_and_whole_segment_release
+    self.assertEqual(summarize(segments), Totals(16, 4, 2, 10, 8, 2, 8, 2))
+                     ^^^^^^^^^^^^^^^^^^^
+  File "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/drafts/2026-11-16-cuda-caching-allocator/code/snapshot_stats.py", line 10, in summarize
+    raise NotImplementedError
+NotImplementedError
+
+----------------------------------------------------------------------
+Ran 23 tests in 0.002s
+
+FAILED (errors=26)

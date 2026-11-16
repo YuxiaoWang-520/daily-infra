@@ -1,0 +1,116 @@
+{
+  "recorded_at": "2026-11-16T11:37:27.337339+08:00",
+  "commands": [
+    {
+      "started_at": "2026-11-16T11:37:22.284513+08:00",
+      "argv": [
+        "/Users/wangyuxiao/miniforge3/envs/ai-infra/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "code",
+        "-p",
+        "test_answers.py",
+        "-v"
+      ],
+      "cwd": "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/wiki/2026/11/2026-11-16-cuda-caching-allocator",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONOPTIMIZE": "0"
+      },
+      "exit_code": 0,
+      "log": "02-tests.txt"
+    },
+    {
+      "started_at": "2026-11-16T11:37:24.419143+08:00",
+      "argv": [
+        "/Users/wangyuxiao/miniforge3/envs/ai-infra/bin/python",
+        "-m",
+        "ruff",
+        "--version"
+      ],
+      "cwd": "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/wiki/2026/11/2026-11-16-cuda-caching-allocator",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONOPTIMIZE": "0"
+      },
+      "exit_code": 0,
+      "log": "03-ruff-version.txt"
+    },
+    {
+      "started_at": "2026-11-16T11:37:24.586681+08:00",
+      "argv": [
+        "/Users/wangyuxiao/miniforge3/envs/ai-infra/bin/python",
+        "-m",
+        "ruff",
+        "check",
+        "code"
+      ],
+      "cwd": "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/wiki/2026/11/2026-11-16-cuda-caching-allocator",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONOPTIMIZE": "0"
+      },
+      "exit_code": 0,
+      "log": "03-ruff.txt"
+    },
+    {
+      "started_at": "2026-11-16T11:37:24.758688+08:00",
+      "argv": [
+        "/Users/wangyuxiao/miniforge3/envs/ai-infra/bin/python",
+        "-m",
+        "ruff",
+        "format",
+        "--check",
+        "code"
+      ],
+      "cwd": "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/wiki/2026/11/2026-11-16-cuda-caching-allocator",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONOPTIMIZE": "0"
+      },
+      "exit_code": 0,
+      "log": "04-format.txt"
+    },
+    {
+      "started_at": "2026-11-16T11:37:24.937398+08:00",
+      "argv": [
+        "/Users/wangyuxiao/miniforge3/envs/ai-infra/bin/python",
+        "code/run_lab.py"
+      ],
+      "cwd": "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/wiki/2026/11/2026-11-16-cuda-caching-allocator",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONOPTIMIZE": "0"
+      },
+      "exit_code": 0,
+      "log": "05-model-lab.txt"
+    },
+    {
+      "started_at": "2026-11-16T11:37:25.706618+08:00",
+      "argv": [
+        "/Users/wangyuxiao/miniforge3/envs/ai-infra/bin/python",
+        "-O",
+        "code/run_lab.py"
+      ],
+      "cwd": "/Users/wangyuxiao/Documents/ChatGPT/daily-infra/wiki/2026/11/2026-11-16-cuda-caching-allocator",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONOPTIMIZE": "0"
+      },
+      "exit_code": 0,
+      "log": "05-optimized-model-lab.txt"
+    }
+  ],
+  "optimized_and_normal_model_results_equal": true,
+  "code_sha256": {
+    "allocator_model.py": "e8d481fb40a9665fc76ffddad24f8f21e69a694c51d87acc91066feafd9936d5",
+    "exercise_allocator.py": "205b30b445d596cc5538d7309d9b39370edeb9d36402838bd5d04c45e18eb061",
+    "exercise_stats.py": "9b7ea620ca8a615b3ea036fafa1fcfa441bb14cb5865472c6394289885719164",
+    "model_types.py": "35f3c9d456bf05ada0f98141e3865faed448544fa881e2e95bde7939702c3a9a",
+    "run_lab.py": "b39d7efca952a309b4e20340375e6d57800f913428c7c922e6775d33dc2cccc9",
+    "snapshot_stats.py": "48dd4ff4f509f8433f1b07712bc7133806bf3fceede94c13caa5b4b4b829521c",
+    "test_answers.py": "6007a0592512a0c7bf75200ddabc69889393ebe93331d669623ecce57972be3f"
+  }
+}

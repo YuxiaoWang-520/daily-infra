@@ -1,0 +1,60 @@
+Upstream https://github.com/pytorch/pytorch
+Commit 2a2d844941bf776d1a49a8ff8730e90f5242f836
+Path c10/core/AllocatorConfig.h
+License ../LICENSE
+
+--- lines 10-23 ---
+10: #include <vector>
+11: 
+12: namespace c10::CachingAllocator {
+13: 
+14: // "small" allocations are packed in 2 MiB blocks
+15: constexpr size_t kSmallBuffer = 2097152;
+16: // all sizes are rounded to at least 512 bytes
+17: constexpr size_t kMinBlockSize = 512;
+18: // largest "small" allocation is 1 MiB
+19: constexpr size_t kSmallSize = 1048576;
+20: // allocations between 1 and 10 MiB may use kLargeBuffer
+21: constexpr size_t kMinLargeAlloc = 10485760;
+22: // round up large allocations to 2 MiB
+23: constexpr size_t kRoundLarge = 2097152;
+
+--- lines 170-184 ---
+170:   /* Device allocator settings */
+171: 
+172:   static size_t large_segment_size() {
+173:     return instance().large_segment_size_;
+174:   }
+175: 
+176:   // Returns the maximum block size (in MB) that is allowed to be split. The
+177:   // default is unlimited (all blocks can be split).
+178:   static size_t max_split_size() {
+179:     return instance().max_split_size_;
+180:   }
+181: 
+182:   // Returns the maximum block size (in MB) that is allowed to be rounded up
+183:   // without requiring splitting when searching for a free block. The default is
+184:   // 20 MiB.
+
+--- lines 335-354 ---
+335:   /* The following members are specifically used for the device allocator. */
+336: 
+337:   // "large" allocations may be packed in blocks of this size
+338:   std::atomic<size_t> large_segment_size_{20971520}; // 20 MB by default
+339:   // The maximum block size that is allowed to be split.
+340:   std::atomic<size_t> max_split_size_{std::numeric_limits<size_t>::max()};
+341:   // The maximum allowable extra size of a memory block without requiring
+342:   // splitting when searching for a free block.
+343:   std::atomic<size_t> max_non_split_rounding_size_;
+344:   // Used to store how memory allocations of different sizes should be rounded
+345:   // up to the nearest power of 2 divisions.
+346:   std::vector<size_t> roundup_power2_divisions_;
+347:   // The threshold that triggers garbage collection when the ratio of used
+348:   // memory to maximum allowed memory exceeds this value.
+349:   std::atomic<double> garbage_collection_threshold_{0};
+350:   // A flag to enable expandable segments feature.
+351:   std::atomic<bool> use_expandable_segments_{false};
+352: 
+353:   /* The following members are specifically used for the host allocator. */
+354: 
+

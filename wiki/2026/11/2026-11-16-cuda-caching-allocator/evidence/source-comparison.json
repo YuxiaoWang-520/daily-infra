@@ -1,0 +1,24 @@
+{
+  "compared_at": "2026-11-16T11:22:58.779824+08:00",
+  "path": "c10/cuda/CUDACachingAllocator.cpp",
+  "functions": [
+    "should_split",
+    "get_allocation_size"
+  ],
+  "main_ranges": [
+    [
+      4185,
+      4213
+    ]
+  ],
+  "stable_ranges": [
+    [
+      3837,
+      3865
+    ]
+  ],
+  "identical_text": true,
+  "sha256_without_final_newline": "7ecab5cc00f3e9ccabd1e4201306dac09dea3f40ddce0cc657f6eb5529ac2e0d",
+  "scope": "Only these two functions, without whole-allocator equivalence",
+  "observed_difference": "main free_locked begins with capture_tracker_.recordFree when captures are active; the corresponding stable function starts by clearing allocated."
+}

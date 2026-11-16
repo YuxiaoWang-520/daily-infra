@@ -1,0 +1,45 @@
+{
+  "recorded_at": "2026-11-16T11:35:13.608470+08:00",
+  "access_date": "2026-11-16",
+  "searches": [
+    "site.docs.pytorch.org CUDA memory management caching allocator memory_reserved inactive_split empty_cache",
+    "site.github.com/pytorch/pytorch CUDACachingAllocator.cpp native cudaMallocAsync release_cached_blocks"
+  ],
+  "official_documents_read": [
+    {
+      "url": "https://docs.pytorch.org/docs/2.15/notes/cuda.html",
+      "sections": [
+        "Memory management",
+        "Optimizing memory usage with PYTORCH_ALLOC_CONF",
+        "CUDA streams"
+      ]
+    },
+    {
+      "url": "https://docs.pytorch.org/docs/2.15/torch_cuda_memory.html",
+      "sections": [
+        "Snapshot API Reference",
+        "Identifying Non-PyTorch allocations"
+      ]
+    },
+    {
+      "url": "https://docs.pytorch.org/devlogs/eager/2026-06-01-cuda-caching-allocator/",
+      "author": "Edward Yang",
+      "published": "2026-06-01",
+      "sections": [
+        "Segments, blocks, and splitting",
+        "Without expandable segments",
+        "Expandable segments don’t eliminate all fragmentation"
+      ]
+    }
+  ],
+  "github_api_checks": [
+    "repos/pytorch/pytorch",
+    "repos/pytorch/pytorch/releases/latest",
+    "repos/pytorch/pytorch/commits/main"
+  ],
+  "source_read_method": "git show pinned main and stable objects, curated numbered excerpts with original blob and excerpt hashes",
+  "notes": [
+    "Source-derived defaults were separated from the 8 MiB minimum segment in the teaching model.",
+    "Snapshots and operation counts were generated locally on CPU, without CUDA execution."
+  ]
+}

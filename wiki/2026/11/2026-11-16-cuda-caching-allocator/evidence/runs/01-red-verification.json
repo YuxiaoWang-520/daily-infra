@@ -1,0 +1,16 @@
+{
+  "started_at": "2026-11-16T11:11:06.982779+08:00",
+  "argv": [
+    "/Users/wangyuxiao/miniforge3/envs/ai-infra/bin/python",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "code",
+    "-p",
+    "test_answers.py",
+    "-v"
+  ],
+  "exit_code": 1,
+  "log": "01-red-tests.txt"
+}

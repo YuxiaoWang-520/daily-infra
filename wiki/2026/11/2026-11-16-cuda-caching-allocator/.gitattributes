@@ -1,0 +1,2 @@
+evidence/upstream/** -whitespace
+evidence/runs/01-red-tests.txt -whitespace

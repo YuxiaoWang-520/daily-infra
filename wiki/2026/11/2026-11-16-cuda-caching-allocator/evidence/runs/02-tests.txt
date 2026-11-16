@@ -1,0 +1,29 @@
+test_best_fit_chooses_smallest_sufficient_block (test_answers.AllocatorTests.test_best_fit_chooses_smallest_sufficient_block) ... ok
+test_deferred_free_stays_active_until_completion (test_answers.AllocatorTests.test_deferred_free_stays_active_until_completion) ... ok
+test_different_segments_do_not_merge (test_answers.AllocatorTests.test_different_segments_do_not_merge) ... ok
+test_exact_fit_has_no_empty_remainder (test_answers.AllocatorTests.test_exact_fit_has_no_empty_remainder) ... ok
+test_fragmented_oom_then_neighbor_release (test_answers.AllocatorTests.test_fragmented_oom_then_neighbor_release) ... ok
+test_free_coalesces_both_neighbors (test_answers.AllocatorTests.test_free_coalesces_both_neighbors) ... ok
+test_invalid_capacity_and_segment_size (test_answers.AllocatorTests.test_invalid_capacity_and_segment_size) ... ok
+test_invalid_requests_preserve_state (test_answers.AllocatorTests.test_invalid_requests_preserve_state) ... ok
+test_oom_retry_returns_whole_segments_before_growing (test_answers.AllocatorTests.test_oom_retry_returns_whole_segments_before_growing) ... ok
+test_randomized_traces_preserve_byte_accounting (test_answers.AllocatorTests.test_randomized_traces_preserve_byte_accounting) ... ok
+test_recovery_releases_cache_even_if_final_request_fails (test_answers.AllocatorTests.test_recovery_releases_cache_even_if_final_request_fails) ... ok
+test_release_does_not_wait_for_deferred_blocks (test_answers.AllocatorTests.test_release_does_not_wait_for_deferred_blocks) ... ok
+test_snapshot_is_detached_from_later_mutation (test_answers.AllocatorTests.test_snapshot_is_detached_from_later_mutation) ... ok
+test_split_and_reuse (test_answers.AllocatorTests.test_split_and_reuse) ... ok
+test_unknown_double_and_pending_free_are_rejected (test_answers.AllocatorTests.test_unknown_double_and_pending_free_are_rejected) ... ok
+test_optimized_execution_performs_state_transitions (test_answers.LabTests.test_optimized_execution_performs_state_transitions) ... ok
+test_empty_segment_is_invalid (test_answers.SnapshotTests.test_empty_segment_is_invalid) ... ok
+test_empty_snapshot (test_answers.SnapshotTests.test_empty_snapshot) ... ok
+test_invalid_block_sizes (test_answers.SnapshotTests.test_invalid_block_sizes) ... ok
+test_invalid_state (test_answers.SnapshotTests.test_invalid_state) ... ok
+test_reserved_gap_can_be_all_awaiting (test_answers.SnapshotTests.test_reserved_gap_can_be_all_awaiting) ... ok
+test_same_gap_can_be_all_releasable (test_answers.SnapshotTests.test_same_gap_can_be_all_releasable) ... ok
+test_snapshot_types_are_immutable (test_answers.SnapshotTests.test_snapshot_types_are_immutable) ... ok
+test_three_states_and_whole_segment_release (test_answers.SnapshotTests.test_three_states_and_whole_segment_release) ... ok
+
+----------------------------------------------------------------------
+Ran 24 tests in 2.043s
+
+OK

@@ -1,0 +1,32 @@
+{
+  "checked_at": "2026-11-16T11:45:57.660816+08:00",
+  "status": "passed",
+  "article": "wiki/2026/11/2026-11-16-cuda-caching-allocator",
+  "article_files": 46,
+  "local_links_checked": 145,
+  "index_articles": 26,
+  "same_day_articles": 1,
+  "source_records_reconstructed": 8,
+  "source_lines_verified": 1247,
+  "tested_code_files_matched": 7,
+  "unittest_passed": 24,
+  "seeded_random_trace_steps": 500,
+  "commands_passed": 6,
+  "normal_and_optimized_model_results_equal": true,
+  "model_scenarios": [
+    "fragmentation_and_recovery",
+    "whole_segment_retry",
+    "deferred_completion",
+    "cache_reuse",
+    "same_reserved_gap"
+  ],
+  "cuda_runtime_executed": false,
+  "mermaid_source_matches": true,
+  "formula_delimiters_valid": true,
+  "exercise_answers": 2,
+  "checksummed_files": 43,
+  "checksum_exit_code": 0,
+  "secret_pattern_hits": 0,
+  "git_preflight_passed": true,
+  "git_sync_status": "ready_to_commit"
+}

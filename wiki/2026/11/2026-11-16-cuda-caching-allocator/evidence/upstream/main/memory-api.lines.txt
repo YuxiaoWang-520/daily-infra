@@ -1,0 +1,143 @@
+Upstream https://github.com/pytorch/pytorch
+Commit 2a2d844941bf776d1a49a8ff8730e90f5242f836
+Path torch/cuda/memory.py
+License ../LICENSE
+
+--- lines 222-234 ---
+222: def empty_cache() -> None:
+223:     r"""Release all unoccupied cached memory currently held by the caching
+224:     allocator so that those can be used in other GPU application and visible in
+225:     `nvidia-smi`.
+226: 
+227:     .. note::
+228:         :func:`~torch.cuda.empty_cache` doesn't increase the amount of GPU
+229:         memory available for PyTorch. However, it may help reduce fragmentation
+230:         of GPU memory in certain cases. See :ref:`cuda-memory-management` for
+231:         more details about GPU memory management.
+232:     """
+233:     if is_initialized():
+234:         torch._C._cuda_emptyCache()
+
+--- lines 255-270 ---
+255:     - ``"allocated.{all,large_pool,small_pool}.{current,peak,allocated,freed}"``:
+256:       number of allocation requests received by the memory allocator.
+257:     - ``"allocated_bytes.{all,large_pool,small_pool}.{current,peak,allocated,freed}"``:
+258:       amount of allocated memory.
+259:     - ``"segment.{all,large_pool,small_pool}.{current,peak,allocated,freed}"``:
+260:       number of reserved segments from ``cudaMalloc()``.
+261:     - ``"reserved_bytes.{all,large_pool,small_pool}.{current,peak,allocated,freed}"``:
+262:       amount of reserved memory.
+263:     - ``"active.{all,large_pool,small_pool}.{current,peak,allocated,freed}"``:
+264:       number of active memory blocks.
+265:     - ``"active_bytes.{all,large_pool,small_pool}.{current,peak,allocated,freed}"``:
+266:       amount of active memory.
+267:     - ``"inactive_split.{all,large_pool,small_pool}.{current,peak,allocated,freed}"``:
+268:       number of inactive, non-releasable memory blocks.
+269:     - ``"inactive_split_bytes.{all,large_pool,small_pool}.{current,peak,allocated,freed}"``:
+270:       amount of inactive, non-releasable memory.
+
+--- lines 289-321 ---
+289:     In addition to the core statistics, we also provide some simple event
+290:     counters:
+291: 
+292:     - ``"num_alloc_retries"``: number of failed ``cudaMalloc`` calls that
+293:       result in a cache flush and retry.
+294:     - ``"num_ooms"``: number of out-of-memory errors thrown.
+295:     - ``"num_sync_all_streams"``: number of ``synchronize_and_free_events`` calls.
+296:     - ``"num_device_alloc"``: number of CUDA allocation calls. This includes both
+297:       cuMemMap and cudaMalloc.
+298:     - ``"num_device_free"``: number of CUDA free calls. This includes both cuMemUnmap
+299:       and cudaFree.
+300:     - ``"num_oom_rejections"``: number of allocations preemptively rejected by the
+301:         throw_on_cudamalloc_oom + per_process_memory_fraction policy.
+302: 
+303:     The caching allocator can be configured via ENV to not split blocks larger than a
+304:     defined size (see Memory Management section of the Cuda Semantics documentation).
+305:     This helps avoid memory fragmentation but may have a performance
+306:     penalty. Additional outputs to assist with tuning and evaluating impact:
+307: 
+308:     - ``"max_split_size"``: blocks above this size will not be split.
+309:     - ``"oversize_allocations.{current,peak,allocated,freed}"``:
+310:       number of over-size allocation requests received by the memory allocator.
+311:     - ``"oversize_segments.{current,peak,allocated,freed}"``:
+312:       number of over-size reserved segments from ``cudaMalloc()``.
+313: 
+314:     The caching allocator can be configured via ENV to round memory allocations in order
+315:     to reduce fragmentation. Sometimes the overhead from rounding can be higher than
+316:     the fragmentation it helps reduce. The following stat can be used to check if
+317:     rounding adds too much overhead:
+318: 
+319:     - ``"requested_bytes.{all,large_pool,small_pool}.{current,peak,allocated,freed}"``:
+320:       memory requested by client code, compare this with allocated_bytes to check if
+321:       allocation rounding adds too much overhead.
+
+--- lines 334-340 ---
+334:     .. note::
+335:         See :ref:`cuda-memory-management` for more details about GPU memory
+336:         management.
+337: 
+338:     .. note::
+339:         With :ref:`backend:cudaMallocAsync<cuda-memory-envvars>`, some stats are not
+340:         meaningful, and are always reported as zero.
+
+--- lines 631-654 ---
+631: def memory_snapshot(mempool_id=None, include_traces=True):
+632:     r"""Return a snapshot of the CUDA memory allocator state across all devices.
+633: 
+634:     Interpreting the output of this function requires familiarity with the
+635:     memory allocator internals.
+636: 
+637:     Args:
+638:         mempool_id: Optional memory pool ID to get snapshot for a specific pool
+639:         include_traces: Whether to include trace entries in the snapshot.
+640:             If True (default), all trace entries are included.
+641:             If False, no trace entries are included (lightweight/fast snapshot).
+642: 
+643:     .. note::
+644:         See :ref:`cuda-memory-management` for more details about GPU memory
+645:         management.
+646:     """
+647:     if mempool_id is None:
+648:         # pyrefly: ignore [bad-argument-type]
+649:         return torch._C._cuda_memorySnapshot((0, 0, include_traces))["segments"]
+650:     else:
+651:         return torch._C._cuda_memorySnapshot(
+652:             # pyrefly: ignore [bad-argument-type]
+653:             (mempool_id[0], mempool_id[1], include_traces)
+654:         )["segments"]
+
+--- lines 1140-1172 ---
+1140:         class Segment(TypedDict):
+1141:             # Segments are memory returned from a cudaMalloc call.
+1142:             # The size of reserved memory is the sum of all Segments.
+1143:             # Segments are cached and reused for future allocations.
+1144:             # If the reuse is smaller than the segment, the segment
+1145:             # is split into more than one Block.
+1146:             # empty_cache() frees Segments that are entirely inactive.
+1147:             address: int
+1148:             total_size: int  #  cudaMalloc'd size of segment
+1149:             stream: int
+1150:             segment_type: Literal["small", "large"]  # 'large' (>1MB)
+1151:             segment_pool_id: Tuple[
+1152:                 int, int
+1153:             ]  # id of the memory pool owning this segment
+1154:             allocated_size: int  # size of memory in use
+1155:             active_size: int  # size of memory in use or in active_awaiting_free state
+1156:             blocks: List[Block]
+1157: 
+1158: 
+1159:         class Block(TypedDict):
+1160:             # A piece of memory returned from the allocator, or
+1161:             # current cached but inactive.
+1162:             size: int
+1163:             requested_size: int  # size requested during malloc, may be smaller than
+1164:             # size due to rounding
+1165:             address: int
+1166:             state: Literal[
+1167:                 "active_allocated",  # used by a tensor
+1168:                 "active_awaiting_free",  # waiting for another stream to finish using
+1169:                 # this, then it will become free
+1170:                 "inactive",
+1171:             ]  # free for reuse
+1172:             frames: List[Frame]  # stack trace from where the allocation occurred
+

@@ -1,0 +1,267 @@
+{
+  "recorded_at": "2026-11-16T11:22:58.721363+08:00",
+  "repository": "https://github.com/pytorch/pytorch",
+  "default_branch": "main",
+  "commits": {
+    "main": "2a2d844941bf776d1a49a8ff8730e90f5242f836",
+    "v2.15.0": "31a77fc9c0a7c6fff15a1ff58c743f53b1a9d457"
+  },
+  "records": [
+    {
+      "label": "main",
+      "commit": "2a2d844941bf776d1a49a8ff8730e90f5242f836",
+      "path": "c10/cuda/CUDACachingAllocator.cpp",
+      "ranges": [
+        [
+          110,
+          137
+        ],
+        [
+          355,
+          400
+        ],
+        [
+          1883,
+          1950
+        ],
+        [
+          2304,
+          2389
+        ],
+        [
+          2628,
+          2685
+        ],
+        [
+          2747,
+          2778
+        ],
+        [
+          2807,
+          2821
+        ],
+        [
+          3312,
+          3324
+        ],
+        [
+          4032,
+          4096
+        ],
+        [
+          4151,
+          4175
+        ],
+        [
+          4185,
+          4226
+        ],
+        [
+          4261,
+          4272
+        ],
+        [
+          4581,
+          4596
+        ],
+        [
+          4775,
+          4799
+        ],
+        [
+          4807,
+          4838
+        ],
+        [
+          4867,
+          4884
+        ],
+        [
+          4905,
+          4937
+        ],
+        [
+          5120,
+          5144
+        ],
+        [
+          5369,
+          5372
+        ],
+        [
+          5521,
+          5546
+        ]
+      ],
+      "blob_sha256": "96522e0cb27477473fd13bbbc889efb50ec786b1a5d1698491cd85abcb6f0878",
+      "excerpt": "main/native-core.lines.txt",
+      "excerpt_sha256": "123869c032633850ad36ce807c2b845abc56e8aae3ba9b03a6a7137af14278a9",
+      "permalink": "https://github.com/pytorch/pytorch/blob/2a2d844941bf776d1a49a8ff8730e90f5242f836/c10/cuda/CUDACachingAllocator.cpp"
+    },
+    {
+      "label": "main",
+      "commit": "2a2d844941bf776d1a49a8ff8730e90f5242f836",
+      "path": "torch/cuda/memory.py",
+      "ranges": [
+        [
+          222,
+          234
+        ],
+        [
+          255,
+          270
+        ],
+        [
+          289,
+          321
+        ],
+        [
+          334,
+          340
+        ],
+        [
+          631,
+          654
+        ],
+        [
+          1140,
+          1172
+        ]
+      ],
+      "blob_sha256": "cd5882d9fcb3b8de65be9d4cf93558dc1844f605ac39d3bcbcaa8db6dbcd56ba",
+      "excerpt": "main/memory-api.lines.txt",
+      "excerpt_sha256": "074ef513ecf039fbad6b22cafeb4541cbfb3b0b654ff109d08fe3ce2f81af82e",
+      "permalink": "https://github.com/pytorch/pytorch/blob/2a2d844941bf776d1a49a8ff8730e90f5242f836/torch/cuda/memory.py"
+    },
+    {
+      "label": "main",
+      "commit": "2a2d844941bf776d1a49a8ff8730e90f5242f836",
+      "path": "c10/core/AllocatorConfig.h",
+      "ranges": [
+        [
+          10,
+          23
+        ],
+        [
+          170,
+          184
+        ],
+        [
+          335,
+          354
+        ]
+      ],
+      "blob_sha256": "2dcf3452616e6e86bbf70e583723fdd5dab3422e5e6b1926cf5fe8840d740f18",
+      "excerpt": "main/allocator-config.lines.txt",
+      "excerpt_sha256": "f3506be1d8f4815f85408c46374c3ed7c8cb62722ec223d8ba2129788e574cd1",
+      "permalink": "https://github.com/pytorch/pytorch/blob/2a2d844941bf776d1a49a8ff8730e90f5242f836/c10/core/AllocatorConfig.h"
+    },
+    {
+      "label": "main",
+      "commit": "2a2d844941bf776d1a49a8ff8730e90f5242f836",
+      "path": "c10/cuda/CUDAAllocatorConfig.h",
+      "ranges": [
+        [
+          208,
+          228
+        ]
+      ],
+      "blob_sha256": "715ef63b24a5c39f9cea7c76e9d31ba49623948cb43a067eff3bff380e99dad8",
+      "excerpt": "main/cuda-config.lines.txt",
+      "excerpt_sha256": "69eaefb82065b51f35b3b51dcc0438ba1e1392d9794f2399d0d3c12cd9e977fc",
+      "permalink": "https://github.com/pytorch/pytorch/blob/2a2d844941bf776d1a49a8ff8730e90f5242f836/c10/cuda/CUDAAllocatorConfig.h"
+    },
+    {
+      "label": "main",
+      "commit": "2a2d844941bf776d1a49a8ff8730e90f5242f836",
+      "path": "c10/cuda/CUDAAllocatorConfig.cpp",
+      "ranges": [
+        [
+          16,
+          28
+        ],
+        [
+          109,
+          147
+        ]
+      ],
+      "blob_sha256": "09b9c990b520cda3d73e2f838800d774a66091fd9d287ccca6cbeeda4363013a",
+      "excerpt": "main/cuda-options.lines.txt",
+      "excerpt_sha256": "c25c3e44ff4eb9f5273f8cf54ec1624267a2507243de461591161360b1933da5",
+      "permalink": "https://github.com/pytorch/pytorch/blob/2a2d844941bf776d1a49a8ff8730e90f5242f836/c10/cuda/CUDAAllocatorConfig.cpp"
+    },
+    {
+      "label": "main",
+      "commit": "2a2d844941bf776d1a49a8ff8730e90f5242f836",
+      "path": "torch/csrc/cuda/Module.cpp",
+      "ranges": [
+        [
+          575,
+          581
+        ],
+        [
+          2587,
+          2588
+        ]
+      ],
+      "blob_sha256": "4d473e544e2c188f0b3e54390f69aa1cdf8254db5ee2a386ce49fc7ccc048480",
+      "excerpt": "main/python-binding.lines.txt",
+      "excerpt_sha256": "9bf5469ff462d591eba8a372005ef12b38132fabaac4d2740041d924cf789883",
+      "permalink": "https://github.com/pytorch/pytorch/blob/2a2d844941bf776d1a49a8ff8730e90f5242f836/torch/csrc/cuda/Module.cpp"
+    },
+    {
+      "label": "v2.15.0",
+      "commit": "31a77fc9c0a7c6fff15a1ff58c743f53b1a9d457",
+      "path": "c10/cuda/CUDACachingAllocator.cpp",
+      "ranges": [
+        [
+          1825,
+          1908
+        ],
+        [
+          2560,
+          2613
+        ],
+        [
+          3684,
+          3748
+        ],
+        [
+          3837,
+          3878
+        ],
+        [
+          4218,
+          4234
+        ],
+        [
+          4408,
+          4432
+        ]
+      ],
+      "blob_sha256": "9213950d664615c45ba251d76af7c3e0f6ed5eb2dda75ac0a4dfab4450ffecf5",
+      "excerpt": "v2.15.0/native-core.lines.txt",
+      "excerpt_sha256": "4b023c17191c7bc2f6b6dcc21c05affd3c05093b6a2b93a30616e3f12b33ab01",
+      "permalink": "https://github.com/pytorch/pytorch/blob/31a77fc9c0a7c6fff15a1ff58c743f53b1a9d457/c10/cuda/CUDACachingAllocator.cpp"
+    },
+    {
+      "label": "v2.15.0",
+      "commit": "31a77fc9c0a7c6fff15a1ff58c743f53b1a9d457",
+      "path": "c10/core/AllocatorConfig.h",
+      "ranges": [
+        [
+          10,
+          23
+        ],
+        [
+          335,
+          354
+        ]
+      ],
+      "blob_sha256": "2dcf3452616e6e86bbf70e583723fdd5dab3422e5e6b1926cf5fe8840d740f18",
+      "excerpt": "v2.15.0/allocator-config.lines.txt",
+      "excerpt_sha256": "4c744e86c35777e8cd4241ce1cd4172ebe9d34b0d05f90c02863485b0a2fde7c",
+      "permalink": "https://github.com/pytorch/pytorch/blob/31a77fc9c0a7c6fff15a1ff58c743f53b1a9d457/c10/core/AllocatorConfig.h"
+    }
+  ]
+}

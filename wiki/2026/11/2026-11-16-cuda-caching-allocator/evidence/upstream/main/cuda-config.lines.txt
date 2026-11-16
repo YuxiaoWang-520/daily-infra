@@ -1,0 +1,28 @@
+Upstream https://github.com/pytorch/pytorch
+Commit 2a2d844941bf776d1a49a8ff8730e90f5242f836
+Path c10/cuda/CUDAAllocatorConfig.h
+License ../LICENSE
+
+--- lines 208-228 ---
+208:   static CUDAAllocatorConfig& instance() {
+209:     static CUDAAllocatorConfig* s_instance = ([]() {
+210:       auto inst = new CUDAAllocatorConfig();
+211:       auto env = c10::utils::get_env("PYTORCH_CUDA_ALLOC_CONF");
+212: #ifdef USE_ROCM
+213:       // convenience for ROCm users, allow alternative HIP token
+214:       if (!env.has_value()) {
+215:         env = c10::utils::get_env("PYTORCH_HIP_ALLOC_CONF");
+216:       }
+217: #endif
+218:       // Note: keep the parsing order and logic stable to avoid potential
+219:       // performance regressions in internal tests.
+220:       if (!env.has_value()) {
+221:         env = c10::utils::get_env("PYTORCH_ALLOC_CONF");
+222:       }
+223:       if (env.has_value()) {
+224:         inst->parseArgs(env.value());
+225:       }
+226:       return inst;
+227:     })();
+228:     return *s_instance;
+

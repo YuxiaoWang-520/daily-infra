@@ -1,0 +1,11 @@
+{
+  "started_at": "2026-11-16T11:25:41.224305+08:00",
+  "argv": [
+    "/Users/wangyuxiao/miniforge3/envs/ai-infra/bin/python",
+    "-O",
+    "code/run_lab.py"
+  ],
+  "exit_code": 1,
+  "log": "01-optimized-red-lab.txt",
+  "run_lab_sha256_before_fix": "032227cccd4ab762c9a6b4fb22f94135f0bb7a34a6011e2ab530675e0c97a424"
+}
