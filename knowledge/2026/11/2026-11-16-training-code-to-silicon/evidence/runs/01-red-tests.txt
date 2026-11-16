@@ -1,0 +1,94 @@
+test_cpu_profile_observes_three_matrix_multiplications (test_walkthrough.PyTorchTests.test_cpu_profile_observes_three_matrix_multiplications) ... ERROR
+test_float32_matches_scalar_reference (test_walkthrough.PyTorchTests.test_float32_matches_scalar_reference) ... ERROR
+test_float64_matches_scalar_reference (test_walkthrough.PyTorchTests.test_float64_matches_scalar_reference) ... ERROR
+test_fx_forward_matches_the_example (test_walkthrough.PyTorchTests.test_fx_forward_matches_the_example) ... ok
+test_finite_differences_for_all_trainable_and_input_values (test_walkthrough.ReferenceTests.test_finite_differences_for_all_trainable_and_input_values) ... ERROR
+test_forward_values (test_walkthrough.ReferenceTests.test_forward_values) ... ERROR
+test_known_gradients (test_walkthrough.ReferenceTests.test_known_gradients) ... ERROR
+test_sgd_update (test_walkthrough.ReferenceTests.test_sgd_update) ... ERROR
+
+======================================================================
+ERROR: test_cpu_profile_observes_three_matrix_multiplications (test_walkthrough.PyTorchTests.test_cpu_profile_observes_three_matrix_multiplications)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/knowledge/2026-11-16-training-code-to-silicon/code/test_walkthrough.py", line 82, in test_cpu_profile_observes_three_matrix_multiplications
+    result = run_step()
+             ^^^^^^^^^^
+  File "<repo>/drafts/knowledge/2026-11-16-training-code-to-silicon/code/walkthrough.py", line 14, in run_step
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_float32_matches_scalar_reference (test_walkthrough.PyTorchTests.test_float32_matches_scalar_reference)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/knowledge/2026-11-16-training-code-to-silicon/code/test_walkthrough.py", line 65, in test_float32_matches_scalar_reference
+    self.check_dtype("float32", 1e-5)
+  File "<repo>/drafts/knowledge/2026-11-16-training-code-to-silicon/code/test_walkthrough.py", line 71, in check_dtype
+    actual, expected = run_step(dtype_name), reference_step()
+                       ^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/drafts/knowledge/2026-11-16-training-code-to-silicon/code/walkthrough.py", line 14, in run_step
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_float64_matches_scalar_reference (test_walkthrough.PyTorchTests.test_float64_matches_scalar_reference)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/knowledge/2026-11-16-training-code-to-silicon/code/test_walkthrough.py", line 68, in test_float64_matches_scalar_reference
+    self.check_dtype("float64", 1e-12)
+  File "<repo>/drafts/knowledge/2026-11-16-training-code-to-silicon/code/test_walkthrough.py", line 71, in check_dtype
+    actual, expected = run_step(dtype_name), reference_step()
+                       ^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/drafts/knowledge/2026-11-16-training-code-to-silicon/code/walkthrough.py", line 14, in run_step
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_finite_differences_for_all_trainable_and_input_values (test_walkthrough.ReferenceTests.test_finite_differences_for_all_trainable_and_input_values)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/knowledge/2026-11-16-training-code-to-silicon/code/test_walkthrough.py", line 39, in test_finite_differences_for_all_trainable_and_input_values
+    reference = reference_step()
+                ^^^^^^^^^^^^^^^^
+  File "<repo>/drafts/knowledge/2026-11-16-training-code-to-silicon/code/reference.py", line 13, in reference_step
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_forward_values (test_walkthrough.ReferenceTests.test_forward_values)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/knowledge/2026-11-16-training-code-to-silicon/code/test_walkthrough.py", line 14, in test_forward_values
+    result = reference_step()
+             ^^^^^^^^^^^^^^^^
+  File "<repo>/drafts/knowledge/2026-11-16-training-code-to-silicon/code/reference.py", line 13, in reference_step
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_known_gradients (test_walkthrough.ReferenceTests.test_known_gradients)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/knowledge/2026-11-16-training-code-to-silicon/code/test_walkthrough.py", line 22, in test_known_gradients
+    result = reference_step()
+             ^^^^^^^^^^^^^^^^
+  File "<repo>/drafts/knowledge/2026-11-16-training-code-to-silicon/code/reference.py", line 13, in reference_step
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_sgd_update (test_walkthrough.ReferenceTests.test_sgd_update)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/knowledge/2026-11-16-training-code-to-silicon/code/test_walkthrough.py", line 31, in test_sgd_update
+    result = reference_step()
+             ^^^^^^^^^^^^^^^^
+  File "<repo>/drafts/knowledge/2026-11-16-training-code-to-silicon/code/reference.py", line 13, in reference_step
+    raise NotImplementedError
+NotImplementedError
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.288s
+
+FAILED (errors=7)

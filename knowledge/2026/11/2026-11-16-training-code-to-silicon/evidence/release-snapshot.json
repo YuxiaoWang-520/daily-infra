@@ -1,0 +1,25 @@
+{
+  "checked_date": "2026-11-16",
+  "timezone": "Asia/Shanghai",
+  "method": "gh api repos/{owner}/{repo}/releases/latest",
+  "releases": [
+    {
+      "repository": "pytorch/pytorch",
+      "tag_name": "v2.15.0",
+      "published_at": "2026-10-28T17:09:49Z",
+      "html_url": "https://github.com/pytorch/pytorch/releases/tag/v2.15.0"
+    },
+    {
+      "repository": "triton-lang/triton",
+      "tag_name": "v3.9.0",
+      "published_at": "2026-10-27T18:56:21Z",
+      "html_url": "https://github.com/triton-lang/triton/releases/tag/v3.9.0"
+    },
+    {
+      "repository": "NVIDIA/open-gpu-kernel-modules",
+      "tag_name": "620.70.06",
+      "published_at": "2026-11-05T00:19:23Z",
+      "html_url": "https://github.com/NVIDIA/open-gpu-kernel-modules/releases/tag/620.70.06"
+    }
+  ]
+}

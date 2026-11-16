@@ -1,0 +1,15 @@
+    atomic_inc(&num_probed_nv_devices);
+
+    if (pci_enable_device(pci_dev) != 0)
+    {
+        nv_printf(NV_DBG_ERRORS,
+            "NVRM: pci_enable_device failed, aborting\n");
+        goto failed;
+    }
+
+    if ((pci_dev->irq == 0 && !pci_find_capability(pci_dev, PCI_CAP_ID_MSIX))
+        && nv_treat_missing_irq_as_error())
+    {
+        nv_printf(NV_DBG_ERRORS, "NVRM: Can't find an IRQ for your NVIDIA card!\n");
+        nv_printf(NV_DBG_ERRORS, "NVRM: Please check your BIOS settings.\n");
+        nv_printf(NV_DBG_ERRORS, "NVRM: [Plug & Play OS] should be set to NO\n");

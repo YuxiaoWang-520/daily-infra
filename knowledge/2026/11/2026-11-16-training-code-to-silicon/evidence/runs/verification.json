@@ -1,0 +1,113 @@
+{
+  "recorded_at": "2026-11-16T16:27:18.977693+08:00",
+  "environment": {
+    "python": "3.12.16",
+    "torch": "2.15.0",
+    "torch_build_commit": "d0f2af8b66b20da4baa50644c0cd3f887a2eae2e",
+    "os": "Darwin",
+    "architecture": "arm64",
+    "cuda_available": false
+  },
+  "checks": [
+    {
+      "name": "02-tests",
+      "argv": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "code",
+        "-p",
+        "test_walkthrough.py",
+        "-v"
+      ],
+      "working_directory": "drafts/knowledge/2026-11-16-training-code-to-silicon",
+      "exit_code": 0,
+      "output": "02-tests.txt"
+    },
+    {
+      "name": "03-demo",
+      "argv": [
+        "python",
+        "code/walkthrough.py"
+      ],
+      "working_directory": "drafts/knowledge/2026-11-16-training-code-to-silicon",
+      "exit_code": 0,
+      "output": "03-demo.json"
+    },
+    {
+      "name": "04-lint",
+      "argv": [
+        "python",
+        "-m",
+        "ruff",
+        "check",
+        "code"
+      ],
+      "working_directory": "drafts/knowledge/2026-11-16-training-code-to-silicon",
+      "exit_code": 0,
+      "output": "04-lint.txt"
+    },
+    {
+      "name": "05-format",
+      "argv": [
+        "python",
+        "-m",
+        "ruff",
+        "format",
+        "--check",
+        "code"
+      ],
+      "working_directory": "drafts/knowledge/2026-11-16-training-code-to-silicon",
+      "exit_code": 0,
+      "output": "05-format.txt"
+    },
+    {
+      "name": "06-optimized-tests",
+      "argv": [
+        "python",
+        "-O",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "code",
+        "-p",
+        "test_walkthrough.py",
+        "-v"
+      ],
+      "working_directory": "drafts/knowledge/2026-11-16-training-code-to-silicon",
+      "exit_code": 0,
+      "output": "06-optimized-tests.txt"
+    },
+    {
+      "name": "07-archived-tests",
+      "argv": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "code",
+        "-p",
+        "test_walkthrough.py",
+        "-v"
+      ],
+      "working_directory": "knowledge/2026/11/2026-11-16-training-code-to-silicon",
+      "exit_code": 0,
+      "output": "07-archived-tests.txt"
+    }
+  ],
+  "redactions": [
+    "Absolute repository and home paths are replaced before archiving.",
+    "Local CPU-profiler process and thread numbers are replaced before archiving."
+  ],
+  "code_sha256": {
+    "example_data.py": "ab85a255fe453284895c4afaaad076f81b1cf0045c9da1f349032916b0269fc3",
+    "reference.py": "aa666030dd0589e86e66a6329060fc5f98f4c2a968c09d6a08a0344ffe99efe2",
+    "test_walkthrough.py": "271230d5814ba37068d278c9a4e9a6b498c71f15ecac43530c11323dd9b1e49e",
+    "walkthrough.py": "91785591e3ad53bd23257a3d08613b05786ce71baf8bb08efa35b8632c6aeef9"
+  },
+  "archive_verified_at": "2026-11-16T16:53:51.562164+08:00"
+}

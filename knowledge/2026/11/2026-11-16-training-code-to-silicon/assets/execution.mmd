@@ -1,0 +1,14 @@
+sequenceDiagram
+    participant H as 主机框架
+    participant R as 运行时与驱动
+    participant G as 设备计算与搬运
+    H->>R: 准备设备存储与输入数据
+    H->>R: 在 stream S 提交 GEMM
+    R-->>H: 提交调用返回
+    R->>G: 对应工作进入可执行状态
+    H->>R: 在 S 提交 bias、ReLU、loss、backward
+    G->>G: 依赖满足后依序读写设备数据
+    H->>R: 请求 loss 的主机标量值
+    R->>G: 等待相关工作并取得标量
+    G-->>R: 标量就绪
+    R-->>H: 返回可读取的主机值

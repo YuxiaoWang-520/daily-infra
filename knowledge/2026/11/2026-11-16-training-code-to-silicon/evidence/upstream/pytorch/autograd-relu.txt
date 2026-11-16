@@ -1,0 +1,4 @@
+- name: relu(Tensor self) -> Tensor
+  self: threshold_backward(grad, result, 0)
+  result: auto_element_wise
+

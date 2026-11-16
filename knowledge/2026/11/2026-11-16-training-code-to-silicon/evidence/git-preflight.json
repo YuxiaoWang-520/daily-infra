@@ -1,0 +1,29 @@
+{
+  "checked_date": "2026-11-16",
+  "timezone": "Asia/Shanghai",
+  "phase": "Before archiving and staging the reviewed on-demand topic",
+  "branch": "main",
+  "fetch_urls": ["git@github.com:YuxiaoWang-520/daily-infra.git"],
+  "push_urls": ["git@github.com:YuxiaoWang-520/daily-infra.git"],
+  "repository": "YuxiaoWang-520/daily-infra",
+  "visibility": "PUBLIC",
+  "isPrivate": false,
+  "default_branch": "main",
+  "viewer_permission": "ADMIN",
+  "authenticated_login": "YuxiaoWang-520",
+  "effective_git_identity_matches_requested_public_identity": true,
+  "head": "abfbcc4fc35a166a12580ebc50374cec2c836d40",
+  "origin_main_after_fetch": "abfbcc4fc35a166a12580ebc50374cec2c836d40",
+  "github_main_rest_api": "abfbcc4fc35a166a12580ebc50374cec2c836d40",
+  "ahead": 0,
+  "behind": 0,
+  "staged_paths": [],
+  "tracked_worktree_clean": true,
+  "untracked_content": "Only this task's knowledge draft",
+  "allowed_commit_paths": [
+    "knowledge/2026/11/2026-11-16-training-code-to-silicon/",
+    "knowledge/index.md"
+  ],
+  "authorization": "AGENTS.md and skills/infra-knowledge-capture/references/daily-infra.md authorize commit and push after review, sanitization and verification.",
+  "note": "This is the pre-commit base snapshot. The publishing commit is verified on GitHub main after push."
+}

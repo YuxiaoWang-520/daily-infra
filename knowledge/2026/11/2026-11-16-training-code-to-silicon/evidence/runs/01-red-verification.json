@@ -1,0 +1,17 @@
+{
+  "recorded_at": "2026-11-16T16:13:05.644622+08:00",
+  "argv": [
+    "python",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "code",
+    "-p",
+    "test_walkthrough.py",
+    "-v"
+  ],
+  "working_directory": "drafts/knowledge/2026-11-16-training-code-to-silicon",
+  "exit_code": 1,
+  "log": "01-red-tests.txt"
+}

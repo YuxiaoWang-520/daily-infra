@@ -1,0 +1,19 @@
+test_cpu_profile_observes_three_matrix_multiplications (test_walkthrough.PyTorchTests.test_cpu_profile_observes_three_matrix_multiplications) ... USDT:2026-11-16 16:53:51 <pid>:<tid> SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-11-16 16:53:51 <pid>:<tid> SyncActivityProfilerHandler.cpp:46] profiler_stop
+ok
+test_float32_matches_scalar_reference (test_walkthrough.PyTorchTests.test_float32_matches_scalar_reference) ... USDT:2026-11-16 16:53:51 <pid>:<tid> SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-11-16 16:53:51 <pid>:<tid> SyncActivityProfilerHandler.cpp:46] profiler_stop
+ok
+test_float64_matches_scalar_reference (test_walkthrough.PyTorchTests.test_float64_matches_scalar_reference) ... USDT:2026-11-16 16:53:51 <pid>:<tid> SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-11-16 16:53:51 <pid>:<tid> SyncActivityProfilerHandler.cpp:46] profiler_stop
+ok
+test_fx_forward_matches_the_example (test_walkthrough.PyTorchTests.test_fx_forward_matches_the_example) ... ok
+test_finite_differences_for_all_trainable_and_input_values (test_walkthrough.ReferenceTests.test_finite_differences_for_all_trainable_and_input_values) ... ok
+test_forward_values (test_walkthrough.ReferenceTests.test_forward_values) ... ok
+test_known_gradients (test_walkthrough.ReferenceTests.test_known_gradients) ... ok
+test_sgd_update (test_walkthrough.ReferenceTests.test_sgd_update) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.746s
+
+OK

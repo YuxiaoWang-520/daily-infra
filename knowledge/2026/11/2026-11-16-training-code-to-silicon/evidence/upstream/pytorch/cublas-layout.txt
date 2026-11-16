@@ -1,0 +1,72 @@
+      const std::optional<Tensor>& scale_a = std::nullopt,
+      const std::optional<Tensor>& scale_b = std::nullopt,
+      const std::optional<Tensor>& scale_result = std::nullopt,
+      const std::optional<ScalingType>& scaling_choice_a = std::nullopt,
+      const std::optional<ScalingType>& scaling_choice_b = std::nullopt,
+      SwizzleType swizzle_choice_a = SwizzleType::NO_SWIZZLE,
+      SwizzleType swizzle_choice_b = SwizzleType::NO_SWIZZLE) {
+    bool transpose_result = false, transpose_a = false, transpose_b = false;
+    result = prepare_matrix_for_cublas(c, transpose_result);
+    mata = prepare_matrix_for_cublas(transpose_result ? mat2 : mat1, transpose_a, transpose_result);
+    matb = prepare_matrix_for_cublas(transpose_result ? mat1 : mat2, transpose_b, transpose_result);
+
+    // Handle scale tensors if provided
+    if (scale_a && scale_b) {
+      // By default since we return in row-major we run the gemm
+      // as B.T @ A.T, check transpose_result to determine if we flip the scales
+      scale_mata_ptr = transpose_result ? scale_b->data_ptr() : scale_a->data_ptr();
+      scale_mata_dtype = transpose_result ? scale_b->scalar_type() : scale_a->scalar_type();
+      scaling_mata_type = transpose_result ? scaling_choice_b : scaling_choice_a;
+      swizzle_mata_type = transpose_result ? swizzle_choice_b : swizzle_choice_a;
+      scale_matb_ptr = transpose_result ? scale_a->data_ptr() : scale_b->data_ptr();
+      scale_matb_dtype = transpose_result ? scale_a->scalar_type() : scale_b->scalar_type();
+      scaling_matb_type = transpose_result ? scaling_choice_a : scaling_choice_b;
+      swizzle_matb_type = transpose_result ? swizzle_choice_a : swizzle_choice_b;
+    }
+
+    if (scale_result) {
+      scale_result_ptr = scale_result->data_ptr();
+      scale_result_dtype = scale_result->scalar_type();
+    }
+
+    // Update transpose flags
+    if (transpose_result) {
+      transpose_a = !transpose_a;
+      transpose_b = !transpose_b;
+    }
+
+    auto sizes_a = mata->sizes();
+    auto sizes_b = matb->sizes();
+
+    m = sizes_a[transpose_result ? 1 : 0];
+    k = sizes_a[transpose_result ? 0 : 1];
+    n = sizes_b[transpose_result ? 0 : 1];
+    lda = mata->stride((transpose_a == transpose_result) ? 1 : 0);
+    ldb = matb->stride((transpose_b == transpose_result) ? 1 : 0);
+    result_ld = result->stride(transpose_result ? 0 : 1);
+    transa = transpose_a ? mata->is_conj() ? 'c' : 't' : 'n';
+    transb = transpose_b ? matb->is_conj() ? 'c' : 't' : 'n';
+
+    // Record whether PyTorch's BLAS dispatch swapped inductor's
+    // (M, N) -> (n, m) when computing C^T = B^T @ A^T in column-major
+    // cuBLAS. Consumers that need to translate an inductor-frame
+    // dynamic-dims mask (e.g. TunableOp wildcard signatures) into the
+    // BLAS frame read this flag and swap the M and N bits when set.
+    swapped_mn = transpose_result;
+
+    // cuBLAS expects unpacked values of `k`, `lda` and `ldb`, adjust for 4x2 packing
+    // if the gemm operands are in packed float4
+    if (mat1.dtype() == at::kFloat4_e2m1fn_x2 && mat2.dtype() == at::kFloat4_e2m1fn_x2) {
+      k = k * 2;
+      lda = lda * 2;
+      ldb = ldb * 2;
+    }
+  }
+
+  // Matrix members
+  char transa, transb;
+  int64_t m, n, k;
+  int64_t lda, ldb, result_ld;
+  c10::MaybeOwned<Tensor> mata, matb, result;
+  // True iff PyTorch's BLAS dispatch swapped inductor's (M, N) into
+  // BLAS's (n, m). Used by TunableOp consumers to translate a dynamic

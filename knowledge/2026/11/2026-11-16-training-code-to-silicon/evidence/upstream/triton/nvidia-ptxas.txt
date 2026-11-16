@@ -1,0 +1,42 @@
+    def make_cubin(self, src, metadata, opt, capability):
+        ptxas = get_ptxas(self.target.arch).path
+        with tempfile.NamedTemporaryFile(delete=False, mode='w', suffix='.ptx') as fsrc, \
+            tempfile.NamedTemporaryFile(delete=False, mode='r', suffix='.log') as flog:
+            fsrc.write(src)
+            fsrc.flush()
+            fbin = fsrc.name + '.o'
+
+            debug_info = []
+            if knobs.compilation.disable_line_info:
+                # This option is ignored if used without -lineinfo
+                debug_info += ["-lineinfo", "-suppress-debug-info"]
+            elif knobs.nvidia.disable_ptxas_opt:
+                # Synthesize complete debug info
+                debug_info += ["-g"]
+            else:
+                # Only emit line info
+                debug_info += ["-lineinfo"]
+
+            fmad = [] if opt.enable_fp_fusion else ["--fmad=false"]
+            arch = sm_arch_from_capability(capability)
+
+            # Disable ptxas optimizations if requested
+            disable_opt = ['--opt-level', '0'] if knobs.nvidia.disable_ptxas_opt else []
+
+            # Accept more ptxas options if provided
+            ptx_extra_options = opt.ptx_options.split(" ") if opt.ptx_options else []
+
+            # -Ofc mid miscompiles some large ConSan kernels into invalid global
+            # accesses; -O1 keeps compile time reasonable without that ptxas bug.
+            if (not knobs.nvidia.disable_ptxas_opt and any(is_enabled(opt, mode) for mode in ["consan", "fpsan"])):
+                ptx_extra_options += ["--opt-level", "1"]
+
+            # Add --regAllocOptLevel=2 to work around ptxas 13.x bug
+            reg_alloc = ['--regAllocOptLevel=2']
+
+            ptxas_cmd = [
+                ptxas, *debug_info, *fmad, '-v', *disable_opt, *reg_alloc, *ptx_extra_options, f'--gpu-name={arch}',
+                fsrc.name, '-o', fbin
+            ]
+            try:
+                subprocess.run(ptxas_cmd, check=True, close_fds=False, stderr=flog)

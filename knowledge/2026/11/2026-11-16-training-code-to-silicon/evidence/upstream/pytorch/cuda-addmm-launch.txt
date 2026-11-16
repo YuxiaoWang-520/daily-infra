@@ -1,0 +1,74 @@
+  cublasCommonArgs args(gemm_mat1, gemm_mat2, result);
+  TORCH_INTERNAL_ASSERT_DEBUG_ONLY(!args.result->is_conj());
+
+  // The Lt path
+  if (!disable_addmm_cuda_lt) {
+    bool lt_success = false;
+    if (is_float_output_with_half_input) {
+      #ifdef USE_ROCM
+      TORCH_CHECK(false, "float output with half input is not enabled for ROCm");
+      #else
+      if (at::cuda::tunable::getTuningContext()->IsTunableOpEnabled()) {
+       TORCH_CHECK(false, "Tunable GEMM is not supported for float output with reduced float input");
+      }
+      AT_DISPATCH_REDUCED_FLOATING_TYPES(
+        scalar_type,
+        "addmm_cuda_lt",
+        [&] {
+          lt_success = launchGemmAndBiasCublasLt<scalar_t, float>(args, use_bias_ptr_lt ? std::make_optional(self) : std::nullopt, alpha, activation);
+        }
+      );
+      #endif
+    } else {
+      // !is_float_output_with_half_input
+      AT_DISPATCH_FLOATING_TYPES_AND2(
+        at::ScalarType::Half,
+        at::ScalarType::BFloat16,
+        scalar_type,
+        "addmm_cuda_lt",
+        [&] {
+          lt_success = launchGemmAndBiasCublasLt<scalar_t>(args, use_bias_ptr_lt ? std::make_optional(self) : std::nullopt, alpha, activation);
+        }
+      );
+    } // end is_float_output_with_half_input
+
+    if (!lt_success) {
+    // lt path failed; recurse but disable lt path
+      return addmm_out_cuda_impl(result, self, mat1, mat2, beta, alpha, activation, true);
+    }
+    // end Lt path
+  } else {
+    // No Lt, we use a GEMM instead
+    if (is_float_output_with_half_input) {
+      AT_DISPATCH_REDUCED_FLOATING_TYPES(
+        scalar_type,
+        "addmm_cuda",
+        [&] {
+          launchGemmCublas<scalar_t, float>(args, alpha, beta);
+        }
+      );
+    } else {
+      AT_DISPATCH_FLOATING_AND_COMPLEX_TYPES_AND2(
+        at::ScalarType::Half,
+        at::ScalarType::BFloat16,
+        scalar_type,
+        "addmm_cuda",
+        [&] {
+          launchGemmCublas<scalar_t>(args, alpha, beta);
+        }
+      );
+    }
+
+    // Apply epilogue
+    switch (activation) {
+      case Activation::RELU:
+        // NOLINTNEXTLINE(cppcoreguidelines-pro-type-const-cast)
+        at::relu_(const_cast<Tensor&>(*args.result));
+        break;
+      case Activation::GELU:
+        // NOLINTNEXTLINE(cppcoreguidelines-pro-type-const-cast)
+        at::gelu_(const_cast<Tensor&>(*args.result), "tanh");
+        break;
+      default: break;
+    }
+  } // end GEMM path

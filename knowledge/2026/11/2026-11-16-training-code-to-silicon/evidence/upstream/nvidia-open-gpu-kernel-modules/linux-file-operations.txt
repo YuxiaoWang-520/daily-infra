@@ -1,0 +1,22 @@
+const char *nv_device_name = MODULE_NAME;
+static const char *nvidia_stack_cache_name = MODULE_NAME "_stack_cache";
+static const char *nvidia_p2p_page_cache_name = MODULE_NAME "_p2p_page_cache";
+
+static int           nvidia_open           (struct inode *, struct file *);
+static int           nvidia_close          (struct inode *, struct file *);
+static unsigned int  nvidia_poll           (struct file *, poll_table *);
+static int           nvidia_ioctl          (struct inode *, struct file *, unsigned int, unsigned long);
+static long          nvidia_unlocked_ioctl (struct file *, unsigned int, unsigned long);
+
+/* character device entry points*/
+static struct file_operations nvidia_fops = {
+    .owner     = THIS_MODULE,
+    .poll      = nvidia_poll,
+    .unlocked_ioctl = nvidia_unlocked_ioctl,
+#if NVCPU_IS_X86_64 || NVCPU_IS_AARCH64
+    .compat_ioctl = nvidia_unlocked_ioctl,
+#endif
+    .mmap      = nvidia_mmap,
+    .open      = nvidia_open,
+    .release   = nvidia_close,
+};

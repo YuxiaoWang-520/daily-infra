@@ -1,0 +1,20 @@
+void gemm_internal<float>(CUDABLAS_GEMM_ARGTYPES(float))
+{
+  auto preferred = at::globalContext().blasPreferredBackend();
+#if defined(USE_ROCM) && defined(USE_ROCM_CK_GEMM)
+  if (preferred == BlasBackend::Ck) {
+    // gfx11 and gfx12 have no CK fp32 GEMM
+    if (!at::detail::getCUDAHooks().isGPUArch({"gfx11", "gfx12"}) &&
+        at::native::gemm_internal_ck<float>(CUDABLAS_GEMM_ARGS(float))) {
+      return;
+    }
+    preferred = at::globalContext().blasDefaultBackend();
+  }
+#endif
+  if (preferred == BlasBackend::Cublaslt) {
+    gemm_internal_cublaslt<float>(CUDABLAS_GEMM_ARGS(float));
+  }
+  else {
+    gemm_internal_cublas<float>(CUDABLAS_GEMM_ARGS(float));
+  }
+}

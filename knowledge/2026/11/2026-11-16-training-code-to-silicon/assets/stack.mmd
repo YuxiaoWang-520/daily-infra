@@ -1,0 +1,15 @@
+flowchart TB
+    model["1 模型与训练程序"] --> framework["2 Tensor · autograd · dispatcher"]
+    framework --> backend["3 后端 · 算子库 · 生成代码"]
+    source["kernel 源码或图 IR"] --> compiler["4 编译 · 链接 · 设备二进制"]
+    framework -. "可选图编译" .-> compiler
+    compiler --> backend
+    backend --> runtime["5 用户态运行时"]
+    backend -. "也可直接调用 Driver API" .-> driver["6 用户态驱动与内核态驱动"]
+    runtime --> driver
+    driver --> control["7 命令处理 · 调度 · 完成通知"]
+    control --> execution["8 ISA · 执行单元 · 内存系统"]
+    execution --> silicon["9 RTL · 物理实现 · 芯片与板卡"]
+    tools["调试 · 追踪 · 性能分析 · 正确性验证"] -. "贯穿各层" .-> framework
+    tools -.-> driver
+    tools -.-> execution

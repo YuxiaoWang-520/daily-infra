@@ -1,0 +1,38 @@
+// LITERALINCLUDE START: TORCH_LIBRARY_IMPL DEFAULT
+TORCH_LIBRARY_IMPL(aten, PrivateUse1, m) {
+  m.impl("empty.memory_format", wrapper_empty_memory_format);
+  m.impl("empty_strided", wrapper_empty_strided);
+  m.impl("as_strided", wrapper_as_strided);
+  m.impl("resize_", wrapper_resize_);
+  m.impl("_reshape_alias", wrapper__reshape_alias);
+  m.impl("_copy_from", wrapper__copy_from);
+  m.impl("_copy_from_and_resize", wrapper__copy_from_and_resize);
+  m.impl("_local_scalar_dense", wrapper__local_scalar_densor);
+  m.impl(
+      "_has_compatible_shallow_copy_type",
+      wrapper_has_compatible_shallow_copy_type);
+  m.impl("set_.source_Tensor", wrapper_set_source_Tensor_);
+  m.impl("set_.source_Storage", wrapper_set_source_Storage_);
+  m.impl(
+      "set_.source_Storage_storage_offset",
+      wrapper_set_source_Storage_storage_offsetset_);
+  m.impl("view", wrapper_view);
+}
+// LITERALINCLUDE END: TORCH_LIBRARY_IMPL DEFAULT
+
+// LITERALINCLUDE START: FALLBACK GLOBAL
+TORCH_LIBRARY_IMPL(_, PrivateUse1, m) {
+  m.fallback(
+      torch::CppFunction::makeFromBoxedFunction<&wrapper_cpu_fallback>());
+}
+// LITERALINCLUDE END: FALLBACK GLOBAL
+
+// LITERALINCLUDE START: FALLBACK SINGLE
+TORCH_LIBRARY_IMPL(aten, PrivateUse1, m) {
+  m.impl(
+      "sub.Tensor",
+      torch::CppFunction::makeFromBoxedFunction<&wrapper_cpu_fallback>());
+}
+// LITERALINCLUDE END: FALLBACK SINGLE
+
+} // namespace at::openreg

@@ -1,0 +1,20 @@
+at::DataPtr OpenRegDeviceAllocator::allocate(size_t nbytes) {
+  int current_device_index = -1;
+  auto ret = orGetDevice(&current_device_index);
+  TORCH_CHECK(ret == orSuccess, "Failed to get current OpenReg device");
+
+  auto curr_device =
+      c10::Device(c10::DeviceType::PrivateUse1, current_device_index);
+
+  void* data = nullptr;
+  if (nbytes > 0) {
+    // Allocate memory via device-specific allocator
+    data = device_allocators_[current_device_index]->malloc(nbytes);
+
+    // Track which device owns this pointer
+    std::lock_guard<std::recursive_mutex> lock(mutex_);
+    allocated_blocks_[data] = current_device_index;
+  }
+
+  return {data, data, &deleteOpenRegMemory, curr_device};
+}

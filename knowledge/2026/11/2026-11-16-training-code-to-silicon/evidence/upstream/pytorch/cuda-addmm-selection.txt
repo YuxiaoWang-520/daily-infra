@@ -1,0 +1,57 @@
+Tensor& addmm_out_cuda_impl(Tensor& result, const Tensor& self, const Tensor& mat1, const Tensor& mat2, const Scalar& beta, const Scalar& alpha, Activation activation=Activation::None, bool disable_addmm_cuda_lt_override=false) {
+  // Shape checks {
+  // Make sure to keep addmm_cuda below in sync with this code; it
+  // preflights a check to try to avoid actually needing to call
+  // expand().
+  TORCH_CHECK(mat1.dim() == 2 && mat2.dim() == 2, "tensors must be 2-D");
+  TORCH_CHECK(
+    mat1.dtype() == mat2.dtype(),
+    "expected mat1 and mat2 to have the same dtype, but got: ", mat1.dtype(), " != ", mat2.dtype()
+  )
+
+  if (result.is_same(self)) {
+    TORCH_CHECK(result.dim() == 2, "tensors must be 2-D");
+    TORCH_CHECK(self.sizes()[0] == mat1.sizes()[0], "self dim 0 must match mat1 dim 0");
+    TORCH_CHECK(self.sizes()[1] == mat2.sizes()[1], "self dim 1 must match mat2 dim 1");
+  }
+  // } Shape checks
+
+  // NOLINTNEXTLINE(*c-array*)
+  TensorArg targs[]{{result, "out", 0}, {self, "self", 1}, {mat1, "mat1", 2}, {mat2, "mat2", 3}};
+  checkAllSameGPU(__func__, targs);
+
+  // Handle whether to use the Lt interface {
+  // Not cached: on ROCm the answer depends on the device and on the preferred BLAS backend, which can change.
+  // If the lt path fails, we recurse back into this function with disable_addmm_cuda_lt_override set.
+  bool disable_addmm_cuda_lt = isGloballyDisabledAddmmCudaLt(self.device()) || disable_addmm_cuda_lt_override;
+  // Everything above is a property of the build/device rather than the inputs.
+  // The distinct-C/D path applies its own input checks, so it keys off this.
+  const bool disable_addmm_cuda_lt_for_device = disable_addmm_cuda_lt;
+  // Condition on the input
+  disable_addmm_cuda_lt = disable_addmm_cuda_lt || !isInputCompliesAddmmCudaLt(result, self, mat1, mat2, beta, alpha, activation);
+
+  at::ScalarType scalar_type = mat1.scalar_type();
+  auto [gemm_mat1, gemm_mat2] =
+      round_gfx942_tf32_operands_to_nearest_if_needed(mat1, mat2, alpha);
+  bool is_float_output_with_half_input = (scalar_type == at::ScalarType::Half || scalar_type == at::ScalarType::BFloat16) && result.scalar_type() == at::ScalarType::Float;
+
+  #ifdef USE_ROCM
+  disable_addmm_cuda_lt = disable_addmm_cuda_lt || is_float_output_with_half_input;
+  #endif
+
+  bool use_bias_ptr_lt = (self.dim() == 1) && !disable_addmm_cuda_lt;
+  // for float output with half input cublasLT with bias produces wrong results
+  use_bias_ptr_lt &= !is_float_output_with_half_input;
+
+  // Handle result/self shapes
+  if (!result.is_same(self)) {
+    at::native::resize_output(result, {mat1.sizes()[0], mat2.sizes()[1]});
+
+      // We do not copy bias only when we need the bias ptr
+    if (beta.toComplexDouble() != 0.0 && !use_bias_ptr_lt) {
+      // alpha == 0 must not take this path. When alpha is 0 and beta is 1 the
+      // operation reduces to D = C, and cuBLASLt then skips the write entirely:
+      // a valid shortcut while C had already been copied into D and the two
+      // pointers aliased, but it silently drops the term once they are
+      // distinct. cuBLASLt does write beta * C for every other beta, so only
+      // beta == 1 is actually affected; excluding all of alpha == 0 costs

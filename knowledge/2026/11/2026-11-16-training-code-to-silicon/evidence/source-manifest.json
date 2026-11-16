@@ -1,0 +1,331 @@
+{
+  "checked_at": "2026-11-16T16:26:31.404085+08:00",
+  "selection": "Official default branch snapshots fetched on the check date; excerpts are source reading evidence, not an installed or GPU-executed version combination.",
+  "repositories": [
+    {
+      "repository": "pytorch/pytorch",
+      "default_branch": "main",
+      "commit": "7d191ca7274de43d574c2dbe35365fefd008babf",
+      "release_tag": "v2.15.0",
+      "release_published_at": "2026-10-28T17:09:49Z",
+      "license_file": "evidence/upstream/pytorch/LICENSE",
+      "license_sha256": "bd018feef8825e88181c84eb7e3aa4eafb8f08a20d9fd6ef948569610c4a3e43"
+    },
+    {
+      "repository": "triton-lang/triton",
+      "default_branch": "main",
+      "commit": "46eccb199bfd3f3559b512c4a15870bd45e6a74d",
+      "release_tag": "v3.9.0",
+      "release_published_at": "2026-10-27T18:56:21Z",
+      "license_file": "evidence/upstream/triton/LICENSE",
+      "license_sha256": "92640fb97222fd0a698ff28ce0c3782c172623f8d6c609b557636a80f28fb946"
+    },
+    {
+      "repository": "NVIDIA/open-gpu-kernel-modules",
+      "default_branch": "main",
+      "commit": "e6a2e01579fbbd1ca2ed43fef2ee2589e9bd8bd9",
+      "release_tag": "620.70.06",
+      "release_published_at": "2026-11-05T00:19:23Z",
+      "license_file": "evidence/upstream/nvidia-open-gpu-kernel-modules/COPYING",
+      "license_sha256": "d8e96d29bc323000e7ba56102d77c88226a7a3d0d94e2081cb4b071ae9de4a06"
+    }
+  ],
+  "excerpts": [
+    {
+      "repository": "pytorch/pytorch",
+      "commit": "7d191ca7274de43d574c2dbe35365fefd008babf",
+      "source_path": "aten/src/ATen/native/LinearAlgebra.cpp",
+      "start_line": 2022,
+      "end_line": 2056,
+      "source_url": "https://github.com/pytorch/pytorch/blob/7d191ca7274de43d574c2dbe35365fefd008babf/aten/src/ATen/native/LinearAlgebra.cpp#L2022-L2056",
+      "source_blob_sha256": "5e375873bdad622a901c44930b7a54e1b7191f0dafb72aecec7d566e6b2c5dd2",
+      "archive_path": "evidence/upstream/pytorch/matmul-2d.txt",
+      "excerpt_sha256": "c7548f6ac7c7dd2fe960d29a6afc2a83811db682b55615947a3b696151e8e96f"
+    },
+    {
+      "repository": "pytorch/pytorch",
+      "commit": "7d191ca7274de43d574c2dbe35365fefd008babf",
+      "source_path": "aten/src/ATen/native/native_functions.yaml",
+      "start_line": 4139,
+      "end_line": 4156,
+      "source_url": "https://github.com/pytorch/pytorch/blob/7d191ca7274de43d574c2dbe35365fefd008babf/aten/src/ATen/native/native_functions.yaml#L4139-L4156",
+      "source_blob_sha256": "92793dfd94b0066c3fb7c538828092abf0c24f9f1eb59e49334c3a4ac32d732d",
+      "archive_path": "evidence/upstream/pytorch/mm-dispatch.txt",
+      "excerpt_sha256": "63214d67093730beb102fe0c85948857282f2f13eef94ca9d1436213511f0ba6"
+    },
+    {
+      "repository": "pytorch/pytorch",
+      "commit": "7d191ca7274de43d574c2dbe35365fefd008babf",
+      "source_path": "tools/autograd/derivatives.yaml",
+      "start_line": 1239,
+      "end_line": 1243,
+      "source_url": "https://github.com/pytorch/pytorch/blob/7d191ca7274de43d574c2dbe35365fefd008babf/tools/autograd/derivatives.yaml#L1239-L1243",
+      "source_blob_sha256": "c7543008cbe52a96bae40e77fb673638672fe6e42f72b88e91f3136d6be4286a",
+      "archive_path": "evidence/upstream/pytorch/autograd-mm.txt",
+      "excerpt_sha256": "b283ab9788e5df47411bb3262a00fc611d1992b83f2bf8bdd31ce398b4133255"
+    },
+    {
+      "repository": "pytorch/pytorch",
+      "commit": "7d191ca7274de43d574c2dbe35365fefd008babf",
+      "source_path": "tools/autograd/derivatives.yaml",
+      "start_line": 2150,
+      "end_line": 2153,
+      "source_url": "https://github.com/pytorch/pytorch/blob/7d191ca7274de43d574c2dbe35365fefd008babf/tools/autograd/derivatives.yaml#L2150-L2153",
+      "source_blob_sha256": "c7543008cbe52a96bae40e77fb673638672fe6e42f72b88e91f3136d6be4286a",
+      "archive_path": "evidence/upstream/pytorch/autograd-relu.txt",
+      "excerpt_sha256": "54fe5cd0e509c9e8adcefe4ad51c78f49d18fcda305b542698daa2f00de5264e"
+    },
+    {
+      "repository": "pytorch/pytorch",
+      "commit": "7d191ca7274de43d574c2dbe35365fefd008babf",
+      "source_path": "tools/autograd/derivatives.yaml",
+      "start_line": 1159,
+      "end_line": 1164,
+      "source_url": "https://github.com/pytorch/pytorch/blob/7d191ca7274de43d574c2dbe35365fefd008babf/tools/autograd/derivatives.yaml#L1159-L1164",
+      "source_blob_sha256": "c7543008cbe52a96bae40e77fb673638672fe6e42f72b88e91f3136d6be4286a",
+      "archive_path": "evidence/upstream/pytorch/autograd-mean.txt",
+      "excerpt_sha256": "e943f7baa2ef4a233bc7131c7bd288d7410403d81a5077cacbb9612244642912"
+    },
+    {
+      "repository": "pytorch/pytorch",
+      "commit": "7d191ca7274de43d574c2dbe35365fefd008babf",
+      "source_path": "aten/src/ATen/native/cuda/Blas.cpp",
+      "start_line": 913,
+      "end_line": 927,
+      "source_url": "https://github.com/pytorch/pytorch/blob/7d191ca7274de43d574c2dbe35365fefd008babf/aten/src/ATen/native/cuda/Blas.cpp#L913-L927",
+      "source_blob_sha256": "20d18bc21a0c438ac45887aa8a0a35482d1f776d0447257594c30f92dede5862",
+      "archive_path": "evidence/upstream/pytorch/cuda-mm-entry.txt",
+      "excerpt_sha256": "eb43ceffa7057326c0126cc4e1fa772a3cdd8e55a5bf0cc108c619c84b5c61f0"
+    },
+    {
+      "repository": "pytorch/pytorch",
+      "commit": "7d191ca7274de43d574c2dbe35365fefd008babf",
+      "source_path": "aten/src/ATen/native/cuda/Blas.cpp",
+      "start_line": 556,
+      "end_line": 612,
+      "source_url": "https://github.com/pytorch/pytorch/blob/7d191ca7274de43d574c2dbe35365fefd008babf/aten/src/ATen/native/cuda/Blas.cpp#L556-L612",
+      "source_blob_sha256": "20d18bc21a0c438ac45887aa8a0a35482d1f776d0447257594c30f92dede5862",
+      "archive_path": "evidence/upstream/pytorch/cuda-addmm-selection.txt",
+      "excerpt_sha256": "ced814d887f5ac971e8b3c1c8e049ce056939ac4ebfef6e98ffe8e80e80942c8"
+    },
+    {
+      "repository": "pytorch/pytorch",
+      "commit": "7d191ca7274de43d574c2dbe35365fefd008babf",
+      "source_path": "aten/src/ATen/native/cuda/Blas.cpp",
+      "start_line": 676,
+      "end_line": 749,
+      "source_url": "https://github.com/pytorch/pytorch/blob/7d191ca7274de43d574c2dbe35365fefd008babf/aten/src/ATen/native/cuda/Blas.cpp#L676-L749",
+      "source_blob_sha256": "20d18bc21a0c438ac45887aa8a0a35482d1f776d0447257594c30f92dede5862",
+      "archive_path": "evidence/upstream/pytorch/cuda-addmm-launch.txt",
+      "excerpt_sha256": "be19f88e5d98382078bb9529ff7a785ab1c3e5764fc640b1e2e6d95e828ccc07"
+    },
+    {
+      "repository": "pytorch/pytorch",
+      "commit": "7d191ca7274de43d574c2dbe35365fefd008babf",
+      "source_path": "aten/src/ATen/cuda/CUDABlas.cpp",
+      "start_line": 1017,
+      "end_line": 1050,
+      "source_url": "https://github.com/pytorch/pytorch/blob/7d191ca7274de43d574c2dbe35365fefd008babf/aten/src/ATen/cuda/CUDABlas.cpp#L1017-L1050",
+      "source_blob_sha256": "2900c1fb341cc32eac12c184793137b3cd03411a3a7dfdba1db23c60c793fea0",
+      "archive_path": "evidence/upstream/pytorch/cublas-float.txt",
+      "excerpt_sha256": "ddc80bd3619c82cee322eafc66e08d12b32cb66956b2063ce41ec6518277c9f6"
+    },
+    {
+      "repository": "pytorch/pytorch",
+      "commit": "7d191ca7274de43d574c2dbe35365fefd008babf",
+      "source_path": "aten/src/ATen/cuda/CUDABlas.cpp",
+      "start_line": 1301,
+      "end_line": 1320,
+      "source_url": "https://github.com/pytorch/pytorch/blob/7d191ca7274de43d574c2dbe35365fefd008babf/aten/src/ATen/cuda/CUDABlas.cpp#L1301-L1320",
+      "source_blob_sha256": "2900c1fb341cc32eac12c184793137b3cd03411a3a7dfdba1db23c60c793fea0",
+      "archive_path": "evidence/upstream/pytorch/cublas-preference.txt",
+      "excerpt_sha256": "e6daa96519c271cb23a1d56d6baedae37f74ee27297a395054da56afe883c26f"
+    },
+    {
+      "repository": "pytorch/pytorch",
+      "commit": "7d191ca7274de43d574c2dbe35365fefd008babf",
+      "source_path": "aten/src/ATen/native/cuda/cuBlasCommonArgs.h",
+      "start_line": 100,
+      "end_line": 171,
+      "source_url": "https://github.com/pytorch/pytorch/blob/7d191ca7274de43d574c2dbe35365fefd008babf/aten/src/ATen/native/cuda/cuBlasCommonArgs.h#L100-L171",
+      "source_blob_sha256": "c92dcf91a7722c23f63702f16edc8e1cb535efae66e95070631f1fe0c845818f",
+      "archive_path": "evidence/upstream/pytorch/cublas-layout.txt",
+      "excerpt_sha256": "21330ebe738fd2b0caf2ccab9d8ffb3112ef6965b7e646c47446b0dd43c0e16f"
+    },
+    {
+      "repository": "pytorch/pytorch",
+      "commit": "7d191ca7274de43d574c2dbe35365fefd008babf",
+      "source_path": "aten/src/ATen/native/cuda/CUDAScalar.cu",
+      "start_line": 59,
+      "end_line": 83,
+      "source_url": "https://github.com/pytorch/pytorch/blob/7d191ca7274de43d574c2dbe35365fefd008babf/aten/src/ATen/native/cuda/CUDAScalar.cu#L59-L83",
+      "source_blob_sha256": "a63a57103cf7274ff9052b517364de8b898c1d43ba2c65b1aa63856ce80101cd",
+      "archive_path": "evidence/upstream/pytorch/cuda-scalar-read.txt",
+      "excerpt_sha256": "5c607f0265e075f93386055ecb8d35ee7e43bbc95b97849c058061b9dabbd201"
+    },
+    {
+      "repository": "pytorch/pytorch",
+      "commit": "7d191ca7274de43d574c2dbe35365fefd008babf",
+      "source_path": "test/cpp_extensions/open_registration_extension/torch_openreg/csrc/aten/OpenRegMinimal.cpp",
+      "start_line": 118,
+      "end_line": 155,
+      "source_url": "https://github.com/pytorch/pytorch/blob/7d191ca7274de43d574c2dbe35365fefd008babf/test/cpp_extensions/open_registration_extension/torch_openreg/csrc/aten/OpenRegMinimal.cpp#L118-L155",
+      "source_blob_sha256": "de05794ac6f625ab6acbcb1c2a8ea015180bd47e4bfe8296d935e159d9253935",
+      "archive_path": "evidence/upstream/pytorch/openreg-operator-registration.txt",
+      "excerpt_sha256": "e50f5c1fefcbc198cdda0c191fb66c2cc2246380525dd51b15243f14e6ef8f53"
+    },
+    {
+      "repository": "pytorch/pytorch",
+      "commit": "7d191ca7274de43d574c2dbe35365fefd008babf",
+      "source_path": "test/cpp_extensions/open_registration_extension/torch_openreg/csrc/runtime/OpenRegDeviceAllocator.cpp",
+      "start_line": 169,
+      "end_line": 188,
+      "source_url": "https://github.com/pytorch/pytorch/blob/7d191ca7274de43d574c2dbe35365fefd008babf/test/cpp_extensions/open_registration_extension/torch_openreg/csrc/runtime/OpenRegDeviceAllocator.cpp#L169-L188",
+      "source_blob_sha256": "bbacff2a16c553bfba40f33035c2533181b14d4c37fa58bb2cda691a9a8ddefe",
+      "archive_path": "evidence/upstream/pytorch/openreg-allocator.txt",
+      "excerpt_sha256": "6bf3ba034bfc268582f77eeaefb1d9234652ab03d940c1d888f45cfff27c38b6"
+    },
+    {
+      "repository": "pytorch/pytorch",
+      "commit": "7d191ca7274de43d574c2dbe35365fefd008babf",
+      "source_path": "test/cpp_extensions/open_registration_extension/torch_openreg/csrc/runtime/OpenRegGuard.cpp",
+      "start_line": 1,
+      "end_line": 9,
+      "source_url": "https://github.com/pytorch/pytorch/blob/7d191ca7274de43d574c2dbe35365fefd008babf/test/cpp_extensions/open_registration_extension/torch_openreg/csrc/runtime/OpenRegGuard.cpp#L1-L9",
+      "source_blob_sha256": "9b6361a76b43708710a6aea744b21df26d7f40dc1a966027d20288ceee278920",
+      "archive_path": "evidence/upstream/pytorch/openreg-guard.txt",
+      "excerpt_sha256": "9b6361a76b43708710a6aea744b21df26d7f40dc1a966027d20288ceee278920"
+    },
+    {
+      "repository": "triton-lang/triton",
+      "commit": "46eccb199bfd3f3559b512c4a15870bd45e6a74d",
+      "source_path": "third_party/nvidia/backend/compiler.py",
+      "start_line": 661,
+      "end_line": 671,
+      "source_url": "https://github.com/triton-lang/triton/blob/46eccb199bfd3f3559b512c4a15870bd45e6a74d/third_party/nvidia/backend/compiler.py#L661-L671",
+      "source_blob_sha256": "48b4c5afc0a5af3542d64c635f05194584dd6e7fb07c0ebf11f5169afb4a06e8",
+      "archive_path": "evidence/upstream/triton/nvidia-compiler-stages.txt",
+      "excerpt_sha256": "d45348a6a21f637aac09c530e12b7aaef29d16a7412f2c8b516d7ece0b56c2aa"
+    },
+    {
+      "repository": "triton-lang/triton",
+      "commit": "46eccb199bfd3f3559b512c4a15870bd45e6a74d",
+      "source_path": "third_party/nvidia/backend/compiler.py",
+      "start_line": 547,
+      "end_line": 575,
+      "source_url": "https://github.com/triton-lang/triton/blob/46eccb199bfd3f3559b512c4a15870bd45e6a74d/third_party/nvidia/backend/compiler.py#L547-L575",
+      "source_blob_sha256": "48b4c5afc0a5af3542d64c635f05194584dd6e7fb07c0ebf11f5169afb4a06e8",
+      "archive_path": "evidence/upstream/triton/nvidia-ptx.txt",
+      "excerpt_sha256": "c96354ef7ebcaffa4c82daf59bec384604ff05ee24230efae10e32bd0aa8ee49"
+    },
+    {
+      "repository": "triton-lang/triton",
+      "commit": "46eccb199bfd3f3559b512c4a15870bd45e6a74d",
+      "source_path": "third_party/nvidia/backend/compiler.py",
+      "start_line": 577,
+      "end_line": 618,
+      "source_url": "https://github.com/triton-lang/triton/blob/46eccb199bfd3f3559b512c4a15870bd45e6a74d/third_party/nvidia/backend/compiler.py#L577-L618",
+      "source_blob_sha256": "48b4c5afc0a5af3542d64c635f05194584dd6e7fb07c0ebf11f5169afb4a06e8",
+      "archive_path": "evidence/upstream/triton/nvidia-ptxas.txt",
+      "excerpt_sha256": "5726cfddfa15b01ff364ae46a608ffe5d5362437d005ea3f38166046552ae4c3"
+    },
+    {
+      "repository": "triton-lang/triton",
+      "commit": "46eccb199bfd3f3559b512c4a15870bd45e6a74d",
+      "source_path": "third_party/nvidia/backend/driver.c",
+      "start_line": 290,
+      "end_line": 326,
+      "source_url": "https://github.com/triton-lang/triton/blob/46eccb199bfd3f3559b512c4a15870bd45e6a74d/third_party/nvidia/backend/driver.c#L290-L326",
+      "source_blob_sha256": "b0440f25ace1da07a596f3de3ec2de6e97761686a13e3f53e57345657e41a4fd",
+      "archive_path": "evidence/upstream/triton/nvidia-load-binary.txt",
+      "excerpt_sha256": "db1e54596630a27c1130f79df08c3a8c6e1a6a1e720a8b03fafa0c455d8bd24f"
+    },
+    {
+      "repository": "triton-lang/triton",
+      "commit": "46eccb199bfd3f3559b512c4a15870bd45e6a74d",
+      "source_path": "third_party/nvidia/backend/driver.c",
+      "start_line": 1050,
+      "end_line": 1127,
+      "source_url": "https://github.com/triton-lang/triton/blob/46eccb199bfd3f3559b512c4a15870bd45e6a74d/third_party/nvidia/backend/driver.c#L1050-L1127",
+      "source_blob_sha256": "b0440f25ace1da07a596f3de3ec2de6e97761686a13e3f53e57345657e41a4fd",
+      "archive_path": "evidence/upstream/triton/nvidia-launch.txt",
+      "excerpt_sha256": "8025b8504a225d55c640ef6737c1f414d736d13f94c694134a11cecd66de080a"
+    },
+    {
+      "repository": "triton-lang/triton",
+      "commit": "46eccb199bfd3f3559b512c4a15870bd45e6a74d",
+      "source_path": "python/triton/compiler/compiler.py",
+      "start_line": 482,
+      "end_line": 493,
+      "source_url": "https://github.com/triton-lang/triton/blob/46eccb199bfd3f3559b512c4a15870bd45e6a74d/python/triton/compiler/compiler.py#L482-L493",
+      "source_blob_sha256": "d2aca6d236496ba01b130af4ab08abb1e67f819afbd519923bae89fd7f29eb45",
+      "archive_path": "evidence/upstream/triton/python-load-binary.txt",
+      "excerpt_sha256": "05c7fd4e0758128b6340d20f8a3e30d29df68343151995f0a92782f989f77d0a"
+    },
+    {
+      "repository": "NVIDIA/open-gpu-kernel-modules",
+      "commit": "e6a2e01579fbbd1ca2ed43fef2ee2589e9bd8bd9",
+      "source_path": "README.md",
+      "start_line": 1,
+      "end_line": 23,
+      "source_url": "https://github.com/NVIDIA/open-gpu-kernel-modules/blob/e6a2e01579fbbd1ca2ed43fef2ee2589e9bd8bd9/README.md#L1-L23",
+      "source_blob_sha256": "adb1d8f1cd024aa36f8b1dc85690b12b7d31d2cf0da87443c61b9966039bf170",
+      "archive_path": "evidence/upstream/nvidia-open-gpu-kernel-modules/matched-components.txt",
+      "excerpt_sha256": "c2f7c135705552887f4948f583d8dfb9aa97d0a4ef985e32b1098cff094045c6"
+    },
+    {
+      "repository": "NVIDIA/open-gpu-kernel-modules",
+      "commit": "e6a2e01579fbbd1ca2ed43fef2ee2589e9bd8bd9",
+      "source_path": "kernel-open/nvidia/nv.c",
+      "start_line": 252,
+      "end_line": 273,
+      "source_url": "https://github.com/NVIDIA/open-gpu-kernel-modules/blob/e6a2e01579fbbd1ca2ed43fef2ee2589e9bd8bd9/kernel-open/nvidia/nv.c#L252-L273",
+      "source_blob_sha256": "e744d8d7fec01dda39269241246438e83c32ac0e0bcc09d1b50c9e01fd031304",
+      "archive_path": "evidence/upstream/nvidia-open-gpu-kernel-modules/linux-file-operations.txt",
+      "excerpt_sha256": "3af6f684854bbb86bca130aeada7ed6229b1581dc446b5b52927d829124be31c"
+    },
+    {
+      "repository": "NVIDIA/open-gpu-kernel-modules",
+      "commit": "e6a2e01579fbbd1ca2ed43fef2ee2589e9bd8bd9",
+      "source_path": "kernel-open/nvidia/nv.c",
+      "start_line": 3034,
+      "end_line": 3041,
+      "source_url": "https://github.com/NVIDIA/open-gpu-kernel-modules/blob/e6a2e01579fbbd1ca2ed43fef2ee2589e9bd8bd9/kernel-open/nvidia/nv.c#L3034-L3041",
+      "source_blob_sha256": "e744d8d7fec01dda39269241246438e83c32ac0e0bcc09d1b50c9e01fd031304",
+      "archive_path": "evidence/upstream/nvidia-open-gpu-kernel-modules/linux-ioctl-entry.txt",
+      "excerpt_sha256": "06831e4207608c8f8d7df84351b1e0ba3c56829964cf3b3f39d0cc6d37303e46"
+    },
+    {
+      "repository": "NVIDIA/open-gpu-kernel-modules",
+      "commit": "e6a2e01579fbbd1ca2ed43fef2ee2589e9bd8bd9",
+      "source_path": "kernel-open/nvidia/nv-pci.c",
+      "start_line": 1191,
+      "end_line": 1205,
+      "source_url": "https://github.com/NVIDIA/open-gpu-kernel-modules/blob/e6a2e01579fbbd1ca2ed43fef2ee2589e9bd8bd9/kernel-open/nvidia/nv-pci.c#L1191-L1205",
+      "source_blob_sha256": "ef8315e9a82c601a34c88f975a00381c049480ae35fb17fc6b8d584f59701a3a",
+      "archive_path": "evidence/upstream/nvidia-open-gpu-kernel-modules/linux-pci-probe.txt",
+      "excerpt_sha256": "eaf73e2d480325ebf70071653f43d0bc590960a0f8248f5ae7c750e63a104309"
+    },
+    {
+      "repository": "NVIDIA/open-gpu-kernel-modules",
+      "commit": "e6a2e01579fbbd1ca2ed43fef2ee2589e9bd8bd9",
+      "source_path": "kernel-open/nvidia/nv-pci.c",
+      "start_line": 2722,
+      "end_line": 2734,
+      "source_url": "https://github.com/NVIDIA/open-gpu-kernel-modules/blob/e6a2e01579fbbd1ca2ed43fef2ee2589e9bd8bd9/kernel-open/nvidia/nv-pci.c#L2722-L2734",
+      "source_blob_sha256": "ef8315e9a82c601a34c88f975a00381c049480ae35fb17fc6b8d584f59701a3a",
+      "archive_path": "evidence/upstream/nvidia-open-gpu-kernel-modules/linux-pci-driver.txt",
+      "excerpt_sha256": "ebb6c7397e8af34a588663520a7a57b21e64618f27bc2db5cdb3315f4ff9431a"
+    }
+  ],
+  "file_notices": {
+    "archive_path": "evidence/upstream/nvidia-open-gpu-kernel-modules/file-notices.txt",
+    "sha256": "2d4103e8fe9896a6b3b5022d8f0a32b4a9080e64b9b99229fd413b54e7787786",
+    "source_files": [
+      "kernel-open/nvidia/nv.c",
+      "kernel-open/nvidia/nv-pci.c"
+    ],
+    "repository": "NVIDIA/open-gpu-kernel-modules",
+    "commit": "e6a2e01579fbbd1ca2ed43fef2ee2589e9bd8bd9"
+  }
+}

@@ -1,0 +1,78 @@
+static void _launch(int gridX, int gridY, int gridZ, int num_warps,
+                    int num_ctas, int launch_cooperative_grid, int launch_pdl,
+                    int shared_memory, CUstream stream, CUfunction function,
+                    void **params) {
+  if (gridX * gridY * gridZ > 0) {
+    // 4 attributes that we can currently pass maximum
+    CUlaunchAttribute launchAttr[4];
+    static cuLaunchKernelEx_t cuLaunchKernelExHandle = NULL;
+    if (cuLaunchKernelExHandle == NULL) {
+      cuLaunchKernelExHandle = getLaunchKernelExHandle();
+    }
+    CUlaunchConfig config;
+    config.gridDimX = gridX * num_ctas;
+    config.gridDimY = gridY;
+    config.gridDimZ = gridZ;
+
+    config.blockDimX = 32 * num_warps;
+    config.blockDimY = 1;
+    config.blockDimZ = 1;
+    config.sharedMemBytes = shared_memory;
+    config.hStream = stream;
+    config.attrs = launchAttr;
+    int num_attrs = 0;
+
+    if (shared_memory > 228 * 1024) {
+      {
+        // XXX: remove attribute defs once driver with new API is in use
+        // L1$ size is set to 8KB, CGA scheduling must be in SPREAD mode.
+        CUlaunchAttribute attr = {
+            .id = CU_LAUNCH_ATTRIBUTE_SHARED_MEMORY_MODE,
+            .value = CU_SHARED_MEMORY_MODE_ALLOW_OVERSIZED_SHARED_MEMORY};
+        launchAttr[num_attrs] = attr;
+        ++num_attrs;
+      }
+    }
+
+    if (launch_pdl != 0) {
+      CUlaunchAttribute pdlAttr = {
+          .id = CU_LAUNCH_ATTRIBUTE_PROGRAMMATIC_STREAM_SERIALIZATION,
+          .value = 1};
+      launchAttr[num_attrs] = pdlAttr;
+      ++num_attrs;
+    }
+
+    if (launch_cooperative_grid != 0) {
+      CUlaunchAttribute coopAttr = {.id = CU_LAUNCH_ATTRIBUTE_COOPERATIVE,
+                                    .value = 1};
+      launchAttr[num_attrs] = coopAttr;
+      ++num_attrs;
+    }
+
+    if (num_ctas != 1) {
+      CUlaunchAttribute clusterAttr = {};
+      clusterAttr.id = CU_LAUNCH_ATTRIBUTE_CLUSTER_DIMENSION;
+      clusterAttr.value.clusterDim.x = num_ctas;
+      clusterAttr.value.clusterDim.y = 1;
+      clusterAttr.value.clusterDim.z = 1;
+      launchAttr[num_attrs] = clusterAttr;
+      ++num_attrs;
+
+      CUlaunchAttribute clusterSchedulingAttr = {};
+      clusterSchedulingAttr.id =
+          CU_LAUNCH_ATTRIBUTE_CLUSTER_SCHEDULING_POLICY_PREFERENCE;
+      clusterSchedulingAttr.value.clusterSchedulingPolicyPreference =
+          CU_CLUSTER_SCHEDULING_POLICY_SPREAD;
+      launchAttr[num_attrs] = clusterSchedulingAttr;
+      ++num_attrs;
+    }
+
+    // num_ctas == 16 is non-portable. Does work for H100 and B200 tho
+    config.numAttrs = num_attrs;
+    if (num_ctas == 16) {
+      CUDA_CHECK(cuFuncSetAttribute(
+          function, CU_FUNC_ATTRIBUTE_NON_PORTABLE_CLUSTER_SIZE_ALLOWED, 1));
+    }
+
+    CUDA_CHECK(cuLaunchKernelExHandle(&config, function, params, 0));
+  }

@@ -1,0 +1,13 @@
+struct pci_driver nv_pci_driver = {
+    .name      = MODULE_NAME,
+    .id_table  = nv_pci_table,
+    .probe     = nv_pci_probe,
+    .remove    = nv_pci_remove,
+    .shutdown  = nv_pci_shutdown,
+#if defined(NV_USE_VFIO_PCI_CORE) && \
+  defined(NV_PCI_DRIVER_HAS_DRIVER_MANAGED_DMA)
+    .driver_managed_dma = NV_TRUE,
+#endif
+#if defined(CONFIG_PM)
+    .driver.pm = &nv_pm_ops,
+#endif

@@ -1,0 +1,8 @@
+long nvidia_unlocked_ioctl(
+    struct file *file,
+    unsigned int cmd,
+    unsigned long i_arg
+)
+{
+    return nvidia_ioctl(NV_FILE_INODE(file), file, cmd, i_arg);
+}

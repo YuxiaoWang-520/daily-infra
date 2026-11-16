@@ -1,0 +1,10 @@
+flowchart LR
+    workload["目标训练程序与数值规范"] --> contract["ISA · 内存模型 · ABI · 命令协议"]
+    contract --> sim["功能模拟器与测试"]
+    sim --> sw["编译器 · runtime · driver · 算子与框架"]
+    contract --> rtl["RTL · IP 集成 · 设计验证"]
+    sw <--> rtl
+    rtl --> physical["物理设计 · 制造 · 封装与板卡"]
+    sw --> bringup["硅后 bring-up 与训练验收"]
+    physical --> bringup
+    bringup --> product["性能 · 多卡 · 长稳 · SDK 发布"]

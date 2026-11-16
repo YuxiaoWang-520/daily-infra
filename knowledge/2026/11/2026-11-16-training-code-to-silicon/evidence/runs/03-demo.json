@@ -1,0 +1,1833 @@
+{
+  "environment": {
+    "python": "3.12.16",
+    "torch": "2.15.0",
+    "torch_build_commit": "d0f2af8b66b20da4baa50644c0cd3f887a2eae2e",
+    "os": "Darwin",
+    "architecture": "arm64",
+    "cuda_available": false
+  },
+  "scalar_reference": {
+    "preactivation": [
+      [
+        5.0,
+        -6.0,
+        7.0,
+        -6.0
+      ],
+      [
+        1.0,
+        4.0,
+        -3.0,
+        2.0
+      ]
+    ],
+    "prediction": [
+      [
+        5.0,
+        0.0,
+        7.0,
+        0.0
+      ],
+      [
+        1.0,
+        4.0,
+        0.0,
+        2.0
+      ]
+    ],
+    "loss_before": 7.25,
+    "grad_x": [
+      [
+        3.5,
+        -1.25,
+        2.25
+      ],
+      [
+        -0.5,
+        1.75,
+        -0.25
+      ]
+    ],
+    "grad_w": [
+      [
+        0.75,
+        -0.75,
+        1.25,
+        -0.25
+      ],
+      [
+        -1.5,
+        1.5,
+        -2.5,
+        0.5
+      ],
+      [
+        3.25,
+        0.75,
+        3.75,
+        0.25
+      ]
+    ],
+    "grad_b": [
+      1.25,
+      0.75,
+      1.25,
+      0.25
+    ],
+    "updated_w": [
+      [
+        0.925,
+        -0.925,
+        1.875,
+        0.025
+      ],
+      [
+        0.15000000000000002,
+        1.85,
+        -0.75,
+        0.95
+      ],
+      [
+        0.675,
+        -0.07500000000000001,
+        0.625,
+        -2.025
+      ]
+    ],
+    "updated_b": [
+      0.875,
+      -1.075,
+      -0.125,
+      1.975
+    ],
+    "loss_after": 3.725390625
+  },
+  "cpu_runs": [
+    {
+      "dtype": "float32",
+      "device": "cpu",
+      "preactivation": [
+        [
+          5.0,
+          -6.0,
+          7.0,
+          -6.0
+        ],
+        [
+          1.0,
+          4.0,
+          -3.0,
+          2.0
+        ]
+      ],
+      "prediction": [
+        [
+          5.0,
+          0.0,
+          7.0,
+          0.0
+        ],
+        [
+          1.0,
+          4.0,
+          0.0,
+          2.0
+        ]
+      ],
+      "loss_before": 7.25,
+      "grad_x": [
+        [
+          3.5,
+          -1.25,
+          2.25
+        ],
+        [
+          -0.5,
+          1.75,
+          -0.25
+        ]
+      ],
+      "grad_w": [
+        [
+          0.75,
+          -0.75,
+          1.25,
+          -0.25
+        ],
+        [
+          -1.5,
+          1.5,
+          -2.5,
+          0.5
+        ],
+        [
+          3.25,
+          0.75,
+          3.75,
+          0.25
+        ]
+      ],
+      "grad_b": [
+        1.25,
+        0.75,
+        1.25,
+        0.25
+      ],
+      "updated_w": [
+        [
+          0.925000011920929,
+          -0.925000011920929,
+          1.875,
+          0.02500000037252903
+        ],
+        [
+          0.15000000596046448,
+          1.850000023841858,
+          -0.75,
+          0.949999988079071
+        ],
+        [
+          0.675000011920929,
+          -0.07500000298023224,
+          0.625,
+          -2.0250000953674316
+        ]
+      ],
+      "updated_b": [
+        0.875,
+        -1.0750000476837158,
+        -0.125,
+        1.975000023841858
+      ],
+      "loss_after": 3.725390672683716,
+      "autograd_node_types": [
+        "AccumulateGrad",
+        "AddBackward0",
+        "MeanBackward0",
+        "MmBackward0",
+        "PowBackward0",
+        "ReluBackward0",
+        "SubBackward0"
+      ],
+      "cpu_operators": [
+        {
+          "name": "AddBackward0",
+          "count": 1,
+          "input_shapes": [
+            [
+              2,
+              4
+            ]
+          ]
+        },
+        {
+          "name": "MeanBackward0",
+          "count": 1,
+          "input_shapes": [
+            []
+          ]
+        },
+        {
+          "name": "MmBackward0",
+          "count": 1,
+          "input_shapes": [
+            [
+              2,
+              4
+            ]
+          ]
+        },
+        {
+          "name": "PowBackward0",
+          "count": 1,
+          "input_shapes": [
+            [
+              2,
+              4
+            ]
+          ]
+        },
+        {
+          "name": "ReluBackward0",
+          "count": 1,
+          "input_shapes": [
+            [
+              2,
+              4
+            ]
+          ]
+        },
+        {
+          "name": "SubBackward0",
+          "count": 1,
+          "input_shapes": [
+            [
+              2,
+              4
+            ]
+          ]
+        },
+        {
+          "name": "aten::_to_copy",
+          "count": 3,
+          "input_shapes": [
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            []
+          ]
+        },
+        {
+          "name": "aten::add",
+          "count": 1,
+          "input_shapes": [
+            [
+              2,
+              4
+            ],
+            [
+              4
+            ],
+            []
+          ]
+        },
+        {
+          "name": "aten::add_",
+          "count": 1,
+          "input_shapes": [
+            [
+              3,
+              4
+            ],
+            [
+              3,
+              4
+            ],
+            []
+          ]
+        },
+        {
+          "name": "aten::add_",
+          "count": 1,
+          "input_shapes": [
+            [
+              4
+            ],
+            [
+              4
+            ],
+            []
+          ]
+        },
+        {
+          "name": "aten::as_strided",
+          "count": 1,
+          "input_shapes": [
+            [
+              2,
+              3
+            ],
+            [],
+            [],
+            []
+          ]
+        },
+        {
+          "name": "aten::as_strided",
+          "count": 1,
+          "input_shapes": [
+            [
+              3,
+              4
+            ],
+            [],
+            [],
+            []
+          ]
+        },
+        {
+          "name": "aten::as_strided",
+          "count": 2,
+          "input_shapes": [
+            [],
+            [],
+            [],
+            []
+          ]
+        },
+        {
+          "name": "aten::clamp_min",
+          "count": 1,
+          "input_shapes": [
+            [
+              2,
+              4
+            ],
+            []
+          ]
+        },
+        {
+          "name": "aten::copy_",
+          "count": 1,
+          "input_shapes": [
+            [
+              2,
+              4
+            ],
+            [
+              2,
+              4
+            ],
+            []
+          ]
+        },
+        {
+          "name": "aten::copy_",
+          "count": 3,
+          "input_shapes": [
+            [],
+            [],
+            []
+          ]
+        },
+        {
+          "name": "aten::detach",
+          "count": 1,
+          "input_shapes": [
+            [
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "name": "aten::detach",
+          "count": 1,
+          "input_shapes": [
+            [
+              3,
+              4
+            ]
+          ]
+        },
+        {
+          "name": "aten::detach",
+          "count": 1,
+          "input_shapes": [
+            [
+              4
+            ]
+          ]
+        },
+        {
+          "name": "aten::div",
+          "count": 1,
+          "input_shapes": [
+            [
+              2,
+              4
+            ],
+            []
+          ]
+        },
+        {
+          "name": "aten::div_",
+          "count": 1,
+          "input_shapes": [
+            [],
+            []
+          ]
+        },
+        {
+          "name": "aten::empty_like",
+          "count": 1,
+          "input_shapes": [
+            [],
+            [],
+            [],
+            [],
+            [],
+            []
+          ]
+        },
+        {
+          "name": "aten::empty_strided",
+          "count": 4,
+          "input_shapes": [
+            [],
+            [],
+            [],
+            [],
+            [],
+            []
+          ]
+        },
+        {
+          "name": "aten::expand",
+          "count": 1,
+          "input_shapes": [
+            [],
+            [],
+            []
+          ]
+        },
+        {
+          "name": "aten::fill_",
+          "count": 1,
+          "input_shapes": [
+            [
+              1,
+              1
+            ],
+            []
+          ]
+        },
+        {
+          "name": "aten::fill_",
+          "count": 1,
+          "input_shapes": [
+            [
+              1,
+              4
+            ],
+            []
+          ]
+        },
+        {
+          "name": "aten::fill_",
+          "count": 1,
+          "input_shapes": [
+            [],
+            []
+          ]
+        },
+        {
+          "name": "aten::matmul",
+          "count": 1,
+          "input_shapes": [
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              4
+            ]
+          ]
+        },
+        {
+          "name": "aten::mean",
+          "count": 1,
+          "input_shapes": [
+            [
+              2,
+              4
+            ],
+            []
+          ]
+        },
+        {
+          "name": "aten::mm",
+          "count": 1,
+          "input_shapes": [
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              4
+            ]
+          ]
+        },
+        {
+          "name": "aten::mm",
+          "count": 1,
+          "input_shapes": [
+            [
+              2,
+              4
+            ],
+            [
+              4,
+              3
+            ]
+          ]
+        },
+        {
+          "name": "aten::mm",
+          "count": 1,
+          "input_shapes": [
+            [
+              3,
+              2
+            ],
+            [
+              2,
+              4
+            ]
+          ]
+        },
+        {
+          "name": "aten::mul",
+          "count": 1,
+          "input_shapes": [
+            [
+              2,
+              4
+            ],
+            [
+              2,
+              4
+            ]
+          ]
+        },
+        {
+          "name": "aten::mul",
+          "count": 1,
+          "input_shapes": [
+            [
+              2,
+              4
+            ],
+            []
+          ]
+        },
+        {
+          "name": "aten::ones_like",
+          "count": 1,
+          "input_shapes": [
+            [],
+            [],
+            [],
+            [],
+            [],
+            []
+          ]
+        },
+        {
+          "name": "aten::pow",
+          "count": 2,
+          "input_shapes": [
+            [
+              2,
+              4
+            ],
+            []
+          ]
+        },
+        {
+          "name": "aten::relu",
+          "count": 1,
+          "input_shapes": [
+            [
+              2,
+              4
+            ]
+          ]
+        },
+        {
+          "name": "aten::resolve_conj",
+          "count": 3,
+          "input_shapes": [
+            [
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "name": "aten::resolve_conj",
+          "count": 3,
+          "input_shapes": [
+            [
+              2,
+              4
+            ]
+          ]
+        },
+        {
+          "name": "aten::resolve_conj",
+          "count": 3,
+          "input_shapes": [
+            [
+              3,
+              4
+            ]
+          ]
+        },
+        {
+          "name": "aten::resolve_conj",
+          "count": 1,
+          "input_shapes": [
+            [
+              4
+            ]
+          ]
+        },
+        {
+          "name": "aten::resolve_neg",
+          "count": 1,
+          "input_shapes": [
+            [
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "name": "aten::resolve_neg",
+          "count": 1,
+          "input_shapes": [
+            [
+              3,
+              4
+            ]
+          ]
+        },
+        {
+          "name": "aten::resolve_neg",
+          "count": 1,
+          "input_shapes": [
+            [
+              4
+            ]
+          ]
+        },
+        {
+          "name": "aten::result_type",
+          "count": 2,
+          "input_shapes": [
+            [
+              2,
+              4
+            ],
+            []
+          ]
+        },
+        {
+          "name": "aten::square",
+          "count": 1,
+          "input_shapes": [
+            [
+              2,
+              4
+            ]
+          ]
+        },
+        {
+          "name": "aten::sub",
+          "count": 1,
+          "input_shapes": [
+            [
+              2,
+              4
+            ],
+            [
+              2,
+              4
+            ],
+            []
+          ]
+        },
+        {
+          "name": "aten::sum",
+          "count": 1,
+          "input_shapes": [
+            [
+              2,
+              4
+            ],
+            [],
+            [],
+            [],
+            []
+          ]
+        },
+        {
+          "name": "aten::sum",
+          "count": 1,
+          "input_shapes": [
+            [
+              2,
+              4
+            ],
+            [],
+            [],
+            []
+          ]
+        },
+        {
+          "name": "aten::t",
+          "count": 1,
+          "input_shapes": [
+            [
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "name": "aten::t",
+          "count": 1,
+          "input_shapes": [
+            [
+              3,
+              4
+            ]
+          ]
+        },
+        {
+          "name": "aten::threshold_backward",
+          "count": 1,
+          "input_shapes": [
+            [
+              2,
+              4
+            ],
+            [
+              2,
+              4
+            ],
+            []
+          ]
+        },
+        {
+          "name": "aten::to",
+          "count": 2,
+          "input_shapes": [
+            [
+              2,
+              4
+            ],
+            [],
+            [],
+            [],
+            []
+          ]
+        },
+        {
+          "name": "aten::to",
+          "count": 3,
+          "input_shapes": [
+            [],
+            [],
+            [],
+            [],
+            []
+          ]
+        },
+        {
+          "name": "aten::transpose",
+          "count": 1,
+          "input_shapes": [
+            [
+              2,
+              3
+            ],
+            [],
+            []
+          ]
+        },
+        {
+          "name": "aten::transpose",
+          "count": 1,
+          "input_shapes": [
+            [
+              3,
+              4
+            ],
+            [],
+            []
+          ]
+        },
+        {
+          "name": "aten::view",
+          "count": 1,
+          "input_shapes": [
+            [
+              1,
+              4
+            ],
+            []
+          ]
+        },
+        {
+          "name": "autograd::engine::evaluate_function: AddBackward0",
+          "count": 1,
+          "input_shapes": []
+        },
+        {
+          "name": "autograd::engine::evaluate_function: MeanBackward0",
+          "count": 1,
+          "input_shapes": []
+        },
+        {
+          "name": "autograd::engine::evaluate_function: MmBackward0",
+          "count": 1,
+          "input_shapes": []
+        },
+        {
+          "name": "autograd::engine::evaluate_function: PowBackward0",
+          "count": 1,
+          "input_shapes": []
+        },
+        {
+          "name": "autograd::engine::evaluate_function: ReluBackward0",
+          "count": 1,
+          "input_shapes": []
+        },
+        {
+          "name": "autograd::engine::evaluate_function: SubBackward0",
+          "count": 1,
+          "input_shapes": []
+        },
+        {
+          "name": "autograd::engine::evaluate_function: torch::autograd::AccumulateGrad",
+          "count": 3,
+          "input_shapes": []
+        },
+        {
+          "name": "detach",
+          "count": 1,
+          "input_shapes": [
+            [
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "name": "detach",
+          "count": 1,
+          "input_shapes": [
+            [
+              3,
+              4
+            ]
+          ]
+        },
+        {
+          "name": "detach",
+          "count": 1,
+          "input_shapes": [
+            [
+              4
+            ]
+          ]
+        },
+        {
+          "name": "torch::autograd::AccumulateGrad",
+          "count": 1,
+          "input_shapes": [
+            [
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "name": "torch::autograd::AccumulateGrad",
+          "count": 1,
+          "input_shapes": [
+            [
+              3,
+              4
+            ]
+          ]
+        },
+        {
+          "name": "torch::autograd::AccumulateGrad",
+          "count": 1,
+          "input_shapes": [
+            [
+              4
+            ]
+          ]
+        },
+        {
+          "name": "tutorial::backward",
+          "count": 1,
+          "input_shapes": []
+        },
+        {
+          "name": "tutorial::forward",
+          "count": 1,
+          "input_shapes": []
+        },
+        {
+          "name": "tutorial::sgd",
+          "count": 1,
+          "input_shapes": []
+        }
+      ]
+    },
+    {
+      "dtype": "float64",
+      "device": "cpu",
+      "preactivation": [
+        [
+          5.0,
+          -6.0,
+          7.0,
+          -6.0
+        ],
+        [
+          1.0,
+          4.0,
+          -3.0,
+          2.0
+        ]
+      ],
+      "prediction": [
+        [
+          5.0,
+          0.0,
+          7.0,
+          0.0
+        ],
+        [
+          1.0,
+          4.0,
+          0.0,
+          2.0
+        ]
+      ],
+      "loss_before": 7.25,
+      "grad_x": [
+        [
+          3.5,
+          -1.25,
+          2.25
+        ],
+        [
+          -0.5,
+          1.75,
+          -0.25
+        ]
+      ],
+      "grad_w": [
+        [
+          0.75,
+          -0.75,
+          1.25,
+          -0.25
+        ],
+        [
+          -1.5,
+          1.5,
+          -2.5,
+          0.5
+        ],
+        [
+          3.25,
+          0.75,
+          3.75,
+          0.25
+        ]
+      ],
+      "grad_b": [
+        1.25,
+        0.75,
+        1.25,
+        0.25
+      ],
+      "updated_w": [
+        [
+          0.925,
+          -0.925,
+          1.875,
+          0.025
+        ],
+        [
+          0.15000000000000002,
+          1.85,
+          -0.75,
+          0.95
+        ],
+        [
+          0.6749999999999999,
+          -0.07500000000000001,
+          0.625,
+          -2.025
+        ]
+      ],
+      "updated_b": [
+        0.875,
+        -1.075,
+        -0.125,
+        1.975
+      ],
+      "loss_after": 3.7253906249999997,
+      "autograd_node_types": [
+        "AccumulateGrad",
+        "AddBackward0",
+        "MeanBackward0",
+        "MmBackward0",
+        "PowBackward0",
+        "ReluBackward0",
+        "SubBackward0"
+      ],
+      "cpu_operators": [
+        {
+          "name": "AddBackward0",
+          "count": 1,
+          "input_shapes": [
+            [
+              2,
+              4
+            ]
+          ]
+        },
+        {
+          "name": "MeanBackward0",
+          "count": 1,
+          "input_shapes": [
+            []
+          ]
+        },
+        {
+          "name": "MmBackward0",
+          "count": 1,
+          "input_shapes": [
+            [
+              2,
+              4
+            ]
+          ]
+        },
+        {
+          "name": "PowBackward0",
+          "count": 1,
+          "input_shapes": [
+            [
+              2,
+              4
+            ]
+          ]
+        },
+        {
+          "name": "ReluBackward0",
+          "count": 1,
+          "input_shapes": [
+            [
+              2,
+              4
+            ]
+          ]
+        },
+        {
+          "name": "SubBackward0",
+          "count": 1,
+          "input_shapes": [
+            [
+              2,
+              4
+            ]
+          ]
+        },
+        {
+          "name": "aten::_to_copy",
+          "count": 2,
+          "input_shapes": [
+            [],
+            [],
+            [],
+            [],
+            [],
+            [],
+            []
+          ]
+        },
+        {
+          "name": "aten::add",
+          "count": 1,
+          "input_shapes": [
+            [
+              2,
+              4
+            ],
+            [
+              4
+            ],
+            []
+          ]
+        },
+        {
+          "name": "aten::add_",
+          "count": 1,
+          "input_shapes": [
+            [
+              3,
+              4
+            ],
+            [
+              3,
+              4
+            ],
+            []
+          ]
+        },
+        {
+          "name": "aten::add_",
+          "count": 1,
+          "input_shapes": [
+            [
+              4
+            ],
+            [
+              4
+            ],
+            []
+          ]
+        },
+        {
+          "name": "aten::as_strided",
+          "count": 1,
+          "input_shapes": [
+            [
+              2,
+              3
+            ],
+            [],
+            [],
+            []
+          ]
+        },
+        {
+          "name": "aten::as_strided",
+          "count": 1,
+          "input_shapes": [
+            [
+              3,
+              4
+            ],
+            [],
+            [],
+            []
+          ]
+        },
+        {
+          "name": "aten::as_strided",
+          "count": 2,
+          "input_shapes": [
+            [],
+            [],
+            [],
+            []
+          ]
+        },
+        {
+          "name": "aten::clamp_min",
+          "count": 1,
+          "input_shapes": [
+            [
+              2,
+              4
+            ],
+            []
+          ]
+        },
+        {
+          "name": "aten::copy_",
+          "count": 1,
+          "input_shapes": [
+            [
+              2,
+              4
+            ],
+            [
+              2,
+              4
+            ],
+            []
+          ]
+        },
+        {
+          "name": "aten::copy_",
+          "count": 2,
+          "input_shapes": [
+            [],
+            [],
+            []
+          ]
+        },
+        {
+          "name": "aten::detach",
+          "count": 1,
+          "input_shapes": [
+            [
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "name": "aten::detach",
+          "count": 1,
+          "input_shapes": [
+            [
+              3,
+              4
+            ]
+          ]
+        },
+        {
+          "name": "aten::detach",
+          "count": 1,
+          "input_shapes": [
+            [
+              4
+            ]
+          ]
+        },
+        {
+          "name": "aten::div",
+          "count": 1,
+          "input_shapes": [
+            [
+              2,
+              4
+            ],
+            []
+          ]
+        },
+        {
+          "name": "aten::div_",
+          "count": 1,
+          "input_shapes": [
+            [],
+            []
+          ]
+        },
+        {
+          "name": "aten::empty_like",
+          "count": 1,
+          "input_shapes": [
+            [],
+            [],
+            [],
+            [],
+            [],
+            []
+          ]
+        },
+        {
+          "name": "aten::empty_strided",
+          "count": 3,
+          "input_shapes": [
+            [],
+            [],
+            [],
+            [],
+            [],
+            []
+          ]
+        },
+        {
+          "name": "aten::expand",
+          "count": 1,
+          "input_shapes": [
+            [],
+            [],
+            []
+          ]
+        },
+        {
+          "name": "aten::fill_",
+          "count": 1,
+          "input_shapes": [
+            [
+              1,
+              1
+            ],
+            []
+          ]
+        },
+        {
+          "name": "aten::fill_",
+          "count": 1,
+          "input_shapes": [
+            [
+              1,
+              4
+            ],
+            []
+          ]
+        },
+        {
+          "name": "aten::fill_",
+          "count": 1,
+          "input_shapes": [
+            [],
+            []
+          ]
+        },
+        {
+          "name": "aten::matmul",
+          "count": 1,
+          "input_shapes": [
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              4
+            ]
+          ]
+        },
+        {
+          "name": "aten::mean",
+          "count": 1,
+          "input_shapes": [
+            [
+              2,
+              4
+            ],
+            []
+          ]
+        },
+        {
+          "name": "aten::mm",
+          "count": 1,
+          "input_shapes": [
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              4
+            ]
+          ]
+        },
+        {
+          "name": "aten::mm",
+          "count": 1,
+          "input_shapes": [
+            [
+              2,
+              4
+            ],
+            [
+              4,
+              3
+            ]
+          ]
+        },
+        {
+          "name": "aten::mm",
+          "count": 1,
+          "input_shapes": [
+            [
+              3,
+              2
+            ],
+            [
+              2,
+              4
+            ]
+          ]
+        },
+        {
+          "name": "aten::mul",
+          "count": 1,
+          "input_shapes": [
+            [
+              2,
+              4
+            ],
+            [
+              2,
+              4
+            ]
+          ]
+        },
+        {
+          "name": "aten::mul",
+          "count": 1,
+          "input_shapes": [
+            [
+              2,
+              4
+            ],
+            []
+          ]
+        },
+        {
+          "name": "aten::ones_like",
+          "count": 1,
+          "input_shapes": [
+            [],
+            [],
+            [],
+            [],
+            [],
+            []
+          ]
+        },
+        {
+          "name": "aten::pow",
+          "count": 2,
+          "input_shapes": [
+            [
+              2,
+              4
+            ],
+            []
+          ]
+        },
+        {
+          "name": "aten::relu",
+          "count": 1,
+          "input_shapes": [
+            [
+              2,
+              4
+            ]
+          ]
+        },
+        {
+          "name": "aten::resolve_conj",
+          "count": 3,
+          "input_shapes": [
+            [
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "name": "aten::resolve_conj",
+          "count": 3,
+          "input_shapes": [
+            [
+              2,
+              4
+            ]
+          ]
+        },
+        {
+          "name": "aten::resolve_conj",
+          "count": 3,
+          "input_shapes": [
+            [
+              3,
+              4
+            ]
+          ]
+        },
+        {
+          "name": "aten::resolve_conj",
+          "count": 1,
+          "input_shapes": [
+            [
+              4
+            ]
+          ]
+        },
+        {
+          "name": "aten::resolve_neg",
+          "count": 1,
+          "input_shapes": [
+            [
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "name": "aten::resolve_neg",
+          "count": 1,
+          "input_shapes": [
+            [
+              3,
+              4
+            ]
+          ]
+        },
+        {
+          "name": "aten::resolve_neg",
+          "count": 1,
+          "input_shapes": [
+            [
+              4
+            ]
+          ]
+        },
+        {
+          "name": "aten::result_type",
+          "count": 2,
+          "input_shapes": [
+            [
+              2,
+              4
+            ],
+            []
+          ]
+        },
+        {
+          "name": "aten::square",
+          "count": 1,
+          "input_shapes": [
+            [
+              2,
+              4
+            ]
+          ]
+        },
+        {
+          "name": "aten::sub",
+          "count": 1,
+          "input_shapes": [
+            [
+              2,
+              4
+            ],
+            [
+              2,
+              4
+            ],
+            []
+          ]
+        },
+        {
+          "name": "aten::sum",
+          "count": 1,
+          "input_shapes": [
+            [
+              2,
+              4
+            ],
+            [],
+            [],
+            [],
+            []
+          ]
+        },
+        {
+          "name": "aten::sum",
+          "count": 1,
+          "input_shapes": [
+            [
+              2,
+              4
+            ],
+            [],
+            [],
+            []
+          ]
+        },
+        {
+          "name": "aten::t",
+          "count": 1,
+          "input_shapes": [
+            [
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "name": "aten::t",
+          "count": 1,
+          "input_shapes": [
+            [
+              3,
+              4
+            ]
+          ]
+        },
+        {
+          "name": "aten::threshold_backward",
+          "count": 1,
+          "input_shapes": [
+            [
+              2,
+              4
+            ],
+            [
+              2,
+              4
+            ],
+            []
+          ]
+        },
+        {
+          "name": "aten::to",
+          "count": 2,
+          "input_shapes": [
+            [
+              2,
+              4
+            ],
+            [],
+            [],
+            [],
+            []
+          ]
+        },
+        {
+          "name": "aten::to",
+          "count": 2,
+          "input_shapes": [
+            [],
+            [],
+            [],
+            [],
+            []
+          ]
+        },
+        {
+          "name": "aten::transpose",
+          "count": 1,
+          "input_shapes": [
+            [
+              2,
+              3
+            ],
+            [],
+            []
+          ]
+        },
+        {
+          "name": "aten::transpose",
+          "count": 1,
+          "input_shapes": [
+            [
+              3,
+              4
+            ],
+            [],
+            []
+          ]
+        },
+        {
+          "name": "aten::view",
+          "count": 1,
+          "input_shapes": [
+            [
+              1,
+              4
+            ],
+            []
+          ]
+        },
+        {
+          "name": "autograd::engine::evaluate_function: AddBackward0",
+          "count": 1,
+          "input_shapes": []
+        },
+        {
+          "name": "autograd::engine::evaluate_function: MeanBackward0",
+          "count": 1,
+          "input_shapes": []
+        },
+        {
+          "name": "autograd::engine::evaluate_function: MmBackward0",
+          "count": 1,
+          "input_shapes": []
+        },
+        {
+          "name": "autograd::engine::evaluate_function: PowBackward0",
+          "count": 1,
+          "input_shapes": []
+        },
+        {
+          "name": "autograd::engine::evaluate_function: ReluBackward0",
+          "count": 1,
+          "input_shapes": []
+        },
+        {
+          "name": "autograd::engine::evaluate_function: SubBackward0",
+          "count": 1,
+          "input_shapes": []
+        },
+        {
+          "name": "autograd::engine::evaluate_function: torch::autograd::AccumulateGrad",
+          "count": 3,
+          "input_shapes": []
+        },
+        {
+          "name": "detach",
+          "count": 1,
+          "input_shapes": [
+            [
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "name": "detach",
+          "count": 1,
+          "input_shapes": [
+            [
+              3,
+              4
+            ]
+          ]
+        },
+        {
+          "name": "detach",
+          "count": 1,
+          "input_shapes": [
+            [
+              4
+            ]
+          ]
+        },
+        {
+          "name": "torch::autograd::AccumulateGrad",
+          "count": 1,
+          "input_shapes": [
+            [
+              2,
+              3
+            ]
+          ]
+        },
+        {
+          "name": "torch::autograd::AccumulateGrad",
+          "count": 1,
+          "input_shapes": [
+            [
+              3,
+              4
+            ]
+          ]
+        },
+        {
+          "name": "torch::autograd::AccumulateGrad",
+          "count": 1,
+          "input_shapes": [
+            [
+              4
+            ]
+          ]
+        },
+        {
+          "name": "tutorial::backward",
+          "count": 1,
+          "input_shapes": []
+        },
+        {
+          "name": "tutorial::forward",
+          "count": 1,
+          "input_shapes": []
+        },
+        {
+          "name": "tutorial::sgd",
+          "count": 1,
+          "input_shapes": []
+        }
+      ]
+    }
+  ],
+  "fx_forward_code": "\n\n\ndef forward(self, x : torch.Tensor, w : torch.Tensor, b : torch.Tensor, target : torch.Tensor) -> tuple[torch.Tensor,torch.Tensor,torch.Tensor]:\n    matmul = x @ w;  x = w = None\n    add = matmul + b;  matmul = b = None\n    relu = torch.relu(add)\n    sub = relu - target;  target = None\n    square = sub.square();  sub = None\n    mean = square.mean();  square = None\n    return (add, relu, mean)\n    "
+}

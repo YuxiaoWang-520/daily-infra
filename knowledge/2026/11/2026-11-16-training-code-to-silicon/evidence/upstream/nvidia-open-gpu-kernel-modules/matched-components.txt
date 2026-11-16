@@ -1,0 +1,23 @@
+# NVIDIA Linux Open GPU Kernel Module Source
+
+This is the source release of the NVIDIA Linux open GPU kernel modules,
+version 620.70.06.
+
+
+## How to Build
+
+To build:
+
+    make modules -j$(nproc)
+
+To install, first uninstall any existing NVIDIA kernel modules.  Then,
+as root:
+
+    make modules_install -j$(nproc)
+
+Note that the kernel modules built here must be used with GSP
+firmware and user-space NVIDIA GPU driver components from a corresponding
+620.70.06 driver release.  This can be achieved by installing
+the NVIDIA GPU driver from the .run file using the `--no-kernel-modules`
+option.  E.g.,
+

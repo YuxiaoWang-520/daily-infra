@@ -1,0 +1,34 @@
+{
+  "checked_at": "2026-11-16T16:56:20.037468+08:00",
+  "status": "passed",
+  "article_directory": "knowledge/2026/11/2026-11-16-training-code-to-silicon",
+  "artifact_files": 59,
+  "checksummed_files": 57,
+  "checksum_exclusions": [
+    "SHA256SUMS",
+    "evidence/delivery-check.json"
+  ],
+  "source_excerpts_verified": 26,
+  "source_lines": 722,
+  "license_hashes_verified": 3,
+  "file_notices_hash_verified": true,
+  "local_links_checked": 86,
+  "python_files_parsed": 4,
+  "python_code_hashes_match_final_runs_and_independent_review": true,
+  "required_verification_commands_passed": 6,
+  "mermaid_sources_equal_readme_blocks": 3,
+  "mermaid_review": "Manual syntax and flow review; source equality checked automatically.",
+  "red_phase_expected_failure_verified": true,
+  "sanitization_pattern_categories": [
+    "absolute_home_path",
+    "private_key",
+    "credential_token",
+    "internal_domain",
+    "private_address"
+  ],
+  "sanitization_findings": [],
+  "knowledge_index_entries_for_topic": 1,
+  "knowledge_index_sha256": "75c296dcd5a616475136568afd9c71dfe31856db68dd13de182535feb6d062d7",
+  "daily_wiki_index_unchanged": true,
+  "errors": []
+}

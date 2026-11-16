@@ -1,0 +1,34 @@
+void gemm_internal_cublas<float>(CUDABLAS_GEMM_ARGTYPES(float)) {
+  auto handle = at::cuda::getCurrentCUDABlasHandleWithWorkspace();
+  CUBLAS_SM_CARVEOUT_GUARD(handle);
+  cublasOperation_t opa = detail::cublasOpFromChar(transa);
+  cublasOperation_t opb = detail::cublasOpFromChar(transb);
+  detail::cublasAdjustLdLevel3(transa, transb, m, n, k, &lda, &ldb, &ldc);
+  GEMM_CHECK_ARGVALUES(float);
+  auto compute_type = CUBLAS_COMPUTE_32F;
+#if !defined(USE_ROCM) && defined(CUDA_VERSION) && CUDA_VERSION >= 12090
+  if (useBF16x9()) {
+    compute_type = CUBLAS_COMPUTE_32F_EMULATED_16BFX9;
+  }
+#endif
+  TORCH_CUDABLAS_CHECK(cublasGemmEx(
+      handle,
+      opa,
+      opb,
+      m,
+      n,
+      k,
+      &alpha,
+      a,
+      CUDA_R_32F,
+      lda,
+      b,
+      CUDA_R_32F,
+      ldb,
+      &beta,
+      c,
+      CUDA_R_32F,
+      ldc,
+      compute_type,
+      CUBLAS_GEMM_DEFAULT_TENSOR_OP));
+}
