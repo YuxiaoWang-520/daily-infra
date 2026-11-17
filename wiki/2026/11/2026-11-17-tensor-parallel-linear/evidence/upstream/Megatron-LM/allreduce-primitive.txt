@@ -1,0 +1,16 @@
+def _reduce(input_, group):
+    """All-reduce the input tensor across model parallel group."""
+    assert group is not None, "group should not be None"
+
+    # Bypass the function if we are using only 1 GPU.
+    if group.size() == 1:
+        return input_
+
+    # All-reduce.
+    # Note: If input_ is contiguous, it is mutated in-place.
+    # If not, a new contiguous tensor is created and returned;
+    # callers must use the returned value to ensure the reduced result is captured.
+    input_ = input_.contiguous()
+    torch.distributed.all_reduce(input_, group=group)
+
+    return input_

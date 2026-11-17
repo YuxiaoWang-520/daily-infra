@@ -1,0 +1,25 @@
+test_all_26_derivatives_match_finite_differences (test_answers.AlgebraTests.test_all_26_derivatives_match_finite_differences) ... ok
+test_all_gradients_match_dense_for_multiple_degrees (test_answers.AlgebraTests.test_all_gradients_match_dense_for_multiple_degrees) ... ok
+test_float32_matches_dense (test_answers.AlgebraTests.test_float32_matches_dense) ... ok
+test_four_ranks_keep_one_hidden_feature_each (test_answers.AlgebraTests.test_four_ranks_keep_one_hidden_feature_each) ... ok
+test_hidden_input_size_need_not_be_divisible_by_degree (test_answers.AlgebraTests.test_hidden_input_size_need_not_be_divisible_by_degree) ... ok
+test_input_gradient_has_two_partial_contributions (test_answers.AlgebraTests.test_input_gradient_has_two_partial_contributions) ... ok
+test_one_rank_matches_dense (test_answers.AlgebraTests.test_one_rank_matches_dense) ... ok
+test_output_bias_is_added_once (test_answers.AlgebraTests.test_output_bias_is_added_once) ... ok
+test_rejects_inconsistent_shapes (test_answers.AlgebraTests.test_rejects_inconsistent_shapes) ... ok
+test_rejects_invalid_parallel_degree (test_answers.AlgebraTests.test_rejects_invalid_parallel_degree) ... ok
+test_rejects_uneven_intermediate_partition (test_answers.AlgebraTests.test_rejects_uneven_intermediate_partition) ... ok
+test_two_ranks_match_hand_calculation (test_answers.AlgebraTests.test_two_ranks_match_hand_calculation) ... ok
+test_one_rank_has_no_communication (test_answers.BudgetTests.test_one_rank_has_no_communication) ... ok
+test_regather_for_weight_gradient_adds_one_allgather (test_answers.BudgetTests.test_regather_for_weight_gradient_adds_one_allgather) ... ok
+test_regather_option_requires_sequence_parallel_mode (test_answers.BudgetTests.test_regather_option_requires_sequence_parallel_mode) ... ok
+test_rejects_invalid_integer_inputs (test_answers.BudgetTests.test_rejects_invalid_integer_inputs) ... ok
+test_rejects_unequal_ring_chunks_in_the_teaching_model (test_answers.BudgetTests.test_rejects_unequal_ring_chunks_in_the_teaching_model) ... ok
+test_sequence_parallel_has_equal_ideal_ring_bytes (test_answers.BudgetTests.test_sequence_parallel_has_equal_ideal_ring_bytes) ... ok
+test_sequence_partition_requires_even_token_count (test_answers.BudgetTests.test_sequence_partition_requires_even_token_count) ... ok
+test_two_allreduces_send_112_mib_per_rank (test_answers.BudgetTests.test_two_allreduces_send_112_mib_per_rank) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.178s
+
+OK

@@ -1,0 +1,12 @@
+megatron/core/tensor_parallel/layers.py @ 1a82f514b87d6bd4cc81d1a175a6c4ce6e54faec
+# Copyright (c) 2025 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+# Parts of the code here are adapted from PyTorch
+# repo: https://github.com/pytorch/pytorch
+
+megatron/core/tensor_parallel/mappings.py @ 1a82f514b87d6bd4cc81d1a175a6c4ce6e54faec
+# Copyright (c) 2025 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+
+megatron/core/transformer/mlp.py @ 1a82f514b87d6bd4cc81d1a175a6c4ce6e54faec
+# Copyright (c) 2024, NVIDIA CORPORATION. All rights reserved.

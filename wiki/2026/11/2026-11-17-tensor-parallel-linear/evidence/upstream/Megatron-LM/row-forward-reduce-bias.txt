@@ -1,0 +1,47 @@
+        # Set up backprop all-reduce.
+        if self.input_is_parallel:
+            input_parallel = input_
+        else:
+            assert not self.sequence_parallel
+            input_parallel = scatter_to_tensor_model_parallel_region(input_, group=self.tp_group)
+        # Matrix multiply.
+        allreduce_dgrad = False
+
+        if self.config._cpu_offloading_context is not None:
+            if self.config._cpu_offloading_context.inside_context is True:
+                if not HAVE_TE:
+                    assert (
+                        self.config.cpu_offloading is False
+                    ), "CPU Offloading cannot be enabled while TE is not present"
+                else:
+                    input_parallel.activation_offloading = self.config.cpu_offloading_activations
+
+        output_parallel = self._forward_impl(
+            input=input_parallel,
+            weight=self.weight,
+            bias=None,
+            gradient_accumulation_fusion=self.gradient_accumulation_fusion,
+            allreduce_dgrad=allreduce_dgrad,
+            sequence_parallel=False,
+            tp_group=None,
+            grad_output_buffer=None,
+            gtp_remat_size=self.gtp_remat_size,
+        )
+
+        # All-reduce across all the partitions.
+        if self.explicit_expert_comm:
+            assert self.skip_bias_add
+            output_ = output_parallel
+        elif self.sequence_parallel:
+            output_ = reduce_scatter_to_sequence_parallel_region(
+                output_parallel, group=self.tp_group
+            )
+        else:
+            output_ = reduce_from_tensor_model_parallel_region(output_parallel, group=self.tp_group)
+        if not self.skip_bias_add:
+            output = (output_ + self.bias) if self.bias is not None else output_
+            output_bias = None
+        else:
+            output = output_
+            output_bias = self.bias
+        return output, output_bias

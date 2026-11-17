@@ -1,0 +1,14 @@
+    def _prepare_output_fn(output_layouts, use_local_output, mod, outputs, device_mesh):
+        # Rowwise sharding produces partial output, depending on output layouts:
+        # 1. to replicate -> allreduce
+        # 2. to shard -> reduce_scatter
+        if outputs.placements != output_layouts:
+            outputs = outputs.redistribute(placements=output_layouts, async_op=True)
+        # back to local tensor if use_local_output is True
+        return outputs.to_local() if use_local_output else outputs
+
+    def _apply(self, module: nn.Module, device_mesh: DeviceMesh) -> nn.Module:
+        if isinstance(module, nn.Linear):
+            partition_fn = self._partition_linear_fn
+            # rowwise linear runtime sharding requires input tensor shard on last dim
+            self.desired_input_layouts: tuple[Placement, ...] = (Shard(-1),)

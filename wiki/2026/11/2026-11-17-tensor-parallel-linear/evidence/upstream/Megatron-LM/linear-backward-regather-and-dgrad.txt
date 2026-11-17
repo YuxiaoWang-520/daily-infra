@@ -1,0 +1,76 @@
+    def backward(ctx, grad_output):
+        """Backward."""
+        input, weight = ctx.saved_tensors
+        main_grad = ctx.main_grad
+        use_bias = ctx.use_bias
+        # TE owns only the forward GEMM here; Megatron retains the backward contract.
+        # Cast dY to the input dtype to match the legacy FP32-logit-cast backward path.
+        grad_output = grad_output.to(ctx.input_dtype)
+
+        # GTP: re-gather weight for dgrad
+        if ctx.gtp_remat_size > 1:
+            sharded_weight = weight
+            weight = sharded_weight.all_gather_and_prefetch_bwd()
+            ctx.gradient_accumulation_fusion = False
+
+        grad_output_buffer = ctx.grad_output_buffer
+        wgrad_deferral_limit = ctx.wgrad_deferral_limit
+        handle = None
+        tp_group = ctx.tp_group
+
+        if ctx.gradient_accumulation_fusion:
+            weight.main_grad = main_grad
+
+        wgrad_compute = True
+        if grad_output_buffer is not None:
+            if wgrad_deferral_limit == 0 or len(grad_output_buffer) < wgrad_deferral_limit:
+                grad_output_buffer.append(grad_output)
+                wgrad_compute = False
+
+        if wgrad_compute:
+            if ctx.sequence_parallel:
+                dim_size = list(input.size())
+                dim_size[0] = dim_size[0] * tp_group.size()
+
+                all_gather_buffer = get_global_memory_buffer().get_tensor(
+                    dim_size, input.dtype, "mpu"
+                )
+                handle = dist_all_gather_func(
+                    all_gather_buffer, input, group=tp_group, async_op=True
+                )
+
+                # Here we rely on CUDA_DEVICE_MAX_CONNECTIONS=1 to ensure that the
+                # gather is scheduled before the input gradient computation
+                total_input = all_gather_buffer
+            else:
+                total_input = input
+        grad_input = grad_output.matmul(weight)
+
+        if ctx.sequence_parallel and wgrad_compute:
+            # pylint: disable=possibly-used-before-assignment
+            handle.wait()
+
+        if wgrad_compute:
+            grad_output, total_input = prepare_input_tensors_for_wgrad_compute(
+                grad_output, total_input
+            )
+
+        if ctx.allreduce_dgrad:
+            # Asynchronous all-reduce
+            handle = torch.distributed.all_reduce(grad_input, group=tp_group, async_op=True)
+            # Here we rely on CUDA_DEVICE_MAX_CONNECTIONS=1 to ensure that the
+            # all-reduce is scheduled before the weight gradient computation
+
+        if ctx.sequence_parallel:
+            assert not ctx.allreduce_dgrad
+            dim_size = list(input.size())
+            sub_grad_input = torch.empty(
+                dim_size, dtype=input.dtype, device=torch.cuda.current_device(), requires_grad=False
+            )
+            # reduce_scatter
+            handle = dist_reduce_scatter_func(
+                sub_grad_input, grad_input, group=tp_group, async_op=True
+            )
+            # Here we rely on CUDA_DEVICE_MAX_CONNECTIONS=1 to ensure that the
+            # reduce scatter is scheduled before the weight gradient computation
+

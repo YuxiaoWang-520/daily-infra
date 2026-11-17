@@ -1,0 +1,7 @@
+torch/distributed/tensor/_redistribute.py @ 479e2b59bebcc8f65283548837332b1ad42f99c3
+# mypy: allow-untyped-defs
+# Copyright (c) Meta Platforms, Inc. and affiliates
+
+torch/distributed/tensor/parallel/style.py @ 479e2b59bebcc8f65283548837332b1ad42f99c3
+# mypy: allow-untyped-defs
+# Copyright (c) Meta Platforms, Inc. and affiliates

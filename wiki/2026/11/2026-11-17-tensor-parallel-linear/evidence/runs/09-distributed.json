@@ -1,0 +1,226 @@
+[
+  {
+    "rank": 0,
+    "case": "gathered_hidden",
+    "backend": "gloo",
+    "device": "cpu",
+    "world_size": 2,
+    "output": [
+      [
+        11.0,
+        -5.0
+      ],
+      [
+        10.0,
+        6.0
+      ]
+    ],
+    "loss": 51.25,
+    "hidden_local_shape": [
+      2,
+      4
+    ],
+    "parameter_local_shapes": {
+      "0.weight": [
+        2,
+        2
+      ],
+      "0.bias": [
+        2
+      ],
+      "2.weight": [
+        2,
+        2
+      ],
+      "2.bias": [
+        2
+      ]
+    },
+    "input_gradient": [
+      [
+        19.0,
+        1.0
+      ],
+      [
+        1.5,
+        15.5
+      ]
+    ],
+    "max_parameter_gradient_abs_error": 0.0,
+    "forward_collective_counts": {
+      "c10d_functional.all_gather_into_tensor": 1,
+      "c10d_functional.all_reduce": 1
+    },
+    "backward_collective_counts": {
+      "c10d_functional.all_gather_into_tensor": 1,
+      "c10d_functional.all_reduce": 1
+    }
+  },
+  {
+    "rank": 1,
+    "case": "gathered_hidden",
+    "backend": "gloo",
+    "device": "cpu",
+    "world_size": 2,
+    "output": [
+      [
+        11.0,
+        -5.0
+      ],
+      [
+        10.0,
+        6.0
+      ]
+    ],
+    "loss": 51.25,
+    "hidden_local_shape": [
+      2,
+      4
+    ],
+    "parameter_local_shapes": {
+      "0.weight": [
+        2,
+        2
+      ],
+      "0.bias": [
+        2
+      ],
+      "2.weight": [
+        2,
+        2
+      ],
+      "2.bias": [
+        2
+      ]
+    },
+    "input_gradient": [
+      [
+        19.0,
+        1.0
+      ],
+      [
+        1.5,
+        15.5
+      ]
+    ],
+    "max_parameter_gradient_abs_error": 0.0,
+    "forward_collective_counts": {
+      "c10d_functional.all_gather_into_tensor": 1,
+      "c10d_functional.all_reduce": 1
+    },
+    "backward_collective_counts": {
+      "c10d_functional.all_gather_into_tensor": 1,
+      "c10d_functional.all_reduce": 1
+    }
+  },
+  {
+    "rank": 0,
+    "case": "paired_shards",
+    "backend": "gloo",
+    "device": "cpu",
+    "world_size": 2,
+    "output": [
+      [
+        11.0,
+        -5.0
+      ],
+      [
+        10.0,
+        6.0
+      ]
+    ],
+    "loss": 51.25,
+    "hidden_local_shape": [
+      2,
+      2
+    ],
+    "parameter_local_shapes": {
+      "0.weight": [
+        2,
+        2
+      ],
+      "0.bias": [
+        2
+      ],
+      "2.weight": [
+        2,
+        2
+      ],
+      "2.bias": [
+        2
+      ]
+    },
+    "input_gradient": [
+      [
+        19.0,
+        1.0
+      ],
+      [
+        1.5,
+        15.5
+      ]
+    ],
+    "max_parameter_gradient_abs_error": 0.0,
+    "forward_collective_counts": {
+      "c10d_functional.all_reduce": 1
+    },
+    "backward_collective_counts": {
+      "c10d_functional.all_reduce": 1
+    }
+  },
+  {
+    "rank": 1,
+    "case": "paired_shards",
+    "backend": "gloo",
+    "device": "cpu",
+    "world_size": 2,
+    "output": [
+      [
+        11.0,
+        -5.0
+      ],
+      [
+        10.0,
+        6.0
+      ]
+    ],
+    "loss": 51.25,
+    "hidden_local_shape": [
+      2,
+      2
+    ],
+    "parameter_local_shapes": {
+      "0.weight": [
+        2,
+        2
+      ],
+      "0.bias": [
+        2
+      ],
+      "2.weight": [
+        2,
+        2
+      ],
+      "2.bias": [
+        2
+      ]
+    },
+    "input_gradient": [
+      [
+        19.0,
+        1.0
+      ],
+      [
+        1.5,
+        15.5
+      ]
+    ],
+    "max_parameter_gradient_abs_error": 0.0,
+    "forward_collective_counts": {
+      "c10d_functional.all_reduce": 1
+    },
+    "backward_collective_counts": {
+      "c10d_functional.all_reduce": 1
+    }
+  }
+]

@@ -32,7 +32,8 @@
 | 24 | [CUDA Graph 怎样减少重复提交开销，哪些动态行为会让捕获失效？](wiki/2026/11/2026-11-12-cuda-graph-replay/README.md) | 重复提交、图捕获、固定地址与动态行为约束，前置为第 06、09 篇 |
 | 25 | [torch.compile 怎样捕获计算，graph break 与重新编译各会增加什么开销？](wiki/2026/11/2026-11-13-torch-compile-guards/README.md) | 计算图、guards、动态输入与编译成本，前置为第 06、09、24 篇 |
 | 26 | [CUDA caching allocator 怎样复用显存，为什么会出现碎片与 OOM？](wiki/2026/11/2026-11-16-cuda-caching-allocator/README.md) | 显存池、分配与回收、碎片及容量排障，前置为第 01、18、24 篇 |
-| 27 | Tensor Parallel 怎样切分线性层，AllReduce 与 AllGather 分别出现在何处？ | 线性层切分、张量布局与通信，前置为第 07、17、23 篇 |
+| 27 | [Tensor Parallel 怎样切分线性层，AllReduce 与 AllGather 分别出现在何处？](wiki/2026/11/2026-11-17-tensor-parallel-linear/README.md) | 线性层切分、张量布局与通信，前置为第 07、17、23 篇 |
+| 28 | Pipeline Parallel 怎样调度 microbatch，气泡和激活显存之间如何取舍？ | 层间流水线、microbatch 调度、吞吐与激活存活期，前置为第 17—19、27 篇 |
 
 每篇既要独立可读，也要链接已有前置文章。较新的实现可以作为当天的进阶部分，但不能让读者先理解尚未解释的术语。
 

@@ -1,0 +1,19 @@
+class _GatherFromModelParallelRegion(torch.autograd.Function):
+    """Gather the input from model parallel region and concatinate."""
+
+    @staticmethod
+    def symbolic(graph, input_, group):
+        """Symbolic function for tracing."""
+        return _gather_along_last_dim(input_, group)
+
+    @staticmethod
+    def forward(ctx, input_, group):
+        """Forward function."""
+        ctx.group = group
+        return _gather_along_last_dim(input_, group)
+
+    @staticmethod
+    def backward(ctx, grad_output):
+        """Backward function."""
+        return _split_along_last_dim(grad_output, ctx.group), None
+

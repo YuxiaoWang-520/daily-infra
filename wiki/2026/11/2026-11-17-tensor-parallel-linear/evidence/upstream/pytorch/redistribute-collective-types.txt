@@ -1,0 +1,25 @@
+            )
+
+    def _comm_type_key(self) -> str | None:
+        """
+        Return a key for grouping transforms by communication type.
+
+        Returns None for local ops (no communication needed), or a string
+        that identifies the collective type for potential grouping/merging.
+        """
+        src, dst = self.src_dst_placements
+        if src.is_partial() and dst.is_replicate():
+            return "all_reduce"
+        elif src.is_partial() and _is_shard_like(dst):
+            return "reduce_scatter"
+        elif _is_shard_like(src) and dst.is_replicate():
+            return "all_gather"
+        elif _is_shard_like(src) and _is_shard_like(dst):
+            return "all_to_all"
+        else:
+            # Local ops (Replicate->Shard, Replicate->Partial, noop, etc.)
+            return None
+
+
+@dataclasses.dataclass(frozen=True, slots=True)
+class _FlattenedTransformInfo(_TransformInfo):

@@ -1,0 +1,180 @@
+{
+  "environment": {
+    "python": "3.12.16",
+    "torch": "2.15.0",
+    "torch_build_commit": "d0f2af8b66b20da4baa50644c0cd3f887a2eae2e",
+    "os": "Darwin",
+    "architecture": "arm64",
+    "cuda_available": false,
+    "gloo_available": true
+  },
+  "single_process_tp_algebra": {
+    "tp_size": 2,
+    "preactivations": [
+      [
+        [
+          3.0,
+          -5.0
+        ],
+        [
+          1.0,
+          3.0
+        ]
+      ],
+      [
+        [
+          5.0,
+          1.0
+        ],
+        [
+          -2.0,
+          4.0
+        ]
+      ]
+    ],
+    "hidden_shards": [
+      [
+        [
+          3.0,
+          0.0
+        ],
+        [
+          1.0,
+          3.0
+        ]
+      ],
+      [
+        [
+          5.0,
+          1.0
+        ],
+        [
+          0.0,
+          4.0
+        ]
+      ]
+    ],
+    "partial_outputs": [
+      [
+        [
+          3.0,
+          0.0
+        ],
+        [
+          1.0,
+          3.0
+        ]
+      ],
+      [
+        [
+          7.0,
+          -4.0
+        ],
+        [
+          8.0,
+          4.0
+        ]
+      ]
+    ],
+    "output": [
+      [
+        11.0,
+        -5.0
+      ],
+      [
+        10.0,
+        6.0
+      ]
+    ],
+    "loss": 51.25,
+    "gradients": {
+      "x": [
+        [
+          19.0,
+          1.0
+        ],
+        [
+          1.5,
+          15.5
+        ]
+      ],
+      "w1": [
+        [
+          1.0,
+          -2.5,
+          7.0,
+          -2.5
+        ],
+        [
+          -6.0,
+          2.5,
+          -14.0,
+          -5.5
+        ]
+      ],
+      "b1": [
+        9.0,
+        2.5,
+        7.0,
+        18.5
+      ],
+      "w2": [
+        [
+          19.0,
+          -3.5
+        ],
+        [
+          12.0,
+          7.5
+        ],
+        [
+          25.0,
+          -10.0
+        ],
+        [
+          21.0,
+          8.0
+        ]
+      ],
+      "b2": [
+        9.0,
+        0.5
+      ]
+    }
+  },
+  "ideal_equal_chunk_ring_estimates": {
+    "inputs": {
+      "tokens": 2048,
+      "hidden": 8192,
+      "tp_size": 8,
+      "element_bytes": 2
+    },
+    "two_allreduces": {
+      "payload_bytes": 33554432,
+      "all_reduce_calls": 2,
+      "all_gather_calls": 0,
+      "reduce_scatter_calls": 0,
+      "ring_rounds": 28,
+      "sent_bytes_per_rank": 117440512,
+      "received_bytes_per_rank": 117440512
+    },
+    "sequence_layout_transforms_only": {
+      "payload_bytes": 33554432,
+      "all_reduce_calls": 0,
+      "all_gather_calls": 2,
+      "reduce_scatter_calls": 2,
+      "ring_rounds": 28,
+      "sent_bytes_per_rank": 117440512,
+      "received_bytes_per_rank": 117440512
+    },
+    "sequence_plus_input_regather": {
+      "payload_bytes": 33554432,
+      "all_reduce_calls": 0,
+      "all_gather_calls": 3,
+      "reduce_scatter_calls": 2,
+      "ring_rounds": 35,
+      "sent_bytes_per_rank": 146800640,
+      "received_bytes_per_rank": 146800640
+    }
+  }
+}

@@ -1,0 +1,27 @@
+class _ReduceScatterToSequenceParallelRegion(torch.autograd.Function):
+    """Reduce scatter the input from the model parallel region."""
+
+    @staticmethod
+    def symbolic(graph, input_, group, input_split_sizes=None, use_global_buffer=False):
+        """Symbolic function for tracing."""
+        return _reduce_scatter_along_first_dim(input_, group, input_split_sizes, use_global_buffer)
+
+    @staticmethod
+    def forward(ctx, input_, group, input_split_sizes=None, use_global_buffer=False):
+        """Forward function."""
+        ctx.group = group
+        ctx.input_split_sizes = input_split_sizes
+        ctx.use_global_buffer = use_global_buffer
+        return _reduce_scatter_along_first_dim(input_, group, input_split_sizes, use_global_buffer)
+
+    @staticmethod
+    def backward(ctx, grad_output):
+        """Backward function."""
+        input_split_sizes = ctx.input_split_sizes
+        use_global_buffer = ctx.use_global_buffer
+        return (
+            _gather_along_first_dim(grad_output, ctx.group, input_split_sizes, use_global_buffer),
+            None,
+            None,
+            None,
+        )

@@ -1,0 +1,24 @@
+test_regather_for_weight_gradient_adds_one_allgather (test_answers.BudgetTests.test_regather_for_weight_gradient_adds_one_allgather) ... ERROR
+test_regather_option_requires_sequence_parallel_mode (test_answers.BudgetTests.test_regather_option_requires_sequence_parallel_mode) ... ERROR
+
+======================================================================
+ERROR: test_regather_for_weight_gradient_adds_one_allgather (test_answers.BudgetTests.test_regather_for_weight_gradient_adds_one_allgather)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-17-tensor-parallel-linear/code/test_answers.py", line 147, in test_regather_for_weight_gradient_adds_one_allgather
+    result = collective_budget(
+             ^^^^^^^^^^^^^^^^^^
+TypeError: collective_budget() got an unexpected keyword argument 'regather_input_for_wgrad'
+
+======================================================================
+ERROR: test_regather_option_requires_sequence_parallel_mode (test_answers.BudgetTests.test_regather_option_requires_sequence_parallel_mode)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-17-tensor-parallel-linear/code/test_answers.py", line 158, in test_regather_option_requires_sequence_parallel_mode
+    collective_budget(8, 8, 2, 4, regather_input_for_wgrad=True)
+TypeError: collective_budget() got an unexpected keyword argument 'regather_input_for_wgrad'
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.000s
+
+FAILED (errors=2)

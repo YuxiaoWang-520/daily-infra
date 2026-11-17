@@ -1,0 +1,102 @@
+{
+  "checked_at": "2026-11-17T11:33:32.864576+08:00",
+  "phase": "before archiving and staging the reviewed article",
+  "repository": "YuxiaoWang-520/daily-infra",
+  "local_repository": ".",
+  "branch": "main",
+  "origin_fetch_urls": [
+    "git@github.com:YuxiaoWang-520/daily-infra.git"
+  ],
+  "origin_push_urls": [
+    "git@github.com:YuxiaoWang-520/daily-infra.git"
+  ],
+  "repository_local_identity": {
+    "name": "YuxiaoWang-520",
+    "email": "13917046839@163.com"
+  },
+  "local_head": "389f8394b7d2f2f124adaf537709bd6df6f86902",
+  "origin_main": "389f8394b7d2f2f124adaf537709bd6df6f86902",
+  "github_main": "389f8394b7d2f2f124adaf537709bd6df6f86902",
+  "ahead_behind": [
+    0,
+    0
+  ],
+  "github_repo_view": {
+    "nameWithOwner": "YuxiaoWang-520/daily-infra",
+    "visibility": "PUBLIC",
+    "isPrivate": false,
+    "defaultBranchRef": {
+      "name": "main"
+    },
+    "viewerPermission": "ADMIN",
+    "url": "https://github.com/YuxiaoWang-520/daily-infra"
+  },
+  "github_authenticated_login": "YuxiaoWang-520",
+  "remote_checks": [
+    "git fetch origin main",
+    "gh repo view YuxiaoWang-520/daily-infra --json nameWithOwner,visibility,isPrivate,defaultBranchRef,viewerPermission,url",
+    "gh api repos/YuxiaoWang-520/daily-infra/commits/main --jq .sha",
+    "gh api user --jq .login"
+  ],
+  "staged_paths": [],
+  "modified_tracked_paths": [],
+  "untracked_paths": [
+    "drafts/2026-11-17-tensor-parallel-linear/.gitattributes",
+    "drafts/2026-11-17-tensor-parallel-linear/README.md",
+    "drafts/2026-11-17-tensor-parallel-linear/assets/forward.mmd",
+    "drafts/2026-11-17-tensor-parallel-linear/assets/sequence.mmd",
+    "drafts/2026-11-17-tensor-parallel-linear/code/README.md",
+    "drafts/2026-11-17-tensor-parallel-linear/code/answers.py",
+    "drafts/2026-11-17-tensor-parallel-linear/code/distributed_cpu.py",
+    "drafts/2026-11-17-tensor-parallel-linear/code/example_data.py",
+    "drafts/2026-11-17-tensor-parallel-linear/code/exercises.py",
+    "drafts/2026-11-17-tensor-parallel-linear/code/run_answers.py",
+    "drafts/2026-11-17-tensor-parallel-linear/code/test_answers.py",
+    "drafts/2026-11-17-tensor-parallel-linear/evidence/paper-notes.md",
+    "drafts/2026-11-17-tensor-parallel-linear/evidence/python-review.json",
+    "drafts/2026-11-17-tensor-parallel-linear/evidence/runs/01-red-tests.txt",
+    "drafts/2026-11-17-tensor-parallel-linear/evidence/runs/01-red-verification.json",
+    "drafts/2026-11-17-tensor-parallel-linear/evidence/runs/02-distributed-probe.txt",
+    "drafts/2026-11-17-tensor-parallel-linear/evidence/runs/03-regather-red.txt",
+    "drafts/2026-11-17-tensor-parallel-linear/evidence/runs/04-tests.txt",
+    "drafts/2026-11-17-tensor-parallel-linear/evidence/runs/05-optimized-tests.txt",
+    "drafts/2026-11-17-tensor-parallel-linear/evidence/runs/06-ruff.txt",
+    "drafts/2026-11-17-tensor-parallel-linear/evidence/runs/07-format.txt",
+    "drafts/2026-11-17-tensor-parallel-linear/evidence/runs/08-answers.json",
+    "drafts/2026-11-17-tensor-parallel-linear/evidence/runs/09-distributed.json",
+    "drafts/2026-11-17-tensor-parallel-linear/evidence/runs/09-distributed.txt",
+    "drafts/2026-11-17-tensor-parallel-linear/evidence/runs/verification.json",
+    "drafts/2026-11-17-tensor-parallel-linear/evidence/source-manifest.json",
+    "drafts/2026-11-17-tensor-parallel-linear/evidence/upstream/Megatron-LM/COPYRIGHT_HEADERS.txt",
+    "drafts/2026-11-17-tensor-parallel-linear/evidence/upstream/Megatron-LM/LICENSE",
+    "drafts/2026-11-17-tensor-parallel-linear/evidence/upstream/Megatron-LM/allreduce-primitive.txt",
+    "drafts/2026-11-17-tensor-parallel-linear/evidence/upstream/Megatron-LM/column-dgrad-condition.txt",
+    "drafts/2026-11-17-tensor-parallel-linear/evidence/upstream/Megatron-LM/column-forward.txt",
+    "drafts/2026-11-17-tensor-parallel-linear/evidence/upstream/Megatron-LM/copy-and-reduce-autograd.txt",
+    "drafts/2026-11-17-tensor-parallel-linear/evidence/upstream/Megatron-LM/gather-feature-autograd.txt",
+    "drafts/2026-11-17-tensor-parallel-linear/evidence/upstream/Megatron-LM/gather-sequence-autograd.txt",
+    "drafts/2026-11-17-tensor-parallel-linear/evidence/upstream/Megatron-LM/linear-backward-regather-and-dgrad.txt",
+    "drafts/2026-11-17-tensor-parallel-linear/evidence/upstream/Megatron-LM/linear-forward-saved-input.txt",
+    "drafts/2026-11-17-tensor-parallel-linear/evidence/upstream/Megatron-LM/mlp-builders.txt",
+    "drafts/2026-11-17-tensor-parallel-linear/evidence/upstream/Megatron-LM/mlp-second-linear-output.txt",
+    "drafts/2026-11-17-tensor-parallel-linear/evidence/upstream/Megatron-LM/reduce-scatter-sequence-autograd.txt",
+    "drafts/2026-11-17-tensor-parallel-linear/evidence/upstream/Megatron-LM/row-forward-reduce-bias.txt",
+    "drafts/2026-11-17-tensor-parallel-linear/evidence/upstream/pytorch/COPYRIGHT_HEADERS.txt",
+    "drafts/2026-11-17-tensor-parallel-linear/evidence/upstream/pytorch/LICENSE",
+    "drafts/2026-11-17-tensor-parallel-linear/evidence/upstream/pytorch/colwise-style.txt",
+    "drafts/2026-11-17-tensor-parallel-linear/evidence/upstream/pytorch/redistribute-collective-types.txt",
+    "drafts/2026-11-17-tensor-parallel-linear/evidence/upstream/pytorch/rowwise-output.txt",
+    "drafts/2026-11-17-tensor-parallel-linear/evidence/upstream/pytorch/rowwise-parameters.txt",
+    "drafts/2026-11-17-tensor-parallel-linear/references.md",
+    "drafts/2026-11-17-tensor-parallel-linear/review.md"
+  ],
+  "planned_staging_whitelist": [
+    "wiki/2026/11/2026-11-17-tensor-parallel-linear/",
+    "wiki/index.md",
+    "ROADMAP.md"
+  ],
+  "notes": [
+    "Remote read-only checks were executed immediately before this record; authenticated account and repository-level Git identity were verified separately.",
+    "This records the pre-commit base. Final sync is verified against GitHub main after the normal push."
+  ]
+}

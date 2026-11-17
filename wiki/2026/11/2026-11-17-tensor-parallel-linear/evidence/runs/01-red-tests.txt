@@ -1,0 +1,308 @@
+test_all_26_derivatives_match_finite_differences (test_answers.AlgebraTests.test_all_26_derivatives_match_finite_differences) ... ERROR
+test_all_gradients_match_dense_for_multiple_degrees (test_answers.AlgebraTests.test_all_gradients_match_dense_for_multiple_degrees) ... 
+  test_all_gradients_match_dense_for_multiple_degrees (test_answers.AlgebraTests.test_all_gradients_match_dense_for_multiple_degrees) (tp_size=1) ... ERROR
+  test_all_gradients_match_dense_for_multiple_degrees (test_answers.AlgebraTests.test_all_gradients_match_dense_for_multiple_degrees) (tp_size=2) ... ERROR
+  test_all_gradients_match_dense_for_multiple_degrees (test_answers.AlgebraTests.test_all_gradients_match_dense_for_multiple_degrees) (tp_size=4) ... ERROR
+test_float32_matches_dense (test_answers.AlgebraTests.test_float32_matches_dense) ... ERROR
+test_four_ranks_keep_one_hidden_feature_each (test_answers.AlgebraTests.test_four_ranks_keep_one_hidden_feature_each) ... ERROR
+test_hidden_input_size_need_not_be_divisible_by_degree (test_answers.AlgebraTests.test_hidden_input_size_need_not_be_divisible_by_degree) ... ERROR
+test_input_gradient_has_two_partial_contributions (test_answers.AlgebraTests.test_input_gradient_has_two_partial_contributions) ... ERROR
+test_one_rank_matches_dense (test_answers.AlgebraTests.test_one_rank_matches_dense) ... ERROR
+test_output_bias_is_added_once (test_answers.AlgebraTests.test_output_bias_is_added_once) ... ERROR
+test_rejects_inconsistent_shapes (test_answers.AlgebraTests.test_rejects_inconsistent_shapes) ... ERROR
+test_rejects_invalid_parallel_degree (test_answers.AlgebraTests.test_rejects_invalid_parallel_degree) ... 
+  test_rejects_invalid_parallel_degree (test_answers.AlgebraTests.test_rejects_invalid_parallel_degree) (degree=0) ... ERROR
+  test_rejects_invalid_parallel_degree (test_answers.AlgebraTests.test_rejects_invalid_parallel_degree) (degree=-1) ... ERROR
+  test_rejects_invalid_parallel_degree (test_answers.AlgebraTests.test_rejects_invalid_parallel_degree) (degree=True) ... ERROR
+  test_rejects_invalid_parallel_degree (test_answers.AlgebraTests.test_rejects_invalid_parallel_degree) (degree=1.5) ... ERROR
+test_rejects_uneven_intermediate_partition (test_answers.AlgebraTests.test_rejects_uneven_intermediate_partition) ... ERROR
+test_two_ranks_match_hand_calculation (test_answers.AlgebraTests.test_two_ranks_match_hand_calculation) ... ERROR
+test_one_rank_has_no_communication (test_answers.BudgetTests.test_one_rank_has_no_communication) ... ERROR
+test_rejects_invalid_integer_inputs (test_answers.BudgetTests.test_rejects_invalid_integer_inputs) ... 
+  test_rejects_invalid_integer_inputs (test_answers.BudgetTests.test_rejects_invalid_integer_inputs) (arguments=(0, 8, 2, 4)) ... ERROR
+  test_rejects_invalid_integer_inputs (test_answers.BudgetTests.test_rejects_invalid_integer_inputs) (arguments=(2, -1, 2, 4)) ... ERROR
+  test_rejects_invalid_integer_inputs (test_answers.BudgetTests.test_rejects_invalid_integer_inputs) (arguments=(2, 8, True, 4)) ... ERROR
+  test_rejects_invalid_integer_inputs (test_answers.BudgetTests.test_rejects_invalid_integer_inputs) (arguments=(2, 8, 2, 1.5)) ... ERROR
+test_rejects_unequal_ring_chunks_in_the_teaching_model (test_answers.BudgetTests.test_rejects_unequal_ring_chunks_in_the_teaching_model) ... ERROR
+test_sequence_parallel_has_equal_ideal_ring_bytes (test_answers.BudgetTests.test_sequence_parallel_has_equal_ideal_ring_bytes) ... ERROR
+test_sequence_partition_requires_even_token_count (test_answers.BudgetTests.test_sequence_partition_requires_even_token_count) ... ERROR
+test_two_allreduces_send_112_mib_per_rank (test_answers.BudgetTests.test_two_allreduces_send_112_mib_per_rank) ... ERROR
+
+======================================================================
+ERROR: test_all_26_derivatives_match_finite_differences (test_answers.AlgebraTests.test_all_26_derivatives_match_finite_differences)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-17-tensor-parallel-linear/code/test_answers.py", line 68, in test_all_26_derivatives_match_finite_differences
+    output = tp_mlp(*values, 2)["output"]
+             ^^^^^^^^^^^^^^^^^^
+  File "<repo>/drafts/2026-11-17-tensor-parallel-linear/code/answers.py", line 14, in tp_mlp
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_all_gradients_match_dense_for_multiple_degrees (test_answers.AlgebraTests.test_all_gradients_match_dense_for_multiple_degrees) (tp_size=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-17-tensor-parallel-linear/code/test_answers.py", line 51, in test_all_gradients_match_dense_for_multiple_degrees
+    actual = tp_mlp(*actual_values, degree)["output"]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/drafts/2026-11-17-tensor-parallel-linear/code/answers.py", line 14, in tp_mlp
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_all_gradients_match_dense_for_multiple_degrees (test_answers.AlgebraTests.test_all_gradients_match_dense_for_multiple_degrees) (tp_size=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-17-tensor-parallel-linear/code/test_answers.py", line 51, in test_all_gradients_match_dense_for_multiple_degrees
+    actual = tp_mlp(*actual_values, degree)["output"]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/drafts/2026-11-17-tensor-parallel-linear/code/answers.py", line 14, in tp_mlp
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_all_gradients_match_dense_for_multiple_degrees (test_answers.AlgebraTests.test_all_gradients_match_dense_for_multiple_degrees) (tp_size=4)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-17-tensor-parallel-linear/code/test_answers.py", line 51, in test_all_gradients_match_dense_for_multiple_degrees
+    actual = tp_mlp(*actual_values, degree)["output"]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/drafts/2026-11-17-tensor-parallel-linear/code/answers.py", line 14, in tp_mlp
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_float32_matches_dense (test_answers.AlgebraTests.test_float32_matches_dense)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-17-tensor-parallel-linear/code/test_answers.py", line 98, in test_float32_matches_dense
+    torch.testing.assert_close(tp_mlp(*values, 2)["output"], dense_mlp(values))
+                               ^^^^^^^^^^^^^^^^^^
+  File "<repo>/drafts/2026-11-17-tensor-parallel-linear/code/answers.py", line 14, in tp_mlp
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_four_ranks_keep_one_hidden_feature_each (test_answers.AlgebraTests.test_four_ranks_keep_one_hidden_feature_each)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-17-tensor-parallel-linear/code/test_answers.py", line 34, in test_four_ranks_keep_one_hidden_feature_each
+    result = tp_mlp(*values, 4)
+             ^^^^^^^^^^^^^^^^^^
+  File "<repo>/drafts/2026-11-17-tensor-parallel-linear/code/answers.py", line 14, in tp_mlp
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_hidden_input_size_need_not_be_divisible_by_degree (test_answers.AlgebraTests.test_hidden_input_size_need_not_be_divisible_by_degree)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-17-tensor-parallel-linear/code/test_answers.py", line 94, in test_hidden_input_size_need_not_be_divisible_by_degree
+    torch.testing.assert_close(tp_mlp(*values, 4)["output"], dense_mlp(values))
+                               ^^^^^^^^^^^^^^^^^^
+  File "<repo>/drafts/2026-11-17-tensor-parallel-linear/code/answers.py", line 14, in tp_mlp
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_input_gradient_has_two_partial_contributions (test_answers.AlgebraTests.test_input_gradient_has_two_partial_contributions)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-17-tensor-parallel-linear/code/test_answers.py", line 61, in test_input_gradient_has_two_partial_contributions
+    prediction = tp_mlp(x, w1, b1, w2, b2, 2)["output"]
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/drafts/2026-11-17-tensor-parallel-linear/code/answers.py", line 14, in tp_mlp
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_one_rank_matches_dense (test_answers.AlgebraTests.test_one_rank_matches_dense)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-17-tensor-parallel-linear/code/test_answers.py", line 29, in test_one_rank_matches_dense
+    actual = tp_mlp(*values, 1)["output"]
+             ^^^^^^^^^^^^^^^^^^
+  File "<repo>/drafts/2026-11-17-tensor-parallel-linear/code/answers.py", line 14, in tp_mlp
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_output_bias_is_added_once (test_answers.AlgebraTests.test_output_bias_is_added_once)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-17-tensor-parallel-linear/code/test_answers.py", line 41, in test_output_bias_is_added_once
+    without_bias = tp_mlp(*values[:4], torch.zeros_like(values[4]), 2)["output"]
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/drafts/2026-11-17-tensor-parallel-linear/code/answers.py", line 14, in tp_mlp
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_inconsistent_shapes (test_answers.AlgebraTests.test_rejects_inconsistent_shapes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-17-tensor-parallel-linear/code/test_answers.py", line 112, in test_rejects_inconsistent_shapes
+    tp_mlp(x, w1, b1[:-1], w2, b2, 2)
+  File "<repo>/drafts/2026-11-17-tensor-parallel-linear/code/answers.py", line 14, in tp_mlp
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_invalid_parallel_degree (test_answers.AlgebraTests.test_rejects_invalid_parallel_degree) (degree=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-17-tensor-parallel-linear/code/test_answers.py", line 103, in test_rejects_invalid_parallel_degree
+    tp_mlp(*make_inputs()[:5], degree)
+  File "<repo>/drafts/2026-11-17-tensor-parallel-linear/code/answers.py", line 14, in tp_mlp
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_invalid_parallel_degree (test_answers.AlgebraTests.test_rejects_invalid_parallel_degree) (degree=-1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-17-tensor-parallel-linear/code/test_answers.py", line 103, in test_rejects_invalid_parallel_degree
+    tp_mlp(*make_inputs()[:5], degree)
+  File "<repo>/drafts/2026-11-17-tensor-parallel-linear/code/answers.py", line 14, in tp_mlp
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_invalid_parallel_degree (test_answers.AlgebraTests.test_rejects_invalid_parallel_degree) (degree=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-17-tensor-parallel-linear/code/test_answers.py", line 103, in test_rejects_invalid_parallel_degree
+    tp_mlp(*make_inputs()[:5], degree)
+  File "<repo>/drafts/2026-11-17-tensor-parallel-linear/code/answers.py", line 14, in tp_mlp
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_invalid_parallel_degree (test_answers.AlgebraTests.test_rejects_invalid_parallel_degree) (degree=1.5)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-17-tensor-parallel-linear/code/test_answers.py", line 103, in test_rejects_invalid_parallel_degree
+    tp_mlp(*make_inputs()[:5], degree)
+  File "<repo>/drafts/2026-11-17-tensor-parallel-linear/code/answers.py", line 14, in tp_mlp
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_uneven_intermediate_partition (test_answers.AlgebraTests.test_rejects_uneven_intermediate_partition)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-17-tensor-parallel-linear/code/test_answers.py", line 107, in test_rejects_uneven_intermediate_partition
+    tp_mlp(*make_inputs()[:5], 3)
+  File "<repo>/drafts/2026-11-17-tensor-parallel-linear/code/answers.py", line 14, in tp_mlp
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_two_ranks_match_hand_calculation (test_answers.AlgebraTests.test_two_ranks_match_hand_calculation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-17-tensor-parallel-linear/code/test_answers.py", line 19, in test_two_ranks_match_hand_calculation
+    result = tp_mlp(x, w1, b1, w2, b2, 2)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/drafts/2026-11-17-tensor-parallel-linear/code/answers.py", line 14, in tp_mlp
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_one_rank_has_no_communication (test_answers.BudgetTests.test_one_rank_has_no_communication)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-17-tensor-parallel-linear/code/test_answers.py", line 137, in test_one_rank_has_no_communication
+    result = collective_budget(3, 7, 1, 4, sequence_parallel=sequence)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/drafts/2026-11-17-tensor-parallel-linear/code/answers.py", line 25, in collective_budget
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_invalid_integer_inputs (test_answers.BudgetTests.test_rejects_invalid_integer_inputs) (arguments=(0, 8, 2, 4))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-17-tensor-parallel-linear/code/test_answers.py", line 145, in test_rejects_invalid_integer_inputs
+    collective_budget(*arguments)
+  File "<repo>/drafts/2026-11-17-tensor-parallel-linear/code/answers.py", line 25, in collective_budget
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_invalid_integer_inputs (test_answers.BudgetTests.test_rejects_invalid_integer_inputs) (arguments=(2, -1, 2, 4))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-17-tensor-parallel-linear/code/test_answers.py", line 145, in test_rejects_invalid_integer_inputs
+    collective_budget(*arguments)
+  File "<repo>/drafts/2026-11-17-tensor-parallel-linear/code/answers.py", line 25, in collective_budget
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_invalid_integer_inputs (test_answers.BudgetTests.test_rejects_invalid_integer_inputs) (arguments=(2, 8, True, 4))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-17-tensor-parallel-linear/code/test_answers.py", line 145, in test_rejects_invalid_integer_inputs
+    collective_budget(*arguments)
+  File "<repo>/drafts/2026-11-17-tensor-parallel-linear/code/answers.py", line 25, in collective_budget
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_invalid_integer_inputs (test_answers.BudgetTests.test_rejects_invalid_integer_inputs) (arguments=(2, 8, 2, 1.5))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-17-tensor-parallel-linear/code/test_answers.py", line 145, in test_rejects_invalid_integer_inputs
+    collective_budget(*arguments)
+  File "<repo>/drafts/2026-11-17-tensor-parallel-linear/code/answers.py", line 25, in collective_budget
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_unequal_ring_chunks_in_the_teaching_model (test_answers.BudgetTests.test_rejects_unequal_ring_chunks_in_the_teaching_model)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-17-tensor-parallel-linear/code/test_answers.py", line 149, in test_rejects_unequal_ring_chunks_in_the_teaching_model
+    collective_budget(1, 3, 2, 1)
+  File "<repo>/drafts/2026-11-17-tensor-parallel-linear/code/answers.py", line 25, in collective_budget
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_sequence_parallel_has_equal_ideal_ring_bytes (test_answers.BudgetTests.test_sequence_parallel_has_equal_ideal_ring_bytes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-17-tensor-parallel-linear/code/test_answers.py", line 127, in test_sequence_parallel_has_equal_ideal_ring_bytes
+    base = collective_budget(2048, 8192, 8, 2)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/drafts/2026-11-17-tensor-parallel-linear/code/answers.py", line 25, in collective_budget
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_sequence_partition_requires_even_token_count (test_answers.BudgetTests.test_sequence_partition_requires_even_token_count)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-17-tensor-parallel-linear/code/test_answers.py", line 152, in test_sequence_partition_requires_even_token_count
+    collective_budget(3, 8, 2, 4)
+  File "<repo>/drafts/2026-11-17-tensor-parallel-linear/code/answers.py", line 25, in collective_budget
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_two_allreduces_send_112_mib_per_rank (test_answers.BudgetTests.test_two_allreduces_send_112_mib_per_rank)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-17-tensor-parallel-linear/code/test_answers.py", line 119, in test_two_allreduces_send_112_mib_per_rank
+    result = collective_budget(2048, 8192, 8, 2)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/drafts/2026-11-17-tensor-parallel-linear/code/answers.py", line 25, in collective_budget
+    raise NotImplementedError
+NotImplementedError
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.004s
+
+FAILED (errors=26)

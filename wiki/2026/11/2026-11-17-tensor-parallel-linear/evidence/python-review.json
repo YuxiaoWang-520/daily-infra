@@ -1,0 +1,34 @@
+{
+  "date": "2026-11-17",
+  "requested_specialist": "python-reviewer",
+  "specialist_result": "Configured model unavailable for this account; specialist review did not start.",
+  "actual_reviewer": "Independent general agent, read-only, limited to this article's six Python files.",
+  "findings": {"CRITICAL": 0, "HIGH": 0, "MEDIUM": 0, "LOW": 0},
+  "tests_run": 6,
+  "tests_passed": 6,
+  "exit_code": 0,
+  "test_duration_seconds": 0.188,
+  "working_directory": "drafts/2026-11-17-tensor-parallel-linear/code",
+  "argv_display": [
+    "python", "-m", "unittest",
+    "test_answers.AlgebraTests.test_output_bias_is_added_once",
+    "test_answers.AlgebraTests.test_all_gradients_match_dense_for_multiple_degrees",
+    "test_answers.AlgebraTests.test_all_26_derivatives_match_finite_differences",
+    "test_answers.BudgetTests.test_two_allreduces_send_112_mib_per_rank",
+    "test_answers.BudgetTests.test_sequence_parallel_has_equal_ideal_ring_bytes",
+    "test_answers.BudgetTests.test_regather_for_weight_gradient_adds_one_allgather", "-v"
+  ],
+  "interpreter_note": "Existing ai-infra Python path normalized to python for publication.",
+  "code_sha256": {
+    "answers.py": "244c2ab6f3c541d4cb346cb64d19ea6f0a2e2adf55ffab9345bf9725c34f32a3",
+    "example_data.py": "ce3848ad1205aa330eef9a8c27dfd8c410b58bfb6ca1baee12a8363f7767e17c",
+    "test_answers.py": "c5b7f03ef0c277372cf1eb869c78002d40152da8afdb722e6c84bb1d338baf7c",
+    "distributed_cpu.py": "c9027a52055b128183acd538cf40d9d97b773f7c908552a88385f43a61619c0f",
+    "exercises.py": "d2a010503c21cd1349ad25d2d2efb71f9ec73511a4b8fe538098252c3572c0f4",
+    "run_answers.py": "3426564ffc1dab06d7502ecf702bdfb5525a0e344aeba4a14c70a2ca4d4b42bd"
+  },
+  "limitations": [
+    "The two-rank demo was statically reviewed in this independent pass; its actual run is recorded by the main executor.",
+    "Sequence-parallel execution, CUDA/NCCL and communication performance were not tested."
+  ]
+}

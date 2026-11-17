@@ -1,0 +1,3 @@
+        self.allreduce_dgrad = (
+            world_size > 1 and not self.sequence_parallel and not self.disable_grad_reduce
+        )

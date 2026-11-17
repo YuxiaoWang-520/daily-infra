@@ -1,0 +1,63 @@
+{
+  "checked_at": "2026-11-17T11:36:27.774583+08:00",
+  "status": "passed",
+  "article_directory": "wiki/2026/11/2026-11-17-tensor-parallel-linear",
+  "published_wiki_count": 27,
+  "same_day_entries": 1,
+  "local_markdown_links_checked": 148,
+  "mermaid_sources_identical": 2,
+  "mermaid_validation": "Manual source syntax/data-flow review and exact source equality; no render performed.",
+  "upstream_excerpts_verified": 16,
+  "upstream_excerpt_lines": 612,
+  "upstream_full_files_verified": 5,
+  "upstream_licenses_and_file_notices_verified": 4,
+  "python_files_ast_parsed": 6,
+  "review_and_run_code_sha256_verified": 6,
+  "passed_command_records": 6,
+  "unittest_normal": 20,
+  "unittest_optimized": 20,
+  "independent_code_review_targeted_tests": 6,
+  "distributed_records_verified_against_raw_output": 4,
+  "distributed_scope": "Two CPU/Gloo ranks, paired feature shards and explicitly gathered hidden activations; all outputs, input gradients and parameter gradients match the dense model.",
+  "privacy_patterns_checked": [
+    "absolute_home_path",
+    "private_key",
+    "github_token",
+    "openai_key",
+    "internal_domain",
+    "private_ipv4"
+  ],
+  "privacy_matches": {
+    "absolute_home_path": [],
+    "private_key": [],
+    "github_token": [],
+    "openai_key": [],
+    "internal_domain": [],
+    "private_ipv4": []
+  },
+  "checksums_file": "evidence/SHA256SUMS",
+  "checksummed_files": 49,
+  "checksum_exclusions": [
+    "evidence/SHA256SUMS",
+    "evidence/delivery-check.json"
+  ],
+  "publish_file_count": 51,
+  "scope_notes": [
+    "CPU exercises and two-rank runs are actual measurements; ring bytes are estimates.",
+    "SP execution, CUDA/NCCL and communication performance were not measured.",
+    "The specialist reviewer could not start; the independent general review and its exact scope are recorded.",
+    "Original paper notes and public upstream excerpts only; no internal materials used."
+  ],
+  "errors": [],
+  "staged_whitespace_check": {
+    "command": "git diff --cached --check",
+    "exit_code": 0,
+    "raw_log_exceptions": [
+      "evidence/runs/01-red-tests.txt",
+      "evidence/runs/02-distributed-probe.txt",
+      "evidence/runs/03-regather-red.txt",
+      "evidence/runs/09-distributed.txt"
+    ],
+    "note": "Raw upstream excerpts and these exact raw logs preserve original whitespace; all published bytes are checksummed."
+  }
+}

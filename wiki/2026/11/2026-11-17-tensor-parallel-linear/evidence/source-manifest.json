@@ -1,0 +1,213 @@
+{
+  "checked_at": "2026-11-17T11:19:02.411818+08:00",
+  "repositories": [
+    {
+      "repository": "pytorch/pytorch",
+      "origin": "https://github.com/pytorch/pytorch.git",
+      "default_branch": "main",
+      "commit": "479e2b59bebcc8f65283548837332b1ad42f99c3",
+      "commit_time": "2026-11-17T02:41:50Z",
+      "latest_release": "v2.15.0",
+      "release_published_at": "2026-10-28T17:09:49Z",
+      "release_api": "https://api.github.com/repos/pytorch/pytorch/releases/latest",
+      "license_archive": "evidence/upstream/pytorch/LICENSE",
+      "license_sha256": "bd018feef8825e88181c84eb7e3aa4eafb8f08a20d9fd6ef948569610c4a3e43",
+      "acquisition": "fetch --filter=blob:none origin main",
+      "file_notices_archive": "evidence/upstream/pytorch/COPYRIGHT_HEADERS.txt",
+      "file_notices_sha256": "e2325cd9d42569463e79d335d74835026932919a67cb6a641f7f95f60ccfc15f"
+    },
+    {
+      "repository": "NVIDIA/Megatron-LM",
+      "origin": "https://github.com/NVIDIA/Megatron-LM.git",
+      "default_branch": "main",
+      "commit": "1a82f514b87d6bd4cc81d1a175a6c4ce6e54faec",
+      "commit_time": "2026-11-16T18:41:14Z",
+      "latest_release": "core_v0.20.0",
+      "release_published_at": "2026-10-29T21:06:49Z",
+      "release_api": "https://api.github.com/repos/NVIDIA/Megatron-LM/releases/latest",
+      "license_archive": "evidence/upstream/Megatron-LM/LICENSE",
+      "license_sha256": "9d70d3ebc699d4c78ebe3f78dfb94b6dbae3529aea3dbc912e65e34a9f17667e",
+      "acquisition": "clone --filter=blob:none --no-checkout --depth=1",
+      "file_notices_archive": "evidence/upstream/Megatron-LM/COPYRIGHT_HEADERS.txt",
+      "file_notices_sha256": "7382dca75400f58603141eeffe7472676b0028959c14bca04ebe818677d15dae"
+    }
+  ],
+  "excerpts": [
+    {
+      "repository": "pytorch/pytorch",
+      "commit": "479e2b59bebcc8f65283548837332b1ad42f99c3",
+      "source_path": "torch/distributed/tensor/parallel/style.py",
+      "start_line": 86,
+      "end_line": 152,
+      "url": "https://github.com/pytorch/pytorch/blob/479e2b59bebcc8f65283548837332b1ad42f99c3/torch/distributed/tensor/parallel/style.py#L86-L152",
+      "source_sha256": "3573b1749b9bf258dd0a0c10c36294abd488d0eb951c3777a2dd87cdb139ee88",
+      "archive_path": "evidence/upstream/pytorch/colwise-style.txt",
+      "excerpt_sha256": "3aefe730068deb3f0b6549a83acc962b3fa00910ba580ccf19edc4513170495f"
+    },
+    {
+      "repository": "pytorch/pytorch",
+      "commit": "479e2b59bebcc8f65283548837332b1ad42f99c3",
+      "source_path": "torch/distributed/tensor/parallel/style.py",
+      "start_line": 221,
+      "end_line": 279,
+      "url": "https://github.com/pytorch/pytorch/blob/479e2b59bebcc8f65283548837332b1ad42f99c3/torch/distributed/tensor/parallel/style.py#L221-L279",
+      "source_sha256": "3573b1749b9bf258dd0a0c10c36294abd488d0eb951c3777a2dd87cdb139ee88",
+      "archive_path": "evidence/upstream/pytorch/rowwise-parameters.txt",
+      "excerpt_sha256": "4e77cde2178df7796f32a54579f47b7ec1ca68159ed749ccc730ad204ab34b04"
+    },
+    {
+      "repository": "pytorch/pytorch",
+      "commit": "479e2b59bebcc8f65283548837332b1ad42f99c3",
+      "source_path": "torch/distributed/tensor/parallel/style.py",
+      "start_line": 294,
+      "end_line": 307,
+      "url": "https://github.com/pytorch/pytorch/blob/479e2b59bebcc8f65283548837332b1ad42f99c3/torch/distributed/tensor/parallel/style.py#L294-L307",
+      "source_sha256": "3573b1749b9bf258dd0a0c10c36294abd488d0eb951c3777a2dd87cdb139ee88",
+      "archive_path": "evidence/upstream/pytorch/rowwise-output.txt",
+      "excerpt_sha256": "05205c3d10532b8e4594fcdc81c4a882932f2d20a2402ec1bf54b47b765333e0"
+    },
+    {
+      "repository": "pytorch/pytorch",
+      "commit": "479e2b59bebcc8f65283548837332b1ad42f99c3",
+      "source_path": "torch/distributed/tensor/_redistribute.py",
+      "start_line": 180,
+      "end_line": 204,
+      "url": "https://github.com/pytorch/pytorch/blob/479e2b59bebcc8f65283548837332b1ad42f99c3/torch/distributed/tensor/_redistribute.py#L180-L204",
+      "source_sha256": "4027e2ccf1fc7ef27a599657122e53066fe8423d45cb8cfa399ac853f5d1bc88",
+      "archive_path": "evidence/upstream/pytorch/redistribute-collective-types.txt",
+      "excerpt_sha256": "a6e85233c9ca087fb21446952ec5cfd99037985345204347317e7d4512170791"
+    },
+    {
+      "repository": "NVIDIA/Megatron-LM",
+      "commit": "1a82f514b87d6bd4cc81d1a175a6c4ce6e54faec",
+      "source_path": "megatron/core/tensor_parallel/layers.py",
+      "start_line": 1319,
+      "end_line": 1321,
+      "url": "https://github.com/NVIDIA/Megatron-LM/blob/1a82f514b87d6bd4cc81d1a175a6c4ce6e54faec/megatron/core/tensor_parallel/layers.py#L1319-L1321",
+      "source_sha256": "c4c9954f163de5d8f6d6d4faf16939b3629e7960963569099b59e5e3300aa7aa",
+      "archive_path": "evidence/upstream/Megatron-LM/column-dgrad-condition.txt",
+      "excerpt_sha256": "b8e700aaa1d7a4e8d4fd100c5238db9f72a3a3fe783b09fec3337714d7fbb0f6"
+    },
+    {
+      "repository": "NVIDIA/Megatron-LM",
+      "commit": "1a82f514b87d6bd4cc81d1a175a6c4ce6e54faec",
+      "source_path": "megatron/core/tensor_parallel/layers.py",
+      "start_line": 1404,
+      "end_line": 1467,
+      "url": "https://github.com/NVIDIA/Megatron-LM/blob/1a82f514b87d6bd4cc81d1a175a6c4ce6e54faec/megatron/core/tensor_parallel/layers.py#L1404-L1467",
+      "source_sha256": "c4c9954f163de5d8f6d6d4faf16939b3629e7960963569099b59e5e3300aa7aa",
+      "archive_path": "evidence/upstream/Megatron-LM/column-forward.txt",
+      "excerpt_sha256": "5bd36461f1e6b1baf08a9e33f2e0e9b394af9b53de42eb1b00d8f7f95133523f"
+    },
+    {
+      "repository": "NVIDIA/Megatron-LM",
+      "commit": "1a82f514b87d6bd4cc81d1a175a6c4ce6e54faec",
+      "source_path": "megatron/core/tensor_parallel/layers.py",
+      "start_line": 744,
+      "end_line": 797,
+      "url": "https://github.com/NVIDIA/Megatron-LM/blob/1a82f514b87d6bd4cc81d1a175a6c4ce6e54faec/megatron/core/tensor_parallel/layers.py#L744-L797",
+      "source_sha256": "c4c9954f163de5d8f6d6d4faf16939b3629e7960963569099b59e5e3300aa7aa",
+      "archive_path": "evidence/upstream/Megatron-LM/linear-forward-saved-input.txt",
+      "excerpt_sha256": "aacbc46c3f68fc354313085f306a7a1f35bedba89fc71116197d2b9ed9c5f009"
+    },
+    {
+      "repository": "NVIDIA/Megatron-LM",
+      "commit": "1a82f514b87d6bd4cc81d1a175a6c4ce6e54faec",
+      "source_path": "megatron/core/tensor_parallel/layers.py",
+      "start_line": 801,
+      "end_line": 876,
+      "url": "https://github.com/NVIDIA/Megatron-LM/blob/1a82f514b87d6bd4cc81d1a175a6c4ce6e54faec/megatron/core/tensor_parallel/layers.py#L801-L876",
+      "source_sha256": "c4c9954f163de5d8f6d6d4faf16939b3629e7960963569099b59e5e3300aa7aa",
+      "archive_path": "evidence/upstream/Megatron-LM/linear-backward-regather-and-dgrad.txt",
+      "excerpt_sha256": "10928091ab045f06d51065952173b1f7df96a12f7ca580cbf2752c9def7e4775"
+    },
+    {
+      "repository": "NVIDIA/Megatron-LM",
+      "commit": "1a82f514b87d6bd4cc81d1a175a6c4ce6e54faec",
+      "source_path": "megatron/core/tensor_parallel/layers.py",
+      "start_line": 1730,
+      "end_line": 1776,
+      "url": "https://github.com/NVIDIA/Megatron-LM/blob/1a82f514b87d6bd4cc81d1a175a6c4ce6e54faec/megatron/core/tensor_parallel/layers.py#L1730-L1776",
+      "source_sha256": "c4c9954f163de5d8f6d6d4faf16939b3629e7960963569099b59e5e3300aa7aa",
+      "archive_path": "evidence/upstream/Megatron-LM/row-forward-reduce-bias.txt",
+      "excerpt_sha256": "d8a020650984a69f02c8d179cb768585e9cf1659bad771799ef7c63a5dbca16a"
+    },
+    {
+      "repository": "NVIDIA/Megatron-LM",
+      "commit": "1a82f514b87d6bd4cc81d1a175a6c4ce6e54faec",
+      "source_path": "megatron/core/tensor_parallel/mappings.py",
+      "start_line": 26,
+      "end_line": 41,
+      "url": "https://github.com/NVIDIA/Megatron-LM/blob/1a82f514b87d6bd4cc81d1a175a6c4ce6e54faec/megatron/core/tensor_parallel/mappings.py#L26-L41",
+      "source_sha256": "4c9510443311f5dbb35b2ff50bbd9e434225e65ee5ffe5bebbfafcfc356af20b",
+      "archive_path": "evidence/upstream/Megatron-LM/allreduce-primitive.txt",
+      "excerpt_sha256": "81d65e94067cf1479586f78fcbc3e902c11e46c931b0de67bec30e9659248808"
+    },
+    {
+      "repository": "NVIDIA/Megatron-LM",
+      "commit": "1a82f514b87d6bd4cc81d1a175a6c4ce6e54faec",
+      "source_path": "megatron/core/tensor_parallel/mappings.py",
+      "start_line": 205,
+      "end_line": 242,
+      "url": "https://github.com/NVIDIA/Megatron-LM/blob/1a82f514b87d6bd4cc81d1a175a6c4ce6e54faec/megatron/core/tensor_parallel/mappings.py#L205-L242",
+      "source_sha256": "4c9510443311f5dbb35b2ff50bbd9e434225e65ee5ffe5bebbfafcfc356af20b",
+      "archive_path": "evidence/upstream/Megatron-LM/copy-and-reduce-autograd.txt",
+      "excerpt_sha256": "d6cf4d36a81744230c035fd1e99d9a0a07e60594c9a6d589ccb98521cb61a283"
+    },
+    {
+      "repository": "NVIDIA/Megatron-LM",
+      "commit": "1a82f514b87d6bd4cc81d1a175a6c4ce6e54faec",
+      "source_path": "megatron/core/tensor_parallel/mappings.py",
+      "start_line": 264,
+      "end_line": 282,
+      "url": "https://github.com/NVIDIA/Megatron-LM/blob/1a82f514b87d6bd4cc81d1a175a6c4ce6e54faec/megatron/core/tensor_parallel/mappings.py#L264-L282",
+      "source_sha256": "4c9510443311f5dbb35b2ff50bbd9e434225e65ee5ffe5bebbfafcfc356af20b",
+      "archive_path": "evidence/upstream/Megatron-LM/gather-feature-autograd.txt",
+      "excerpt_sha256": "9331404d9def946ddc62c3fa2bba570e1b4a4c6c31a9b692d9ce9a01c76192eb"
+    },
+    {
+      "repository": "NVIDIA/Megatron-LM",
+      "commit": "1a82f514b87d6bd4cc81d1a175a6c4ce6e54faec",
+      "source_path": "megatron/core/tensor_parallel/mappings.py",
+      "start_line": 304,
+      "end_line": 356,
+      "url": "https://github.com/NVIDIA/Megatron-LM/blob/1a82f514b87d6bd4cc81d1a175a6c4ce6e54faec/megatron/core/tensor_parallel/mappings.py#L304-L356",
+      "source_sha256": "4c9510443311f5dbb35b2ff50bbd9e434225e65ee5ffe5bebbfafcfc356af20b",
+      "archive_path": "evidence/upstream/Megatron-LM/gather-sequence-autograd.txt",
+      "excerpt_sha256": "ee6580da6205a7ed27f1f38c3d09f5aee9b0b6dc42ec54d6cb17ba343548a9b4"
+    },
+    {
+      "repository": "NVIDIA/Megatron-LM",
+      "commit": "1a82f514b87d6bd4cc81d1a175a6c4ce6e54faec",
+      "source_path": "megatron/core/tensor_parallel/mappings.py",
+      "start_line": 359,
+      "end_line": 385,
+      "url": "https://github.com/NVIDIA/Megatron-LM/blob/1a82f514b87d6bd4cc81d1a175a6c4ce6e54faec/megatron/core/tensor_parallel/mappings.py#L359-L385",
+      "source_sha256": "4c9510443311f5dbb35b2ff50bbd9e434225e65ee5ffe5bebbfafcfc356af20b",
+      "archive_path": "evidence/upstream/Megatron-LM/reduce-scatter-sequence-autograd.txt",
+      "excerpt_sha256": "c5f1d8d444263a4c0e4d5223b76e517cb723f1a1baeebd5e585a541bc17bfceb"
+    },
+    {
+      "repository": "NVIDIA/Megatron-LM",
+      "commit": "1a82f514b87d6bd4cc81d1a175a6c4ce6e54faec",
+      "source_path": "megatron/core/transformer/mlp.py",
+      "start_line": 239,
+      "end_line": 274,
+      "url": "https://github.com/NVIDIA/Megatron-LM/blob/1a82f514b87d6bd4cc81d1a175a6c4ce6e54faec/megatron/core/transformer/mlp.py#L239-L274",
+      "source_sha256": "d03292fe84f63bc74429f964b6f9408febc6c8637e984089dc436a234d9cddd2",
+      "archive_path": "evidence/upstream/Megatron-LM/mlp-builders.txt",
+      "excerpt_sha256": "37cf7406c231a7e814c8716c8c2a148204823e2d756a953d4d8a41898393f329"
+    },
+    {
+      "repository": "NVIDIA/Megatron-LM",
+      "commit": "1a82f514b87d6bd4cc81d1a175a6c4ce6e54faec",
+      "source_path": "megatron/core/transformer/mlp.py",
+      "start_line": 393,
+      "end_line": 406,
+      "url": "https://github.com/NVIDIA/Megatron-LM/blob/1a82f514b87d6bd4cc81d1a175a6c4ce6e54faec/megatron/core/transformer/mlp.py#L393-L406",
+      "source_sha256": "d03292fe84f63bc74429f964b6f9408febc6c8637e984089dc436a234d9cddd2",
+      "archive_path": "evidence/upstream/Megatron-LM/mlp-second-linear-output.txt",
+      "excerpt_sha256": "1ebf7bbc094320711b600a4f5feedf97aca1eb0b6016b913ed60907a1dd6acd0"
+    }
+  ]
+}

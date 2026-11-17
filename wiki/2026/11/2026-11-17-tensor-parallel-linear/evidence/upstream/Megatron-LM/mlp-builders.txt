@@ -1,0 +1,36 @@
+        self.linear_fc1 = submodules.linear_fc1(
+            self.input_size if not use_latent_size else not_none(self.config.moe_latent_size),
+            ffn_hidden_size,
+            config=self.config,
+            init_method=not_none(self.config.init_method),
+            gather_output=False,
+            bias=self.config.add_bias_linear,
+            skip_bias_add=True,
+            is_expert=is_expert,
+            tp_comm_buffer_name="fc1",
+            tp_group=tp_group,
+            pg_collection=pg_collection,
+            stride=fc1_stride,
+            name=(name + ".linear_fc1") if name is not None else None,
+        )
+
+        if self.config.use_te_activation_func and not (submodules.activation_func is None):
+            self.activation_func = apply_module(submodules.activation_func(config=self.config))
+        else:
+            self.activation_func = self.config.activation_func
+
+        self.linear_fc2 = submodules.linear_fc2(
+            not_none(self.config.ffn_hidden_size),
+            not_none(
+                self.config.hidden_size if not use_latent_size else self.config.moe_latent_size
+            ),
+            config=self.config,
+            init_method=not_none(self.config.output_layer_init_method),
+            bias=self.config.add_bias_linear,
+            input_is_parallel=True,
+            skip_bias_add=True,
+            is_expert=is_expert,
+            tp_comm_buffer_name="fc2",
+            tp_group=tp_group,
+            pg_collection=pg_collection,
+            name=(name + ".linear_fc2") if name is not None else None,

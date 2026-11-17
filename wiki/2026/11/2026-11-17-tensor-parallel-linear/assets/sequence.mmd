@@ -1,0 +1,18 @@
+flowchart TB
+    subgraph Forward["SP 前向的布局转换"]
+        XS["X · token 分片"] --> AGX["AllGather · token 维"]
+        AGX --> XC["完整 X · 列切分 GEMM 与激活"]
+        XC --> RP["行切分 GEMM · 输出部分和"]
+        RP --> RSY["ReduceScatter · token 维"]
+        RSY --> YS["Y · token 分片"]
+    end
+    subgraph Backward["SP 反向的布局转换"]
+        DYS["dY · token 分片"] --> AGDY["AllGather · token 维"]
+        AGDY --> Q["第二层与激活反向 · Q 的特征分片"]
+        Q --> DXP["第一层输入梯度 · 部分和"]
+        DXP --> RSDX["ReduceScatter · token 维"]
+        RSDX --> DXS["dX · token 分片"]
+        Q --> DW1["第一层权重梯度"]
+    end
+    XS -. "若只保存分片输入" .-> REGATHER["额外 AllGather · 为权重梯度取得 X"]
+    REGATHER -.-> DW1

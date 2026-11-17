@@ -1,0 +1,59 @@
+        self,
+        *,
+        input_layouts: Placement | None = None,
+        output_layouts: Placement | None = None,
+        use_local_output: bool = True,
+    ):
+        super().__init__()
+        self.input_layouts = (input_layouts or Shard(-1),)
+        self.output_layouts = (output_layouts or Replicate(),)
+        self.use_local_output = use_local_output
+
+    @staticmethod
+    def _prepare_input_fn(
+        input_layouts, desired_input_layouts, mod, inputs, device_mesh
+    ):
+        input_tensor = inputs[0]
+        if not isinstance(input_tensor, DTensor):
+            input_tensor = DTensor.from_local(
+                input_tensor,
+                device_mesh,
+                input_layouts,
+                run_check=False,
+            )
+
+        if input_layouts != desired_input_layouts:
+            input_tensor = input_tensor.redistribute(
+                placements=desired_input_layouts, async_op=True
+            )
+        return input_tensor
+
+    def _partition_linear_fn(self, name, module, device_mesh):
+        # Rowwise shard weight to Shard(1), bias to Replicate(), weight be Shard(1)
+        # means Rowwise as nn.Linear is input * weight^T + bias, where
+        # weight would become Shard(0)
+        module.register_parameter(
+            "weight",
+            nn.Parameter(
+                distribute_tensor(
+                    module.weight,
+                    device_mesh,
+                    [Shard(1)],
+                    src_data_rank=self.src_data_rank,
+                ),
+                requires_grad=module.weight.requires_grad,
+            ),
+        )
+        if getattr(module, "bias", None) is not None:
+            # The Linear module has bias
+            module.register_parameter(
+                "bias",
+                nn.Parameter(
+                    distribute_tensor(
+                        module.bias,
+                        device_mesh,
+                        [Replicate()],
+                        src_data_rank=self.src_data_rank,
+                    ),
+                    requires_grad=module.bias.requires_grad,
+                ),

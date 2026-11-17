@@ -1,0 +1,64 @@
+        bias = self.bias if not self.skip_bias_add else None
+
+        if (
+            self.allreduce_dgrad
+            or self.sequence_parallel
+            or self.explicit_expert_comm
+            or self.disable_grad_reduce
+        ):
+            input_parallel = input_
+        else:
+            input_parallel = copy_to_tensor_model_parallel_region(input_, group=self.tp_group)
+
+        if self.config.defer_embedding_wgrad_compute:
+            if (
+                self.config.wgrad_deferral_limit == 0
+                or len(self.embedding_activation_buffer) < self.config.wgrad_deferral_limit
+            ):
+                self.embedding_activation_buffer.append(input_parallel)
+
+        # Matrix multiply.
+        allreduce_dgrad = False if self.explicit_expert_comm else self.allreduce_dgrad
+
+        if self.config._cpu_offloading_context is not None:
+            if self.config._cpu_offloading_context.inside_context is True:
+                if not HAVE_TE:
+                    assert (
+                        self.config.cpu_offloading is False
+                    ), "CPU Offloading cannot be enabled while TE is not present"
+                else:
+                    input_parallel.activation_offloading = self.config.cpu_offloading_activations
+
+        output_parallel = self._forward_impl(
+            input=input_parallel,
+            weight=weight,
+            bias=bias,
+            gradient_accumulation_fusion=self.gradient_accumulation_fusion,
+            allreduce_dgrad=allreduce_dgrad,
+            sequence_parallel=False if self.explicit_expert_comm else self.sequence_parallel,
+            grad_output_buffer=(
+                self.grad_output_buffer if self.config.defer_embedding_wgrad_compute else None
+            ),
+            wgrad_deferral_limit=(
+                self.config.wgrad_deferral_limit
+                if self.config.defer_embedding_wgrad_compute
+                else None
+            ),
+            tp_group=self.tp_group,
+            gtp_remat_size=self.gtp_remat_size,
+            output_dtype=self.output_dtype if output_dtype is None else output_dtype,
+        )
+
+        gather_output = self.gather_output
+        # Use the runtime gather output if it's set explicitly.
+        if runtime_gather_output is not None:
+            gather_output = runtime_gather_output
+
+        if gather_output:
+            output = self.gather_tensor_parallel_output(
+                output_parallel, barrier_before=inference_tp_ag_barrier
+            )
+        else:
+            output = output_parallel
+        output_bias = self.bias if self.skip_bias_add else None
+        return output, output_bias

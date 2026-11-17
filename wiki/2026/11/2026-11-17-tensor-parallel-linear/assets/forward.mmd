@@ -1,0 +1,10 @@
+flowchart LR
+    X["X · 2×2 · 两个 rank 均持有"] --> C0["rank 0 · W1 的前两列 + b1 的前两项"]
+    X --> C1["rank 1 · W1 的后两列 + b1 的后两项"]
+    C0 --> Z0["ReLU · Z0 为 2×2"]
+    C1 --> Z1["ReLU · Z1 为 2×2"]
+    Z0 --> R0["W2 的前两行 · P0"]
+    Z1 --> R1["W2 的后两行 · P1"]
+    R0 --> Sum["AllReduce SUM · P0 + P1"]
+    R1 --> Sum
+    Sum --> Y["每个 rank 加一次 b2 · Y 为 2×2"]
