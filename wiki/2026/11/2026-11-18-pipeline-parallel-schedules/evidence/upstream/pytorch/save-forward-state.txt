@@ -1,0 +1,14 @@
+        # See [Note: pipeline model output type]
+        output_tuple = _normalize_model_output_as_tuple(output)
+
+        # Prepare for final output merge or reduction
+        # Output chunks is only used for the last stage since we only merge the output of the last stage
+        if self.is_last and save_forward_output:
+            self.output_chunks.append(output)
+        # Save activations and inputs for backward
+        flat_args = flatten_args(composite_args)
+        flat_kwargs = flatten_args(composite_kwargs)
+        flatten_input_tensors = flat_args + flat_kwargs
+        self._forward_chunk_states[fwd_chunk_id] = self._make_forward_chunk_state(
+            output_tuple, flatten_input_tensors
+        )

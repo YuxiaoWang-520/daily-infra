@@ -1,0 +1,47 @@
+    output_tensors = None
+    total_num_tokens = torch.zeros([], dtype=torch.int, device="cuda")
+
+    if not forward_only:
+        input_tensors = []
+        output_tensors = []
+    forward_data_store = []
+
+    # Run warmup forward passes.
+    for i in range(num_warmup_microbatches):
+        # Decide to checkpoint all layers' activations of the current micro-batch
+        if max_outstanding_backprops is not None:
+            checkpoint_activations_microbatch = (
+                i % max_outstanding_backprops
+                >= config.num_microbatches_with_partial_activation_checkpoints
+            )
+        else:
+            checkpoint_activations_microbatch = None
+
+        forward_data_iterator = _prepare_forward_data_iterator(
+            data_iterator, p2p_communicator, is_multimodule=is_multimodule
+        )
+        input_tensor = p2p_communicator.recv_forward(
+            recv_tensor_shapes, p2p_communicator.is_pp_first_stage
+        )
+        output_tensor, num_tokens = forward_step(
+            forward_step_func,
+            forward_data_iterator,
+            model,
+            num_microbatches,
+            input_tensor,
+            forward_data_store,
+            config,
+            cp_group_size=cp_size,
+            collect_non_loss_data=collect_non_loss_data,
+            checkpoint_activations_microbatch=checkpoint_activations_microbatch,
+            is_first_microbatch=check_first_val_step(first_val_step, forward_only, i == 0),
+            current_microbatch=i,
+            is_last_stage=p2p_communicator.is_pp_last_stage,
+        )
+        p2p_communicator.send_forward(output_tensor, p2p_communicator.is_pp_last_stage)
+        total_num_tokens += num_tokens
+
+        if not forward_only:
+            input_tensors.append(input_tensor)
+            output_tensors.append(output_tensor)
+            deallocate_output_tensor(output_tensor, config.deallocate_pipeline_outputs)

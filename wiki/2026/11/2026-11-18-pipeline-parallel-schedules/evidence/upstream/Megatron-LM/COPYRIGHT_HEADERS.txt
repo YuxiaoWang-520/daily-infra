@@ -1,0 +1,5 @@
+SOURCE: megatron/core/pipeline_parallel/schedules.py
+# Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+SOURCE: megatron/core/pipeline_parallel/p2p_communication.py
+# Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.

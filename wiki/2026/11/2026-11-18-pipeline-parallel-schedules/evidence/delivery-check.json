@@ -1,0 +1,53 @@
+{
+  "checked_at": "2026-11-18T11:29:04.887384+08:00",
+  "status": "passed",
+  "article_directory": "wiki/2026/11/2026-11-18-pipeline-parallel-schedules",
+  "published_wiki_count": 28,
+  "same_day_entries": 1,
+  "local_markdown_links_checked": 161,
+  "mermaid_sources_identical": 1,
+  "timeline_rows_identical": 6,
+  "diagram_validation": "Manual Mermaid source syntax/data-flow review plus source equality; no render performed. Unit time grids verified against model output.",
+  "upstream_excerpts_verified": 20,
+  "upstream_excerpt_lines": 566,
+  "upstream_full_files_verified": 5,
+  "upstream_licenses_and_file_notices_verified": 4,
+  "python_files_ast_parsed": 6,
+  "code_hashes_verified_against_run_and_review": 6,
+  "passed_required_commands": 6,
+  "unittest_normal": 21,
+  "unittest_optimized": 21,
+  "independent_general_review_targeted_tests": 7,
+  "distributed_records_verified_against_raw_output": 4,
+  "privacy_patterns_checked": [
+    "absolute_home_path",
+    "private_key",
+    "github_token",
+    "openai_key",
+    "internal_domain",
+    "private_ipv4"
+  ],
+  "privacy_matches": {
+    "absolute_home_path": [],
+    "private_key": [],
+    "github_token": [],
+    "openai_key": [],
+    "internal_domain": [],
+    "private_ipv4": []
+  },
+  "checksums_file": "evidence/SHA256SUMS",
+  "checksummed_files": 54,
+  "checksum_exclusions": [
+    "evidence/SHA256SUMS",
+    "evidence/delivery-check.json"
+  ],
+  "publish_file_count": 56,
+  "scope_notes": [
+    "Actual execution: CPU/Gloo, two stages, four equal microbatches, GPipe and 1F1B, all parameter gradients and one SGD update.",
+    "Unequal partition gradients verified in one process only.",
+    "Timing, activation bytes and boundary payload tables are hypothetical model calculations; no GPU or allocator memory measurement.",
+    "No CUDA/NCCL, dynamic-shape or Megatron GPU execution.",
+    "Fixed Python specialist could not start; independent general code review completed and scope disclosed."
+  ],
+  "errors": []
+}

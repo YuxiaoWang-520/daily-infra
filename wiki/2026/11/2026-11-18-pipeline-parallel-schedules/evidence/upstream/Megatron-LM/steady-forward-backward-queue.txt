@@ -1,0 +1,37 @@
+        else:
+            output_tensor_grad = p2p_communicator.send_forward_recv_backward(
+                output_tensor, send_tensor_shapes, p2p_communicator.is_pp_last_stage
+            )
+
+            # Add input_tensor and output_tensor to end of list.
+            input_tensors.append(input_tensor)
+            output_tensors.append(output_tensor)
+            deallocate_output_tensor(output_tensor, config.deallocate_pipeline_outputs)
+
+            # Pop input_tensor and output_tensor from the start of the list for
+            # the backward pass.
+            input_tensor = input_tensors.pop(0)
+            output_tensor = output_tensors.pop(0)
+
+            # Enable grad sync for the last microbatch in the batch if the full
+            # backward pass completes in the 1F1B stage.
+            if num_warmup_microbatches == 0 and last_iteration:
+                if config.grad_sync_func is None or grad_sync_first_stage:
+                    enable_grad_sync()
+
+            input_tensor_grad = backward_func(
+                input_tensor, output_tensor, output_tensor_grad, config
+            )
+
+            if last_iteration:
+                input_tensor = None
+                p2p_communicator.send_backward(
+                    input_tensor_grad, p2p_communicator.is_pp_first_stage
+                )
+            else:
+                forward_data_iterator = _prepare_forward_data_iterator(
+                    data_iterator, p2p_communicator, is_multimodule=is_multimodule
+                )
+                input_tensor = p2p_communicator.send_backward_recv_forward(
+                    input_tensor_grad, recv_tensor_shapes, p2p_communicator.is_pp_first_stage
+                )

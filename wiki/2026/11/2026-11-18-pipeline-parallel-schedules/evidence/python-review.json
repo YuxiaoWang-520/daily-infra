@@ -1,0 +1,54 @@
+{
+  "recorded_at": "2026-11-18T11:22:16.639634+08:00",
+  "requested_specialist": "python-reviewer",
+  "specialist_result": "Did not start: configured gpt-5.4 model is unsupported for this ChatGPT account.",
+  "actual_reviewer": "Independent general agent, read-only review of the six article Python files; routing MAIN.",
+  "findings": {
+    "CRITICAL": 0,
+    "HIGH": 0,
+    "MEDIUM": 0,
+    "LOW": 0
+  },
+  "tests_run": 7,
+  "tests_passed": 7,
+  "exit_code": 0,
+  "reported_test_duration_seconds": 0.535,
+  "working_directory": "drafts/2026-11-18-pipeline-parallel-schedules/code",
+  "argv_display": [
+    "python",
+    "-m",
+    "unittest",
+    "-v",
+    "test_answers.ScheduleTests.test_dependencies_and_stage_exclusivity",
+    "test_answers.ScheduleTests.test_fewer_microbatches_than_stages_in_teaching_model",
+    "test_answers.ScheduleTests.test_1f1b_preserves_time_and_reduces_live_activations",
+    "test_answers.GradientTests.test_unequal_microbatches_match_full_batch",
+    "test_answers.GradientTests.test_one_optimizer_update_matches_dense",
+    "test_answers.GradientTests.test_existing_gradients_are_cleared",
+    "test_answers.GradientTests.test_naive_average_of_unequal_means_is_wrong"
+  ],
+  "env_overrides": {
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "interpreter_note": "Existing ai-infra interpreter; path normalized to python for publication.",
+  "evidence_origin": "Results and file hashes reported by the independent reviewer; full execution evidence is separately archived by MAIN.",
+  "code_sha256": {
+    "answers.py": "b593a5c107b585cb704b145bf9fcf88717a44731d1e742de815e2d319b1a0e96",
+    "distributed_cpu.py": "c1df35aece5d5e32723beb5c71a7ea874ffbe34cd6697d66faa27bb66de65c54",
+    "example_data.py": "4593ed662d8141dc4d0130ba077b67fed618616cfe7aa492ff469e4e77d2286f",
+    "exercises.py": "9e99bdd38b03bc53d88c300046ba39d024c41670d197616a69d809ac4c0f2e13",
+    "run_answers.py": "2a060d9b3c6b1b799fb016ad193ecf0274ed1e4dd53478ad4b9e8b24d937037e",
+    "test_answers.py": "798d954c335ef05159d314cf26a37802f36f2f443686982a870388d5b7400a17"
+  },
+  "checked_behavior": [
+    "Per-stage exclusivity, forward/backward dependencies, state lifetime and mathematical m<p schedules.",
+    "One shared loss denominator, unequal partitions, old-gradient clearing and one final SGD update.",
+    "Static metadata flags, fixed two-rank execution, paired-call counter and finally-based process-group destruction.",
+    "Existing four distributed records were read and compared; no distributed rerun in this review."
+  ],
+  "limitations": [
+    "No specialist review was completed.",
+    "The targeted seven tests were run; the complete suite, lint and two-rank process were not rerun by this reviewer.",
+    "CUDA/NCCL, allocator activation peaks, communication performance, distributed unequal microbatches and dynamic shapes were not tested."
+  ]
+}

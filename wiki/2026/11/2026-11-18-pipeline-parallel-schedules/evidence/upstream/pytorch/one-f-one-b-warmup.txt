@@ -1,0 +1,27 @@
+        # Last stage has 1 warmup, second-to-last 2 warmups, ...
+        # first stage `num_stages` warmups
+        warmup_chunks = min(
+            self._n_microbatches,
+            self._num_stages - self._stage.stage_index,
+        )
+
+        # Chunk counters
+        fwd_mb_index = 0
+        bwd_mb_index = 0
+
+        # Warmup phase
+        send_work: list[dist.Work] = []
+        fwd_sends = []
+        for _ in range(warmup_chunks):
+            # Receive activations
+            fwd_recvs = self._stage.get_fwd_recv_ops(fwd_mb_index)
+            _wait_batch_p2p(_batch_p2p(fwd_recvs, desc="fwd_recv"))
+
+            # Compute
+            output = self._stage.forward_one_chunk(
+                fwd_mb_index,
+                arg_mbs[fwd_mb_index],
+                kwarg_mbs[fwd_mb_index],
+                save_forward_output=return_outputs,
+            )  # type: ignore[index]
+

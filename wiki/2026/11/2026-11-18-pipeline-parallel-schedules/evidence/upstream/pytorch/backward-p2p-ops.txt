@@ -1,0 +1,61 @@
+    def get_bwd_send_ops(self, bwd_chunk_id: int) -> list[dist.P2POp]:
+        """
+        Get the gradient send ops for current stage's backward.
+        Handles DTensor gradients by extracting local tensors.
+        """
+        if not self.has_backward or self.is_first:
+            return []
+
+        self._check_chunk_id(bwd_chunk_id)
+        # Create bwd send infra lazily
+        if self.grad_send_info is None:
+            # Send info for input grads during backward:
+            # List of destinations corresponding to input grads
+            # Can be None if an input has no grad
+            # `grad_send_info` is a mirror of `args_recv_info`
+            self.grad_send_info = self._create_grad_send_info(self.args_recv_info[0])
+
+        ops: list[dist.P2POp] = []
+        grads_input = self.bwd_cache.pop(bwd_chunk_id)
+
+        for idx, (grad, grad_recv_stage) in enumerate(
+            zip(grads_input, self.grad_send_info, strict=True)
+        ):
+            if grad_recv_stage is None:
+                if grad is not None:
+                    raise PipeliningMetadataError(
+                        f"[{self.stage_index}] for chunk {bwd_chunk_id} has gradient {grad} "
+                        f"but no stage to send it to"
+                    )
+                continue
+
+            grad_meta = self._get_grad_send_meta(idx)
+            if grad_meta is None:
+                if grad is not None:
+                    raise PipeliningMetadataError(
+                        f"Stage {self.stage_index} chunk {bwd_chunk_id} input {idx}: "
+                        f"backward produced a {type(grad).__name__} gradient, but "
+                        "backward metadata for this grad slot is None, so the "
+                        "previous stage did not allocate a recv buffer. DTensor "
+                        "grad metadata cannot be derived from forward DTensor "
+                        "metadata because gradient placements may differ from "
+                        "activation placements. Provide static input_grads "
+                        "metadata or run metadata inference with a microbatch "
+                        "that produces this grad."
+                    )
+                continue
+
+            if isinstance(grad, torch.Tensor):
+                # Extract local tensor if DTensor
+                send_tensor = to_local_if_dtensor(grad)
+                logger.debug(
+                    "%s Sending gradient to Stage %s: %s",
+                    self.log_prefix,
+                    grad_recv_stage,
+                    send_tensor.size(),
+                )
+                peer_global_rank = self._resolve_peer_global_rank(grad_recv_stage)
+                ops.append(
+                    dist.P2POp(
+                        dist.isend,
+                        send_tensor,

@@ -1,0 +1,26 @@
+test_equal_microbatches_match_full_batch (test_answers.GradientTests.test_equal_microbatches_match_full_batch) ... ok
+test_existing_gradients_are_cleared (test_answers.GradientTests.test_existing_gradients_are_cleared) ... ok
+test_naive_average_of_unequal_means_is_wrong (test_answers.GradientTests.test_naive_average_of_unequal_means_is_wrong) ... ok
+test_one_optimizer_update_matches_dense (test_answers.GradientTests.test_one_optimizer_update_matches_dense) ... ok
+test_rejects_invalid_chunk_partition (test_answers.GradientTests.test_rejects_invalid_chunk_partition) ... ok
+test_rejects_invalid_input_target_shapes (test_answers.GradientTests.test_rejects_invalid_input_target_shapes) ... ok
+test_single_full_chunk (test_answers.GradientTests.test_single_full_chunk) ... ok
+test_single_row_chunks (test_answers.GradientTests.test_single_row_chunks) ... ok
+test_unequal_microbatches_match_full_batch (test_answers.GradientTests.test_unequal_microbatches_match_full_batch) ... ok
+test_1f1b_preserves_time_and_reduces_live_activations (test_answers.ScheduleTests.test_1f1b_preserves_time_and_reduces_live_activations) ... ok
+test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) ... ok
+test_dependencies_and_stage_exclusivity (test_answers.ScheduleTests.test_dependencies_and_stage_exclusivity) ... ok
+test_fewer_microbatches_than_stages_in_teaching_model (test_answers.ScheduleTests.test_fewer_microbatches_than_stages_in_teaching_model) ... ok
+test_first_stage_order (test_answers.ScheduleTests.test_first_stage_order) ... ok
+test_gpipe_backward_is_fifo (test_answers.ScheduleTests.test_gpipe_backward_is_fifo) ... ok
+test_gpipe_three_stages_four_microbatches (test_answers.ScheduleTests.test_gpipe_three_stages_four_microbatches) ... ok
+test_one_stage_has_no_bubble (test_answers.ScheduleTests.test_one_stage_has_no_bubble) ... ok
+test_rejects_invalid_costs (test_answers.ScheduleTests.test_rejects_invalid_costs) ... ok
+test_rejects_invalid_counts (test_answers.ScheduleTests.test_rejects_invalid_counts) ... ok
+test_rejects_unknown_schedule (test_answers.ScheduleTests.test_rejects_unknown_schedule) ... ok
+test_slow_middle_stage_increases_time (test_answers.ScheduleTests.test_slow_middle_stage_increases_time) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 1.538s
+
+OK

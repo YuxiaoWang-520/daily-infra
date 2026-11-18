@@ -1,0 +1,55 @@
+    def get_fwd_send_ops(self, fwd_chunk_id: int) -> list[dist.P2POp]:
+        """
+        Get the activation send ops for current stage's forward.
+        Handles DTensor outputs by extracting local tensors.
+
+        Sent slots stay live until :meth:`release_fwd_send_outputs`.
+        """
+        state = self._forward_chunk_states[fwd_chunk_id]
+
+        ops: list[dist.P2POp] = []
+
+        for idx, out in enumerate(state.live_outputs):
+            dst_stages = [dst for dst in self.act_send_info[idx] if dst is not None]
+            if not dst_stages:
+                continue
+            if out is None:
+                raise AssertionError(
+                    f"{self.log_prefix} output {idx} of chunk {fwd_chunk_id} was "
+                    "released before its send was issued"
+                )
+            if state.send_pending[idx]:
+                raise AssertionError(
+                    f"{self.log_prefix} output {idx} of chunk {fwd_chunk_id} "
+                    "already has a pending send"
+                )
+            state.send_pending[idx] = True
+            # Extract local tensor if DTensor
+            send_tensor = to_local_if_dtensor(out, detach=True)
+            for dst in dst_stages:
+                logger.debug(
+                    "%s Sending tensor to Stage %s: %s",
+                    self.log_prefix,
+                    dst,
+                    send_tensor.size(),
+                )
+                peer_global_rank = self._resolve_peer_global_rank(dst)
+                ops.append(
+                    dist.P2POp(
+                        dist.isend,
+                        send_tensor,
+                        peer_global_rank,
+                        self._get_p2p_group(self.stage_index, dst),
+                    )
+                )
+
+        return ops
+
+    def release_fwd_send_outputs(self, fwd_chunk_id: int) -> None:
+        """Drop stage references to outputs whose sends completed.
+
+        This does not guarantee that tensor storage is freed. Autograd, aliases,
+        user code, or communication objects may still own it. Missing state
+        means backward already consumed the outputs.
+        """
+        state = self._forward_chunk_states.get(fwd_chunk_id)

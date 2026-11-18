@@ -1,0 +1,17 @@
+{
+  "recorded_at": "2026-11-18T11:08:21.038537+08:00",
+  "argv": [
+    "python",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "code",
+    "-p",
+    "test_answers.py",
+    "-v"
+  ],
+  "working_directory": "drafts/2026-11-18-pipeline-parallel-schedules",
+  "exit_code": 1,
+  "log": "01-red-tests.txt"
+}

@@ -1,0 +1,11 @@
+SOURCE: torch/distributed/pipelining/schedules.py
+# mypy: allow-untyped-defs
+# Copyright (c) Meta Platforms, Inc. and affiliates
+
+SOURCE: torch/distributed/pipelining/stage.py
+# mypy: allow-untyped-defs
+# Copyright (c) Meta Platforms, Inc. and affiliates
+
+SOURCE: torch/distributed/pipelining/_utils.py
+# mypy: allow-untyped-defs
+# Copyright (c) Meta Platforms, Inc. and affiliates

@@ -1,0 +1,1359 @@
+test_equal_microbatches_match_full_batch (test_answers.GradientTests.test_equal_microbatches_match_full_batch) ... ERROR
+test_existing_gradients_are_cleared (test_answers.GradientTests.test_existing_gradients_are_cleared) ... ERROR
+test_naive_average_of_unequal_means_is_wrong (test_answers.GradientTests.test_naive_average_of_unequal_means_is_wrong) ... ok
+test_one_optimizer_update_matches_dense (test_answers.GradientTests.test_one_optimizer_update_matches_dense) ... ERROR
+test_rejects_invalid_chunk_partition (test_answers.GradientTests.test_rejects_invalid_chunk_partition) ... 
+  test_rejects_invalid_chunk_partition (test_answers.GradientTests.test_rejects_invalid_chunk_partition) (sizes=[]) ... ERROR
+  test_rejects_invalid_chunk_partition (test_answers.GradientTests.test_rejects_invalid_chunk_partition) (sizes=[7]) ... ERROR
+  test_rejects_invalid_chunk_partition (test_answers.GradientTests.test_rejects_invalid_chunk_partition) (sizes=[9]) ... ERROR
+  test_rejects_invalid_chunk_partition (test_answers.GradientTests.test_rejects_invalid_chunk_partition) (sizes=[0, 8]) ... ERROR
+  test_rejects_invalid_chunk_partition (test_answers.GradientTests.test_rejects_invalid_chunk_partition) (sizes=[True, 7]) ... ERROR
+  test_rejects_invalid_chunk_partition (test_answers.GradientTests.test_rejects_invalid_chunk_partition) (sizes=[1.5, 6.5]) ... ERROR
+test_rejects_invalid_input_target_shapes (test_answers.GradientTests.test_rejects_invalid_input_target_shapes) ... 
+  test_rejects_invalid_input_target_shapes (test_answers.GradientTests.test_rejects_invalid_input_target_shapes) (xshape=torch.Size([0, 3]), yshape=torch.Size([0, 2])) ... ERROR
+  test_rejects_invalid_input_target_shapes (test_answers.GradientTests.test_rejects_invalid_input_target_shapes) (xshape=torch.Size([8, 3]), yshape=torch.Size([7, 2])) ... ERROR
+  test_rejects_invalid_input_target_shapes (test_answers.GradientTests.test_rejects_invalid_input_target_shapes) (xshape=torch.Size([24]), yshape=torch.Size([8, 2])) ... ERROR
+  test_rejects_invalid_input_target_shapes (test_answers.GradientTests.test_rejects_invalid_input_target_shapes) (xshape=torch.Size([8, 3]), yshape=torch.Size([16])) ... ERROR
+  test_rejects_invalid_input_target_shapes (test_answers.GradientTests.test_rejects_invalid_input_target_shapes) (xshape=torch.Size([8, 3]), yshape=torch.Size([8, 1])) ... ERROR
+test_single_full_chunk (test_answers.GradientTests.test_single_full_chunk) ... ERROR
+test_single_row_chunks (test_answers.GradientTests.test_single_row_chunks) ... ERROR
+test_unequal_microbatches_match_full_batch (test_answers.GradientTests.test_unequal_microbatches_match_full_batch) ... ERROR
+test_1f1b_preserves_time_and_reduces_live_activations (test_answers.ScheduleTests.test_1f1b_preserves_time_and_reduces_live_activations) ... ERROR
+test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) ... 
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=1, m=1, schedule='gpipe') ... ERROR
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=1, m=1, schedule='1f1b') ... ERROR
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=1, m=2, schedule='gpipe') ... ERROR
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=1, m=2, schedule='1f1b') ... ERROR
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=1, m=3, schedule='gpipe') ... ERROR
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=1, m=3, schedule='1f1b') ... ERROR
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=1, m=4, schedule='gpipe') ... ERROR
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=1, m=4, schedule='1f1b') ... ERROR
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=1, m=5, schedule='gpipe') ... ERROR
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=1, m=5, schedule='1f1b') ... ERROR
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=1, m=6, schedule='gpipe') ... ERROR
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=1, m=6, schedule='1f1b') ... ERROR
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=1, m=7, schedule='gpipe') ... ERROR
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=1, m=7, schedule='1f1b') ... ERROR
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=2, m=1, schedule='gpipe') ... ERROR
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=2, m=1, schedule='1f1b') ... ERROR
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=2, m=2, schedule='gpipe') ... ERROR
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=2, m=2, schedule='1f1b') ... ERROR
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=2, m=3, schedule='gpipe') ... ERROR
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=2, m=3, schedule='1f1b') ... ERROR
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=2, m=4, schedule='gpipe') ... ERROR
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=2, m=4, schedule='1f1b') ... ERROR
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=2, m=5, schedule='gpipe') ... ERROR
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=2, m=5, schedule='1f1b') ... ERROR
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=2, m=6, schedule='gpipe') ... ERROR
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=2, m=6, schedule='1f1b') ... ERROR
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=2, m=7, schedule='gpipe') ... ERROR
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=2, m=7, schedule='1f1b') ... ERROR
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=3, m=1, schedule='gpipe') ... ERROR
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=3, m=1, schedule='1f1b') ... ERROR
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=3, m=2, schedule='gpipe') ... ERROR
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=3, m=2, schedule='1f1b') ... ERROR
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=3, m=3, schedule='gpipe') ... ERROR
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=3, m=3, schedule='1f1b') ... ERROR
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=3, m=4, schedule='gpipe') ... ERROR
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=3, m=4, schedule='1f1b') ... ERROR
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=3, m=5, schedule='gpipe') ... ERROR
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=3, m=5, schedule='1f1b') ... ERROR
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=3, m=6, schedule='gpipe') ... ERROR
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=3, m=6, schedule='1f1b') ... ERROR
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=3, m=7, schedule='gpipe') ... ERROR
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=3, m=7, schedule='1f1b') ... ERROR
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=4, m=1, schedule='gpipe') ... ERROR
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=4, m=1, schedule='1f1b') ... ERROR
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=4, m=2, schedule='gpipe') ... ERROR
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=4, m=2, schedule='1f1b') ... ERROR
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=4, m=3, schedule='gpipe') ... ERROR
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=4, m=3, schedule='1f1b') ... ERROR
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=4, m=4, schedule='gpipe') ... ERROR
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=4, m=4, schedule='1f1b') ... ERROR
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=4, m=5, schedule='gpipe') ... ERROR
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=4, m=5, schedule='1f1b') ... ERROR
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=4, m=6, schedule='gpipe') ... ERROR
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=4, m=6, schedule='1f1b') ... ERROR
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=4, m=7, schedule='gpipe') ... ERROR
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=4, m=7, schedule='1f1b') ... ERROR
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=5, m=1, schedule='gpipe') ... ERROR
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=5, m=1, schedule='1f1b') ... ERROR
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=5, m=2, schedule='gpipe') ... ERROR
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=5, m=2, schedule='1f1b') ... ERROR
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=5, m=3, schedule='gpipe') ... ERROR
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=5, m=3, schedule='1f1b') ... ERROR
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=5, m=4, schedule='gpipe') ... ERROR
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=5, m=4, schedule='1f1b') ... ERROR
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=5, m=5, schedule='gpipe') ... ERROR
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=5, m=5, schedule='1f1b') ... ERROR
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=5, m=6, schedule='gpipe') ... ERROR
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=5, m=6, schedule='1f1b') ... ERROR
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=5, m=7, schedule='gpipe') ... ERROR
+  test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=5, m=7, schedule='1f1b') ... ERROR
+test_dependencies_and_stage_exclusivity (test_answers.ScheduleTests.test_dependencies_and_stage_exclusivity) ... ERROR
+test_fewer_microbatches_than_stages_in_teaching_model (test_answers.ScheduleTests.test_fewer_microbatches_than_stages_in_teaching_model) ... ERROR
+test_first_stage_order (test_answers.ScheduleTests.test_first_stage_order) ... ERROR
+test_gpipe_backward_is_fifo (test_answers.ScheduleTests.test_gpipe_backward_is_fifo) ... ERROR
+test_gpipe_three_stages_four_microbatches (test_answers.ScheduleTests.test_gpipe_three_stages_four_microbatches) ... ERROR
+test_one_stage_has_no_bubble (test_answers.ScheduleTests.test_one_stage_has_no_bubble) ... ERROR
+test_rejects_invalid_costs (test_answers.ScheduleTests.test_rejects_invalid_costs) ... 
+  test_rejects_invalid_costs (test_answers.ScheduleTests.test_rejects_invalid_costs) (costs=[], key='forward_ticks') ... ERROR
+  test_rejects_invalid_costs (test_answers.ScheduleTests.test_rejects_invalid_costs) (costs=[], key='backward_ticks') ... ERROR
+  test_rejects_invalid_costs (test_answers.ScheduleTests.test_rejects_invalid_costs) (costs=[1], key='forward_ticks') ... ERROR
+  test_rejects_invalid_costs (test_answers.ScheduleTests.test_rejects_invalid_costs) (costs=[1], key='backward_ticks') ... ERROR
+  test_rejects_invalid_costs (test_answers.ScheduleTests.test_rejects_invalid_costs) (costs=[1, 0, 1], key='forward_ticks') ... ERROR
+  test_rejects_invalid_costs (test_answers.ScheduleTests.test_rejects_invalid_costs) (costs=[1, 0, 1], key='backward_ticks') ... ERROR
+  test_rejects_invalid_costs (test_answers.ScheduleTests.test_rejects_invalid_costs) (costs=[1, True, 1], key='forward_ticks') ... ERROR
+  test_rejects_invalid_costs (test_answers.ScheduleTests.test_rejects_invalid_costs) (costs=[1, True, 1], key='backward_ticks') ... ERROR
+  test_rejects_invalid_costs (test_answers.ScheduleTests.test_rejects_invalid_costs) (costs=[1, 2.5, 1], key='forward_ticks') ... ERROR
+  test_rejects_invalid_costs (test_answers.ScheduleTests.test_rejects_invalid_costs) (costs=[1, 2.5, 1], key='backward_ticks') ... ERROR
+test_rejects_invalid_counts (test_answers.ScheduleTests.test_rejects_invalid_counts) ... 
+  test_rejects_invalid_counts (test_answers.ScheduleTests.test_rejects_invalid_counts) (args=(0, 4)) ... ERROR
+  test_rejects_invalid_counts (test_answers.ScheduleTests.test_rejects_invalid_counts) (args=(3, 0)) ... ERROR
+  test_rejects_invalid_counts (test_answers.ScheduleTests.test_rejects_invalid_counts) (args=(-1, 4)) ... ERROR
+  test_rejects_invalid_counts (test_answers.ScheduleTests.test_rejects_invalid_counts) (args=(3, -1)) ... ERROR
+  test_rejects_invalid_counts (test_answers.ScheduleTests.test_rejects_invalid_counts) (args=(True, 4)) ... ERROR
+  test_rejects_invalid_counts (test_answers.ScheduleTests.test_rejects_invalid_counts) (args=(3, True)) ... ERROR
+  test_rejects_invalid_counts (test_answers.ScheduleTests.test_rejects_invalid_counts) (args=(2.5, 4)) ... ERROR
+  test_rejects_invalid_counts (test_answers.ScheduleTests.test_rejects_invalid_counts) (args=(3, 2.5)) ... ERROR
+test_rejects_unknown_schedule (test_answers.ScheduleTests.test_rejects_unknown_schedule) ... ERROR
+test_slow_middle_stage_increases_time (test_answers.ScheduleTests.test_slow_middle_stage_increases_time) ... ERROR
+
+======================================================================
+ERROR: test_equal_microbatches_match_full_batch (test_answers.GradientTests.test_equal_microbatches_match_full_batch)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 114, in test_equal_microbatches_match_full_batch
+    self.compare_reference([2, 2, 2, 2])
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 106, in compare_reference
+    result = microbatch_backward(model, x, target, sizes)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 9, in microbatch_backward
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_existing_gradients_are_cleared (test_answers.GradientTests.test_existing_gradients_are_cleared)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 137, in test_existing_gradients_are_cleared
+    microbatch_backward(model, x, target, [1, 3, 4])
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 9, in microbatch_backward
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_one_optimizer_update_matches_dense (test_answers.GradientTests.test_one_optimizer_update_matches_dense)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 126, in test_one_optimizer_update_matches_dense
+    model, dense = self.compare_reference([1, 3, 4])
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 106, in compare_reference
+    result = microbatch_backward(model, x, target, sizes)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 9, in microbatch_backward
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_invalid_chunk_partition (test_answers.GradientTests.test_rejects_invalid_chunk_partition) (sizes=[])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 157, in test_rejects_invalid_chunk_partition
+    microbatch_backward(make_model(), x, target, sizes)
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 9, in microbatch_backward
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_invalid_chunk_partition (test_answers.GradientTests.test_rejects_invalid_chunk_partition) (sizes=[7])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 157, in test_rejects_invalid_chunk_partition
+    microbatch_backward(make_model(), x, target, sizes)
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 9, in microbatch_backward
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_invalid_chunk_partition (test_answers.GradientTests.test_rejects_invalid_chunk_partition) (sizes=[9])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 157, in test_rejects_invalid_chunk_partition
+    microbatch_backward(make_model(), x, target, sizes)
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 9, in microbatch_backward
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_invalid_chunk_partition (test_answers.GradientTests.test_rejects_invalid_chunk_partition) (sizes=[0, 8])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 157, in test_rejects_invalid_chunk_partition
+    microbatch_backward(make_model(), x, target, sizes)
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 9, in microbatch_backward
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_invalid_chunk_partition (test_answers.GradientTests.test_rejects_invalid_chunk_partition) (sizes=[True, 7])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 157, in test_rejects_invalid_chunk_partition
+    microbatch_backward(make_model(), x, target, sizes)
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 9, in microbatch_backward
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_invalid_chunk_partition (test_answers.GradientTests.test_rejects_invalid_chunk_partition) (sizes=[1.5, 6.5])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 157, in test_rejects_invalid_chunk_partition
+    microbatch_backward(make_model(), x, target, sizes)
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 9, in microbatch_backward
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_invalid_input_target_shapes (test_answers.GradientTests.test_rejects_invalid_input_target_shapes) (xshape=torch.Size([0, 3]), yshape=torch.Size([0, 2]))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 163, in test_rejects_invalid_input_target_shapes
+    microbatch_backward(make_model(), a, b, [len(a)])
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 9, in microbatch_backward
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_invalid_input_target_shapes (test_answers.GradientTests.test_rejects_invalid_input_target_shapes) (xshape=torch.Size([8, 3]), yshape=torch.Size([7, 2]))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 163, in test_rejects_invalid_input_target_shapes
+    microbatch_backward(make_model(), a, b, [len(a)])
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 9, in microbatch_backward
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_invalid_input_target_shapes (test_answers.GradientTests.test_rejects_invalid_input_target_shapes) (xshape=torch.Size([24]), yshape=torch.Size([8, 2]))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 163, in test_rejects_invalid_input_target_shapes
+    microbatch_backward(make_model(), a, b, [len(a)])
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 9, in microbatch_backward
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_invalid_input_target_shapes (test_answers.GradientTests.test_rejects_invalid_input_target_shapes) (xshape=torch.Size([8, 3]), yshape=torch.Size([16]))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 163, in test_rejects_invalid_input_target_shapes
+    microbatch_backward(make_model(), a, b, [len(a)])
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 9, in microbatch_backward
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_invalid_input_target_shapes (test_answers.GradientTests.test_rejects_invalid_input_target_shapes) (xshape=torch.Size([8, 3]), yshape=torch.Size([8, 1]))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 163, in test_rejects_invalid_input_target_shapes
+    microbatch_backward(make_model(), a, b, [len(a)])
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 9, in microbatch_backward
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_single_full_chunk (test_answers.GradientTests.test_single_full_chunk)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 120, in test_single_full_chunk
+    self.compare_reference([8])
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 106, in compare_reference
+    result = microbatch_backward(model, x, target, sizes)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 9, in microbatch_backward
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_single_row_chunks (test_answers.GradientTests.test_single_row_chunks)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 123, in test_single_row_chunks
+    self.compare_reference([1] * 8)
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 106, in compare_reference
+    result = microbatch_backward(model, x, target, sizes)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 9, in microbatch_backward
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_unequal_microbatches_match_full_batch (test_answers.GradientTests.test_unequal_microbatches_match_full_batch)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 117, in test_unequal_microbatches_match_full_batch
+    self.compare_reference([1, 3, 4])
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 106, in compare_reference
+    result = microbatch_backward(model, x, target, sizes)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 9, in microbatch_backward
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_1f1b_preserves_time_and_reduces_live_activations (test_answers.ScheduleTests.test_1f1b_preserves_time_and_reduces_live_activations)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 19, in test_1f1b_preserves_time_and_reduces_live_activations
+    result = simulate_pipeline(3, 4, "1f1b")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=1, m=1, schedule='gpipe')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=1, m=1, schedule='1f1b')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=1, m=2, schedule='gpipe')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=1, m=2, schedule='1f1b')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=1, m=3, schedule='gpipe')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=1, m=3, schedule='1f1b')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=1, m=4, schedule='gpipe')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=1, m=4, schedule='1f1b')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=1, m=5, schedule='gpipe')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=1, m=5, schedule='1f1b')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=1, m=6, schedule='gpipe')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=1, m=6, schedule='1f1b')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=1, m=7, schedule='gpipe')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=1, m=7, schedule='1f1b')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=2, m=1, schedule='gpipe')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=2, m=1, schedule='1f1b')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=2, m=2, schedule='gpipe')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=2, m=2, schedule='1f1b')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=2, m=3, schedule='gpipe')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=2, m=3, schedule='1f1b')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=2, m=4, schedule='gpipe')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=2, m=4, schedule='1f1b')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=2, m=5, schedule='gpipe')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=2, m=5, schedule='1f1b')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=2, m=6, schedule='gpipe')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=2, m=6, schedule='1f1b')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=2, m=7, schedule='gpipe')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=2, m=7, schedule='1f1b')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=3, m=1, schedule='gpipe')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=3, m=1, schedule='1f1b')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=3, m=2, schedule='gpipe')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=3, m=2, schedule='1f1b')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=3, m=3, schedule='gpipe')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=3, m=3, schedule='1f1b')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=3, m=4, schedule='gpipe')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=3, m=4, schedule='1f1b')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=3, m=5, schedule='gpipe')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=3, m=5, schedule='1f1b')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=3, m=6, schedule='gpipe')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=3, m=6, schedule='1f1b')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=3, m=7, schedule='gpipe')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=3, m=7, schedule='1f1b')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=4, m=1, schedule='gpipe')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=4, m=1, schedule='1f1b')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=4, m=2, schedule='gpipe')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=4, m=2, schedule='1f1b')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=4, m=3, schedule='gpipe')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=4, m=3, schedule='1f1b')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=4, m=4, schedule='gpipe')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=4, m=4, schedule='1f1b')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=4, m=5, schedule='gpipe')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=4, m=5, schedule='1f1b')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=4, m=6, schedule='gpipe')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=4, m=6, schedule='1f1b')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=4, m=7, schedule='gpipe')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=4, m=7, schedule='1f1b')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=5, m=1, schedule='gpipe')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=5, m=1, schedule='1f1b')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=5, m=2, schedule='gpipe')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=5, m=2, schedule='1f1b')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=5, m=3, schedule='gpipe')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=5, m=3, schedule='1f1b')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=5, m=4, schedule='gpipe')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=5, m=4, schedule='1f1b')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=5, m=5, schedule='gpipe')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=5, m=5, schedule='1f1b')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=5, m=6, schedule='gpipe')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=5, m=6, schedule='1f1b')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=5, m=7, schedule='gpipe')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_balanced_formula_for_many_sizes (test_answers.ScheduleTests.test_balanced_formula_for_many_sizes) (p=5, m=7, schedule='1f1b')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 39, in test_balanced_formula_for_many_sizes
+    result = simulate_pipeline(p, m, name, forward_ticks=[1] * p, backward_ticks=[2] * p)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_dependencies_and_stage_exclusivity (test_answers.ScheduleTests.test_dependencies_and_stage_exclusivity)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 47, in test_dependencies_and_stage_exclusivity
+    result = simulate_pipeline(p, m, name, forward_ticks=list(range(1, p + 1)), backward_ticks=list(range(p, 0, -1)))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_fewer_microbatches_than_stages_in_teaching_model (test_answers.ScheduleTests.test_fewer_microbatches_than_stages_in_teaching_model)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 64, in test_fewer_microbatches_than_stages_in_teaching_model
+    result = simulate_pipeline(4, 2, "1f1b")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_first_stage_order (test_answers.ScheduleTests.test_first_stage_order)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 24, in test_first_stage_order
+    result = simulate_pipeline(3, 4, "1f1b")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_gpipe_backward_is_fifo (test_answers.ScheduleTests.test_gpipe_backward_is_fifo)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 29, in test_gpipe_backward_is_fifo
+    result = simulate_pipeline(3, 4, "gpipe")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_gpipe_three_stages_four_microbatches (test_answers.ScheduleTests.test_gpipe_three_stages_four_microbatches)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 13, in test_gpipe_three_stages_four_microbatches
+    result = simulate_pipeline(3, 4, "gpipe")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_one_stage_has_no_bubble (test_answers.ScheduleTests.test_one_stage_has_no_bubble)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 70, in test_one_stage_has_no_bubble
+    result = simulate_pipeline(1, 4, name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_invalid_costs (test_answers.ScheduleTests.test_rejects_invalid_costs) (costs=[], key='forward_ticks')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 91, in test_rejects_invalid_costs
+    simulate_pipeline(3, 4, "gpipe", **{key: value})
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_invalid_costs (test_answers.ScheduleTests.test_rejects_invalid_costs) (costs=[], key='backward_ticks')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 91, in test_rejects_invalid_costs
+    simulate_pipeline(3, 4, "gpipe", **{key: value})
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_invalid_costs (test_answers.ScheduleTests.test_rejects_invalid_costs) (costs=[1], key='forward_ticks')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 91, in test_rejects_invalid_costs
+    simulate_pipeline(3, 4, "gpipe", **{key: value})
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_invalid_costs (test_answers.ScheduleTests.test_rejects_invalid_costs) (costs=[1], key='backward_ticks')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 91, in test_rejects_invalid_costs
+    simulate_pipeline(3, 4, "gpipe", **{key: value})
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_invalid_costs (test_answers.ScheduleTests.test_rejects_invalid_costs) (costs=[1, 0, 1], key='forward_ticks')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 91, in test_rejects_invalid_costs
+    simulate_pipeline(3, 4, "gpipe", **{key: value})
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_invalid_costs (test_answers.ScheduleTests.test_rejects_invalid_costs) (costs=[1, 0, 1], key='backward_ticks')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 91, in test_rejects_invalid_costs
+    simulate_pipeline(3, 4, "gpipe", **{key: value})
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_invalid_costs (test_answers.ScheduleTests.test_rejects_invalid_costs) (costs=[1, True, 1], key='forward_ticks')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 91, in test_rejects_invalid_costs
+    simulate_pipeline(3, 4, "gpipe", **{key: value})
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_invalid_costs (test_answers.ScheduleTests.test_rejects_invalid_costs) (costs=[1, True, 1], key='backward_ticks')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 91, in test_rejects_invalid_costs
+    simulate_pipeline(3, 4, "gpipe", **{key: value})
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_invalid_costs (test_answers.ScheduleTests.test_rejects_invalid_costs) (costs=[1, 2.5, 1], key='forward_ticks')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 91, in test_rejects_invalid_costs
+    simulate_pipeline(3, 4, "gpipe", **{key: value})
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_invalid_costs (test_answers.ScheduleTests.test_rejects_invalid_costs) (costs=[1, 2.5, 1], key='backward_ticks')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 91, in test_rejects_invalid_costs
+    simulate_pipeline(3, 4, "gpipe", **{key: value})
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_invalid_counts (test_answers.ScheduleTests.test_rejects_invalid_counts) (args=(0, 4))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 85, in test_rejects_invalid_counts
+    simulate_pipeline(*args, "gpipe")
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_invalid_counts (test_answers.ScheduleTests.test_rejects_invalid_counts) (args=(3, 0))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 85, in test_rejects_invalid_counts
+    simulate_pipeline(*args, "gpipe")
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_invalid_counts (test_answers.ScheduleTests.test_rejects_invalid_counts) (args=(-1, 4))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 85, in test_rejects_invalid_counts
+    simulate_pipeline(*args, "gpipe")
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_invalid_counts (test_answers.ScheduleTests.test_rejects_invalid_counts) (args=(3, -1))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 85, in test_rejects_invalid_counts
+    simulate_pipeline(*args, "gpipe")
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_invalid_counts (test_answers.ScheduleTests.test_rejects_invalid_counts) (args=(True, 4))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 85, in test_rejects_invalid_counts
+    simulate_pipeline(*args, "gpipe")
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_invalid_counts (test_answers.ScheduleTests.test_rejects_invalid_counts) (args=(3, True))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 85, in test_rejects_invalid_counts
+    simulate_pipeline(*args, "gpipe")
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_invalid_counts (test_answers.ScheduleTests.test_rejects_invalid_counts) (args=(2.5, 4))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 85, in test_rejects_invalid_counts
+    simulate_pipeline(*args, "gpipe")
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_invalid_counts (test_answers.ScheduleTests.test_rejects_invalid_counts) (args=(3, 2.5))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 85, in test_rejects_invalid_counts
+    simulate_pipeline(*args, "gpipe")
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_rejects_unknown_schedule (test_answers.ScheduleTests.test_rejects_unknown_schedule)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 95, in test_rejects_unknown_schedule
+    simulate_pipeline(3, 4, "unknown")
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_slow_middle_stage_increases_time (test_answers.ScheduleTests.test_slow_middle_stage_increases_time)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/test_answers.py", line 76, in test_slow_middle_stage_increases_time
+    balanced = simulate_pipeline(3, 4, "1f1b")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/answers.py", line 5, in simulate_pipeline
+    raise NotImplementedError
+NotImplementedError
+
+----------------------------------------------------------------------
+Ran 21 tests in 0.034s
+
+FAILED (errors=114)

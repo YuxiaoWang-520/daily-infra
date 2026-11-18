@@ -1,0 +1,5 @@
+evidence/upstream/** -whitespace
+evidence/runs/01-red-tests.txt -whitespace
+evidence/runs/02-distributed-metadata-red.txt -whitespace
+evidence/runs/03-distributed-probe.txt -whitespace
+evidence/runs/09-distributed.txt -whitespace

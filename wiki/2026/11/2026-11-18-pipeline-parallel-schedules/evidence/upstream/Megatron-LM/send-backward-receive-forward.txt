@@ -1,0 +1,25 @@
+    def send_backward_recv_forward(
+        self, input_tensor_grads, tensor_shapes, is_first_stage: bool
+    ) -> Union[torch.Tensor, list[torch.Tensor]]:
+        """Batched send and recv with previous rank in pipeline."""
+        config = self.config
+        unwrap_input_tensor_grads = False
+        if not isinstance(input_tensor_grads, list):
+            unwrap_input_tensor_grads = True
+            input_tensor_grads = [input_tensor_grads]
+        if not isinstance(tensor_shapes, list):
+            tensor_shapes = [tensor_shapes]
+        input_tensors = []
+        for input_tensor_grad, tensor_shape in zip(input_tensor_grads, tensor_shapes):
+            if is_first_stage:
+                input_tensor = None
+            else:
+                if config.timers is not None:
+                    config.timers('backward-send-forward-recv', log_level=2).start()
+                input_tensor, _, _ = self._communicate(
+                    tensor_send_next=None,
+                    tensor_send_prev=input_tensor_grad,
+                    recv_prev=True,
+                    recv_next=False,
+                    tensor_shape=tensor_shape,
+                )

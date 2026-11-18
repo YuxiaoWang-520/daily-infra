@@ -1,0 +1,35 @@
+        # Run backward
+        # Delay send waits
+        bwd_sends_to_wait: list[list[dist.Work]] = []
+        for i in range(self._n_microbatches):
+            with record_function(f"Backward {i}"):
+                ops = self._stage.get_bwd_recv_ops(i)
+                works = _sorted_batch_p2p(ops, desc="bwd_recv")
+                for work in works.values():
+                    _wait_batch_p2p(work)
+
+                loss = self._maybe_get_loss(self._stage, i)
+                self._stage.backward_one_chunk(
+                    i,
+                    loss=loss,
+                    last_backward=i == self._n_microbatches - 1,
+                )
+
+                ops = self._stage.get_bwd_send_ops(i)
+                works = _sorted_batch_p2p(ops, desc="bwd_send")
+                bwd_sends_to_wait.extend(works.values())
+
+            logger.debug("[%s] Backwarded microbatch %s", self._stage.stage_index, i)
+
+        # Wait for all backward sends to finish
+        for work in bwd_sends_to_wait:
+            _wait_batch_p2p(work)
+
+        # Update losses if there is a container passed in
+        self._update_losses(self._stage, losses)
+
+        # This option defers only FSDP finalization. Other stages still need PP scaling.
+        if self._finalize_gradients or not isinstance(self._stage.submod, FSDPModule):
+            self._stage.perform_reduce_grad(
+                self._n_microbatches if self.scale_grads else 1
+            )

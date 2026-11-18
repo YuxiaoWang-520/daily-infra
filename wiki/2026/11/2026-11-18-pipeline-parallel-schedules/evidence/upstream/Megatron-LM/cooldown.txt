@@ -1,0 +1,25 @@
+    # Run cooldown backward passes.
+    if not forward_only:
+        for i in range(num_warmup_microbatches):
+
+            # Enable async grad reduction in the last backward pass
+            # Note: If grad sync function is provided, only enable
+            # async grad reduction in first pipeline stage. Other
+            # pipeline stages do grad reduction during pipeline
+            # bubble.
+            if i == num_warmup_microbatches - 1:
+                if config.grad_sync_func is None or grad_sync_first_stage:
+                    enable_grad_sync()
+
+            input_tensor = input_tensors.pop(0)
+            output_tensor = output_tensors.pop(0)
+
+            output_tensor_grad = p2p_communicator.recv_backward(
+                send_tensor_shapes, p2p_communicator.is_pp_last_stage
+            )
+
+            input_tensor_grad = backward_func(
+                input_tensor, output_tensor, output_tensor_grad, config
+            )
+
+            p2p_communicator.send_backward(input_tensor_grad, p2p_communicator.is_pp_first_stage)

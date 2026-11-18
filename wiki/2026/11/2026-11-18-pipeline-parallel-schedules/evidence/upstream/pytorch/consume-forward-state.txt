@@ -1,0 +1,19 @@
+        self._check_chunk_id(bwd_chunk_id)
+
+        entry = self._forward_chunk_states.pop(bwd_chunk_id)
+        # Released slots use gradient edges as backward roots.
+        stage_output = entry.stage_output_for_backward()
+        input_values = entry.input_values
+
+        # Compute backward
+        if self.is_last:
+            # Last stage computes gradients from loss and has no gradients from
+            # next stage
+            bwd_kwargs = {
+                "stage_output": loss,
+                "output_grads": None,
+                "input_values": input_values,
+            }
+        else:
+            # Otherwise, receive gradients from next stage
+            grads_output = self._retrieve_recv_grads(bwd_chunk_id)

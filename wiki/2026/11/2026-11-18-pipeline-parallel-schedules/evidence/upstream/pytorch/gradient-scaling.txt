@@ -1,0 +1,15 @@
+    def scale_grads(self, grad_scale_factor: int) -> None:
+        """Scale gradients model gradients by `grad_scale_factor`, which should be specified in coordination with the
+        loss function used with pipelining.  For loss functions which perform 'mean' loss reduction, `grad_scale_factor`
+        should be set to num_microbatches.  For loss functions that use `sum` reduction, `grad_scale_factor` should
+        be set to 1.
+
+        Should only be called once per pipeline schedule step, after all backwards passes have completed.
+        """
+
+        # PP scales only for its own contribution (microbatches), but relies on DP to scale further
+        # for DP degree.
+        if grad_scale_factor != 1:
+            for p in self.submod.parameters():
+                if p.grad is not None:
+                    p.grad.div_(grad_scale_factor)

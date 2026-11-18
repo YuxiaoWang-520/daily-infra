@@ -1,0 +1,23 @@
+            # STATIC mode: metadata comes from user inputs, no validation needed
+            self._stage_meta.input_grads = self._user_meta.input_grads
+            self._stage_meta.output_grads = self._user_meta.output_grads
+            # For STATIC mode with plain tensors, if output_grads is not set but
+            # we have outputs, derive output_grads from outputs.
+            # (gradient shape == output shape, but requires_grad=False for gradients)
+            if self._stage_meta.output_grads is None:
+                if self._stage_meta.outputs is None:
+                    raise PipeliningMetadataError(
+                        f"Stage {self.stage_index}: output metadata is required for backward inference."
+                    )
+                self._stage_meta.output_grads = _derive_grad_metas(
+                    self._stage_meta.outputs
+                )
+            # Similarly, derive input_grads from inputs if not provided
+            if self._stage_meta.input_grads is None:
+                if self._stage_meta.inputs is None:
+                    raise PipeliningMetadataError(
+                        f"Stage {self.stage_index}: input metadata is required for backward inference."
+                    )
+                self._stage_meta.input_grads = _derive_grad_metas(
+                    self._stage_meta.inputs
+                )

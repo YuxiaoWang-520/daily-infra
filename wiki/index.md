@@ -31,8 +31,9 @@
 | 25 | 2026-11-13 | [torch.compile 怎样捕获计算，graph break 与重新编译各会增加什么开销？](2026/11/2026-11-13-torch-compile-guards/README.md) | Dynamo／FX、guards、图分段、动态形状与编译成本 | 第 06、09、24 篇 |
 | 26 | 2026-11-16 | [CUDA caching allocator 怎样复用显存，为什么会出现碎片与 OOM？](2026/11/2026-11-16-cuda-caching-allocator/README.md) | 分配器、块复用、碎片、stream 生命周期与容量排障 | 第 01、18、24 篇 |
 | 27 | 2026-11-17 | [Tensor Parallel 怎样切分线性层，AllReduce 与 AllGather 分别出现在何处？](2026/11/2026-11-17-tensor-parallel-linear/README.md) | 列／行切分、梯度与布局、AllReduce／AllGather、Sequence Parallel 与通信预算 | 第 07、17、23 篇 |
+| 28 | 2026-11-18 | [Pipeline Parallel 怎样调度 microbatch，气泡和激活显存之间如何取舍？](2026/11/2026-11-18-pipeline-parallel-schedules/README.md) | GPipe／1F1B、microbatch、气泡分母、激活生命周期与一致梯度 | 第 17—19、27 篇 |
 
-下一篇候选为 Pipeline Parallel 怎样调度 microbatch，气泡和激活显存之间如何取舍？
+下一篇候选为 Context Parallel 怎样切分长序列，Attention 如何在各 rank 间交换 K／V？
 
 2026-10-22 起按用户要求集中完成起步前 10 篇，使用实际归档日期；日常定时任务仍按工作日每天一篇执行。范围见 [本次任务说明](../docs/BOOTSTRAP10.md)。
 

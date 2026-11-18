@@ -1,0 +1,505 @@
+{
+  "environment": {
+    "python": "3.12.16",
+    "torch": "2.15.0",
+    "torch_build_commit": "d0f2af8b66b20da4baa50644c0cd3f887a2eae2e",
+    "os": "Darwin",
+    "architecture": "arm64",
+    "cuda_available": false,
+    "gloo_available": true
+  },
+  "unit_tick_schedules": {
+    "gpipe": {
+      "schedule": "gpipe",
+      "stages": 3,
+      "microbatches": 4,
+      "makespan_ticks": 12,
+      "compute_utilization": 0.6666666666666666,
+      "busy_ticks_per_stage": [
+        8,
+        8,
+        8
+      ],
+      "peak_saved_microbatches": [
+        4,
+        4,
+        4
+      ],
+      "events": [
+        {
+          "stage": 0,
+          "phase": "F",
+          "microbatch": 0,
+          "start": 0,
+          "end": 1
+        },
+        {
+          "stage": 0,
+          "phase": "F",
+          "microbatch": 1,
+          "start": 1,
+          "end": 2
+        },
+        {
+          "stage": 0,
+          "phase": "F",
+          "microbatch": 2,
+          "start": 2,
+          "end": 3
+        },
+        {
+          "stage": 0,
+          "phase": "F",
+          "microbatch": 3,
+          "start": 3,
+          "end": 4
+        },
+        {
+          "stage": 0,
+          "phase": "B",
+          "microbatch": 0,
+          "start": 8,
+          "end": 9
+        },
+        {
+          "stage": 0,
+          "phase": "B",
+          "microbatch": 1,
+          "start": 9,
+          "end": 10
+        },
+        {
+          "stage": 0,
+          "phase": "B",
+          "microbatch": 2,
+          "start": 10,
+          "end": 11
+        },
+        {
+          "stage": 0,
+          "phase": "B",
+          "microbatch": 3,
+          "start": 11,
+          "end": 12
+        },
+        {
+          "stage": 1,
+          "phase": "F",
+          "microbatch": 0,
+          "start": 1,
+          "end": 2
+        },
+        {
+          "stage": 1,
+          "phase": "F",
+          "microbatch": 1,
+          "start": 2,
+          "end": 3
+        },
+        {
+          "stage": 1,
+          "phase": "F",
+          "microbatch": 2,
+          "start": 3,
+          "end": 4
+        },
+        {
+          "stage": 1,
+          "phase": "F",
+          "microbatch": 3,
+          "start": 4,
+          "end": 5
+        },
+        {
+          "stage": 1,
+          "phase": "B",
+          "microbatch": 0,
+          "start": 7,
+          "end": 8
+        },
+        {
+          "stage": 1,
+          "phase": "B",
+          "microbatch": 1,
+          "start": 8,
+          "end": 9
+        },
+        {
+          "stage": 1,
+          "phase": "B",
+          "microbatch": 2,
+          "start": 9,
+          "end": 10
+        },
+        {
+          "stage": 1,
+          "phase": "B",
+          "microbatch": 3,
+          "start": 10,
+          "end": 11
+        },
+        {
+          "stage": 2,
+          "phase": "F",
+          "microbatch": 0,
+          "start": 2,
+          "end": 3
+        },
+        {
+          "stage": 2,
+          "phase": "F",
+          "microbatch": 1,
+          "start": 3,
+          "end": 4
+        },
+        {
+          "stage": 2,
+          "phase": "F",
+          "microbatch": 2,
+          "start": 4,
+          "end": 5
+        },
+        {
+          "stage": 2,
+          "phase": "F",
+          "microbatch": 3,
+          "start": 5,
+          "end": 6
+        },
+        {
+          "stage": 2,
+          "phase": "B",
+          "microbatch": 0,
+          "start": 6,
+          "end": 7
+        },
+        {
+          "stage": 2,
+          "phase": "B",
+          "microbatch": 1,
+          "start": 7,
+          "end": 8
+        },
+        {
+          "stage": 2,
+          "phase": "B",
+          "microbatch": 2,
+          "start": 8,
+          "end": 9
+        },
+        {
+          "stage": 2,
+          "phase": "B",
+          "microbatch": 3,
+          "start": 9,
+          "end": 10
+        }
+      ]
+    },
+    "1f1b": {
+      "schedule": "1f1b",
+      "stages": 3,
+      "microbatches": 4,
+      "makespan_ticks": 12,
+      "compute_utilization": 0.6666666666666666,
+      "busy_ticks_per_stage": [
+        8,
+        8,
+        8
+      ],
+      "peak_saved_microbatches": [
+        3,
+        2,
+        1
+      ],
+      "events": [
+        {
+          "stage": 0,
+          "phase": "F",
+          "microbatch": 0,
+          "start": 0,
+          "end": 1
+        },
+        {
+          "stage": 0,
+          "phase": "F",
+          "microbatch": 1,
+          "start": 1,
+          "end": 2
+        },
+        {
+          "stage": 0,
+          "phase": "F",
+          "microbatch": 2,
+          "start": 2,
+          "end": 3
+        },
+        {
+          "stage": 0,
+          "phase": "B",
+          "microbatch": 0,
+          "start": 5,
+          "end": 6
+        },
+        {
+          "stage": 0,
+          "phase": "F",
+          "microbatch": 3,
+          "start": 6,
+          "end": 7
+        },
+        {
+          "stage": 0,
+          "phase": "B",
+          "microbatch": 1,
+          "start": 7,
+          "end": 8
+        },
+        {
+          "stage": 0,
+          "phase": "B",
+          "microbatch": 2,
+          "start": 9,
+          "end": 10
+        },
+        {
+          "stage": 0,
+          "phase": "B",
+          "microbatch": 3,
+          "start": 11,
+          "end": 12
+        },
+        {
+          "stage": 1,
+          "phase": "F",
+          "microbatch": 0,
+          "start": 1,
+          "end": 2
+        },
+        {
+          "stage": 1,
+          "phase": "F",
+          "microbatch": 1,
+          "start": 2,
+          "end": 3
+        },
+        {
+          "stage": 1,
+          "phase": "B",
+          "microbatch": 0,
+          "start": 4,
+          "end": 5
+        },
+        {
+          "stage": 1,
+          "phase": "F",
+          "microbatch": 2,
+          "start": 5,
+          "end": 6
+        },
+        {
+          "stage": 1,
+          "phase": "B",
+          "microbatch": 1,
+          "start": 6,
+          "end": 7
+        },
+        {
+          "stage": 1,
+          "phase": "F",
+          "microbatch": 3,
+          "start": 7,
+          "end": 8
+        },
+        {
+          "stage": 1,
+          "phase": "B",
+          "microbatch": 2,
+          "start": 8,
+          "end": 9
+        },
+        {
+          "stage": 1,
+          "phase": "B",
+          "microbatch": 3,
+          "start": 10,
+          "end": 11
+        },
+        {
+          "stage": 2,
+          "phase": "F",
+          "microbatch": 0,
+          "start": 2,
+          "end": 3
+        },
+        {
+          "stage": 2,
+          "phase": "B",
+          "microbatch": 0,
+          "start": 3,
+          "end": 4
+        },
+        {
+          "stage": 2,
+          "phase": "F",
+          "microbatch": 1,
+          "start": 4,
+          "end": 5
+        },
+        {
+          "stage": 2,
+          "phase": "B",
+          "microbatch": 1,
+          "start": 5,
+          "end": 6
+        },
+        {
+          "stage": 2,
+          "phase": "F",
+          "microbatch": 2,
+          "start": 6,
+          "end": 7
+        },
+        {
+          "stage": 2,
+          "phase": "B",
+          "microbatch": 2,
+          "start": 7,
+          "end": 8
+        },
+        {
+          "stage": 2,
+          "phase": "F",
+          "microbatch": 3,
+          "start": 8,
+          "end": 9
+        },
+        {
+          "stage": 2,
+          "phase": "B",
+          "microbatch": 3,
+          "start": 9,
+          "end": 10
+        }
+      ]
+    }
+  },
+  "unequal_microbatch_cpu_validation": {
+    "chunk_sizes": [
+      1,
+      3,
+      4
+    ],
+    "output": [
+      [
+        -0.13597466380421847,
+        -0.7513368841067021
+      ],
+      [
+        -0.03684402998506814,
+        -0.6011609153528699
+      ],
+      [
+        0.09422965888549874,
+        -0.3837310894722231
+      ],
+      [
+        0.24345443881435663,
+        -0.12456424854664178
+      ],
+      [
+        0.3848908200425899,
+        0.1164416027525032
+      ],
+      [
+        0.49812539456524363,
+        0.29539708276794563
+      ],
+      [
+        0.5787462941179244,
+        0.41051441003798067
+      ],
+      [
+        0.632757317326261,
+        0.4803816705640382
+      ]
+    ],
+    "loss": 0.37916318132772353,
+    "full_batch_loss": 0.37916318132772353,
+    "max_parameter_gradient_abs_error": 1.1102230246251565e-16
+  },
+  "hypothetical_fixed_global_batch_64_dp_2": [
+    {
+      "microbatch_rows": 2,
+      "microbatches": 16,
+      "hypothetical_stage_forward_ms": 1.3,
+      "hypothetical_stage_backward_ms": 2.6,
+      "estimated_step_ms": 74.1,
+      "compute_utilization": 0.8421052631578947,
+      "saved_activation_mib_per_microbatch_assumption": 32,
+      "gpipe_peak_saved_activation_mib_per_stage": [
+        512,
+        512,
+        512,
+        512
+      ],
+      "one_f_one_b_peak_saved_activation_mib_per_stage": [
+        128,
+        96,
+        64,
+        32
+      ],
+      "payload_bytes_per_microbatch_per_direction": 67108864,
+      "payload_bytes_per_boundary_per_step_per_direction": 1073741824,
+      "payload_messages_per_boundary_both_directions": 32
+    },
+    {
+      "microbatch_rows": 4,
+      "microbatches": 8,
+      "hypothetical_stage_forward_ms": 2.0,
+      "hypothetical_stage_backward_ms": 4.0,
+      "estimated_step_ms": 66.0,
+      "compute_utilization": 0.7272727272727273,
+      "saved_activation_mib_per_microbatch_assumption": 64,
+      "gpipe_peak_saved_activation_mib_per_stage": [
+        512,
+        512,
+        512,
+        512
+      ],
+      "one_f_one_b_peak_saved_activation_mib_per_stage": [
+        256,
+        192,
+        128,
+        64
+      ],
+      "payload_bytes_per_microbatch_per_direction": 134217728,
+      "payload_bytes_per_boundary_per_step_per_direction": 1073741824,
+      "payload_messages_per_boundary_both_directions": 16
+    },
+    {
+      "microbatch_rows": 8,
+      "microbatches": 4,
+      "hypothetical_stage_forward_ms": 3.6,
+      "hypothetical_stage_backward_ms": 7.4,
+      "estimated_step_ms": 77.0,
+      "compute_utilization": 0.5714285714285714,
+      "saved_activation_mib_per_microbatch_assumption": 128,
+      "gpipe_peak_saved_activation_mib_per_stage": [
+        512,
+        512,
+        512,
+        512
+      ],
+      "one_f_one_b_peak_saved_activation_mib_per_stage": [
+        512,
+        384,
+        256,
+        128
+      ],
+      "payload_bytes_per_microbatch_per_direction": 268435456,
+      "payload_bytes_per_boundary_per_step_per_direction": 1073741824,
+      "payload_messages_per_boundary_both_directions": 8
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "recorded_at": "2026-11-18T11:13:21.580657+08:00",
+  "checks": [
+    {
+      "name": "04-tests",
+      "argv": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "code",
+        "-p",
+        "test_answers.py",
+        "-v"
+      ],
+      "working_directory": "drafts/2026-11-18-pipeline-parallel-schedules",
+      "exit_code": 0,
+      "output": "04-tests.txt"
+    },
+    {
+      "name": "05-optimized-tests",
+      "argv": [
+        "python",
+        "-O",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "code",
+        "-p",
+        "test_answers.py",
+        "-v"
+      ],
+      "working_directory": "drafts/2026-11-18-pipeline-parallel-schedules",
+      "exit_code": 0,
+      "output": "05-optimized-tests.txt"
+    },
+    {
+      "name": "06-ruff",
+      "argv": [
+        "python",
+        "-m",
+        "ruff",
+        "check",
+        "code"
+      ],
+      "working_directory": "drafts/2026-11-18-pipeline-parallel-schedules",
+      "exit_code": 0,
+      "output": "06-ruff.txt"
+    },
+    {
+      "name": "07-format",
+      "argv": [
+        "python",
+        "-m",
+        "ruff",
+        "format",
+        "--check",
+        "code"
+      ],
+      "working_directory": "drafts/2026-11-18-pipeline-parallel-schedules",
+      "exit_code": 0,
+      "output": "07-format.txt"
+    },
+    {
+      "name": "08-answers",
+      "argv": [
+        "python",
+        "code/run_answers.py"
+      ],
+      "working_directory": "drafts/2026-11-18-pipeline-parallel-schedules",
+      "exit_code": 0,
+      "output": "08-answers.json"
+    },
+    {
+      "name": "09-distributed",
+      "argv": [
+        "python",
+        "-m",
+        "torch.distributed.run",
+        "--standalone",
+        "--nnodes=1",
+        "--nproc-per-node=2",
+        "code/distributed_cpu.py"
+      ],
+      "working_directory": "drafts/2026-11-18-pipeline-parallel-schedules",
+      "exit_code": 0,
+      "output": "09-distributed.txt"
+    }
+  ],
+  "environment": {
+    "python": "3.12.16",
+    "torch": "2.15.0",
+    "torch_build_commit": "d0f2af8b66b20da4baa50644c0cd3f887a2eae2e",
+    "os": "Darwin",
+    "architecture": "arm64",
+    "cuda_available": false,
+    "gloo_available": true
+  },
+  "env_overrides": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "GLOO_SOCKET_IFNAME": "lo0"
+  },
+  "interpreter_note": "Existing ai-infra interpreter; path normalized to python in published commands.",
+  "redactions": [
+    "Absolute home/repository paths, machine hostnames and network addresses replaced before archival."
+  ],
+  "code_sha256": {
+    "answers.py": "b593a5c107b585cb704b145bf9fcf88717a44731d1e742de815e2d319b1a0e96",
+    "distributed_cpu.py": "c1df35aece5d5e32723beb5c71a7ea874ffbe34cd6697d66faa27bb66de65c54",
+    "example_data.py": "4593ed662d8141dc4d0130ba077b67fed618616cfe7aa492ff469e4e77d2286f",
+    "exercises.py": "9e99bdd38b03bc53d88c300046ba39d024c41670d197616a69d809ac4c0f2e13",
+    "run_answers.py": "2a060d9b3c6b1b799fb016ad193ecf0274ed1e4dd53478ad4b9e8b24d937037e",
+    "test_answers.py": "798d954c335ef05159d314cf26a37802f36f2f443686982a870388d5b7400a17"
+  }
+}

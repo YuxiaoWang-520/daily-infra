@@ -1,0 +1,168 @@
+[
+  {
+    "schedule": "Schedule1F1B",
+    "rank": 0,
+    "backend": "gloo",
+    "device": "cpu",
+    "microbatches": 4,
+    "microbatch_rows": 2,
+    "loss_normalization": "microbatch SSE / 16 global output elements; scale_grads=False",
+    "events": [
+      "F0",
+      "F1",
+      "B0",
+      "F2",
+      "B1",
+      "F3",
+      "B2",
+      "B3"
+    ],
+    "peak_unmatched_forward_calls": 2,
+    "final_unmatched_forward_calls": 0,
+    "max_parameter_gradient_abs_error": 5.551115123125783e-17,
+    "max_parameter_update_abs_error": 6.938893903907228e-18,
+    "output": null,
+    "loss": null
+  },
+  {
+    "schedule": "Schedule1F1B",
+    "rank": 1,
+    "backend": "gloo",
+    "device": "cpu",
+    "microbatches": 4,
+    "microbatch_rows": 2,
+    "loss_normalization": "microbatch SSE / 16 global output elements; scale_grads=False",
+    "events": [
+      "F0",
+      "B0",
+      "F1",
+      "B1",
+      "F2",
+      "B2",
+      "F3",
+      "B3"
+    ],
+    "peak_unmatched_forward_calls": 1,
+    "final_unmatched_forward_calls": 0,
+    "max_parameter_gradient_abs_error": 1.1102230246251565e-16,
+    "max_parameter_update_abs_error": 2.7755575615628914e-17,
+    "output": [
+      [
+        -0.13597466380421852,
+        -0.7513368841067021
+      ],
+      [
+        -0.03684402998506814,
+        -0.6011609153528699
+      ],
+      [
+        0.09422965888549874,
+        -0.3837310894722231
+      ],
+      [
+        0.24345443881435663,
+        -0.12456424854664176
+      ],
+      [
+        0.3848908200425899,
+        0.1164416027525032
+      ],
+      [
+        0.49812539456524363,
+        0.29539708276794563
+      ],
+      [
+        0.5787462941179244,
+        0.41051441003798067
+      ],
+      [
+        0.632757317326261,
+        0.4803816705640382
+      ]
+    ],
+    "loss": 0.37916318132772353
+  },
+  {
+    "schedule": "ScheduleGPipe",
+    "rank": 0,
+    "backend": "gloo",
+    "device": "cpu",
+    "microbatches": 4,
+    "microbatch_rows": 2,
+    "loss_normalization": "microbatch SSE / 16 global output elements; scale_grads=False",
+    "events": [
+      "F0",
+      "F1",
+      "F2",
+      "F3",
+      "B0",
+      "B1",
+      "B2",
+      "B3"
+    ],
+    "peak_unmatched_forward_calls": 4,
+    "final_unmatched_forward_calls": 0,
+    "max_parameter_gradient_abs_error": 5.551115123125783e-17,
+    "max_parameter_update_abs_error": 6.938893903907228e-18,
+    "output": null,
+    "loss": null
+  },
+  {
+    "schedule": "ScheduleGPipe",
+    "rank": 1,
+    "backend": "gloo",
+    "device": "cpu",
+    "microbatches": 4,
+    "microbatch_rows": 2,
+    "loss_normalization": "microbatch SSE / 16 global output elements; scale_grads=False",
+    "events": [
+      "F0",
+      "F1",
+      "F2",
+      "F3",
+      "B0",
+      "B1",
+      "B2",
+      "B3"
+    ],
+    "peak_unmatched_forward_calls": 4,
+    "final_unmatched_forward_calls": 0,
+    "max_parameter_gradient_abs_error": 1.1102230246251565e-16,
+    "max_parameter_update_abs_error": 2.7755575615628914e-17,
+    "output": [
+      [
+        -0.13597466380421852,
+        -0.7513368841067021
+      ],
+      [
+        -0.03684402998506814,
+        -0.6011609153528699
+      ],
+      [
+        0.09422965888549874,
+        -0.3837310894722231
+      ],
+      [
+        0.24345443881435663,
+        -0.12456424854664176
+      ],
+      [
+        0.3848908200425899,
+        0.1164416027525032
+      ],
+      [
+        0.49812539456524363,
+        0.29539708276794563
+      ],
+      [
+        0.5787462941179244,
+        0.41051441003798067
+      ],
+      [
+        0.632757317326261,
+        0.4803816705640382
+      ]
+    ],
+    "loss": 0.37916318132772353
+  }
+]

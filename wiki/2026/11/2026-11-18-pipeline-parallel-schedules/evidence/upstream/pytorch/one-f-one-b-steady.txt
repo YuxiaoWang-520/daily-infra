@@ -1,0 +1,36 @@
+        # 1B1F phase
+        while True:  # Don't worry, we have a break inside
+            # We actually do 1B first as the `1B1F` name indicates, so prepare its recv ops
+            bwd_recvs = self._stage.get_bwd_recv_ops(bwd_mb_index)
+
+            # Now, we need to fire the fwd_sends and bwd_recvs together
+            send_work = _batch_p2p(fwd_sends + bwd_recvs, desc="fwd_send_bwd_recv")
+            _wait_and_release_fwd_send(
+                self._stage,
+                fwd_mb_index - 1,
+                fwd_sends,
+                [send_work],
+            )
+            bwd_recvs.clear()
+
+            # Backward one chunk
+            loss = self._maybe_get_loss(self._stage, bwd_mb_index)
+            self._stage.backward_one_chunk(
+                bwd_mb_index,
+                loss=loss,
+                last_backward=bwd_mb_index == self._n_microbatches - 1,
+            )
+
+            # Get the bwd send ops, but don't fire, to be fused with the 1F below
+            bwd_sends = self._stage.get_bwd_send_ops(bwd_mb_index)
+            bwd_mb_index += 1
+
+            if fwd_mb_index == self._n_microbatches:
+                # We are done with 1B1F, so break with some left-over bwd_sends
+                break
+
+            # We prepare 1F of the `1B1F`
+            fwd_recvs = self._stage.get_fwd_recv_ops(fwd_mb_index)
+
+            # Fuse it with bwd_sends above
+            _wait_batch_p2p(_batch_p2p(bwd_sends + fwd_recvs, desc="bwd_send_fwd_recv"))

@@ -1,0 +1,19 @@
+{
+  "recorded_at": "2026-11-18T11:12:07.993157+08:00",
+  "argv": [
+    "python",
+    "-m",
+    "torch.distributed.run",
+    "--standalone",
+    "--nnodes=1",
+    "--nproc-per-node=2",
+    "code/distributed_cpu.py"
+  ],
+  "env_overrides": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "GLOO_SOCKET_IFNAME": "lo0"
+  },
+  "exit_code": 1,
+  "observed_failure": "Static example tensors omitted requires_grad metadata; first-stage output gradient was None.",
+  "log": "02-distributed-metadata-red.txt"
+}

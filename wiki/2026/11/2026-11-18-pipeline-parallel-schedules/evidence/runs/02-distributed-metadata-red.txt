@@ -1,0 +1,90 @@
+PP_RESULT {"schedule": "ScheduleGPipe", "rank": 1, "backend": "gloo", "device": "cpu", "microbatches": 4, "microbatch_rows": 2, "loss_normalization": "microbatch SSE / 16 global output elements; scale_grads=False", "events": ["F0", "F1", "F2", "F3", "B0", "B1", "B2", "B3"], "peak_unmatched_forward_calls": 4, "final_unmatched_forward_calls": 0, "max_parameter_gradient_abs_error": 1.1102230246251565e-16, "max_parameter_update_abs_error": 2.7755575615628914e-17, "output": [[-0.13597466380421852, -0.7513368841067021], [-0.03684402998506814, -0.6011609153528699], [0.09422965888549874, -0.3837310894722231], [0.24345443881435663, -0.12456424854664176], [0.3848908200425899, 0.1164416027525032], [0.49812539456524363, 0.29539708276794563], [0.5787462941179244, 0.41051441003798067], [0.632757317326261, 0.4803816705640382]], "loss": 0.37916318132772353}
+W1118 11:11:14.332000 42482 site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+
+*****************************************
+Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+*****************************************
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "[HOME]/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/distributed/pipelining/_backward.py", line 460, in stage_backward
+[rank0]:     extract_tensors_with_grads(
+[rank0]:   File "[HOME]/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/distributed/pipelining/_backward.py", line 430, in extract_tensors_with_grads
+[rank0]:     extract_tensors_with_grads(
+[rank0]:   File "[HOME]/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/distributed/pipelining/_backward.py", line 404, in extract_tensors_with_grads
+[rank0]:     raise AssertionError(
+[rank0]: AssertionError: A GradientEdge root requires a gradient but got <class 'NoneType'>
+
+[rank0]: The above exception was the direct cause of the following exception:
+
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/distributed_cpu.py", line 119, in <module>
+[rank0]:     main()
+[rank0]:   File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/distributed_cpu.py", line 111, in main
+[rank0]:     result = run_case(schedule)
+[rank0]:              ^^^^^^^^^^^^^^^^^^
+[rank0]:   File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/distributed_cpu.py", line 62, in run_case
+[rank0]:     output = schedule.step(x)
+[rank0]:              ^^^^^^^^^^^^^^^^
+[rank0]:   File "[HOME]/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/distributed/pipelining/schedules.py", line 1190, in step
+[rank0]:     self._step_microbatches(
+[rank0]:   File "[HOME]/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/distributed/pipelining/schedules.py", line 1357, in _step_microbatches
+[rank0]:     self._stage.backward_one_chunk(
+[rank0]:   File "[REPO]/drafts/2026-11-18-pipeline-parallel-schedules/code/distributed_cpu.py", line 30, in backward_one_chunk
+[rank0]:     result = super().backward_one_chunk(bwd_chunk_id, *args, **kwargs)
+[rank0]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "[HOME]/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/distributed/pipelining/stage.py", line 1313, in backward_one_chunk
+[rank0]:     grads_input, _ = self.backward_maybe_with_nosync(
+[rank0]:                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "[HOME]/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/distributed/pipelining/stage.py", line 1137, in backward_maybe_with_nosync
+[rank0]:     result = perform_backward(backward_type)()
+[rank0]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "[HOME]/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/distributed/pipelining/stage.py", line 1088, in <lambda>
+[rank0]:     stage_backward(
+[rank0]:   File "[HOME]/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/distributed/pipelining/_backward.py", line 505, in stage_backward
+[rank0]:     raise RuntimeError(exc_msg) from e
+[rank0]: RuntimeError: 
+[rank0]:         Failed to run stage backward:
+[rank0]:         Stage output: (GradientEdge(node='<TanhBackward0 object at 0x10cb49810>', output_nr='0', ownership_token='None'),)
+[rank0]:         Output gradient: ('None',)
+[rank0]:         Input: ['Tensor(torch.Size([2, 3]), grad=False, dtype=torch.float64)']
+[rank0]:         
+W1118 11:11:16.107000 42482 site-packages/torch/distributed/elastic/multiprocessing/api.py:1028] Sending process 42503 closing signal SIGTERM
+E1118 11:11:16.116000 42482 site-packages/torch/distributed/elastic/multiprocessing/api.py:1002] failed (exitcode: 1) local_rank: 0 (pid: 42502) of binary: [HOME]/miniforge3/envs/ai-infra/bin/python
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "[HOME]/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/distributed/run.py", line 1142, in <module>
+    main()
+  File "[HOME]/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 384, in wrapper
+    result = f(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^
+  File "[HOME]/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/distributed/run.py", line 1138, in main
+    run(args)
+  File "[HOME]/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/distributed/run.py", line 1129, in run
+    elastic_launch(
+  File "[HOME]/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/distributed/launcher/api.py", line 197, in __call__
+    return launch_agent(
+           ^^^^^^^^^^^^^
+  File "[HOME]/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/distributed/launcher/api.py", line 386, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+code/distributed_cpu.py FAILED
+------------------------------------------------------------
+Failures:
+[1]:
+  time      : 2026-11-18_11:11:16
+  host      : [HOST]
+  rank      : 1 (local_rank: 1)
+  exitcode  : -15 (pid: 42503)  (SIGTERM)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 42503
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-11-18_11:11:16
+  host      : [HOST]
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 42502) 
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================
