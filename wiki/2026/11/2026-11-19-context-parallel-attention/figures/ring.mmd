@@ -1,0 +1,11 @@
+flowchart LR
+    subgraph R0[rank 0：全局位置 0 至 3]
+        Q0[本地 Q 0 至 3] --> A0[更新本地 m、l、u]
+        KV0[本地 K/V 0 至 3] --> A0
+    end
+    subgraph R1[rank 1：全局位置 4 至 7]
+        Q1[本地 Q 4 至 7] --> A1[更新本地 m、l、u]
+        KV1[本地 K/V 4 至 7] --> A1
+    end
+    KV0 -->|发送一份 K/V 块| A1
+    KV1 -->|发送一份 K/V 块| A0

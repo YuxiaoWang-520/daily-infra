@@ -1,0 +1,34 @@
+        if context_parallel:
+            assert (
+                fp8 or fused_attention_backend == FusedAttnBackend["F16_arbitrary_seqlen"]
+            ), f"{fused_attention_backend} does not work with context parallelism!"
+            assert core_attention_bias_type not in [
+                "alibi"
+            ], f"{core_attention_bias_type} is not supported with context parallelism!"
+            query_layer, key_layer, value_layer = [
+                x.contiguous() for x in (query_layer, key_layer, value_layer)
+            ]
+            with self.attention_dropout_ctx():
+                output = attn_forward_func_with_cp(
+                    self.training,
+                    query_layer,
+                    key_layer,
+                    value_layer,
+                    cu_seqlens_q,
+                    cu_seqlens_kv,
+                    max_seqlen_q,
+                    max_seqlen_kv,
+                    cu_seqlens_q_padded,
+                    cu_seqlens_kv_padded,
+                    self.attention_dropout if self.training else 0.0,
+                    cp_group,
+                    cp_global_ranks,
+                    cp_stream,
+                    cp_comm_type,
+                    softmax_scale=self.softmax_scale,
+                    qkv_format=qkv_format,
+                    attn_mask_type=attn_mask_type,
+                    attn_bias_type=core_attention_bias_type,
+                    attn_bias=core_attention_bias,
+                    deterministic=self.deterministic,
+                    use_fused_attention=True,

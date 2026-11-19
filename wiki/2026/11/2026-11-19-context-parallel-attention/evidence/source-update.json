@@ -1,0 +1,262 @@
+{
+  "checked_at": "2026-11-19T11:06:20.160253+08:00",
+  "repositories": [
+    {
+      "name": "pytorch",
+      "repository": "pytorch/pytorch",
+      "origin": "https://github.com/pytorch/pytorch.git",
+      "default_branch": "main",
+      "commit": "55e45fb47412a2ffdab02ca0ee62da51c1d58f31",
+      "commit_time": "2026-11-19T03:01:25Z",
+      "stable_tag": "v2.15.0",
+      "stable_commit": "31a77fc9c0a7c6fff15a1ff58c743f53b1a9d457",
+      "release_published_at": "2026-10-28T17:09:49Z",
+      "release_url": "https://github.com/pytorch/pytorch/releases/tag/v2.15.0",
+      "commands": [
+        {
+          "argv": [
+            "git",
+            "-C",
+            ".cache/upstream/pytorch",
+            "fetch",
+            "--depth=1",
+            "origin",
+            "main"
+          ],
+          "exit_code": 0,
+          "stdout": "",
+          "stderr": "From https://github.com/pytorch/pytorch\n * branch            main       -> FETCH_HEAD\n + 6e95b05...55e45fb main       -> origin/main  (forced update)\n"
+        },
+        {
+          "argv": [
+            "git",
+            "-C",
+            ".cache/upstream/pytorch",
+            "fetch",
+            "--depth=1",
+            "origin",
+            "refs/tags/v2.15.0:refs/tags/v2.15.0"
+          ],
+          "exit_code": 0,
+          "stdout": "",
+          "stderr_excerpt": "From https://github.com/pytorch/pytorch\n",
+          "stderr_total_lines": 374,
+          "stderr_sha256": "b702f73e512d077d0b4f4843de9283371ce545e8554091c41c051c1faef17e01",
+          "archive_note": "unrelated automatically followed tag announcements omitted; relevant fetch lines preserved"
+        },
+        {
+          "argv": [
+            "git",
+            "-C",
+            ".cache/upstream/pytorch",
+            "rev-parse",
+            "origin/main"
+          ],
+          "exit_code": 0,
+          "stdout": "55e45fb47412a2ffdab02ca0ee62da51c1d58f31\n",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "git",
+            "-C",
+            ".cache/upstream/pytorch",
+            "rev-parse",
+            "v2.15.0^{commit}"
+          ],
+          "exit_code": 0,
+          "stdout": "31a77fc9c0a7c6fff15a1ff58c743f53b1a9d457\n",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "git",
+            "-C",
+            ".cache/upstream/pytorch",
+            "show",
+            "-s",
+            "--format=%cI",
+            "55e45fb47412a2ffdab02ca0ee62da51c1d58f31"
+          ],
+          "exit_code": 0,
+          "stdout": "2026-11-19T03:01:25Z\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "name": "Megatron-LM",
+      "repository": "NVIDIA/Megatron-LM",
+      "origin": "https://github.com/NVIDIA/Megatron-LM.git",
+      "default_branch": "main",
+      "commit": "43a2ef6d35a0188a4f0601a5ce5e569d2c011562",
+      "commit_time": "2026-11-18T18:59:48Z",
+      "stable_tag": "core_v0.20.0",
+      "stable_commit": "685fb8bd970185e9ac3283fe32a5d6667bf4b268",
+      "release_published_at": "2026-10-29T21:06:49Z",
+      "release_url": "https://github.com/NVIDIA/Megatron-LM/releases/tag/core_v0.20.0",
+      "commands": [
+        {
+          "argv": [
+            "git",
+            "-C",
+            ".cache/upstream/Megatron-LM",
+            "fetch",
+            "--depth=1",
+            "origin",
+            "main"
+          ],
+          "exit_code": 0,
+          "stdout": "",
+          "stderr": "From https://github.com/NVIDIA/Megatron-LM\n * branch            main       -> FETCH_HEAD\n + 91260b5...43a2ef6 main       -> origin/main  (forced update)\n"
+        },
+        {
+          "argv": [
+            "git",
+            "-C",
+            ".cache/upstream/Megatron-LM",
+            "fetch",
+            "--depth=1",
+            "origin",
+            "refs/tags/core_v0.20.0:refs/tags/core_v0.20.0"
+          ],
+          "exit_code": 0,
+          "stdout": "",
+          "stderr": "From https://github.com/NVIDIA/Megatron-LM\n * [new tag]         core_v0.20.0 -> core_v0.20.0\n"
+        },
+        {
+          "argv": [
+            "git",
+            "-C",
+            ".cache/upstream/Megatron-LM",
+            "rev-parse",
+            "origin/main"
+          ],
+          "exit_code": 0,
+          "stdout": "43a2ef6d35a0188a4f0601a5ce5e569d2c011562\n",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "git",
+            "-C",
+            ".cache/upstream/Megatron-LM",
+            "rev-parse",
+            "core_v0.20.0^{commit}"
+          ],
+          "exit_code": 0,
+          "stdout": "685fb8bd970185e9ac3283fe32a5d6667bf4b268\n",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "git",
+            "-C",
+            ".cache/upstream/Megatron-LM",
+            "show",
+            "-s",
+            "--format=%cI",
+            "43a2ef6d35a0188a4f0601a5ce5e569d2c011562"
+          ],
+          "exit_code": 0,
+          "stdout": "2026-11-18T18:59:48Z\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "name": "TransformerEngine",
+      "repository": "NVIDIA/TransformerEngine",
+      "origin": "https://github.com/NVIDIA/TransformerEngine.git",
+      "default_branch": "main",
+      "commit": "c2b5a322fc0220770171b9dc6b9b922cb3ddcbdd",
+      "commit_time": "2026-11-18T16:12:47-08:00",
+      "stable_tag": "v2.21.0",
+      "stable_commit": "7457e47d26d9d02dfb783007335dfbe75e1b90a8",
+      "release_published_at": "2026-11-10T20:56:58Z",
+      "release_url": "https://github.com/NVIDIA/TransformerEngine/releases/tag/v2.21.0",
+      "commands": [
+        {
+          "argv": [
+            "git",
+            "clone",
+            "--filter=blob:none",
+            "--no-checkout",
+            "--depth=1",
+            "https://github.com/NVIDIA/TransformerEngine.git",
+            ".cache/upstream/TransformerEngine"
+          ],
+          "exit_code": 0,
+          "stdout": "",
+          "stderr": "Cloning into '.cache/upstream/TransformerEngine'...\n"
+        },
+        {
+          "argv": [
+            "git",
+            "-C",
+            ".cache/upstream/TransformerEngine",
+            "fetch",
+            "--depth=1",
+            "origin",
+            "main"
+          ],
+          "exit_code": 0,
+          "stdout": "",
+          "stderr": "From https://github.com/NVIDIA/TransformerEngine\n * branch            main       -> FETCH_HEAD\n"
+        },
+        {
+          "argv": [
+            "git",
+            "-C",
+            ".cache/upstream/TransformerEngine",
+            "fetch",
+            "--depth=1",
+            "origin",
+            "refs/tags/v2.21.0:refs/tags/v2.21.0"
+          ],
+          "exit_code": 0,
+          "stdout": "",
+          "stderr": "From https://github.com/NVIDIA/TransformerEngine\n * [new tag]         v2.21.0    -> v2.21.0\n * [new tag]         v2.21      -> v2.21\n"
+        },
+        {
+          "argv": [
+            "git",
+            "-C",
+            ".cache/upstream/TransformerEngine",
+            "rev-parse",
+            "origin/main"
+          ],
+          "exit_code": 0,
+          "stdout": "c2b5a322fc0220770171b9dc6b9b922cb3ddcbdd\n",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "git",
+            "-C",
+            ".cache/upstream/TransformerEngine",
+            "rev-parse",
+            "v2.21.0^{commit}"
+          ],
+          "exit_code": 0,
+          "stdout": "7457e47d26d9d02dfb783007335dfbe75e1b90a8\n",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "git",
+            "-C",
+            ".cache/upstream/TransformerEngine",
+            "show",
+            "-s",
+            "--format=%cI",
+            "c2b5a322fc0220770171b9dc6b9b922cb3ddcbdd"
+          ],
+          "exit_code": 0,
+          "stdout": "2026-11-18T16:12:47-08:00\n",
+          "stderr": ""
+        }
+      ]
+    }
+  ]
+}

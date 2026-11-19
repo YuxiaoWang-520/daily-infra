@@ -1,0 +1,37 @@
+        p2p_comm_buffers = [None, None]
+        k_shape = k.shape
+        k_numel = k.numel()
+        v_shape = v.shape
+        o_shape = q.shape[:-1] + v.shape[-1:]
+        p2p_comm_buffers[0] = torch.cat((k.view(-1), v.view(-1)), dim=-1)
+        send_recv_reqs = [[], []]
+
+        # P2P communication and compute: each rank has cp_size steps
+        # MXFP8/F16 attention:    q, k, v: torch.Tensor, dtype=fwd_nominal_dtype
+        # FP8DS/CS attention:     q, k, v: torch.Tensor, dtype=torch.uint8
+        out = None
+        # Preserve the original format for fused output and post-attention A2A.
+        o_format = qkv_format
+        second_half_lse_seqlen = None
+        for i in range(cp_size + 1):
+            if i < cp_size:
+                with torch.cuda.stream(flash_attn_streams[i % 2]):
+                    # wait until KV is received
+                    for req in send_recv_reqs[(i + 1) % 2]:
+                        req.wait()
+
+                    if i < (cp_size - 1):
+                        p2p_comm_buffers[(i + 1) % 2] = torch.empty_like(p2p_comm_buffers[i % 2])
+                        send_recv_reqs[i % 2] = flash_attn_p2p_communicate(
+                            rank,
+                            p2p_comm_buffers[i % 2],
+                            send_dst,
+                            p2p_comm_buffers[(i + 1) % 2],
+                            recv_src,
+                            cp_group,
+                            batch_p2p_comm,
+                        )
+
+                    kv_inputs[i % 2] = p2p_comm_buffers[i % 2]
+                    k_part = kv_inputs[i % 2][:k_numel].view(*k_shape)
+                    v_part = kv_inputs[i % 2][k_numel:].view(*v_shape)

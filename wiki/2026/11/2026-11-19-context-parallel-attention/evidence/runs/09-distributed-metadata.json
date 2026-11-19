@@ -1,0 +1,16 @@
+{
+  "argv": [
+    "python",
+    "code/distributed_cpu.py"
+  ],
+  "exit_code": 0,
+  "timeout": false,
+  "rendezvous": "local temporary FileStore",
+  "world_size": 2,
+  "backend": "Gloo",
+  "environment": {
+    "GLOO_SOCKET_IFNAME": "lo0",
+    "OMP_NUM_THREADS": "1",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  }
+}

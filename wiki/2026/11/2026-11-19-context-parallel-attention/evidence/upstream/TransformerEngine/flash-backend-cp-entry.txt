@@ -1,0 +1,39 @@
+        if context_parallel and all(
+            not isinstance(x, Float8Tensor) for x in [query_layer, key_layer, value_layer]
+        ):
+            assert (
+                alibi_slopes is None
+            ), "Alibi slope bias addition is not supported with context parallelism."
+            if use_flash_attn_3 and softcap != 0.0:
+                raise NotImplementedError(
+                    "softcap is not supported by the FlashAttention 3 backend in context "
+                    "parallel. Please use FlashAttention 2 (>= 2.6.0) for softcap support."
+                )
+            with self.attention_dropout_ctx():
+                output = attn_forward_func_with_cp(
+                    self.training,
+                    query_layer,
+                    key_layer,
+                    value_layer,
+                    cu_seqlens_q,
+                    cu_seqlens_kv,
+                    max_seqlen_q,
+                    max_seqlen_kv,
+                    (
+                        cu_seqlens_q_padded
+                        if pad_between_seqs
+                        else (cu_seqlens_q if qkv_format == "thd" else None)
+                    ),
+                    (
+                        cu_seqlens_kv_padded
+                        if pad_between_seqs
+                        else (cu_seqlens_kv if qkv_format == "thd" else None)
+                    ),
+                    self.attention_dropout if self.training else 0.0,
+                    cp_group,
+                    cp_global_ranks,
+                    cp_stream,
+                    cp_comm_type,
+                    softmax_scale=self.softmax_scale,
+                    qkv_format="bshd" if qkv_format == "sbhd" else qkv_format,
+                    attn_mask_type=attn_mask_type,

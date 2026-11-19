@@ -1,0 +1,18 @@
+{
+  "checked_at": "2026-11-19T11:29:01.980820+08:00",
+  "phase": "technical and teaching self-review before archive",
+  "source_audit": {
+    "fixed_excerpts_compared_to_git_show": 24,
+    "licenses_compared_to_git_show": 3,
+    "passed": true,
+    "note": "actual byte comparisons completed in preceding source audit; this records the observed result"
+  },
+  "code_hashes_match_execution_and_independent_review": true,
+  "normal_and_optimized_tests_each": 26,
+  "independent_targeted_tests": 7,
+  "mermaid_blocks_equal_source": true,
+  "mermaid_rendered": false,
+  "pre_archive_local_links_checked": 100,
+  "initial_index_count": 28,
+  "issues": []
+}

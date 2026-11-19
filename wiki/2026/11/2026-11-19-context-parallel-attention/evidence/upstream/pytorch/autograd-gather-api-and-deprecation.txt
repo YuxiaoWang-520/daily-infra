@@ -1,0 +1,21 @@
+def all_gather(tensor, group=group.WORLD):
+    """
+    Gathers tensors from the whole group in a list.
+
+    Arguments:
+        tensor (Tensor): Tensor to be broadcast from current process.
+        group (ProcessGroup, optional): The process group to work on.
+
+    Returns:
+        tuple([Tensor]): Output of the collective.
+
+    """
+    if torch.compiler.is_compiling():
+        _not_supported_under_compile(
+            "all_gather",
+            suggestion="torch.distributed.functional_collectives.all_gather_single",
+        )
+    _deprecated(
+        "all_gather", "torch.distributed.functional_collectives.all_gather_single"
+    )
+    return _AllGather.apply(group, tensor)

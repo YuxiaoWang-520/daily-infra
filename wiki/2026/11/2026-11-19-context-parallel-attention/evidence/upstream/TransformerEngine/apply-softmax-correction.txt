@@ -1,0 +1,25 @@
+                    if i == 1:
+                        softmax_lse = torch.clone(softmax_lse_per_step[0])
+                        if qkv_format == "thd":
+                            # Keep THD in the kernel's input dtype; thd_out_correction
+                            # performs its own promotion and requires matching dtypes.
+                            out = out_per_step[0].clone().view(o_shape)
+                        elif qkv_format in ["bshd", "sbhd"]:
+                            # Keep the accumulator in the partial-output dtype. FP8
+                            # partial outputs have already been dequantized to FP32.
+                            out = out_per_step[0].clone()
+                            out = out.view(o_shape)
+                    elif (i - 1) <= rank or not causal:
+                        old_softmax_lse = softmax_lse.clone()
+                        flash_attn_fwd_softmax_lse_correction(
+                            softmax_lse, softmax_lse_per_step[(i - 1) % 2]
+                        )
+                        if qkv_format in ["bshd", "sbhd"]:
+                            flash_attn_fwd_incremental_out_correction(
+                                out.view(*out_per_step[(i - 1) % 2].shape),
+                                out_per_step[(i - 1) % 2],
+                                old_softmax_lse,
+                                softmax_lse,
+                                softmax_lse_per_step[(i - 1) % 2],
+                                seq_dim,
+                            )

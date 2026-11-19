@@ -1,0 +1,13 @@
+def flash_attn_fwd_incremental_out_correction(
+    out: torch.Tensor,
+    out_per_step: torch.Tensor,
+    old_softmax_lse: torch.Tensor,
+    new_softmax_lse: torch.Tensor,
+    softmax_lse_per_step: torch.Tensor,
+    seq_dim: int,
+):
+    """Online softmax merge: rescale accumulated output and add new step's contribution."""
+    scale_old = torch.exp(old_softmax_lse - new_softmax_lse).movedim(2, seq_dim).unsqueeze(-1)
+    scale_new = torch.exp(softmax_lse_per_step - new_softmax_lse).movedim(2, seq_dim).unsqueeze(-1)
+    out.mul_(scale_old)
+    out.addcmul_(out_per_step, scale_new)

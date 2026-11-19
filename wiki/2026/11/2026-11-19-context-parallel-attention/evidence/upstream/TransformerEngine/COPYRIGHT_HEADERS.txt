@@ -1,0 +1,30 @@
+Source: transformer_engine/pytorch/attention/dot_product_attention/backends.py
+Commit: c2b5a322fc0220770171b9dc6b9b922cb3ddcbdd
+# Copyright (c) 2022-2026, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+#
+# See LICENSE for license information.
+
+"""Attention Backends."""
+
+from contextlib import nullcontext
+from dataclasses import dataclass
+from importlib.metadata import version as get_pkg_version
+from importlib.metadata import PackageNotFoundError
+import functools
+import inspect
+
+
+Source: transformer_engine/pytorch/attention/dot_product_attention/context_parallel.py
+Commit: c2b5a322fc0220770171b9dc6b9b922cb3ddcbdd
+# Copyright (c) 2022-2026, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+#
+# See LICENSE for license information.
+
+"""Context Parallelism."""
+import os
+from typing import List, Union, Tuple
+import torch
+import transformer_engine_torch as tex
+
+from transformer_engine.pytorch.device import te_device_type
+from transformer_engine.pytorch.utils import (

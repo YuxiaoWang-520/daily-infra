@@ -1,0 +1,53 @@
+                            use_flash_attn_4,
+                            qkv_format,
+                            fa_forward_kwargs,
+                            flash_attn_fwd,
+                            max_seqlen_q,
+                            max_seqlen_kv,
+                            pad_between_seqs,
+                            cu_seqlens_q_padded,
+                            cu_seqlens_kv_padded,
+                        ]
+
+                    # cp_size = 4:
+                    #
+                    #           step
+                    # section | 0  1  2  3
+                    # --------------------
+                    #    G  0 | d, u, u, u,
+                    #    P  1 | l, d, u, u,
+                    #    U  2 | l, l, d, u,
+                    #       3 | l, l, l, d,
+                    #
+                    # Each GPU holds a slice of Q and KV. To compute the attention of each Q slice, each GPU
+                    # runs cp_size steps to get the partial results of its own Q and all KV slices. KV is communicated
+                    # in a point-to-point, ring fashion. For attn_mask_type = causal, there are three attention
+                    # patterns in the cp_size x cp_size (i.e. GPU x step) matrix, the diagonal tiles, the lower-triangle
+                    # tiles, and the upper-triangle tiles. For attn_mask_type != causal, the pattern is all the same.
+                    if causal:
+                        if i == 0:
+                            section = "diagonal"
+                            prepare_outputs = cp_p2p_fwd_prepare_qkv(*prepare_inputs, section)
+                            (
+                                q_part,
+                                k_part,
+                                v_part,
+                                cu_seqlens_q_per_step[i],
+                                cu_seqlens_kv_per_step[i],
+                            ) = prepare_outputs
+                            q_inputs[i % 2] = q_part
+                            if use_fused_attention:
+                                (
+                                    out_per_step[i % 2],
+                                    softmax_lse_per_step[i % 2],
+                                    rng_states[i],
+                                    attn_biases[i],
+                                    max_logit_per_step[i % 2],
+                                ) = cp_p2p_fwd_fused_attn(
+                                    *fused_attn_inputs, *prepare_outputs, section
+                                )
+                            else:
+                                out_per_step[i % 2], softmax_lse_per_step[i % 2], rng_states[i] = (
+                                    cp_p2p_fwd_flash_attn(
+                                        *flash_attn_inputs,
+                                        *prepare_outputs,

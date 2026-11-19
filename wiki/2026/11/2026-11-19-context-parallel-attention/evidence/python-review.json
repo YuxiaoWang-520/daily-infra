@@ -1,0 +1,61 @@
+{
+  "specialist_attempt": {
+    "role": "python-reviewer",
+    "task": "nov19_python_review",
+    "status": "failed_before_execution",
+    "error": "The 'gpt-5.4' model is not supported when using Codex with a ChatGPT account."
+  },
+  "fallback": {
+    "role": "Independent general code reviewer; not the unavailable specialist",
+    "task": "nov19_python_fallback",
+    "scope": [
+      "code/answers.py",
+      "code/distributed_cpu.py",
+      "code/example_data.py",
+      "code/exercises.py",
+      "code/run_answers.py",
+      "code/test_answers.py"
+    ],
+    "read_only": true,
+    "sha256": {
+      "answers.py": "08177fcbe7b4e60b1f8db522f4b9cf5b4e7dc7bc58245f03bfae15e18c8235d4",
+      "distributed_cpu.py": "3d589ad1c5b7382cc2f0e98c57f6d482c55c83e53ebfa7e9cab4379d3a425e26",
+      "example_data.py": "0f6f8865d602a74fe1a8c8168eef99f0a5c9052c3d5320fbd7fd3ad50a04e9c7",
+      "exercises.py": "81c2d13d1fa894962dfcf2c482ba1a8dc5ea4f432461f934f53bae7ff7652691",
+      "run_answers.py": "f1f1e229d5848713fa0f7e7d7726c0fcb2306a6d78efac3515700f4e1e5e1ceb",
+      "test_answers.py": "d88a24bd568596a27d6f64a8144927c9a3bf7817e5add03fd806d32f3c17e8d5"
+    },
+    "manifest_match": true,
+    "verification": {
+      "cwd": "code",
+      "argv": [
+        "python",
+        "-m",
+        "unittest",
+        "-v",
+        "test_answers.StreamingTests.test_causal_output_and_all_gradients_match_sdpa",
+        "test_answers.StreamingTests.test_fully_masked_first_block_has_finite_gradients",
+        "test_answers.StreamingTests.test_fully_masked_query_returns_zero_not_nan",
+        "test_answers.StreamingTests.test_only_empty_keys_allow_zero_gradients",
+        "test_answers.StreamingTests.test_global_positions_define_mask",
+        "test_answers.ContextParallelTests.test_cp_two_restores_global_output_order",
+        "test_answers.ContextParallelTests.test_cp_four_zigzag_all_gradients"
+      ],
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit_code": 0,
+      "result": "Ran 7 tests in 0.335s; OK",
+      "record_type": "reviewer's returned verification report, not a separately captured raw stdout file"
+    },
+    "findings": [],
+    "disposition": "No actionable correctness or regression finding within the reviewed teaching scope.",
+    "limits": [
+      "General independent review; the fixed-model specialist did not execute.",
+      "Distributed run, full suite, optimized tests and Ruff were not repeated by the reviewer.",
+      "CPU float64 teaching cases, not exhaustive floating-point extremes or GPU behavior.",
+      "Deprecated differentiable AllGather retained as a pinned teaching baseline.",
+      "No GPU performance, training-memory savings, distributed ring-backward or compute/communication overlap acceptance."
+    ]
+  }
+}

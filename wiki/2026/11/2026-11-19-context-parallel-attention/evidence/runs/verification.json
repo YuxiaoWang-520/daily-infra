@@ -1,0 +1,90 @@
+{
+  "checked_at": "2026-11-19T11:15:35.844638+08:00",
+  "environment": {
+    "python": "3.12.16",
+    "torch": "2.15.0",
+    "torch_git_version": "d0f2af8b66b20da4baa50644c0cd3f887a2eae2e",
+    "platform": "Darwin",
+    "machine": "arm64",
+    "cuda_available": false,
+    "gloo_available": true
+  },
+  "code_sha256": {
+    "answers.py": "08177fcbe7b4e60b1f8db522f4b9cf5b4e7dc7bc58245f03bfae15e18c8235d4",
+    "distributed_cpu.py": "3d589ad1c5b7382cc2f0e98c57f6d482c55c83e53ebfa7e9cab4379d3a425e26",
+    "example_data.py": "0f6f8865d602a74fe1a8c8168eef99f0a5c9052c3d5320fbd7fd3ad50a04e9c7",
+    "exercises.py": "81c2d13d1fa894962dfcf2c482ba1a8dc5ea4f432461f934f53bae7ff7652691",
+    "run_answers.py": "f1f1e229d5848713fa0f7e7d7726c0fcb2306a6d78efac3515700f4e1e5e1ceb",
+    "test_answers.py": "d88a24bd568596a27d6f64a8144927c9a3bf7817e5add03fd806d32f3c17e8d5"
+  },
+  "commands": [
+    {
+      "output": "04-tests.txt",
+      "argv": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "code",
+        "-p",
+        "test_answers.py",
+        "-v"
+      ],
+      "exit_code": 0
+    },
+    {
+      "output": "05-optimized-tests.txt",
+      "argv": [
+        "python",
+        "-O",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "code",
+        "-p",
+        "test_answers.py",
+        "-v"
+      ],
+      "exit_code": 0
+    },
+    {
+      "output": "06-ruff.txt",
+      "argv": [
+        "ruff",
+        "check",
+        "code"
+      ],
+      "exit_code": 0
+    },
+    {
+      "output": "07-format.txt",
+      "argv": [
+        "ruff",
+        "format",
+        "--check",
+        "code"
+      ],
+      "exit_code": 0
+    },
+    {
+      "output": "08-answers.json",
+      "argv": [
+        "python",
+        "code/run_answers.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "output": "09-distributed.txt",
+      "argv": [
+        "python",
+        "code/distributed_cpu.py"
+      ],
+      "exit_code": 0,
+      "rendezvous": "local temporary FileStore",
+      "parsed_results": "09-distributed.json"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+def _get_batch_on_this_cp_rank_per_sequence_balancing(
+    batch: dict[str, torch.Tensor], cp_group: torch.distributed.ProcessGroup
+):
+    """Partition a batch across CP ranks with per-sequence zigzag load balancing.
+
+    Applies zigzag load-balanced chunking across the entire sequence. The
+    sequence is split into ``2 * cp_size`` equal chunks and assigned in a
+    zigzag pattern: for CP=2, the 4 chunks are assigned as
+    (chunk_0, chunk_3) -> GPU 0 and (chunk_1, chunk_2) -> GPU 1, balancing
+    compute for causal attention where later tokens attend to more
+    predecessors. The sequence length must be divisible by
+    ``2 * cp_size``. All tensor-valued entries in the batch are
+    partitioned along their sequence dimension; metadata keys
+    (cu_seqlens, cu_seqlens_padded, max_seqlen, etc.) and None-valued
+    entries are left unchanged.

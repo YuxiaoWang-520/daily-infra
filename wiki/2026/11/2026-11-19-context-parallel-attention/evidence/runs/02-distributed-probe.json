@@ -1,0 +1,16 @@
+{
+  "argv": [
+    "python",
+    "-m",
+    "torch.distributed.run",
+    "--standalone",
+    "--nnodes=1",
+    "--nproc-per-node=2",
+    "code/distributed_cpu.py"
+  ],
+  "timeout_seconds": 100,
+  "process_exit_code": null,
+  "wrapper_exit_code": 1,
+  "result": "subprocess.TimeoutExpired before any CP_RESULT was returned; original capture was not archived because the initial wrapper did not catch TimeoutExpired",
+  "correction": "use two locally spawned processes and FileStore rendezvous; retain real Gloo gather/backward and P2P operations; no claim about the cause of the torchrun timeout"
+}

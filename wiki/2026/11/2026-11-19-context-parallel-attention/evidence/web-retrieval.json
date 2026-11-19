@@ -1,0 +1,27 @@
+{
+  "accessed_on": "2026-11-19",
+  "timezone": "Asia/Shanghai",
+  "provider": "Parallel web_fetch",
+  "session_id": "session_1b5a31451a0a7be7f27fafb623311a31",
+  "note": "Access date differs from provider's cached acquisition dates. Only metadata and own notes archived; no full paper or documentation text redistributed.",
+  "sources": [
+    {
+      "url": "https://docs.nvidia.com/megatron-core/developer-guide/latest/user-guide/features/context_parallel.html",
+      "extract_id": "extract_1b5a31451a0a7be7f27fafb623311a31",
+      "acquired_at": "2026-11-18T00:00:00Z",
+      "errors": []
+    },
+    {
+      "url": "https://arxiv.org/html/2310.01889v4",
+      "extract_id": "extract_6a6014bcb2c358d2496cc27f99675e1b",
+      "acquired_at": "2026-10-16T00:00:00Z",
+      "errors": []
+    },
+    {
+      "url": "https://arxiv.org/abs/2310.01889v4",
+      "extract_id": "extract_6a6014bcb2c358d2496cc27f99675e1b",
+      "acquired_at": "2026-10-24T00:00:00Z",
+      "errors": []
+    }
+  ]
+}

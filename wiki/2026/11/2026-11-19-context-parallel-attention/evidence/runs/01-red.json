@@ -1,0 +1,16 @@
+{
+  "checked_at": "2026-11-19T11:07:37.588410+08:00",
+  "argv": [
+    "python",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "code",
+    "-p",
+    "test_answers.py",
+    "-v"
+  ],
+  "exit_code": 1,
+  "stage": "contracts before implementation"
+}

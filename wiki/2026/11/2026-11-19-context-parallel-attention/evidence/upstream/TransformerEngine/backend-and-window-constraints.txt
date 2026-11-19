@@ -1,0 +1,25 @@
+    assert (
+        qkv_format != "sbhd" or use_fused_attention
+    ), "Context parallelism does not support FlashAttention backend with qkv_format = 'sbhd'!"
+    assert attn_bias is None or (use_fused_attention and "padding" not in attn_mask_type), (
+        "Context parallelism only supports attention bias with FusedAttention backend and"
+        " non-padding mask types!"
+    )
+    assert qkv_format != "thd" or (
+        cu_seqlens_q_padded is not None and cu_seqlens_kv_padded is not None
+    ), "cu_seqlens_padded can not be None for context parallelism and qkv_format = 'thd'!"
+
+    sliding_window_attn = (
+        window_size is not None and window_size != (-1, 0) and window_size != (-1, -1)
+    )
+    assert not sliding_window_attn or cp_comm_type in [
+        "a2a",
+        "all_gather",
+    ], f"Context parallelism does not support sliding window attention with {cp_comm_type=}!"
+
+    assert (
+        softmax_type == "vanilla" or use_fused_attention
+    ), f"Context parallelism only supports {softmax_type=} with FusedAttention backend!"
+    assert (
+        softmax_type == "vanilla" or cp_comm_type == "a2a"
+    ), f"Context parallelism only supports {softmax_type=} with cp_comm_type = 'a2a'!"

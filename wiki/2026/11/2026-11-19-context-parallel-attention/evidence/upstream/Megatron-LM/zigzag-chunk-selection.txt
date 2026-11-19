@@ -1,0 +1,18 @@
+    if cp_size > 1:
+        for key, val in batch.items():
+            if key in METADATA_KEYS or val is None:
+                continue
+            seq_dim = 2 if key == 'attention_mask' else 1
+            val = val.view(
+                *val.shape[0:seq_dim],
+                2 * cp_size,
+                val.shape[seq_dim] // (2 * cp_size),
+                *val.shape[(seq_dim + 1) :],
+            )
+            index = torch.zeros(2, dtype=torch.int64, device=val.device)
+            index[0].fill_(cp_rank)
+            index[1].fill_(2 * cp_size - cp_rank - 1)
+            val = val.index_select(seq_dim, index)
+            val = val.view(*val.shape[0:seq_dim], -1, *val.shape[(seq_dim + 2) :])
+            batch[key] = val
+

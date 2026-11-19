@@ -1,0 +1,35 @@
+                elif i >= (cp_size - rank - 1):
+                    if i == 0 and rank == (cp_size - 1):
+                        if ctx.qkv_format == "bshd":
+                            dk[:, 0, ...].copy_(dk_)
+                            dv[:, 0, ...].copy_(dv_)
+                        elif ctx.qkv_format == "sbhd":
+                            dk[0, ...].copy_(dk_)
+                            dv[0, ...].copy_(dv_)
+                        elif ctx.qkv_format == "thd":
+                            tex.thd_grad_correction(dk, dk_, cu_seqlens_kv_padded, "copy", "none")
+                            tex.thd_grad_correction(dv, dv_, cu_seqlens_kv_padded, "copy", "none")
+                    else:
+                        if ctx.qkv_format == "bshd":
+                            dk[:, 0, ...].add_(dk_)
+                            dv[:, 0, ...].add_(dv_)
+                        elif ctx.qkv_format == "sbhd":
+                            dk[0, ...].add_(dk_)
+                            dv[0, ...].add_(dv_)
+                        elif ctx.qkv_format == "thd":
+                            tex.thd_grad_correction(dk, dk_, cu_seqlens_kv_padded, "add", "none")
+                            tex.thd_grad_correction(dv, dv_, cu_seqlens_kv_padded, "add", "none")
+                elif i > 0:
+                    dk.add_(dk_)
+                    dv.add_(dv_)
+                else:  # i == 0
+                    dk.copy_(dk_)
+                    dv.copy_(dv_)
+            else:
+                # not fp8 and not causal
+                if i == 0:
+                    dk.copy_(dk_)
+                    dv.copy_(dv_)
+                else:  # i > 0
+                    dk.add_(dk_)
+                    dv.add_(dv_)

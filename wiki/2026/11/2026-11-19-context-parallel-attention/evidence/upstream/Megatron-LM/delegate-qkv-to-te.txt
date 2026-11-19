@@ -1,0 +1,9 @@
+            _fa_kwargs = dict(
+                attn_mask_type=attn_mask_type.name, **attention_bias_kwargs, **packed_seq_kwargs
+            )
+            if num_splits is not None:
+                _fa_kwargs["num_splits"] = num_splits
+            if bf16_backward is not None:
+                _fa_kwargs["bf16_backward"] = bf16_backward
+
+            core_attn_out = super().forward(query, key, value, attention_mask, **_fa_kwargs)

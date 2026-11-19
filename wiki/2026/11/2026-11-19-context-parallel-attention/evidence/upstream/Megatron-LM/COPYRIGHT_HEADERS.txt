@@ -1,0 +1,46 @@
+Source: megatron/core/extensions/transformer_engine.py
+Commit: 43a2ef6d35a0188a4f0601a5ce5e569d2c011562
+# Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+from __future__ import annotations
+
+import copy
+import dataclasses
+import enum
+import importlib
+import inspect
+import io
+import os
+import pickle
+import re
+
+
+Source: megatron/core/transformer/transformer_config.py
+Commit: 43a2ef6d35a0188a4f0601a5ce5e569d2c011562
+# Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+import logging
+import math
+import os
+import warnings
+from copy import deepcopy
+from dataclasses import MISSING, dataclass, field, fields
+from typing import Any, Callable, Dict, List, Literal, Optional, Self, Tuple, Union
+
+import torch
+import torch.nn.functional as F
+
+
+Source: megatron/core/utils.py
+Commit: 43a2ef6d35a0188a4f0601a5ce5e569d2c011562
+# Copyright (c) 2023, NVIDIA CORPORATION. All rights reserved.
+
+"""Utility functions used throughout Megatron core"""
+
+import array
+import asyncio
+import functools
+import hashlib
+import inspect
+import logging
+import math
+import operator

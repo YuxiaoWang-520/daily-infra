@@ -1,0 +1,30 @@
+Source: torch/distributed/nn/functional.py
+Commit: 55e45fb47412a2ffdab02ca0ee62da51c1d58f31
+# mypy: allow-untyped-defs
+"""
+.. warning::
+    ``torch.distributed.nn.functional`` is deprecated. Use
+    :mod:`torch.distributed.functional_collectives` instead.
+"""
+
+import warnings
+
+import torch
+import torch.distributed as dist
+from torch.autograd import Function
+
+
+Source: torch/nn/functional.py
+Commit: 55e45fb47412a2ffdab02ca0ee62da51c1d58f31
+"""Functional interface."""
+
+import dataclasses
+import enum
+import importlib
+import math
+import warnings
+from collections.abc import Callable
+from typing import Any as _Any, Optional, TYPE_CHECKING
+
+import torch
+from torch import _VF, sym_int as _sym_int, Tensor

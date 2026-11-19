@@ -1,0 +1,41 @@
+        for i in range(cp_size):
+            # wait until KV is received
+            for req in send_recv_reqs:
+                req.wait()
+
+            send_tensor = p2p_comm_buffers[i % 2]
+            recv_tensor = p2p_comm_buffers[(i + 1) % 2]
+            if ctx.fp8:
+                if i < cp_size - 1:
+                    send_recv_reqs = flash_attn_p2p_communicate(
+                        rank,
+                        send_tensor[0],
+                        send_dst,
+                        recv_tensor[0],
+                        recv_src,
+                        ctx.cp_group,
+                        batch_p2p_comm,
+                    )
+                else:
+                    dkv_a2a_req = torch.distributed.all_to_all_single(
+                        dkv_send_buffer,
+                        dkv_recv_buffer,
+                        group=ctx.cp_group,
+                        async_op=True,
+                    )
+                    send_recv_reqs = [dkv_a2a_req]
+            else:
+                if i == 0:
+                    send_tensor = send_tensor[0]
+                    recv_tensor = recv_tensor[0]
+                if i == (cp_size - 1):
+                    send_tensor = send_tensor[1]
+                    recv_tensor = recv_tensor[1]
+                send_recv_reqs = flash_attn_p2p_communicate(
+                    rank, send_tensor, send_dst, recv_tensor, recv_src, ctx.cp_group, batch_p2p_comm
+                )
+
+            kv = p2p_comm_buffers[i % 2][0]
+            dq_, dk_, dv_ = None, None, None
+            k_part = kv[: ctx.k_numel].view(*ctx.k_shape)
+            v_part = kv[ctx.k_numel :].view(*ctx.v_shape)

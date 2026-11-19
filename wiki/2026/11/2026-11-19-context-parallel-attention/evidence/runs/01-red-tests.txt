@@ -1,0 +1,443 @@
+test_contiguous_positions_and_pair_counts (test_answers.ContextParallelTests.test_contiguous_positions_and_pair_counts) ... ERROR
+test_cp_four_zigzag_all_gradients (test_answers.ContextParallelTests.test_cp_four_zigzag_all_gradients) ... ERROR
+test_cp_noncausal (test_answers.ContextParallelTests.test_cp_noncausal) ... ERROR
+test_cp_one_with_odd_length (test_answers.ContextParallelTests.test_cp_one_with_odd_length) ... ERROR
+test_cp_shape_mismatch_rejected (test_answers.ContextParallelTests.test_cp_shape_mismatch_rejected) ... ERROR
+test_cp_two_restores_global_output_order (test_answers.ContextParallelTests.test_cp_two_restores_global_output_order) ... ERROR
+test_layout_invalid_inputs (test_answers.ContextParallelTests.test_layout_invalid_inputs) ... 
+  test_layout_invalid_inputs (test_answers.ContextParallelTests.test_layout_invalid_inputs) (seq=7, cp=2, layout='contiguous') ... ERROR
+  test_layout_invalid_inputs (test_answers.ContextParallelTests.test_layout_invalid_inputs) (seq=10, cp=2, layout='zigzag') ... ERROR
+  test_layout_invalid_inputs (test_answers.ContextParallelTests.test_layout_invalid_inputs) (seq=8, cp=0, layout='zigzag') ... ERROR
+  test_layout_invalid_inputs (test_answers.ContextParallelTests.test_layout_invalid_inputs) (seq=8, cp=True, layout='zigzag') ... ERROR
+  test_layout_invalid_inputs (test_answers.ContextParallelTests.test_layout_invalid_inputs) (seq=8, cp=2, layout='unknown') ... ERROR
+  test_layout_invalid_inputs (test_answers.ContextParallelTests.test_layout_invalid_inputs) (seq=0, cp=2, layout='contiguous') ... ERROR
+test_ring_visits_every_owner_once (test_answers.ContextParallelTests.test_ring_visits_every_owner_once) ... ERROR
+test_zigzag_balances_causal_pairs (test_answers.ContextParallelTests.test_zigzag_balances_causal_pairs) ... ERROR
+test_bad_shapes_dtype_and_positions_rejected (test_answers.StreamingTests.test_bad_shapes_dtype_and_positions_rejected) ... 
+  test_bad_shapes_dtype_and_positions_rejected (test_answers.StreamingTests.test_bad_shapes_dtype_and_positions_rejected) (q=torch.Size([8]), k=torch.Size([8, 3]), positions=torch.Size([8])) ... ERROR
+  test_bad_shapes_dtype_and_positions_rejected (test_answers.StreamingTests.test_bad_shapes_dtype_and_positions_rejected) (q=torch.Size([8, 3]), k=torch.Size([8, 2]), positions=torch.Size([8])) ... ERROR
+  test_bad_shapes_dtype_and_positions_rejected (test_answers.StreamingTests.test_bad_shapes_dtype_and_positions_rejected) (q=torch.Size([8, 3]), k=torch.Size([8, 3]), positions=torch.Size([8])) ... ERROR
+  test_bad_shapes_dtype_and_positions_rejected (test_answers.StreamingTests.test_bad_shapes_dtype_and_positions_rejected) (q=torch.Size([8, 3]), k=torch.Size([8, 3]), positions=torch.Size([8])) ... ERROR
+  test_bad_shapes_dtype_and_positions_rejected (test_answers.StreamingTests.test_bad_shapes_dtype_and_positions_rejected) (q=torch.Size([8, 3]), k=torch.Size([8, 3]), positions=torch.Size([8])) ... ERROR
+  test_bad_shapes_dtype_and_positions_rejected (test_answers.StreamingTests.test_bad_shapes_dtype_and_positions_rejected) (q=torch.Size([8, 3]), k=torch.Size([8, 3]), positions=torch.Size([7])) ... ERROR
+  test_bad_shapes_dtype_and_positions_rejected (test_answers.StreamingTests.test_bad_shapes_dtype_and_positions_rejected) (q=torch.Size([8, 3]), k=torch.Size([8, 3]), positions=torch.Size([8])) ... ERROR
+  test_bad_shapes_dtype_and_positions_rejected (test_answers.StreamingTests.test_bad_shapes_dtype_and_positions_rejected) (q=torch.Size([8, 3]), k=torch.Size([8, 3]), positions=torch.Size([8])) ... ERROR
+test_causal_output_and_all_gradients_match_sdpa (test_answers.StreamingTests.test_causal_output_and_all_gradients_match_sdpa) ... ERROR
+test_empty_key_block_is_neutral (test_answers.StreamingTests.test_empty_key_block_is_neutral) ... ERROR
+test_finite_difference_autograd_check (test_answers.StreamingTests.test_finite_difference_autograd_check) ... ERROR
+test_fully_masked_first_block_has_finite_gradients (test_answers.StreamingTests.test_fully_masked_first_block_has_finite_gradients) ... ERROR
+test_fully_masked_query_returns_zero_not_nan (test_answers.StreamingTests.test_fully_masked_query_returns_zero_not_nan) ... ERROR
+test_global_positions_define_mask (test_answers.StreamingTests.test_global_positions_define_mask) ... ERROR
+test_large_logits_stay_finite (test_answers.StreamingTests.test_large_logits_stay_finite) ... ERROR
+test_local_softmax_average_is_wrong (test_answers.StreamingTests.test_local_softmax_average_is_wrong) ... ok
+test_logsumexp_matches_full_scores (test_answers.StreamingTests.test_logsumexp_matches_full_scores) ... ERROR
+test_missing_blocks_rejected (test_answers.StreamingTests.test_missing_blocks_rejected) ... ERROR
+test_noncausal_matches_sdpa (test_answers.StreamingTests.test_noncausal_matches_sdpa) ... ERROR
+test_nonfinite_input_rejected (test_answers.StreamingTests.test_nonfinite_input_rejected) ... 
+  test_nonfinite_input_rejected (test_answers.StreamingTests.test_nonfinite_input_rejected) (which=0) ... ERROR
+  test_nonfinite_input_rejected (test_answers.StreamingTests.test_nonfinite_input_rejected) (which=1) ... ERROR
+  test_nonfinite_input_rejected (test_answers.StreamingTests.test_nonfinite_input_rejected) (which=2) ... ERROR
+test_numeric_causal_example (test_answers.StreamingTests.test_numeric_causal_example) ... ERROR
+test_reordered_blocks_keep_output_and_gradients (test_answers.StreamingTests.test_reordered_blocks_keep_output_and_gradients) ... ERROR
+
+======================================================================
+ERROR: test_contiguous_positions_and_pair_counts (test_answers.ContextParallelTests.test_contiguous_positions_and_pair_counts)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 182, in test_contiguous_positions_and_pair_counts
+    shards = sequence_shards(8, 2, layout="contiguous")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<article>/code/answers.py", line 21, in sequence_shards
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_cp_four_zigzag_all_gradients (test_answers.ContextParallelTests.test_cp_four_zigzag_all_gradients)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 223, in test_cp_four_zigzag_all_gradients
+    actual = cp_attention(q, k, v, 4, layout="zigzag")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<article>/code/answers.py", line 33, in cp_attention
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_cp_noncausal (test_answers.ContextParallelTests.test_cp_noncausal)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 234, in test_cp_noncausal
+    out = cp_attention(q, k, v, 2, layout=layout, causal=False)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<article>/code/answers.py", line 33, in cp_attention
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_cp_one_with_odd_length (test_answers.ContextParallelTests.test_cp_one_with_odd_length)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 212, in test_cp_one_with_odd_length
+    torch.testing.assert_close(cp_attention(q, k, v, 1, layout=layout), dense(q, k, v))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<article>/code/answers.py", line 33, in cp_attention
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_cp_shape_mismatch_rejected (test_answers.ContextParallelTests.test_cp_shape_mismatch_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 240, in test_cp_shape_mismatch_rejected
+    cp_attention(q, k[:7], v, 2)
+  File "<article>/code/answers.py", line 33, in cp_attention
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_cp_two_restores_global_output_order (test_answers.ContextParallelTests.test_cp_two_restores_global_output_order)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 217, in test_cp_two_restores_global_output_order
+    actual = cp_attention(q, k, v, 2, layout=layout)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<article>/code/answers.py", line 33, in cp_attention
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_layout_invalid_inputs (test_answers.ContextParallelTests.test_layout_invalid_inputs) (seq=7, cp=2, layout='contiguous')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 196, in test_layout_invalid_inputs
+    sequence_shards(seq, cp, layout=layout)
+  File "<article>/code/answers.py", line 21, in sequence_shards
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_layout_invalid_inputs (test_answers.ContextParallelTests.test_layout_invalid_inputs) (seq=10, cp=2, layout='zigzag')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 196, in test_layout_invalid_inputs
+    sequence_shards(seq, cp, layout=layout)
+  File "<article>/code/answers.py", line 21, in sequence_shards
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_layout_invalid_inputs (test_answers.ContextParallelTests.test_layout_invalid_inputs) (seq=8, cp=0, layout='zigzag')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 196, in test_layout_invalid_inputs
+    sequence_shards(seq, cp, layout=layout)
+  File "<article>/code/answers.py", line 21, in sequence_shards
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_layout_invalid_inputs (test_answers.ContextParallelTests.test_layout_invalid_inputs) (seq=8, cp=True, layout='zigzag')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 196, in test_layout_invalid_inputs
+    sequence_shards(seq, cp, layout=layout)
+  File "<article>/code/answers.py", line 21, in sequence_shards
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_layout_invalid_inputs (test_answers.ContextParallelTests.test_layout_invalid_inputs) (seq=8, cp=2, layout='unknown')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 196, in test_layout_invalid_inputs
+    sequence_shards(seq, cp, layout=layout)
+  File "<article>/code/answers.py", line 21, in sequence_shards
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_layout_invalid_inputs (test_answers.ContextParallelTests.test_layout_invalid_inputs) (seq=0, cp=2, layout='contiguous')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 196, in test_layout_invalid_inputs
+    sequence_shards(seq, cp, layout=layout)
+  File "<article>/code/answers.py", line 21, in sequence_shards
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_ring_visits_every_owner_once (test_answers.ContextParallelTests.test_ring_visits_every_owner_once)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 199, in test_ring_visits_every_owner_once
+    self.assertEqual(ring_order(0, 4), (0, 3, 2, 1))
+                     ^^^^^^^^^^^^^^^^
+  File "<article>/code/answers.py", line 25, in ring_order
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_zigzag_balances_causal_pairs (test_answers.ContextParallelTests.test_zigzag_balances_causal_pairs)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 187, in test_zigzag_balances_causal_pairs
+    shards = sequence_shards(8, 2, layout="zigzag")
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<article>/code/answers.py", line 21, in sequence_shards
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_bad_shapes_dtype_and_positions_rejected (test_answers.StreamingTests.test_bad_shapes_dtype_and_positions_rejected) (q=torch.Size([8]), k=torch.Size([8, 3]), positions=torch.Size([8]))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 153, in test_bad_shapes_dtype_and_positions_rejected
+    streaming_attention(aq, ab, ap)
+  File "<article>/code/answers.py", line 17, in streaming_attention
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_bad_shapes_dtype_and_positions_rejected (test_answers.StreamingTests.test_bad_shapes_dtype_and_positions_rejected) (q=torch.Size([8, 3]), k=torch.Size([8, 2]), positions=torch.Size([8]))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 153, in test_bad_shapes_dtype_and_positions_rejected
+    streaming_attention(aq, ab, ap)
+  File "<article>/code/answers.py", line 17, in streaming_attention
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_bad_shapes_dtype_and_positions_rejected (test_answers.StreamingTests.test_bad_shapes_dtype_and_positions_rejected) (q=torch.Size([8, 3]), k=torch.Size([8, 3]), positions=torch.Size([8]))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 153, in test_bad_shapes_dtype_and_positions_rejected
+    streaming_attention(aq, ab, ap)
+  File "<article>/code/answers.py", line 17, in streaming_attention
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_bad_shapes_dtype_and_positions_rejected (test_answers.StreamingTests.test_bad_shapes_dtype_and_positions_rejected) (q=torch.Size([8, 3]), k=torch.Size([8, 3]), positions=torch.Size([8]))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 153, in test_bad_shapes_dtype_and_positions_rejected
+    streaming_attention(aq, ab, ap)
+  File "<article>/code/answers.py", line 17, in streaming_attention
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_bad_shapes_dtype_and_positions_rejected (test_answers.StreamingTests.test_bad_shapes_dtype_and_positions_rejected) (q=torch.Size([8, 3]), k=torch.Size([8, 3]), positions=torch.Size([8]))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 153, in test_bad_shapes_dtype_and_positions_rejected
+    streaming_attention(aq, ab, ap)
+  File "<article>/code/answers.py", line 17, in streaming_attention
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_bad_shapes_dtype_and_positions_rejected (test_answers.StreamingTests.test_bad_shapes_dtype_and_positions_rejected) (q=torch.Size([8, 3]), k=torch.Size([8, 3]), positions=torch.Size([7]))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 153, in test_bad_shapes_dtype_and_positions_rejected
+    streaming_attention(aq, ab, ap)
+  File "<article>/code/answers.py", line 17, in streaming_attention
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_bad_shapes_dtype_and_positions_rejected (test_answers.StreamingTests.test_bad_shapes_dtype_and_positions_rejected) (q=torch.Size([8, 3]), k=torch.Size([8, 3]), positions=torch.Size([8]))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 153, in test_bad_shapes_dtype_and_positions_rejected
+    streaming_attention(aq, ab, ap)
+  File "<article>/code/answers.py", line 17, in streaming_attention
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_bad_shapes_dtype_and_positions_rejected (test_answers.StreamingTests.test_bad_shapes_dtype_and_positions_rejected) (q=torch.Size([8, 3]), k=torch.Size([8, 3]), positions=torch.Size([8]))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 153, in test_bad_shapes_dtype_and_positions_rejected
+    streaming_attention(aq, ab, ap)
+  File "<article>/code/answers.py", line 17, in streaming_attention
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_causal_output_and_all_gradients_match_sdpa (test_answers.StreamingTests.test_causal_output_and_all_gradients_match_sdpa)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 74, in test_causal_output_and_all_gradients_match_sdpa
+    actual, _ = streaming_attention(q, blocks(k, v), torch.arange(8))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<article>/code/answers.py", line 17, in streaming_attention
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_empty_key_block_is_neutral (test_answers.StreamingTests.test_empty_key_block_is_neutral)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 130, in test_empty_key_block_is_neutral
+    out, _ = streaming_attention(q, [empty, *blocks(k, v), empty], torch.arange(8))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<article>/code/answers.py", line 17, in streaming_attention
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_finite_difference_autograd_check (test_answers.StreamingTests.test_finite_difference_autograd_check)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 170, in test_finite_difference_autograd_check
+    self.assertTrue(torch.autograd.gradcheck(function, (q, k, v), eps=1e-6, atol=1e-5))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<HOME>/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/autograd/gradcheck.py", line 2119, in gradcheck
+    return _gradcheck_helper(**args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<HOME>/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/autograd/gradcheck.py", line 2141, in _gradcheck_helper
+    func_out = func(*tupled_inputs)
+               ^^^^^^^^^^^^^^^^^^^^
+  File "<article>/code/test_answers.py", line 167, in function
+    out, _ = streaming_attention(aq, blocks(ak, av, (1, 0)), torch.arange(4))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<article>/code/answers.py", line 17, in streaming_attention
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_fully_masked_first_block_has_finite_gradients (test_answers.StreamingTests.test_fully_masked_first_block_has_finite_gradients)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 94, in test_fully_masked_first_block_has_finite_gradients
+    out, _ = streaming_attention(q[:2], blocks(k, v, (3, 2, 1, 0)), torch.arange(2))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<article>/code/answers.py", line 17, in streaming_attention
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_fully_masked_query_returns_zero_not_nan (test_answers.StreamingTests.test_fully_masked_query_returns_zero_not_nan)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 102, in test_fully_masked_query_returns_zero_not_nan
+    out, lse = streaming_attention(q[:2], blocks(k, v, (3,)), torch.arange(2))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<article>/code/answers.py", line 17, in streaming_attention
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_global_positions_define_mask (test_answers.StreamingTests.test_global_positions_define_mask)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 113, in test_global_positions_define_mask
+    out, _ = streaming_attention(q[:2], [KVBlock(k, v, kp)], qp)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<article>/code/answers.py", line 17, in streaming_attention
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_large_logits_stay_finite (test_answers.StreamingTests.test_large_logits_stay_finite)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 122, in test_large_logits_stay_finite
+    out, lse = streaming_attention(q, blocks(k, v), torch.arange(8))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<article>/code/answers.py", line 17, in streaming_attention
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_logsumexp_matches_full_scores (test_answers.StreamingTests.test_logsumexp_matches_full_scores)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 174, in test_logsumexp_matches_full_scores
+    _, lse = streaming_attention(q, blocks(k, v), torch.arange(8))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<article>/code/answers.py", line 17, in streaming_attention
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_missing_blocks_rejected (test_answers.StreamingTests.test_missing_blocks_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 136, in test_missing_blocks_rejected
+    streaming_attention(q, [], torch.arange(8))
+  File "<article>/code/answers.py", line 17, in streaming_attention
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_noncausal_matches_sdpa (test_answers.StreamingTests.test_noncausal_matches_sdpa)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 69, in test_noncausal_matches_sdpa
+    actual, _ = streaming_attention(q, iter(blocks(k, v)), torch.arange(8), causal=False)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<article>/code/answers.py", line 17, in streaming_attention
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_nonfinite_input_rejected (test_answers.StreamingTests.test_nonfinite_input_rejected) (which=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 161, in test_nonfinite_input_rejected
+    streaming_attention(q, blocks(k, v), torch.arange(8))
+  File "<article>/code/answers.py", line 17, in streaming_attention
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_nonfinite_input_rejected (test_answers.StreamingTests.test_nonfinite_input_rejected) (which=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 161, in test_nonfinite_input_rejected
+    streaming_attention(q, blocks(k, v), torch.arange(8))
+  File "<article>/code/answers.py", line 17, in streaming_attention
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_nonfinite_input_rejected (test_answers.StreamingTests.test_nonfinite_input_rejected) (which=2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 161, in test_nonfinite_input_rejected
+    streaming_attention(q, blocks(k, v), torch.arange(8))
+  File "<article>/code/answers.py", line 17, in streaming_attention
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_numeric_causal_example (test_answers.StreamingTests.test_numeric_causal_example)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 53, in test_numeric_causal_example
+    out, lse = streaming_attention(q, blocks(k, v, (0, 1)), torch.arange(4))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<article>/code/answers.py", line 17, in streaming_attention
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_reordered_blocks_keep_output_and_gradients (test_answers.StreamingTests.test_reordered_blocks_keep_output_and_gradients)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 86, in test_reordered_blocks_keep_output_and_gradients
+    out, lse = streaming_attention(q, blocks(k, v, order), torch.arange(8))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<article>/code/answers.py", line 17, in streaming_attention
+    raise NotImplementedError
+NotImplementedError
+
+----------------------------------------------------------------------
+Ran 24 tests in 0.017s
+
+FAILED (errors=37)

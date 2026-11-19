@@ -1,0 +1,31 @@
+test_contiguous_positions_and_pair_counts (test_answers.ContextParallelTests.test_contiguous_positions_and_pair_counts) ... ok
+test_cp_four_zigzag_all_gradients (test_answers.ContextParallelTests.test_cp_four_zigzag_all_gradients) ... ok
+test_cp_noncausal (test_answers.ContextParallelTests.test_cp_noncausal) ... ok
+test_cp_one_with_odd_length (test_answers.ContextParallelTests.test_cp_one_with_odd_length) ... ok
+test_cp_shape_mismatch_rejected (test_answers.ContextParallelTests.test_cp_shape_mismatch_rejected) ... ok
+test_cp_two_restores_global_output_order (test_answers.ContextParallelTests.test_cp_two_restores_global_output_order) ... ok
+test_layout_invalid_inputs (test_answers.ContextParallelTests.test_layout_invalid_inputs) ... ok
+test_ring_visits_every_owner_once (test_answers.ContextParallelTests.test_ring_visits_every_owner_once) ... ok
+test_zigzag_balances_causal_pairs (test_answers.ContextParallelTests.test_zigzag_balances_causal_pairs) ... ok
+test_bad_shapes_dtype_and_positions_rejected (test_answers.StreamingTests.test_bad_shapes_dtype_and_positions_rejected) ... ok
+test_causal_output_and_all_gradients_match_sdpa (test_answers.StreamingTests.test_causal_output_and_all_gradients_match_sdpa) ... ok
+test_empty_key_block_is_neutral (test_answers.StreamingTests.test_empty_key_block_is_neutral) ... ok
+test_finite_difference_autograd_check (test_answers.StreamingTests.test_finite_difference_autograd_check) ... ok
+test_finite_inputs_with_overflowing_scores_rejected (test_answers.StreamingTests.test_finite_inputs_with_overflowing_scores_rejected) ... ok
+test_fully_masked_first_block_has_finite_gradients (test_answers.StreamingTests.test_fully_masked_first_block_has_finite_gradients) ... ok
+test_fully_masked_query_returns_zero_not_nan (test_answers.StreamingTests.test_fully_masked_query_returns_zero_not_nan) ... ok
+test_global_positions_define_mask (test_answers.StreamingTests.test_global_positions_define_mask) ... ok
+test_large_logits_stay_finite (test_answers.StreamingTests.test_large_logits_stay_finite) ... ok
+test_local_softmax_average_is_wrong (test_answers.StreamingTests.test_local_softmax_average_is_wrong) ... ok
+test_logsumexp_matches_full_scores (test_answers.StreamingTests.test_logsumexp_matches_full_scores) ... ok
+test_missing_blocks_rejected (test_answers.StreamingTests.test_missing_blocks_rejected) ... ok
+test_noncausal_matches_sdpa (test_answers.StreamingTests.test_noncausal_matches_sdpa) ... ok
+test_nonfinite_input_rejected (test_answers.StreamingTests.test_nonfinite_input_rejected) ... ok
+test_numeric_causal_example (test_answers.StreamingTests.test_numeric_causal_example) ... ok
+test_only_empty_keys_allow_zero_gradients (test_answers.StreamingTests.test_only_empty_keys_allow_zero_gradients) ... ok
+test_reordered_blocks_keep_output_and_gradients (test_answers.StreamingTests.test_reordered_blocks_keep_output_and_gradients) ... ok
+
+----------------------------------------------------------------------
+Ran 26 tests in 0.375s
+
+OK
