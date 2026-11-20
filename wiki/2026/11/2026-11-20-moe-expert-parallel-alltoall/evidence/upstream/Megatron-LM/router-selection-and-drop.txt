@@ -1,0 +1,28 @@
+            probs, routing_map = topk_routing_with_score_function(
+                logits,
+                self.topk,
+                use_pre_softmax=self.config.moe_router_pre_softmax,
+                num_groups=self.config.moe_router_num_groups,
+                group_topk=self.config.moe_router_group_topk,
+                scaling_factor=self.config.moe_router_topk_scaling_factor,
+                score_function=self.score_function,
+                expert_bias=self.expert_bias,
+                fused=fused,
+                router_replay=self.router_replay,
+                topk_indices=topk_indices,
+                dense_output=dense_output and not fused,
+            )
+            if self.config.moe_virtual_expert_load_balance and fused:
+                # TE returns compact IDs but full-width probabilities; normalize the pair.
+                probs = probs.gather(1, routing_map)
+
+        # Apply token dropping to probs and routing_map.
+        if self.config.moe_expert_capacity_factor is not None:
+            probs, routing_map = apply_router_token_dropping(
+                probs,
+                routing_map,
+                router_topk=self.topk,
+                capacity_factor=self.config.moe_expert_capacity_factor,
+                drop_policy=self.config.moe_token_drop_policy,
+                pad_to_capacity=self.config.moe_pad_expert_input_to_capacity,
+            )

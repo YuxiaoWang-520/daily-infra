@@ -1,0 +1,6 @@
+    moe_router_pre_softmax: bool = False
+    """Enable pre-softmax(pre-sigmoid) routing for MoE, which means softmax is before the
+    top-k selection.
+    By default, softmax is done after top-k."""
+
+    moe_router_topk_scaling_factor: Optional[float] = None

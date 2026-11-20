@@ -1,0 +1,223 @@
+{
+  "checked_at": "2026-11-20T11:06:22.443473+08:00",
+  "repositories": [
+    {
+      "name": "Megatron-LM",
+      "repository": "NVIDIA/Megatron-LM",
+      "origin": "https://github.com/NVIDIA/Megatron-LM.git",
+      "default_branch": "main",
+      "commit": "2e7c0b68b3aa75c2ebfc7eb35afcc513b7aad72a",
+      "commit_time": "2026-11-19T15:39:17-08:00",
+      "stable_tag": "core_v0.20.1",
+      "stable_commit": "f7aa73b2d9cdda75421be7067d221a5cb90e0f43",
+      "release": {
+        "html_url": "https://github.com/NVIDIA/Megatron-LM/releases/tag/core_v0.20.1",
+        "published_at": "2026-11-19T21:26:28Z",
+        "tag_name": "core_v0.20.1"
+      },
+      "commands": [
+        {
+          "argv": [
+            "gh",
+            "api",
+            "repos/NVIDIA/Megatron-LM",
+            "--jq",
+            "{default_branch}"
+          ],
+          "exit_code": 0,
+          "stdout": "{\"default_branch\":\"main\"}\n",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "gh",
+            "api",
+            "repos/NVIDIA/Megatron-LM/releases/latest",
+            "--jq",
+            "{tag_name,published_at,html_url}"
+          ],
+          "exit_code": 0,
+          "stdout": "{\"html_url\":\"https://github.com/NVIDIA/Megatron-LM/releases/tag/core_v0.20.1\",\"published_at\":\"2026-11-19T21:26:28Z\",\"tag_name\":\"core_v0.20.1\"}\n",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "git",
+            "-C",
+            ".cache/upstream/Megatron-LM",
+            "fetch",
+            "--no-tags",
+            "--depth=1",
+            "origin",
+            "main"
+          ],
+          "exit_code": 0,
+          "stdout": "",
+          "stderr": "From https://github.com/NVIDIA/Megatron-LM\n * branch            main       -> FETCH_HEAD\n + 43a2ef6...2e7c0b6 main       -> origin/main  (forced update)\n"
+        },
+        {
+          "argv": [
+            "git",
+            "-C",
+            ".cache/upstream/Megatron-LM",
+            "fetch",
+            "--no-tags",
+            "--depth=1",
+            "origin",
+            "refs/tags/core_v0.20.1:refs/tags/core_v0.20.1"
+          ],
+          "exit_code": 0,
+          "stdout": "",
+          "stderr": "From https://github.com/NVIDIA/Megatron-LM\n * [new tag]         core_v0.20.1 -> core_v0.20.1\n"
+        },
+        {
+          "argv": [
+            "git",
+            "-C",
+            ".cache/upstream/Megatron-LM",
+            "rev-parse",
+            "origin/main"
+          ],
+          "exit_code": 0,
+          "stdout": "2e7c0b68b3aa75c2ebfc7eb35afcc513b7aad72a\n",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "git",
+            "-C",
+            ".cache/upstream/Megatron-LM",
+            "rev-parse",
+            "core_v0.20.1^{commit}"
+          ],
+          "exit_code": 0,
+          "stdout": "f7aa73b2d9cdda75421be7067d221a5cb90e0f43\n",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "git",
+            "-C",
+            ".cache/upstream/Megatron-LM",
+            "show",
+            "-s",
+            "--format=%cI",
+            "2e7c0b68b3aa75c2ebfc7eb35afcc513b7aad72a"
+          ],
+          "exit_code": 0,
+          "stdout": "2026-11-19T15:39:17-08:00\n",
+          "stderr": ""
+        }
+      ]
+    },
+    {
+      "name": "pytorch",
+      "repository": "pytorch/pytorch",
+      "origin": "https://github.com/pytorch/pytorch.git",
+      "default_branch": "main",
+      "commit": "3d9ded4cb906777b32d099ef17dfb28d50b623c2",
+      "commit_time": "2026-11-20T02:50:53Z",
+      "stable_tag": "v2.15.0",
+      "stable_commit": "31a77fc9c0a7c6fff15a1ff58c743f53b1a9d457",
+      "release": {
+        "html_url": "https://github.com/pytorch/pytorch/releases/tag/v2.15.0",
+        "published_at": "2026-10-28T17:09:49Z",
+        "tag_name": "v2.15.0"
+      },
+      "commands": [
+        {
+          "argv": [
+            "gh",
+            "api",
+            "repos/pytorch/pytorch",
+            "--jq",
+            "{default_branch}"
+          ],
+          "exit_code": 0,
+          "stdout": "{\"default_branch\":\"main\"}\n",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "gh",
+            "api",
+            "repos/pytorch/pytorch/releases/latest",
+            "--jq",
+            "{tag_name,published_at,html_url}"
+          ],
+          "exit_code": 0,
+          "stdout": "{\"html_url\":\"https://github.com/pytorch/pytorch/releases/tag/v2.15.0\",\"published_at\":\"2026-10-28T17:09:49Z\",\"tag_name\":\"v2.15.0\"}\n",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "git",
+            "-C",
+            ".cache/upstream/pytorch",
+            "fetch",
+            "--no-tags",
+            "--depth=1",
+            "origin",
+            "main"
+          ],
+          "exit_code": 0,
+          "stdout": "",
+          "stderr": "From https://github.com/pytorch/pytorch\n * branch            main       -> FETCH_HEAD\n + 55e45fb...3d9ded4 main       -> origin/main  (forced update)\n"
+        },
+        {
+          "argv": [
+            "git",
+            "-C",
+            ".cache/upstream/pytorch",
+            "fetch",
+            "--no-tags",
+            "--depth=1",
+            "origin",
+            "refs/tags/v2.15.0:refs/tags/v2.15.0"
+          ],
+          "exit_code": 0,
+          "stdout": "",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "git",
+            "-C",
+            ".cache/upstream/pytorch",
+            "rev-parse",
+            "origin/main"
+          ],
+          "exit_code": 0,
+          "stdout": "3d9ded4cb906777b32d099ef17dfb28d50b623c2\n",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "git",
+            "-C",
+            ".cache/upstream/pytorch",
+            "rev-parse",
+            "v2.15.0^{commit}"
+          ],
+          "exit_code": 0,
+          "stdout": "31a77fc9c0a7c6fff15a1ff58c743f53b1a9d457\n",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "git",
+            "-C",
+            ".cache/upstream/pytorch",
+            "show",
+            "-s",
+            "--format=%cI",
+            "3d9ded4cb906777b32d099ef17dfb28d50b623c2"
+          ],
+          "exit_code": 0,
+          "stdout": "2026-11-20T02:50:53Z\n",
+          "stderr": ""
+        }
+      ]
+    }
+  ]
+}

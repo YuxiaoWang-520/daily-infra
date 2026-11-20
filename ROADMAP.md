@@ -35,7 +35,8 @@
 | 27 | [Tensor Parallel 怎样切分线性层，AllReduce 与 AllGather 分别出现在何处？](wiki/2026/11/2026-11-17-tensor-parallel-linear/README.md) | 线性层切分、张量布局与通信，前置为第 07、17、23 篇 |
 | 28 | [Pipeline Parallel 怎样调度 microbatch，气泡和激活显存之间如何取舍？](wiki/2026/11/2026-11-18-pipeline-parallel-schedules/README.md) | 层间流水线、microbatch 调度、吞吐与激活存活期，前置为第 17—19、27 篇 |
 | 29 | [Context Parallel 怎样切分长序列，Attention 如何在各 rank 间交换 K／V？](wiki/2026/11/2026-11-19-context-parallel-attention/README.md) | 长序列训练、Attention 分块、全局归一化与通信，前置为第 10、18、23、27 篇 |
-| 30 | MoE 的 token 怎样路由到专家，为什么 Expert Parallel 需要 AllToAll？ | MoE 路由、专家计算、AllToAll 与负载，前置为第 07、17、23、27 篇 |
+| 30 | [MoE 的 token 怎样路由到专家，为什么 Expert Parallel 需要 AllToAll？](wiki/2026/11/2026-11-20-moe-expert-parallel-alltoall/README.md) | MoE 路由、专家计算、AllToAll 与负载，前置为第 07、17、23、27 篇 |
+| 31 | 训练 profiler 的时间轴怎样区分 CPU 提交、GPU 执行与通信等待？ | 端到端训练观测、异步时间轴与瓶颈归因，前置为第 06、17、23、28、30 篇 |
 
 每篇既要独立可读，也要链接已有前置文章。较新的实现可以作为当天的进阶部分，但不能让读者先理解尚未解释的术语。
 

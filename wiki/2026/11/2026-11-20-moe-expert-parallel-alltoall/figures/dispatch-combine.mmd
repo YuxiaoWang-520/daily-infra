@@ -1,0 +1,6 @@
+flowchart LR
+    T[rank 0：原 token t1，x=2] -->|本地分配| E1[rank 0：expert 1，输出 4]
+    T -->|dispatch AllToAll| E2[rank 1：expert 2，输出 6]
+    E1 -->|原 token 的本地贡献| C[rank 0：恢复 t1 的分配对应关系]
+    E2 -->|combine AllToAll 返回| C
+    C --> W[按门控相加：0.25×4 + 0.75×6 = 5.5]

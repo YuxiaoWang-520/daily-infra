@@ -1,0 +1,15 @@
+        # Reuse the unbiased aux-loss routing calculation for due router diagnostics.
+        # Hash assignments come from tid2eid, so learned-routing aux losses do not apply.
+        aux_loss_enabled = not self.is_hash_layer and self.is_aux_loss_enabled()
+        apply_aux_loss = torch.is_grad_enabled() and aux_loss_enabled
+        compute_aux_inputs = self.training and (observe_router_diagnostics or apply_aux_loss)
+        if compute_aux_inputs:
+            score_context = nullcontext() if apply_aux_loss else torch.no_grad()
+            with score_context:
+                routing_map_for_aux_loss, scores_for_aux_loss = compute_routing_scores_for_aux_loss(
+                    logits,
+                    self.topk,
+                    self.score_function,
+                    fused=self.config.moe_router_aux_loss_fusion,
+                    padding_mask=padding_mask,
+                )

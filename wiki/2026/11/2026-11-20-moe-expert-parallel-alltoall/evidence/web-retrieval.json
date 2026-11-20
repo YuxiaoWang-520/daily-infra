@@ -1,0 +1,40 @@
+{
+  "accessed_on": "2026-11-20",
+  "timezone": "Asia/Shanghai",
+  "provider": "Parallel web_search and web_fetch",
+  "session_id": "session_1b5a31451a0a7be7f27fafb623311a31",
+  "note": "Cache acquisition dates are distinct from access and source-fetch dates; only metadata and own notes archived.",
+  "sources": [
+    {
+      "url": "https://arxiv.org/abs/1701.06538",
+      "title": "[1701.06538] Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer",
+      "acquired_at": "2026-11-09T00:00:00Z",
+      "extract_id": "extract_e5ed8fd1582517352ae081a748ca94c8"
+    },
+    {
+      "url": "https://arxiv.org/html/1701.06538v1",
+      "title": "Outrageously Large Neural Networks: The Sparsely-Gated Mixture-of-Experts Layer",
+      "acquired_at": "2026-10-14T00:00:00Z",
+      "extract_id": "extract_e5ed8fd1582517352ae081a748ca94c8"
+    },
+    {
+      "url": "https://arxiv.org/abs/2101.03961",
+      "title": "[2101.03961] Switch Transformers: Scaling to Trillion Parameter Models with Simple and Efficient Sparsity",
+      "acquired_at": "2026-11-09T00:00:00Z",
+      "extract_id": "extract_e5ed8fd1582517352ae081a748ca94c8"
+    },
+    {
+      "url": "https://arxiv.org/html/2101.03961v3",
+      "title": "Switch Transformers: Scaling to Trillion Parameter Models with Simple and Efficient Sparsity",
+      "acquired_at": "2026-11-09T00:00:00Z",
+      "extract_id": "extract_e5ed8fd1582517352ae081a748ca94c8"
+    },
+    {
+      "url": "https://docs.nvidia.com/megatron-core/developer-guide/latest/apidocs/core/core.transformer.moe.token_dispatcher.html",
+      "title": "core.transformer.moe.token_dispatcher — Megatron Core",
+      "acquired_at": "2026-11-18T00:00:00Z",
+      "extract_id": "extract_fb06132e52a24fc39c76b82d17d4bf9b"
+    }
+  ],
+  "errors": []
+}

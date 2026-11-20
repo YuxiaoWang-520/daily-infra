@@ -1,0 +1,110 @@
+Source: megatron/core/tensor_parallel/mappings.py
+Commit: 2e7c0b68b3aa75c2ebfc7eb35afcc513b7aad72a
+# Copyright (c) 2025 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+import torch
+
+from megatron.core.parallel_state import get_global_memory_buffer
+from megatron.core.utils import (
+    get_pg_size,
+    get_tensor_model_parallel_group_if_none,
+    is_torch_min_version,
+)
+
+from .utils import split_tensor_along_last_dim
+
+
+Source: megatron/core/transformer/moe/experts.py
+Commit: 2e7c0b68b3aa75c2ebfc7eb35afcc513b7aad72a
+# Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+from __future__ import annotations
+
+import functools
+import inspect
+import logging
+import warnings
+import weakref
+from collections.abc import Callable, Iterable
+from contextlib import nullcontext
+from copy import deepcopy
+from dataclasses import dataclass
+
+
+Source: megatron/core/transformer/moe/moe_layer.py
+Commit: 2e7c0b68b3aa75c2ebfc7eb35afcc513b7aad72a
+# Copyright (c) 2025 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+from __future__ import annotations
+
+from abc import ABC, abstractmethod
+from dataclasses import dataclass
+from typing import Optional, Protocol
+
+import torch
+
+from megatron.core import utils
+from megatron.core.extensions.transformer_engine import HAVE_TE
+
+
+Source: megatron/core/transformer/moe/moe_utils.py
+Commit: 2e7c0b68b3aa75c2ebfc7eb35afcc513b7aad72a
+# Copyright (c) 2025 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+import math
+from typing import List, Optional, Tuple, Union
+
+import torch
+
+from megatron.core import parallel_state
+from megatron.core.extensions.transformer_engine import (
+    HAVE_TE,
+    TE_GROUPED_GEMM_EXPERT_TOKEN_ALIGNMENT,
+    te_supports_deterministic_moe_aux_loss,
+
+
+Source: megatron/core/transformer/moe/router.py
+Commit: 2e7c0b68b3aa75c2ebfc7eb35afcc513b7aad72a
+# Copyright (c) 2025 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+import logging
+from abc import ABC, abstractmethod
+from contextlib import nullcontext
+from dataclasses import dataclass
+from typing import Optional, Sequence, Union
+
+import torch
+
+from megatron.core.inference.moe.sigmoid_topk import HAVE_TRITON as HAVE_SIGMOID_TOPK_KERNEL
+from megatron.core.inference.moe.sigmoid_topk import is_sigmoid_topk_supported, sigmoid_topk_routing
+
+
+Source: megatron/core/transformer/moe/token_dispatcher.py
+Commit: 2e7c0b68b3aa75c2ebfc7eb35afcc513b7aad72a
+# Copyright (c) 2025 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+import logging
+import warnings
+from abc import ABC, abstractmethod
+from typing import List, Optional, Tuple
+
+import torch
+
+from megatron.core import utils
+from megatron.core.config import is_experimental_enabled
+from megatron.core.fp8_utils import get_fp8_recipe_for_a2a
+
+
+Source: megatron/core/transformer/transformer_config.py
+Commit: 2e7c0b68b3aa75c2ebfc7eb35afcc513b7aad72a
+# Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+import logging
+import math
+import os
+import warnings
+from copy import deepcopy
+from dataclasses import MISSING, dataclass, field, fields
+from typing import Any, Callable, Dict, List, Literal, Optional, Self, Tuple, Union
+
+import torch
+import torch.nn.functional as F

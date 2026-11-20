@@ -1,0 +1,36 @@
+{
+  "checked_at": "2026-11-20T11:27:40.503934+08:00",
+  "phase": "archived content acceptance before Git staging and push",
+  "passed": true,
+  "wiki_count": 30,
+  "today_entries": 1,
+  "article_git_payload_files": 62,
+  "payload_bytes_excluding_delivery_report": 215456,
+  "local_links_checked": 159,
+  "fixed_source_excerpts": 25,
+  "licenses": 2,
+  "source_byte_comparison": "technical-audit.json; actual git show comparison before archive",
+  "code_files_frozen": 6,
+  "normal_tests": 23,
+  "optimized_tests": 23,
+  "independent_targeted_tests": 7,
+  "distributed_records": 4,
+  "distributed_max_abs_error": 4.336808689942018e-19,
+  "mermaid_sources": 1,
+  "mermaid_rendered": false,
+  "privacy_categories_checked": [
+    "absolute_home",
+    "private_key",
+    "github_token",
+    "openai_key",
+    "internal_domain",
+    "private_ipv4"
+  ],
+  "privacy_findings": [],
+  "checksummed_files": 60,
+  "checksum_excludes": [
+    "evidence/SHA256SUMS",
+    "evidence/delivery-check.json"
+  ],
+  "issues": []
+}

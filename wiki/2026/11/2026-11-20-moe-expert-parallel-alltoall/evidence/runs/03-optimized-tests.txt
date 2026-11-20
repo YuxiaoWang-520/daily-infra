@@ -1,0 +1,28 @@
+test_bad_expert_shapes_rejected (test_answers.PackedMoETests.test_bad_expert_shapes_rejected) ... ok
+test_capacity_changes_scalar_output (test_answers.PackedMoETests.test_capacity_changes_scalar_output) ... ok
+test_combination_shape_mismatch_rejected (test_answers.PackedMoETests.test_combination_shape_mismatch_rejected) ... ok
+test_dispatch_order_can_be_inverted (test_answers.PackedMoETests.test_dispatch_order_can_be_inverted) ... ok
+test_empty_expert_input_remains_differentiable (test_answers.PackedMoETests.test_empty_expert_input_remains_differentiable) ... ok
+test_finite_difference_gradcheck (test_answers.PackedMoETests.test_finite_difference_gradcheck) ... ok
+test_packed_output_and_all_gradients_match_dense (test_answers.PackedMoETests.test_packed_output_and_all_gradients_match_dense) ... ok
+test_scalar_weighted_combine (test_answers.PackedMoETests.test_scalar_weighted_combine) ... ok
+test_unused_experts_have_zero_gradients (test_answers.PackedMoETests.test_unused_experts_have_zero_gradients) ... ok
+test_zero_capacity_keeps_zero_gradients (test_answers.PackedMoETests.test_zero_capacity_keeps_zero_gradients) ... ok
+test_aux_loss_hand_value_and_gradient (test_answers.RoutingTests.test_aux_loss_hand_value_and_gradient) ... ok
+test_aux_uniform_probability_is_not_balance_certificate (test_answers.RoutingTests.test_aux_uniform_probability_is_not_balance_certificate) ... ok
+test_capacity_formula_counts_assignments (test_answers.RoutingTests.test_capacity_formula_counts_assignments) ... ok
+test_capacity_keeps_highest_probability_without_renormalizing (test_answers.RoutingTests.test_capacity_keeps_highest_probability_without_renormalizing) ... ok
+test_empty_destination_split (test_answers.RoutingTests.test_empty_destination_split) ... ok
+test_invalid_capacity_factor (test_answers.RoutingTests.test_invalid_capacity_factor) ... ok
+test_invalid_route_inputs (test_answers.RoutingTests.test_invalid_route_inputs) ... ok
+test_owner_split_matrix (test_answers.RoutingTests.test_owner_split_matrix) ... ok
+test_post_top1_gate_has_zero_task_gradient (test_answers.RoutingTests.test_post_top1_gate_has_zero_task_gradient) ... ok
+test_selected_experts_and_weights (test_answers.RoutingTests.test_selected_experts_and_weights) ... ok
+test_softmax_order_changes_weight_sum (test_answers.RoutingTests.test_softmax_order_changes_weight_sum) ... ok
+test_ties_use_lower_expert_id (test_answers.RoutingTests.test_ties_use_lower_expert_id) ... ok
+test_zero_capacity_drops_all_assignments (test_answers.RoutingTests.test_zero_capacity_drops_all_assignments) ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 0.880s
+
+OK

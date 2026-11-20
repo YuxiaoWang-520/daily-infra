@@ -1,0 +1,26 @@
+    def combine_postprocess(self, permutated_local_input_tokens):
+        """Finalizes token reconstruction with un-permutation and reshaping.
+
+        This method un-permutes the tokens back to their original order,
+        reshapes the tensor to its original shape, and adds the shared
+        expert output if enabled. It then releases the router probabilities
+        stored by `dispatch_preprocess`, which this forward no longer needs.
+
+        Args:
+            permutated_local_input_tokens (torch.Tensor): Permuted hidden states from token combine.
+
+        Returns:
+            The final MoE layer output reshaped to its original dimensions.
+        """
+
+        # Unpermutation 1: AlltoAll output to output
+        output = unpermute(
+            permutated_local_input_tokens,
+            self.reversed_local_input_permutation_mapping,
+            restore_shape=self.hidden_shape_before_permute,
+            routing_map=self.routing_map,
+            fused=self.config.moe_permute_fusion,
+            drop_and_pad=self.drop_and_pad,
+            batch_invariant_inverse_map=self.batch_invariant_inverse_permutation_mapping,
+            ep_invariant_combine=self.config.moe_ep_invariant_combine,
+        )

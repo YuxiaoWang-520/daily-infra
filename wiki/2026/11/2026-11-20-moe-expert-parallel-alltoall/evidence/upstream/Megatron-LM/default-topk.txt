@@ -1,0 +1,4 @@
+    moe_router_topk: int = 2
+    """Number of experts to route to for each token."""
+
+    moe_enable_routing_replay: bool = False

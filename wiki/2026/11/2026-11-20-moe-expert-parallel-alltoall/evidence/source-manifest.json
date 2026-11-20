@@ -1,0 +1,353 @@
+{
+  "checked_at": "2026-11-20T11:16:38.050890+08:00",
+  "repositories": [
+    {
+      "name": "Megatron-LM",
+      "repository": "NVIDIA/Megatron-LM",
+      "origin": "https://github.com/NVIDIA/Megatron-LM.git",
+      "default_branch": "main",
+      "commit": "2e7c0b68b3aa75c2ebfc7eb35afcc513b7aad72a",
+      "commit_time": "2026-11-19T15:39:17-08:00",
+      "stable_tag": "core_v0.20.1",
+      "stable_commit": "f7aa73b2d9cdda75421be7067d221a5cb90e0f43",
+      "release": {
+        "html_url": "https://github.com/NVIDIA/Megatron-LM/releases/tag/core_v0.20.1",
+        "published_at": "2026-11-19T21:26:28Z",
+        "tag_name": "core_v0.20.1"
+      }
+    },
+    {
+      "name": "pytorch",
+      "repository": "pytorch/pytorch",
+      "origin": "https://github.com/pytorch/pytorch.git",
+      "default_branch": "main",
+      "commit": "3d9ded4cb906777b32d099ef17dfb28d50b623c2",
+      "commit_time": "2026-11-20T02:50:53Z",
+      "stable_tag": "v2.15.0",
+      "stable_commit": "31a77fc9c0a7c6fff15a1ff58c743f53b1a9d457",
+      "release": {
+        "html_url": "https://github.com/pytorch/pytorch/releases/tag/v2.15.0",
+        "published_at": "2026-10-28T17:09:49Z",
+        "tag_name": "v2.15.0"
+      }
+    }
+  ],
+  "excerpts": [
+    {
+      "repository": "Megatron-LM",
+      "commit": "2e7c0b68b3aa75c2ebfc7eb35afcc513b7aad72a",
+      "revision": "main",
+      "source_path": "megatron/core/transformer/transformer_config.py",
+      "start_line": 988,
+      "end_line": 991,
+      "source_sha256": "5470c5ca64aad696089ba9503f588c89d33669df05682d51e0d01bda705ca16e",
+      "archive_path": "evidence/upstream/Megatron-LM/default-topk.txt",
+      "excerpt_sha256": "88d1d1b65e2db432b7387e99132e9c8d8b2b55d86f6cb9b5c31192bc429c5fa2",
+      "permalink": "https://github.com/NVIDIA/Megatron-LM/blob/2e7c0b68b3aa75c2ebfc7eb35afcc513b7aad72a/megatron/core/transformer/transformer_config.py#L988-L991"
+    },
+    {
+      "repository": "Megatron-LM",
+      "commit": "2e7c0b68b3aa75c2ebfc7eb35afcc513b7aad72a",
+      "revision": "main",
+      "source_path": "megatron/core/transformer/transformer_config.py",
+      "start_line": 1027,
+      "end_line": 1032,
+      "source_sha256": "5470c5ca64aad696089ba9503f588c89d33669df05682d51e0d01bda705ca16e",
+      "archive_path": "evidence/upstream/Megatron-LM/default-normalization.txt",
+      "excerpt_sha256": "36443771a2c0d9f550901e1e9ae12e5e0c400645a761206c7f342418727b191e",
+      "permalink": "https://github.com/NVIDIA/Megatron-LM/blob/2e7c0b68b3aa75c2ebfc7eb35afcc513b7aad72a/megatron/core/transformer/transformer_config.py#L1027-L1032"
+    },
+    {
+      "repository": "Megatron-LM",
+      "commit": "2e7c0b68b3aa75c2ebfc7eb35afcc513b7aad72a",
+      "revision": "main",
+      "source_path": "megatron/core/transformer/transformer_config.py",
+      "start_line": 1144,
+      "end_line": 1155,
+      "source_sha256": "5470c5ca64aad696089ba9503f588c89d33669df05682d51e0d01bda705ca16e",
+      "archive_path": "evidence/upstream/Megatron-LM/main-dispatcher-default.txt",
+      "excerpt_sha256": "10c93fdc77ac4326ecbc6a546614c5b89f0362b549d1e330f50ffece9ee4f451",
+      "permalink": "https://github.com/NVIDIA/Megatron-LM/blob/2e7c0b68b3aa75c2ebfc7eb35afcc513b7aad72a/megatron/core/transformer/transformer_config.py#L1144-L1155"
+    },
+    {
+      "repository": "Megatron-LM",
+      "commit": "2e7c0b68b3aa75c2ebfc7eb35afcc513b7aad72a",
+      "revision": "main",
+      "source_path": "megatron/core/transformer/transformer_config.py",
+      "start_line": 1173,
+      "end_line": 1184,
+      "source_sha256": "5470c5ca64aad696089ba9503f588c89d33669df05682d51e0d01bda705ca16e",
+      "archive_path": "evidence/upstream/Megatron-LM/capacity-default.txt",
+      "excerpt_sha256": "41cba83642e50544bc5fb7e197f367fc20f8dfdadfd7be766007078cd2f25465",
+      "permalink": "https://github.com/NVIDIA/Megatron-LM/blob/2e7c0b68b3aa75c2ebfc7eb35afcc513b7aad72a/megatron/core/transformer/transformer_config.py#L1173-L1184"
+    },
+    {
+      "repository": "Megatron-LM",
+      "commit": "2e7c0b68b3aa75c2ebfc7eb35afcc513b7aad72a",
+      "revision": "main",
+      "source_path": "megatron/core/transformer/transformer_config.py",
+      "start_line": 1211,
+      "end_line": 1215,
+      "source_sha256": "5470c5ca64aad696089ba9503f588c89d33669df05682d51e0d01bda705ca16e",
+      "archive_path": "evidence/upstream/Megatron-LM/apply-probs-on-input-default.txt",
+      "excerpt_sha256": "88643c7e54e1f1283b89e98c2a78960624ae494e2599572df765f78fc7e33047",
+      "permalink": "https://github.com/NVIDIA/Megatron-LM/blob/2e7c0b68b3aa75c2ebfc7eb35afcc513b7aad72a/megatron/core/transformer/transformer_config.py#L1211-L1215"
+    },
+    {
+      "repository": "Megatron-LM",
+      "commit": "2e7c0b68b3aa75c2ebfc7eb35afcc513b7aad72a",
+      "revision": "main",
+      "source_path": "megatron/core/transformer/moe/moe_layer.py",
+      "start_line": 391,
+      "end_line": 413,
+      "source_sha256": "a0841a62332c6b6f0c3345304fa2a946b58074617f2390ac39430f4002956657",
+      "archive_path": "evidence/upstream/Megatron-LM/dispatcher-selection.txt",
+      "excerpt_sha256": "2b6d04bb28cd601afc9a1552ca205fef81c66c8d5e62fcfb5fa064cee407d06d",
+      "permalink": "https://github.com/NVIDIA/Megatron-LM/blob/2e7c0b68b3aa75c2ebfc7eb35afcc513b7aad72a/megatron/core/transformer/moe/moe_layer.py#L391-L413"
+    },
+    {
+      "repository": "Megatron-LM",
+      "commit": "2e7c0b68b3aa75c2ebfc7eb35afcc513b7aad72a",
+      "revision": "main",
+      "source_path": "megatron/core/transformer/moe/router.py",
+      "start_line": 1187,
+      "end_line": 1214,
+      "source_sha256": "6d5add22757c58190be916db3f2d22ec76f45338d4017f4122c4e30b13c2d11c",
+      "archive_path": "evidence/upstream/Megatron-LM/router-selection-and-drop.txt",
+      "excerpt_sha256": "720f7a44fdb089f87715e59df0958e76bcc2bba193fb2fdfa6e3ed271bc071ec",
+      "permalink": "https://github.com/NVIDIA/Megatron-LM/blob/2e7c0b68b3aa75c2ebfc7eb35afcc513b7aad72a/megatron/core/transformer/moe/router.py#L1187-L1214"
+    },
+    {
+      "repository": "Megatron-LM",
+      "commit": "2e7c0b68b3aa75c2ebfc7eb35afcc513b7aad72a",
+      "revision": "main",
+      "source_path": "megatron/core/transformer/moe/router.py",
+      "start_line": 1216,
+      "end_line": 1230,
+      "source_sha256": "6d5add22757c58190be916db3f2d22ec76f45338d4017f4122c4e30b13c2d11c",
+      "archive_path": "evidence/upstream/Megatron-LM/independent-aux-routing-inputs.txt",
+      "excerpt_sha256": "61cf96e0e3121200ffbecbdb1f5acfaa735a71d3448ead70d9a7395479e45d09",
+      "permalink": "https://github.com/NVIDIA/Megatron-LM/blob/2e7c0b68b3aa75c2ebfc7eb35afcc513b7aad72a/megatron/core/transformer/moe/router.py#L1216-L1230"
+    },
+    {
+      "repository": "Megatron-LM",
+      "commit": "2e7c0b68b3aa75c2ebfc7eb35afcc513b7aad72a",
+      "revision": "main",
+      "source_path": "megatron/core/transformer/moe/moe_utils.py",
+      "start_line": 1078,
+      "end_line": 1094,
+      "source_sha256": "fa6c4d8b9530d23c1437463202ea5b0d504f343cd71c84b603986d0382b0579e",
+      "archive_path": "evidence/upstream/Megatron-LM/topk-softmax-scope.txt",
+      "excerpt_sha256": "931acdbc4e4bbf9d2eef0a20b7b0641c55b4139f5bafec3449d5e1eae7bd3736",
+      "permalink": "https://github.com/NVIDIA/Megatron-LM/blob/2e7c0b68b3aa75c2ebfc7eb35afcc513b7aad72a/megatron/core/transformer/moe/moe_utils.py#L1078-L1094"
+    },
+    {
+      "repository": "Megatron-LM",
+      "commit": "2e7c0b68b3aa75c2ebfc7eb35afcc513b7aad72a",
+      "revision": "main",
+      "source_path": "megatron/core/transformer/moe/moe_utils.py",
+      "start_line": 1271,
+      "end_line": 1305,
+      "source_sha256": "fa6c4d8b9530d23c1437463202ea5b0d504f343cd71c84b603986d0382b0579e",
+      "archive_path": "evidence/upstream/Megatron-LM/capacity-mask-no-renormalization.txt",
+      "excerpt_sha256": "d59a90d6825ada7e608b2e817cd41bab9272e530119250a4f3f8431e5a8779b3",
+      "permalink": "https://github.com/NVIDIA/Megatron-LM/blob/2e7c0b68b3aa75c2ebfc7eb35afcc513b7aad72a/megatron/core/transformer/moe/moe_utils.py#L1271-L1305"
+    },
+    {
+      "repository": "Megatron-LM",
+      "commit": "2e7c0b68b3aa75c2ebfc7eb35afcc513b7aad72a",
+      "revision": "main",
+      "source_path": "megatron/core/transformer/moe/moe_utils.py",
+      "start_line": 273,
+      "end_line": 291,
+      "source_sha256": "fa6c4d8b9530d23c1437463202ea5b0d504f343cd71c84b603986d0382b0579e",
+      "archive_path": "evidence/upstream/Megatron-LM/capacity-formula.txt",
+      "excerpt_sha256": "f949d56b03287df46f9ffde818d9a1211c1c205a0a2463e7fbda54aeaf283c13",
+      "permalink": "https://github.com/NVIDIA/Megatron-LM/blob/2e7c0b68b3aa75c2ebfc7eb35afcc513b7aad72a/megatron/core/transformer/moe/moe_utils.py#L273-L291"
+    },
+    {
+      "repository": "Megatron-LM",
+      "commit": "2e7c0b68b3aa75c2ebfc7eb35afcc513b7aad72a",
+      "revision": "main",
+      "source_path": "megatron/core/transformer/moe/moe_utils.py",
+      "start_line": 84,
+      "end_line": 116,
+      "source_sha256": "fa6c4d8b9530d23c1437463202ea5b0d504f343cd71c84b603986d0382b0579e",
+      "archive_path": "evidence/upstream/Megatron-LM/aux-normalization-scope.txt",
+      "excerpt_sha256": "dbaaf057f01ea3b9a0c6893ab524b3ae5ff183d574762f3587760e739cc77d5c",
+      "permalink": "https://github.com/NVIDIA/Megatron-LM/blob/2e7c0b68b3aa75c2ebfc7eb35afcc513b7aad72a/megatron/core/transformer/moe/moe_utils.py#L84-L116"
+    },
+    {
+      "repository": "Megatron-LM",
+      "commit": "2e7c0b68b3aa75c2ebfc7eb35afcc513b7aad72a",
+      "revision": "main",
+      "source_path": "megatron/core/transformer/moe/moe_utils.py",
+      "start_line": 171,
+      "end_line": 175,
+      "source_sha256": "fa6c4d8b9530d23c1437463202ea5b0d504f343cd71c84b603986d0382b0579e",
+      "archive_path": "evidence/upstream/Megatron-LM/aux-implementation.txt",
+      "excerpt_sha256": "1e5e930418abc5abfd8b1b9059c63d76514168e315900e017b3075d24566b6fc",
+      "permalink": "https://github.com/NVIDIA/Megatron-LM/blob/2e7c0b68b3aa75c2ebfc7eb35afcc513b7aad72a/megatron/core/transformer/moe/moe_utils.py#L171-L175"
+    },
+    {
+      "repository": "Megatron-LM",
+      "commit": "2e7c0b68b3aa75c2ebfc7eb35afcc513b7aad72a",
+      "revision": "main",
+      "source_path": "megatron/core/transformer/moe/token_dispatcher.py",
+      "start_line": 573,
+      "end_line": 606,
+      "source_sha256": "c00e9e4acd88ee98a34d0e7bcb1fbe8a402b2361deda7f187e591aab2eff435d",
+      "archive_path": "evidence/upstream/Megatron-LM/send-receive-splits.txt",
+      "excerpt_sha256": "224943449bcade253172f693a3a29e4618f571cdf1f9bf90e341074d802a3bb7",
+      "permalink": "https://github.com/NVIDIA/Megatron-LM/blob/2e7c0b68b3aa75c2ebfc7eb35afcc513b7aad72a/megatron/core/transformer/moe/token_dispatcher.py#L573-L606"
+    },
+    {
+      "repository": "Megatron-LM",
+      "commit": "2e7c0b68b3aa75c2ebfc7eb35afcc513b7aad72a",
+      "revision": "main",
+      "source_path": "megatron/core/transformer/moe/token_dispatcher.py",
+      "start_line": 674,
+      "end_line": 694,
+      "source_sha256": "c00e9e4acd88ee98a34d0e7bcb1fbe8a402b2361deda7f187e591aab2eff435d",
+      "archive_path": "evidence/upstream/Megatron-LM/pack-and-record-inverse.txt",
+      "excerpt_sha256": "272741709215c7eb7dc6d5d5854143fd0fb24e8889f3139cdc927bc093d8b4b2",
+      "permalink": "https://github.com/NVIDIA/Megatron-LM/blob/2e7c0b68b3aa75c2ebfc7eb35afcc513b7aad72a/megatron/core/transformer/moe/token_dispatcher.py#L674-L694"
+    },
+    {
+      "repository": "Megatron-LM",
+      "commit": "2e7c0b68b3aa75c2ebfc7eb35afcc513b7aad72a",
+      "revision": "main",
+      "source_path": "megatron/core/transformer/moe/token_dispatcher.py",
+      "start_line": 719,
+      "end_line": 740,
+      "source_sha256": "c00e9e4acd88ee98a34d0e7bcb1fbe8a402b2361deda7f187e591aab2eff435d",
+      "archive_path": "evidence/upstream/Megatron-LM/dispatch-tokens-and-probs.txt",
+      "excerpt_sha256": "e24ad531e311f13f977197385eb9835661b904bb01b028070441a11d432ba4c7",
+      "permalink": "https://github.com/NVIDIA/Megatron-LM/blob/2e7c0b68b3aa75c2ebfc7eb35afcc513b7aad72a/megatron/core/transformer/moe/token_dispatcher.py#L719-L740"
+    },
+    {
+      "repository": "Megatron-LM",
+      "commit": "2e7c0b68b3aa75c2ebfc7eb35afcc513b7aad72a",
+      "revision": "main",
+      "source_path": "megatron/core/transformer/moe/moe_layer.py",
+      "start_line": 707,
+      "end_line": 729,
+      "source_sha256": "a0841a62332c6b6f0c3345304fa2a946b58074617f2390ac39430f4002956657",
+      "archive_path": "evidence/upstream/Megatron-LM/local-expert-call.txt",
+      "excerpt_sha256": "f3ed79ae9de5e072499abeb8cbc1a7b72d1c6451eeac89d624ba7fd01cfa4889",
+      "permalink": "https://github.com/NVIDIA/Megatron-LM/blob/2e7c0b68b3aa75c2ebfc7eb35afcc513b7aad72a/megatron/core/transformer/moe/moe_layer.py#L707-L729"
+    },
+    {
+      "repository": "Megatron-LM",
+      "commit": "2e7c0b68b3aa75c2ebfc7eb35afcc513b7aad72a",
+      "revision": "main",
+      "source_path": "megatron/core/transformer/moe/token_dispatcher.py",
+      "start_line": 878,
+      "end_line": 888,
+      "source_sha256": "c00e9e4acd88ee98a34d0e7bcb1fbe8a402b2361deda7f187e591aab2eff435d",
+      "archive_path": "evidence/upstream/Megatron-LM/inverse-alltoall-combine.txt",
+      "excerpt_sha256": "043b647ee3df53e5ca1b3e0c55a1a54b318615a6d095a5c3ee5ee135a6894754",
+      "permalink": "https://github.com/NVIDIA/Megatron-LM/blob/2e7c0b68b3aa75c2ebfc7eb35afcc513b7aad72a/megatron/core/transformer/moe/token_dispatcher.py#L878-L888"
+    },
+    {
+      "repository": "Megatron-LM",
+      "commit": "2e7c0b68b3aa75c2ebfc7eb35afcc513b7aad72a",
+      "revision": "main",
+      "source_path": "megatron/core/transformer/moe/token_dispatcher.py",
+      "start_line": 890,
+      "end_line": 915,
+      "source_sha256": "c00e9e4acd88ee98a34d0e7bcb1fbe8a402b2361deda7f187e591aab2eff435d",
+      "archive_path": "evidence/upstream/Megatron-LM/restore-token-order.txt",
+      "excerpt_sha256": "044baa119037c737c5a2bc184ff2e2e9f87d98cf35844bfb8279a5eaccd35b61",
+      "permalink": "https://github.com/NVIDIA/Megatron-LM/blob/2e7c0b68b3aa75c2ebfc7eb35afcc513b7aad72a/megatron/core/transformer/moe/token_dispatcher.py#L890-L915"
+    },
+    {
+      "repository": "Megatron-LM",
+      "commit": "2e7c0b68b3aa75c2ebfc7eb35afcc513b7aad72a",
+      "revision": "main",
+      "source_path": "megatron/core/tensor_parallel/mappings.py",
+      "start_line": 428,
+      "end_line": 470,
+      "source_sha256": "4c9510443311f5dbb35b2ff50bbd9e434225e65ee5ffe5bebbfafcfc356af20b",
+      "archive_path": "evidence/upstream/Megatron-LM/autograd-alltoall-forward.txt",
+      "excerpt_sha256": "99151c6185b66b5fcf7f03328812f848e2bfe0171d140f2fcccaf4ed5434ca5b",
+      "permalink": "https://github.com/NVIDIA/Megatron-LM/blob/2e7c0b68b3aa75c2ebfc7eb35afcc513b7aad72a/megatron/core/tensor_parallel/mappings.py#L428-L470"
+    },
+    {
+      "repository": "Megatron-LM",
+      "commit": "2e7c0b68b3aa75c2ebfc7eb35afcc513b7aad72a",
+      "revision": "main",
+      "source_path": "megatron/core/tensor_parallel/mappings.py",
+      "start_line": 473,
+      "end_line": 488,
+      "source_sha256": "4c9510443311f5dbb35b2ff50bbd9e434225e65ee5ffe5bebbfafcfc356af20b",
+      "archive_path": "evidence/upstream/Megatron-LM/autograd-alltoall-backward.txt",
+      "excerpt_sha256": "fd6f4d6958481fef19e7b958b131477e2469882ff76d29ad53a7580755b73584",
+      "permalink": "https://github.com/NVIDIA/Megatron-LM/blob/2e7c0b68b3aa75c2ebfc7eb35afcc513b7aad72a/megatron/core/tensor_parallel/mappings.py#L473-L488"
+    },
+    {
+      "repository": "Megatron-LM",
+      "commit": "f7aa73b2d9cdda75421be7067d221a5cb90e0f43",
+      "revision": "stable",
+      "source_path": "megatron/core/transformer/transformer_config.py",
+      "start_line": 1010,
+      "end_line": 1020,
+      "source_sha256": "6fb81ef5c3e96f51565b947445811ff4d4334140349b71cc1ffc9169053271ff",
+      "archive_path": "evidence/upstream/Megatron-LM/stable-dispatcher-default.txt",
+      "excerpt_sha256": "499cf0fb32395a2121a8a8d70c21ca784c477b0aac4fd41e8086c1e37f3ca4f2",
+      "permalink": "https://github.com/NVIDIA/Megatron-LM/blob/f7aa73b2d9cdda75421be7067d221a5cb90e0f43/megatron/core/transformer/transformer_config.py#L1010-L1020"
+    },
+    {
+      "repository": "Megatron-LM",
+      "commit": "2e7c0b68b3aa75c2ebfc7eb35afcc513b7aad72a",
+      "revision": "main",
+      "source_path": "megatron/core/transformer/moe/experts.py",
+      "start_line": 2051,
+      "end_line": 2066,
+      "source_sha256": "a356f9c6d92ad2af22e69793a7ce26c8c86129637542292b096d78ce4a07dae6",
+      "archive_path": "evidence/upstream/Megatron-LM/expert-input-weighting-option.txt",
+      "excerpt_sha256": "f196ab18aab1dd6b22d4167b00b208353622e7632b49398808790a665d2842d9",
+      "permalink": "https://github.com/NVIDIA/Megatron-LM/blob/2e7c0b68b3aa75c2ebfc7eb35afcc513b7aad72a/megatron/core/transformer/moe/experts.py#L2051-L2066"
+    },
+    {
+      "repository": "Megatron-LM",
+      "commit": "f7aa73b2d9cdda75421be7067d221a5cb90e0f43",
+      "revision": "stable",
+      "source_path": "megatron/core/transformer/moe/moe_utils.py",
+      "start_line": 930,
+      "end_line": 944,
+      "source_sha256": "d1aff14179353c469d891aa367ca7dc8ff756add1999eb9b5e897a19ca234295",
+      "archive_path": "evidence/upstream/Megatron-LM/stable-topk-softmax.txt",
+      "excerpt_sha256": "933fd0efbb2c40f69f4e36d93556c7d000eea9bc95313f40b4d3d446751b1ea0",
+      "permalink": "https://github.com/NVIDIA/Megatron-LM/blob/f7aa73b2d9cdda75421be7067d221a5cb90e0f43/megatron/core/transformer/moe/moe_utils.py#L930-L944"
+    },
+    {
+      "repository": "pytorch",
+      "commit": "3d9ded4cb906777b32d099ef17dfb28d50b623c2",
+      "revision": "main",
+      "source_path": "torch/distributed/distributed_c10d.py",
+      "start_line": 6460,
+      "end_line": 6518,
+      "source_sha256": "da805ae18b601e1df7c88f14657831b029b1962bc78dac1f825bb228372d322e",
+      "archive_path": "evidence/upstream/pytorch/alltoall-single-splits.txt",
+      "excerpt_sha256": "1e7dab64f94b138b3317e963655cc1687c3d61b626f4e1d4f910f2ce3e1f4775",
+      "permalink": "https://github.com/pytorch/pytorch/blob/3d9ded4cb906777b32d099ef17dfb28d50b623c2/torch/distributed/distributed_c10d.py#L6460-L6518"
+    }
+  ],
+  "licenses": [
+    {
+      "repository": "Megatron-LM",
+      "commit": "2e7c0b68b3aa75c2ebfc7eb35afcc513b7aad72a",
+      "source_path": "LICENSE",
+      "archive_path": "evidence/upstream/Megatron-LM/LICENSE",
+      "sha256": "9d70d3ebc699d4c78ebe3f78dfb94b6dbae3529aea3dbc912e65e34a9f17667e"
+    },
+    {
+      "repository": "pytorch",
+      "commit": "3d9ded4cb906777b32d099ef17dfb28d50b623c2",
+      "source_path": "LICENSE",
+      "archive_path": "evidence/upstream/pytorch/LICENSE",
+      "sha256": "bd018feef8825e88181c84eb7e3aa4eafb8f08a20d9fd6ef948569610c4a3e43"
+    }
+  ]
+}

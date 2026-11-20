@@ -1,0 +1,98 @@
+{
+  "checked_at": "2026-11-20T11:13:36.977237+08:00",
+  "environment": {
+    "python": "3.12.16",
+    "torch": "2.15.0",
+    "torch_git_version": "d0f2af8b66b20da4baa50644c0cd3f887a2eae2e",
+    "platform": "Darwin",
+    "machine": "arm64",
+    "cuda_available": false,
+    "gloo_available": true,
+    "GLOO_SOCKET_IFNAME": "lo0",
+    "OMP_NUM_THREADS": "1",
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "distributed_rendezvous": "temporary FileStore; two spawned processes"
+  },
+  "code_sha256": {
+    "answers.py": "00a92648b01b0ffcb2d979c308ed7e6a31fd6b7673f7694f9d90e24162c15707",
+    "distributed_cpu.py": "ca74ad3a8593e763ca0a83cc8322742a2022cda06e91a45d34b37beace78580d",
+    "example_data.py": "b0d25ae0f05eb44f1f17d5deaa4ed78e057b0872adf00b6b774715bbc94619a5",
+    "exercises.py": "c970ad636da8d9fce969cfa566c244c96b1f5beb2c143bd6a22676b62eb6e96b",
+    "run_answers.py": "51c435525189e0c06b9b41d980f825dfdd190e421ebf36e8051556ef6d7a16d4",
+    "test_answers.py": "ede4fd7950904df2f2df17e062ee960ec3983e10b0a6aa3c0d79089985bd8a4a"
+  },
+  "commands": [
+    {
+      "output": "02-tests.txt",
+      "argv": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "code",
+        "-p",
+        "test_answers.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "timeout": false
+    },
+    {
+      "output": "03-optimized-tests.txt",
+      "argv": [
+        "python",
+        "-O",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "code",
+        "-p",
+        "test_answers.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "timeout": false
+    },
+    {
+      "output": "04-ruff.txt",
+      "argv": [
+        "ruff",
+        "check",
+        "code"
+      ],
+      "exit_code": 0,
+      "timeout": false
+    },
+    {
+      "output": "05-format.txt",
+      "argv": [
+        "ruff",
+        "format",
+        "--check",
+        "code"
+      ],
+      "exit_code": 0,
+      "timeout": false
+    },
+    {
+      "output": "06-answers.json",
+      "argv": [
+        "python",
+        "code/run_answers.py"
+      ],
+      "exit_code": 0,
+      "timeout": false
+    },
+    {
+      "output": "07-distributed.txt",
+      "argv": [
+        "python",
+        "code/distributed_cpu.py"
+      ],
+      "exit_code": 0,
+      "timeout": false
+    }
+  ]
+}

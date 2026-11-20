@@ -1,0 +1,399 @@
+test_bad_expert_shapes_rejected (test_answers.PackedMoETests.test_bad_expert_shapes_rejected) ... ERROR
+test_capacity_changes_scalar_output (test_answers.PackedMoETests.test_capacity_changes_scalar_output) ... ERROR
+test_combination_shape_mismatch_rejected (test_answers.PackedMoETests.test_combination_shape_mismatch_rejected) ... ERROR
+test_dispatch_order_can_be_inverted (test_answers.PackedMoETests.test_dispatch_order_can_be_inverted) ... ERROR
+test_empty_expert_input_remains_differentiable (test_answers.PackedMoETests.test_empty_expert_input_remains_differentiable) ... ERROR
+test_finite_difference_gradcheck (test_answers.PackedMoETests.test_finite_difference_gradcheck) ... ERROR
+test_packed_output_and_all_gradients_match_dense (test_answers.PackedMoETests.test_packed_output_and_all_gradients_match_dense) ... ERROR
+test_scalar_weighted_combine (test_answers.PackedMoETests.test_scalar_weighted_combine) ... ERROR
+test_unused_experts_have_zero_gradients (test_answers.PackedMoETests.test_unused_experts_have_zero_gradients) ... ERROR
+test_zero_capacity_keeps_zero_gradients (test_answers.PackedMoETests.test_zero_capacity_keeps_zero_gradients) ... ERROR
+test_aux_loss_hand_value_and_gradient (test_answers.RoutingTests.test_aux_loss_hand_value_and_gradient) ... ERROR
+test_aux_uniform_probability_is_not_balance_certificate (test_answers.RoutingTests.test_aux_uniform_probability_is_not_balance_certificate) ... ERROR
+test_capacity_formula_counts_assignments (test_answers.RoutingTests.test_capacity_formula_counts_assignments) ... ERROR
+test_capacity_keeps_highest_probability_without_renormalizing (test_answers.RoutingTests.test_capacity_keeps_highest_probability_without_renormalizing) ... ERROR
+test_empty_destination_split (test_answers.RoutingTests.test_empty_destination_split) ... ERROR
+test_invalid_capacity_factor (test_answers.RoutingTests.test_invalid_capacity_factor) ... 
+  test_invalid_capacity_factor (test_answers.RoutingTests.test_invalid_capacity_factor) (factor=0) ... ERROR
+  test_invalid_capacity_factor (test_answers.RoutingTests.test_invalid_capacity_factor) (factor=-1) ... ERROR
+  test_invalid_capacity_factor (test_answers.RoutingTests.test_invalid_capacity_factor) (factor=inf) ... ERROR
+  test_invalid_capacity_factor (test_answers.RoutingTests.test_invalid_capacity_factor) (factor=nan) ... ERROR
+  test_invalid_capacity_factor (test_answers.RoutingTests.test_invalid_capacity_factor) (factor=True) ... ERROR
+test_invalid_route_inputs (test_answers.RoutingTests.test_invalid_route_inputs) ... 
+  test_invalid_route_inputs (test_answers.RoutingTests.test_invalid_route_inputs) (k=0, cap=None) ... ERROR
+  test_invalid_route_inputs (test_answers.RoutingTests.test_invalid_route_inputs) (k=5, cap=None) ... ERROR
+  test_invalid_route_inputs (test_answers.RoutingTests.test_invalid_route_inputs) (k=True, cap=None) ... ERROR
+  test_invalid_route_inputs (test_answers.RoutingTests.test_invalid_route_inputs) (k=2, cap=-1) ... ERROR
+  test_invalid_route_inputs (test_answers.RoutingTests.test_invalid_route_inputs) (k=1, cap=None) ... ERROR
+  test_invalid_route_inputs (test_answers.RoutingTests.test_invalid_route_inputs) (k=1, cap=None) ... ERROR
+test_invalid_route_inputs (test_answers.RoutingTests.test_invalid_route_inputs) ... ERROR
+test_owner_split_matrix (test_answers.RoutingTests.test_owner_split_matrix) ... ERROR
+test_post_top1_gate_has_zero_task_gradient (test_answers.RoutingTests.test_post_top1_gate_has_zero_task_gradient) ... ERROR
+test_selected_experts_and_weights (test_answers.RoutingTests.test_selected_experts_and_weights) ... ERROR
+test_softmax_order_changes_weight_sum (test_answers.RoutingTests.test_softmax_order_changes_weight_sum) ... ERROR
+test_ties_use_lower_expert_id (test_answers.RoutingTests.test_ties_use_lower_expert_id) ... ERROR
+test_zero_capacity_drops_all_assignments (test_answers.RoutingTests.test_zero_capacity_drops_all_assignments) ... ERROR
+
+======================================================================
+ERROR: test_bad_expert_shapes_rejected (test_answers.PackedMoETests.test_bad_expert_shapes_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 180, in test_bad_expert_shapes_rejected
+    moe_forward(x, logits, a, b, 2)
+  File "<article>/code/answers.py", line 29, in moe_forward
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_capacity_changes_scalar_output (test_answers.PackedMoETests.test_capacity_changes_scalar_output)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 124, in test_capacity_changes_scalar_output
+    routes = route_tokens(example_logits(), 2, capacity=2)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<article>/code/answers.py", line 5, in route_tokens
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_combination_shape_mismatch_rejected (test_answers.PackedMoETests.test_combination_shape_mismatch_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 185, in test_combination_shape_mismatch_rejected
+    routes = route_tokens(example_logits(), 2)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<article>/code/answers.py", line 5, in route_tokens
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_dispatch_order_can_be_inverted (test_answers.PackedMoETests.test_dispatch_order_can_be_inverted)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 158, in test_dispatch_order_can_be_inverted
+    routes = route_tokens(example_logits(), 2)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<article>/code/answers.py", line 5, in route_tokens
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_empty_expert_input_remains_differentiable (test_answers.PackedMoETests.test_empty_expert_input_remains_differentiable)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 169, in test_empty_expert_input_remains_differentiable
+    out = evaluate_experts(x, torch.empty(0, dtype=torch.int64), w1, w2, expert_offset=2)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<article>/code/answers.py", line 21, in evaluate_experts
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_finite_difference_gradcheck (test_answers.PackedMoETests.test_finite_difference_gradcheck)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 191, in test_finite_difference_gradcheck
+    self.assertTrue(torch.autograd.gradcheck(lambda *v: moe_forward(*v, 2)[0], inputs, eps=1e-6, atol=1e-5))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<HOME>/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/autograd/gradcheck.py", line 2119, in gradcheck
+    return _gradcheck_helper(**args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<HOME>/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/autograd/gradcheck.py", line 2141, in _gradcheck_helper
+    func_out = func(*tupled_inputs)
+               ^^^^^^^^^^^^^^^^^^^^
+  File "<article>/code/test_answers.py", line 191, in <lambda>
+    self.assertTrue(torch.autograd.gradcheck(lambda *v: moe_forward(*v, 2)[0], inputs, eps=1e-6, atol=1e-5))
+                                                        ^^^^^^^^^^^^^^^^^^
+  File "<article>/code/answers.py", line 29, in moe_forward
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_packed_output_and_all_gradients_match_dense (test_answers.PackedMoETests.test_packed_output_and_all_gradients_match_dense)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 133, in test_packed_output_and_all_gradients_match_dense
+    actual, _ = moe_forward(x, logits, w1, w2, 2, pre_softmax=pre)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<article>/code/answers.py", line 29, in moe_forward
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_scalar_weighted_combine (test_answers.PackedMoETests.test_scalar_weighted_combine)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 118, in test_scalar_weighted_combine
+    routes = route_tokens(example_logits(), 2)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<article>/code/answers.py", line 5, in route_tokens
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_unused_experts_have_zero_gradients (test_answers.PackedMoETests.test_unused_experts_have_zero_gradients)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 152, in test_unused_experts_have_zero_gradients
+    out, _ = moe_forward(*inputs, 2)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "<article>/code/answers.py", line 29, in moe_forward
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_zero_capacity_keeps_zero_gradients (test_answers.PackedMoETests.test_zero_capacity_keeps_zero_gradients)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 143, in test_zero_capacity_keeps_zero_gradients
+    out, _ = moe_forward(*inputs, 2, capacity=0)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<article>/code/answers.py", line 29, in moe_forward
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_aux_loss_hand_value_and_gradient (test_answers.RoutingTests.test_aux_loss_hand_value_and_gradient)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 96, in test_aux_loss_hand_value_and_gradient
+    loss = load_balance_loss(logits, 2, coefficient=.01)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<article>/code/answers.py", line 17, in load_balance_loss
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_aux_uniform_probability_is_not_balance_certificate (test_answers.RoutingTests.test_aux_uniform_probability_is_not_balance_certificate)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 104, in test_aux_uniform_probability_is_not_balance_certificate
+    routes = route_tokens(logits, 2)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "<article>/code/answers.py", line 5, in route_tokens
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_capacity_formula_counts_assignments (test_answers.RoutingTests.test_capacity_formula_counts_assignments)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 63, in test_capacity_formula_counts_assignments
+    self.assertEqual(capacity_for(4, 4, 2, 1.0), 2)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<article>/code/answers.py", line 9, in capacity_for
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_capacity_keeps_highest_probability_without_renormalizing (test_answers.RoutingTests.test_capacity_keeps_highest_probability_without_renormalizing)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 52, in test_capacity_keeps_highest_probability_without_renormalizing
+    routes = route_tokens(example_logits(), 2, capacity=2)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<article>/code/answers.py", line 5, in route_tokens
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_empty_destination_split (test_answers.RoutingTests.test_empty_destination_split)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 89, in test_empty_destination_split
+    plan = dispatch_plan(route_tokens(example_logits(skew=True)[:2], 2), 2)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<article>/code/answers.py", line 5, in route_tokens
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_invalid_capacity_factor (test_answers.RoutingTests.test_invalid_capacity_factor) (factor=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 69, in test_invalid_capacity_factor
+    capacity_for(4, 4, 2, factor)
+  File "<article>/code/answers.py", line 9, in capacity_for
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_invalid_capacity_factor (test_answers.RoutingTests.test_invalid_capacity_factor) (factor=-1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 69, in test_invalid_capacity_factor
+    capacity_for(4, 4, 2, factor)
+  File "<article>/code/answers.py", line 9, in capacity_for
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_invalid_capacity_factor (test_answers.RoutingTests.test_invalid_capacity_factor) (factor=inf)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 69, in test_invalid_capacity_factor
+    capacity_for(4, 4, 2, factor)
+  File "<article>/code/answers.py", line 9, in capacity_for
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_invalid_capacity_factor (test_answers.RoutingTests.test_invalid_capacity_factor) (factor=nan)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 69, in test_invalid_capacity_factor
+    capacity_for(4, 4, 2, factor)
+  File "<article>/code/answers.py", line 9, in capacity_for
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_invalid_capacity_factor (test_answers.RoutingTests.test_invalid_capacity_factor) (factor=True)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 69, in test_invalid_capacity_factor
+    capacity_for(4, 4, 2, factor)
+  File "<article>/code/answers.py", line 9, in capacity_for
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_invalid_route_inputs (test_answers.RoutingTests.test_invalid_route_inputs) (k=0, cap=None)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 76, in test_invalid_route_inputs
+    route_tokens(logits, k, capacity=cap)
+  File "<article>/code/answers.py", line 5, in route_tokens
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_invalid_route_inputs (test_answers.RoutingTests.test_invalid_route_inputs) (k=5, cap=None)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 76, in test_invalid_route_inputs
+    route_tokens(logits, k, capacity=cap)
+  File "<article>/code/answers.py", line 5, in route_tokens
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_invalid_route_inputs (test_answers.RoutingTests.test_invalid_route_inputs) (k=True, cap=None)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 76, in test_invalid_route_inputs
+    route_tokens(logits, k, capacity=cap)
+  File "<article>/code/answers.py", line 5, in route_tokens
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_invalid_route_inputs (test_answers.RoutingTests.test_invalid_route_inputs) (k=2, cap=-1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 76, in test_invalid_route_inputs
+    route_tokens(logits, k, capacity=cap)
+  File "<article>/code/answers.py", line 5, in route_tokens
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_invalid_route_inputs (test_answers.RoutingTests.test_invalid_route_inputs) (k=1, cap=None)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 76, in test_invalid_route_inputs
+    route_tokens(logits, k, capacity=cap)
+  File "<article>/code/answers.py", line 5, in route_tokens
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_invalid_route_inputs (test_answers.RoutingTests.test_invalid_route_inputs) (k=1, cap=None)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 76, in test_invalid_route_inputs
+    route_tokens(logits, k, capacity=cap)
+  File "<article>/code/answers.py", line 5, in route_tokens
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_invalid_route_inputs (test_answers.RoutingTests.test_invalid_route_inputs)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 80, in test_invalid_route_inputs
+    route_tokens(logits, 2)
+  File "<article>/code/answers.py", line 5, in route_tokens
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_owner_split_matrix (test_answers.RoutingTests.test_owner_split_matrix)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 83, in test_owner_split_matrix
+    plans = [dispatch_plan(route_tokens(part, 2), 2) for part in example_logits().chunk(2)]
+                           ^^^^^^^^^^^^^^^^^^^^^
+  File "<article>/code/answers.py", line 5, in route_tokens
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_post_top1_gate_has_zero_task_gradient (test_answers.RoutingTests.test_post_top1_gate_has_zero_task_gradient)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 111, in test_post_top1_gate_has_zero_task_gradient
+    route_tokens(logits, 1, pre_softmax=pre).weights.sum().backward()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<article>/code/answers.py", line 5, in route_tokens
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_selected_experts_and_weights (test_answers.RoutingTests.test_selected_experts_and_weights)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 33, in test_selected_experts_and_weights
+    routes = route_tokens(example_logits(), 2)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<article>/code/answers.py", line 5, in route_tokens
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_softmax_order_changes_weight_sum (test_answers.RoutingTests.test_softmax_order_changes_weight_sum)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 42, in test_softmax_order_changes_weight_sum
+    after = route_tokens(logits, 2)
+            ^^^^^^^^^^^^^^^^^^^^^^^
+  File "<article>/code/answers.py", line 5, in route_tokens
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_ties_use_lower_expert_id (test_answers.RoutingTests.test_ties_use_lower_expert_id)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 48, in test_ties_use_lower_expert_id
+    routes = route_tokens(torch.zeros(2, 4, dtype=torch.float64), 2)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<article>/code/answers.py", line 5, in route_tokens
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_zero_capacity_drops_all_assignments (test_answers.RoutingTests.test_zero_capacity_drops_all_assignments)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 58, in test_zero_capacity_drops_all_assignments
+    routes = route_tokens(example_logits(), 2, capacity=0)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<article>/code/answers.py", line 5, in route_tokens
+    raise NotImplementedError
+NotImplementedError
+
+----------------------------------------------------------------------
+Ran 23 tests in 0.014s
+
+FAILED (errors=33)

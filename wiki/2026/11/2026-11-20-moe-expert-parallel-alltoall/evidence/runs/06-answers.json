@@ -1,0 +1,54 @@
+{
+  "cases": {
+    "None": {
+      "expert_counts": [
+        2,
+        2,
+        3,
+        1
+      ],
+      "kept_assignments": 8,
+      "scalar_output": [
+        1.3749999999999998,
+        5.499999999999999,
+        10.875,
+        7.733333333333333
+      ]
+    },
+    "2": {
+      "expert_counts": [
+        2,
+        2,
+        2,
+        1
+      ],
+      "kept_assignments": 7,
+      "scalar_output": [
+        1.3749999999999998,
+        5.499999999999999,
+        7.5,
+        7.733333333333333
+      ]
+    }
+  },
+  "source_destination_split_matrix": [
+    [
+      3,
+      1
+    ],
+    [
+      1,
+      3
+    ]
+  ],
+  "auxiliary_loss_coefficient_0_01": 0.01075,
+  "assumed_payload": {
+    "assignment_rows": 8,
+    "remote_assignment_rows": 2,
+    "hidden_dimension": 4096,
+    "bytes_per_element": 2,
+    "forward_dispatch_and_return_remote_bytes": 32768,
+    "scope": "all ranks combined, remote hidden-state payload only; receive not counted twice; no gradients or metadata",
+    "measured": false
+  }
+}

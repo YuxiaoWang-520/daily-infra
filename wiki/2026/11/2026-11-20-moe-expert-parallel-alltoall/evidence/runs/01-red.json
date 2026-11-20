@@ -1,0 +1,15 @@
+{
+  "argv": [
+    "python",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "code",
+    "-p",
+    "test_answers.py",
+    "-v"
+  ],
+  "exit_code": 1,
+  "phase": "test contracts before implementation"
+}

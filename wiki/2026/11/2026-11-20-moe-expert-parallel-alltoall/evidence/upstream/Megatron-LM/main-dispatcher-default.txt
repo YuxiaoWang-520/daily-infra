@@ -1,0 +1,12 @@
+    moe_token_dispatcher_type: Literal['allgather', 'alltoall', 'flex'] = "alltoall"
+    """The type of token dispatcher to use. The default is 'alltoall'.
+    Options are 'allgather','alltoall' and 'flex'."""
+
+    moe_enable_deepep: bool = False
+    """[Experimental] Enable DeepEP for efficient token dispatching and combine in MoE models."""
+
+    moe_flex_dispatcher_backend: Literal['deepep', 'deepepv2', 'hybridep', 'ncclep'] = "deepep"
+    """[Experimental] The backend to use for flex token dispatcher. The default is "deepep".
+    Options are "deepep", "deepepv2", "hybridep", and "ncclep". Currently only "hybridep"
+    backend supports the MNNVL case. "ncclep" uses NVIDIA NCCL Expert Parallelism via
+    TransformerEngine's transformer_engine.pytorch.ep API."""

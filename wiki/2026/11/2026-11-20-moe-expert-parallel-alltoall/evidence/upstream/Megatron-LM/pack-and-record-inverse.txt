@@ -1,0 +1,21 @@
+        # Permutation 1: input to AlltoAll input
+        self.tokens_per_expert = self._maybe_dtoh_and_synchronize(
+            "before_permutation_1", self.tokens_per_expert
+        )
+        self.hidden_shape_before_permute = hidden_states.shape
+        (
+            permutated_local_input_tokens,
+            permuted_probs,
+            self.reversed_local_input_permutation_mapping,
+            self.batch_invariant_inverse_permutation_mapping,
+            _,
+        ) = permute(
+            hidden_states,
+            self.routing_map,
+            probs=probs,
+            num_out_tokens=self.num_out_tokens,
+            fused=self.config.moe_permute_fusion,
+            drop_and_pad=self.drop_and_pad,
+            return_batch_invariant_inverse_map=self.config.batch_invariant_mode,
+        )
+        return permutated_local_input_tokens, permuted_probs

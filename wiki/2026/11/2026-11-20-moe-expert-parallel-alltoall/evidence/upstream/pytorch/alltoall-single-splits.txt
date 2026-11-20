@@ -1,0 +1,59 @@
+def all_to_all_single(
+    output: torch.Tensor,
+    input: torch.Tensor,
+    output_split_sizes: list[int] | None = None,
+    input_split_sizes: list[int] | None = None,
+    group: ProcessGroup | None = None,
+    async_op: bool = False,
+    *,
+    config: object | None = None,
+) -> Work | None:
+    """
+    Split input tensor and then scatter the split list to all processes in a group.
+
+    Later the received tensors are concatenated from all the processes in the group
+    and returned as a single output tensor.
+
+    Complex tensors are supported.
+
+    Args:
+        output (Tensor): Gathered concatenated output tensor.
+        input (Tensor): Input tensor to scatter.
+        output_split_sizes: (list[Int], optional): Output split sizes for dim 0
+            if specified None or empty, dim 0 of ``output`` tensor must divide
+            equally by ``world_size``.
+        input_split_sizes: (list[Int], optional): Input split sizes for dim 0
+            if specified None or empty, dim 0 of ``input`` tensor must divide
+            equally by ``world_size``.
+        group (ProcessGroup, optional): The process group to work on. If None,
+            the default process group will be used.
+        async_op (bool, optional): Whether this op should be an async op.
+        config (object, optional): Backend-specific per-collective configuration.
+            Supported types and operations depend on the backend.
+
+    Returns:
+        Async work handle, if async_op is set to True.
+        None, if not async_op or if not part of the group.
+
+    .. warning::
+        `all_to_all_single` is experimental and subject to change.
+
+    Examples:
+        >>> # xdoctest: +SKIP("Undefined rank")
+        >>> input = torch.arange(4) + rank * 4
+        >>> input
+        tensor([0, 1, 2, 3])     # Rank 0
+        tensor([4, 5, 6, 7])     # Rank 1
+        tensor([8, 9, 10, 11])   # Rank 2
+        tensor([12, 13, 14, 15]) # Rank 3
+        >>> output = torch.empty([4], dtype=torch.int64)
+        >>> dist.all_to_all_single(output, input)
+        >>> output
+        tensor([0, 4, 8, 12])    # Rank 0
+        tensor([1, 5, 9, 13])    # Rank 1
+        tensor([2, 6, 10, 14])   # Rank 2
+        tensor([3, 7, 11, 15])   # Rank 3
+
+        >>> # Essentially, it is similar to following operation:
+        >>> scatter_list = list(input.chunk(world_size))
+        >>> gather_list = list(output.chunk(world_size))

@@ -1,0 +1,33 @@
+    Detailed explanation of the auxiliary loss:
+
+    The formula for the auxiliary loss is:
+        loss = E * Σ_{i=1}^{E} (f_i * P_i)
+    where:
+        f_i = 1 / (T * topk) * Σ_{x∈B} routing_map(x, i)
+             (fraction of tokens dispatched to expert i)
+        P_i = 1 / T * Σ_{x∈B} probs(x, i)
+             (averaged router probability allocated for expert i)
+        E is the number of experts
+        T is the total number of tokens in the batch B
+
+    For distributed training with sequence or context parallelism, each rank can
+    process a subset of the batch.
+        loss = E * Σ_{i=1}^{E} (f_i * Σ_{j=1}^{N} P_ij)
+             = E * Σ_{i=1}^{E} Σ_{j=1}^{N} (f_i * P_ij)
+             = Σ_{j=1}^{N} E * (Σ_{i=1}^{E} f_i * P_ij)
+
+    where:
+        f_i = 1 / (T * topk) * Σ_{x∈B} routing_map(x, i)
+             (fraction of tokens dispatched to expert i in the global batch)
+        P_ij = 1 / T * Σ_{x∈B_j} probs(x, i)
+              (averaged router probability allocated for expert i in local batch of the j-th rank)
+        N is the number of ranks
+        B_j is the batch of tokens in the j-th rank
+        T is the total number of tokens in the global batch B
+
+    Note:
+    To calculate the auxiliary loss at different levels (micro-batch or global batch):
+    - probs: Should always be from the local batch being processed
+    - tokens_per_expert: Should represent token counts at the desired level
+      (either micro-batch or global batch)
+    - total_num_tokens: Should match the total token count at the same level as tokens_per_expert

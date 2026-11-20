@@ -1,0 +1,14 @@
+Source: torch/distributed/distributed_c10d.py
+Commit: 3d9ded4cb906777b32d099ef17dfb28d50b623c2
+# mypy: allow-untyped-defs
+"""Distributed Collective Communication (c10d)."""
+
+import collections.abc
+import contextlib
+import ctypes
+import hashlib
+import io
+import itertools
+import logging
+import operator
+import os

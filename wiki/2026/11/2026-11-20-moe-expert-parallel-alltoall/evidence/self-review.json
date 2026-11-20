@@ -1,0 +1,11 @@
+{
+  "checked_at": "2026-11-20T11:26:23.482741+08:00",
+  "phase": "technical and teaching self-review before archive",
+  "fixed_source_fragments": 25,
+  "licenses": 2,
+  "technical_audit": "technical-audit.json",
+  "pre_archive_local_links_checked": 97,
+  "index_count_before_archive": 29,
+  "mermaid_rendered": false,
+  "errors": []
+}

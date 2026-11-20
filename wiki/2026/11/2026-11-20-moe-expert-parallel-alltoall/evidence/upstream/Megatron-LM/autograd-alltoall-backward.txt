@@ -1,0 +1,16 @@
+    @staticmethod
+    def backward(ctx, *grad_output):
+        """Backward function."""
+        return (
+            None,
+            _AllToAll.apply(
+                ctx.group,
+                *grad_output,
+                ctx.input_split_sizes,
+                ctx.output_split_sizes,
+                ctx.use_nccl_stream,
+            ),
+            None,
+            None,
+            None,
+        )

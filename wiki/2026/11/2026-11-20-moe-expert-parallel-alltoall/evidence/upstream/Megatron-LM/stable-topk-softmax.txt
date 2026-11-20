@@ -1,0 +1,15 @@
+    if score_function == "softmax":
+        if use_pre_softmax:
+            scores = torch.softmax(logits, dim=-1, dtype=torch.float32)
+            if precomputed_indices is not None:
+                top_indices = precomputed_indices
+                probs = torch.gather(scores, dim=1, index=top_indices)
+            else:
+                probs, top_indices = compute_topk(scores, topk, num_groups, group_topk)
+        else:
+            if precomputed_indices is not None:
+                top_indices = precomputed_indices
+                scores = torch.gather(logits, dim=1, index=top_indices)
+            else:
+                scores, top_indices = compute_topk(logits, topk, num_groups, group_topk)
+            probs = torch.softmax(scores, dim=-1, dtype=torch.float32)
