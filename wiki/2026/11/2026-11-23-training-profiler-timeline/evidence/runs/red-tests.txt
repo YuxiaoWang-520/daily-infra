@@ -1,0 +1,376 @@
+test_clip_both_sides_and_discard_empty (test_answers.IntervalTests.test_clip_both_sides_and_discard_empty) ... ERROR
+test_clipping_applies_to_sum_and_union (test_answers.IntervalTests.test_clipping_applies_to_sum_and_union) ... ERROR
+test_disjoint_touching_intervals_do_not_overlap (test_answers.IntervalTests.test_disjoint_touching_intervals_do_not_overlap) ... ERROR
+test_duplicate_kernels_affect_sum_not_union (test_answers.IntervalTests.test_duplicate_kernels_affect_sum_not_union) ... ERROR
+test_empty_inputs (test_answers.IntervalTests.test_empty_inputs) ... ERROR
+test_example_overlap_and_partition (test_answers.IntervalTests.test_example_overlap_and_partition) ... ERROR
+test_exhaustive_integer_interval_oracle (test_answers.IntervalTests.test_exhaustive_integer_interval_oracle) ... ERROR
+test_invalid_intervals (test_answers.IntervalTests.test_invalid_intervals) ... 
+  test_invalid_intervals (test_answers.IntervalTests.test_invalid_intervals) (interval=(2, 1)) ... ERROR
+  test_invalid_intervals (test_answers.IntervalTests.test_invalid_intervals) (interval=(0, nan)) ... ERROR
+  test_invalid_intervals (test_answers.IntervalTests.test_invalid_intervals) (interval=(True, 2)) ... ERROR
+  test_invalid_intervals (test_answers.IntervalTests.test_invalid_intervals) (interval=('0', 2)) ... ERROR
+test_invalid_windows (test_answers.IntervalTests.test_invalid_windows) ... 
+  test_invalid_windows (test_answers.IntervalTests.test_invalid_windows) (window=(1, 1)) ... ERROR
+  test_invalid_windows (test_answers.IntervalTests.test_invalid_windows) (window=(2, 1)) ... ERROR
+  test_invalid_windows (test_answers.IntervalTests.test_invalid_windows) (window=(0, inf)) ... ERROR
+  test_invalid_windows (test_answers.IntervalTests.test_invalid_windows) (window=(False, 1)) ... ERROR
+test_merge_nested_adjacent_and_unsorted (test_answers.IntervalTests.test_merge_nested_adjacent_and_unsorted) ... ERROR
+test_translation_invariance (test_answers.IntervalTests.test_translation_invariance) ... ERROR
+test_real_schedule_trace_and_training_equivalence (test_answers.RealCPUProfileTests.test_real_schedule_trace_and_training_equivalence) ... ERROR
+test_ignore_non_complete_records (test_answers.TraceTests.test_ignore_non_complete_records) ... ERROR
+test_projection_drops_metadata_args_and_remaps_lanes (test_answers.TraceTests.test_projection_drops_metadata_args_and_remaps_lanes) ... ERROR
+test_projection_empty_cpu_selection (test_answers.TraceTests.test_projection_empty_cpu_selection) ... ERROR
+test_reject_malformed_complete_events (test_answers.TraceTests.test_reject_malformed_complete_events) ... 
+  test_reject_malformed_complete_events (test_answers.TraceTests.test_reject_malformed_complete_events) (change={'dur': -1}) ... ERROR
+  test_reject_malformed_complete_events (test_answers.TraceTests.test_reject_malformed_complete_events) (change={'ts': inf}) ... ERROR
+  test_reject_malformed_complete_events (test_answers.TraceTests.test_reject_malformed_complete_events) (change={'dur': True}) ... ERROR
+  test_reject_malformed_complete_events (test_answers.TraceTests.test_reject_malformed_complete_events) (change={'name': 42}) ... ERROR
+  test_reject_malformed_complete_events (test_answers.TraceTests.test_reject_malformed_complete_events) (change={'ts': 1e+308, 'dur': 1e+308}) ... ERROR
+test_reject_missing_event_fields_or_wrong_container (test_answers.TraceTests.test_reject_missing_event_fields_or_wrong_container) ... 
+  test_reject_missing_event_fields_or_wrong_container (test_answers.TraceTests.test_reject_missing_event_fields_or_wrong_container) (trace={}) ... ERROR
+  test_reject_missing_event_fields_or_wrong_container (test_answers.TraceTests.test_reject_missing_event_fields_or_wrong_container) (trace={'traceEvents': {}}) ... ERROR
+  test_reject_missing_event_fields_or_wrong_container (test_answers.TraceTests.test_reject_missing_event_fields_or_wrong_container) (trace={'traceEvents': [{'ph': 'X', 'name': 'phase::forward', 'cat': 'user_annotation', 'ts': 100, 'pid': 123, 'tid': 456}]}) ... ERROR
+  test_reject_missing_event_fields_or_wrong_container (test_answers.TraceTests.test_reject_missing_event_fields_or_wrong_container) (trace={'traceEvents': [None]}) ... ERROR
+test_synthetic_gpu_is_explicitly_labeled (test_answers.TraceTests.test_synthetic_gpu_is_explicitly_labeled) ... ERROR
+test_zero_duration_is_valid (test_answers.TraceTests.test_zero_duration_is_valid) ... ERROR
+
+======================================================================
+ERROR: test_clip_both_sides_and_discard_empty (test_answers.IntervalTests.test_clip_both_sides_and_discard_empty)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-23-training-profiler-timeline/code/test_answers.py", line 28, in test_clip_both_sides_and_discard_empty
+    merge_intervals([(-2, 2), (8, 12), (3, 3), (11, 12)], (0, 10)),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/drafts/2026-11-23-training-profiler-timeline/code/answers.py", line 4, in merge_intervals
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_clipping_applies_to_sum_and_union (test_answers.IntervalTests.test_clipping_applies_to_sum_and_union)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-23-training-profiler-timeline/code/test_answers.py", line 72, in test_clipping_applies_to_sum_and_union
+    result = overlap_summary([(-5, 5)], [(3, 15)], (0, 10))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/drafts/2026-11-23-training-profiler-timeline/code/answers.py", line 8, in overlap_summary
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_disjoint_touching_intervals_do_not_overlap (test_answers.IntervalTests.test_disjoint_touching_intervals_do_not_overlap)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-23-training-profiler-timeline/code/test_answers.py", line 67, in test_disjoint_touching_intervals_do_not_overlap
+    result = overlap_summary([(0, 4)], [(4, 8)], (0, 10))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/drafts/2026-11-23-training-profiler-timeline/code/answers.py", line 8, in overlap_summary
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_duplicate_kernels_affect_sum_not_union (test_answers.IntervalTests.test_duplicate_kernels_affect_sum_not_union)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-23-training-profiler-timeline/code/test_answers.py", line 61, in test_duplicate_kernels_affect_sum_not_union
+    result = overlap_summary([(1, 5), (1, 5)], [(3, 7)], (0, 10))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/drafts/2026-11-23-training-profiler-timeline/code/answers.py", line 8, in overlap_summary
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_empty_inputs (test_answers.IntervalTests.test_empty_inputs)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-23-training-profiler-timeline/code/test_answers.py", line 33, in test_empty_inputs
+    result = overlap_summary([], [], (0, 10))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/drafts/2026-11-23-training-profiler-timeline/code/answers.py", line 8, in overlap_summary
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_example_overlap_and_partition (test_answers.IntervalTests.test_example_overlap_and_partition)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-23-training-profiler-timeline/code/test_answers.py", line 48, in test_example_overlap_and_partition
+    result = overlap_summary([(2000, 8000), (8000, 11000)], [(5000, 13000)], (0, 15000))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/drafts/2026-11-23-training-profiler-timeline/code/answers.py", line 8, in overlap_summary
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_exhaustive_integer_interval_oracle (test_answers.IntervalTests.test_exhaustive_integer_interval_oracle)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-23-training-profiler-timeline/code/test_answers.py", line 86, in test_exhaustive_integer_interval_oracle
+    result = overlap_summary([(a, b)], [(2, 5)], (0, 6))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/drafts/2026-11-23-training-profiler-timeline/code/answers.py", line 8, in overlap_summary
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_invalid_intervals (test_answers.IntervalTests.test_invalid_intervals) (interval=(2, 1))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-23-training-profiler-timeline/code/test_answers.py", line 45, in test_invalid_intervals
+    merge_intervals([interval], (0, 10))
+  File "<repo>/drafts/2026-11-23-training-profiler-timeline/code/answers.py", line 4, in merge_intervals
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_invalid_intervals (test_answers.IntervalTests.test_invalid_intervals) (interval=(0, nan))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-23-training-profiler-timeline/code/test_answers.py", line 45, in test_invalid_intervals
+    merge_intervals([interval], (0, 10))
+  File "<repo>/drafts/2026-11-23-training-profiler-timeline/code/answers.py", line 4, in merge_intervals
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_invalid_intervals (test_answers.IntervalTests.test_invalid_intervals) (interval=(True, 2))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-23-training-profiler-timeline/code/test_answers.py", line 45, in test_invalid_intervals
+    merge_intervals([interval], (0, 10))
+  File "<repo>/drafts/2026-11-23-training-profiler-timeline/code/answers.py", line 4, in merge_intervals
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_invalid_intervals (test_answers.IntervalTests.test_invalid_intervals) (interval=('0', 2))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-23-training-profiler-timeline/code/test_answers.py", line 45, in test_invalid_intervals
+    merge_intervals([interval], (0, 10))
+  File "<repo>/drafts/2026-11-23-training-profiler-timeline/code/answers.py", line 4, in merge_intervals
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_invalid_windows (test_answers.IntervalTests.test_invalid_windows) (window=(1, 1))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-23-training-profiler-timeline/code/test_answers.py", line 40, in test_invalid_windows
+    merge_intervals([], window)
+  File "<repo>/drafts/2026-11-23-training-profiler-timeline/code/answers.py", line 4, in merge_intervals
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_invalid_windows (test_answers.IntervalTests.test_invalid_windows) (window=(2, 1))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-23-training-profiler-timeline/code/test_answers.py", line 40, in test_invalid_windows
+    merge_intervals([], window)
+  File "<repo>/drafts/2026-11-23-training-profiler-timeline/code/answers.py", line 4, in merge_intervals
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_invalid_windows (test_answers.IntervalTests.test_invalid_windows) (window=(0, inf))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-23-training-profiler-timeline/code/test_answers.py", line 40, in test_invalid_windows
+    merge_intervals([], window)
+  File "<repo>/drafts/2026-11-23-training-profiler-timeline/code/answers.py", line 4, in merge_intervals
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_invalid_windows (test_answers.IntervalTests.test_invalid_windows) (window=(False, 1))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-23-training-profiler-timeline/code/test_answers.py", line 40, in test_invalid_windows
+    merge_intervals([], window)
+  File "<repo>/drafts/2026-11-23-training-profiler-timeline/code/answers.py", line 4, in merge_intervals
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_merge_nested_adjacent_and_unsorted (test_answers.IntervalTests.test_merge_nested_adjacent_and_unsorted)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-23-training-profiler-timeline/code/test_answers.py", line 22, in test_merge_nested_adjacent_and_unsorted
+    merge_intervals([(4, 8), (1, 5), (8, 9), (2, 3)], (0, 10)),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/drafts/2026-11-23-training-profiler-timeline/code/answers.py", line 4, in merge_intervals
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_translation_invariance (test_answers.IntervalTests.test_translation_invariance)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-23-training-profiler-timeline/code/test_answers.py", line 78, in test_translation_invariance
+    original = overlap_summary([(1, 6)], [(3, 9)], (0, 10))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/drafts/2026-11-23-training-profiler-timeline/code/answers.py", line 8, in overlap_summary
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_real_schedule_trace_and_training_equivalence (test_answers.RealCPUProfileTests.test_real_schedule_trace_and_training_equivalence)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-23-training-profiler-timeline/code/test_answers.py", line 155, in test_real_schedule_trace_and_training_equivalence
+    result = run_cpu_profile(Path(folder))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/drafts/2026-11-23-training-profiler-timeline/code/cpu_profile.py", line 4, in run_cpu_profile
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_ignore_non_complete_records (test_answers.TraceTests.test_ignore_non_complete_records)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-23-training-profiler-timeline/code/test_answers.py", line 101, in test_ignore_non_complete_records
+    events = complete_events(trace)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/drafts/2026-11-23-training-profiler-timeline/code/answers.py", line 12, in complete_events
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_projection_drops_metadata_args_and_remaps_lanes (test_answers.TraceTests.test_projection_drops_metadata_args_and_remaps_lanes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-23-training-profiler-timeline/code/test_answers.py", line 128, in test_projection_drops_metadata_args_and_remaps_lanes
+    projected, metadata = project_cpu_trace(trace)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/drafts/2026-11-23-training-profiler-timeline/code/answers.py", line 16, in project_cpu_trace
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_projection_empty_cpu_selection (test_answers.TraceTests.test_projection_empty_cpu_selection)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-23-training-profiler-timeline/code/test_answers.py", line 138, in test_projection_empty_cpu_selection
+    projected, metadata = project_cpu_trace({"traceEvents": []})
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/drafts/2026-11-23-training-profiler-timeline/code/answers.py", line 16, in project_cpu_trace
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_reject_malformed_complete_events (test_answers.TraceTests.test_reject_malformed_complete_events) (change={'dur': -1})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-23-training-profiler-timeline/code/test_answers.py", line 112, in test_reject_malformed_complete_events
+    complete_events({"traceEvents": [self.event(**change)]})
+  File "<repo>/drafts/2026-11-23-training-profiler-timeline/code/answers.py", line 12, in complete_events
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_reject_malformed_complete_events (test_answers.TraceTests.test_reject_malformed_complete_events) (change={'ts': inf})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-23-training-profiler-timeline/code/test_answers.py", line 112, in test_reject_malformed_complete_events
+    complete_events({"traceEvents": [self.event(**change)]})
+  File "<repo>/drafts/2026-11-23-training-profiler-timeline/code/answers.py", line 12, in complete_events
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_reject_malformed_complete_events (test_answers.TraceTests.test_reject_malformed_complete_events) (change={'dur': True})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-23-training-profiler-timeline/code/test_answers.py", line 112, in test_reject_malformed_complete_events
+    complete_events({"traceEvents": [self.event(**change)]})
+  File "<repo>/drafts/2026-11-23-training-profiler-timeline/code/answers.py", line 12, in complete_events
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_reject_malformed_complete_events (test_answers.TraceTests.test_reject_malformed_complete_events) (change={'name': 42})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-23-training-profiler-timeline/code/test_answers.py", line 112, in test_reject_malformed_complete_events
+    complete_events({"traceEvents": [self.event(**change)]})
+  File "<repo>/drafts/2026-11-23-training-profiler-timeline/code/answers.py", line 12, in complete_events
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_reject_malformed_complete_events (test_answers.TraceTests.test_reject_malformed_complete_events) (change={'ts': 1e+308, 'dur': 1e+308})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-23-training-profiler-timeline/code/test_answers.py", line 112, in test_reject_malformed_complete_events
+    complete_events({"traceEvents": [self.event(**change)]})
+  File "<repo>/drafts/2026-11-23-training-profiler-timeline/code/answers.py", line 12, in complete_events
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_reject_missing_event_fields_or_wrong_container (test_answers.TraceTests.test_reject_missing_event_fields_or_wrong_container) (trace={})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-23-training-profiler-timeline/code/test_answers.py", line 119, in test_reject_missing_event_fields_or_wrong_container
+    complete_events(trace)
+  File "<repo>/drafts/2026-11-23-training-profiler-timeline/code/answers.py", line 12, in complete_events
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_reject_missing_event_fields_or_wrong_container (test_answers.TraceTests.test_reject_missing_event_fields_or_wrong_container) (trace={'traceEvents': {}})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-23-training-profiler-timeline/code/test_answers.py", line 119, in test_reject_missing_event_fields_or_wrong_container
+    complete_events(trace)
+  File "<repo>/drafts/2026-11-23-training-profiler-timeline/code/answers.py", line 12, in complete_events
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_reject_missing_event_fields_or_wrong_container (test_answers.TraceTests.test_reject_missing_event_fields_or_wrong_container) (trace={'traceEvents': [{'ph': 'X', 'name': 'phase::forward', 'cat': 'user_annotation', 'ts': 100, 'pid': 123, 'tid': 456}]})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-23-training-profiler-timeline/code/test_answers.py", line 119, in test_reject_missing_event_fields_or_wrong_container
+    complete_events(trace)
+  File "<repo>/drafts/2026-11-23-training-profiler-timeline/code/answers.py", line 12, in complete_events
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_reject_missing_event_fields_or_wrong_container (test_answers.TraceTests.test_reject_missing_event_fields_or_wrong_container) (trace={'traceEvents': [None]})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-23-training-profiler-timeline/code/test_answers.py", line 119, in test_reject_missing_event_fields_or_wrong_container
+    complete_events(trace)
+  File "<repo>/drafts/2026-11-23-training-profiler-timeline/code/answers.py", line 12, in complete_events
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_synthetic_gpu_is_explicitly_labeled (test_answers.TraceTests.test_synthetic_gpu_is_explicitly_labeled)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-23-training-profiler-timeline/code/test_answers.py", line 143, in test_synthetic_gpu_is_explicitly_labeled
+    trace = synthetic_trace()
+            ^^^^^^^^^^^^^^^^^
+  File "<repo>/drafts/2026-11-23-training-profiler-timeline/code/answers.py", line 20, in synthetic_trace
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_zero_duration_is_valid (test_answers.TraceTests.test_zero_duration_is_valid)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-23-training-profiler-timeline/code/test_answers.py", line 106, in test_zero_duration_is_valid
+    self.assertEqual(complete_events({"traceEvents": [self.event(dur=0)]})[0].end_us, 100)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/drafts/2026-11-23-training-profiler-timeline/code/answers.py", line 12, in complete_events
+    raise NotImplementedError
+NotImplementedError
+
+----------------------------------------------------------------------
+Ran 19 tests in 0.002s
+
+FAILED (errors=32)

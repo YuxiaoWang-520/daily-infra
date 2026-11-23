@@ -1,0 +1,69 @@
+{
+  "displayTimeUnit": "ms",
+  "provenance": "synthetic; not a hardware measurement",
+  "traceEvents": [
+    {
+      "name": "step",
+      "cat": "user_annotation",
+      "ts": 0,
+      "dur": 15000,
+      "pid": 1,
+      "tid": 1,
+      "ph": "X"
+    },
+    {
+      "name": "cudaLaunchKernel A",
+      "cat": "cuda_runtime",
+      "ts": 1000,
+      "dur": 200,
+      "pid": 1,
+      "tid": 1,
+      "ph": "X"
+    },
+    {
+      "name": "cudaLaunchKernel B",
+      "cat": "cuda_runtime",
+      "ts": 1300,
+      "dur": 200,
+      "pid": 1,
+      "tid": 1,
+      "ph": "X"
+    },
+    {
+      "name": "communication enqueue",
+      "cat": "cuda_runtime",
+      "ts": 1600,
+      "dur": 100,
+      "pid": 1,
+      "tid": 1,
+      "ph": "X"
+    },
+    {
+      "name": "compute_A",
+      "cat": "kernel",
+      "ts": 2000,
+      "dur": 6000,
+      "pid": 2,
+      "tid": 101,
+      "ph": "X"
+    },
+    {
+      "name": "compute_B",
+      "cat": "kernel",
+      "ts": 8000,
+      "dur": 3000,
+      "pid": 2,
+      "tid": 101,
+      "ph": "X"
+    },
+    {
+      "name": "communication",
+      "cat": "kernel",
+      "ts": 5000,
+      "dur": 8000,
+      "pid": 2,
+      "tid": 102,
+      "ph": "X"
+    }
+  ]
+}

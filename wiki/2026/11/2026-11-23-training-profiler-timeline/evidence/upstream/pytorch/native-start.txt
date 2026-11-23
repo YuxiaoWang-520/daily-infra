@@ -1,0 +1,28 @@
+    def _prepare_trace(self):
+        self.entered = True
+        t0 = perf_counter_ns()
+        _prepare_profiler(
+            self.config(create_trace_id=True),
+            self.kineto_activities,
+            activity_filter=self.activity_filters,
+            profiler_extensions=self._profiler_extensions,
+        )
+        t1 = perf_counter_ns()
+        self._stats.profiler_prepare_call_duration_us = int((t1 - t0) / 1000)
+
+    def _start_trace(self):
+        self.entered = True
+        _run_on_profiler_start()
+        t0 = perf_counter_ns()
+        _enable_profiler(self.config(create_trace_id=False), self.kineto_activities)
+        t1 = perf_counter_ns()
+        self._stats.profiler_enable_call_duration_us = int((t1 - t0) / 1000)
+        self.profiling_start_time_ns = t1
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        if not self.enabled:
+            return
+        if self.use_device and hasattr(torch, self.use_device):
+            device_module = getattr(torch, self.use_device)
+            if hasattr(device_module, "synchronize"):
+                device_module.synchronize()

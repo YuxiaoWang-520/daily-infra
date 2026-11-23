@@ -1,0 +1,119 @@
+{
+  "checked_at": "2026-11-23T11:15:12.825115+08:00",
+  "environment": {
+    "python": "3.12.16",
+    "platform": "Darwin arm64",
+    "torch": "2.15.0",
+    "torch_git": "d0f2af8b66b20da4baa50644c0cd3f887a2eae2e",
+    "cuda_available": false,
+    "profiler_activities": [
+      "ProfilerActivity.CPU"
+    ]
+  },
+  "source_files_sha256": {
+    "code/answers.py": "db66e6e20a4d56f81a5191f5a3b8d416107bd022d5576d7d6275ef27bc9753a1",
+    "code/cpu_profile.py": "e2e6ac03b4a2db7dd077dab4ff6ce6c5f3d466edb9286ed0fc3e81631f7bd350",
+    "code/exercises.py": "5809f9693b91dbea6e5a899e3fe9571c71c2339a44d87363b2c900f450321fde",
+    "code/run_answers.py": "ee4b9414d2f698e7984a446db07fd91fdc9c3a7151eea5b679157abb387b5a45",
+    "code/test_answers.py": "ea984126ce842237c512255f1ba7af8e60fb0a72be7c5e6c5cc4c351a90b4f34"
+  },
+  "red_test": {
+    "exit_code": 1,
+    "output": "red-tests.txt",
+    "result": "19 tests; 32 subtest/errors with intentionally unimplemented answer stubs"
+  },
+  "commands": [
+    {
+      "started_at": "2026-11-23T11:15:06.927632+08:00",
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "code",
+        "-p",
+        "test_answers.py",
+        "-v"
+      ],
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "cwd": "<article>",
+      "exit_code": 0,
+      "output": "pre-review-unit-tests.txt"
+    },
+    {
+      "started_at": "2026-11-23T11:15:08.380315+08:00",
+      "command": [
+        "python",
+        "-O",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "code",
+        "-p",
+        "test_answers.py",
+        "-v"
+      ],
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "cwd": "<article>",
+      "exit_code": 0,
+      "output": "pre-review-optimized-tests.txt"
+    },
+    {
+      "started_at": "2026-11-23T11:15:11.604912+08:00",
+      "command": [
+        "ruff",
+        "check",
+        "code"
+      ],
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "cwd": "<article>",
+      "exit_code": 0,
+      "output": "pre-review-ruff-check.txt"
+    },
+    {
+      "started_at": "2026-11-23T11:15:11.641061+08:00",
+      "command": [
+        "ruff",
+        "format",
+        "--check",
+        "code"
+      ],
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "cwd": "<article>",
+      "exit_code": 0,
+      "output": "pre-review-ruff-format.txt"
+    },
+    {
+      "started_at": "2026-11-23T11:15:11.676349+08:00",
+      "command": [
+        "python",
+        "code/run_answers.py",
+        "--output-dir",
+        "evidence/runs"
+      ],
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "cwd": "<article>",
+      "exit_code": 0,
+      "output": "pre-review-answers-run.txt"
+    }
+  ],
+  "log_redactions": [
+    "absolute repository path -> <repo>",
+    "home path -> <home>",
+    "hostname -> <host>"
+  ],
+  "executable_recording": "existing ai-infra Python/Ruff; recorded basename",
+  "archive_note": "Artifacts moved to pre-review-* after independent review; commands originally used evidence/runs."
+}

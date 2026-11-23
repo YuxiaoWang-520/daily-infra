@@ -1,0 +1,76 @@
+TRY004 Prefer `TypeError` exception for invalid type
+  --> code/answers.py:13:9
+   |
+11 | def _number(value: object) -> float:
+12 |     if isinstance(value, bool) or not isinstance(value, (int, float)):
+13 |         raise ValueError("timestamps and durations must be finite numbers")
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+14 |     result = float(value)
+15 |     if not math.isfinite(result):
+   |
+
+TRY004 Prefer `TypeError` exception for invalid type
+   --> code/answers.py:107:9
+    |
+105 |     """Read only Chrome complete ('X') events. Does not pair B/E or flow records."""
+106 |     if not isinstance(trace, Mapping) or not isinstance(trace.get("traceEvents"), list):
+107 |         raise ValueError("expected a traceEvents list")
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+108 |     result = []
+109 |     for raw in trace["traceEvents"]:
+    |
+
+TRY004 Prefer `TypeError` exception for invalid type
+   --> code/answers.py:111:13
+    |
+109 |     for raw in trace["traceEvents"]:
+110 |         if not isinstance(raw, Mapping):
+111 |             raise ValueError("trace event must be an object")
+    |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+112 |         if raw.get("ph") != "X":
+113 |             continue
+    |
+
+TRY004 Prefer `TypeError` exception for invalid type
+   --> code/answers.py:116:17
+    |
+114 |         for key in ("name", "cat"):
+115 |             if not isinstance(raw.get(key), str):
+116 |                 raise ValueError(f"complete event requires string {key}")
+    |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+117 |         for key in ("pid", "tid"):
+118 |             if isinstance(raw.get(key), bool) or not isinstance(
+    |
+
+TRY004 Prefer `TypeError` exception for invalid type
+   --> code/answers.py:121:17
+    |
+119 |                 raw.get(key), (str, int)
+120 |             ):
+121 |                 raise ValueError(f"complete event requires string or integer {key}")
+    |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+122 |         start = _number(raw.get("ts"))
+123 |         duration = _number(raw.get("dur"))
+    |
+
+C408 Unnecessary `dict()` call (rewrite as a literal)
+   --> code/answers.py:202:13
+    |
+200 |         "provenance": "synthetic; not a hardware measurement",
+201 |         "traceEvents": [
+202 |             dict(name=n, cat=c, ts=t, dur=d, pid=p, tid=s, ph="X")
+    |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+203 |             for n, c, t, d, p, s in rows
+204 |         ],
+    |
+help: Rewrite as a literal
+    |
+201 |         "traceEvents": [
+    -             dict(name=n, cat=c, ts=t, dur=d, pid=p, tid=s, ph="X")
+202 +             {"name": n, "cat": c, "ts": t, "dur": d, "pid": p, "tid": s, "ph": "X"}
+203 |             for n, c, t, d, p, s in rows
+    |
+note: This is an unsafe fix and may change runtime behavior
+
+Found 6 errors.
+1 unsafe fix available with `--fix --unsafe-fixes`.

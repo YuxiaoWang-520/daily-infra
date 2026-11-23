@@ -1,0 +1,7 @@
+std::unique_ptr<at::ObserverContext> onFunctionEnterTLS(
+    const at::RecordFunction& fn) {
+  KinetoThreadLocalState* state_ptr = KinetoThreadLocalState::getTLS();
+  if (!state_ptr) {
+    return nullptr;
+  }
+  return state_ptr->recordQueue.getSubqueue()->begin_op(fn);

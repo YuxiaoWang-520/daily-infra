@@ -1,0 +1,13 @@
+    def stop_trace(self) -> None:
+        if self.execution_trace_observer:
+            self.execution_trace_observer.stop()
+        if self.profiler is None:
+            raise AssertionError("Profiler must be initialized before stopping trace")
+        if self._use_cuspy:
+            # Unpublish the observer (record_function stops routing here) and close the trace
+            # window (end boundary, native clock, no device sync), queuing it for deferred
+            # export; the observer is kept alive past stop for the async write.
+            prof._set_active_cuspy_profiler_observer(None)
+            if self._cuspy_profiler_observer is not None:
+                self._cuspy_window_id = self._cuspy_profiler_observer.close_window()
+        self.profiler.__exit__(None, None, None)

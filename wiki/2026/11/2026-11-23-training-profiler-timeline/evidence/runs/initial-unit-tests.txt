@@ -1,0 +1,26 @@
+test_clip_both_sides_and_discard_empty (test_answers.IntervalTests.test_clip_both_sides_and_discard_empty) ... ok
+test_clipping_applies_to_sum_and_union (test_answers.IntervalTests.test_clipping_applies_to_sum_and_union) ... ok
+test_disjoint_touching_intervals_do_not_overlap (test_answers.IntervalTests.test_disjoint_touching_intervals_do_not_overlap) ... ok
+test_duplicate_kernels_affect_sum_not_union (test_answers.IntervalTests.test_duplicate_kernels_affect_sum_not_union) ... ok
+test_empty_inputs (test_answers.IntervalTests.test_empty_inputs) ... ok
+test_example_overlap_and_partition (test_answers.IntervalTests.test_example_overlap_and_partition) ... ok
+test_exhaustive_integer_interval_oracle (test_answers.IntervalTests.test_exhaustive_integer_interval_oracle) ... ok
+test_invalid_intervals (test_answers.IntervalTests.test_invalid_intervals) ... ok
+test_invalid_windows (test_answers.IntervalTests.test_invalid_windows) ... ok
+test_merge_nested_adjacent_and_unsorted (test_answers.IntervalTests.test_merge_nested_adjacent_and_unsorted) ... ok
+test_translation_invariance (test_answers.IntervalTests.test_translation_invariance) ... ok
+test_real_schedule_trace_and_training_equivalence (test_answers.RealCPUProfileTests.test_real_schedule_trace_and_training_equivalence) ... USDT:2026-11-23 11:13:05 90155:117647964 SyncActivityProfilerHandler.cpp:39] profiler_start
+USDT:2026-11-23 11:13:05 90155:117647964 SyncActivityProfilerHandler.cpp:46] profiler_stop
+ok
+test_ignore_non_complete_records (test_answers.TraceTests.test_ignore_non_complete_records) ... ok
+test_projection_drops_metadata_args_and_remaps_lanes (test_answers.TraceTests.test_projection_drops_metadata_args_and_remaps_lanes) ... ok
+test_projection_empty_cpu_selection (test_answers.TraceTests.test_projection_empty_cpu_selection) ... ok
+test_reject_malformed_complete_events (test_answers.TraceTests.test_reject_malformed_complete_events) ... ok
+test_reject_missing_event_fields_or_wrong_container (test_answers.TraceTests.test_reject_missing_event_fields_or_wrong_container) ... ok
+test_synthetic_gpu_is_explicitly_labeled (test_answers.TraceTests.test_synthetic_gpu_is_explicitly_labeled) ... ok
+test_zero_duration_is_valid (test_answers.TraceTests.test_zero_duration_is_valid) ... ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 0.579s
+
+OK

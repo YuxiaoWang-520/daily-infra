@@ -1,0 +1,40 @@
+{
+  "recorded_at": "2026-11-23T11:31:13.918437+08:00",
+  "article_state_at_review": "draft",
+  "technical": {
+    "mode": "MAIN self-review",
+    "outcome": "pass",
+    "evidence": "technical-audit.json",
+    "fixed": [
+      "raw duration cancellation",
+      "binary64 integer coercion",
+      "rebased start overflow",
+      "rebased endpoint overflow",
+      "lint exception types/literal"
+    ]
+  },
+  "teaching": {
+    "mode": "MAIN self-review",
+    "outcome": "pass",
+    "checks": [
+      "example before formulas/source",
+      "every major claim mapped to primary source",
+      "sum/union/critical path distinct",
+      "units aligned before exercises",
+      "CPU self differs from CPU utilization",
+      "terms defined in place",
+      "GPU synthetic and CPU measured labeled",
+      "two exercises with full contracts/answers",
+      "four interview levels",
+      "optimization prerequisites/costs and causal limits"
+    ],
+    "changes": [
+      "Moved ms/us conversion before first code exercise",
+      "Defined Kineto/CUPTI/collective/rank where needed"
+    ]
+  },
+  "independent_code_review": "python-review.json",
+  "unresolved_critical_or_high": 0,
+  "unresolved_findings": [],
+  "publication_gate": "Final archive/index/link/privacy/staged-byte checks remain separate in delivery-check.json; this report is not proof of a Git push."
+}

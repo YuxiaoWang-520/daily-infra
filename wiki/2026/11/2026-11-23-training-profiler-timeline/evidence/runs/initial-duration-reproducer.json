@@ -1,0 +1,7 @@
+{
+  "input_ts": 1000000000000000.0,
+  "input_dur": 0.01,
+  "initial_projected_dur": 0.0,
+  "expected_dur": 0.01,
+  "mismatch_reproduced": true
+}

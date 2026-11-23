@@ -1,0 +1,45 @@
+    def prepare_trace(self) -> None:
+        if hasattr(torch, "_inductor"):
+            import torch._inductor.config as inductor_config
+
+            self.has_cudagraphs = inductor_config.triton.cudagraphs
+        if (self.profiler is not None) and (not self.acc_events):
+            _warn_once(
+                "Warning: Profiler clears events at the end of each cycle. "
+                "Only events from the current cycle will be reported. "
+                "To keep events across cycles, set acc_events=True."
+            )
+        if (self.profiler is None) or (not self.acc_events):
+            use_device = None if self._use_cuspy else self.use_device
+            activity_filters = {}
+            profiler_configs = []
+            for activity, config in self.activity_configs.items():
+                if config.activity_types is not None:
+                    activity_filters[activity] = set(config.activity_types)
+                profiler_configs.extend(config.profiler_configs)
+            if self._use_cuspy:
+                profiler_configs = [
+                    config
+                    for config in profiler_configs
+                    if not isinstance(config, PerformanceMetricsConfig)
+                ]
+            profiler_extensions = _get_profiler_extensions(profiler_configs)
+            if "PERFORMANCE_METRICS" in profiler_extensions:
+                profiler_extensions["PERFORMANCE_METRICS_DEVICE_ID"] = str(
+                    torch.cuda.current_device()
+                )
+            self.profiler = prof.profile(
+                use_cpu=(ProfilerActivity.CPU in self.activities),
+                use_device=use_device,
+                record_shapes=self.record_shapes,
+                with_flops=self.with_flops,
+                profile_memory=self.profile_memory,
+                with_stack=self.with_stack,
+                use_kineto=True,
+                experimental_config=self.experimental_config,
+                acc_events=self.acc_events,
+                custom_trace_id_callback=self.custom_trace_id_callback,
+                post_processing_timeout_s=self.post_processing_timeout_s,
+                activity_filters=activity_filters or None,
+                _profiler_extensions=profiler_extensions,
+            )

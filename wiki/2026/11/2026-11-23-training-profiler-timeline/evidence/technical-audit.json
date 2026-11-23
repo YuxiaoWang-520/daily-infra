@@ -1,0 +1,55 @@
+{
+  "checked_at": "2026-11-23T11:28:55.905126+08:00",
+  "review_mode": "MAIN technical self-review with executable artifact checks",
+  "original_source_excerpts_verified": 19,
+  "original_source_lines": 500,
+  "full_source_and_excerpt_hashes_match": true,
+  "main_and_stable_license_bytes_match": true,
+  "final_code_hashes_match_independent_review": true,
+  "python_ast_files": 5,
+  "all_final_commands_exit_zero": true,
+  "unit_tests": {
+    "normal": 22,
+    "optimized": 22
+  },
+  "real_cpu": {
+    "retained_events": 140,
+    "steps": [
+      2,
+      3
+    ],
+    "callback": [
+      4
+    ],
+    "phase_counts_match": true,
+    "weights_exact": true,
+    "losses_exact": true
+  },
+  "synthetic_interval_arithmetic_verified": true,
+  "critical_path_teaching_model": {
+    "units": "ms",
+    "fixed_schedule_before": {
+      "compute_end": 11,
+      "communication_end": 13,
+      "selected_completion": 13
+    },
+    "fixed_schedule_counterfactual": {
+      "compute_end": 11,
+      "communication_end": 9,
+      "selected_completion": 11
+    },
+    "assumptions": [
+      "Same starts/dependencies",
+      "No resource-contention changes",
+      "Not an actual speedup prediction"
+    ]
+  },
+  "mermaid_bytes_and_numeric_labels_match": true,
+  "cache_worktree_head_and_status_preserved": true,
+  "limitations": [
+    "CPU only",
+    "No visual renderer execution",
+    "No measured GPU overlap or communication root cause"
+  ],
+  "unresolved_issues": []
+}

@@ -1,0 +1,90 @@
+{
+  "recorded_at": "2026-11-23T11:28:54.915709+08:00",
+  "scope": [
+    "code/answers.py",
+    "code/cpu_profile.py",
+    "code/exercises.py",
+    "code/run_answers.py",
+    "code/test_answers.py"
+  ],
+  "required_specialist": {
+    "agent": "/root/nov23_python_review",
+    "status": "failed_before_execution",
+    "error": "The 'gpt-5.4' model is not supported when using Codex with a ChatGPT account."
+  },
+  "independent_fallback": {
+    "agent": "/root/nov23_python_fallback",
+    "role": "independent general code reviewer",
+    "evidence_kind": "agent reports; not fabricated raw stdout",
+    "repository_writes": false,
+    "commands_reported": [
+      {
+        "command": "python -B - (two independent inline scripts)",
+        "exit_codes": [
+          0,
+          0
+        ],
+        "stage": "initial frozen 20-test version"
+      },
+      {
+        "command": "python -B - (delta-only checks)",
+        "exit_codes": [
+          0
+        ],
+        "stage": "integer/rebase fixes"
+      },
+      {
+        "command": "python -B - (delta-only checks)",
+        "exit_codes": [
+          0
+        ],
+        "stage": "final endpoint guard"
+      }
+    ],
+    "checks_reported": [
+      "Five frozen source hashes verified",
+      "3000 deterministic randomized quarter-unit cases checked with independent cell-set oracle; all 8 metrics, generator inputs",
+      "13 invalid interval/window inputs rejected",
+      "Distinct processes and threads map to distinct lanes; metadata and args removed; names explicitly retained",
+      "Large ts=1e15 with dur=0.01 preserves original duration",
+      "Real CPU run: 140 events, steps [2,3], callback [4], exact numerical equality, success restores thread count",
+      "Independent scalar SGD oracle: max loss error 1.3877787807814457e-17",
+      "Injected first-active-step failure propagated, threads restored, fresh profiler usable afterwards",
+      "Final precision regressions reject lossy integer conversion, conversion overflow, rebase start/end overflow; strict JSON roundtrip for valid projected trace"
+    ],
+    "findings": [
+      {
+        "severity": "MEDIUM",
+        "issue": "Integer endpoints were rounded while window length used original integer subtraction; partition could become negative",
+        "reproduction": "window=(2**53+1,2**53+3), compute=[window]: window_us=2, compute_us=4, no_selected_activity_us=-2",
+        "resolution": "Reject inexact binary64 integer conversion, normalize window arithmetic, regression covers original case and 10**400",
+        "status": "fixed; delta confirmed"
+      },
+      {
+        "severity": "LOW",
+        "issue": "Rebasing individually finite timestamps could overflow the projected start",
+        "resolution": "Validate relative_start finite; original reproduction regression",
+        "status": "fixed; delta confirmed"
+      },
+      {
+        "severity": "LOW",
+        "issue": "Finite rebased start plus original duration could overflow the projected endpoint",
+        "resolution": "Validate projected endpoint finite and add second subcase",
+        "status": "fixed; final delta confirmed"
+      }
+    ],
+    "final_disposition": "accepted; no unresolved findings in reviewed scope",
+    "limitations": [
+      "No CUDA/NCCL execution",
+      "No production trace privacy guarantee; event names require manual review",
+      "General review fallback, not successful specialist execution"
+    ]
+  },
+  "final_source_files_sha256": {
+    "code/answers.py": "c49674f68f0f9bef51cdfdf842b00d612042ec3986a699f75edd7d1130ccfb62",
+    "code/cpu_profile.py": "e2e6ac03b4a2db7dd077dab4ff6ce6c5f3d466edb9286ed0fc3e81631f7bd350",
+    "code/exercises.py": "5809f9693b91dbea6e5a899e3fe9571c71c2339a44d87363b2c900f450321fde",
+    "code/run_answers.py": "ee4b9414d2f698e7984a446db07fd91fdc9c3a7151eea5b679157abb387b5a45",
+    "code/test_answers.py": "2749239c9afeb91a9a51e9b7f9b0fbde6cf0a51222a66ae0571dcdea02b68e3f"
+  }
+}

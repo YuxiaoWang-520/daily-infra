@@ -1,0 +1,16 @@
+flowchart LR
+  subgraph Host[CPU 线程：提交顺序，时间为 ms]
+    LA[提交 A：1.0 到 1.2] --> LB[提交 B：1.3 到 1.5]
+    LB --> LC[提交通信：1.6 到 1.7]
+  end
+  subgraph Compute[设备计算 stream]
+    A[计算 A：2 到 8] --> B[计算 B：8 到 11]
+  end
+  subgraph Comm[设备通信 stream]
+    N[通信：5 到 13]
+  end
+  LA -. 对应的设备工作 .-> A
+  LB -. 对应的设备工作 .-> B
+  LC -. 对应的设备工作 .-> N
+  B --> J[选定设备工作全部结束：13 ms]
+  N --> J

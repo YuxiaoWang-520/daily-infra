@@ -1,0 +1,187 @@
+{
+  "checked_at": "2026-11-23T11:30:36.573233+08:00",
+  "branch": "main",
+  "baseline_local_head": "d98a940c6f4fb29eafe39e0162f39d11b74be56f",
+  "baseline_origin_main": "d98a940c6f4fb29eafe39e0162f39d11b74be56f",
+  "baseline_github_main": "d98a940c6f4fb29eafe39e0162f39d11b74be56f",
+  "origin_read_url": "git@github.com:YuxiaoWang-520/daily-infra.git",
+  "origin_push_urls": [
+    "git@github.com:YuxiaoWang-520/daily-infra.git"
+  ],
+  "identity": {
+    "repository_local_name": "YuxiaoWang-520",
+    "repository_local_email": "13917046839@163.com",
+    "github_login": "YuxiaoWang-520"
+  },
+  "repository": {
+    "defaultBranchRef": {
+      "name": "main"
+    },
+    "isPrivate": false,
+    "nameWithOwner": "YuxiaoWang-520/daily-infra",
+    "url": "https://github.com/YuxiaoWang-520/daily-infra",
+    "viewerPermission": "ADMIN",
+    "visibility": "PUBLIC"
+  },
+  "ahead_behind": [
+    0,
+    0
+  ],
+  "preexisting_staging_empty": true,
+  "unrelated_tracked_changes": false,
+  "current_status": "?? drafts/",
+  "published_articles_before": 30,
+  "today_already_published": false,
+  "authorized_commit_scope": [
+    "wiki/2026/11/2026-11-23-training-profiler-timeline/",
+    "wiki/index.md",
+    "ROADMAP.md"
+  ],
+  "commands": [
+    {
+      "command": [
+        "git",
+        "branch",
+        "--show-current"
+      ],
+      "exit_code": 0,
+      "output": "main\n"
+    },
+    {
+      "command": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "output": "d98a940c6f4fb29eafe39e0162f39d11b74be56f\n"
+    },
+    {
+      "command": [
+        "git",
+        "rev-parse",
+        "origin/main"
+      ],
+      "exit_code": 0,
+      "output": "d98a940c6f4fb29eafe39e0162f39d11b74be56f\n"
+    },
+    {
+      "command": [
+        "git",
+        "remote",
+        "get-url",
+        "origin"
+      ],
+      "exit_code": 0,
+      "output": "git@github.com:YuxiaoWang-520/daily-infra.git\n"
+    },
+    {
+      "command": [
+        "git",
+        "remote",
+        "get-url",
+        "--push",
+        "--all",
+        "origin"
+      ],
+      "exit_code": 0,
+      "output": "git@github.com:YuxiaoWang-520/daily-infra.git\n"
+    },
+    {
+      "command": [
+        "git",
+        "config",
+        "--local",
+        "user.name"
+      ],
+      "exit_code": 0,
+      "output": "YuxiaoWang-520\n"
+    },
+    {
+      "command": [
+        "git",
+        "config",
+        "--local",
+        "user.email"
+      ],
+      "exit_code": 0,
+      "output": "13917046839@163.com\n"
+    },
+    {
+      "command": [
+        "git",
+        "rev-list",
+        "--left-right",
+        "--count",
+        "HEAD...origin/main"
+      ],
+      "exit_code": 0,
+      "output": "0\t0\n"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--name-only"
+      ],
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--name-only"
+      ],
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "command": [
+        "git",
+        "status",
+        "--short",
+        "--untracked-files=normal"
+      ],
+      "exit_code": 0,
+      "output": "?? drafts/\n"
+    },
+    {
+      "command": [
+        "gh",
+        "repo",
+        "view",
+        "YuxiaoWang-520/daily-infra",
+        "--json",
+        "nameWithOwner,visibility,isPrivate,defaultBranchRef,viewerPermission,url"
+      ],
+      "exit_code": 0,
+      "output": "{\"defaultBranchRef\":{\"name\":\"main\"},\"isPrivate\":false,\"nameWithOwner\":\"YuxiaoWang-520/daily-infra\",\"url\":\"https://github.com/YuxiaoWang-520/daily-infra\",\"viewerPermission\":\"ADMIN\",\"visibility\":\"PUBLIC\"}\n"
+    },
+    {
+      "command": [
+        "gh",
+        "api",
+        "user",
+        "--jq",
+        ".login"
+      ],
+      "exit_code": 0,
+      "output": "YuxiaoWang-520\n"
+    },
+    {
+      "command": [
+        "gh",
+        "api",
+        "repos/YuxiaoWang-520/daily-infra/commits/main",
+        "--jq",
+        ".sha"
+      ],
+      "exit_code": 0,
+      "output": "d98a940c6f4fb29eafe39e0162f39d11b74be56f\n"
+    }
+  ],
+  "remote_fetch": "git fetch --no-tags origin main completed successfully immediately before this check",
+  "note": "This file records pre-publication baseline; final commit is verified against GitHub after push, outside its own bytes."
+}

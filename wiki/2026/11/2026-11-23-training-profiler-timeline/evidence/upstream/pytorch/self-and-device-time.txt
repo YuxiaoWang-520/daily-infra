@@ -1,0 +1,30 @@
+        return self.self_device_memory_usage
+
+    @property
+    def cpu_time_total(self):
+        if self.device_type == DeviceType.CPU:
+            return self.time_range.elapsed_us()
+        else:
+            return 0
+
+    @property
+    def self_cpu_time_total(self):
+        if self.is_async or self.device_type != DeviceType.CPU:
+            return 0
+        return self.cpu_time_total - sum(
+            child.cpu_time_total for child in self.cpu_children
+        )
+
+    @property
+    def device_time_total(self):
+        if self.is_async or not self.use_device:
+            return 0
+        if self.device_type == DeviceType.CPU:
+            if not self.is_legacy:
+                # account for the kernels in the children ops
+                return sum(kinfo.duration for kinfo in self.kernels) + sum(
+                    ch.device_time_total for ch in self.cpu_children
+                )
+            else:
+                # each legacy cpu events has a single (fake) kernel
+                return sum(kinfo.duration for kinfo in self.kernels)

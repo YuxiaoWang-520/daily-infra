@@ -1,0 +1,10 @@
+void pushTLSProfilingCallbacks(
+    const std::unordered_set<at::RecordScope>& scopes) {
+  KinetoThreadLocalState* state_ptr = KinetoThreadLocalState::getTLS();
+  TORCH_INTERNAL_ASSERT(state_ptr, "Expected profiler state set");
+  auto recordFunctionCallback =
+      at::RecordFunctionCallback(onFunctionEnterTLS, onFunctionExitTLS)
+          .needsInputs(state_ptr->config().report_input_shapes)
+          .scopes(scopes);
+  state_ptr->setCallbackHandle(
+      at::addThreadLocalCallback(recordFunctionCallback));

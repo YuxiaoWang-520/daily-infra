@@ -1,0 +1,19 @@
+{
+  "retrieved_on": "2026-11-23",
+  "provider": "Parallel",
+  "search_id": "search_2211838138bde3d477b211b1b474e7f5",
+  "session_id": "session_2211838138bde3d477b211b1b474e7f5",
+  "sources": [
+    {
+      "url": "https://perfetto.dev/docs/getting-started/other-formats",
+      "title": "Visualizing external trace formats with Perfetto - Perfetto Tracing Docs",
+      "publish_date": null
+    },
+    {
+      "url": "https://perfetto.dev/docs/faq",
+      "title": "Frequently Asked Questions - Perfetto Tracing Docs",
+      "publish_date": null
+    }
+  ],
+  "note": "Read excerpts for Chrome JSON microsecond timestamps, complete X events and importer limitations. Own notes are in official-reading-notes.md; no copied full webpage."
+}

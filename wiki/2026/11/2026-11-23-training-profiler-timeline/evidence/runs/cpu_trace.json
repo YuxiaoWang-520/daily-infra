@@ -1,0 +1,1266 @@
+{
+  "displayTimeUnit": "ms",
+  "provenance": "real CPU trace; projected, not full raw trace",
+  "traceEvents": [
+    {
+      "ph": "X",
+      "name": "ProfilerStep#2",
+      "cat": "user_annotation",
+      "ts": 0.0,
+      "dur": 89.502,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "phase::input",
+      "cat": "user_annotation",
+      "ts": 4.130859375,
+      "dur": 5.925,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::clone",
+      "cat": "cpu_op",
+      "ts": 5.7578125,
+      "dur": 2.712,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::empty_strided",
+      "cat": "cpu_op",
+      "ts": 6.091796875,
+      "dur": 0.542,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::copy_",
+      "cat": "cpu_op",
+      "ts": 7.9697265625,
+      "dur": 0.417,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "phase::forward",
+      "cat": "user_annotation",
+      "ts": 11.599609375,
+      "dur": 6.676,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::matmul",
+      "cat": "cpu_op",
+      "ts": 13.6435546875,
+      "dur": 3.38,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::mm",
+      "cat": "cpu_op",
+      "ts": 13.89453125,
+      "dur": 3.046,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::resolve_conj",
+      "cat": "cpu_op",
+      "ts": 16.2314453125,
+      "dur": 0.0,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::resolve_conj",
+      "cat": "cpu_op",
+      "ts": 16.3984375,
+      "dur": 0.0,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::resolve_conj",
+      "cat": "cpu_op",
+      "ts": 16.482421875,
+      "dur": 0.041,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "phase::loss",
+      "cat": "user_annotation",
+      "ts": 19.5283203125,
+      "dur": 15.689,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::sub",
+      "cat": "cpu_op",
+      "ts": 21.572265625,
+      "dur": 1.085,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::square",
+      "cat": "cpu_op",
+      "ts": 23.158203125,
+      "dur": 2.795,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::pow",
+      "cat": "cpu_op",
+      "ts": 24.201171875,
+      "dur": 1.711,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::result_type",
+      "cat": "cpu_op",
+      "ts": 24.7431640625,
+      "dur": 0.042,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::to",
+      "cat": "cpu_op",
+      "ts": 25.2021484375,
+      "dur": 0.042,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::mean",
+      "cat": "cpu_op",
+      "ts": 27.205078125,
+      "dur": 6.426,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::mean",
+      "cat": "cpu_op",
+      "ts": 27.7890625,
+      "dur": 5.633,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::sum",
+      "cat": "cpu_op",
+      "ts": 28.4150390625,
+      "dur": 1.753,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::as_strided",
+      "cat": "cpu_op",
+      "ts": 28.8740234375,
+      "dur": 0.167,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::fill_",
+      "cat": "cpu_op",
+      "ts": 29.8759765625,
+      "dur": 0.041,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::div_",
+      "cat": "cpu_op",
+      "ts": 30.4599609375,
+      "dur": 2.879,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::div_",
+      "cat": "cpu_op",
+      "ts": 31.1689453125,
+      "dur": 1.961,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::to",
+      "cat": "cpu_op",
+      "ts": 31.4609375,
+      "dur": 1.294,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::_to_copy",
+      "cat": "cpu_op",
+      "ts": 31.8369140625,
+      "dur": 0.876,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::empty_strided",
+      "cat": "cpu_op",
+      "ts": 32.044921875,
+      "dur": 0.251,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::copy_",
+      "cat": "cpu_op",
+      "ts": 32.4208984375,
+      "dur": 0.25,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "phase::backward",
+      "cat": "user_annotation",
+      "ts": 36.509765625,
+      "dur": 42.769,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::ones_like",
+      "cat": "cpu_op",
+      "ts": 42.142578125,
+      "dur": 1.002,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::empty_like",
+      "cat": "cpu_op",
+      "ts": 42.392578125,
+      "dur": 0.501,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::empty_strided",
+      "cat": "cpu_op",
+      "ts": 42.5595703125,
+      "dur": 0.292,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::fill_",
+      "cat": "cpu_op",
+      "ts": 43.0185546875,
+      "dur": 0.084,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "autograd::engine::evaluate_function: MeanBackward0",
+      "cat": "cpu_op",
+      "ts": 49.7373046875,
+      "dur": 6.051,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "MeanBackward0",
+      "cat": "cpu_op",
+      "ts": 50.947265625,
+      "dur": 4.34,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::expand",
+      "cat": "cpu_op",
+      "ts": 51.40625,
+      "dur": 0.835,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::as_strided",
+      "cat": "cpu_op",
+      "ts": 51.6982421875,
+      "dur": 0.209,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::div",
+      "cat": "cpu_op",
+      "ts": 52.408203125,
+      "dur": 2.712,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::div",
+      "cat": "cpu_op",
+      "ts": 52.8671875,
+      "dur": 2.044,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::to",
+      "cat": "cpu_op",
+      "ts": 53.1591796875,
+      "dur": 1.001,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::_to_copy",
+      "cat": "cpu_op",
+      "ts": 53.2841796875,
+      "dur": 0.793,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::empty_strided",
+      "cat": "cpu_op",
+      "ts": 53.4091796875,
+      "dur": 0.292,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::copy_",
+      "cat": "cpu_op",
+      "ts": 53.826171875,
+      "dur": 0.251,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "autograd::engine::evaluate_function: PowBackward0",
+      "cat": "cpu_op",
+      "ts": 57.70703125,
+      "dur": 4.173,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "PowBackward0",
+      "cat": "cpu_op",
+      "ts": 57.8740234375,
+      "dur": 3.171,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::pow",
+      "cat": "cpu_op",
+      "ts": 58.1240234375,
+      "dur": 0.96,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::result_type",
+      "cat": "cpu_op",
+      "ts": 58.291015625,
+      "dur": 0.042,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::to",
+      "cat": "cpu_op",
+      "ts": 58.416015625,
+      "dur": 0.042,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::copy_",
+      "cat": "cpu_op",
+      "ts": 58.833984375,
+      "dur": 0.208,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::mul",
+      "cat": "cpu_op",
+      "ts": 59.208984375,
+      "dur": 1.043,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::mul",
+      "cat": "cpu_op",
+      "ts": 59.5849609375,
+      "dur": 0.459,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::mul",
+      "cat": "cpu_op",
+      "ts": 60.376953125,
+      "dur": 0.334,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "autograd::engine::evaluate_function: SubBackward0",
+      "cat": "cpu_op",
+      "ts": 63.548828125,
+      "dur": 0.459,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "SubBackward0",
+      "cat": "cpu_op",
+      "ts": 63.673828125,
+      "dur": 0.083,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "autograd::engine::evaluate_function: MmBackward0",
+      "cat": "cpu_op",
+      "ts": 65.384765625,
+      "dur": 4.256,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "MmBackward0",
+      "cat": "cpu_op",
+      "ts": 65.509765625,
+      "dur": 3.546,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::t",
+      "cat": "cpu_op",
+      "ts": 65.884765625,
+      "dur": 2.003,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::transpose",
+      "cat": "cpu_op",
+      "ts": 67.26171875,
+      "dur": 0.376,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::as_strided",
+      "cat": "cpu_op",
+      "ts": 67.4287109375,
+      "dur": 0.167,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::mm",
+      "cat": "cpu_op",
+      "ts": 68.0126953125,
+      "dur": 0.793,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::resolve_conj",
+      "cat": "cpu_op",
+      "ts": 68.4306640625,
+      "dur": 0.041,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::resolve_conj",
+      "cat": "cpu_op",
+      "ts": 68.5556640625,
+      "dur": 0.0,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "autograd::engine::evaluate_function: torch::autograd::AccumulateGrad",
+      "cat": "cpu_op",
+      "ts": 73.1044921875,
+      "dur": 1.585,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "torch::autograd::AccumulateGrad",
+      "cat": "cpu_op",
+      "ts": 73.60546875,
+      "dur": 0.959,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::detach",
+      "cat": "cpu_op",
+      "ts": 73.8974609375,
+      "dur": 0.542,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "detach",
+      "cat": "cpu_op",
+      "ts": 74.1474609375,
+      "dur": 0.25,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "phase::update",
+      "cat": "user_annotation",
+      "ts": 80.65625,
+      "dur": 5.049,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::add_",
+      "cat": "cpu_op",
+      "ts": 83.4521484375,
+      "dur": 0.542,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::item",
+      "cat": "cpu_op",
+      "ts": 86.4560546875,
+      "dur": 0.376,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::_local_scalar_dense",
+      "cat": "cpu_op",
+      "ts": 86.6650390625,
+      "dur": 0.083,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "ProfilerStep#3",
+      "cat": "user_annotation",
+      "ts": 94.55078125,
+      "dur": 56.414,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "phase::input",
+      "cat": "user_annotation",
+      "ts": 96.6787109375,
+      "dur": 2.587,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::clone",
+      "cat": "cpu_op",
+      "ts": 97.513671875,
+      "dur": 0.792,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::empty_strided",
+      "cat": "cpu_op",
+      "ts": 97.6796875,
+      "dur": 0.209,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::copy_",
+      "cat": "cpu_op",
+      "ts": 98.013671875,
+      "dur": 0.251,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "phase::forward",
+      "cat": "user_annotation",
+      "ts": 100.43359375,
+      "dur": 3.422,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::matmul",
+      "cat": "cpu_op",
+      "ts": 101.310546875,
+      "dur": 1.585,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::mm",
+      "cat": "cpu_op",
+      "ts": 101.435546875,
+      "dur": 1.46,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::resolve_conj",
+      "cat": "cpu_op",
+      "ts": 102.3544921875,
+      "dur": 0.0,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::resolve_conj",
+      "cat": "cpu_op",
+      "ts": 102.4794921875,
+      "dur": 0.0,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::resolve_conj",
+      "cat": "cpu_op",
+      "ts": 102.5625,
+      "dur": 0.0,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "phase::loss",
+      "cat": "user_annotation",
+      "ts": 104.9833984375,
+      "dur": 8.011,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::sub",
+      "cat": "cpu_op",
+      "ts": 105.8173828125,
+      "dur": 0.835,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::square",
+      "cat": "cpu_op",
+      "ts": 106.9443359375,
+      "dur": 1.043,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::pow",
+      "cat": "cpu_op",
+      "ts": 107.02734375,
+      "dur": 0.918,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::result_type",
+      "cat": "cpu_op",
+      "ts": 107.361328125,
+      "dur": 0.0,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::to",
+      "cat": "cpu_op",
+      "ts": 107.486328125,
+      "dur": 0.0,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::mean",
+      "cat": "cpu_op",
+      "ts": 108.2373046875,
+      "dur": 3.589,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::mean",
+      "cat": "cpu_op",
+      "ts": 108.48828125,
+      "dur": 3.171,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::sum",
+      "cat": "cpu_op",
+      "ts": 108.8212890625,
+      "dur": 0.835,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::as_strided",
+      "cat": "cpu_op",
+      "ts": 108.98828125,
+      "dur": 0.084,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::fill_",
+      "cat": "cpu_op",
+      "ts": 109.447265625,
+      "dur": 0.0,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::div_",
+      "cat": "cpu_op",
+      "ts": 109.78125,
+      "dur": 1.794,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::div_",
+      "cat": "cpu_op",
+      "ts": 110.115234375,
+      "dur": 1.335,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::to",
+      "cat": "cpu_op",
+      "ts": 110.3232421875,
+      "dur": 0.793,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::_to_copy",
+      "cat": "cpu_op",
+      "ts": 110.44921875,
+      "dur": 0.626,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::empty_strided",
+      "cat": "cpu_op",
+      "ts": 110.57421875,
+      "dur": 0.208,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::copy_",
+      "cat": "cpu_op",
+      "ts": 110.8662109375,
+      "dur": 0.167,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "phase::backward",
+      "cat": "user_annotation",
+      "ts": 114.162109375,
+      "dur": 28.541,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::ones_like",
+      "cat": "cpu_op",
+      "ts": 117.5419921875,
+      "dur": 0.668,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::empty_like",
+      "cat": "cpu_op",
+      "ts": 117.6259765625,
+      "dur": 0.375,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::empty_strided",
+      "cat": "cpu_op",
+      "ts": 117.7509765625,
+      "dur": 0.25,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::fill_",
+      "cat": "cpu_op",
+      "ts": 118.1259765625,
+      "dur": 0.042,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "autograd::engine::evaluate_function: MeanBackward0",
+      "cat": "cpu_op",
+      "ts": 121.9228515625,
+      "dur": 3.589,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "MeanBackward0",
+      "cat": "cpu_op",
+      "ts": 122.08984375,
+      "dur": 3.088,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::expand",
+      "cat": "cpu_op",
+      "ts": 122.2568359375,
+      "dur": 0.543,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::as_strided",
+      "cat": "cpu_op",
+      "ts": 122.4658203125,
+      "dur": 0.125,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::div",
+      "cat": "cpu_op",
+      "ts": 122.9248046875,
+      "dur": 2.086,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::div",
+      "cat": "cpu_op",
+      "ts": 123.2587890625,
+      "dur": 1.585,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::to",
+      "cat": "cpu_op",
+      "ts": 123.5087890625,
+      "dur": 0.751,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::_to_copy",
+      "cat": "cpu_op",
+      "ts": 123.591796875,
+      "dur": 0.626,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::empty_strided",
+      "cat": "cpu_op",
+      "ts": 123.7177734375,
+      "dur": 0.208,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::copy_",
+      "cat": "cpu_op",
+      "ts": 124.009765625,
+      "dur": 0.167,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "autograd::engine::evaluate_function: PowBackward0",
+      "cat": "cpu_op",
+      "ts": 127.138671875,
+      "dur": 3.38,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "PowBackward0",
+      "cat": "cpu_op",
+      "ts": 127.22265625,
+      "dur": 2.587,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::pow",
+      "cat": "cpu_op",
+      "ts": 127.4306640625,
+      "dur": 0.793,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::result_type",
+      "cat": "cpu_op",
+      "ts": 127.5556640625,
+      "dur": 0.0,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::to",
+      "cat": "cpu_op",
+      "ts": 127.6396484375,
+      "dur": 0.042,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::copy_",
+      "cat": "cpu_op",
+      "ts": 128.0146484375,
+      "dur": 0.167,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::mul",
+      "cat": "cpu_op",
+      "ts": 128.306640625,
+      "dur": 0.877,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::mul",
+      "cat": "cpu_op",
+      "ts": 128.5986328125,
+      "dur": 0.418,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::mul",
+      "cat": "cpu_op",
+      "ts": 129.2666015625,
+      "dur": 0.292,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "autograd::engine::evaluate_function: SubBackward0",
+      "cat": "cpu_op",
+      "ts": 132.021484375,
+      "dur": 0.459,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "SubBackward0",
+      "cat": "cpu_op",
+      "ts": 132.146484375,
+      "dur": 0.084,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "autograd::engine::evaluate_function: MmBackward0",
+      "cat": "cpu_op",
+      "ts": 133.857421875,
+      "dur": 2.211,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "MmBackward0",
+      "cat": "cpu_op",
+      "ts": 133.982421875,
+      "dur": 1.627,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::t",
+      "cat": "cpu_op",
+      "ts": 134.1494140625,
+      "dur": 0.584,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::transpose",
+      "cat": "cpu_op",
+      "ts": 134.31640625,
+      "dur": 0.25,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::as_strided",
+      "cat": "cpu_op",
+      "ts": 134.44140625,
+      "dur": 0.084,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::mm",
+      "cat": "cpu_op",
+      "ts": 134.775390625,
+      "dur": 0.668,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::resolve_conj",
+      "cat": "cpu_op",
+      "ts": 135.150390625,
+      "dur": 0.0,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::resolve_conj",
+      "cat": "cpu_op",
+      "ts": 135.234375,
+      "dur": 0.0,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "autograd::engine::evaluate_function: torch::autograd::AccumulateGrad",
+      "cat": "cpu_op",
+      "ts": 137.779296875,
+      "dur": 1.043,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "torch::autograd::AccumulateGrad",
+      "cat": "cpu_op",
+      "ts": 138.11328125,
+      "dur": 0.584,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::detach",
+      "cat": "cpu_op",
+      "ts": 138.322265625,
+      "dur": 0.292,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "detach",
+      "cat": "cpu_op",
+      "ts": 138.4052734375,
+      "dur": 0.209,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "phase::update",
+      "cat": "user_annotation",
+      "ts": 143.955078125,
+      "dur": 4.005,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::add_",
+      "cat": "cpu_op",
+      "ts": 145.9990234375,
+      "dur": 0.417,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::item",
+      "cat": "cpu_op",
+      "ts": 148.5859375,
+      "dur": 0.251,
+      "pid": 1,
+      "tid": 1
+    },
+    {
+      "ph": "X",
+      "name": "aten::_local_scalar_dense",
+      "cat": "cpu_op",
+      "ts": 148.7109375,
+      "dur": 0.042,
+      "pid": 1,
+      "tid": 1
+    }
+  ]
+}

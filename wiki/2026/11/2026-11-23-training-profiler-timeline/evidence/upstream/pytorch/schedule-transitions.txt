@@ -1,0 +1,37 @@
+        ] = {
+            # key is (prev_action, current_action), value is action list corresponding to the state pair.
+            (ProfilerAction.NONE, ProfilerAction.NONE): [],
+            (ProfilerAction.NONE, ProfilerAction.WARMUP): [self.prepare_trace],
+            (ProfilerAction.NONE, ProfilerAction.RECORD): [
+                self.prepare_trace,
+                self.start_trace,
+            ],
+            (ProfilerAction.NONE, ProfilerAction.RECORD_AND_SAVE): [
+                self.prepare_trace,
+                self.start_trace,
+            ],
+            (ProfilerAction.WARMUP, ProfilerAction.NONE): [
+                partial(warn, "Incorrect schedule: WARMUP followed by NONE"),
+                self.start_trace,
+                self.stop_trace,
+            ],
+            (ProfilerAction.WARMUP, ProfilerAction.WARMUP): [],
+            (ProfilerAction.WARMUP, ProfilerAction.RECORD): [self.start_trace],
+            (ProfilerAction.WARMUP, ProfilerAction.RECORD_AND_SAVE): [self.start_trace],
+            (ProfilerAction.RECORD, ProfilerAction.NONE): [
+                partial(warn, "Incorrect schedule: RECORD followed by NONE"),
+                self.stop_trace,
+            ],
+            (ProfilerAction.RECORD, ProfilerAction.WARMUP): [
+                partial(warn, "Incorrect schedule: RECORD followed by WARMUP"),
+                self.stop_trace,
+            ],
+            (ProfilerAction.RECORD, ProfilerAction.RECORD): [],
+            (ProfilerAction.RECORD, ProfilerAction.RECORD_AND_SAVE): [],
+            (ProfilerAction.RECORD_AND_SAVE, ProfilerAction.NONE): [
+                self._finalize_trace,
+            ],
+            (ProfilerAction.RECORD_AND_SAVE, ProfilerAction.WARMUP): [
+                self._finalize_trace,
+                self.prepare_trace,
+            ],

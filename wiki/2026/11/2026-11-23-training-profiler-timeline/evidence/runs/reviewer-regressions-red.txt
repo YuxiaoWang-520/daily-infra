@@ -1,0 +1,25 @@
+test_reject_lossy_integer_timestamps (test_answers.IntervalTests.test_reject_lossy_integer_timestamps) ... FAIL
+test_projection_rejects_rebase_overflow (test_answers.TraceTests.test_projection_rejects_rebase_overflow) ... FAIL
+
+======================================================================
+FAIL: test_reject_lossy_integer_timestamps (test_answers.IntervalTests.test_reject_lossy_integer_timestamps)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 95, in test_reject_lossy_integer_timestamps
+    with self.assertRaises(ValueError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+======================================================================
+FAIL: test_projection_rejects_rebase_overflow (test_answers.TraceTests.test_projection_rejects_rebase_overflow)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<article>/code/test_answers.py", line 193, in test_projection_rejects_rebase_overflow
+    with self.assertRaises(ValueError):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: ValueError not raised
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.000s
+
+FAILED (failures=2)

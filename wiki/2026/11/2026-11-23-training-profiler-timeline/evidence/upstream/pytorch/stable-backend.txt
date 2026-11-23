@@ -1,0 +1,10 @@
+        cuda_config = self.activity_configs.get(ProfilerActivity.CUDA)
+        self._cuspy_config: CuspyConfig | None = (
+            cuda_config._get_profiler_config(CuspyConfig)
+            if cuda_config is not None
+            else None
+        )
+        self._use_cuspy = self._cuspy_config is not None or (
+            self._custom_profiler_config.get("backend") == "cuspy"
+            or bool(self._custom_profiler_config.get("cuspy"))
+        )

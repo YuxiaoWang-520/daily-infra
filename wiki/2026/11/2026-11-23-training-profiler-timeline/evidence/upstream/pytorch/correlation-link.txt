@@ -1,0 +1,39 @@
+            corr_id = kineto_event.linked_correlation_id()
+            if corr_id > 0:
+                if corr_id not in device_corr_map:
+                    device_corr_map[corr_id] = []
+                device_corr_map[corr_id].append(fe)
+            elif corr_id == 0:
+                # Unlinked runtime/driver records and overhead have external_id=0.
+                # Their correlation ids can alias PyTorch operator ids, so do not
+                # use them to look up device work. See KinetoEvent::externalId().
+                if fe.external_id != 0:
+                    frontend_function_events.append(fe)
+            else:
+                raise RuntimeError(
+                    f"Got negative correlation id {corr_id} in profiler post processing"
+                )
+
+        # associate device kernels and device runtime (CPU) with CPU events
+        for fe in frontend_function_events:
+            if (
+                fe.device_type == DeviceType.CPU
+                and not fe.is_async
+                and fe.id in device_corr_map
+            ):
+                for f_evt in device_corr_map[fe.id]:
+                    if f_evt.device_type in [
+                        DeviceType.CUDA,
+                        DeviceType.PrivateUse1,
+                        DeviceType.XPU,
+                    ]:
+                        fe.append_kernel(
+                            f_evt.name,
+                            f_evt.device_index,
+                            f_evt.time_range.end - f_evt.time_range.start,
+                        )
+                    elif f_evt.device_type == DeviceType.CPU:
+                        # make sure that 'thread' of a CPU Kineto (e.g. Device Runtime) event is associated
+                        # with the 'thread' of the corresponding linked PyTorch event to properly track
+                        # parents and children
+                        f_evt.thread = fe.thread

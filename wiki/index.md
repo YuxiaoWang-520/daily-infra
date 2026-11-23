@@ -34,8 +34,9 @@
 | 28 | 2026-11-18 | [Pipeline Parallel 怎样调度 microbatch，气泡和激活显存之间如何取舍？](2026/11/2026-11-18-pipeline-parallel-schedules/README.md) | GPipe／1F1B、microbatch、气泡分母、激活生命周期与一致梯度 | 第 17—19、27 篇 |
 | 29 | 2026-11-19 | [Context Parallel 怎样切分长序列，Attention 如何在各 rank 间交换 K／V？](2026/11/2026-11-19-context-parallel-attention/README.md) | Context Parallel、长序列、online softmax、因果布局、K／V 交换与梯度归约 | 第 10、18、23、27 篇 |
 | 30 | 2026-11-20 | [MoE 的 token 怎样路由到专家，为什么 Expert Parallel 需要 AllToAll？](2026/11/2026-11-20-moe-expert-parallel-alltoall/README.md) | MoE、Top-k 门控、Expert Parallel、AllToAll、容量与负载均衡 | 第 07、17、23、27 篇 |
+| 31 | 2026-11-23 | [训练 profiler 的时间轴怎样区分 CPU 提交、GPU 执行与通信等待？](2026/11/2026-11-23-training-profiler-timeline/README.md) | profiler、异步时间轴、范围统计、通信重叠与瓶颈归因 | 第 06、17、23、28、30 篇 |
 
-下一篇候选为训练 profiler 的时间轴怎样区分 CPU 提交、GPU 执行与通信等待？
+下一篇候选为异步 checkpoint 怎样与训练重叠，何时才算保存完成？
 
 2026-10-22 起按用户要求集中完成起步前 10 篇，使用实际归档日期；日常定时任务仍按工作日每天一篇执行。范围见 [本次任务说明](../docs/BOOTSTRAP10.md)。
 

@@ -1,0 +1,137 @@
+{
+  "retrieved_on": "2026-11-23",
+  "provider": "Parallel",
+  "searches": [
+    {
+      "search_id": "search_17370cbc2e0b07d30989b60a240753fc",
+      "session_id": "session_17370cbc2e0b07d30989b60a240753fc",
+      "sources": [
+        {
+          "url": "https://docs.pytorch.org/docs/main/profiler",
+          "title": "torch.profiler — PyTorch main documentation",
+          "publish_date": "2020-12-18"
+        },
+        {
+          "url": "https://docs.pytorch.org/docs/main/profiler.html",
+          "title": "torch.profiler — PyTorch main documentation",
+          "publish_date": "2020-12-18"
+        },
+        {
+          "url": "https://docs.pytorch.org/docs/stable/profiler",
+          "title": "torch.profiler — PyTorch 2.8 documentation",
+          "publish_date": "2020-12-18"
+        },
+        {
+          "url": "https://docs.pytorch.org/docs/2.15/profiler.html",
+          "title": "torch.profiler — PyTorch 2.15 documentation",
+          "publish_date": "2020-12-18"
+        },
+        {
+          "url": "http://docs.pytorch.org/docs/stable/profiler.html",
+          "title": "torch.profiler#",
+          "publish_date": "2020-12-18"
+        },
+        {
+          "url": "http://docs.pytorch.org/docs/main/accelerator/profiler.html",
+          "title": "Profiler Integration — PyTorch main documentation",
+          "publish_date": "2025-12-26"
+        },
+        {
+          "url": "https://docs.pytorch.org/tutorials/recipes/recipes/profiler_recipe.html",
+          "title": "PyTorch Profiler — PyTorch Tutorials 2.14.0+cu130 ...",
+          "publish_date": "2021-01-29"
+        },
+        {
+          "url": "https://docs.pytorch.org/docs/2.13/generated/torch.autograd.profiler_util.EventList.html",
+          "title": "EventList #",
+          "publish_date": null
+        },
+        {
+          "url": "https://docs.pytorch.org/docs/2.14/profiler.html",
+          "title": "torch.profiler — PyTorch 2.14 documentation",
+          "publish_date": "2020-12-18"
+        },
+        {
+          "url": "http://docs.pytorch.org/docs/main/generated/torch.autograd.profiler_util.EventList.html",
+          "title": "EventList #",
+          "publish_date": null
+        }
+      ]
+    },
+    {
+      "search_id": "search_127a7310c52c229d666c4156ae622233",
+      "session_id": "session_127a7310c52c229d666c4156ae622233",
+      "sources": [
+        {
+          "url": "https://docs.nvidia.com/nsight-systems/UserGuide/",
+          "title": "User Guide — Nsight Systems",
+          "publish_date": "2026-09-09"
+        },
+        {
+          "url": "https://docs.nvidia.com/nsight-systems/2026.1/AnalysisGuide/index.html",
+          "title": "Post-Collection Analysis Guide — Nsight Systems",
+          "publish_date": "2026-01-15"
+        },
+        {
+          "url": "https://docs.nvidia.com/nsight-systems/AnalysisGuide/",
+          "title": "Post-Collection Analysis Guide — Nsight Systems",
+          "publish_date": "2026-11-04"
+        },
+        {
+          "url": "https://docs.nvidia.com/nsight-systems/UserGuide/index.html?highlight=CPU%20utilization",
+          "title": "User Guide — Nsight Systems",
+          "publish_date": "2025-11-21"
+        },
+        {
+          "url": "https://docs.nvidia.com/nsight-systems/UserGuide/index.html",
+          "title": "User Guide — Nsight Systems",
+          "publish_date": null
+        },
+        {
+          "url": "https://docs.nvidia.com/nsight-systems/AnalysisGuide/index.html",
+          "title": "Post-Collection Analysis Guide — Nsight Systems",
+          "publish_date": null
+        },
+        {
+          "url": "https://archive.docs.nvidia.com/nsight-systems/2026.3/AnalysisGuide/index.html",
+          "title": "Post-Collection Analysis Guide — Nsight Systems",
+          "publish_date": "2026-05-14"
+        },
+        {
+          "url": "https://docs.nvidia.com/cuda/profiler-users-guide",
+          "title": "1. Preparing An Application For Profiling — Profiler 12.9 documentation",
+          "publish_date": null
+        },
+        {
+          "url": "https://docs.nvidia.com/nsight-systems/2022.5/UserGuide/index.html",
+          "title": "User Guide :: Nsight Systems Documentation",
+          "publish_date": null
+        },
+        {
+          "url": "https://archive.docs.nvidia.com/nsight-systems/2026.4/UserGuide/index.html",
+          "title": "User Guide — Nsight Systems",
+          "publish_date": "2026-07-28"
+        }
+      ]
+    }
+  ],
+  "fetch": {
+    "extract_id": "extract_84405c2d5bc87b85f86b7463079c5deb",
+    "results": [
+      {
+        "url": "https://docs.pytorch.org/docs/2.15/profiler.html",
+        "title": "torch.profiler #",
+        "publish_date": null,
+        "provider_acquired_at": "2026-11-17T00:00:00Z"
+      },
+      {
+        "url": "https://archive.docs.nvidia.com/nsight-systems/2026.4/UserGuide/index.html",
+        "title": "User Guide — Nsight Systems",
+        "publish_date": "2026-07-28",
+        "provider_acquired_at": "2026-10-23T00:00:00Z"
+      }
+    ],
+    "errors": []
+  },
+  "note": "Search/extract excerpts were read to locate primary authorities; this metadata does not claim provider-cached content was acquired today. Local notes paraphrase claims; fixed Git source is implementation evidence."
+}

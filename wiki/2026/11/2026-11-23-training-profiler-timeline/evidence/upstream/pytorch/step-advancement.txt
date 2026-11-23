@@ -1,0 +1,26 @@
+    def step(self) -> None:
+        """
+        Signals the profiler that the next profiling step has started.
+        """
+        if self.record_steps and self.step_rec_fn:
+            self.step_rec_fn.__exit__(None, None, None)
+            # Drop our reference so a subsequent stop() / step() — e.g. after
+            # this step() raises — doesn't double-exit the same instance.
+            self.step_rec_fn = None
+        prev_action = self.current_action
+        prev_schedule_action = self._prev_schedule_action
+        next_step = self.step_num + 1
+        schedule_action = self.schedule(next_step)
+
+        # Note that we check schedule validity BEFORE changing the profiler's
+        # internal state. This prevents the profiler from being in an invalid
+        # state.
+        if schedule_action == ProfilerAction.DEVICE_STOPPED:
+            raise ValueError(
+                "ProfilerAction.DEVICE_STOPPED is set internally by the "
+                "profiler and must not be returned by a user-provided schedule"
+            )
+
+        self.step_num = next_step
+        self.current_action = schedule_action
+        self._prev_schedule_action = schedule_action

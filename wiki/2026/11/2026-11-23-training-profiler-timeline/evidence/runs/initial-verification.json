@@ -1,0 +1,88 @@
+{
+  "checked_at": "2026-11-23T11:13:09.297841+08:00",
+  "environment": {
+    "python": "3.12.16",
+    "platform": "Darwin arm64",
+    "torch": "2.15.0",
+    "torch_git": "d0f2af8b66b20da4baa50644c0cd3f887a2eae2e",
+    "cuda_available": false,
+    "profiler_activities": [
+      "ProfilerActivity.CPU"
+    ]
+  },
+  "source_files_sha256": {
+    "code/answers.py": "a909e09d1bdf798a8f2c407a5bcf292b8853878b4077e9993f3e3d43e636b266",
+    "code/cpu_profile.py": "e2e6ac03b4a2db7dd077dab4ff6ce6c5f3d466edb9286ed0fc3e81631f7bd350",
+    "code/exercises.py": "5809f9693b91dbea6e5a899e3fe9571c71c2339a44d87363b2c900f450321fde",
+    "code/run_answers.py": "ee4b9414d2f698e7984a446db07fd91fdc9c3a7151eea5b679157abb387b5a45",
+    "code/test_answers.py": "355e68886fcdd8d88a5a7212b6b60b02ab2611f5fd91da5d8245b2824503e441"
+  },
+  "red_test": {
+    "exit_code": 1,
+    "output": "red-tests.txt",
+    "result": "19 tests; 32 subtest/errors with intentionally unimplemented answer stubs"
+  },
+  "commands": [
+    {
+      "started_at": "2026-11-23T11:13:04.531392+08:00",
+      "command": [
+        "python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "code",
+        "-p",
+        "test_answers.py",
+        "-v"
+      ],
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "cwd": "<article>",
+      "exit_code": 0,
+      "output": "initial-unit-tests.txt"
+    },
+    {
+      "started_at": "2026-11-23T11:13:05.836408+08:00",
+      "command": [
+        "python",
+        "-O",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "code",
+        "-p",
+        "test_answers.py",
+        "-v"
+      ],
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "cwd": "<article>",
+      "exit_code": 0,
+      "output": "initial-optimized-tests.txt"
+    },
+    {
+      "started_at": "2026-11-23T11:13:09.230100+08:00",
+      "command": [
+        "ruff",
+        "check",
+        "code"
+      ],
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "cwd": "<article>",
+      "exit_code": 1,
+      "output": "initial-ruff-check.txt"
+    }
+  ],
+  "log_redactions": [
+    "absolute repository path -> <repo>",
+    "home path -> <home>",
+    "hostname -> <host>"
+  ],
+  "executable_recording": "executed with existing ai-infra Python/Ruff; recorded command uses basename"
+}

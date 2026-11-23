@@ -1,0 +1,88 @@
+{
+  "synthetic_gpu": {
+    "window_us": 15000.0,
+    "compute_us": 9000.0,
+    "communication_us": 8000.0,
+    "overlap_us": 6000.0,
+    "communication_only_us": 2000.0,
+    "any_activity_us": 11000.0,
+    "no_selected_activity_us": 4000.0,
+    "summed_activity_us": 17000.0
+  },
+  "real_cpu": {
+    "device": "CPU",
+    "gpu_executed": false,
+    "dtype": "float64",
+    "threads": 1,
+    "input_shape": [
+      16,
+      8
+    ],
+    "weight_shape": [
+      8,
+      4
+    ],
+    "steps_run": 4,
+    "schedule": {
+      "wait": 1,
+      "warmup": 1,
+      "active": 2,
+      "repeat": 1
+    },
+    "profiled_steps": [
+      2,
+      3
+    ],
+    "callback_step_numbers": [
+      4
+    ],
+    "phase_counts": {
+      "phase::backward": 2,
+      "phase::forward": 2,
+      "phase::input": 2,
+      "phase::loss": 2,
+      "phase::update": 2
+    },
+    "forward_samples": [
+      {
+        "cpu_total_us": 6.676000000000002,
+        "self_cpu_us": 3.2959999999999923,
+        "cpu_children": 1
+      },
+      {
+        "cpu_total_us": 3.421999999999997,
+        "self_cpu_us": 1.8370000000000175,
+        "cpu_children": 1
+      }
+    ],
+    "losses": [
+      0.08306359499692917,
+      0.08089199181386245,
+      0.07877723023753842,
+      0.07671782244125351
+    ],
+    "losses_match": true,
+    "weight_max_abs_error": 0.0,
+    "capture_wall_seconds": 0.3906129589304328,
+    "wall_scope": "four annotated steps + profiler transitions + export; not clean throughput",
+    "raw_trace_sha256_before_projection": "fc307868c4ddcc6321d69db1d3ce5a8b6d571e86f3128be92ac1029821324a21",
+    "raw_trace_archived": false,
+    "projection": {
+      "raw_event_records": 164,
+      "retained_complete_events": 140,
+      "timestamp_origin_us": 4547233558940.709,
+      "durations_preserved": true,
+      "dropped": [
+        "non-X events",
+        "non-CPU categories",
+        "args",
+        "top-level metadata"
+      ],
+      "remapped": [
+        "pid",
+        "tid"
+      ],
+      "names_retained_require_manual_privacy_review": true
+    }
+  }
+}
