@@ -1,0 +1,28 @@
+W1124 11:09:38.723000 20466 site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+test_already_failed_staging_propagates_to_upload_future (test_answers.DCPTests.test_already_failed_staging_propagates_to_upload_future) ... ok
+test_async_stage_has_two_distinct_completion_boundaries (test_answers.DCPTests.test_async_stage_has_two_distinct_completion_boundaries) ... <home>/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/distributed/checkpoint/utils.py:488: UserWarning: torch.distributed is disabled, unavailable or uninitialized, assuming the intent is to save in a single process.
+  return func(*args, **kwargs)
+<home>/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/distributed/checkpoint/utils.py:488: UserWarning: torch.distributed is disabled, unavailable or uninitialized, assuming the intent is to load in a single process.
+  return func(*args, **kwargs)
+ok
+test_blocking_stage_returns_save_future (test_answers.DCPTests.test_blocking_stage_returns_save_future) ... ok
+test_failed_save_is_done_but_not_successful (test_answers.DCPTests.test_failed_save_is_done_but_not_successful) ... ok
+test_shallow_dictionary_is_not_an_independent_tensor_snapshot (test_answers.DCPTests.test_shallow_dictionary_is_not_an_independent_tensor_snapshot) ... ok
+test_exact_first_and_last_schedule (test_answers.ScheduleTests.test_exact_first_and_last_schedule) ... ok
+test_fast_storage_overlaps_compute (test_answers.ScheduleTests.test_fast_storage_overlaps_compute) ... ok
+test_integer_arithmetic_remains_exact (test_answers.ScheduleTests.test_integer_arithmetic_remains_exact) ... ok
+test_no_checkpoints (test_answers.ScheduleTests.test_no_checkpoints) ... ok
+test_one_checkpoint_cannot_hide_final_write (test_answers.ScheduleTests.test_one_checkpoint_cannot_hide_final_write) ... ok
+test_partial_tail_can_hide_some_drain (test_answers.ScheduleTests.test_partial_tail_can_hide_some_drain) ... ok
+test_reject_invalid_ranges (test_answers.ScheduleTests.test_reject_invalid_ranges) ... ok
+test_reject_nonintegers_and_booleans (test_answers.ScheduleTests.test_reject_nonintegers_and_booleans) ... ok
+test_slow_storage_creates_backpressure (test_answers.ScheduleTests.test_slow_storage_creates_backpressure) ... ok
+test_small_grid_accounting_and_order (test_answers.ScheduleTests.test_small_grid_accounting_and_order) ... ok
+test_storage_exactly_matches_compute_interval (test_answers.ScheduleTests.test_storage_exactly_matches_compute_interval) ... ok
+test_zero_stage_and_write_cost (test_answers.ScheduleTests.test_zero_stage_and_write_cost) ... ok
+test_zero_steps (test_answers.ScheduleTests.test_zero_steps) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.013s
+
+OK

@@ -1,0 +1,36 @@
+    if dist.is_available() and dist.is_initialized():
+        pg = process_group or _get_default_group()
+        if torch.device("cpu") not in pg._device_types:
+            raise AssertionError(
+                "A CPU backend must be enabled for async save; try initializing process group with 'cpu:gloo,cuda:nccl'"
+            )
+
+    owned_async_stager: AsyncStager | None = None
+    if async_stager is None:
+        if storage_writer is not None and isinstance(storage_writer, AsyncStager):
+            # bwc with old storage_writers
+            async_stager = storage_writer
+        else:
+            async_stager = DefaultStager(
+                StagingOptions(
+                    False,
+                    False,
+                    False,
+                    False,
+                )
+            )
+            owned_async_stager = async_stager
+
+    state_dict = _stateful_to_state_dict(state_dict)
+
+    owned_async_stager_closed = False
+
+    def maybe_close_owned_async_stager() -> None:
+        nonlocal owned_async_stager_closed
+        if owned_async_stager is not None and not owned_async_stager_closed:
+            owned_async_stager_closed = True
+            owned_async_stager.close()
+
+    @_dcp_method_logger(log_exceptions=True)
+    def stage_state_dict() -> Future[STATE_DICT_TYPE] | STATE_DICT_TYPE:
+        return async_stager.stage(state_dict)

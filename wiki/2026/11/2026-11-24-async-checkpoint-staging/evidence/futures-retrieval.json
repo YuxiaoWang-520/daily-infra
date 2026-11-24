@@ -1,0 +1,26 @@
+{
+  "retrieved_on": "2026-11-24",
+  "provider": "Parallel",
+  "search_id": "search_e8664dd364a1372e3aae83c2ed810986",
+  "sources": [
+    {
+      "url": "http://docs.python.org/3.12/library/concurrent.futures.html",
+      "title": "concurrent.futures — Launching parallel tasks — Python 3.12.16 documentation"
+    },
+    {
+      "url": "https://docs.python.org/release/3.12.7/library/concurrent.futures.html",
+      "title": "concurrent.futures — Launching parallel tasks — Python 3.12.7 documentation"
+    }
+  ],
+  "fetch": {
+    "id": "extract_2ef51fa1467cf458a51647a7e4544b5b",
+    "results": [
+      {
+        "url": "https://docs.python.org/3.12/library/concurrent.futures.html",
+        "title": "concurrent.futures — Launching parallel tasks — Python 3.12.16 documentation",
+        "provider_acquired_at": "2026-11-23T00:00:00Z"
+      }
+    ]
+  },
+  "note": "Read official executor cleanup excerpts; Future failure semantics additionally exercised directly. No full copied webpage."
+}

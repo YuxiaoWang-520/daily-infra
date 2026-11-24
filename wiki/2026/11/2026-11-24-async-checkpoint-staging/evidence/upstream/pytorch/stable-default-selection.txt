@@ -1,0 +1,17 @@
+    owned_async_stager: AsyncStager | None = None
+    if async_stager is None:
+        if storage_writer is not None and isinstance(storage_writer, AsyncStager):
+            # bwc with old storage_writers
+            async_stager = storage_writer
+        else:
+            async_stager = DefaultStager(
+                StagingOptions(
+                    False,
+                    False,
+                    False,
+                    False,
+                )
+            )
+            owned_async_stager = async_stager
+
+    state_dict = _stateful_to_state_dict(state_dict)

@@ -1,0 +1,26 @@
+def save_wrapper(
+    staging_future_or_state_dict: Future[STATE_DICT_TYPE] | STATE_DICT_TYPE,
+    *,
+    checkpoint_id: str | os.PathLike | None = None,
+    storage_writer: StorageWriter | None = None,
+    planner: SavePlanner | None = None,
+    process_group: dist.ProcessGroup | None = None,
+    no_dist: bool = False,
+    use_collectives: bool = True,
+) -> Future:
+    from torch.distributed.checkpoint.state_dict_saver import save
+
+    staged_dict = (
+        staging_future_or_state_dict.result()
+        if isinstance(staging_future_or_state_dict, Future)
+        else staging_future_or_state_dict
+    )
+    return save(
+        staged_dict,
+        checkpoint_id=checkpoint_id,
+        storage_writer=storage_writer,
+        planner=planner,
+        process_group=process_group,
+        no_dist=no_dist,
+        use_collectives=use_collectives,
+    )

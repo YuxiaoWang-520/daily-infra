@@ -1,0 +1,236 @@
+{
+  "checked_at": "2026-11-24T11:24:47.482533+08:00",
+  "branch": "main",
+  "baseline_local_head": "bc98da38602247e494aa94eda4ddac09e4198769",
+  "baseline_origin_main": "bc98da38602247e494aa94eda4ddac09e4198769",
+  "baseline_github_main": "bc98da38602247e494aa94eda4ddac09e4198769",
+  "origin_read_url": "git@github.com:YuxiaoWang-520/daily-infra.git",
+  "origin_push_urls": [
+    "git@github.com:YuxiaoWang-520/daily-infra.git"
+  ],
+  "repository": {
+    "defaultBranchRef": {
+      "name": "main"
+    },
+    "isPrivate": false,
+    "nameWithOwner": "YuxiaoWang-520/daily-infra",
+    "url": "https://github.com/YuxiaoWang-520/daily-infra",
+    "viewerPermission": "ADMIN",
+    "visibility": "PUBLIC"
+  },
+  "identity": {
+    "local_name": "YuxiaoWang-520",
+    "local_email": "13917046839@163.com",
+    "effective_name": "YuxiaoWang-520",
+    "effective_email": "13917046839@163.com",
+    "github_login": "YuxiaoWang-520",
+    "author_and_committer_ident_verified": true
+  },
+  "ahead_behind": [
+    0,
+    0
+  ],
+  "preexisting_staging_empty": true,
+  "unrelated_changes": false,
+  "current_status": "?? drafts/",
+  "articles_before": 31,
+  "today_already_published": false,
+  "authorized_commit_scope": [
+    "wiki/2026/11/2026-11-24-async-checkpoint-staging/",
+    "wiki/index.md",
+    "ROADMAP.md"
+  ],
+  "commands": [
+    {
+      "command": [
+        "git",
+        "branch",
+        "--show-current"
+      ],
+      "exit_code": 0,
+      "output": "main\n"
+    },
+    {
+      "command": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "output": "bc98da38602247e494aa94eda4ddac09e4198769\n"
+    },
+    {
+      "command": [
+        "git",
+        "rev-parse",
+        "origin/main"
+      ],
+      "exit_code": 0,
+      "output": "bc98da38602247e494aa94eda4ddac09e4198769\n"
+    },
+    {
+      "command": [
+        "git",
+        "remote",
+        "get-url",
+        "origin"
+      ],
+      "exit_code": 0,
+      "output": "git@github.com:YuxiaoWang-520/daily-infra.git\n"
+    },
+    {
+      "command": [
+        "git",
+        "remote",
+        "get-url",
+        "--push",
+        "--all",
+        "origin"
+      ],
+      "exit_code": 0,
+      "output": "git@github.com:YuxiaoWang-520/daily-infra.git\n"
+    },
+    {
+      "command": [
+        "git",
+        "config",
+        "--local",
+        "user.name"
+      ],
+      "exit_code": 0,
+      "output": "YuxiaoWang-520\n"
+    },
+    {
+      "command": [
+        "git",
+        "config",
+        "--local",
+        "user.email"
+      ],
+      "exit_code": 0,
+      "output": "13917046839@163.com\n"
+    },
+    {
+      "command": [
+        "git",
+        "config",
+        "user.name"
+      ],
+      "exit_code": 0,
+      "output": "YuxiaoWang-520\n"
+    },
+    {
+      "command": [
+        "git",
+        "config",
+        "user.email"
+      ],
+      "exit_code": 0,
+      "output": "13917046839@163.com\n"
+    },
+    {
+      "command": [
+        "git",
+        "var",
+        "GIT_AUTHOR_IDENT"
+      ],
+      "exit_code": 0,
+      "output": "YuxiaoWang-520 <13917046839@163.com> 1795490682 +0800\n"
+    },
+    {
+      "command": [
+        "git",
+        "var",
+        "GIT_COMMITTER_IDENT"
+      ],
+      "exit_code": 0,
+      "output": "YuxiaoWang-520 <13917046839@163.com> 1795490682 +0800\n"
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--name-only"
+      ],
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--name-only"
+      ],
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "command": [
+        "git",
+        "rev-list",
+        "--left-right",
+        "--count",
+        "HEAD...origin/main"
+      ],
+      "exit_code": 0,
+      "output": "0\t0\n"
+    },
+    {
+      "command": [
+        "git",
+        "status",
+        "--short",
+        "--untracked-files=normal"
+      ],
+      "exit_code": 0,
+      "output": "?? drafts/\n"
+    },
+    {
+      "command": [
+        "gh",
+        "repo",
+        "view",
+        "YuxiaoWang-520/daily-infra",
+        "--json",
+        "nameWithOwner,visibility,isPrivate,defaultBranchRef,viewerPermission,url"
+      ],
+      "exit_code": 0,
+      "output": "{\"defaultBranchRef\":{\"name\":\"main\"},\"isPrivate\":false,\"nameWithOwner\":\"YuxiaoWang-520/daily-infra\",\"url\":\"https://github.com/YuxiaoWang-520/daily-infra\",\"viewerPermission\":\"ADMIN\",\"visibility\":\"PUBLIC\"}\n"
+    },
+    {
+      "command": [
+        "gh",
+        "api",
+        "user",
+        "--jq",
+        ".login"
+      ],
+      "exit_code": 0,
+      "output": "YuxiaoWang-520\n"
+    },
+    {
+      "command": [
+        "gh",
+        "api",
+        "repos/YuxiaoWang-520/daily-infra/commits/main",
+        "--jq",
+        ".sha"
+      ],
+      "exit_code": 0,
+      "output": "bc98da38602247e494aa94eda4ddac09e4198769\n"
+    },
+    {
+      "command": [
+        "git",
+        "ls-files",
+        "--others",
+        "--exclude-standard"
+      ],
+      "exit_code": 0,
+      "output": "drafts/2026-11-24-async-checkpoint-staging/.gitattributes\ndrafts/2026-11-24-async-checkpoint-staging/README.md\ndrafts/2026-11-24-async-checkpoint-staging/code/README.md\ndrafts/2026-11-24-async-checkpoint-staging/code/answers.py\ndrafts/2026-11-24-async-checkpoint-staging/code/dcp_demo.py\ndrafts/2026-11-24-async-checkpoint-staging/code/exercises.py\ndrafts/2026-11-24-async-checkpoint-staging/code/run_answers.py\ndrafts/2026-11-24-async-checkpoint-staging/code/test_answers.py\ndrafts/2026-11-24-async-checkpoint-staging/evidence/futures-retrieval.json\ndrafts/2026-11-24-async-checkpoint-staging/evidence/official-reading-notes.md\ndrafts/2026-11-24-async-checkpoint-staging/evidence/python-review.json\ndrafts/2026-11-24-async-checkpoint-staging/evidence/runs/answers-run.txt\ndrafts/2026-11-24-async-checkpoint-staging/evidence/runs/initial-ruff-check.txt\ndrafts/2026-11-24-async-checkpoint-staging/evidence/runs/optimized-tests.txt\ndrafts/2026-11-24-async-checkpoint-staging/evidence/runs/red-tests.txt\ndrafts/2026-11-24-async-checkpoint-staging/evidence/runs/results.json\ndrafts/2026-11-24-async-checkpoint-staging/evidence/runs/ruff-check.txt\ndrafts/2026-11-24-async-checkpoint-staging/evidence/runs/ruff-format.txt\ndrafts/2026-11-24-async-checkpoint-staging/evidence/runs/unit-tests.txt\ndrafts/2026-11-24-async-checkpoint-staging/evidence/runs/verification.json\ndrafts/2026-11-24-async-checkpoint-staging/evidence/self-review.json\ndrafts/2026-11-24-async-checkpoint-staging/evidence/source-manifest.json\ndrafts/2026-11-24-async-checkpoint-staging/evidence/source-reading-notes.md\ndrafts/2026-11-24-async-checkpoint-staging/evidence/source-update.json\ndrafts/2026-11-24-async-checkpoint-staging/evidence/technical-audit.json\ndrafts/2026-11-24-async-checkpoint-staging/evidence/upstream/pytorch/LICENSE\ndrafts/2026-11-24-async-checkpoint-staging/evidence/upstream/pytorch/blocking-stage-copy-and-cache.txt\ndrafts/2026-11-24-async-checkpoint-staging/evidence/upstream/pytorch/data-sync.txt\ndrafts/2026-11-24-async-checkpoint-staging/evidence/upstream/pytorch/default-stage-and-device-sync.txt\ndrafts/2026-11-24-async-checkpoint-staging/evidence/upstream/pytorch/filesystem-blocking-stager.txt\ndrafts/2026-11-24-async-checkpoint-staging/evidence/upstream/pytorch/filesystem-writer-defaults.txt\ndrafts/2026-11-24-async-checkpoint-staging/evidence/upstream/pytorch/metadata-publication.txt\ndrafts/2026-11-24-async-checkpoint-staging/evidence/upstream/pytorch/new-cpu-tensor-storage.txt\ndrafts/2026-11-24-async-checkpoint-staging/evidence/upstream/pytorch/save-default-stager-and-state.txt\ndrafts/2026-11-24-async-checkpoint-staging/evidence/upstream/pytorch/source-headers.json\ndrafts/2026-11-24-async-checkpoint-staging/evidence/upstream/pytorch/stable-completion.txt\ndrafts/2026-11-24-async-checkpoint-staging/evidence/upstream/pytorch/stable-default-selection.txt\ndrafts/2026-11-24-async-checkpoint-staging/evidence/upstream/pytorch/stable-metadata.txt\ndrafts/2026-11-24-async-checkpoint-staging/evidence/upstream/pytorch/staging-options-defaults.txt\ndrafts/2026-11-24-async-checkpoint-staging/evidence/upstream/pytorch/thread-future-lifecycle.txt\ndrafts/2026-11-24-async-checkpoint-staging/evidence/upstream/pytorch/two-futures-and-completion.txt\ndrafts/2026-11-24-async-checkpoint-staging/evidence/upstream/pytorch/upload-dispatch-and-cleanup.txt\ndrafts/2026-11-24-async-checkpoint-staging/evidence/upstream/pytorch/worker-waits-stage.txt\ndrafts/2026-11-24-async-checkpoint-staging/evidence/upstream/pytorch/write-wait-global-finish.txt\ndrafts/2026-11-24-async-checkpoint-staging/evidence/web-retrieval.json\ndrafts/2026-11-24-async-checkpoint-staging/figures/snapshot-lifecycle.mmd\ndrafts/2026-11-24-async-checkpoint-staging/references.md\ndrafts/2026-11-24-async-checkpoint-staging/review.md\n"
+    }
+  ],
+  "remote_fetch": "git fetch --no-tags origin main succeeded immediately before preflight",
+  "note": "Pre-publication baseline only. Final commit and push verified separately, avoiding recursive self-inclusion."
+}

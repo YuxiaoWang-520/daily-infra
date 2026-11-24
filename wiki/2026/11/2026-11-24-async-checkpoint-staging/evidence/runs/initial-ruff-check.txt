@@ -1,0 +1,14 @@
+TRY004 Prefer `TypeError` exception for invalid type
+   --> code/dcp_demo.py:239:17
+    |
+237 |               )
+238 |               if not isinstance(response, AsyncSaveResponse):
+239 | /                 raise RuntimeError(
+240 | |                     "expected AsyncSaveResponse for a Future-returning stager"
+241 | |                 )
+    | |_________________^
+242 |               stage_success = True
+243 |               try:
+    |
+
+Found 1 error.

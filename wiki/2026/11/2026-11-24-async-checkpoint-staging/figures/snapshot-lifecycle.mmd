@@ -1,0 +1,15 @@
+sequenceDiagram
+  participant T as 训练线程
+  participant S as 独立暂存区
+  participant W as 后台保存线程
+  T->>S: 请求第 7 步快照
+  Note over T,S: 复制完成前，保护仍会被读取的训练状态
+  S-->>T: 暂存成功完成
+  S->>W: 提供隔离后的第 7 步状态
+  par 训练继续
+    T->>T: 把 live state 推进到第 8 步
+  and 保存继续
+    W->>W: 写数据，完成元数据处理
+  end
+  W-->>T: 保存 Future 的 result 成功
+  Note over T,W: 此时才把该保存结果视为候选恢复点

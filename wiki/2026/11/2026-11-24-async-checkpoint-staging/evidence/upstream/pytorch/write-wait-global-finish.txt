@@ -1,0 +1,26 @@
+    def write_data():
+        if planner is None:
+            raise AssertionError("planner is None")
+        if central_plan is None:
+            raise AssertionError("central_plan is None")
+        final_local_plan = planner.finish_plan(central_plan)
+        all_writes = storage_writer.write_data(final_local_plan, planner)
+
+        all_writes.wait()
+        return all_writes.value()
+
+    @_dcp_method_logger(**ckpt_kwargs)
+    def finish_checkpoint(all_results):
+        if global_metadata is None:
+            raise AssertionError("global_metadata is None")
+        storage_writer.finish(metadata=global_metadata, results=all_results)
+        return global_metadata
+
+    if use_collectives:
+        metadata = distW.all_reduce("write", write_data, finish_checkpoint)
+    else:
+        write_results: list[WriteResult] = write_data()
+        metadata = finish_checkpoint([write_results])
+        distW.barrier()
+
+    return metadata

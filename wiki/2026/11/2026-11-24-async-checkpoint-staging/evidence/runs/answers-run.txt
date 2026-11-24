@@ -1,0 +1,253 @@
+W1124 11:09:39.704000 20484 site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+<home>/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/distributed/checkpoint/utils.py:488: UserWarning: torch.distributed is disabled, unavailable or uninitialized, assuming the intent is to save in a single process.
+  return func(*args, **kwargs)
+<home>/miniforge3/envs/ai-infra/lib/python3.12/site-packages/torch/distributed/checkpoint/utils.py:488: UserWarning: torch.distributed is disabled, unavailable or uninitialized, assuming the intent is to load in a single process.
+  return func(*args, **kwargs)
+{
+  "fast_storage_model": {
+    "model": "synthetic fixed durations; one in-flight save; blocking staging",
+    "training_finished_ms": 36000,
+    "all_saved_ms": 42000,
+    "backpressure_ms": 0,
+    "final_drain_ms": 6000,
+    "sync_total_ms": 54000,
+    "checkpoints": [
+      {
+        "step": 100,
+        "backpressure_ms": 0,
+        "stage_start_ms": 10000,
+        "stage_end_ms": 12000,
+        "write_start_ms": 12000,
+        "write_end_ms": 18000
+      },
+      {
+        "step": 200,
+        "backpressure_ms": 0,
+        "stage_start_ms": 22000,
+        "stage_end_ms": 24000,
+        "write_start_ms": 24000,
+        "write_end_ms": 30000
+      },
+      {
+        "step": 300,
+        "backpressure_ms": 0,
+        "stage_start_ms": 34000,
+        "stage_end_ms": 36000,
+        "write_start_ms": 36000,
+        "write_end_ms": 42000
+      }
+    ]
+  },
+  "slow_storage_model": {
+    "model": "synthetic fixed durations; one in-flight save; blocking staging",
+    "training_finished_ms": 48000,
+    "all_saved_ms": 64000,
+    "backpressure_ms": 12000,
+    "final_drain_ms": 16000,
+    "sync_total_ms": 84000,
+    "checkpoints": [
+      {
+        "step": 100,
+        "backpressure_ms": 0,
+        "stage_start_ms": 10000,
+        "stage_end_ms": 12000,
+        "write_start_ms": 12000,
+        "write_end_ms": 28000
+      },
+      {
+        "step": 200,
+        "backpressure_ms": 6000,
+        "stage_start_ms": 28000,
+        "stage_end_ms": 30000,
+        "write_start_ms": 30000,
+        "write_end_ms": 46000
+      },
+      {
+        "step": 300,
+        "backpressure_ms": 6000,
+        "stage_start_ms": 46000,
+        "stage_end_ms": 48000,
+        "write_start_ms": 48000,
+        "write_end_ms": 64000
+      }
+    ]
+  },
+  "blocking_staging_cpu": {
+    "scope": "real local CPU DCP; synthetic state; no distributed/GPU benchmark",
+    "return_type": "Future",
+    "async_staging": false,
+    "after_api_return": {
+      "staging_complete": true,
+      "upload_done": false,
+      "metadata_exists": false
+    },
+    "after_staging": {
+      "staging_complete": true,
+      "upload_done": false,
+      "metadata_exists": false
+    },
+    "upload_done_after_result": true,
+    "failure_type": null,
+    "all_saved_successfully": true,
+    "metadata_after_completion": true,
+    "shallow_copy_aliases_live_weight": true,
+    "payload_bytes": 40,
+    "live_state_changed": true,
+    "snapshot": {
+      "weight": [
+        1.0,
+        2.0
+      ],
+      "momentum": [
+        0.1,
+        0.2
+      ],
+      "step": 7
+    },
+    "live": {
+      "weight": [
+        101.0,
+        102.0
+      ],
+      "momentum": [
+        10.1,
+        10.2
+      ],
+      "step": 8
+    },
+    "restored": {
+      "weight": [
+        1.0,
+        2.0
+      ],
+      "momentum": [
+        0.1,
+        0.2
+      ],
+      "step": 7
+    },
+    "restored_matches_snapshot": true,
+    "checkpoint_files": [
+      ".metadata",
+      "__0_0.distcp"
+    ],
+    "temporary_checkpoint_retained": false
+  },
+  "async_staging_cpu": {
+    "scope": "real local CPU DCP; synthetic state; no distributed/GPU benchmark",
+    "return_type": "AsyncSaveResponse",
+    "async_staging": true,
+    "after_api_return": {
+      "staging_complete": false,
+      "upload_done": false,
+      "metadata_exists": false
+    },
+    "after_staging": {
+      "staging_complete": true,
+      "upload_done": false,
+      "metadata_exists": false
+    },
+    "upload_done_after_result": true,
+    "failure_type": null,
+    "all_saved_successfully": true,
+    "metadata_after_completion": true,
+    "shallow_copy_aliases_live_weight": true,
+    "payload_bytes": 40,
+    "live_state_changed": true,
+    "snapshot": {
+      "weight": [
+        1.0,
+        2.0
+      ],
+      "momentum": [
+        0.1,
+        0.2
+      ],
+      "step": 7
+    },
+    "live": {
+      "weight": [
+        101.0,
+        102.0
+      ],
+      "momentum": [
+        10.1,
+        10.2
+      ],
+      "step": 8
+    },
+    "restored": {
+      "weight": [
+        1.0,
+        2.0
+      ],
+      "momentum": [
+        0.1,
+        0.2
+      ],
+      "step": 7
+    },
+    "restored_matches_snapshot": true,
+    "checkpoint_files": [
+      ".metadata",
+      "__0_0.distcp"
+    ],
+    "temporary_checkpoint_retained": false
+  },
+  "write_failure_cpu": {
+    "scope": "real local CPU DCP; synthetic state; no distributed/GPU benchmark",
+    "return_type": "AsyncSaveResponse",
+    "async_staging": true,
+    "after_api_return": {
+      "staging_complete": false,
+      "upload_done": false,
+      "metadata_exists": false
+    },
+    "after_staging": {
+      "staging_complete": true,
+      "upload_done": false,
+      "metadata_exists": false
+    },
+    "upload_done_after_result": true,
+    "failure_type": "CheckpointException",
+    "all_saved_successfully": false,
+    "metadata_after_completion": false,
+    "shallow_copy_aliases_live_weight": true,
+    "payload_bytes": 40,
+    "live_state_changed": true,
+    "snapshot": {
+      "weight": [
+        1.0,
+        2.0
+      ],
+      "momentum": [
+        0.1,
+        0.2
+      ],
+      "step": 7
+    },
+    "live": {
+      "weight": [
+        101.0,
+        102.0
+      ],
+      "momentum": [
+        10.1,
+        10.2
+      ],
+      "step": 8
+    },
+    "restored": null,
+    "restored_matches_snapshot": false,
+    "checkpoint_files": [],
+    "temporary_checkpoint_retained": false
+  },
+  "already_failed_staging_probe": {
+    "version_probe_only": true,
+    "staging_completion_reported_success": true,
+    "upload_done": true,
+    "upload_failure_type": "RuntimeError",
+    "metadata_exists": false,
+    "interpretation": "Never use done() or staging_completion alone as proof of a saved checkpoint"
+  }
+}

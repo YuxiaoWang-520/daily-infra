@@ -1,0 +1,26 @@
+@dataclass
+class StagingOptions:
+    """
+    Configuration options for checkpoint staging behavior.
+
+    Attributes:
+        use_pinned_memory (bool): Enable pinned memory allocation for faster
+            CPU-GPU transfers. Requires CUDA to be available. Default: True
+        use_shared_memory (bool): Enable shared memory for multi-process
+            scenarios. Useful when multiple processes need access to the
+            same staged data. Default: True
+        use_async_staging (bool): Enable asynchronous staging using a
+            background thread pool. Allows overlapping computation with
+            staging operations. Requires CUDA. Default: True
+        use_non_blocking_copy (bool): Use non-blocking device memory
+            copies with stream synchronization. Improves performance by
+            allowing CPU work to continue during GPU transfers. Default: True
+
+    Note:
+        CUDA-dependent features will raise exception if CUDA is not available.
+    """
+
+    use_pinned_memory: bool = True
+    use_shared_memory: bool = True
+    use_async_staging: bool = True
+    use_non_blocking_copy: bool = True

@@ -1,0 +1,79 @@
+{
+  "retrieved_on": "2026-11-24",
+  "provider": "Parallel",
+  "search": {
+    "id": "search_571590dff75279714220355abf656ee8",
+    "session_id": "session_571590dff75279714220355abf656ee8",
+    "sources": [
+      {
+        "url": "https://docs.pytorch.org/docs/2.15/distributed.checkpoint.html",
+        "title": "Distributed Checkpoint - torch.distributed.checkpoint #",
+        "publish_date": "2022-11-16"
+      },
+      {
+        "url": "https://docs.pytorch.org/tutorials/recipes/distributed_async_checkpoint_recipe.html",
+        "title": "Asynchronous Saving with Distributed Checkpoint (DCP) #",
+        "publish_date": "2024-07-22"
+      },
+      {
+        "url": "https://docs.pytorch.org/docs/main/distributed/checkpoint.html",
+        "title": "Distributed Checkpoint - torch.distributed.checkpoint #",
+        "publish_date": null
+      },
+      {
+        "url": "https://docs.pytorch.org/docs/2.14/distributed.checkpoint.html",
+        "title": "Distributed Checkpoint - torch.distributed.checkpoint #",
+        "publish_date": null
+      },
+      {
+        "url": "https://docs.pytorch.org/docs/2.14/distributed.checkpoint",
+        "title": "Distributed Checkpoint - torch.distributed.checkpoint #",
+        "publish_date": "2022-11-16"
+      },
+      {
+        "url": "https://docs.pytorch.org/docs/stable/distributed.checkpoint.html",
+        "title": "Distributed Checkpoint - torch.distributed.checkpoint — PyTorch 2.11 documentation",
+        "publish_date": "2022-11-16"
+      },
+      {
+        "url": "https://docs.pytorch.org/docs/2.13/distributed.checkpoint.html",
+        "title": "Distributed Checkpoint - torch.distributed.checkpoint ...",
+        "publish_date": "2022-11-16"
+      },
+      {
+        "url": "https://docs.pytorch.org/docs/2.11/distributed.checkpoint.html",
+        "title": "Distributed Checkpoint - torch.distributed.checkpoint #",
+        "publish_date": "2022-11-16"
+      },
+      {
+        "url": "https://docs.pytorch.org/tutorials//recipes/distributed_async_checkpoint_recipe.html",
+        "title": "Asynchronous Saving with Distributed Checkpoint (DCP) #",
+        "publish_date": "2024-07-22"
+      },
+      {
+        "url": "https://docs.pytorch.org/docs/2.8/distributed.checkpoint.html",
+        "title": "Distributed Checkpoint - torch.distributed.checkpoint#",
+        "publish_date": "2022-11-16"
+      }
+    ]
+  },
+  "fetch": {
+    "id": "extract_62fd036ebf2379066414686ff3a5ae1b",
+    "results": [
+      {
+        "url": "https://docs.pytorch.org/docs/2.15/distributed.checkpoint.html",
+        "title": "Distributed Checkpoint - torch.distributed.checkpoint #",
+        "provider_acquired_at": "2026-11-17T00:00:00Z",
+        "publish_date": null
+      },
+      {
+        "url": "https://docs.pytorch.org/tutorials/recipes/distributed_async_checkpoint_recipe.html",
+        "title": "Asynchronous Saving with Distributed Checkpoint (DCP) #",
+        "provider_acquired_at": "2026-11-24T00:00:00Z",
+        "publish_date": null
+      }
+    ],
+    "errors": []
+  },
+  "note": "Primary documentation excerpts read; own notes archived separately. Provider-cached acquisition dates differ from this read date; no claim every page was fetched live today."
+}

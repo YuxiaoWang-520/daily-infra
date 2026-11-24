@@ -1,0 +1,10 @@
+                if use_fsync:
+                    # Flush Python-level buffers (OS for local files, network for cloud storage) before fsync.
+                    stream.flush()
+                    try:
+                        os.fsync(stream.fileno())
+                    except (AttributeError, UnsupportedOperation) as e:
+                        warnings.warn(
+                            f"fsync not supported for this stream, relying on flush(): {e}"
+                        )
+                stream.close()

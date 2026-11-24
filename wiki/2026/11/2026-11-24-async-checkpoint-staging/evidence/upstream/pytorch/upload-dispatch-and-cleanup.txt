@@ -1,0 +1,22 @@
+        staging_future_or_state_dict = stage_state_dict()
+
+        upload_executor: _AsyncCheckpointExecutor = (
+            _ProcessBasedAsyncCheckpointExecutor()
+            if async_checkpointer_type == AsyncCheckpointerType.PROCESS
+            else _ThreadBasedAsyncCheckpointExecutor()
+        )
+
+        upload_future: Future = upload_executor.execute_save(
+            staging_future_or_state_dict,
+            checkpoint_id=checkpoint_id,
+            storage_writer=storage_writer,
+            planner=planner,
+            process_group=process_group,
+            no_dist=no_dist,
+            use_collectives=use_collectives,
+        )
+
+        if owned_async_stager is not None:
+            upload_future.add_done_callback(lambda _: maybe_close_owned_async_stager())
+            # in the success path transfer cleanup ownership to the upload future
+            stack.pop_all()

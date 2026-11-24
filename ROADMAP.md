@@ -37,7 +37,8 @@
 | 29 | [Context Parallel 怎样切分长序列，Attention 如何在各 rank 间交换 K／V？](wiki/2026/11/2026-11-19-context-parallel-attention/README.md) | 长序列训练、Attention 分块、全局归一化与通信，前置为第 10、18、23、27 篇 |
 | 30 | [MoE 的 token 怎样路由到专家，为什么 Expert Parallel 需要 AllToAll？](wiki/2026/11/2026-11-20-moe-expert-parallel-alltoall/README.md) | MoE 路由、专家计算、AllToAll 与负载，前置为第 07、17、23、27 篇 |
 | 31 | [训练 profiler 的时间轴怎样区分 CPU 提交、GPU 执行与通信等待？](wiki/2026/11/2026-11-23-training-profiler-timeline/README.md) | 端到端训练观测、异步时间轴与瓶颈归因，前置为第 06、17、23、28、30 篇 |
-| 32 | 异步 checkpoint 怎样与训练重叠，何时才算保存完成？ | 快照暂存、存储流水线与恢复一致性，前置为第 18、20、22、31 篇 |
+| 32 | [异步 checkpoint 怎样与训练重叠，何时才算保存完成？](wiki/2026/11/2026-11-24-async-checkpoint-staging/README.md) | 快照暂存、存储流水线与恢复一致性，前置为第 18、20、22、31 篇 |
+| 33 | 训练数据怎样分片并 shuffle，才能兼顾吞吐和可复现性？ | 分布式采样、顺序 I/O、随机种子与恢复游标，前置为第 20、22、32 篇 |
 
 每篇既要独立可读，也要链接已有前置文章。较新的实现可以作为当天的进阶部分，但不能让读者先理解尚未解释的术语。
 

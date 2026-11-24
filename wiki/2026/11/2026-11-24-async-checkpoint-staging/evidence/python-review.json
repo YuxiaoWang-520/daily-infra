@@ -1,0 +1,48 @@
+{
+  "recorded_at": "2026-11-24T11:21:55.090536+08:00",
+  "scope": [
+    "code/answers.py",
+    "code/dcp_demo.py",
+    "code/exercises.py",
+    "code/run_answers.py",
+    "code/test_answers.py"
+  ],
+  "required_specialist": {
+    "agent": "/root/nov24_python_review",
+    "status": "failed_before_execution",
+    "error": "The 'gpt-5.4' model is not supported when using Codex with a ChatGPT account."
+  },
+  "independent_fallback": {
+    "agent": "/root/nov24_python_fallback",
+    "role": "independent general Python and code-safety reviewer",
+    "evidence_kind": "actual agent report, not raw stdout",
+    "command_reported": "python -B - (bounded inline checks in owned TemporaryDirectory)",
+    "exit_code_reported": 0,
+    "repository_writes": false,
+    "checks_reported": [
+      "2005 independent per-step oracle cases including partial tails, zero work, and 10**100 integers",
+      "50 invalid type/range cases",
+      "Two generations of three tensors isolated from live storage and each other; one-shot reuse rejected; threads exit on close",
+      "Blocking/async staging x success/write failure: four real local CPU DCP cases",
+      "Injected early TimeoutError releases gates, completes upload, closes stager, exits threads, removes temporary directory",
+      "Already-failed staging version probe: staging reports success, upload RuntimeError, no metadata",
+      "CLI substitutions validate identical stdout/file JSON, six result keys, exact huge integers, NaN rejected before writing",
+      "Only locally self-created temporary checkpoints are loaded; no untrusted load path"
+    ],
+    "findings": [],
+    "final_disposition": "accepted; no reportable CRITICAL/HIGH/MEDIUM/LOW findings",
+    "limitations": [
+      "No prose or upstream source review",
+      "No GPU/distributed/performance/power-loss validation",
+      "Did not duplicate the complete archived test/evidence generation",
+      "Fallback is not successful specialist execution"
+    ]
+  },
+  "final_source_files_sha256": {
+    "code/answers.py": "c1058efc2220fa0dfb978b7b5ef6097a26206dede953398f1b523445e3178f4b",
+    "code/dcp_demo.py": "be604dc06a8e456caa54d3eb9ee08a547f72dd86c0114ae06a73987db68f2660",
+    "code/exercises.py": "d003130a827f99021ad98cb2a414f84e638599bf47e4dab35e6913f9b013633c",
+    "code/run_answers.py": "5220dfdc88e692f9a184d0df3f59d4b6386ac475818f07d7e2dce2519b6d5eca",
+    "code/test_answers.py": "72db9ac0b178895d63ba79ba9f541cf81c7bf568974a3a98a8cc4e8796c03710"
+  }
+}

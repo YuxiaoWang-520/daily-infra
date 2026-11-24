@@ -1,0 +1,287 @@
+test_already_failed_staging_propagates_to_upload_future (test_answers.DCPTests.test_already_failed_staging_propagates_to_upload_future) ... ERROR
+test_async_stage_has_two_distinct_completion_boundaries (test_answers.DCPTests.test_async_stage_has_two_distinct_completion_boundaries) ... ERROR
+test_blocking_stage_returns_save_future (test_answers.DCPTests.test_blocking_stage_returns_save_future) ... ERROR
+test_failed_save_is_done_but_not_successful (test_answers.DCPTests.test_failed_save_is_done_but_not_successful) ... ERROR
+test_shallow_dictionary_is_not_an_independent_tensor_snapshot (test_answers.DCPTests.test_shallow_dictionary_is_not_an_independent_tensor_snapshot) ... ERROR
+test_exact_first_and_last_schedule (test_answers.ScheduleTests.test_exact_first_and_last_schedule) ... ERROR
+test_fast_storage_overlaps_compute (test_answers.ScheduleTests.test_fast_storage_overlaps_compute) ... ERROR
+test_integer_arithmetic_remains_exact (test_answers.ScheduleTests.test_integer_arithmetic_remains_exact) ... ERROR
+test_no_checkpoints (test_answers.ScheduleTests.test_no_checkpoints) ... ERROR
+test_one_checkpoint_cannot_hide_final_write (test_answers.ScheduleTests.test_one_checkpoint_cannot_hide_final_write) ... ERROR
+test_partial_tail_can_hide_some_drain (test_answers.ScheduleTests.test_partial_tail_can_hide_some_drain) ... ERROR
+test_reject_invalid_ranges (test_answers.ScheduleTests.test_reject_invalid_ranges) ... 
+  test_reject_invalid_ranges (test_answers.ScheduleTests.test_reject_invalid_ranges) (args=(-1, 1, 1, 1, 1)) ... ERROR
+  test_reject_invalid_ranges (test_answers.ScheduleTests.test_reject_invalid_ranges) (args=(1, 0, 1, 1, 1)) ... ERROR
+  test_reject_invalid_ranges (test_answers.ScheduleTests.test_reject_invalid_ranges) (args=(1, 1, 0, 1, 1)) ... ERROR
+  test_reject_invalid_ranges (test_answers.ScheduleTests.test_reject_invalid_ranges) (args=(1, 1, 1, -1, 1)) ... ERROR
+  test_reject_invalid_ranges (test_answers.ScheduleTests.test_reject_invalid_ranges) (args=(1, 1, 1, 1, -1)) ... ERROR
+test_reject_nonintegers_and_booleans (test_answers.ScheduleTests.test_reject_nonintegers_and_booleans) ... 
+  test_reject_nonintegers_and_booleans (test_answers.ScheduleTests.test_reject_nonintegers_and_booleans) (args=(True, 1, 1, 1, 1)) ... ERROR
+  test_reject_nonintegers_and_booleans (test_answers.ScheduleTests.test_reject_nonintegers_and_booleans) (args=(1, 1.0, 1, 1, 1)) ... ERROR
+  test_reject_nonintegers_and_booleans (test_answers.ScheduleTests.test_reject_nonintegers_and_booleans) (args=(1, 1, '1', 1, 1)) ... ERROR
+test_slow_storage_creates_backpressure (test_answers.ScheduleTests.test_slow_storage_creates_backpressure) ... ERROR
+test_small_grid_accounting_and_order (test_answers.ScheduleTests.test_small_grid_accounting_and_order) ... ERROR
+test_storage_exactly_matches_compute_interval (test_answers.ScheduleTests.test_storage_exactly_matches_compute_interval) ... ERROR
+test_zero_stage_and_write_cost (test_answers.ScheduleTests.test_zero_stage_and_write_cost) ... ERROR
+test_zero_steps (test_answers.ScheduleTests.test_zero_steps) ... ERROR
+
+======================================================================
+ERROR: test_already_failed_staging_propagates_to_upload_future (test_answers.DCPTests.test_already_failed_staging_propagates_to_upload_future)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-24-async-checkpoint-staging/code/test_answers.py", line 134, in test_already_failed_staging_propagates_to_upload_future
+    r = probe_failed_staging()
+        ^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/drafts/2026-11-24-async-checkpoint-staging/code/dcp_demo.py", line 8, in probe_failed_staging
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_async_stage_has_two_distinct_completion_boundaries (test_answers.DCPTests.test_async_stage_has_two_distinct_completion_boundaries)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-24-async-checkpoint-staging/code/test_answers.py", line 107, in test_async_stage_has_two_distinct_completion_boundaries
+    r = run_checkpoint_case()
+        ^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/drafts/2026-11-24-async-checkpoint-staging/code/dcp_demo.py", line 4, in run_checkpoint_case
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_blocking_stage_returns_save_future (test_answers.DCPTests.test_blocking_stage_returns_save_future)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-24-async-checkpoint-staging/code/test_answers.py", line 97, in test_blocking_stage_returns_save_future
+    r = run_checkpoint_case(async_staging=False)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/drafts/2026-11-24-async-checkpoint-staging/code/dcp_demo.py", line 4, in run_checkpoint_case
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_failed_save_is_done_but_not_successful (test_answers.DCPTests.test_failed_save_is_done_but_not_successful)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-24-async-checkpoint-staging/code/test_answers.py", line 126, in test_failed_save_is_done_but_not_successful
+    r = run_checkpoint_case(fail_write=True)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/drafts/2026-11-24-async-checkpoint-staging/code/dcp_demo.py", line 4, in run_checkpoint_case
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_shallow_dictionary_is_not_an_independent_tensor_snapshot (test_answers.DCPTests.test_shallow_dictionary_is_not_an_independent_tensor_snapshot)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-24-async-checkpoint-staging/code/test_answers.py", line 119, in test_shallow_dictionary_is_not_an_independent_tensor_snapshot
+    r = run_checkpoint_case()
+        ^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/drafts/2026-11-24-async-checkpoint-staging/code/dcp_demo.py", line 4, in run_checkpoint_case
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_exact_first_and_last_schedule (test_answers.ScheduleTests.test_exact_first_and_last_schedule)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-24-async-checkpoint-staging/code/test_answers.py", line 27, in test_exact_first_and_last_schedule
+    r = simulate_checkpoints(300, 100, 100, 2000, 6000)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/drafts/2026-11-24-async-checkpoint-staging/code/answers.py", line 4, in simulate_checkpoints
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_fast_storage_overlaps_compute (test_answers.ScheduleTests.test_fast_storage_overlaps_compute)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-24-async-checkpoint-staging/code/test_answers.py", line 11, in test_fast_storage_overlaps_compute
+    r = simulate_checkpoints(300, 100, 100, 2000, 6000)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/drafts/2026-11-24-async-checkpoint-staging/code/answers.py", line 4, in simulate_checkpoints
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_integer_arithmetic_remains_exact (test_answers.ScheduleTests.test_integer_arithmetic_remains_exact)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-24-async-checkpoint-staging/code/test_answers.py", line 66, in test_integer_arithmetic_remains_exact
+    r = simulate_checkpoints(2, 10**30, 1, 7, 9)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/drafts/2026-11-24-async-checkpoint-staging/code/answers.py", line 4, in simulate_checkpoints
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_no_checkpoints (test_answers.ScheduleTests.test_no_checkpoints)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-24-async-checkpoint-staging/code/test_answers.py", line 35, in test_no_checkpoints
+    r = simulate_checkpoints(9, 3, 10, 7, 11)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/drafts/2026-11-24-async-checkpoint-staging/code/answers.py", line 4, in simulate_checkpoints
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_one_checkpoint_cannot_hide_final_write (test_answers.ScheduleTests.test_one_checkpoint_cannot_hide_final_write)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-24-async-checkpoint-staging/code/test_answers.py", line 62, in test_one_checkpoint_cannot_hide_final_write
+    r = simulate_checkpoints(100, 100, 100, 2000, 6000)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/drafts/2026-11-24-async-checkpoint-staging/code/answers.py", line 4, in simulate_checkpoints
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_partial_tail_can_hide_some_drain (test_answers.ScheduleTests.test_partial_tail_can_hide_some_drain)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-24-async-checkpoint-staging/code/test_answers.py", line 46, in test_partial_tail_can_hide_some_drain
+    r = simulate_checkpoints(250, 100, 100, 2000, 6000)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/drafts/2026-11-24-async-checkpoint-staging/code/answers.py", line 4, in simulate_checkpoints
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_reject_invalid_ranges (test_answers.ScheduleTests.test_reject_invalid_ranges) (args=(-1, 1, 1, 1, 1))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-24-async-checkpoint-staging/code/test_answers.py", line 79, in test_reject_invalid_ranges
+    simulate_checkpoints(*args)
+  File "<repo>/drafts/2026-11-24-async-checkpoint-staging/code/answers.py", line 4, in simulate_checkpoints
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_reject_invalid_ranges (test_answers.ScheduleTests.test_reject_invalid_ranges) (args=(1, 0, 1, 1, 1))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-24-async-checkpoint-staging/code/test_answers.py", line 79, in test_reject_invalid_ranges
+    simulate_checkpoints(*args)
+  File "<repo>/drafts/2026-11-24-async-checkpoint-staging/code/answers.py", line 4, in simulate_checkpoints
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_reject_invalid_ranges (test_answers.ScheduleTests.test_reject_invalid_ranges) (args=(1, 1, 0, 1, 1))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-24-async-checkpoint-staging/code/test_answers.py", line 79, in test_reject_invalid_ranges
+    simulate_checkpoints(*args)
+  File "<repo>/drafts/2026-11-24-async-checkpoint-staging/code/answers.py", line 4, in simulate_checkpoints
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_reject_invalid_ranges (test_answers.ScheduleTests.test_reject_invalid_ranges) (args=(1, 1, 1, -1, 1))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-24-async-checkpoint-staging/code/test_answers.py", line 79, in test_reject_invalid_ranges
+    simulate_checkpoints(*args)
+  File "<repo>/drafts/2026-11-24-async-checkpoint-staging/code/answers.py", line 4, in simulate_checkpoints
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_reject_invalid_ranges (test_answers.ScheduleTests.test_reject_invalid_ranges) (args=(1, 1, 1, 1, -1))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-24-async-checkpoint-staging/code/test_answers.py", line 79, in test_reject_invalid_ranges
+    simulate_checkpoints(*args)
+  File "<repo>/drafts/2026-11-24-async-checkpoint-staging/code/answers.py", line 4, in simulate_checkpoints
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_reject_nonintegers_and_booleans (test_answers.ScheduleTests.test_reject_nonintegers_and_booleans) (args=(True, 1, 1, 1, 1))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-24-async-checkpoint-staging/code/test_answers.py", line 73, in test_reject_nonintegers_and_booleans
+    simulate_checkpoints(*args)
+  File "<repo>/drafts/2026-11-24-async-checkpoint-staging/code/answers.py", line 4, in simulate_checkpoints
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_reject_nonintegers_and_booleans (test_answers.ScheduleTests.test_reject_nonintegers_and_booleans) (args=(1, 1.0, 1, 1, 1))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-24-async-checkpoint-staging/code/test_answers.py", line 73, in test_reject_nonintegers_and_booleans
+    simulate_checkpoints(*args)
+  File "<repo>/drafts/2026-11-24-async-checkpoint-staging/code/answers.py", line 4, in simulate_checkpoints
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_reject_nonintegers_and_booleans (test_answers.ScheduleTests.test_reject_nonintegers_and_booleans) (args=(1, 1, '1', 1, 1))
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-24-async-checkpoint-staging/code/test_answers.py", line 73, in test_reject_nonintegers_and_booleans
+    simulate_checkpoints(*args)
+  File "<repo>/drafts/2026-11-24-async-checkpoint-staging/code/answers.py", line 4, in simulate_checkpoints
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_slow_storage_creates_backpressure (test_answers.ScheduleTests.test_slow_storage_creates_backpressure)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-24-async-checkpoint-staging/code/test_answers.py", line 19, in test_slow_storage_creates_backpressure
+    r = simulate_checkpoints(300, 100, 100, 2000, 16000)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/drafts/2026-11-24-async-checkpoint-staging/code/answers.py", line 4, in simulate_checkpoints
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_small_grid_accounting_and_order (test_answers.ScheduleTests.test_small_grid_accounting_and_order)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-24-async-checkpoint-staging/code/test_answers.py", line 84, in test_small_grid_accounting_and_order
+    r = simulate_checkpoints(9, 2, 2, stage, write)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/drafts/2026-11-24-async-checkpoint-staging/code/answers.py", line 4, in simulate_checkpoints
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_storage_exactly_matches_compute_interval (test_answers.ScheduleTests.test_storage_exactly_matches_compute_interval)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-24-async-checkpoint-staging/code/test_answers.py", line 57, in test_storage_exactly_matches_compute_interval
+    r = simulate_checkpoints(30, 10, 10, 2, 100)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/drafts/2026-11-24-async-checkpoint-staging/code/answers.py", line 4, in simulate_checkpoints
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_zero_stage_and_write_cost (test_answers.ScheduleTests.test_zero_stage_and_write_cost)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-24-async-checkpoint-staging/code/test_answers.py", line 52, in test_zero_stage_and_write_cost
+    r = simulate_checkpoints(10, 4, 2, 0, 0)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/drafts/2026-11-24-async-checkpoint-staging/code/answers.py", line 4, in simulate_checkpoints
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_zero_steps (test_answers.ScheduleTests.test_zero_steps)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-24-async-checkpoint-staging/code/test_answers.py", line 41, in test_zero_steps
+    r = simulate_checkpoints(0, 3, 10, 7, 11)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/drafts/2026-11-24-async-checkpoint-staging/code/answers.py", line 4, in simulate_checkpoints
+    raise NotImplementedError
+NotImplementedError
+
+----------------------------------------------------------------------
+Ran 18 tests in 0.001s
+
+FAILED (errors=24)

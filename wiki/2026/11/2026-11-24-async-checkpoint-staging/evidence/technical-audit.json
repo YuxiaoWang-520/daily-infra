@@ -1,0 +1,41 @@
+{
+  "checked_at": "2026-11-24T11:23:41.601452+08:00",
+  "mode": "MAIN technical self-review plus direct Git/data checks",
+  "source_excerpts_verified": 17,
+  "source_lines": 476,
+  "original_source_bytes_and_hashes_match": true,
+  "main_and_stable_license_match": true,
+  "python_ast_files": 5,
+  "frozen_source_hashes_match_independent_review": true,
+  "all_final_commands_exit_zero": true,
+  "unit_tests": {
+    "normal": 18,
+    "optimized": 18
+  },
+  "cli_stdout_matches_json": true,
+  "synthetic_fixed_time_models": {
+    "fast_all_saved_ms": 42000,
+    "slow_all_saved_ms": 64000,
+    "final_drain_counted": true,
+    "not_performance_measurements": true
+  },
+  "real_local_cpu_dcp": {
+    "success_paths": 2,
+    "snapshot_step": 7,
+    "live_step": 8,
+    "payload_bytes": 40,
+    "three_tensors_exact": true,
+    "staging_and_upload_boundaries_distinct": true,
+    "write_failure_propagated": true,
+    "version_specific_failed_staging_reporting_probe_confirmed": true
+  },
+  "mermaid_source_and_body_match": true,
+  "cache_head_and_worktree_preserved": true,
+  "limits": [
+    "No GPU or distributed execution",
+    "No storage throughput or fault-durability test",
+    "No visual renderer"
+  ],
+  "unresolved_article_issues": [],
+  "known_upstream_behavior": "Already-done failed staging Future reports staging completion success in inspected branches/build; upload still fails. Documented, not fixed upstream."
+}

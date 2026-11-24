@@ -1,0 +1,34 @@
+        if self._config.use_async_staging:
+            if self._staging_executor is None:
+                raise AssertionError(
+                    "staging_executor should not be None for async staging"
+                )
+            self._staging_future = self._staging_executor.submit(
+                self._stage,
+                state_dict,
+                **kwargs,
+            )
+            return self._staging_future
+        else:
+            return self._stage(state_dict, **kwargs)
+
+    def _stage(self, state_dict: STATE_DICT_TYPE, **kwargs: Any) -> STATE_DICT_TYPE:
+        if self._config.use_non_blocking_copy:
+            if not (self._staging_stream or not self._config.use_async_staging):
+                raise AssertionError(
+                    "Non-blocking copy in a background thread for async staging needs staging_stream to be initialized."
+                )
+            with (
+                self._staging_stream
+                if self._staging_stream is not None
+                else nullcontext()
+            ):
+                state_dict = self._state_dict_stager.stage(
+                    state_dict, non_blocking=self._config.use_non_blocking_copy
+                )
+            # waits for the enqued copy operations to finish.
+            self._staging_stream.synchronize() if self._staging_stream else torch.accelerator.synchronize()
+        else:
+            state_dict = self._state_dict_stager.stage(state_dict, non_blocking=False)
+
+        return state_dict

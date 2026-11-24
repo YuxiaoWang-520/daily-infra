@@ -1,0 +1,104 @@
+{
+  "checked_at": "2026-11-24T11:01:44.438331+08:00",
+  "repository": "https://github.com/pytorch/pytorch",
+  "default_branch": "main",
+  "main_commit": "0d8b36742ee52e2926f5c349cdae9e57c82ed2f0",
+  "stable_release": {
+    "html_url": "https://github.com/pytorch/pytorch/releases/tag/v2.15.0",
+    "published_at": "2026-10-28T17:09:49Z",
+    "tag_name": "v2.15.0"
+  },
+  "stable_commit": "31a77fc9c0a7c6fff15a1ff58c743f53b1a9d457",
+  "cache_worktree_preserved": true,
+  "commands": [
+    {
+      "started_at": "2026-11-24T11:01:33.496115+08:00",
+      "command": [
+        "git",
+        "fetch",
+        "--no-tags",
+        "origin",
+        "main"
+      ],
+      "cwd": "<repo>",
+      "exit_code": 0,
+      "output": "From github.com:YuxiaoWang-520/daily-infra\n * branch            main       -> FETCH_HEAD\n"
+    },
+    {
+      "started_at": "2026-11-24T11:01:37.272029+08:00",
+      "command": [
+        "gh",
+        "api",
+        "repos/pytorch/pytorch",
+        "--jq",
+        "{default_branch}"
+      ],
+      "cwd": "<repo>",
+      "exit_code": 0,
+      "output": "{\"default_branch\":\"main\"}\n"
+    },
+    {
+      "started_at": "2026-11-24T11:01:38.340239+08:00",
+      "command": [
+        "gh",
+        "api",
+        "repos/pytorch/pytorch/releases/latest",
+        "--jq",
+        "{tag_name,published_at,html_url}"
+      ],
+      "cwd": "<repo>",
+      "exit_code": 0,
+      "output": "{\"html_url\":\"https://github.com/pytorch/pytorch/releases/tag/v2.15.0\",\"published_at\":\"2026-10-28T17:09:49Z\",\"tag_name\":\"v2.15.0\"}\n"
+    },
+    {
+      "started_at": "2026-11-24T11:01:39.717033+08:00",
+      "command": [
+        "git",
+        "fetch",
+        "--no-tags",
+        "--depth=1",
+        "origin",
+        "main"
+      ],
+      "cwd": ".cache/upstream/pytorch",
+      "exit_code": 0,
+      "output": "From https://github.com/pytorch/pytorch\n * branch            main       -> FETCH_HEAD\n + 8aa44e9...0d8b367 main       -> origin/main  (forced update)\n"
+    },
+    {
+      "started_at": "2026-11-24T11:01:41.615025+08:00",
+      "command": [
+        "git",
+        "fetch",
+        "--no-tags",
+        "--depth=1",
+        "origin",
+        "refs/tags/v2.15.0:refs/tags/v2.15.0"
+      ],
+      "cwd": ".cache/upstream/pytorch",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "started_at": "2026-11-24T11:01:44.285015+08:00",
+      "command": [
+        "git",
+        "rev-parse",
+        "origin/main"
+      ],
+      "cwd": ".cache/upstream/pytorch",
+      "exit_code": 0,
+      "output": "0d8b36742ee52e2926f5c349cdae9e57c82ed2f0\n"
+    },
+    {
+      "started_at": "2026-11-24T11:01:44.367873+08:00",
+      "command": [
+        "git",
+        "rev-parse",
+        "v2.15.0^{commit}"
+      ],
+      "cwd": ".cache/upstream/pytorch",
+      "exit_code": 0,
+      "output": "31a77fc9c0a7c6fff15a1ff58c743f53b1a9d457\n"
+    }
+  ]
+}

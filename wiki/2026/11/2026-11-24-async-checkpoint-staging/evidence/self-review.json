@@ -1,0 +1,36 @@
+{
+  "recorded_at": "2026-11-24T11:23:41.601452+08:00",
+  "article_state_at_review": "draft",
+  "technical": {
+    "mode": "MAIN self-review",
+    "outcome": "pass",
+    "evidence": "technical-audit.json",
+    "observations": [
+      "Actual default-stager selection verified",
+      "Snapshot logical boundary separate from physical copy",
+      "Already-done failure report documented as version-specific",
+      "Initial lint exception type corrected"
+    ]
+  },
+  "teaching": {
+    "mode": "MAIN self-review",
+    "outcome": "pass",
+    "changes": [
+      "Clarified producer-to-copy and copy-to-overwrite dependencies for CUDA; not CPU-verified",
+      "Moved exception-boundary reminder next to first Future explanation"
+    ],
+    "checks": [
+      "Concrete state before APIs",
+      "42s and 64s examples before formula",
+      "One in-flight/final-drain assumptions explicit",
+      "Node-local memory budget",
+      "Two complete exercises and answers",
+      "Four interview levels",
+      "CPU function evidence distinct from model and GPU claims"
+    ]
+  },
+  "independent_code_review": "python-review.json",
+  "unresolved_critical_or_high": 0,
+  "known_version_behavior_documented": true,
+  "publication_gate": "Final archive/link/privacy/staging checks in delivery-check.json; this file does not prove a Git push."
+}
