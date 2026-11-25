@@ -1,0 +1,29 @@
+{
+  "checked_at": "2026-11-25T11:21:24+08:00",
+  "decision": "passed",
+  "checks": {
+    "source_fragments_exact": 11,
+    "source_fragment_lines": 482,
+    "source_file_and_fragment_digests": true,
+    "license_exact_and_main_stable_equal": true,
+    "four_whole_source_files_main_stable_equal": true,
+    "cache_checkout_and_clean_status_preserved": true,
+    "five_python_hashes_match_execution_and_independent_review": true,
+    "python_ast_parse": true,
+    "twenty_tests_normal_and_optimized": true,
+    "five_verification_commands_exit_zero": true,
+    "raw_cli_json_equals_archived_results": true,
+    "sample_lists_prefetch_cursor_and_iterable_tail_values": true,
+    "figure_source_equals_body": true,
+    "sampler_grid_instances": 616,
+    "request_cost_arithmetic_seconds": [
+      4.072,
+      1.003
+    ]
+  },
+  "scope": "Cross-artifact technical consistency audit, not an additional full test pass",
+  "limits": [
+    "CPU functional evidence only; no GPU/distributed/storage/throughput/crash-injection verification",
+    "Figure source semantic and text consistency checked; no rendered visual QA"
+  ]
+}

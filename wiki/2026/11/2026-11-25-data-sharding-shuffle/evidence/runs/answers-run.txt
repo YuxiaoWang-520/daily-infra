@@ -1,0 +1,313 @@
+{
+  "torch_version": "2.15.0",
+  "torch_build_commit": "d0f2af8b66b20da4baa50644c0cd3f887a2eae2e",
+  "exercise_one": {
+    "padded": [
+      [
+        0,
+        3,
+        6,
+        9
+      ],
+      [
+        1,
+        4,
+        7,
+        0
+      ],
+      [
+        2,
+        5,
+        8,
+        1
+      ]
+    ],
+    "truncated": [
+      [
+        0,
+        3,
+        6
+      ],
+      [
+        1,
+        4,
+        7
+      ],
+      [
+        2,
+        5,
+        8
+      ]
+    ],
+    "rank_zero_drop_tail": [
+      [
+        0,
+        3,
+        6
+      ]
+    ],
+    "shard_owners": [
+      [
+        0,
+        4
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ]
+    ]
+  },
+  "exercise_two": {
+    "kind": "real CPU DataLoader functional probe",
+    "rank": 0,
+    "world_size_in_plan": 2,
+    "distributed_process_group": false,
+    "worker_start_method": "spawn",
+    "num_workers_before": 2,
+    "num_workers_resume": 0,
+    "prefetch_factor": 2,
+    "in_order": true,
+    "total_batches": 10,
+    "dispatched_at_start": 4,
+    "dispatched_at_checkpoint": 6,
+    "committed_batches": 2,
+    "token": {
+      "plan_digest": "69a15363d738825df34a01d7cb845b404bd55b2f33f60adf3617190ecdbceecc",
+      "committed_batches": 2
+    },
+    "prefix": [
+      [
+        [
+          11,
+          298
+        ],
+        [
+          13,
+          406
+        ]
+      ],
+      [
+        [
+          4,
+          7593
+        ],
+        [
+          23,
+          2515
+        ]
+      ]
+    ],
+    "uninterrupted_suffix": [
+      [
+        [
+          19,
+          5991
+        ],
+        [
+          17,
+          2026
+        ]
+      ],
+      [
+        [
+          28,
+          6633
+        ],
+        [
+          32,
+          8276
+        ]
+      ],
+      [
+        [
+          18,
+          3429
+        ],
+        [
+          6,
+          3486
+        ]
+      ],
+      [
+        [
+          14,
+          4163
+        ],
+        [
+          34,
+          253
+        ]
+      ],
+      [
+        [
+          3,
+          2599
+        ],
+        [
+          7,
+          3698
+        ]
+      ],
+      [
+        [
+          31,
+          6299
+        ],
+        [
+          8,
+          5730
+        ]
+      ],
+      [
+        [
+          12,
+          3133
+        ],
+        [
+          37,
+          5814
+        ]
+      ],
+      [
+        [
+          20,
+          3584
+        ],
+        [
+          30,
+          1793
+        ]
+      ]
+    ],
+    "resumed_suffix": [
+      [
+        [
+          19,
+          5991
+        ],
+        [
+          17,
+          2026
+        ]
+      ],
+      [
+        [
+          28,
+          6633
+        ],
+        [
+          32,
+          8276
+        ]
+      ],
+      [
+        [
+          18,
+          3429
+        ],
+        [
+          6,
+          3486
+        ]
+      ],
+      [
+        [
+          14,
+          4163
+        ],
+        [
+          34,
+          253
+        ]
+      ],
+      [
+        [
+          3,
+          2599
+        ],
+        [
+          7,
+          3698
+        ]
+      ],
+      [
+        [
+          31,
+          6299
+        ],
+        [
+          8,
+          5730
+        ]
+      ],
+      [
+        [
+          12,
+          3133
+        ],
+        [
+          37,
+          5814
+        ]
+      ],
+      [
+        [
+          20,
+          3584
+        ],
+        [
+          30,
+          1793
+        ]
+      ]
+    ],
+    "exact_rows_match": true,
+    "wrong_resume_batch_count": 4,
+    "wrong_resume_skipped_ids": [
+      19,
+      17,
+      28,
+      32,
+      18,
+      6,
+      14,
+      34
+    ],
+    "iterable_worker_shards": [
+      [
+        0,
+        2,
+        4
+      ],
+      [
+        1,
+        3,
+        5
+      ]
+    ],
+    "iterable_batch_size": 4,
+    "iterable_drop_last": true,
+    "iterable_two_worker_batches": [],
+    "iterable_zero_worker_batches": [
+      [
+        0,
+        1,
+        2,
+        3
+      ]
+    ],
+    "limitations": [
+      "No distributed training or GPU execution",
+      "No throughput benchmark",
+      "Immutable synthetic data; fixed rank and world size",
+      "No worker RNG or open streaming connection recovery",
+      "Original loader drained after checkpoint; no process-crash injection"
+    ]
+  }
+}

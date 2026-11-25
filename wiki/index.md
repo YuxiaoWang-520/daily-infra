@@ -36,8 +36,9 @@
 | 30 | 2026-11-20 | [MoE 的 token 怎样路由到专家，为什么 Expert Parallel 需要 AllToAll？](2026/11/2026-11-20-moe-expert-parallel-alltoall/README.md) | MoE、Top-k 门控、Expert Parallel、AllToAll、容量与负载均衡 | 第 07、17、23、27 篇 |
 | 31 | 2026-11-23 | [训练 profiler 的时间轴怎样区分 CPU 提交、GPU 执行与通信等待？](2026/11/2026-11-23-training-profiler-timeline/README.md) | profiler、异步时间轴、范围统计、通信重叠与瓶颈归因 | 第 06、17、23、28、30 篇 |
 | 32 | 2026-11-24 | [异步 checkpoint 怎样与训练重叠，何时才算保存完成？](2026/11/2026-11-24-async-checkpoint-staging/README.md) | checkpoint、快照隔离、异步暂存、背压与保存完成边界 | 第 18、20、22、31 篇 |
+| 33 | 2026-11-25 | [训练数据怎样分片并 shuffle，才能兼顾吞吐和可复现性？](2026/11/2026-11-25-data-sharding-shuffle/README.md) | 训练数据、DistributedSampler、物理分片、随机性与恢复游标 | 第 20、22、32 篇 |
 
-下一篇候选为训练数据怎样分片并 shuffle，才能兼顾吞吐和可复现性？
+下一篇候选为变长序列怎样做长度分桶与 packing，padding、吞吐和损失分母有何关系？
 
 2026-10-22 起按用户要求集中完成起步前 10 篇，使用实际归档日期；日常定时任务仍按工作日每天一篇执行。范围见 [本次任务说明](../docs/BOOTSTRAP10.md)。
 

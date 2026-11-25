@@ -1,0 +1,73 @@
+{
+  "checked_at": "2026-11-25T11:20:39+08:00",
+  "kind": "independent general Python correctness and safety review; reviewer report, not raw stdout",
+  "specialist_attempt": {
+    "agent": "/root/nov25_python_review",
+    "role": "python-reviewer",
+    "executed": false,
+    "error": "The 'gpt-5.4' model is not supported when using Codex with a ChatGPT account."
+  },
+  "fallback": {
+    "agent": "/root/nov25_python_fallback",
+    "role": "independent general reviewer",
+    "agent_type": "default",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "max",
+    "read_only": true
+  },
+  "decision": "accepted",
+  "findings": [],
+  "code_sha256_after": {
+    "code/answers.py": "a636a358a9e0c9db5413f7aaa7133c1a32f574f294480b3708c9b9e31134fd41",
+    "code/exercises.py": "24034b4b0c5e2b996e4f0dd6e9da1cd86a59aefb8d7f322980bcf1b32c050267",
+    "code/run_answers.py": "9258fd456857efd0e9273ef6f22d3dfd6c6a43dba141799f09d08b134343fde5",
+    "code/runtime_demo.py": "80e5d8134d6bca5e93ceeab24154ded26e8ba1e1b7082d3947cd9d75083dff9b",
+    "code/test_answers.py": "51397c77d79043fc17cab2857bda894856fe2c7db05228bc05e88b72ea4074e2"
+  },
+  "code_sha256_before": {
+    "code/answers.py": "a636a358a9e0c9db5413f7aaa7133c1a32f574f294480b3708c9b9e31134fd41",
+    "code/exercises.py": "043650aa28ceb97ed78f11a364a496b2a56e2a7d42835579fffb6279068a7d20",
+    "code/run_answers.py": "9258fd456857efd0e9273ef6f22d3dfd6c6a43dba141799f09d08b134343fde5",
+    "code/runtime_demo.py": "80e5d8134d6bca5e93ceeab24154ded26e8ba1e1b7082d3947cd9d75083dff9b",
+    "code/test_answers.py": "51397c77d79043fc17cab2857bda894856fe2c7db05228bc05e88b72ea4074e2"
+  },
+  "checks_reported": [
+    {
+      "check": "Independent official DistributedSampler oracle",
+      "cases": 11088,
+      "scope": "N=0..32, R=1..7, every rank, shuffle/drop combinations, normal and high valid seeds",
+      "result": "passed"
+    },
+    {
+      "check": "Independent batch tails, two-level drop_last, shard formula/coverage/disjointness",
+      "result": "passed"
+    },
+    {
+      "check": "Canonical digest with concrete batches; changed config with same batches; all valid cursors; direct out-of-range tokens and high seed rejection",
+      "result": "passed"
+    },
+    {
+      "check": "Stateless value does not consume Python or Torch default RNG",
+      "result": "passed"
+    },
+    {
+      "check": "Expanded starter API and deliberate NotImplementedError methods",
+      "result": "passed"
+    },
+    {
+      "check": "Real CLI once in independent temporary directory; sole results.json output; real spawn workers, 4 to 6 dispatch, committed 2, exact resumed suffix, token JSON and iterable tail",
+      "result": "passed"
+    }
+  ],
+  "scope_limits": [
+    "Five Python files only; not an independent article or upstream review",
+    "Immutable synthetic data and fixed dataset identity/rank/topology",
+    "No GPU, distributed group, multi-rank/machine, throughput, worker RNG, stream or crash recovery claim",
+    "Exact prefetch counts are tied to recorded installed runtime",
+    "Equal worker counts required for shard assignment formula"
+  ],
+  "temporary_cleanup": {
+    "reviewer_initial_cleanup": "command safety layer denied cleanup",
+    "main_followup": "Verified exact owned directory was not a symlink and contained only expected synthetic results.json, checked result invariants, unlinked that file and removed empty directory successfully"
+  }
+}

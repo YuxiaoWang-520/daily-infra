@@ -1,0 +1,24 @@
+        self._timeout = loader.timeout
+        self._collate_fn = loader.collate_fn
+        self._sampler_iter = iter(self._index_sampler)
+        self._base_seed = (
+            torch.empty((), dtype=torch.int64)
+            .random_(generator=loader.generator)
+            .item()
+        )
+        self._persistent_workers = loader.persistent_workers
+        self._num_yielded = 0
+        self._profile_name = f"enumerate(DataLoader)#{self.__class__.__name__}.__next__"
+
+    def __iter__(self) -> Self:
+        return self
+
+    def _reset(self, loader, first_iter=False) -> None:
+        self._sampler_iter = iter(self._index_sampler)
+        self._num_yielded = 0
+        self._IterableDataset_len_called = loader._IterableDataset_len_called
+        if isinstance(self._dataset, IterDataPipe):
+            self._shared_seed = _share_dist_seed(loader.generator, self._pg)
+            shared_rng = torch.Generator()
+            shared_rng.manual_seed(self._shared_seed)
+            self._dataset = torch.utils.data.graph_settings.apply_random_seed(

@@ -1,0 +1,55 @@
+        if isinstance(dataset, IterableDataset):
+            self._dataset_kind = _DatasetKind.Iterable
+            # NOTE [ Custom Samplers and IterableDataset ]
+            #
+            # `IterableDataset` does not support custom `batch_sampler` or
+            # `sampler` since the key is irrelevant (unless we support
+            # generator-style dataset one day...).
+            #
+            # For `sampler`, we always create a dummy sampler. This is an
+            # infinite sampler even when the dataset may have an implemented
+            # finite `__len__` because in multi-process data loading, naive
+            # settings will return duplicated data (which may be desired), and
+            # thus using a sampler with length matching that of dataset will
+            # cause data loss (you may have duplicates of the first couple
+            # batches, but never see anything afterwards). Therefore,
+            # `IterableDataset` always uses an infinite sampler, an instance of
+            # `_InfiniteConstantSampler` defined above.
+            #
+            # A custom `batch_sampler` essentially only controls the batch size.
+            # However, it is unclear how useful it would be since an iterable-style
+            # dataset can handle that within itself. Moreover, it is pointless
+            # in multi-process data loading as the assignment order of batches
+            # to workers is an implementation detail so users can not control
+            # how to batchify each worker's iterable. Thus, we disable this
+            # option. If this turns out to be useful in future, we can re-enable
+            # this, and support custom samplers that specify the assignments to
+            # specific workers.
+            if isinstance(dataset, IterDataPipe):
+                if shuffle is not None:
+                    dataset = torch.utils.data.graph_settings.apply_shuffle_settings(
+                        dataset, shuffle=shuffle
+                    )
+            # We cannot check `shuffle is not None` here, since previously `shuffle=False` was the default.
+            elif shuffle not in {False, None}:
+                raise ValueError(
+                    f"DataLoader with IterableDataset: expected unspecified shuffle option, but got shuffle={shuffle}"
+                )
+
+            if sampler is not None:
+                # See NOTE [ Custom Samplers and IterableDataset ]
+                raise ValueError(
+                    f"DataLoader with IterableDataset: expected unspecified sampler option, but got sampler={sampler}"
+                )
+            elif batch_sampler is not None:
+                # See NOTE [ Custom Samplers and IterableDataset ]
+                raise ValueError(
+                    "DataLoader with IterableDataset: expected unspecified "
+                    f"batch_sampler option, but got batch_sampler={batch_sampler}"
+                )
+        else:
+            shuffle = bool(shuffle)
+            self._dataset_kind = _DatasetKind.Map
+
+        if sampler is not None and shuffle:
+            raise ValueError("sampler option is mutually exclusive with shuffle")

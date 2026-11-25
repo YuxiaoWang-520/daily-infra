@@ -1,0 +1,53 @@
+{
+  "checked_at": "2026-11-25T11:23:44+08:00",
+  "technical_review": {
+    "reviewer": "MAIN",
+    "kind": "self-review",
+    "decision": "passed",
+    "findings": [
+      {
+        "severity": "LOW",
+        "observation": "Initial Ruff found 22 C408/I001 style issues",
+        "resolution": "Corrected only owned code; final lint and tests pass"
+      }
+    ],
+    "evidence": "evidence/technical-audit.json"
+  },
+  "teaching_review": {
+    "reviewer": "MAIN",
+    "kind": "self-review",
+    "decision": "passed",
+    "findings": [
+      {
+        "severity": "MEDIUM",
+        "observation": "Second starter initially exposed only slicing, insufficient to guide digest/cursor contract",
+        "resolution": "Expanded ResumeToken/DataPlan starter; independent reviewer checked focused delta; answer/runtime behavior unchanged"
+      },
+      {
+        "severity": "LOW",
+        "observation": "Sampler spelling error in prose",
+        "resolution": "Corrected and reread"
+      }
+    ],
+    "checks": [
+      "Small example precedes formula and source",
+      "Diagram and formulas consistent",
+      "Logical order versus physical shards separated",
+      "Two exercises have complete answers and explicit contracts",
+      "Tradeoffs and interview answers included",
+      "CPU input replay not called full training recovery"
+    ],
+    "virtual_local_markdown_links_checked": 76,
+    "placeholder_scan": "passed",
+    "rendered_figure_review": false
+  },
+  "independent_code_review": "evidence/python-review.json",
+  "unresolved_critical_high": [],
+  "final_archive_delivery_gate": {
+    "decision": "passed",
+    "checked_at": "2026-11-25T11:26:29+08:00",
+    "local_markdown_links_checked": 146,
+    "index_articles": 33,
+    "today_articles": 1
+  }
+}

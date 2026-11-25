@@ -1,0 +1,25 @@
+test_configuration_changes_rejected (test_answers.ResumeTests.test_configuration_changes_rejected) ... ok
+test_cursor_validation (test_answers.ResumeTests.test_cursor_validation) ... ok
+test_digest_is_stable_and_content_sensitive (test_answers.ResumeTests.test_digest_is_stable_and_content_sensitive) ... ok
+test_every_commit_boundary (test_answers.ResumeTests.test_every_commit_boundary) ... ok
+test_json_token_round_trip (test_answers.ResumeTests.test_json_token_round_trip) ... ok
+test_plan_validation_and_empty_resume (test_answers.ResumeTests.test_plan_validation_and_empty_resume) ... ok
+test_prefetch_cursor_skips_uncommitted_data (test_answers.ResumeTests.test_prefetch_cursor_skips_uncommitted_data) ... ok
+test_stateless_value_reproducible_by_sample_key (test_answers.ResumeTests.test_stateless_value_reproducible_by_sample_key) ... ok
+test_batch_tail_and_no_input_mutation (test_answers.ShardingTests.test_batch_tail_and_no_input_mutation) ... ok
+test_empty_and_too_few_samples (test_answers.ShardingTests.test_empty_and_too_few_samples) ... ok
+test_epoch_is_explicit_and_repeatable (test_answers.ShardingTests.test_epoch_is_explicit_and_repeatable) ... ok
+test_global_rng_not_consumed (test_answers.ShardingTests.test_global_rng_not_consumed) ... ok
+test_invalid_batch_and_shard_arguments (test_answers.ShardingTests.test_invalid_batch_and_shard_arguments) ... ok
+test_invalid_rank_arguments (test_answers.ShardingTests.test_invalid_rank_arguments) ... ok
+test_matches_official_sampler_grid (test_answers.ShardingTests.test_matches_official_sampler_grid) ... ok
+test_padding_hand_example (test_answers.ShardingTests.test_padding_hand_example) ... ok
+test_shard_assignment_example (test_answers.ShardingTests.test_shard_assignment_example) ... ok
+test_shard_coverage_and_disjointness (test_answers.ShardingTests.test_shard_coverage_and_disjointness) ... ok
+test_truncation_hand_example (test_answers.ShardingTests.test_truncation_hand_example) ... ok
+test_two_drop_last_levels (test_answers.ShardingTests.test_two_drop_last_levels) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.005s
+
+OK

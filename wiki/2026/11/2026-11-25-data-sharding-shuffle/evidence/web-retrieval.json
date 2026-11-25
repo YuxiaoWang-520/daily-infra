@@ -1,0 +1,84 @@
+{
+  "queried_at": "2026-11-25 Asia/Shanghai",
+  "provider": "Parallel connected web_search / web_fetch",
+  "search_id": "search_0d71420c6b2d7af0eda01b3f5032709e",
+  "session_id": "session_0d71420c6b2d7af0eda01b3f5032709e",
+  "search_queries": [
+    "site:docs.pytorch.org DistributedSampler set_epoch padding",
+    "site:docs.pytorch.org DataLoader prefetch worker random seed",
+    "site:docs.pytorch.org IterableDataset worker sharding drop_last"
+  ],
+  "search_results": [
+    {
+      "url": "https://docs.pytorch.org/docs/stable/data.html?highlight=collate_fn",
+      "title": "torch.utils.data — PyTorch 2.11 documentation",
+      "publish_date": "2025-06-13"
+    },
+    {
+      "url": "https://docs.pytorch.org/docs/main/data.html",
+      "title": "torch.utils.data — PyTorch main documentation",
+      "publish_date": null
+    },
+    {
+      "url": "https://docs.pytorch.org/docs/main/utils/data.html",
+      "title": "torch.utils.data — PyTorch main documentation",
+      "publish_date": "2025-06-13"
+    },
+    {
+      "url": "https://docs.pytorch.org/docs/stable/notes/randomness.html",
+      "title": "Reproducibility — PyTorch 2.14 documentation",
+      "publish_date": "2026-05-14"
+    },
+    {
+      "url": "https://docs.pytorch.org/docs/2.15/data.html",
+      "title": "torch.utils.data — PyTorch 2.15 documentation",
+      "publish_date": "2025-06-13"
+    },
+    {
+      "url": "http://docs.pytorch.org/docs/2.7/_modules/torch/utils/data/distributed.html",
+      "title": "Source code for torch.utils.data.distributed",
+      "publish_date": null
+    },
+    {
+      "url": "https://docs.pytorch.org/docs/2.9/data.html",
+      "title": "torch.utils.data #",
+      "publish_date": null
+    },
+    {
+      "url": "https://docs.pytorch.org/docs/2.6/_modules/torch/utils/data/distributed.html",
+      "title": "Source code for torch.utils.data.distributed",
+      "publish_date": null
+    },
+    {
+      "url": "https://docs.pytorch.org/docs/2.11/data.html",
+      "title": "torch.utils.data #",
+      "publish_date": "2025-06-13"
+    },
+    {
+      "url": "https://docs.pytorch.org/docs/2.14/notes/randomness.html",
+      "title": "Reproducibility — PyTorch 2.14 documentation",
+      "publish_date": null
+    }
+  ],
+  "extract_id": "extract_f632c286ed3354ec257bd4e2b356e7b6",
+  "requested_urls": [
+    "https://docs.pytorch.org/docs/main/data.html",
+    "https://docs.pytorch.org/docs/main/notes/randomness.html"
+  ],
+  "fetched": [
+    {
+      "url": "https://docs.pytorch.org/docs/main/data.html",
+      "title": "torch.utils.data#",
+      "acquired_at": "2026-08-03T00:00:00Z",
+      "publish_date": null
+    },
+    {
+      "url": "https://docs.pytorch.org/docs/main/notes/randomness.html",
+      "title": "Reproducibility #",
+      "acquired_at": "2026-11-21T00:00:00Z",
+      "publish_date": null
+    }
+  ],
+  "errors": [],
+  "notes": "Own reading notes are archived separately. Returned cache timestamps are retained; current implementation is additionally verified by actual git fetch."
+}

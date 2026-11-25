@@ -1,0 +1,45 @@
+    def _reset(self, loader, first_iter=False) -> None:
+        super()._reset(loader, first_iter)
+        self._send_idx = 0  # idx of the next task to be sent to workers
+        self._rcvd_idx = 0  # idx of the next task to be returned in __next__
+        # information about data not yet yielded, i.e., tasks w/ indices in range [rcvd_idx, send_idx).
+        # map: task idx => - (worker_id,)        if data isn't fetched (outstanding)
+        #                  \ (worker_id, data)   if data is already fetched (out-of-order)
+        self._task_info = {}
+        self._tasks_outstanding = (
+            0  # always equal to count(v for v in task_info.values() if len(v) == 1)
+        )
+        # A list of booleans representing whether each worker still has work to
+        # do, i.e., not having exhausted its iterable dataset object. It always
+        # contains all `True`s if not using an iterable-style dataset
+        # (i.e., if kind != Iterable).
+        # Not that this indicates that a worker still has work to do *for this epoch*.
+        # It does not mean that a worker is dead. In case of `_persistent_workers`,
+        # the worker will be reset to available in the next epoch.
+        self._workers_status = [True for i in range(self._num_workers)]
+        # A list of integers representing how many tasks are outstanding for each worker
+        # Incremented when a task is dispatched to the worker
+        # Decremented when that data has been given to the main thread
+        # Each worker should have at most self._prefetch_factor tasks outstanding
+        self._workers_num_tasks = [0 for i in range(self._num_workers)]
+        # Reset the worker queue cycle so it resumes next epoch at worker 0
+        self._worker_queue_idx_cycle = itertools.cycle(range(self._num_workers))
+        # We resume the prefetching in case it was enabled
+        if not first_iter:
+            for idx in range(self._num_workers):
+                self._index_queues[idx].put(
+                    _utils.worker._ResumeIteration(self._shared_seed)
+                )
+            resume_iteration_cnt = self._num_workers
+            while resume_iteration_cnt > 0:
+                return_idx, return_data = self._get_data()
+                if isinstance(return_idx, _utils.worker._ResumeIteration):
+                    if return_data is not None:
+                        raise AssertionError(
+                            "Expected return_data to be None when resuming iteration"
+                        )
+                    resume_iteration_cnt -= 1
+        # prime the prefetch loop
+        for _ in range(self._prefetch_factor * self._num_workers):
+            self._try_put_index()
+

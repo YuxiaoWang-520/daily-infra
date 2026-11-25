@@ -1,0 +1,31 @@
+{
+  "checked_at": "2026-11-25T11:22:05+08:00",
+  "decision": "passed",
+  "target_repository": "YuxiaoWang-520/daily-infra",
+  "visibility": "PUBLIC",
+  "default_branch": "main",
+  "github_login": "YuxiaoWang-520",
+  "viewer_permission": "ADMIN",
+  "branch": "main",
+  "baseline_local_head": "8160edb161189c64dea3081a5a69a27caccbf1d6",
+  "baseline_origin_main": "8160edb161189c64dea3081a5a69a27caccbf1d6",
+  "baseline_github_main": "8160edb161189c64dea3081a5a69a27caccbf1d6",
+  "ahead_behind": [
+    0,
+    0
+  ],
+  "origin_read": "git@github.com:YuxiaoWang-520/daily-infra.git",
+  "origin_push": "git@github.com:YuxiaoWang-520/daily-infra.git",
+  "repository_local_identity": {
+    "user.name": "YuxiaoWang-520",
+    "user.email": "13917046839@163.com"
+  },
+  "effective_identity": {
+    "GIT_AUTHOR_IDENT": "YuxiaoWang-520 <13917046839@163.com>",
+    "GIT_COMMITTER_IDENT": "YuxiaoWang-520 <13917046839@163.com>"
+  },
+  "preexisting_staged_files": [],
+  "preexisting_unrelated_tracked_changes": [],
+  "untracked_scope": "Only this task draft; cache and ignored files excluded",
+  "authorization": "Daily Wiki publish workflow; no PR/deploy/visibility/automation changes"
+}

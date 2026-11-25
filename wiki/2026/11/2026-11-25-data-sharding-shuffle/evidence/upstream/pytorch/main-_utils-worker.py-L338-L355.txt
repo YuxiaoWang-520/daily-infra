@@ -1,0 +1,18 @@
+            if isinstance(r, _ResumeIteration):
+                # Acknowledge the main process
+                data_queue.put((r, None))
+                iteration_end = False
+
+                if isinstance(dataset, IterDataPipe):
+                    if r.seed is None:
+                        raise AssertionError(
+                            "resume iteration seed is None for IterDataPipe"
+                        )
+                    shared_rng.manual_seed(r.seed)
+                    dataset = apply_random_seed(dataset, shared_rng)
+
+                # Recreate the fetcher for worker-reuse policy
+                fetcher = _DatasetKind.create_fetcher(
+                    dataset_kind, dataset, auto_collation, collate_fn, drop_last
+                )
+                continue

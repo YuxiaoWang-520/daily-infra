@@ -1,0 +1,134 @@
+{
+  "checked_at": "2026-11-25T11:08:04+08:00",
+  "repository": "https://github.com/pytorch/pytorch",
+  "main": "19f0c2704b8086f392172c18d37f3557ecff3aef",
+  "stable": {
+    "tag": "v2.15.0",
+    "commit": "31a77fc9c0a7c6fff15a1ff58c743f53b1a9d457",
+    "published_at": "2026-10-28T17:09:49Z"
+  },
+  "fragments": [
+    {
+      "version": "main",
+      "commit": "19f0c2704b8086f392172c18d37f3557ecff3aef",
+      "source_path": "torch/utils/data/distributed.py",
+      "start_line": 66,
+      "end_line": 157,
+      "source_file_sha256": "95866f953c4d71f5b9cac5d6dafbea641c14de760cca69a2ddde39ff768d73b2",
+      "archive_path": "evidence/upstream/pytorch/main-distributed.py-L66-L157.txt",
+      "excerpt_sha256": "d44b9e5f4b3ed33b2ea93e822ce42a6c5da219e3c8178312e4d5ce5321da9b8b",
+      "permalink": "https://github.com/pytorch/pytorch/blob/19f0c2704b8086f392172c18d37f3557ecff3aef/torch/utils/data/distributed.py#L66-L157"
+    },
+    {
+      "version": "main",
+      "commit": "19f0c2704b8086f392172c18d37f3557ecff3aef",
+      "source_path": "torch/utils/data/dataloader.py",
+      "start_line": 181,
+      "end_line": 229,
+      "source_file_sha256": "b0e3b33e3f119bb815fa76699effa68514f38d920e611e66a7e23f46ea1c2c43",
+      "archive_path": "evidence/upstream/pytorch/main-dataloader.py-L181-L229.txt",
+      "excerpt_sha256": "4f274366194de0830855118647869e8ffd048245e6b0babd01e1e2b4ab59840a",
+      "permalink": "https://github.com/pytorch/pytorch/blob/19f0c2704b8086f392172c18d37f3557ecff3aef/torch/utils/data/dataloader.py#L181-L229"
+    },
+    {
+      "version": "main",
+      "commit": "19f0c2704b8086f392172c18d37f3557ecff3aef",
+      "source_path": "torch/utils/data/dataloader.py",
+      "start_line": 320,
+      "end_line": 374,
+      "source_file_sha256": "b0e3b33e3f119bb815fa76699effa68514f38d920e611e66a7e23f46ea1c2c43",
+      "archive_path": "evidence/upstream/pytorch/main-dataloader.py-L320-L374.txt",
+      "excerpt_sha256": "d902c57e487c99db934d7760a7f4695ba483f8e49fcda05545367bb25c901bb4",
+      "permalink": "https://github.com/pytorch/pytorch/blob/19f0c2704b8086f392172c18d37f3557ecff3aef/torch/utils/data/dataloader.py#L320-L374"
+    },
+    {
+      "version": "main",
+      "commit": "19f0c2704b8086f392172c18d37f3557ecff3aef",
+      "source_path": "torch/utils/data/dataloader.py",
+      "start_line": 686,
+      "end_line": 709,
+      "source_file_sha256": "b0e3b33e3f119bb815fa76699effa68514f38d920e611e66a7e23f46ea1c2c43",
+      "archive_path": "evidence/upstream/pytorch/main-dataloader.py-L686-L709.txt",
+      "excerpt_sha256": "210c6662b01547eab807cfcaa26e6abfaedd4ee770cc20911e0a660139f911f9",
+      "permalink": "https://github.com/pytorch/pytorch/blob/19f0c2704b8086f392172c18d37f3557ecff3aef/torch/utils/data/dataloader.py#L686-L709"
+    },
+    {
+      "version": "main",
+      "commit": "19f0c2704b8086f392172c18d37f3557ecff3aef",
+      "source_path": "torch/utils/data/dataloader.py",
+      "start_line": 1234,
+      "end_line": 1278,
+      "source_file_sha256": "b0e3b33e3f119bb815fa76699effa68514f38d920e611e66a7e23f46ea1c2c43",
+      "archive_path": "evidence/upstream/pytorch/main-dataloader.py-L1234-L1278.txt",
+      "excerpt_sha256": "9d6bd551dafb358af743e19fac2efc4ace0f3fe926ea6f851c61c91dcb248a47",
+      "permalink": "https://github.com/pytorch/pytorch/blob/19f0c2704b8086f392172c18d37f3557ecff3aef/torch/utils/data/dataloader.py#L1234-L1278"
+    },
+    {
+      "version": "main",
+      "commit": "19f0c2704b8086f392172c18d37f3557ecff3aef",
+      "source_path": "torch/utils/data/dataloader.py",
+      "start_line": 1532,
+      "end_line": 1569,
+      "source_file_sha256": "b0e3b33e3f119bb815fa76699effa68514f38d920e611e66a7e23f46ea1c2c43",
+      "archive_path": "evidence/upstream/pytorch/main-dataloader.py-L1532-L1569.txt",
+      "excerpt_sha256": "f89222e389cb59489e59633014f7f29022e611bbefab292d1bda44cfad66201a",
+      "permalink": "https://github.com/pytorch/pytorch/blob/19f0c2704b8086f392172c18d37f3557ecff3aef/torch/utils/data/dataloader.py#L1532-L1569"
+    },
+    {
+      "version": "main",
+      "commit": "19f0c2704b8086f392172c18d37f3557ecff3aef",
+      "source_path": "torch/utils/data/_utils/worker.py",
+      "start_line": 274,
+      "end_line": 282,
+      "source_file_sha256": "9a4a472bd0c07b68ab7e289d81c101618b00e5ed5df85de6051b27e1696f517e",
+      "archive_path": "evidence/upstream/pytorch/main-_utils-worker.py-L274-L282.txt",
+      "excerpt_sha256": "b31b6942e8a8d65da81a2c72c55a651e1635f7e0e15b63747d757bd3eb7c1712",
+      "permalink": "https://github.com/pytorch/pytorch/blob/19f0c2704b8086f392172c18d37f3557ecff3aef/torch/utils/data/_utils/worker.py#L274-L282"
+    },
+    {
+      "version": "main",
+      "commit": "19f0c2704b8086f392172c18d37f3557ecff3aef",
+      "source_path": "torch/utils/data/_utils/worker.py",
+      "start_line": 338,
+      "end_line": 355,
+      "source_file_sha256": "9a4a472bd0c07b68ab7e289d81c101618b00e5ed5df85de6051b27e1696f517e",
+      "archive_path": "evidence/upstream/pytorch/main-_utils-worker.py-L338-L355.txt",
+      "excerpt_sha256": "4981deaae0c69f71e30784e06fc25cf1d23564bb415dca7205ba040f8ee4e9d1",
+      "permalink": "https://github.com/pytorch/pytorch/blob/19f0c2704b8086f392172c18d37f3557ecff3aef/torch/utils/data/_utils/worker.py#L338-L355"
+    },
+    {
+      "version": "main",
+      "commit": "19f0c2704b8086f392172c18d37f3557ecff3aef",
+      "source_path": "torch/utils/data/_utils/fetch.py",
+      "start_line": 20,
+      "end_line": 57,
+      "source_file_sha256": "dc5d6761c1b90c60ad4c377f2e11cb9d8382e29ce3cf4c3c053909894cbd13b5",
+      "archive_path": "evidence/upstream/pytorch/main-_utils-fetch.py-L20-L57.txt",
+      "excerpt_sha256": "d6d318be955dbbe4840034ac0913836a6c6149ae47c560cd4183beb1577724ba",
+      "permalink": "https://github.com/pytorch/pytorch/blob/19f0c2704b8086f392172c18d37f3557ecff3aef/torch/utils/data/_utils/fetch.py#L20-L57"
+    },
+    {
+      "version": "main",
+      "commit": "19f0c2704b8086f392172c18d37f3557ecff3aef",
+      "source_path": "torch/utils/data/sampler.py",
+      "start_line": 333,
+      "end_line": 354,
+      "source_file_sha256": "817f818a4897f0c12569aa88edb951c3d9912cc20b4a47d62bff3b70cadf1ac5",
+      "archive_path": "evidence/upstream/pytorch/main-sampler.py-L333-L354.txt",
+      "excerpt_sha256": "40409a2c00eb60b33bac8ebed03bd0027f94d023debe2d41b84d89c6fce6702f",
+      "permalink": "https://github.com/pytorch/pytorch/blob/19f0c2704b8086f392172c18d37f3557ecff3aef/torch/utils/data/sampler.py#L333-L354"
+    },
+    {
+      "version": "v2.15.0",
+      "commit": "31a77fc9c0a7c6fff15a1ff58c743f53b1a9d457",
+      "source_path": "torch/utils/data/distributed.py",
+      "start_line": 66,
+      "end_line": 157,
+      "source_file_sha256": "95866f953c4d71f5b9cac5d6dafbea641c14de760cca69a2ddde39ff768d73b2",
+      "archive_path": "evidence/upstream/pytorch/v2.15.0-distributed.py-L66-L157.txt",
+      "excerpt_sha256": "d44b9e5f4b3ed33b2ea93e822ce42a6c5da219e3c8178312e4d5ce5321da9b8b",
+      "permalink": "https://github.com/pytorch/pytorch/blob/31a77fc9c0a7c6fff15a1ff58c743f53b1a9d457/torch/utils/data/distributed.py#L66-L157"
+    }
+  ],
+  "license_sha256": "bd018feef8825e88181c84eb7e3aa4eafb8f08a20d9fd6ef948569610c4a3e43"
+}

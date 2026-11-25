@@ -1,0 +1,22 @@
+    def __iter__(self) -> Iterator[list[int]]:
+        sampler_iter = iter(self.sampler)
+        if self.drop_last:
+            # Create multiple references to the same iterator
+            args = [sampler_iter] * self.batch_size
+            for batch_droplast in zip(*args, strict=False):
+                yield [*batch_droplast]
+        else:
+            batch = [*itertools.islice(sampler_iter, self.batch_size)]
+            while batch:
+                yield batch
+                batch = [*itertools.islice(sampler_iter, self.batch_size)]
+
+    def __len__(self) -> int:
+        # Can only be called if self.sampler has __len__ implemented
+        # We cannot enforce this condition, so we turn off typechecking for the
+        # implementation below.
+        # Somewhat related: see NOTE [ Lack of Default `__len__` in Python Abstract Base Classes ]
+        if self.drop_last:
+            return len(self.sampler) // self.batch_size  # type: ignore[arg-type]
+        else:
+            return (len(self.sampler) + self.batch_size - 1) // self.batch_size  # type: ignore[arg-type]

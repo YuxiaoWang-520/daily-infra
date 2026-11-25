@@ -1,0 +1,50 @@
+Initial RED run: 20 unittest methods, exit 1, 635 repeated NotImplementedError errors.
+The complete sanitized output is preserved losslessly in red-tests.txt.gz.
+Uncompressed SHA-256: 0b0d31d95a692bd6c5c35138e357f630583ba671e51d5c1c7ee8cfbf686bc7cd
+
+--- first 25 lines ---
+test_configuration_changes_rejected (test_answers.ResumeTests.test_configuration_changes_rejected) ... ERROR
+test_cursor_validation (test_answers.ResumeTests.test_cursor_validation) ... ERROR
+test_digest_is_stable_and_content_sensitive (test_answers.ResumeTests.test_digest_is_stable_and_content_sensitive) ... ERROR
+test_every_commit_boundary (test_answers.ResumeTests.test_every_commit_boundary) ... ERROR
+test_json_token_round_trip (test_answers.ResumeTests.test_json_token_round_trip) ... ERROR
+test_plan_validation_and_empty_resume (test_answers.ResumeTests.test_plan_validation_and_empty_resume) ... ERROR
+test_prefetch_cursor_skips_uncommitted_data (test_answers.ResumeTests.test_prefetch_cursor_skips_uncommitted_data) ... ERROR
+test_stateless_value_reproducible_by_sample_key (test_answers.ResumeTests.test_stateless_value_reproducible_by_sample_key) ... ERROR
+test_batch_tail_and_no_input_mutation (test_answers.ShardingTests.test_batch_tail_and_no_input_mutation) ... ERROR
+test_empty_and_too_few_samples (test_answers.ShardingTests.test_empty_and_too_few_samples) ... ERROR
+test_epoch_is_explicit_and_repeatable (test_answers.ShardingTests.test_epoch_is_explicit_and_repeatable) ... ERROR
+test_global_rng_not_consumed (test_answers.ShardingTests.test_global_rng_not_consumed) ... ERROR
+test_invalid_batch_and_shard_arguments (test_answers.ShardingTests.test_invalid_batch_and_shard_arguments) ... ERROR
+test_invalid_rank_arguments (test_answers.ShardingTests.test_invalid_rank_arguments) ... ERROR
+test_matches_official_sampler_grid (test_answers.ShardingTests.test_matches_official_sampler_grid) ... 
+  test_matches_official_sampler_grid (test_answers.ShardingTests.test_matches_official_sampler_grid) (n=0, ranks=1, rank=0, shuffle=False, drop=False, epoch=0) ... ERROR
+  test_matches_official_sampler_grid (test_answers.ShardingTests.test_matches_official_sampler_grid) (n=0, ranks=1, rank=0, shuffle=False, drop=False, epoch=3) ... ERROR
+  test_matches_official_sampler_grid (test_answers.ShardingTests.test_matches_official_sampler_grid) (n=0, ranks=1, rank=0, shuffle=False, drop=True, epoch=0) ... ERROR
+  test_matches_official_sampler_grid (test_answers.ShardingTests.test_matches_official_sampler_grid) (n=0, ranks=1, rank=0, shuffle=False, drop=True, epoch=3) ... ERROR
+  test_matches_official_sampler_grid (test_answers.ShardingTests.test_matches_official_sampler_grid) (n=0, ranks=1, rank=0, shuffle=True, drop=False, epoch=0) ... ERROR
+  test_matches_official_sampler_grid (test_answers.ShardingTests.test_matches_official_sampler_grid) (n=0, ranks=1, rank=0, shuffle=True, drop=False, epoch=3) ... ERROR
+  test_matches_official_sampler_grid (test_answers.ShardingTests.test_matches_official_sampler_grid) (n=0, ranks=1, rank=0, shuffle=True, drop=True, epoch=0) ... ERROR
+  test_matches_official_sampler_grid (test_answers.ShardingTests.test_matches_official_sampler_grid) (n=0, ranks=1, rank=0, shuffle=True, drop=True, epoch=3) ... ERROR
+  test_matches_official_sampler_grid (test_answers.ShardingTests.test_matches_official_sampler_grid) (n=0, ranks=2, rank=0, shuffle=False, drop=False, epoch=0) ... ERROR
+  test_matches_official_sampler_grid (test_answers.ShardingTests.test_matches_official_sampler_grid) (n=0, ranks=2, rank=1, shuffle=False, drop=False, epoch=0) ... ERROR
+
+--- repeated tracebacks omitted here; see gzip archive ---
+======================================================================
+ERROR: test_two_drop_last_levels (test_answers.ShardingTests.test_two_drop_last_levels)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-25-data-sharding-shuffle/code/test_answers.py", line 88, in test_two_drop_last_levels
+    p = plan(sample_count=10, world_size=3, rank=0, batch_size=3,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/drafts/2026-11-25-data-sharding-shuffle/code/test_answers.py", line 32, in plan
+    return DataPlan(**config)
+           ^^^^^^^^^^^^^^^^^^
+  File "<repo>/drafts/2026-11-25-data-sharding-shuffle/code/answers.py", line 30, in __init__
+    raise NotImplementedError
+NotImplementedError
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.016s
+
+FAILED (errors=635)

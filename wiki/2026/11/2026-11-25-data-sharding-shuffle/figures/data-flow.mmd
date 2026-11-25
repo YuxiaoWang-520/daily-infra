@@ -1,0 +1,11 @@
+flowchart TD
+    A[固定数据版本与样本 ID] --> B[共享 seed 与 epoch：生成全局排列]
+    B --> C[补齐或截断，再按 rank 间隔取 ID]
+    C --> D[每个 rank 主进程合成索引批次]
+    D --> E[后台 worker 读取、变换、合批]
+    E --> F[预取结果等待返回]
+    F --> G[训练循环取得 batch]
+    G --> H[完成对应更新，推进 committed_batches]
+    H --> I[与模型、优化器一起保存一致快照]
+    I --> J[恢复：重建同一排列，跳过已提交批次]
+    J --> D

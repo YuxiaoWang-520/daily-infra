@@ -1,0 +1,102 @@
+{
+  "checked_at": "2026-11-25T11:12:09+08:00",
+  "python": "3.12.16",
+  "platform": "Darwin arm64",
+  "torch": "2.15.0",
+  "torch_build_commit": "d0f2af8b66b20da4baa50644c0cd3f887a2eae2e",
+  "cuda_available": false,
+  "ruff": "ruff 0.17.3",
+  "commands": [
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "code",
+        "-p",
+        "test_answers.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "timed_out": false,
+      "log": "evidence/runs/unit-tests.txt"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-O",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "code",
+        "-p",
+        "test_answers.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "timed_out": false,
+      "log": "evidence/runs/optimized-tests.txt"
+    },
+    {
+      "command": [
+        "ruff",
+        "check",
+        "code"
+      ],
+      "exit_code": 0,
+      "timed_out": false,
+      "log": "evidence/runs/ruff-check.txt"
+    },
+    {
+      "command": [
+        "ruff",
+        "format",
+        "--check",
+        "code"
+      ],
+      "exit_code": 0,
+      "timed_out": false,
+      "log": "evidence/runs/ruff-format.txt"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "code/run_answers.py",
+        "--output-dir",
+        "evidence/runs"
+      ],
+      "exit_code": 0,
+      "timed_out": false,
+      "log": "evidence/runs/answers-run.txt"
+    }
+  ],
+  "red_test_exit_code": 1,
+  "code_sha256": {
+    "code/answers.py": "a636a358a9e0c9db5413f7aaa7133c1a32f574f294480b3708c9b9e31134fd41",
+    "code/exercises.py": "24034b4b0c5e2b996e4f0dd6e9da1cd86a59aefb8d7f322980bcf1b32c050267",
+    "code/run_answers.py": "9258fd456857efd0e9273ef6f22d3dfd6c6a43dba141799f09d08b134343fde5",
+    "code/runtime_demo.py": "80e5d8134d6bca5e93ceeab24154ded26e8ba1e1b7082d3947cd9d75083dff9b",
+    "code/test_answers.py": "51397c77d79043fc17cab2857bda894856fe2c7db05228bc05e88b72ea4074e2"
+  },
+  "starter_only_revision": {
+    "checked_at": "2026-11-25T11:14:04+08:00",
+    "old_sha256": "043650aa28ceb97ed78f11a364a496b2a56e2a7d42835579fffb6279068a7d20",
+    "new_sha256": "24034b4b0c5e2b996e4f0dd6e9da1cd86a59aefb8d7f322980bcf1b32c050267",
+    "description": "Expanded deliberate learner skeleton; answers, runtime, tests and runner unchanged. Ruff rerun; no repeat behavioral tests needed."
+  },
+  "red_log_archive": {
+    "summary": "evidence/runs/red-tests.txt",
+    "complete_sanitized_log_gzip": "evidence/runs/red-tests.txt.gz",
+    "uncompressed_bytes": 528790,
+    "uncompressed_sha256": "0b0d31d95a692bd6c5c35138e357f630583ba671e51d5c1c7ee8cfbf686bc7cd",
+    "gzip_bytes": 7848,
+    "gzip_sha256": "011bfe4bede6214b95e88076f8b6b92bc6358d8ae79aabfb8f46af1c1e38fd36",
+    "lossless": true
+  }
+}
