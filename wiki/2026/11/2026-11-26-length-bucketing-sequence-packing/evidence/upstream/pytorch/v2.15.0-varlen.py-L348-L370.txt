@@ -1,0 +1,23 @@
+def varlen_attn(
+    query: torch.Tensor,
+    key: torch.Tensor,
+    value: torch.Tensor,
+    cu_seq_q: torch.Tensor,
+    cu_seq_k: torch.Tensor | None,
+    max_q: int,
+    max_k: int,
+    *,
+    return_aux: AuxRequest | None = None,
+    scale: float | None = None,
+    window_size: tuple[int, int] = (-1, -1),
+    enable_gqa: bool = False,
+    seqused_k: torch.Tensor | None = None,
+    block_table: torch.Tensor | None = None,
+    num_splits: int | None = None,
+) -> torch.Tensor | tuple[torch.Tensor, torch.Tensor]:
+    r"""Compute variable-length attention using Flash Attention.
+
+    This function is similar to scaled_dot_product_attention but optimized for
+    variable-length sequences using cumulative sequence position tensors.
+    Backend enablement follows :func:`torch.nn.attention.sdpa_kernel`. By default,
+    eligible cuDNN is preferred over Flash; ``set_priority=True`` overrides this order.

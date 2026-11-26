@@ -1,0 +1,97 @@
+{
+  "checked_at": "2026-11-26T11:23:30+08:00",
+  "kind": "Independent general Python correctness and safety reviewer report, not raw stdout",
+  "specialist_attempt": {
+    "agent": "/root/nov26_python_review",
+    "role": "python-reviewer",
+    "executed": false,
+    "error": "The 'gpt-5.4' model is not supported when using Codex with a ChatGPT account."
+  },
+  "reviewer": {
+    "agent": "/root/nov26_python_fallback",
+    "role": "independent general reviewer",
+    "agent_type": "default",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "max",
+    "read_only": true
+  },
+  "decision": "accepted",
+  "initial_review": {
+    "code_sha256_before_and_after": {
+      "code/answers.py": "94a77f3f37e865277d8afe9091fa1558225f22e3d2371ab4aae604f1949b1451",
+      "code/exercises.py": "6968037e9e1f19a74b457edf92c3d45bb8f9d6ea14850f9ace7fbd6f78d43db6",
+      "code/run_answers.py": "6da74670db2c52c96a2be318e3c4c0ae693c637e1260f34e011113ce2cc4ad59",
+      "code/test_answers.py": "36486cc3eb8fbaf22314de296753a18fa6f4cf5ad118d1866702e7e3574cc3d9",
+      "code/toy_model.py": "8f7759bcb48170f4888247025aa35d5ffe6a9687795c6b5b365f814fbbcdedfb"
+    },
+    "decision": "conditionally accepted for default CPU environment",
+    "checks_reported": [
+      {
+        "check": "Bounded exhaustive FFD/cost independent oracles",
+        "cases": 1279,
+        "result": "passed"
+      },
+      {
+        "check": "Pure-Python metadata and mask oracles",
+        "cases": 4,
+        "result": "passed"
+      },
+      {
+        "check": "Manual float64 log-sum-exp CE and gradient comparisons",
+        "cases": 3,
+        "result": "passed"
+      },
+      {
+        "check": "DDP SUM-scale algebra",
+        "cases": 3,
+        "result": "passed"
+      },
+      {
+        "check": "CPU SDPA output/loss/all-param gradient equivalence and observable mask/position counterexamples",
+        "result": "passed"
+      },
+      {
+        "check": "CLI strict JSON equals results.json, exact owned temporary cleanup",
+        "result": "passed"
+      }
+    ],
+    "finding": {
+      "severity": "LOW",
+      "locations": [
+        "answers.py:146",
+        "toy_model.py:19",
+        "run_answers.py:25"
+      ],
+      "observation": "Mutable default device could create meta tensors in the advertised CPU reference",
+      "status": "resolved by focused delta"
+    }
+  },
+  "focused_delta": {
+    "change": "Pin CPU factories and parameter initialization, add meta-default regression",
+    "red_log": "evidence/runs/meta-device-red.txt",
+    "checks_reported": [
+      "Isolated process set torch.set_default_device(meta)",
+      "All six PackedBatch tensors remained CPU",
+      "All ToyAttentionLM parameters remained CPU",
+      "Outputs/loss/all-param gradient errors under 1e-12",
+      "CLI under meta default produced strict JSON equal to sole results.json",
+      "Exact owned result file and empty directory removed",
+      "Factory delta inspected, no pyc files appeared"
+    ],
+    "decision": "accepted; prior LOW closed",
+    "full_exhaustive_checks_repeated": false
+  },
+  "code_sha256_after": {
+    "code/answers.py": "258b178414092e0bddb8884feb88a9136a1bcd56250308f9accb570af8d21695",
+    "code/exercises.py": "6968037e9e1f19a74b457edf92c3d45bb8f9d6ea14850f9ace7fbd6f78d43db6",
+    "code/run_answers.py": "e5f63bb19c414c3fc285e08c88bc764602ea035a28ac6f064dbb2d3dc69bad2f",
+    "code/test_answers.py": "8c30166c0d80edfc3af143f41f1f879a72b6c06d98b229abadb2deaec92a6b30",
+    "code/toy_model.py": "0f8f515efb6ccccb2f29c9d3e64173b964aba4245070437cd7c0cbeba50ad196"
+  },
+  "remaining_findings": [],
+  "scope_limits": [
+    "Five Python files only; not independent article/upstream review",
+    "CPU semantics and arithmetic, no GPU/varlen/distributed/throughput/convergence validation",
+    "Ordinary DDP averaging is a stated algebraic assumption; no process group run"
+  ]
+}

@@ -1,0 +1,14 @@
+std::optional<Tensor> convert_boolean_attn_mask(const std::optional<Tensor>& attn_mask, caffe2::TypeMeta dtype) {
+  // Pass through
+  if (!attn_mask.has_value()) {
+    return std::nullopt;
+  }
+  // Convert boolean mask to additive mask; need to invert mask to indicate what
+  // to mask *out*.
+  if (attn_mask->dtype() == at::kBool) {
+    constexpr double neg_inf = -std::numeric_limits<double>::infinity();
+    return at::where(*attn_mask, 0.0, at::scalar_tensor(neg_inf, at::TensorOptions().dtype(dtype).device(attn_mask->device())));
+  }
+  // Otherwise, attn_mask represents an additive attention tensor
+  return attn_mask;
+}

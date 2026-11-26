@@ -1,0 +1,59 @@
+def _select_backend(
+    query: torch.Tensor,
+    key: torch.Tensor,
+    value: torch.Tensor,
+    cu_seq_q: torch.Tensor,
+    cu_seq_k: torch.Tensor | None,
+    max_q: int,
+    window_size: list[int],
+    seqused_k: torch.Tensor | None = None,
+    block_table: torch.Tensor | None = None,
+    num_splits: int | None = None,
+    return_lse: bool = False,
+) -> int:
+    """Select the first eligible varlen backend in the SDPA priority order."""
+    cudnn_enabled = torch._C._get_cudnn_sdp_enabled()
+    flash_enabled = torch._C._get_flash_sdp_enabled()
+    needs_backward = torch.is_grad_enabled() and _input_requires_grad(query, key, value)
+    cudnn_reasons = (
+        _cudnn_rejection_reasons(
+            query,
+            key,
+            value,
+            cu_seq_q,
+            cu_seq_k,
+            max_q,
+            window_size,
+            seqused_k,
+            block_table,
+            num_splits,
+            needs_backward,
+        )
+        if cudnn_enabled
+        else []
+    )
+    cudnn_eligible = cudnn_enabled and not cudnn_reasons
+    # Only FA4 consumes the gradient of a returned lse, so prefer it over cuDNN
+    # unless the user set an explicit priority order.
+    prefer_flash = (
+        flash_enabled
+        and return_lse
+        and needs_backward
+        and current_flash_attention_impl() == "FA4"
+        and not _is_sdp_priority_order_active()
+    )
+    for backend in _get_sdp_priority_order():
+        if backend == _CUDNN_ATTENTION_BACKEND and cudnn_eligible and not prefer_flash:
+            return backend
+        if backend == _FLASH_ATTENTION_BACKEND and flash_enabled:
+            return backend
+    if cudnn_enabled:
+        constraints = "\n  - ".join(cudnn_reasons)
+        raise RuntimeError(
+            "SDPBackend.CUDNN_ATTENTION was requested for varlen_attn, but its "
+            f"constraints are not satisfied:\n  - {constraints}"
+        )
+    raise RuntimeError(
+        "No viable backend for varlen_attn. Enable SDPBackend.FLASH_ATTENTION "
+        "or SDPBackend.CUDNN_ATTENTION with sdpa_kernel()."
+    )

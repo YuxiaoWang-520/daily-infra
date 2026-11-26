@@ -1,0 +1,17 @@
+test_cpu_reference_under_meta_default_device (test_answers.SemanticTests.test_cpu_reference_under_meta_default_device) ... FAIL
+
+======================================================================
+FAIL: test_cpu_reference_under_meta_default_device (test_answers.SemanticTests.test_cpu_reference_under_meta_default_device)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-26-length-bucketing-sequence-packing/code/test_answers.py", line 233, in test_cpu_reference_under_meta_default_device
+    self.assertEqual(tensor.device.type, "cpu")
+AssertionError: 'meta' != 'cpu'
+- meta
++ cpu
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.566s
+
+FAILED (failures=1)

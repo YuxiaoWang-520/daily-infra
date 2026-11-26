@@ -1,0 +1,31 @@
+{
+  "checked_at": "2026-11-26T11:23:05+08:00",
+  "decision": "passed",
+  "branch": "main",
+  "target_repository": "YuxiaoWang-520/daily-infra",
+  "visibility": "PUBLIC",
+  "default_branch": "main",
+  "viewer_permission": "ADMIN",
+  "github_login": "YuxiaoWang-520",
+  "baseline_local_head": "9821c59dba4541e4fb0875e2dce870548408fc3b",
+  "baseline_origin_main": "9821c59dba4541e4fb0875e2dce870548408fc3b",
+  "baseline_github_main": "9821c59dba4541e4fb0875e2dce870548408fc3b",
+  "ahead_behind": [
+    0,
+    0
+  ],
+  "origin_read": "git@github.com:YuxiaoWang-520/daily-infra.git",
+  "origin_push": "git@github.com:YuxiaoWang-520/daily-infra.git",
+  "repository_local_identity": {
+    "user.name": "YuxiaoWang-520",
+    "user.email": "13917046839@163.com"
+  },
+  "effective_author_committer": {
+    "GIT_AUTHOR_IDENT": "YuxiaoWang-520 <13917046839@163.com>",
+    "GIT_COMMITTER_IDENT": "YuxiaoWang-520 <13917046839@163.com>"
+  },
+  "preexisting_staged_files": [],
+  "preexisting_unrelated_tracked_changes": [],
+  "untracked_scope": "Only current Wiki draft, ignored caches excluded",
+  "authorization": "Reviewed daily Wiki, scoped index and roadmap; no PR/deploy/visibility/automation mutation"
+}

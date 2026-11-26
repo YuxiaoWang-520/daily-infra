@@ -1,0 +1,94 @@
+I001 [*] Import block is un-sorted or un-formatted
+ --> code/exercises.py:3:1
+  |
+1 |   """Learner API skeleton; dataclasses are supplied so the focus stays on mechanisms."""
+2 |
+3 | / from collections.abc import Sequence
+4 | |
+5 | | import torch
+6 | |
+7 | | from answers import CostEstimate, PackedBatch
+  | |_____________________________________________^
+help: Organize imports
+  |
+5 | import torch
+  -
+6 | from answers import CostEstimate, PackedBatch
+  |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> code/run_answers.py:3:1
+   |
+ 1 |   """Run both exercises; write synthetic results to the requested output directory."""
+ 2 |
+ 3 | / import argparse
+ 4 | | import json
+ 5 | | from dataclasses import asdict
+ 6 | | from pathlib import Path
+ 7 | |
+ 8 | | import torch
+ 9 | | import torch.nn.functional as F
+10 | |
+11 | | from answers import ddp_sum_scale, first_fit_decreasing, packed_cost, padded_cost
+12 | | from toy_model import compare_models
+   | |____________________________________^
+help: Organize imports
+   |
+9  | import torch.nn.functional as F
+   -
+10 | from answers import ddp_sum_scale, first_fit_decreasing, packed_cost, padded_cost
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> code/test_answers.py:3:1
+   |
+ 1 |   """Independent small examples and real CPU attention/gradient checks."""
+ 2 |
+ 3 | / import unittest
+ 4 | |
+ 5 | | import torch
+ 6 | | import torch.nn.functional as F
+ 7 | |
+ 8 | | from answers import (
+ 9 | |     ddp_sum_scale,
+10 | |     first_fit_decreasing,
+11 | |     loss_sum_and_count,
+12 | |     pack_batch,
+13 | |     packed_cost,
+14 | |     padded_cost,
+15 | | )
+16 | | from toy_model import compare_models
+   | |____________________________________^
+help: Organize imports
+  |
+6 | import torch.nn.functional as F
+  -
+7 | from answers import (
+  |
+
+I001 [*] Import block is un-sorted or un-formatted
+ --> code/toy_model.py:3:1
+  |
+1 |   """Actual float64 CPU SDPA; no dropout, varlen kernel, distributed group or benchmark."""
+2 |
+3 | / import torch
+4 | | from torch import nn
+5 | | from torch.nn import functional as F
+6 | | from torch.nn.attention import SDPBackend, sdpa_kernel
+7 | |
+8 | | from answers import loss_sum_and_count, pack_batch
+  | |__________________________________________________^
+help: Organize imports
+  |
+3 | import torch
+4 + from answers import loss_sum_and_count, pack_batch
+5 | from torch import nn
+6 | from torch.nn import functional as F
+7 | from torch.nn.attention import SDPBackend, sdpa_kernel
+  -
+  - from answers import loss_sum_and_count, pack_batch
+8 |
+  |
+
+Found 4 errors.
+[*] 4 fixable with `--fix`.

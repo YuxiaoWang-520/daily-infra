@@ -1,0 +1,39 @@
+{
+  "checked_at": "2026-11-26T11:06:56+08:00",
+  "cache_checkout_preserved": "4892050dadb28d1ca1065268e35084747967e34e",
+  "commands": [
+    {
+      "command": "git fetch --no-tags origin main",
+      "scope": "target repository",
+      "exit_code": 0,
+      "output": "From github.com:YuxiaoWang-520/daily-infra\n * branch main -> FETCH_HEAD"
+    },
+    {
+      "command": "git -C .cache/upstream/pytorch fetch --no-tags --depth=1 origin main",
+      "exit_code": 0,
+      "output": "From https://github.com/pytorch/pytorch\n * branch main -> FETCH_HEAD\n + 19f0c27...205e1e1 main -> origin/main (forced update)"
+    },
+    {
+      "command": "git -C .cache/upstream/pytorch fetch --no-tags --depth=1 origin refs/tags/v2.15.0:refs/tags/v2.15.0",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "command": "gh api repos/pytorch/pytorch --jq .default_branch",
+      "exit_code": 0,
+      "output": "main"
+    },
+    {
+      "command": "gh api repos/pytorch/pytorch/releases/latest",
+      "exit_code": 0,
+      "output": {
+        "tag_name": "v2.15.0",
+        "published_at": "2026-10-28T17:09:49Z",
+        "target_commitish": "main"
+      }
+    }
+  ],
+  "main": "205e1e1fca6c6634bff5b06691d6648a4f72fe9a",
+  "stable": "31a77fc9c0a7c6fff15a1ff58c743f53b1a9d457",
+  "version_boundary": "The public varlen argument list matches the stable tag; implementation and backend selection differ. No claim that main was built or that GPU kernels were executed."
+}

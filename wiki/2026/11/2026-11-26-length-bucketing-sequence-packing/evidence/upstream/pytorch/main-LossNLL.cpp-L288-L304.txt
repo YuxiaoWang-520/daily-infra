@@ -1,0 +1,17 @@
+  const scalar_t total_weight_val = !weight_data ?
+    static_cast<scalar_t>(batch_size - num_ignored) :
+    std::accumulate(std::begin(weight_partial_sums),
+                    std::end(weight_partial_sums),
+                    scalar_t{0});
+
+  scalar_t output_val = std::accumulate(std::begin(loss_partial_sums),
+                                        std::end(loss_partial_sums),
+                                        scalar_t{0});
+
+  if (reduction == Reduction::Mean) {
+    output_val /= total_weight_val;
+  }
+
+  // write result to output tensors
+  *output.mutable_data_ptr<scalar_t>() = output_val;
+  *total_weight_data = total_weight_val;

@@ -1,0 +1,187 @@
+{
+  "queried_at": "2026-11-26 Asia/Shanghai",
+  "provider": "Connected Parallel web_search and web_fetch",
+  "entries": [
+    {
+      "kind": "nov26paperSearch",
+      "search_id": "search_5b87f5278beb003155e2b273634120a3",
+      "extract_id": null,
+      "session_id": "session_5b87f5278beb003155e2b273634120a3",
+      "results": [
+        {
+          "title": "[2107.02027] Efficient Sequence Packing without Cross-contamination: Accelerating Large Language Models without Impacting Performance",
+          "url": "https://arxiv.org/abs/2107.02027",
+          "publish_date": "2021-06-29",
+          "acquired_at": null
+        },
+        {
+          "title": "Efficient Sequence Packing without Cross-contamination: Accelerating Large Language Models without Impacting Performance",
+          "url": "https://arxiv.org/pdf/2107.02027",
+          "publish_date": "2021-06-29",
+          "acquired_at": null
+        },
+        {
+          "title": "Efficient Sequence Packing without Cross-contamination: Accelerating Large Language Models without Impacting Performance",
+          "url": "https://arxiv.org/html/2107.02027v2",
+          "publish_date": null,
+          "acquired_at": null
+        },
+        {
+          "title": "[2107.02027] Efficient Sequence Packing without Cross-contamination:\nAccelerating Large Language Models without Impacting Performance",
+          "url": "https://ar5iv.labs.arxiv.org/html/2107.02027",
+          "publish_date": null,
+          "acquired_at": null
+        },
+        {
+          "title": "EFFICIENT SEQUENCE PACKING WITHOUT CROSS-CONTAMINATION: ACCELERATING LARGE LANGUAGE MODELS WITHOUT IMPACTING PERFORMANCE",
+          "url": "https://huggingface.co/papers/2107.02027",
+          "publish_date": null,
+          "acquired_at": null
+        },
+        {
+          "title": "E S P C - : A L L M I P",
+          "url": "https://arxiv.org/pdf/2107.02027v2",
+          "publish_date": "2022-10-07",
+          "acquired_at": null
+        },
+        {
+          "title": "Packing Data for efficient Training and Inference - GitHub Pages",
+          "url": "https://lweitkamp.github.io/posts/packing/index.html",
+          "publish_date": "2024-10-01",
+          "acquired_at": null
+        },
+        {
+          "title": "E S P C - : A L L M I P",
+          "url": "https://pdfs.assets.alphaxiv.org/2107.02027v2.pdf",
+          "publish_date": "2022-10-07",
+          "acquired_at": null
+        },
+        {
+          "title": "\u5e8f\u5217\u6253\u5305\u4e0e\u53d8\u957f Attention\uff1a\u5c11\u7b97 Padding \u4e4b\u540e\uff0c\u600e\u6837\u4fdd\u6301\u8bad\u7ec3\u76ee\u6807\u4e0d\u53d8 \u00b7 Charlestar",
+          "url": "https://charlestar.github.io/2026/09/13/sequence-packing-variable-length-attention",
+          "publish_date": "2026-09-12",
+          "acquired_at": null
+        },
+        {
+          "title": "Efficient Sequence Packing without Cross-contamination: Accelerating Large Language Models without Impacting Performance - Science Explorer Abstract",
+          "url": "https://scixplorer.org/abs/arXiv:2107.02027/abstract",
+          "publish_date": "2021-06-01",
+          "acquired_at": null
+        }
+      ],
+      "errors": []
+    },
+    {
+      "kind": "nov26paperFetch",
+      "search_id": null,
+      "extract_id": "extract_9aa892f54997b3274a3c7204d945de06",
+      "session_id": "session_5b87f5278beb003155e2b273634120a3",
+      "results": [
+        {
+          "title": "Efficient Sequence Packing without Cross-contamination: Accelerating Large Language Models without Impacting Performance",
+          "url": "https://arxiv.org/html/2107.02027v2",
+          "publish_date": null,
+          "acquired_at": "2026-10-07T00:00:00Z"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "kind": "nov26docSearch",
+      "search_id": "search_0ac345ccd6cdf67d0ad0b5f854d90190",
+      "extract_id": null,
+      "session_id": "session_0ac345ccd6cdf67d0ad0b5f854d90190",
+      "results": [
+        {
+          "title": "Megatron-LM/megatron/core/packed_seq_params.py at main \u00b7 NVIDIA/Megatron-LM \u00b7 GitHub",
+          "url": "https://github.com/NVIDIA/Megatron-LM/blob/main/megatron/core/packed_seq_params.py",
+          "publish_date": null,
+          "acquired_at": null
+        },
+        {
+          "title": "core.packed_seq_params \u2014 Megatron Core",
+          "url": "https://docs.nvidia.com/megatron-core/developer-guide/latest/apidocs/core/core.packed_seq_params.html",
+          "publish_date": null,
+          "acquired_at": null
+        },
+        {
+          "title": "torch.nn.functional.scaled_dot_product_attention \u2014 PyTorch ...",
+          "url": "https://docs.pytorch.org/docs/main/generated/torch.nn.functional.scaled_dot_product_attention.html",
+          "publish_date": null,
+          "acquired_at": null
+        },
+        {
+          "title": "torch.nn.functional.scaled_dot_product_attention #",
+          "url": "https://docs.pytorch.org/docs/2.14/generated/torch.nn.functional.scaled_dot_product_attention.html",
+          "publish_date": null,
+          "acquired_at": null
+        },
+        {
+          "title": "core.ssm.ops.common.causal_conv1d_varlen \u2014 Megatron Core",
+          "url": "https://docs.nvidia.com/megatron-core/developer-guide/latest/apidocs/core/core.ssm.ops.common.causal_conv1d_varlen.html",
+          "publish_date": null,
+          "acquired_at": null
+        },
+        {
+          "title": "Speeding Up Variable-Length Training with Dynamic Context Parallelism and NVIDIA Megatron Core | NVIDIA Technical Blog",
+          "url": "https://developer.nvidia.com/blog/speeding-up-variable-length-training-with-dynamic-context-parallelism-and-nvidia-megatron-core",
+          "publish_date": "2026-01-28",
+          "acquired_at": null
+        },
+        {
+          "title": "core.ssm.packed_seq_helpers \u2014 Megatron Core",
+          "url": "https://docs.nvidia.com/megatron-core/developer-guide/nightly/apidocs/core/core.ssm.packed_seq_helpers.html",
+          "publish_date": null,
+          "acquired_at": null
+        },
+        {
+          "title": "core.ssm.ops.causal_conv1d_varlen \u2014 Megatron Core",
+          "url": "https://docs.nvidia.com/megatron-core/developer-guide/latest/apidocs/core/core.ssm.ops.causal_conv1d_varlen.html",
+          "publish_date": null,
+          "acquired_at": null
+        },
+        {
+          "title": "Megatron-LM/megatron/core/datasets/readme.md at main \u00b7 NVIDIA/Megatron-LM \u00b7 GitHub",
+          "url": "https://github.com/NVIDIA/Megatron-LM/blob/main/megatron/core/datasets/readme.md",
+          "publish_date": null,
+          "acquired_at": null
+        },
+        {
+          "title": "Using Variable Length Attention in PyTorch #",
+          "url": "https://docs.pytorch.org/tutorials/intermediate/variable_length_attention_tutorial.html",
+          "publish_date": null,
+          "acquired_at": null
+        }
+      ],
+      "errors": []
+    },
+    {
+      "kind": "nov26sdpaFetch",
+      "search_id": null,
+      "extract_id": "extract_81fcbd998016576e19452180ac1ee742",
+      "session_id": "session_0ac345ccd6cdf67d0ad0b5f854d90190",
+      "results": [
+        {
+          "title": "torch.nn.functional.scaled_dot_product_attention #",
+          "url": "https://docs.pytorch.org/docs/main/generated/torch.nn.functional.scaled_dot_product_attention.html",
+          "publish_date": null,
+          "acquired_at": "2026-11-23T00:00:00Z"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "kind": "nov26paperAlgorithms",
+      "extract_id": "extract_9529fef87e580202824d297f2e113e4e",
+      "session_id": "session_5b87f5278beb003155e2b273634120a3",
+      "results": [
+        {
+          "url": "https://arxiv.org/html/2107.02027v2",
+          "acquired_at": "2026-10-07T00:00:00Z"
+        }
+      ],
+      "errors": []
+    }
+  ],
+  "notes": "Only metadata is reproduced here. Original paper sections and official API were actually read; own notes accompany fixed-commit source evidence. Cache acquired_at is not the Git fetch date."
+}

@@ -1,0 +1,53 @@
+{
+  "checked_at": "2026-11-26T11:25:01+08:00",
+  "technical_review": {
+    "reviewer": "MAIN",
+    "kind": "self-review",
+    "decision": "passed",
+    "findings": [
+      {
+        "severity": "LOW",
+        "observation": "Independent reviewer identified global default-device dependency",
+        "resolution": "Regression failed before fix, explicit CPU factories added, 25 normal/-O tests and focused independent delta pass"
+      },
+      {
+        "severity": "LOW",
+        "observation": "Four initial Ruff I001 issues",
+        "resolution": "Fixed only owned imports; final checks pass"
+      },
+      {
+        "severity": "LOW",
+        "observation": "Paper algorithm initially abbreviated as NNLS",
+        "resolution": "Read original 3.1, name NNLSHP and distinguish SPFHP from teaching FFD"
+      }
+    ],
+    "evidence": "evidence/technical-audit.json"
+  },
+  "teaching_review": {
+    "reviewer": "MAIN",
+    "kind": "self-review",
+    "decision": "passed",
+    "additional_findings": [],
+    "checks": [
+      "Small cost example precedes symbols and implementation",
+      "Input tokens, slots, attention area, causal pairs and supervised targets distinguished",
+      "Independent-sample objective and absolute-position scope explicit",
+      "Three negative controls and gradient checks explained",
+      "Paper BERT and histogram algorithms versus tutorial causal LM and FFD separated",
+      "Two full exercises, source evidence and interview answers included"
+    ],
+    "virtual_local_markdown_links_checked": 75,
+    "placeholder_scan": "passed",
+    "figure_body_matches_source": true,
+    "figure_rendered": false
+  },
+  "independent_code_review": "evidence/python-review.json",
+  "unresolved_critical_high": [],
+  "final_archive_delivery_gate": {
+    "decision": "passed",
+    "checked_at": "2026-11-26T11:26:30+08:00",
+    "local_markdown_links_checked": 145,
+    "index_articles": 34,
+    "today_articles": 1
+  }
+}

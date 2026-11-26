@@ -1,0 +1,37 @@
+        !query.is_nested() && !key_acc.is_nested(),
+        "_scaled_dot_product_attention: Nested tensors for query / key are not supported when is_causal=True");
+
+    // Replace attn_mask with causal mask; lower triangular elements take part
+    // in attention.
+    const auto L = query.sym_size(-2), S = key_acc.sym_size(-2);
+    attn_mask =
+        at::ones_symint({L, S}, query.options().dtype(at::kBool)).tril();
+    attn_mask = convert_boolean_attn_mask(attn_mask, query.dtype());
+    }
+
+
+    // MQA/GQA handling
+    auto [key_expanded, value_expanded] = pre_process_group_query_attention_input(query, key_acc, value_acc, enable_gqa);
+    auto attn = at::matmul(query, key_expanded.transpose(-2, -1) * scaling_factor);
+    if (attn_mask.has_value()) {
+      if (at::areAnyTensorSubclassLike({attn, *attn_mask})) {
+        attn = attn.add(*attn_mask);
+      } else {
+        attn.add_(*attn_mask);
+      }
+    }
+    attn = at::_safe_softmax(attn, -1);
+    if (dropout_p > 0.0) {
+      if (dropout_mask.has_value()) {
+        // In order to validate the correctness of the fused kernels, we need to
+        // use the same dropout mask in order to compare the results.
+        TORCH_WARN_ONCE("Dropout mask should only be used for testing purposes.");
+        attn = attn.masked_fill(dropout_mask->logical_not(), 0.0);
+        auto dropout_scaling = 1.0 / (1 - dropout_p);
+        return std::make_tuple(at::matmul(attn, value_expanded * dropout_scaling).to(origin_dtype), attn.to(origin_dtype));
+      } else {
+        attn = at::dropout(attn, dropout_p, true);
+      }
+    }
+
+    return std::make_tuple(at::matmul(attn, value_expanded).to(origin_dtype), attn.to(origin_dtype));

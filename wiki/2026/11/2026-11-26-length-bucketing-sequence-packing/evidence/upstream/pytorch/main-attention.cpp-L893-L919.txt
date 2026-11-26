@@ -1,0 +1,27 @@
+    }
+    case SDPBackend::math: {
+      const bool any_inputs_require_grad = query_.requires_grad() || key.requires_grad() || value.requires_grad();
+      if (query_device_type == c10::kMPS && !(at::GradMode::is_enabled() && any_inputs_require_grad)) {
+        return std::get<0>(at::_scaled_dot_product_attention_math_for_mps(
+            query_,
+            key,
+            value,
+            attn_mask,
+            dropout_p,
+            is_causal,
+            std::nullopt, /*dropout_mask*/
+            scale,
+            enable_gqa));
+      }
+      return std::get<0>(at::_scaled_dot_product_attention_math(
+          query_,
+          key,
+          value,
+          attn_mask,
+          dropout_p,
+          is_causal,
+          std::nullopt, /*dropout_mask*/
+          scale,
+          enable_gqa));
+    }
+    default:

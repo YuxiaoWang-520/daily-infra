@@ -1,0 +1,111 @@
+{
+  "checked_at": "2026-11-26T11:21:05+08:00",
+  "python": "3.12.16",
+  "platform": "Darwin arm64",
+  "torch": "2.15.0",
+  "torch_build_commit": "d0f2af8b66b20da4baa50644c0cd3f887a2eae2e",
+  "cuda_available": false,
+  "ruff": "ruff 0.17.3",
+  "commands": [
+    {
+      "command": [
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "code",
+        "-p",
+        "test_answers.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "timed_out": false,
+      "log": "evidence/runs/unit-tests.txt"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "-O",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "code",
+        "-p",
+        "test_answers.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "timed_out": false,
+      "log": "evidence/runs/optimized-tests.txt"
+    },
+    {
+      "command": [
+        "ruff",
+        "check",
+        "code"
+      ],
+      "exit_code": 0,
+      "timed_out": false,
+      "log": "evidence/runs/ruff-check.txt"
+    },
+    {
+      "command": [
+        "ruff",
+        "format",
+        "--check",
+        "code"
+      ],
+      "exit_code": 0,
+      "timed_out": false,
+      "log": "evidence/runs/ruff-format.txt"
+    },
+    {
+      "command": [
+        "python",
+        "-B",
+        "code/run_answers.py",
+        "--output-dir",
+        "evidence/runs"
+      ],
+      "exit_code": 0,
+      "timed_out": false,
+      "log": "evidence/runs/answers-run.txt"
+    }
+  ],
+  "red_test": {
+    "exit_code": 1,
+    "selected_tests": [
+      "CostTests.test_padding_hand_example",
+      "SemanticTests.test_metadata_example"
+    ],
+    "test_count": 2,
+    "reason": "Answer stubs intentionally unimplemented before implementation",
+    "log": "evidence/runs/red-tests.txt"
+  },
+  "regression": {
+    "finding": "CPU factories relied on mutable global default device",
+    "red_log": "evidence/runs/meta-device-red.txt",
+    "red_exit_code": 1,
+    "test": "SemanticTests.test_cpu_reference_under_meta_default_device",
+    "fix": "Pin CPU tensor factories and parameter initialization explicitly; test metadata/model/CLI under meta default context",
+    "before_code_sha256": {
+      "code/answers.py": "94a77f3f37e865277d8afe9091fa1558225f22e3d2371ab4aae604f1949b1451",
+      "code/exercises.py": "6968037e9e1f19a74b457edf92c3d45bb8f9d6ea14850f9ace7fbd6f78d43db6",
+      "code/run_answers.py": "6da74670db2c52c96a2be318e3c4c0ae693c637e1260f34e011113ce2cc4ad59",
+      "code/test_answers.py": "36486cc3eb8fbaf22314de296753a18fa6f4cf5ad118d1866702e7e3574cc3d9",
+      "code/toy_model.py": "8f7759bcb48170f4888247025aa35d5ffe6a9687795c6b5b365f814fbbcdedfb"
+    },
+    "green_test_in": "evidence/runs/unit-tests.txt"
+  },
+  "code_sha256": {
+    "code/answers.py": "258b178414092e0bddb8884feb88a9136a1bcd56250308f9accb570af8d21695",
+    "code/exercises.py": "6968037e9e1f19a74b457edf92c3d45bb8f9d6ea14850f9ace7fbd6f78d43db6",
+    "code/run_answers.py": "e5f63bb19c414c3fc285e08c88bc764602ea035a28ac6f064dbb2d3dc69bad2f",
+    "code/test_answers.py": "8c30166c0d80edfc3af143f41f1f879a72b6c06d98b229abadb2deaec92a6b30",
+    "code/toy_model.py": "0f8f515efb6ccccb2f29c9d3e64173b964aba4245070437cd7c0cbeba50ad196"
+  }
+}

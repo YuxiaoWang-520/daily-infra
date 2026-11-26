@@ -1,0 +1,45 @@
+{
+  "checked_at": "2026-11-26T11:26:30+08:00",
+  "decision": "passed",
+  "article": "wiki/2026/11/2026-11-26-length-bucketing-sequence-packing",
+  "article_files": 47,
+  "payload_files_excluding_this_report_and_SHA256SUMS": 45,
+  "payload_bytes_excluding_this_report_and_SHA256SUMS": 146789,
+  "checksums": "SHA256SUMS",
+  "local_markdown_links_checked_article_index_roadmap": 145,
+  "strict_json_files_parsed": 10,
+  "python_files_parsed": 5,
+  "published_index_articles": 34,
+  "today_article_count": 1,
+  "draft_removed_by_archive": true,
+  "required_files_present": true,
+  "placeholder_scan": "passed",
+  "privacy_scan": {
+    "decision": "passed",
+    "categories": [
+      "personal_home",
+      "private_key",
+      "github_token",
+      "aws_access_key",
+      "internal_domain",
+      "mac_private_temp",
+      "private_ipv4"
+    ],
+    "findings": []
+  },
+  "code_hashes_match_final_runs_and_independent_review": true,
+  "source_excerpt_digests_match": true,
+  "paper_notes_and_fixed_version_sources_archived": true,
+  "two_self_reviews_and_independent_general_code_review": "passed",
+  "allowed_commit_paths": [
+    "wiki/2026/11/2026-11-26-length-bucketing-sequence-packing",
+    "wiki/index.md",
+    "ROADMAP.md"
+  ],
+  "git_sync": "Baseline verified; commit/push must be confirmed afterward",
+  "limits": [
+    "CPU reference and arithmetic only",
+    "No GPU/varlen/distributed/throughput/convergence validation",
+    "Figure source semantic/text checks, no visual render"
+  ]
+}

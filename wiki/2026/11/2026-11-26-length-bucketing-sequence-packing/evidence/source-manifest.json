@@ -1,0 +1,168 @@
+{
+  "checked_at": "2026-11-26T11:06:56+08:00",
+  "repository": "https://github.com/pytorch/pytorch",
+  "default_branch": "main",
+  "main": "205e1e1fca6c6634bff5b06691d6648a4f72fe9a",
+  "stable": {
+    "tag": "v2.15.0",
+    "commit": "31a77fc9c0a7c6fff15a1ff58c743f53b1a9d457",
+    "published_at": "2026-10-28T17:09:49Z"
+  },
+  "fragments": [
+    {
+      "version": "main",
+      "commit": "205e1e1fca6c6634bff5b06691d6648a4f72fe9a",
+      "source_path": "torch/nn/functional.py",
+      "start_line": 3525,
+      "end_line": 3558,
+      "source_file_sha256": "c944e3d1af603e6a93ae864ba1bc70c82b7684208a7798a7d8b4d6ce93240a48",
+      "archive_path": "evidence/upstream/pytorch/main-functional.py-L3525-L3558.txt",
+      "excerpt_sha256": "a9435392f6690146ab065898ea60272a7464e501078595f237a7440764d38702",
+      "permalink": "https://github.com/pytorch/pytorch/blob/205e1e1fca6c6634bff5b06691d6648a4f72fe9a/torch/nn/functional.py#L3525-L3558"
+    },
+    {
+      "version": "main",
+      "commit": "205e1e1fca6c6634bff5b06691d6648a4f72fe9a",
+      "source_path": "torch/nn/functional.py",
+      "start_line": 3604,
+      "end_line": 3616,
+      "source_file_sha256": "c944e3d1af603e6a93ae864ba1bc70c82b7684208a7798a7d8b4d6ce93240a48",
+      "archive_path": "evidence/upstream/pytorch/main-functional.py-L3604-L3616.txt",
+      "excerpt_sha256": "e48c8a592fe416a589ef0389c860b4017a2ae8faec5597db06cb8e20401ab44d",
+      "permalink": "https://github.com/pytorch/pytorch/blob/205e1e1fca6c6634bff5b06691d6648a4f72fe9a/torch/nn/functional.py#L3604-L3616"
+    },
+    {
+      "version": "main",
+      "commit": "205e1e1fca6c6634bff5b06691d6648a4f72fe9a",
+      "source_path": "torch/nn/functional.py",
+      "start_line": 6493,
+      "end_line": 6537,
+      "source_file_sha256": "c944e3d1af603e6a93ae864ba1bc70c82b7684208a7798a7d8b4d6ce93240a48",
+      "archive_path": "evidence/upstream/pytorch/main-functional.py-L6493-L6537.txt",
+      "excerpt_sha256": "83b361883b718c797dd3588c98445bdc1a0f5e47a6ae6407f2f0930c366229c1",
+      "permalink": "https://github.com/pytorch/pytorch/blob/205e1e1fca6c6634bff5b06691d6648a4f72fe9a/torch/nn/functional.py#L6493-L6537"
+    },
+    {
+      "version": "main",
+      "commit": "205e1e1fca6c6634bff5b06691d6648a4f72fe9a",
+      "source_path": "aten/src/ATen/native/transformers/attention.cpp",
+      "start_line": 573,
+      "end_line": 586,
+      "source_file_sha256": "040ac476aa9a73084e6c3a28d060f7f315aea92af1573ea42cd108b5e76e999d",
+      "archive_path": "evidence/upstream/pytorch/main-attention.cpp-L573-L586.txt",
+      "excerpt_sha256": "8ff52e02af279cd4f87daf1c01790a84e4aa75c4169b0f0d22291aef30298c65",
+      "permalink": "https://github.com/pytorch/pytorch/blob/205e1e1fca6c6634bff5b06691d6648a4f72fe9a/aten/src/ATen/native/transformers/attention.cpp#L573-L586"
+    },
+    {
+      "version": "main",
+      "commit": "205e1e1fca6c6634bff5b06691d6648a4f72fe9a",
+      "source_path": "aten/src/ATen/native/transformers/attention.cpp",
+      "start_line": 893,
+      "end_line": 919,
+      "source_file_sha256": "040ac476aa9a73084e6c3a28d060f7f315aea92af1573ea42cd108b5e76e999d",
+      "archive_path": "evidence/upstream/pytorch/main-attention.cpp-L893-L919.txt",
+      "excerpt_sha256": "61959976ba748d2a742d89deb8ecdefb07cc9a6d302cb63734a6c3f51af883fe",
+      "permalink": "https://github.com/pytorch/pytorch/blob/205e1e1fca6c6634bff5b06691d6648a4f72fe9a/aten/src/ATen/native/transformers/attention.cpp#L893-L919"
+    },
+    {
+      "version": "main",
+      "commit": "205e1e1fca6c6634bff5b06691d6648a4f72fe9a",
+      "source_path": "aten/src/ATen/native/transformers/attention.cpp",
+      "start_line": 979,
+      "end_line": 1015,
+      "source_file_sha256": "040ac476aa9a73084e6c3a28d060f7f315aea92af1573ea42cd108b5e76e999d",
+      "archive_path": "evidence/upstream/pytorch/main-attention.cpp-L979-L1015.txt",
+      "excerpt_sha256": "ce33e30a7fa58356d7561d553ca12dcc152f0e373a6ae47bda85ee366f21a197",
+      "permalink": "https://github.com/pytorch/pytorch/blob/205e1e1fca6c6634bff5b06691d6648a4f72fe9a/aten/src/ATen/native/transformers/attention.cpp#L979-L1015"
+    },
+    {
+      "version": "main",
+      "commit": "205e1e1fca6c6634bff5b06691d6648a4f72fe9a",
+      "source_path": "aten/src/ATen/native/LossNLL.cpp",
+      "start_line": 246,
+      "end_line": 271,
+      "source_file_sha256": "f6c000838196b0483797eeb7fd0d2988e191b15ad2b91bd096deff950147a552",
+      "archive_path": "evidence/upstream/pytorch/main-LossNLL.cpp-L246-L271.txt",
+      "excerpt_sha256": "280d2123229671278274649319243bdd0a64dc54bf9b4c3f91127101345ed80f",
+      "permalink": "https://github.com/pytorch/pytorch/blob/205e1e1fca6c6634bff5b06691d6648a4f72fe9a/aten/src/ATen/native/LossNLL.cpp#L246-L271"
+    },
+    {
+      "version": "main",
+      "commit": "205e1e1fca6c6634bff5b06691d6648a4f72fe9a",
+      "source_path": "aten/src/ATen/native/LossNLL.cpp",
+      "start_line": 288,
+      "end_line": 304,
+      "source_file_sha256": "f6c000838196b0483797eeb7fd0d2988e191b15ad2b91bd096deff950147a552",
+      "archive_path": "evidence/upstream/pytorch/main-LossNLL.cpp-L288-L304.txt",
+      "excerpt_sha256": "019fa515e591668f6786c77766d24cf8302d5a1dc98e8f4a8a61997f0c2a7756",
+      "permalink": "https://github.com/pytorch/pytorch/blob/205e1e1fca6c6634bff5b06691d6648a4f72fe9a/aten/src/ATen/native/LossNLL.cpp#L288-L304"
+    },
+    {
+      "version": "main",
+      "commit": "205e1e1fca6c6634bff5b06691d6648a4f72fe9a",
+      "source_path": "aten/src/ATen/native/LossNLL.cpp",
+      "start_line": 632,
+      "end_line": 666,
+      "source_file_sha256": "f6c000838196b0483797eeb7fd0d2988e191b15ad2b91bd096deff950147a552",
+      "archive_path": "evidence/upstream/pytorch/main-LossNLL.cpp-L632-L666.txt",
+      "excerpt_sha256": "a7c30117d938369055029fad8274fba6eeb6b2b97a37f7700c71c31af9070da5",
+      "permalink": "https://github.com/pytorch/pytorch/blob/205e1e1fca6c6634bff5b06691d6648a4f72fe9a/aten/src/ATen/native/LossNLL.cpp#L632-L666"
+    },
+    {
+      "version": "main",
+      "commit": "205e1e1fca6c6634bff5b06691d6648a4f72fe9a",
+      "source_path": "torch/nn/attention/varlen.py",
+      "start_line": 172,
+      "end_line": 230,
+      "source_file_sha256": "38bc0ffcb014408ca91ff1d42f9a961ca870c03a6402c14a26f1e24655dd04e5",
+      "archive_path": "evidence/upstream/pytorch/main-varlen.py-L172-L230.txt",
+      "excerpt_sha256": "b2f528ff8197d6c544fec79347ad9c8dcec6ec07e686e15503ec2da20728fe25",
+      "permalink": "https://github.com/pytorch/pytorch/blob/205e1e1fca6c6634bff5b06691d6648a4f72fe9a/torch/nn/attention/varlen.py#L172-L230"
+    },
+    {
+      "version": "main",
+      "commit": "205e1e1fca6c6634bff5b06691d6648a4f72fe9a",
+      "source_path": "torch/nn/attention/varlen.py",
+      "start_line": 361,
+      "end_line": 406,
+      "source_file_sha256": "38bc0ffcb014408ca91ff1d42f9a961ca870c03a6402c14a26f1e24655dd04e5",
+      "archive_path": "evidence/upstream/pytorch/main-varlen.py-L361-L406.txt",
+      "excerpt_sha256": "eeeb21c816001bfd5451f185c8eb43467d999427d655c868d6a38bf670fdf3db",
+      "permalink": "https://github.com/pytorch/pytorch/blob/205e1e1fca6c6634bff5b06691d6648a4f72fe9a/torch/nn/attention/varlen.py#L361-L406"
+    },
+    {
+      "version": "main",
+      "commit": "205e1e1fca6c6634bff5b06691d6648a4f72fe9a",
+      "source_path": "torch/nn/attention/varlen.py",
+      "start_line": 487,
+      "end_line": 546,
+      "source_file_sha256": "38bc0ffcb014408ca91ff1d42f9a961ca870c03a6402c14a26f1e24655dd04e5",
+      "archive_path": "evidence/upstream/pytorch/main-varlen.py-L487-L546.txt",
+      "excerpt_sha256": "80b98806731e5596b7a828ec9f1c121c0056bcb9f53e56594a6d72e21c5be6be",
+      "permalink": "https://github.com/pytorch/pytorch/blob/205e1e1fca6c6634bff5b06691d6648a4f72fe9a/torch/nn/attention/varlen.py#L487-L546"
+    },
+    {
+      "version": "v2.15.0",
+      "commit": "31a77fc9c0a7c6fff15a1ff58c743f53b1a9d457",
+      "source_path": "torch/nn/attention/varlen.py",
+      "start_line": 348,
+      "end_line": 370,
+      "source_file_sha256": "9fb410de45d3851c5d52190ce36e55ad4b690c707e98b32d29abae3dd85e50c7",
+      "archive_path": "evidence/upstream/pytorch/v2.15.0-varlen.py-L348-L370.txt",
+      "excerpt_sha256": "371ed869b90f765c903791a517e8c54aaa6998ae0055042557eca6baabec362d",
+      "permalink": "https://github.com/pytorch/pytorch/blob/31a77fc9c0a7c6fff15a1ff58c743f53b1a9d457/torch/nn/attention/varlen.py#L348-L370"
+    },
+    {
+      "version": "main",
+      "commit": "205e1e1fca6c6634bff5b06691d6648a4f72fe9a",
+      "source_path": "torch/nn/attention/varlen.py",
+      "start_line": 476,
+      "end_line": 484,
+      "source_file_sha256": "38bc0ffcb014408ca91ff1d42f9a961ca870c03a6402c14a26f1e24655dd04e5",
+      "archive_path": "evidence/upstream/pytorch/main-varlen.py-L476-L484.txt",
+      "excerpt_sha256": "895cdf5c6b3a17e3f3e65808fe9a42fc1e8791fff742b35c80b1b6f66c097ef0",
+      "permalink": "https://github.com/pytorch/pytorch/blob/205e1e1fca6c6634bff5b06691d6648a4f72fe9a/torch/nn/attention/varlen.py#L476-L484"
+    }
+  ],
+  "license_sha256": "bd018feef8825e88181c84eb7e3aa4eafb8f08a20d9fd6ef948569610c4a3e43"
+}

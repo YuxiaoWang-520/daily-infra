@@ -1,0 +1,31 @@
+{
+  "checked_at": "2026-11-26T11:25:01+08:00",
+  "decision": "passed",
+  "checks": {
+    "source_fragments_exact": 14,
+    "source_fragment_lines": 445,
+    "full_file_and_excerpt_digests": true,
+    "license_exact": true,
+    "varlen_main_stable_public_arguments_match": true,
+    "varlen_whole_files_differ": true,
+    "cache_checkout_and_clean_status_preserved": true,
+    "five_python_hashes_match_final_verification": true,
+    "twenty_five_tests_normal_optimized": true,
+    "meta_device_regression_red_green": true,
+    "all_five_commands_exit_zero": true,
+    "raw_cli_strict_json_matches_results": true,
+    "costs_and_mask_labels_boundaries_normalization": true,
+    "float64_output_loss_gradient_error_below_1e_minus_12": true,
+    "wrong_mask_position_label_controls_observable": true,
+    "figure_body_equals_source": true,
+    "paper_algorithm_name_and_BERT_causal_boundary_checked": true,
+    "five_python_hashes_match_independent_final_review": true,
+    "independent_default_device_delta_closed": true
+  },
+  "scope": "Source/archive and cross-artifact audit, not another full test pass",
+  "limits": [
+    "CPU reference and cost arithmetic only",
+    "No GPU/varlen/distributed/performance/convergence validation",
+    "Figure source semantic/text checks, no rendered visual QA"
+  ]
+}

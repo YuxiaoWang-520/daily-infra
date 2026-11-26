@@ -1,0 +1,203 @@
+{
+  "torch_version": "2.15.0",
+  "torch_build_commit": "d0f2af8b66b20da4baa50644c0cd3f887a2eae2e",
+  "costs_are_arithmetic_models_not_benchmarks": true,
+  "exercise_one": {
+    "lengths": [
+      8,
+      2,
+      7,
+      3
+    ],
+    "capacity": 10,
+    "groups": [
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "costs": {
+      "original": {
+        "useful_tokens": 20,
+        "token_slots": 30,
+        "dense_square_area": 226,
+        "varlen_square_area": 126,
+        "valid_causal_pairs": 73,
+        "utilization": 0.6666666666666666
+      },
+      "bucketed": {
+        "useful_tokens": 20,
+        "token_slots": 22,
+        "dense_square_area": 146,
+        "varlen_square_area": 126,
+        "valid_causal_pairs": 73,
+        "utilization": 0.9090909090909091
+      },
+      "fixed_dense_packed": {
+        "useful_tokens": 20,
+        "token_slots": 20,
+        "dense_square_area": 200,
+        "varlen_square_area": 126,
+        "valid_causal_pairs": 73,
+        "utilization": 1.0
+      }
+    },
+    "nonoptimal_ffd_example": {
+      "lengths": [
+        6,
+        5,
+        3,
+        2,
+        2,
+        2
+      ],
+      "heuristic_groups": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3,
+          4
+        ],
+        [
+          5
+        ]
+      ],
+      "feasible_groups": [
+        [
+          0,
+          3,
+          4
+        ],
+        [
+          1,
+          2,
+          5
+        ]
+      ],
+      "heuristic_pack_count": 3,
+      "feasible_pack_count": 2
+    }
+  },
+  "exercise_two": {
+    "environment_scope": "float64 CPU SDPA math backend, one head, no dropout",
+    "sequences": [
+      [
+        1,
+        4,
+        6
+      ],
+      [
+        2,
+        5
+      ]
+    ],
+    "tokens": [
+      1,
+      4,
+      6,
+      2,
+      5
+    ],
+    "positions": [
+      0,
+      1,
+      2,
+      0,
+      1
+    ],
+    "segments": [
+      0,
+      0,
+      0,
+      1,
+      1
+    ],
+    "labels_at_predictor_positions": [
+      4,
+      6,
+      -100,
+      5,
+      -100
+    ],
+    "cu_seqlens": [
+      0,
+      3,
+      5
+    ],
+    "sdpa_boolean_allow_mask": [
+      [
+        true,
+        false,
+        false,
+        false,
+        false
+      ],
+      [
+        true,
+        true,
+        false,
+        false,
+        false
+      ],
+      [
+        true,
+        true,
+        true,
+        false,
+        false
+      ],
+      [
+        false,
+        false,
+        false,
+        true,
+        false
+      ],
+      [
+        false,
+        false,
+        false,
+        true,
+        true
+      ]
+    ],
+    "max_logit_abs_error": 5.551115123125783e-17,
+    "loss_abs_error": 0.0,
+    "max_parameter_grad_abs_error": 1.3877787807814457e-17,
+    "valid_target_count": 3,
+    "token_mean_loss": 1.9904863512868722,
+    "sequence_mean_loss": 1.9765812819020798,
+    "naive_causal_first_sequence_logit_error": 1.3877787807814457e-17,
+    "naive_causal_second_sequence_logit_error": 0.005140253622220828,
+    "unreset_position_second_sequence_logit_error": 0.5025739711464893,
+    "naive_concat_target_count": 4,
+    "naive_boundary_loss": 2.039891143207308,
+    "limitations": [
+      "Not a GPU or optimized varlen execution",
+      "No distributed training",
+      "No dropout/RoPE/MoE/packing throughput validation"
+    ]
+  },
+  "normalization": {
+    "local_loss_sums": [
+      6,
+      6
+    ],
+    "valid_target_counts": [
+      3,
+      1
+    ],
+    "global_token_mean": 3.0,
+    "mean_of_local_means": 4.0,
+    "scale_before_standard_ddp_average": 0.5,
+    "all_ignored_library_mean_is_nan": true
+  },
+  "optimized_varlen_gpu_run": "not run: this runner checks CPU reference semantics only"
+}

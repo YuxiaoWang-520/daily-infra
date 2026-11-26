@@ -1,0 +1,30 @@
+test_bucket_order_example (test_answers.CostTests.test_bucket_order_example) ... ok
+test_coverage_capacity_and_stable_ties (test_answers.CostTests.test_coverage_capacity_and_stable_ties) ... ok
+test_empty_costs (test_answers.CostTests.test_empty_costs) ... ok
+test_heuristic_not_an_optimality_claim (test_answers.CostTests.test_heuristic_not_an_optimality_claim) ... ok
+test_inputs_not_mutated (test_answers.CostTests.test_inputs_not_mutated) ... ok
+test_invalid_group_and_order_contracts (test_answers.CostTests.test_invalid_group_and_order_contracts) ... ok
+test_invalid_lengths_and_scalars (test_answers.CostTests.test_invalid_lengths_and_scalars) ... ok
+test_packing_example (test_answers.CostTests.test_packing_example) ... ok
+test_padding_hand_example (test_answers.CostTests.test_padding_hand_example) ... ok
+test_absolute_position_reset_matters (test_answers.SemanticTests.test_absolute_position_reset_matters) ... ok
+test_cpu_reference_under_meta_default_device (test_answers.SemanticTests.test_cpu_reference_under_meta_default_device) ... ok
+test_ddp_average_gradient_needs_global_token_denominator (test_answers.SemanticTests.test_ddp_average_gradient_needs_global_token_denominator) ... ok
+test_helpers_and_model_do_not_consume_default_rng (test_answers.SemanticTests.test_helpers_and_model_do_not_consume_default_rng) ... ok
+test_invalid_global_token_counts (test_answers.SemanticTests.test_invalid_global_token_counts) ... ok
+test_invalid_sequences (test_answers.SemanticTests.test_invalid_sequences) ... ok
+test_loss_shape_value_and_target_validation (test_answers.SemanticTests.test_loss_shape_value_and_target_validation) ... ok
+test_mask_matches_pairwise_oracle (test_answers.SemanticTests.test_mask_matches_pairwise_oracle) ... ok
+test_metadata_example (test_answers.SemanticTests.test_metadata_example) ... ok
+test_naive_concatenated_shift_adds_a_target (test_answers.SemanticTests.test_naive_concatenated_shift_adds_a_target) ... ok
+test_no_double_label_shift_in_cross_entropy (test_answers.SemanticTests.test_no_double_label_shift_in_cross_entropy) ... ok
+test_plain_causal_mask_leaks_between_sequences (test_answers.SemanticTests.test_plain_causal_mask_leaks_between_sequences) ... ok
+test_real_packed_and_separate_outputs_loss_gradients (test_answers.SemanticTests.test_real_packed_and_separate_outputs_loss_gradients) ... ok
+test_singletons_all_ignored_have_sum_zero (test_answers.SemanticTests.test_singletons_all_ignored_have_sum_zero) ... ok
+test_token_and_sequence_mean_are_different_objectives (test_answers.SemanticTests.test_token_and_sequence_mean_are_different_objectives) ... ok
+test_zero_local_count_allowed_when_global_count_positive (test_answers.SemanticTests.test_zero_local_count_allowed_when_global_count_positive) ... ok
+
+----------------------------------------------------------------------
+Ran 25 tests in 0.898s
+
+OK
