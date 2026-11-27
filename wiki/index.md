@@ -38,8 +38,9 @@
 | 32 | 2026-11-24 | [异步 checkpoint 怎样与训练重叠，何时才算保存完成？](2026/11/2026-11-24-async-checkpoint-staging/README.md) | checkpoint、快照隔离、异步暂存、背压与保存完成边界 | 第 18、20、22、31 篇 |
 | 33 | 2026-11-25 | [训练数据怎样分片并 shuffle，才能兼顾吞吐和可复现性？](2026/11/2026-11-25-data-sharding-shuffle/README.md) | 训练数据、DistributedSampler、物理分片、随机性与恢复游标 | 第 20、22、32 篇 |
 | 34 | 2026-11-26 | [变长序列怎样做长度分桶与 packing，padding、吞吐和损失分母有何关系？](2026/11/2026-11-26-length-bucketing-sequence-packing/README.md) | 变长合批、packing、Attention 边界、标签与损失归一化 | 第 01、10、17、33 篇 |
+| 35 | 2026-11-27 | [混合精度训练中的 loss scaling、溢出检测与跳步，怎样影响梯度和训练进度？](2026/11/2026-11-27-amp-loss-scaling-skipped-steps/README.md) | AMP、loss scaling、梯度裁剪、溢出检测、跳步与恢复进度 | 第 03、17、18、22、34 篇 |
 
-下一篇候选为混合精度训练中的 loss scaling、溢出检测与跳步，怎样影响梯度和训练进度？
+下一篇候选为 AdamW 的动量、权重衰减与更新精度，怎样影响显存和训练行为？
 
 2026-10-22 起按用户要求集中完成起步前 10 篇，使用实际归档日期；日常定时任务仍按工作日每天一篇执行。范围见 [本次任务说明](../docs/BOOTSTRAP10.md)。
 

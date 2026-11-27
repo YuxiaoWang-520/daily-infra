@@ -1,0 +1,19 @@
+{
+  "checked_at": "2026-11-27T11:30:10+08:00",
+  "review_type": "MAIN technical self-review, mechanically checked cross-evidence facts",
+  "source_fragments": 13,
+  "source_lines": 336,
+  "source_bytes_and_license_match_git": true,
+  "main_stable_cpu_kernel_identical": true,
+  "main_stable_grad_scaler_different": true,
+  "constructor_default_boundary_verified": true,
+  "cache_checkout_preserved": true,
+  "final_code_matches_execution_and_independent_review": true,
+  "test_methods": 23,
+  "ordinary_and_optimized_pass": true,
+  "strict_json_and_stdout_file_equality": true,
+  "scalar_table_momentum_scales_clipping_accumulation_and_dtype_match": true,
+  "multiple_optimizer_and_cached_flag_counterexample_match": true,
+  "diagram_source_matches_body": true,
+  "scope": "CPU synthetic examples only; no GPU, distributed, storage crash, convergence or performance validation"
+}

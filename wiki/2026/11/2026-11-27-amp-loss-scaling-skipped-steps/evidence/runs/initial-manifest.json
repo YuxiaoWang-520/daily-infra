@@ -1,0 +1,109 @@
+{
+  "scope": "CPU only; synthetic Inf injection; no GPU performance measurement",
+  "runs": [
+    {
+      "log": "unittest.txt",
+      "command": [
+        "<python>",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        ".",
+        "-p",
+        "test_answers.py",
+        "-v"
+      ],
+      "cwd": "code",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_at": "2026-11-27T11:20:08+08:00",
+      "elapsed_seconds": 1.883,
+      "exit_code": 0,
+      "timed_out": false
+    },
+    {
+      "log": "unittest-optimized.txt",
+      "command": [
+        "<python>",
+        "-O",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        ".",
+        "-p",
+        "test_answers.py",
+        "-v"
+      ],
+      "cwd": "code",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_at": "2026-11-27T11:20:08+08:00",
+      "elapsed_seconds": 3.549,
+      "exit_code": 0,
+      "timed_out": false
+    },
+    {
+      "log": "ruff.txt",
+      "command": [
+        "<ruff>",
+        "check",
+        "--select",
+        "E,F,I,UP,B",
+        "."
+      ],
+      "cwd": "code",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_at": "2026-11-27T11:20:08+08:00",
+      "elapsed_seconds": 0.073,
+      "exit_code": 1,
+      "timed_out": false
+    },
+    {
+      "log": "ruff-format.txt",
+      "command": [
+        "<ruff>",
+        "format",
+        "--check",
+        "."
+      ],
+      "cwd": "code",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_at": "2026-11-27T11:20:08+08:00",
+      "elapsed_seconds": 0.07,
+      "exit_code": 0,
+      "timed_out": false
+    },
+    {
+      "log": "cli.txt",
+      "command": [
+        "<python>",
+        "run_answers.py",
+        "--output-dir",
+        "../evidence/runs/cpu"
+      ],
+      "cwd": "code",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_at": "2026-11-27T11:20:08+08:00",
+      "elapsed_seconds": 1.878,
+      "exit_code": 0,
+      "timed_out": false
+    }
+  ],
+  "code_sha256": {
+    "answers.py": "6271daef5ad59a95d91aa98676f6d2ff6068ab5002c673323e8f8d8220a44033",
+    "exercises.py": "0b31a7d3990faa3b9fe5b3a2817011ec389cef25794e5081e1a8acf2e7a0824d",
+    "run_answers.py": "46d5dc15b81ab90929d648f9d58123edf06a17f1d3dfa4a6dbb59ccfedb7ff30",
+    "runtime_demo.py": "c6281794c897c29c974de73ffc34da1c576fe3f7200dad14a2956a964cfe01fd",
+    "test_answers.py": "59484dd28cd7a4a940ead4bf583d369a654d375a7b0eb378cf752189ba03b13f"
+  }
+}

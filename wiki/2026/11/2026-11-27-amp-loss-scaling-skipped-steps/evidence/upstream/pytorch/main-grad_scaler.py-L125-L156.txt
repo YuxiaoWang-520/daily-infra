@@ -1,0 +1,32 @@
+    def __init__(
+        self,
+        device: str | None = None,
+        init_scale: float = 2.0**16,
+        growth_factor: float = 2.0,
+        backoff_factor: float = 0.5,
+        growth_interval: int = 2000,
+        enabled: bool = True,
+    ) -> None:
+        if device is None:
+            accel = torch.accelerator.current_accelerator()
+            device = accel.type if accel is not None else "cuda"
+        self._device = device
+        self._enabled = enabled
+        if self._device == "cuda":
+            if enabled and torch.cuda.amp.common.amp_definitely_not_available():
+                warnings.warn(
+                    "torch.cuda.amp.GradScaler is enabled, but CUDA is not available.  Disabling.",
+                    stacklevel=2,
+                )
+                self._enabled = False
+
+        if self._enabled:
+            if growth_factor <= 1.0:
+                raise AssertionError("The growth factor must be > 1.0.")
+            if backoff_factor >= 1.0:
+                raise AssertionError("The backoff factor must be < 1.0.")
+
+            self._init_scale = init_scale
+            # self._scale will be lazily initialized during the first call to scale()
+            self._scale: torch.Tensor | None = None
+            self._growth_factor = growth_factor

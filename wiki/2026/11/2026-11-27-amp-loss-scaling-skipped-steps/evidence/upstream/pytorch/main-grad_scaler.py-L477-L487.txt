@@ -1,0 +1,11 @@
+        if optimizer_state["stage"] is OptState.READY:
+            self.unscale_(optimizer)
+
+        if len(optimizer_state["found_inf_per_device"]) == 0:
+            raise AssertionError("No inf checks were recorded for this optimizer.")
+
+        retval = self._maybe_opt_step(optimizer, optimizer_state, *args, **kwargs)
+
+        optimizer_state["stage"] = OptState.STEPPED
+
+        return retval

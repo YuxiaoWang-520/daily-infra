@@ -1,0 +1,36 @@
+{
+  "checked_at": "2026-11-27T11:33:23+08:00",
+  "status": "pass",
+  "article": "wiki/2026/11/2026-11-27-amp-loss-scaling-skipped-steps",
+  "article_files": 55,
+  "payload_files_sha256": 53,
+  "payload_bytes": 171502,
+  "checksum_exclusions": [
+    "evidence/SHA256SUMS",
+    "evidence/delivery-check.json"
+  ],
+  "local_markdown_links_checked": 163,
+  "broken_links": [],
+  "privacy_categories_scanned": [
+    "personal_home",
+    "mac_temp",
+    "private_key",
+    "github_token",
+    "aws_key",
+    "internal_domain",
+    "private_ip"
+  ],
+  "privacy_findings": [],
+  "ast_and_strict_json_pass": true,
+  "required_files_present": true,
+  "published_index_count": 35,
+  "same_day_articles": 1,
+  "draft_removed_by_archive": true,
+  "status_and_next_topic_consistent": true,
+  "execution_and_independent_code_hashes_match": true,
+  "scope": "Only this reviewed article plus wiki/index.md and ROADMAP.md; no unrelated paths",
+  "limitations": [
+    "Pattern scan is not a general repository or history security audit",
+    "No diagram rendering or GPU/distributed/performance measurement"
+  ]
+}

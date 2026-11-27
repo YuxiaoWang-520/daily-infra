@@ -1,0 +1,102 @@
+I001 [*] Import block is un-sorted or un-formatted
+ --> exercises.py:3:1
+  |
+1 |   """Exercise starters. Implement these contracts before reading the answers."""
+2 |
+3 | / from collections.abc import Sequence
+4 | | from typing import Any
+5 | |
+6 | | import torch
+7 | | from answers import Quantization
+  | |________________________________^
+help: Organize imports
+  |
+6 | import torch
+7 +
+8 | from answers import Quantization
+  |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> run_answers.py:3:1
+   |
+ 1 |   """Emit strict JSON evidence for the CPU examples; never benchmark a GPU."""
+ 2 |
+ 3 | / import argparse
+ 4 | | import json
+ 5 | | import math
+ 6 | | import platform
+ 7 | | from dataclasses import asdict
+ 8 | | from pathlib import Path
+ 9 | | from typing import Any
+10 | |
+11 | | import torch
+12 | | from answers import quantized_gradient, unscale_accumulated, unscale_and_clip
+13 | | from runtime_demo import (
+14 | |     accumulation_probe,
+15 | |     autocast_probe,
+16 | |     clipping_probe,
+17 | |     protocol_probes,
+18 | |     training_trace,
+19 | | )
+   | |_^
+help: Organize imports
+   |
+11 | import torch
+12 +
+13 | from answers import quantized_gradient, unscale_accumulated, unscale_and_clip
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> runtime_demo.py:3:1
+   |
+ 1 |   """Real CPU AMP protocols; no GPU numeric or performance claim is made."""
+ 2 |
+ 3 | / import copy
+ 4 | | import math
+ 5 | | from collections.abc import Callable, Iterable, Sequence
+ 6 | | from typing import Any
+ 7 | |
+ 8 | | import torch
+ 9 | | from answers import finite_number
+10 | | from torch import nn
+11 | | from torch.nn import functional as F
+   | |____________________________________^
+help: Organize imports
+   |
+8  | import torch
+   - from answers import finite_number
+9  | from torch import nn
+10 | from torch.nn import functional as F
+11 |
+12 + from answers import finite_number
+13 +
+14 |
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> test_answers.py:3:1
+   |
+ 1 |   """Analytic examples plus real CPU GradScaler and autocast checks."""
+ 2 |
+ 3 | / import math
+ 4 | | import unittest
+ 5 | |
+ 6 | | import torch
+ 7 | | from answers import quantized_gradient, unscale_accumulated, unscale_and_clip
+ 8 | | from runtime_demo import (
+ 9 | |     accumulation_probe,
+10 | |     autocast_probe,
+11 | |     clipping_probe,
+12 | |     protocol_probes,
+13 | |     training_trace,
+14 | | )
+   | |_^
+help: Organize imports
+  |
+6 | import torch
+7 +
+8 | from answers import quantized_gradient, unscale_accumulated, unscale_and_clip
+  |
+
+Found 4 errors.
+[*] 4 fixable with `--fix`.

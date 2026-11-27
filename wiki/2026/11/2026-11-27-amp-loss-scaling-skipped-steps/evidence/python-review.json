@@ -1,0 +1,57 @@
+{
+  "report_kind": "Actual independent agent reports summarized by the primary author; not raw command stdout",
+  "scope": "Five article-owned Python files and code/.ruff.toml; no tutorial or upstream independent review",
+  "specialist_attempt": {
+    "agent": "/root/nov27_python_review",
+    "role": "python-reviewer",
+    "result": "Failed before executing: gpt-5.4 is not supported with this ChatGPT account"
+  },
+  "fallback": {
+    "agent": "/root/nov27_python_fallback",
+    "role": "Independent general Python correctness and security reviewer",
+    "model": "gpt-5.6-terra",
+    "reasoning_effort": "max",
+    "access": "Read only; no edits, installs or Git mutations",
+    "actual_checks": [
+      "Independent scalar oracle for applied updates, momentum recurrence, scale sequence [8,16,8,8,16] and scheduler progress",
+      "Restored trace equality and multiple-optimizer independent skip behavior",
+      "Explicit CPU behavior under meta default device and BF16 autocast dtype checks",
+      "Temporary CLI output parsed with rejection of nonstandard NaN/Infinity constants; nonfinite probes stored as strings",
+      "Repeated CLI output path rejected with FileExistsError; existing result file SHA256 unchanged; temporary directory automatically cleaned",
+      "Reviewed known-first-party Ruff configuration; did not repeat the full test suite or Ruff"
+    ],
+    "initial_findings": [
+      {
+        "severity": "LOW",
+        "location": "answers.py unscale_accumulated math.fsum boundary",
+        "evidence": "Finite terms [1e308,1e308] overflow math.fsum with OverflowError before the nonfinite result guard",
+        "status": "fixed and independently rechecked"
+      }
+    ],
+    "initial_code_sha256": {
+      "answers.py": "6271daef5ad59a95d91aa98676f6d2ff6068ab5002c673323e8f8d8220a44033",
+      "runtime_demo.py": "0dc60d1c493a7dad4932a6a00a1a00b0235b56ec50fa49d87480dc438fedb844",
+      "run_answers.py": "d185536bbc56dceeadd8be8d17adf694fb5a8a50ea6a2a0d2fcc74c1ed0d3dff",
+      "exercises.py": "feef692b5bb7268386337236bf9c7a0adba5c579dbf445b7efe3a95c49b463f7",
+      "test_answers.py": "0e89992ffb8abe03e81b2dad4d40ebff98b38357c39fffb11665f32b01461921"
+    },
+    "delta_review": {
+      "scope": "Only answers.py numeric-overflow guards and the added regression in test_answers.py",
+      "checks": [
+        "fsum overflow case raises ValueError with OverflowError cause",
+        "float conversion of 10**1000 raises ValueError with OverflowError cause",
+        "Normal mixed-scale accumulation still returns 1.5"
+      ],
+      "result": "Accepted; no new findings; did not repeat full oracle, suite or CLI"
+    },
+    "final_code_sha256": {
+      "answers.py": "b2d6126ac6c7213de1371c69774faee6b5c3df5e21eb161b86092254644d849f",
+      "runtime_demo.py": "0dc60d1c493a7dad4932a6a00a1a00b0235b56ec50fa49d87480dc438fedb844",
+      "run_answers.py": "d185536bbc56dceeadd8be8d17adf694fb5a8a50ea6a2a0d2fcc74c1ed0d3dff",
+      "exercises.py": "feef692b5bb7268386337236bf9c7a0adba5c579dbf445b7efe3a95c49b463f7",
+      "test_answers.py": "ea9f889fc56c1dc14dc315f2ae21d0ad8ed3ada12384350c40ab6ecf3bd1662a"
+    },
+    "unresolved_findings": [],
+    "limitations": ["CPU Torch 2.15 only", "No GPU or real FP16 backward-underflow or performance validation", "No independent tutorial prose review"]
+  }
+}

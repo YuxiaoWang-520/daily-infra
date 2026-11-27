@@ -1,0 +1,15 @@
+    def __init__(
+        self,
+        device: str = "cuda",
+        init_scale: float = 2.0**16,
+        growth_factor: float = 2.0,
+        backoff_factor: float = 0.5,
+        growth_interval: int = 2000,
+        enabled: bool = True,
+    ) -> None:
+        self._device = device
+        self._enabled = enabled
+        if self._device == "cuda":
+            if enabled and torch.cuda.amp.common.amp_definitely_not_available():
+                warnings.warn(
+                    "torch.cuda.amp.GradScaler is enabled, but CUDA is not available.  Disabling.",

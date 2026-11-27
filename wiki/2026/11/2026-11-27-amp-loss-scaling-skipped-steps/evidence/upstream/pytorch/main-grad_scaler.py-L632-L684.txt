@@ -1,0 +1,53 @@
+    def state_dict(self) -> dict[str, Any]:
+        r"""Return the state of the scaler as a :class:`dict`.
+
+        It contains five entries:
+
+        * ``"scale"`` - a Python float containing the current scale
+        * ``"growth_factor"`` - a Python float containing the current growth factor
+        * ``"backoff_factor"`` - a Python float containing the current backoff factor
+        * ``"growth_interval"`` - a Python int containing the current growth interval
+        * ``"_growth_tracker"`` - a Python int containing the number of recent consecutive unskipped steps.
+
+        If this instance is not enabled, returns an empty dict.
+
+        .. note::
+           If you wish to checkpoint the scaler's state after a particular iteration, :meth:`state_dict`
+           should be called after :meth:`update`.
+        """
+        if self._enabled:
+            return {
+                "scale": self.get_scale(),
+                "growth_factor": self._growth_factor,
+                "backoff_factor": self._backoff_factor,
+                "growth_interval": self._growth_interval,
+                "_growth_tracker": self._get_growth_tracker(),
+            }
+        return {}
+
+    def load_state_dict(self, state_dict: dict[str, Any]) -> None:
+        r"""Load the scaler state.
+
+        If this instance is disabled, :meth:`load_state_dict` is a no-op.
+
+        Args:
+           state_dict(dict): scaler state.  Should be an object returned from a call to :meth:`state_dict`.
+        """
+        if not self._enabled:
+            return
+
+        if len(state_dict) == 0:
+            raise RuntimeError(
+                "The source state dict is empty, possibly because it was saved "
+                "from a disabled instance of GradScaler."
+            )
+
+        self._init_scale = cast(float, state_dict["scale"])
+        if self._scale is not None:
+            self._scale.fill_(state_dict["scale"])
+        self._growth_factor = cast(float, state_dict["growth_factor"])
+        self._backoff_factor = cast(float, state_dict["backoff_factor"])
+        self._growth_interval = cast(int, state_dict["growth_interval"])
+        self._init_growth_tracker = cast(int, state_dict["_growth_tracker"])
+        if self._growth_tracker is not None:
+            self._growth_tracker.fill_(state_dict["_growth_tracker"])

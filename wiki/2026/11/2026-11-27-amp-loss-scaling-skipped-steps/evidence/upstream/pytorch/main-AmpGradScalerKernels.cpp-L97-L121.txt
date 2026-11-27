@@ -1,0 +1,25 @@
+        [&iter, &found_inf, &inv_scale] {
+          auto* found_inf_ptr = found_inf.data_ptr<float>();
+          const auto* inv_scale_ptr = inv_scale.const_data_ptr<float>();
+          at::native::cpu_kernel_vec(
+              iter,
+              [found_inf_ptr, inv_scale_ptr](scalar_t val_in) -> scalar_t {
+                if (!std::isfinite(val_in)) {
+                  *found_inf_ptr = 1.f;
+                }
+                // Every thread accesses inv_scale, but it will hit in cache.
+                const auto inv_scale_val = *inv_scale_ptr;
+                return static_cast<scalar_t>(
+                    inv_scale_val == 1.f ? val_in : val_in * inv_scale_val);
+              },
+              [found_inf_ptr, inv_scale_ptr](Vectorized<scalar_t> val_vec) -> Vectorized<scalar_t>{
+                if (val_vec.has_inf_nan()) {
+                  *found_inf_ptr = 1.f;
+                }
+                // Every thread accesses inv_scale, but it will hit in cache.
+                const auto inv_scale_val = *inv_scale_ptr;
+                return inv_scale_val == 1.f ? val_vec : val_vec * Vectorized<scalar_t>(inv_scale_val);
+              });
+        });
+    }
+  }

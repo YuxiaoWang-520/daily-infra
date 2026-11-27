@@ -1,0 +1,13 @@
+        """
+        if not self._enabled:
+            return outputs
+
+        # Short-circuit for the common case.
+        if isinstance(outputs, torch.Tensor):
+            if self._scale is None:
+                self._lazy_init_scale_growth_tracker(outputs.device)
+            # _scale is now guaranteed to be set
+            scale = self._scale
+            if scale is None:
+                raise AssertionError("_scale should not be None after lazy init")
+            return outputs * scale.to(device=outputs.device, non_blocking=True)

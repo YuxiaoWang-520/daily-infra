@@ -1,0 +1,201 @@
+{
+  "analytic_accumulation": {
+    "constant": 2.0,
+    "mixed": 1.5
+  },
+  "analytic_clipping": {
+    "correct": [
+      0.6000000000000001,
+      0.8
+    ],
+    "wrong": [
+      0.07500000000000001,
+      0.1
+    ]
+  },
+  "autocast": {
+    "gradient_dtype": "torch.float32",
+    "loss": 0.03614544868469238,
+    "loss_dtype": "torch.float32",
+    "output_dtype": "torch.bfloat16",
+    "parameter_device": "cpu",
+    "parameter_dtype": "torch.float32"
+  },
+  "environment": {
+    "cuda_available": false,
+    "machine": "arm64",
+    "platform": "Darwin",
+    "python": "3.12.16",
+    "torch": "2.15.0",
+    "torch_build_commit": "d0f2af8b66b20da4baa50644c0cd3f887a2eae2e"
+  },
+  "protocol": {
+    "double_step_error": "RuntimeError",
+    "double_unscale_error": "RuntimeError",
+    "half_parameter_unscale_error": "ValueError",
+    "multiple_optimizers": {
+      "parameters_after": [
+        0.800000011920929,
+        1.0
+      ],
+      "scale_after": 4.0,
+      "step_calls": [
+        1,
+        0
+      ]
+    },
+    "mutation_after_unscale": {
+      "parameter_after": "-inf",
+      "step_calls": 1
+    }
+  },
+  "quantization": {
+    "bf16_small": {
+      "direct_storage": 1.0011717677116394e-08,
+      "dtype": "torch.bfloat16",
+      "gradient": 1e-08,
+      "recovered": 1.0011717677116394e-08,
+      "scale": 1.0,
+      "scaled_storage": 1.0011717677116394e-08
+    },
+    "fp16_overflow": {
+      "direct_storage": 64.0,
+      "dtype": "torch.float16",
+      "gradient": 64.0,
+      "recovered": "inf",
+      "scale": 1024.0,
+      "scaled_storage": "inf"
+    },
+    "fp16_small": {
+      "direct_storage": 0.0,
+      "dtype": "torch.float16",
+      "gradient": 1e-08,
+      "recovered": 1.0011717677116394e-08,
+      "scale": 1024.0,
+      "scaled_storage": 1.0251998901367188e-05
+    }
+  },
+  "real_accumulation": {
+    "changed_scale_gradient": 1.5,
+    "fixed_scale_gradient": 2.0
+  },
+  "real_clipping": {
+    "correct": [
+      0.5999999046325684,
+      0.7999998331069946
+    ],
+    "wrong": [
+      0.07500000298023224,
+      0.10000000149011612
+    ]
+  },
+  "resume_after_3_equal": true,
+  "scope": {
+    "autocast_smoke": "CPU BF16 linear and FP32 MSE loss",
+    "device": "cpu",
+    "gpu_underflow_or_performance_measured": false,
+    "protocol_math": "float32 scalar with synthetic Inf injection",
+    "restore": "in-memory state_dict at completed update boundaries"
+  },
+  "trace": {
+    "applied_updates": 4,
+    "data_batches": 5,
+    "final_scaler": {
+      "_growth_tracker": 0,
+      "backoff_factor": 0.5,
+      "growth_factor": 2.0,
+      "growth_interval": 2,
+      "scale": 16.0
+    },
+    "records": [
+      {
+        "applied_updates": 1,
+        "data_batches": 1,
+        "growth_tracker": 1,
+        "injected_nonfinite": false,
+        "momentum_after": 1.0,
+        "momentum_before": null,
+        "optimizer_step_called": true,
+        "parameter_after": 0.8999999761581421,
+        "parameter_before": 1.0,
+        "scale_after": 8.0,
+        "scale_before": 8.0,
+        "scaled_gradient": 8.0,
+        "scheduler_steps": 1,
+        "step_return_is_none": true,
+        "unscaled_gradient": 1.0
+      },
+      {
+        "applied_updates": 2,
+        "data_batches": 2,
+        "growth_tracker": 0,
+        "injected_nonfinite": false,
+        "momentum_after": 1.7999999523162842,
+        "momentum_before": 1.0,
+        "optimizer_step_called": true,
+        "parameter_after": 0.7199999690055847,
+        "parameter_before": 0.8999999761581421,
+        "scale_after": 16.0,
+        "scale_before": 8.0,
+        "scaled_gradient": 7.199999809265137,
+        "scheduler_steps": 2,
+        "step_return_is_none": true,
+        "unscaled_gradient": 0.8999999761581421
+      },
+      {
+        "applied_updates": 2,
+        "data_batches": 3,
+        "growth_tracker": 0,
+        "injected_nonfinite": true,
+        "momentum_after": 1.7999999523162842,
+        "momentum_before": 1.7999999523162842,
+        "optimizer_step_called": false,
+        "parameter_after": 0.7199999690055847,
+        "parameter_before": 0.7199999690055847,
+        "scale_after": 8.0,
+        "scale_before": 16.0,
+        "scaled_gradient": "inf",
+        "scheduler_steps": 2,
+        "step_return_is_none": true,
+        "unscaled_gradient": "inf"
+      },
+      {
+        "applied_updates": 3,
+        "data_batches": 4,
+        "growth_tracker": 1,
+        "injected_nonfinite": false,
+        "momentum_after": 2.3399999141693115,
+        "momentum_before": 1.7999999523162842,
+        "optimizer_step_called": true,
+        "parameter_after": 0.4859999716281891,
+        "parameter_before": 0.7199999690055847,
+        "scale_after": 8.0,
+        "scale_before": 8.0,
+        "scaled_gradient": 5.759999752044678,
+        "scheduler_steps": 3,
+        "step_return_is_none": true,
+        "unscaled_gradient": 0.7199999690055847
+      },
+      {
+        "applied_updates": 4,
+        "data_batches": 5,
+        "growth_tracker": 0,
+        "injected_nonfinite": false,
+        "momentum_after": 2.5920000076293945,
+        "momentum_before": 2.3399999141693115,
+        "optimizer_step_called": true,
+        "parameter_after": 0.22679996490478516,
+        "parameter_before": 0.4859999716281891,
+        "scale_after": 16.0,
+        "scale_before": 8.0,
+        "scaled_gradient": 3.8879997730255127,
+        "scheduler_steps": 4,
+        "step_return_is_none": true,
+        "unscaled_gradient": 0.4859999716281891
+      }
+    ],
+    "scaler_enabled": true,
+    "scheduler_last_epoch": 4,
+    "scheduler_steps": 4
+  }
+}

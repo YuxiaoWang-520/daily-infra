@@ -1,0 +1,27 @@
+test_autocast_has_per_operation_dtypes (test_answers.RuntimeTests.test_autocast_has_per_operation_dtypes) ... ok
+test_cpu_factories_under_meta_default (test_answers.RuntimeTests.test_cpu_factories_under_meta_default) ... ok
+test_multi_optimizer_decisions_are_independent (test_answers.RuntimeTests.test_multi_optimizer_decisions_are_independent) ... ok
+test_nonfinite_skip_preserves_parameter_and_momentum (test_answers.RuntimeTests.test_nonfinite_skip_preserves_parameter_and_momentum) ... ok
+test_optimizer_protocol_errors_are_real (test_answers.RuntimeTests.test_optimizer_protocol_errors_are_real) ... ok
+test_post_unscale_nonfinite_is_not_rechecked (test_answers.RuntimeTests.test_post_unscale_nonfinite_is_not_rechecked) ... ok
+test_public_state_dict_roundtrip_at_update_boundaries (test_answers.RuntimeTests.test_public_state_dict_roundtrip_at_update_boundaries) ... ok
+test_real_accumulation_order (test_answers.RuntimeTests.test_real_accumulation_order) ... ok
+test_real_clipping_order (test_answers.RuntimeTests.test_real_clipping_order) ... ok
+test_real_trace_scale_and_training_clocks (test_answers.RuntimeTests.test_real_trace_scale_and_training_clocks) ... ok
+test_runtime_helpers_do_not_consume_default_rng (test_answers.RuntimeTests.test_runtime_helpers_do_not_consume_default_rng) ... ok
+test_scale_can_fall_below_one (test_answers.RuntimeTests.test_scale_can_fall_below_one) ... ok
+test_step_none_return_cannot_detect_skip (test_answers.RuntimeTests.test_step_none_return_cannot_detect_skip) ... ok
+test_trace_input_validation (test_answers.RuntimeTests.test_trace_input_validation) ... ok
+test_accumulation_scale_must_stay_constant (test_answers.ScalingMathTests.test_accumulation_scale_must_stay_constant) ... ok
+test_bfloat16_retains_this_small_value (test_answers.ScalingMathTests.test_bfloat16_retains_this_small_value) ... ok
+test_clipping_validation (test_answers.ScalingMathTests.test_clipping_validation) ... ok
+test_fp16_underflow_and_early_scale (test_answers.ScalingMathTests.test_fp16_underflow_and_early_scale) ... ok
+test_invalid_quantization_inputs (test_answers.ScalingMathTests.test_invalid_quantization_inputs) ... ok
+test_large_scale_can_overflow (test_answers.ScalingMathTests.test_large_scale_can_overflow) ... ok
+test_unscale_before_clipping (test_answers.ScalingMathTests.test_unscale_before_clipping) ... ok
+test_wrong_clip_order_shrinks_by_scale (test_answers.ScalingMathTests.test_wrong_clip_order_shrinks_by_scale) ... ok
+
+----------------------------------------------------------------------
+Ran 22 tests in 1.551s
+
+OK

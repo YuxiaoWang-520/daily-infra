@@ -1,0 +1,39 @@
+test_numeric_overflow_uses_value_error (test_answers.ScalingMathTests.test_numeric_overflow_uses_value_error) ... 
+  test_numeric_overflow_uses_value_error (test_answers.ScalingMathTests.test_numeric_overflow_uses_value_error) (index=0) ... ERROR
+  test_numeric_overflow_uses_value_error (test_answers.ScalingMathTests.test_numeric_overflow_uses_value_error) (index=1) ... ERROR
+
+======================================================================
+ERROR: test_numeric_overflow_uses_value_error (test_answers.ScalingMathTests.test_numeric_overflow_uses_value_error) (index=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-27-amp-loss-scaling-skipped-steps/code/test_answers.py", line 78, in test_numeric_overflow_uses_value_error
+    case()
+  File "<repo>/drafts/2026-11-27-amp-loss-scaling-skipped-steps/code/test_answers.py", line 73, in <lambda>
+    lambda: unscale_accumulated([1e308, 1e308], [1, 1], 1),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/drafts/2026-11-27-amp-loss-scaling-skipped-steps/code/answers.py", line 84, in unscale_accumulated
+    result = math.fsum(terms) / final_scale
+             ^^^^^^^^^^^^^^^^
+OverflowError: intermediate overflow in fsum
+
+======================================================================
+ERROR: test_numeric_overflow_uses_value_error (test_answers.ScalingMathTests.test_numeric_overflow_uses_value_error) (index=1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-27-amp-loss-scaling-skipped-steps/code/test_answers.py", line 78, in test_numeric_overflow_uses_value_error
+    case()
+  File "<repo>/drafts/2026-11-27-amp-loss-scaling-skipped-steps/code/test_answers.py", line 74, in <lambda>
+    lambda: quantized_gradient(10**1000, 8),
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/drafts/2026-11-27-amp-loss-scaling-skipped-steps/code/answers.py", line 41, in quantized_gradient
+    gradient = finite_number(gradient, "gradient")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/drafts/2026-11-27-amp-loss-scaling-skipped-steps/code/answers.py", line 25, in finite_number
+    number = float(value)
+             ^^^^^^^^^^^^
+OverflowError: int too large to convert to float
+
+----------------------------------------------------------------------
+Ran 1 test in 0.000s
+
+FAILED (errors=2)

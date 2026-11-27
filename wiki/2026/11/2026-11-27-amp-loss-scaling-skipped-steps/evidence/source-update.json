@@ -1,0 +1,41 @@
+{
+  "checked_at": "2026-11-27T11:10:11+08:00",
+  "cache_checkout_preserved": "4892050dadb28d1ca1065268e35084747967e34e",
+  "commands": [
+    {
+      "command": "git fetch --no-tags origin main",
+      "scope": "target repository",
+      "exit_code": 0,
+      "output": "From github.com:YuxiaoWang-520/daily-infra\n * branch main -> FETCH_HEAD"
+    },
+    {
+      "command": "git -C .cache/upstream/pytorch fetch --no-tags --depth=1 origin main",
+      "exit_code": 0,
+      "output": "From https://github.com/pytorch/pytorch\n * branch main -> FETCH_HEAD\n + 205e1e1...26bbfa3 main -> origin/main (forced update)"
+    },
+    {
+      "command": "git -C .cache/upstream/pytorch fetch --no-tags --depth=1 origin refs/tags/v2.15.0:refs/tags/v2.15.0",
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "command": "gh api repos/pytorch/pytorch --jq .default_branch",
+      "exit_code": 0,
+      "output": "main"
+    },
+    {
+      "command": "gh api repos/pytorch/pytorch/releases/latest",
+      "exit_code": 0,
+      "output": {
+        "tag_name": "v2.15.0",
+        "published_at": "2026-10-28T17:09:49Z",
+        "target_commitish": "main"
+      }
+    }
+  ],
+  "main": "26bbfa344f2f4df9b06fcc980dba95fee81d5a19",
+  "stable": "31a77fc9c0a7c6fff15a1ff58c743f53b1a9d457",
+  "whole_file_equal_main_stable": "aten/src/ATen/native/cpu/AmpGradScalerKernels.cpp",
+  "grad_scaler_whole_file_equal": false,
+  "version_boundary": "Main constructor device=None selects current accelerator, stable tag and installed binary default to cuda. Experiments explicitly request cpu."
+}

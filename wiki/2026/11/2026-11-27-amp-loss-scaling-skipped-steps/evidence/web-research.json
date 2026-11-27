@@ -1,0 +1,178 @@
+{
+  "requested_on": "2026-11-27",
+  "timezone": "Asia/Shanghai",
+  "role": "Primary source discovery and targeted extraction; no full webpages archived",
+  "cache_boundary": "acquired_at is the extraction service cache timestamp, not a claim of live refetch today",
+  "sessions": {
+    "nov27paperSearch": {
+      "id": "search_7fa75d534f4b837359c402cd2d89a937",
+      "session_id": "session_7fa75d534f4b837359c402cd2d89a937",
+      "warnings": [],
+      "errors": [],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/1710.03740",
+          "title": "Mixed Precision Training",
+          "publish_date": null,
+          "acquired_at": null
+        },
+        {
+          "url": "https://developer.nvidia.com/blog/mixed-precision-training-deep-neural-networks",
+          "title": "Mixed-Precision Training of Deep Neural Networks | NVIDIA Technical Blog",
+          "publish_date": "2017-10-11",
+          "acquired_at": null
+        },
+        {
+          "url": "https://arxiv.org/abs/1710.03740",
+          "title": "[1710.03740] Mixed Precision Training",
+          "publish_date": "2017-10-10",
+          "acquired_at": null
+        },
+        {
+          "url": "https://arxiv.org/pdf/1710.03740",
+          "title": "Mixed Precision Training",
+          "publish_date": "2017-10-10",
+          "acquired_at": null
+        },
+        {
+          "url": "https://docs.nvidia.com/deeplearning/performance/pdf/Training-Mixed-Precision-User-Guide.pdf",
+          "title": "Train with Mixed Precision",
+          "publish_date": "2023-02-01",
+          "acquired_at": null
+        },
+        {
+          "url": "https://nvidia.github.io/OpenSeq2Seq/html/mixed-precision.html",
+          "title": "Mixed Precision Training — OpenSeq2Seq 0.2 documentation",
+          "publish_date": null,
+          "acquired_at": null
+        },
+        {
+          "url": "https://intuitivepapers.ai/mixed-precision-training",
+          "title": "Mixed Precision Training explained — FP16 and loss scaling",
+          "publish_date": "2017-10-01",
+          "acquired_at": null
+        },
+        {
+          "url": "https://arxiv.org/html/1710.03740v2",
+          "title": "Mixed Precision Training",
+          "publish_date": null,
+          "acquired_at": null
+        },
+        {
+          "url": "https://arxiv.org/pdf/1710.03740v3",
+          "title": "M P T",
+          "publish_date": "2018-02-19",
+          "acquired_at": null
+        },
+        {
+          "url": "https://www.ijcai.org/Proceedings/2020/404",
+          "title": "Reducing Underflow in Mixed Precision Training by Gradient Scaling | IJCAI",
+          "publish_date": "2020-07-09",
+          "acquired_at": null
+        }
+      ]
+    },
+    "nov27docSearch": {
+      "id": "search_82d1522bc8d037f3d8a0eba6b1818800",
+      "session_id": "session_82d1522bc8d037f3d8a0eba6b1818800",
+      "warnings": [],
+      "errors": [],
+      "sources": [
+        {
+          "url": "https://docs.pytorch.org/docs/2.14/notes/amp_examples.html",
+          "title": "Automatic Mixed Precision examples #",
+          "publish_date": null,
+          "acquired_at": null
+        },
+        {
+          "url": "https://docs.pytorch.org/docs/2.15/notes/amp_examples.html",
+          "title": "Automatic Mixed Precision examples #",
+          "publish_date": null,
+          "acquired_at": null
+        },
+        {
+          "url": "http://docs.pytorch.org/docs/main/notes/amp_examples.html",
+          "title": "Automatic Mixed Precision examples#",
+          "publish_date": "2026-05-07",
+          "acquired_at": null
+        },
+        {
+          "url": "https://docs.pytorch.org/docs/2.13/notes/amp_examples.html",
+          "title": "Automatic Mixed Precision examples — PyTorch 2.13 documentation",
+          "publish_date": null,
+          "acquired_at": null
+        },
+        {
+          "url": "https://docs.pytorch.org/docs/stable/notes/amp_examples.html",
+          "title": "Automatic Mixed Precision examples — PyTorch 2.12 documentation",
+          "publish_date": "2020-02-13",
+          "acquired_at": null
+        },
+        {
+          "url": "https://docs.pytorch.org/docs/2.6/notes/amp_examples.html",
+          "title": "Automatic Mixed Precision examples ¶",
+          "publish_date": null,
+          "acquired_at": null
+        },
+        {
+          "url": "http://docs.pytorch.org/docs/2.12/notes/amp_examples.html",
+          "title": "Automatic Mixed Precision examples — PyTorch 2.12 documentation",
+          "publish_date": "2020-02-13",
+          "acquired_at": null
+        },
+        {
+          "url": "https://docs.pytorch.org/docs/2.11/notes/amp_examples.html",
+          "title": "Automatic Mixed Precision examples #",
+          "publish_date": "2020-02-13",
+          "acquired_at": null
+        },
+        {
+          "url": "https://docs.pytorch.org/docs/2.2/amp.html",
+          "title": "Automatic Mixed Precision package - torch.amp ¶",
+          "publish_date": null,
+          "acquired_at": null
+        },
+        {
+          "url": "https://docs.pytorch.org/docs/2.8/notes/amp_examples.html",
+          "title": "Automatic Mixed Precision examples #",
+          "publish_date": "2020-02-13",
+          "acquired_at": null
+        }
+      ]
+    },
+    "nov27paperFetch": {
+      "id": "extract_154bd23c086210d90ac29c9be8b66596",
+      "session_id": "session_7fa75d534f4b837359c402cd2d89a937",
+      "warnings": [],
+      "errors": [],
+      "sources": [
+        {
+          "url": "https://arxiv.org/html/1710.03740v3",
+          "title": "Mixed Precision Training",
+          "publish_date": null,
+          "acquired_at": "2026-11-13T00:00:00Z"
+        }
+      ]
+    },
+    "nov27ampFetch": {
+      "id": "extract_736408bb6d74a1f5d2e9b29b304fc4ac",
+      "session_id": "session_82d1522bc8d037f3d8a0eba6b1818800",
+      "warnings": [],
+      "errors": [],
+      "sources": [
+        {
+          "url": "https://docs.pytorch.org/docs/2.15/notes/amp_examples.html",
+          "title": "Automatic Mixed Precision examples #",
+          "publish_date": null,
+          "acquired_at": "2026-11-26T00:00:00Z"
+        },
+        {
+          "url": "https://docs.pytorch.org/docs/2.15/amp.html",
+          "title": "Automatic Mixed Precision package - torch.amp #",
+          "publish_date": null,
+          "acquired_at": "2026-11-26T00:00:00Z"
+        }
+      ]
+    }
+  }
+}

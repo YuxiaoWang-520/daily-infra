@@ -1,0 +1,122 @@
+{
+  "scope": "CPU only; synthetic Inf injection; no GPU performance measurement",
+  "environment": {
+    "python": "3.12.16",
+    "torch": "2.15.0",
+    "torch_build_commit": "d0f2af8b66b20da4baa50644c0cd3f887a2eae2e",
+    "platform": "Darwin",
+    "machine": "arm64",
+    "cuda_available": false,
+    "ruff": "ruff 0.17.3"
+  },
+  "runs": [
+    {
+      "log": "unittest.txt",
+      "command": [
+        "<python>",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        ".",
+        "-p",
+        "test_answers.py",
+        "-v"
+      ],
+      "cwd": "code",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_at": "2026-11-27T11:27:23+08:00",
+      "elapsed_seconds": 1.496,
+      "exit_code": 0,
+      "timed_out": false
+    },
+    {
+      "log": "unittest-optimized.txt",
+      "command": [
+        "<python>",
+        "-O",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        ".",
+        "-p",
+        "test_answers.py",
+        "-v"
+      ],
+      "cwd": "code",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_at": "2026-11-27T11:27:23+08:00",
+      "elapsed_seconds": 3.459,
+      "exit_code": 0,
+      "timed_out": false
+    },
+    {
+      "log": "ruff.txt",
+      "command": [
+        "<ruff>",
+        "check",
+        "."
+      ],
+      "cwd": "code",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_at": "2026-11-27T11:27:23+08:00",
+      "elapsed_seconds": 0.029,
+      "exit_code": 0,
+      "timed_out": false
+    },
+    {
+      "log": "ruff-format.txt",
+      "command": [
+        "<ruff>",
+        "format",
+        "--check",
+        "."
+      ],
+      "cwd": "code",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_at": "2026-11-27T11:27:23+08:00",
+      "elapsed_seconds": 0.023,
+      "exit_code": 0,
+      "timed_out": false
+    },
+    {
+      "log": "cli.txt",
+      "command": [
+        "<python>",
+        "run_answers.py",
+        "--output-dir",
+        "../evidence/runs/cpu"
+      ],
+      "cwd": "code",
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "started_at": "2026-11-27T11:27:23+08:00",
+      "elapsed_seconds": 1.485,
+      "exit_code": 0,
+      "timed_out": false
+    }
+  ],
+  "code_sha256": {
+    "answers.py": "b2d6126ac6c7213de1371c69774faee6b5c3df5e21eb161b86092254644d849f",
+    "exercises.py": "feef692b5bb7268386337236bf9c7a0adba5c579dbf445b7efe3a95c49b463f7",
+    "run_answers.py": "d185536bbc56dceeadd8be8d17adf694fb5a8a50ea6a2a0d2fcc74c1ed0d3dff",
+    "runtime_demo.py": "0dc60d1c493a7dad4932a6a00a1a00b0235b56ec50fa49d87480dc438fedb844",
+    "test_answers.py": "ea9f889fc56c1dc14dc315f2ae21d0ad8ed3ada12384350c40ab6ecf3bd1662a"
+  },
+  "history": {
+    "initial_manifest": "initial-manifest.json",
+    "initial_stub_red": "red-tests.txt",
+    "numeric_overflow_red": "overflow-red.txt",
+    "final_test_count": 23
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "checked_at": "2026-11-27T11:31:34+08:00",
+  "status": "published",
+  "technical_review": {
+    "reviewer": "MAIN",
+    "type": "self-review",
+    "result": "pass",
+    "evidence": "technical-audit.json",
+    "unresolved_critical_high": 0
+  },
+  "teaching_review": {
+    "reviewer": "MAIN",
+    "type": "self-review",
+    "result": "pass",
+    "checked": [
+      "beginner definitions and prerequisite links",
+      "loss scaling before underflow; precision versus range",
+      "clip and accumulation units",
+      "diagram and two complete exercise contracts",
+      "ordinary optimizer, cached flags and custom-path boundary",
+      "data/update/scheduler clocks and consistent restore",
+      "primary source, stable/main/build and cache timestamps separated",
+      "CPU synthesis and unmeasured GPU/distributed/performance limits"
+    ],
+    "closed_findings": [
+      "intermediate FP16 gradient versus FP32 parameter grad clarified",
+      "first-use terms expanded"
+    ]
+  },
+  "independent_code_review": "python-review.json",
+  "release_gate": "Technical and teaching pass; independent code delta accepted; archive only after link and delivery verification",
+  "limitations": [
+    "No diagram rendering",
+    "No GPU, distributed, storage-crash, performance or convergence measurements"
+  ],
+  "archive_checked_at": "2026-11-27T11:32:34+08:00",
+  "prearchive_local_links": 91,
+  "prearchive_privacy_findings": 0
+}

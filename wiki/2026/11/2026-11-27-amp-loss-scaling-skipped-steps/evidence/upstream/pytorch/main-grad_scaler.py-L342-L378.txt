@@ -1,0 +1,37 @@
+        self._check_scale_growth_tracker("unscale_")
+
+        optimizer_state = self._per_optimizer_states[id(optimizer)]
+
+        if optimizer_state["stage"] is OptState.UNSCALED:
+            raise RuntimeError(
+                "unscale_() has already been called on this optimizer since the last update()."
+            )
+        elif optimizer_state["stage"] is OptState.STEPPED:
+            raise RuntimeError("unscale_() is being called after step().")
+
+        # FP32 division can be imprecise for certain compile options, so we carry out the reciprocal in FP64.
+        if self._scale is None:
+            raise AssertionError("_scale is None in unscale_")
+        inv_scale = (
+            self._scale.double().reciprocal().float()
+            if self._scale.device != torch.device("mps:0")
+            else self._scale.reciprocal()
+        )
+        found_inf = torch.full((), 0.0, dtype=torch.float32, device=self._scale.device)
+
+        optimizer_state["found_inf_per_device"] = self._unscale_grads_(
+            optimizer, inv_scale, found_inf, False
+        )
+        optimizer_state["stage"] = OptState.UNSCALED
+
+    def _maybe_opt_step(
+        self,
+        optimizer: torch.optim.Optimizer,
+        optimizer_state: dict[str, Any],
+        *args: Any,
+        **kwargs: Any,
+    ) -> float | None:
+        retval: float | None = None
+        if not sum(v.item() for v in optimizer_state["found_inf_per_device"].values()):
+            retval = optimizer.step(*args, **kwargs)
+        return retval

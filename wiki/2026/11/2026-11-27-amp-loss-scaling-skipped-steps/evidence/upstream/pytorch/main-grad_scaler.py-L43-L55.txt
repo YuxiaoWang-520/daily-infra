@@ -1,0 +1,13 @@
+class OptState(Enum):
+    READY = 0
+    UNSCALED = 1
+    STEPPED = 2
+
+
+def _refresh_per_optimizer_state() -> dict[str, Any]:
+    return {"stage": OptState.READY, "found_inf_per_device": {}}
+
+
+class GradScaler:
+    """An instance ``scaler`` of :class:`GradScaler`.
+

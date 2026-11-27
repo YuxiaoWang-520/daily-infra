@@ -1,0 +1,157 @@
+{
+  "checked_at": "2026-11-27T11:10:11+08:00",
+  "repository": "https://github.com/pytorch/pytorch",
+  "default_branch": "main",
+  "main": "26bbfa344f2f4df9b06fcc980dba95fee81d5a19",
+  "stable": {
+    "tag": "v2.15.0",
+    "commit": "31a77fc9c0a7c6fff15a1ff58c743f53b1a9d457",
+    "published_at": "2026-10-28T17:09:49Z"
+  },
+  "fragments": [
+    {
+      "version": "main",
+      "commit": "26bbfa344f2f4df9b06fcc980dba95fee81d5a19",
+      "source_path": "torch/amp/grad_scaler.py",
+      "start_line": 43,
+      "end_line": 55,
+      "source_file_sha256": "f6a5676f01ea17f088c85f5a21ee351a729ca3387ca58f970016c8774cee910c",
+      "archive_path": "evidence/upstream/pytorch/main-grad_scaler.py-L43-L55.txt",
+      "excerpt_sha256": "e9c6f6fae0226968c106f590baf56687ea9c2563b85c3cfad3cfeac26284f71d",
+      "permalink": "https://github.com/pytorch/pytorch/blob/26bbfa344f2f4df9b06fcc980dba95fee81d5a19/torch/amp/grad_scaler.py#L43-L55"
+    },
+    {
+      "version": "main",
+      "commit": "26bbfa344f2f4df9b06fcc980dba95fee81d5a19",
+      "source_path": "torch/amp/grad_scaler.py",
+      "start_line": 125,
+      "end_line": 156,
+      "source_file_sha256": "f6a5676f01ea17f088c85f5a21ee351a729ca3387ca58f970016c8774cee910c",
+      "archive_path": "evidence/upstream/pytorch/main-grad_scaler.py-L125-L156.txt",
+      "excerpt_sha256": "a5c66dc4689db76ac457ba13ead77719c497bd6c4e145cc9d17ffe654f48ea1c",
+      "permalink": "https://github.com/pytorch/pytorch/blob/26bbfa344f2f4df9b06fcc980dba95fee81d5a19/torch/amp/grad_scaler.py#L125-L156"
+    },
+    {
+      "version": "main",
+      "commit": "26bbfa344f2f4df9b06fcc980dba95fee81d5a19",
+      "source_path": "torch/amp/grad_scaler.py",
+      "start_line": 210,
+      "end_line": 222,
+      "source_file_sha256": "f6a5676f01ea17f088c85f5a21ee351a729ca3387ca58f970016c8774cee910c",
+      "archive_path": "evidence/upstream/pytorch/main-grad_scaler.py-L210-L222.txt",
+      "excerpt_sha256": "b5103ba96bbc0f519c1034a1935936586bf8a2e479a57d931761bc6122f38fab",
+      "permalink": "https://github.com/pytorch/pytorch/blob/26bbfa344f2f4df9b06fcc980dba95fee81d5a19/torch/amp/grad_scaler.py#L210-L222"
+    },
+    {
+      "version": "main",
+      "commit": "26bbfa344f2f4df9b06fcc980dba95fee81d5a19",
+      "source_path": "torch/amp/grad_scaler.py",
+      "start_line": 270,
+      "end_line": 301,
+      "source_file_sha256": "f6a5676f01ea17f088c85f5a21ee351a729ca3387ca58f970016c8774cee910c",
+      "archive_path": "evidence/upstream/pytorch/main-grad_scaler.py-L270-L301.txt",
+      "excerpt_sha256": "d0e8969541e13eb9adb64e6717a28f64b842894160206e37200b6b9289bf320e",
+      "permalink": "https://github.com/pytorch/pytorch/blob/26bbfa344f2f4df9b06fcc980dba95fee81d5a19/torch/amp/grad_scaler.py#L270-L301"
+    },
+    {
+      "version": "main",
+      "commit": "26bbfa344f2f4df9b06fcc980dba95fee81d5a19",
+      "source_path": "torch/amp/grad_scaler.py",
+      "start_line": 342,
+      "end_line": 378,
+      "source_file_sha256": "f6a5676f01ea17f088c85f5a21ee351a729ca3387ca58f970016c8774cee910c",
+      "archive_path": "evidence/upstream/pytorch/main-grad_scaler.py-L342-L378.txt",
+      "excerpt_sha256": "a654d43878f40cbeaa74c8c52acc500e50c9193402e2914f74d386687463c7f5",
+      "permalink": "https://github.com/pytorch/pytorch/blob/26bbfa344f2f4df9b06fcc980dba95fee81d5a19/torch/amp/grad_scaler.py#L342-L378"
+    },
+    {
+      "version": "main",
+      "commit": "26bbfa344f2f4df9b06fcc980dba95fee81d5a19",
+      "source_path": "torch/amp/grad_scaler.py",
+      "start_line": 414,
+      "end_line": 427,
+      "source_file_sha256": "f6a5676f01ea17f088c85f5a21ee351a729ca3387ca58f970016c8774cee910c",
+      "archive_path": "evidence/upstream/pytorch/main-grad_scaler.py-L414-L427.txt",
+      "excerpt_sha256": "42b58736b52b69d205e358cfad1fdd14fc2cdf348c619ae20bbd40cb03adb793",
+      "permalink": "https://github.com/pytorch/pytorch/blob/26bbfa344f2f4df9b06fcc980dba95fee81d5a19/torch/amp/grad_scaler.py#L414-L427"
+    },
+    {
+      "version": "main",
+      "commit": "26bbfa344f2f4df9b06fcc980dba95fee81d5a19",
+      "source_path": "torch/amp/grad_scaler.py",
+      "start_line": 477,
+      "end_line": 487,
+      "source_file_sha256": "f6a5676f01ea17f088c85f5a21ee351a729ca3387ca58f970016c8774cee910c",
+      "archive_path": "evidence/upstream/pytorch/main-grad_scaler.py-L477-L487.txt",
+      "excerpt_sha256": "51d3df1173a49c1354071a09841e5caf753e44fda8925a5e3c4ca256fcf3b78d",
+      "permalink": "https://github.com/pytorch/pytorch/blob/26bbfa344f2f4df9b06fcc980dba95fee81d5a19/torch/amp/grad_scaler.py#L477-L487"
+    },
+    {
+      "version": "main",
+      "commit": "26bbfa344f2f4df9b06fcc980dba95fee81d5a19",
+      "source_path": "torch/amp/grad_scaler.py",
+      "start_line": 516,
+      "end_line": 564,
+      "source_file_sha256": "f6a5676f01ea17f088c85f5a21ee351a729ca3387ca58f970016c8774cee910c",
+      "archive_path": "evidence/upstream/pytorch/main-grad_scaler.py-L516-L564.txt",
+      "excerpt_sha256": "22e15e41e1c40f3a37d8567afce8fa5f335ef4e531dd0f0c1d5825f27d4f246a",
+      "permalink": "https://github.com/pytorch/pytorch/blob/26bbfa344f2f4df9b06fcc980dba95fee81d5a19/torch/amp/grad_scaler.py#L516-L564"
+    },
+    {
+      "version": "main",
+      "commit": "26bbfa344f2f4df9b06fcc980dba95fee81d5a19",
+      "source_path": "torch/amp/grad_scaler.py",
+      "start_line": 632,
+      "end_line": 684,
+      "source_file_sha256": "f6a5676f01ea17f088c85f5a21ee351a729ca3387ca58f970016c8774cee910c",
+      "archive_path": "evidence/upstream/pytorch/main-grad_scaler.py-L632-L684.txt",
+      "excerpt_sha256": "874bc0dbc97277b0122ef9ed1148b443177ff2116309aa6accf5429c822959ff",
+      "permalink": "https://github.com/pytorch/pytorch/blob/26bbfa344f2f4df9b06fcc980dba95fee81d5a19/torch/amp/grad_scaler.py#L632-L684"
+    },
+    {
+      "version": "main",
+      "commit": "26bbfa344f2f4df9b06fcc980dba95fee81d5a19",
+      "source_path": "aten/src/ATen/native/cpu/AmpGradScalerKernels.cpp",
+      "start_line": 97,
+      "end_line": 121,
+      "source_file_sha256": "de2d70fe3c0983824bb9407ddaba49793797fa63fbd5166194b62f5562d55786",
+      "archive_path": "evidence/upstream/pytorch/main-AmpGradScalerKernels.cpp-L97-L121.txt",
+      "excerpt_sha256": "dafea21ca90dee4d78007357f9a695e1ec21affa5e134686f38f55b84232f267",
+      "permalink": "https://github.com/pytorch/pytorch/blob/26bbfa344f2f4df9b06fcc980dba95fee81d5a19/aten/src/ATen/native/cpu/AmpGradScalerKernels.cpp#L97-L121"
+    },
+    {
+      "version": "main",
+      "commit": "26bbfa344f2f4df9b06fcc980dba95fee81d5a19",
+      "source_path": "aten/src/ATen/native/cpu/AmpGradScalerKernels.cpp",
+      "start_line": 168,
+      "end_line": 190,
+      "source_file_sha256": "de2d70fe3c0983824bb9407ddaba49793797fa63fbd5166194b62f5562d55786",
+      "archive_path": "evidence/upstream/pytorch/main-AmpGradScalerKernels.cpp-L168-L190.txt",
+      "excerpt_sha256": "86e53f14e9f67dbb7aaaf6c8bd05222ae94f19d40fe84ca31aa40a81a97ce0fc",
+      "permalink": "https://github.com/pytorch/pytorch/blob/26bbfa344f2f4df9b06fcc980dba95fee81d5a19/aten/src/ATen/native/cpu/AmpGradScalerKernels.cpp#L168-L190"
+    },
+    {
+      "version": "main",
+      "commit": "26bbfa344f2f4df9b06fcc980dba95fee81d5a19",
+      "source_path": "torch/nn/utils/clip_grad.py",
+      "start_line": 170,
+      "end_line": 188,
+      "source_file_sha256": "af5d3d487773959e0bf28351e3ffe20facc7afac428cd79b8899c11c5fa57672",
+      "archive_path": "evidence/upstream/pytorch/main-clip_grad.py-L170-L188.txt",
+      "excerpt_sha256": "2997ffdca16a6044f9f8e7becfed403438531969b4f5157b2394af9e5574bf4f",
+      "permalink": "https://github.com/pytorch/pytorch/blob/26bbfa344f2f4df9b06fcc980dba95fee81d5a19/torch/nn/utils/clip_grad.py#L170-L188"
+    },
+    {
+      "version": "v2.15.0",
+      "commit": "31a77fc9c0a7c6fff15a1ff58c743f53b1a9d457",
+      "source_path": "torch/amp/grad_scaler.py",
+      "start_line": 123,
+      "end_line": 137,
+      "source_file_sha256": "862d3289c5fd0283987de797ac3a7640285bacff5720ce7e867cb92663989cc3",
+      "archive_path": "evidence/upstream/pytorch/v2.15.0-grad_scaler.py-L123-L137.txt",
+      "excerpt_sha256": "4b02f952eb4331d9241024e7d6fc35f08ab1775dfc070f3bc57794ed8fcf0735",
+      "permalink": "https://github.com/pytorch/pytorch/blob/31a77fc9c0a7c6fff15a1ff58c743f53b1a9d457/torch/amp/grad_scaler.py#L123-L137"
+    }
+  ],
+  "license_sha256": "bd018feef8825e88181c84eb7e3aa4eafb8f08a20d9fd6ef948569610c4a3e43"
+}

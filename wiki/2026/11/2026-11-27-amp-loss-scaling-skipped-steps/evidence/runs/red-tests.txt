@@ -1,0 +1,29 @@
+test_fp16_underflow_and_early_scale (test_answers.ScalingMathTests.test_fp16_underflow_and_early_scale) ... ERROR
+test_real_trace_scale_and_training_clocks (test_answers.RuntimeTests.test_real_trace_scale_and_training_clocks) ... ERROR
+
+======================================================================
+ERROR: test_fp16_underflow_and_early_scale (test_answers.ScalingMathTests.test_fp16_underflow_and_early_scale)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-27-amp-loss-scaling-skipped-steps/code/test_answers.py", line 20, in test_fp16_underflow_and_early_scale
+    r = quantized_gradient(1e-8, 1024)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/drafts/2026-11-27-amp-loss-scaling-skipped-steps/code/answers.py", line 5, in quantized_gradient
+    raise NotImplementedError
+NotImplementedError
+
+======================================================================
+ERROR: test_real_trace_scale_and_training_clocks (test_answers.RuntimeTests.test_real_trace_scale_and_training_clocks)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/drafts/2026-11-27-amp-loss-scaling-skipped-steps/code/test_answers.py", line 73, in test_real_trace_scale_and_training_clocks
+    result = training_trace([False, False, True, False, False])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/drafts/2026-11-27-amp-loss-scaling-skipped-steps/code/runtime_demo.py", line 5, in training_trace
+    raise NotImplementedError
+NotImplementedError
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.000s
+
+FAILED (errors=2)
